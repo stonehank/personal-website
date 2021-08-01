@@ -1,0 +1,22 @@
+//*{
+//  padding:0;
+//  margin:0;
+//  box-sizing: border-box;
+//}
+html{
+  overflow:auto !important;
+}
+body{
+  background-color:var(--background-color);
+  color:var(--text-primary)
+}
+
+a {
+  color:var(--text-primary);
+  &:link {color:var(--text-primary)}
+  &:visited {color:var(--text-primary)}
+  &:hover {color:var(--theme-primary)}
+  &:active {color:var(--text-primary)}
+}
+
+@import "./overwrite/index";
