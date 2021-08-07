@@ -22,10 +22,14 @@
 </template>
 
 <script>
+    import {scrollTo} from "pagesDir/index/src/utils";
     export default {
         name: "TocList",
         props:{
             curLevelToc:Array
+        },
+        computed:{
+            scrollTo:()=>scrollTo
         },
         data(){
             return {
@@ -43,19 +47,8 @@
 
             })
         },
-        methods:{
-            scrollTo(hash) {
-                if($(hash).length===0)return
-                let top=Math.max(0.001,$(hash).offset().top - this.$custom_data.getNavH() - 8)
-                try {
-                    window.scrollTo({
-                        top: top,
-                        behavior: 'smooth'
-                    })
-                } catch (_) {
-                    (document.documentElement || document.body).scrollTop=0
-                }
-            }
+        destroyed() {
+            clearTimeout(this.initTimer)
         }
     }
 </script>

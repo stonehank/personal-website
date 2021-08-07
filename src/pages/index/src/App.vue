@@ -31,7 +31,7 @@
         return hljs
     })
     import Navigation from "pagesDir/index/src/components/Navigation/index";
-    import ScrTopBtn from "pagesDir/index/src/components/ScrTopBtn";
+    import ScrTopBtn from "pagesDir/index/src/commons/ScrTopBtn";
     export default {
         name: "App",
         components: {

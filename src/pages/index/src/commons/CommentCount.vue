@@ -1,6 +1,6 @@
 <template>
     <span>
-        <v-icon small>fas fa-comment</v-icon>
+        <v-icon small>far fa-comment-alt</v-icon>
         {{commentCount}}
     </span>
 </template>

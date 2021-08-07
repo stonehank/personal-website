@@ -1,5 +1,6 @@
 <template>
     <v-card
+            flat
             class="mx-auto h-100 d-flex flex-column"
             :to="'/articles/'+articleHeader.slug"
     >
@@ -11,9 +12,10 @@
             <div class="text-secondary text-mid overflow-hidden" v-html="articleHeader.summary"></div>
             <div class="mt-2">
                 <ArticleTags :tags="articleHeader.relatedTags"/>
-                <div class="text-sm d-flex justify-space-between mt-2">
-                    <CommentCount :commentCount="commentCount" />
+                <div class="text-sm d-flex justify-space-start mt-2">
                     <DateRender :date="articleHeader.created_at" />
+                    <b class="text-md mx-2">·</b>
+                    <CommentCount :commentCount="15" />
                 </div>
             </div>
         </v-card-text>

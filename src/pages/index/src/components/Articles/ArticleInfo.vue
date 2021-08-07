@@ -16,9 +16,9 @@
                     <ArticleTags :tags="articleDetails.relatedTags" />
                     <div class="text-sm d-flex justify-space-between">
                         <div class="d-flex align-center">
-                            <CommentCount :commentCount="15" />
-                            <b class="text-md mx-2">·</b>
                             <DateRender :date="articleDetails.created_at" />
+                            <b class="text-md mx-2">·</b>
+                            <CommentCount :commentCount="15" />
                         </div>
                     </div>
                 </v-card-subtitle>
@@ -34,9 +34,9 @@
     import ArticleTags from "pagesDir/index/src/commons/ArticleTags";
     import CommentCount from "pagesDir/index/src/commons/CommentCount";
     import DateRender from "pagesDir/index/src/commons/DateRender";
-    import TableOfContent from "pagesDir/index/src/components/Blogs/TableOfContent";
+    import TableOfContent from "pagesDir/index/src/components/Articles/TableOfContent";
     export default {
-        name: "BlogArticle",
+        name: "ArticleInfo",
         props:{
             articleDetails:{
                 default:()=>({}),

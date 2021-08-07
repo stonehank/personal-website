@@ -1,14 +1,14 @@
 <template>
-    <BlogArticle v-if="articleDetails"
+    <ArticleInfo v-if="articleDetails"
                  :articleDetails="articleDetails"
     />
 </template>
 
 <script>
-    import BlogArticle from "pagesDir/index/src/components/Blogs/BlogArticle";
+    import ArticleInfo from "pagesDir/index/src/components/Articles/ArticleInfo";
     export default {
         name: "Article",
-        components: {BlogArticle},
+        components: {ArticleInfo},
         data(){
             return {
                 articleDetails:null,

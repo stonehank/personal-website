@@ -13,18 +13,45 @@
            </v-list-item>
            <v-divider></v-divider>
            <v-list dense>
-               <v-list-item
+               <div
                        v-for="item in items"
                        :key="item.title"
-                       :to="item.to"
                >
-                   <v-list-item-icon>
-                       <v-icon small>{{ item.icon }}</v-icon>
-                   </v-list-item-icon>
-                   <v-list-item-content>
-                       <v-list-item-title>{{ item.title }}</v-list-item-title>
-                   </v-list-item-content>
-               </v-list-item>
+                   <v-list-item
+                           v-if="!item.children"
+                           :to="item.to"
+                   >
+                       <v-list-item-icon>
+                           <v-icon small>{{ item.icon }}</v-icon>
+                       </v-list-item-icon>
+                       <v-list-item-content>
+                           <v-list-item-title>{{ item.title }}</v-list-item-title>
+                       </v-list-item-content>
+                   </v-list-item>
+                   <v-list-group
+                           v-else
+                           no-action
+                           :value="true"
+                   >
+                       <template v-slot:activator>
+                           <v-list-item-icon>
+                               <v-icon small>{{ item.icon }}</v-icon>
+                           </v-list-item-icon>
+                           <v-list-item-content>
+                               <v-list-item-title>{{ item.title }}</v-list-item-title>
+                           </v-list-item-content>
+                       </template>
+                       <v-list-item
+                               v-for="child in item.children"
+                               :key="child.title"
+                               :to="child.to"
+                       >
+                           <v-list-item-content>
+                               <v-list-item-title v-text="child.title"></v-list-item-title>
+                           </v-list-item-content>
+                       </v-list-item>
+                   </v-list-group>
+               </div>
            </v-list>
        </v-navigation-drawer>
    </div>

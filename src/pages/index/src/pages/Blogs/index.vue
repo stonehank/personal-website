@@ -1,6 +1,7 @@
 <template>
     <section class="d-flex">
         <v-navigation-drawer
+                v-if="$vuetify.breakpoint.mdAndUp"
                 permanent
                 fixed
                 class="pa-4"
@@ -27,8 +28,10 @@
                 </v-list-item>
             </v-list>
         </v-navigation-drawer>
-        <v-container fluid style="margin-left:256px">
-            <router-view></router-view>
+        <v-container fluid :style="$vuetify.breakpoint.mdAndUp ? 'margin-left:256px' : ''">
+            <keep-alive>
+                <router-view></router-view>
+            </keep-alive>
         </v-container>
     </section>
 </template>

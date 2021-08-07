@@ -22,7 +22,17 @@
             return {
                 items:[
                     {title:'首页',icon:'fas fa-home',to:"/"},
-                    {title:'博客',icon:'fas fa-file',to:"/blogs"},
+                    {
+                        title:'博客',
+                        icon:'fas fa-file',
+                        to:"/blogs",
+                        children:[
+                            {title:'日常记录',icon:null,to:"/blogs/default"},
+                            {title:'源码阅读',icon:null,to:"/blogs/sourcecode"},
+                            {title:'算法系列',icon:null,to:"/blogs/algorithm"},
+                            {title:'时间归档',icon:null,to:"/blogs/archive"},
+                            {title:'标签归档',icon:null,to:"/blogs/tags"},
+                        ]},
                     {title:'项目',icon:'fas fa-project-diagram',to:"/projects"},
                 ]
             }

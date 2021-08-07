@@ -9,10 +9,7 @@
                elevation="4"
                large
                v-show="show"
-               @click="$vuetify.goTo(0,{
-                   duration:300,
-                   easing:'linear',
-               })"
+               @click="scrollTo"
         >
             <v-icon small color="white">fas fa-angle-up</v-icon>
         </v-btn>
@@ -20,6 +17,8 @@
 </template>
 
 <script>
+    import {scrollTo} from "pagesDir/index/src/utils";
+
     export default {
         name: "ScrTopBtn",
         data(){
@@ -27,11 +26,14 @@
                 show:false
             }
         },
+        computed:{
+            scrollTo:()=>scrollTo
+        },
         methods:{
             onScroll(e){
                 let scrTop=$(e.target).scrollTop()
                 this.show = scrTop > window.innerHeight * 1.5;
-            }
+            },
         }
     }
 </script>

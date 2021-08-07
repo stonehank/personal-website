@@ -16,7 +16,7 @@
 </template>
 
 <script>
-    import TocList from "pagesDir/index/src/components/Blogs/TableOfContent/TocList";
+    import TocList from "./TocList";
     export default {
         name: "TableOfContent",
         components: {TocList},
