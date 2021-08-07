@@ -1,0 +1,118 @@
+{
+  "zh-cn": {
+    "head": {
+      "nick": "昵称",
+      "mail": "邮箱(不会被显示)",
+      "link": "👈切换协议",
+      "require":"(*)",
+      "website":"个人主页",
+      "change_avatar":"更改"
+    },
+    "tips": {
+      "count":"获取中",
+      "pageview":"获取中",
+      "placeholder":"说点什么吧",
+      "comments": ["总共","条评论"],
+      "sofa": "快来做第一个评论的人吧~"
+    },
+    "ctrl": {
+      "reply": "回复",
+      "submit": "提交",
+      "edit":"编辑",
+      "save":"保存",
+      "cancel":"取消",
+      "discuss":"参与讨论",
+      "comment_list":"条评论",
+      "collapse_comment":"收起",
+      "more": "加载更多评论",
+      "no_more":"已经到最后啦",
+      "preview": "预览",
+      "preview_on":"On",
+      "preview_off":"Off",
+      "emoji": "表情"
+    },
+    "error": {
+      "100": "初始化失败，请检查你的AppId和AppKey.",
+      "401": "未经授权的操作，请检查你的AppId和AppKey.",
+      "403": "访问被api域名白名单拒绝，请检查你的安全域名设置.",
+      "importError":"leancloud 导入失败，请刷新重试！",
+      "initError":"leancloud 初始化失败!",
+      "noCommentError":"由于未知错误，无法获取回复列表"
+    },
+    "timeago": {
+      "seconds": "秒前",
+      "minutes": "分钟前",
+      "hours": "小时前",
+      "days": "天前",
+      "months":"个月前",
+      "now": "刚刚"
+    },
+    "verify":{
+      "empty_content":"内容不能为空！",
+      "exceed_content":"超出了限制长度2000个字符",
+      "require_nick":"昵称为必填项！",
+      "require_mail":"email为必填项！",
+      "email_format_failed":"email格式错误！",
+      "link_format_failed":"网址格式错误！",
+      "some_filed_error":"存在无效输入，请再次检查"
+    }
+  },
+  "en": {
+    "head": {
+      "nick": "NickName",
+      "mail": "E-Mail(will not show on comment)",
+      "link": "👈toggle protocol",
+      "website":"Personal link",
+      "require":"(require)",
+      "change_avatar":"Change"
+    },
+    "tips": {
+      "count":"fetching",
+      "pageview":"fetching",
+      "placeholder":"Some advice?",
+      "comments": ["","Comments"],
+      "sofa": "No comments yet."
+    },
+    "ctrl": {
+      "reply": "Reply",
+      "submit":"Submit",
+      "edit":"Edit",
+      "save":"Save",
+      "cancel":"Cancel",
+      "comment_list":"Comment",
+      "collapse_comment":"Collapse",
+      "discuss":"Discuss",
+      "more": "Load more comments",
+      "no_more":"No more comments",
+      "preview": "Preview",
+      "preview_on":"On",
+      "preview_off":"Off",
+      "emoji": "Emoji"
+    },
+    "error": {
+      "100": "Initialization failed, Please check your appId and appKey.",
+      "401": "Unauthorized operation, Please check your appId and appKey.",
+      "403": "Access denied by api domain white list, Please check your security domain.",
+      "importError":"Something error when import leancloud, try again please",
+      "initError":"Something eror when initial leancloud, try again please",
+      "noCommentError":"Failed to get the reply comment list"
+    },
+    "timeago": {
+      "seconds": "seconds ago",
+      "minutes": "minutes ago",
+      "hours": "hours ago",
+      "days": "days ago",
+      "months":"months ago",
+      "now": "just now"
+    },
+    "verify":{
+      "empty_content":"Content must not be empty!",
+      "exceed_content":"Exceed limit length 2000.",
+      "require_nick":"NickName is required!",
+      "require_mail":"E-Mail is required!",
+      "email_format_failed":"Incorrect email format!",
+      "link_format_failed":"Incorrect website format! ",
+      "some_filed_error":"Some field is invalid, check please."
+    }
+  }
+}

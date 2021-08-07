@@ -9,7 +9,7 @@ let isDark=backgroundColor==='dark'
 
 Vue.use(Vuetify)
 
-export default new Vuetify({
+let vuetify= new Vuetify({
     treeShake:true,
     breakpoint: {
         thresholds: {
@@ -46,3 +46,5 @@ export default new Vuetify({
         iconfont:'fa',
     }
 })
+window.vuetify=vuetify
+export default vuetify

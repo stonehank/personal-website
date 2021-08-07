@@ -32,7 +32,7 @@ const isDev = process.env.NODE_ENV === 'development'
 const configPlugins = [
   new WebpackBar(),
   !isDev && new CleanWebpackPlugin(),
-  new BundleAnalyzerPlugin({analyzerMode: isDev ? 'server' : 'static', analyzerPort: 8888,}),
+  new BundleAnalyzerPlugin({analyzerMode: isDev ? 'disabled' : 'static', analyzerPort: 8888,}),
   new ScriptExtHtmlWebpackPlugin({defaultAttribute: 'defer'}),
   !isDev && false && new PurgecssPlugin({
     paths: glob.sync([

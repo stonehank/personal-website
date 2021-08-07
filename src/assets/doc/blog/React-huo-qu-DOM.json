@@ -1,0 +1,38 @@
+{
+  "content": "<h3 id=\"createref\">createRef</h3>\n<p>当 ref 属性在组件时，获取组件实例；当ref属性在dom时，获取dom实例</p>\n<pre><code class=\"language-jsx\"><pre class=\"hljs\"><code><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">MyComponent</span> <span class=\"hljs-keyword\">extends</span> <span class=\"hljs-title\">React</span>.<span class=\"hljs-title\">Component</span> </span>{\n  <span class=\"hljs-keyword\">constructor</span>(props) {\n    <span class=\"hljs-keyword\">super</span>(props);\n\n    <span class=\"hljs-keyword\">this</span>.inputRef = React.createRef();\n  }\n\n  render() {\n    <span class=\"hljs-keyword\">return</span> &lt;input type=\"text\" ref={this.inputRef} /&gt;;\n  }\n\n  componentDidMount() {\n    <span class=\"hljs-keyword\">this</span>.inputRef.current.focus();\n  }\n}</code></pre>\n</code></pre>\n<h3 id=\"finddomnode\">findDOMNode</h3>\n<p>获取findDOMNode(this)参数组件(this)的DOM（所有DOM）</p>\n<p>如果只是Fragment包裹，则只能获取其第一个子组件的DOM</p>\n<p>例如：</p>\n<p>获取的第一个子组件的DOM：<code>&lt;div&gt;1&lt;/div&gt;</code></p>\n<pre><code class=\"language-jsx\"><pre class=\"hljs\"><code>&lt;Fragment&gt;\n    &lt;div&gt;1&lt;/div&gt;\n    &lt;div&gt;2&lt;/div&gt;\n&lt;<span class=\"hljs-regexp\">/Fragment&gt;</span></code></pre>\n</code></pre>\n<p>获取的第一个子组件的DOM：<code>&lt;div&gt;&lt;div&gt;1&lt;/div&gt;&lt;div&gt;2&lt;/div&gt;&lt;/div&gt;</code></p>\n<pre><code class=\"language-jsx\"><pre class=\"hljs\"><code>&lt;Fragment&gt;\n    &lt;div&gt;\n        &lt;div&gt;1&lt;/div&gt;\n        &lt;div&gt;2&lt;/div&gt;\n    &lt;/div&gt;\n&lt;<span class=\"hljs-regexp\">/Fragment&gt;</span></code></pre>\n</code></pre>\n<h3 id=\"forwardref\">forwardRef</h3>\n<p>用法：</p>\n<pre><code class=\"language-jsx\"><pre class=\"hljs\"><code><span class=\"hljs-keyword\">const</span> Child=React.forwardRef(<span class=\"hljs-function\">(<span class=\"hljs-params\">props,ref</span>)=&gt;</span>(\n    &lt;div&gt;\n        &lt;span ref={ref}&gt;child&lt;/span&gt;\n    &lt;/div&gt;\n))</code></pre>\n</code></pre>\n<p>通过上面包裹后，</p>\n<pre><code class=\"language-jsx\"><pre class=\"hljs\"><code><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">Parent</span> <span class=\"hljs-keyword\">extends</span> <span class=\"hljs-title\">Component</span></span>{\n    <span class=\"hljs-comment\">//...</span>\n    \n    <span class=\"hljs-keyword\">this</span>.myRef=React.createRef();\n\n    &lt;Child ref={this.myRef} /&gt;\n}</code></pre>\n</code></pre>\n<p>虽然ref在组件上，但还是能获取到Child的span.</p>\n<p>另一种用法：获取的是input</p>\n<pre><code class=\"language-jsx\"><pre class=\"hljs\"><code><span class=\"hljs-keyword\">const</span> Child= React.forwardRef(<span class=\"hljs-function\">(<span class=\"hljs-params\">props,ref</span>)=&gt;</span>{\n    <span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">GrandChild</span> <span class=\"hljs-keyword\">extends</span> <span class=\"hljs-title\">React</span>.<span class=\"hljs-title\">Component</span></span>{\n        render(){\n            <span class=\"hljs-keyword\">return</span> (\n                &lt;input ref={ref}/&gt;\n            )\n        }\n    }\n    <span class=\"hljs-keyword\">return</span> (\n        &lt;div &gt;\n            child\n            {props.children}\n            &lt;GrandChild /&gt;\n        &lt;/div&gt;\n    )\n})\n</code></pre>\n</code></pre>\n",
+  "toc": [
+    {
+      "anchor": "createref",
+      "level": 3,
+      "text": "createRef"
+    },
+    {
+      "anchor": "finddomnode",
+      "level": 3,
+      "text": "findDOMNode"
+    },
+    {
+      "anchor": "forwardref",
+      "level": 3,
+      "text": "forwardRef"
+    }
+  ],
+  "relatedTags": [
+    "react"
+  ],
+  "created_at": "2018-06-08",
+  "timeArr": [
+    2018,
+    5,
+    8,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "React获取DOM",
+  "uuid": "8fb9804dd71b929b0e5256563c63f9d6c48d95b2",
+  "summary": "<h4>createRef</h4>\n<p>当 ref 属性在组件时，获取组件实例；当ref属性在dom时，获取dom实例</p>\n<pre class=\"hljs\"><code><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">MyComponent</span> <span class=\"hljs-keyword\">extends</span> <span class=\"hljs-title\">React</span>.<span class=\"hljs-title\">Component</span> </span>{\n  <span class=\"hljs-keyword\">constructor</span>(props) {\n    <span class=\"hljs-keyword\">super</span>(props);\n\n    <span class=\"hljs-keyword\">this</span>.inp...</code></pre>",
+  "slug": "React-huo-qu-DOM",
+  "sha": "584a1de3b3d076a60c2ae132c0b6ae9e4451ad42"
+}

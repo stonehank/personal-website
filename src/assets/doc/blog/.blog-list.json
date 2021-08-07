@@ -1,0 +1,207 @@
+{
+  "single-spa-wei-qian-duan-de-lu-you-guan-li-xi-tong": {
+    "relatedTags": [
+      "react",
+      "vue",
+      "router",
+      "webpack",
+      "promise"
+    ],
+    "created_at": "2021-06-07",
+    "timeArr": [
+      2021,
+      5,
+      7,
+      0,
+      0,
+      0,
+      0
+    ],
+    "title": "single-spa-微前端的路由管理系统",
+    "uuid": "386fc98fbb6d77826458755f0e09b60919b215bc",
+    "summary": "<p><code>single-spa</code>一个页面路由管理工具，当一个页面存在多个框架<code>React</code>, <code>Vue</code>, <code>Angular</code>等等时，单个框架路由已经不能适用，需要一个纯粹的<code>js</code>路由进行管理。</p>\n<p>我的项目结构：</p>\n<pre class=\"hljs\"><code>├── index.js\n├── react-blog\n|  ├── ...other files（内部...</code></pre>",
+    "slug": "single-spa-wei-qian-duan-de-lu-you-guan-li-xi-tong",
+    "sha": "50c7293ce539c8e299857ea6753e63a4e3841ac6"
+  },
+  "react-router2-ge-ji-qiao": {
+    "relatedTags": [
+      "react",
+      "router"
+    ],
+    "created_at": "2018-11-06",
+    "timeArr": [
+      2018,
+      10,
+      6,
+      0,
+      0,
+      0,
+      0
+    ],
+    "title": "react-router2个技巧",
+    "uuid": "8f280c8e1286471ef7f34acf52ea54212de93568",
+    "summary": "<ol>\n<li><code>SPA</code>的router跳转后立刻回到最顶端</li>\n</ol>\n<p>核心：添加<code>window.scrollTo(0, 0)</code></p>\n<p>可以在每一个<code>Component</code>里面写，也可以包裹<code>Route</code></p>\n<pre class=\"hljs\"><code><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">ScrollToTopRoute</span> <span class=\"hljs-keyword\">extends</span> <span class=\"hljs-title\">Component</span> </span>{\n  componen...</code></pre>",
+    "slug": "react-router2-ge-ji-qiao",
+    "sha": "557c27da0f9f9270e3a273c2f21a0885dca67e10"
+  },
+  "ji-lu-CRA-de-webpack-pei-zhi-ceng-jing-de-issue-3": {
+    "relatedTags": [
+      "webpack",
+      "github",
+      "react",
+      "正则"
+    ],
+    "created_at": "2018-10-18",
+    "timeArr": [
+      2018,
+      9,
+      18,
+      0,
+      0,
+      0,
+      0
+    ],
+    "title": "记录CRA的webpack配置曾经的issue-3",
+    "uuid": "f0f5a9f7c1ddeec7f61b8a95cfc5ec817c6bd3fb",
+    "summary": "<ul>\n<li><code>terser</code>的配置output</li>\n</ul>\n<pre class=\"hljs\"><code>terserOptions: {\n  ...\n  output: {\n    ...      \n    // Turned on because emoji and regex is not minified properly using default\n    //...</code></pre>",
+    "slug": "ji-lu-CRA-de-webpack-pei-zhi-ceng-jing-de-issue-3",
+    "sha": "578982e3d37ef324089ae9591f0a39802c74a3a1"
+  },
+  "React-huo-qu-DOM": {
+    "relatedTags": [
+      "react"
+    ],
+    "created_at": "2018-06-08",
+    "timeArr": [
+      2018,
+      5,
+      8,
+      0,
+      0,
+      0,
+      0
+    ],
+    "title": "React获取DOM",
+    "uuid": "8fb9804dd71b929b0e5256563c63f9d6c48d95b2",
+    "summary": "<h4>createRef</h4>\n<p>当 ref 属性在组件时，获取组件实例；当ref属性在dom时，获取dom实例</p>\n<pre class=\"hljs\"><code><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">MyComponent</span> <span class=\"hljs-keyword\">extends</span> <span class=\"hljs-title\">React</span>.<span class=\"hljs-title\">Component</span> </span>{\n  <span class=\"hljs-keyword\">constructor</span>(props) {\n    <span class=\"hljs-keyword\">super</span>(props);\n\n    <span class=\"hljs-keyword\">this</span>.inp...</code></pre>",
+    "slug": "React-huo-qu-DOM",
+    "sha": "584a1de3b3d076a60c2ae132c0b6ae9e4451ad42"
+  },
+  "BST-de-Morris-Traversal-O(1)-bian-li": {
+    "relatedTags": [
+      "二叉树"
+    ],
+    "created_at": "2019-01-09",
+    "timeArr": [
+      2019,
+      0,
+      9,
+      0,
+      0,
+      0,
+      0
+    ],
+    "title": "BST的Morris Traversal-O(1)遍历",
+    "uuid": "6bb049b1a078a0b78387fb4624933c478107281e",
+    "summary": "<p>关于二叉树的遍历，使用栈递归或者仿栈循环都是需要<code>O(N)</code>的空间，<code>Morris Traversal</code>保证了空间为<code>O(1)</code>，时间还是<code>O(N)</code>（比原来多了一遍）。</p>\n<p>这里只介绍<code>inOrder</code>顺序。</p>\n<p>思路：</p>\n<p>对每一个<code>cur</code>节点，优先找到一个<code>pre</code>节点，这个<code>pre</code>节点的作用是，当后续<code>cur</code>节...</p>",
+    "slug": "BST-de-Morris-Traversal-O(1)-bian-li",
+    "sha": "58cf220aadf082c27c39c6bf0db303d77f20ea86"
+  },
+  "yi-xie-bei-hu-lve-de-js-zhi-shi-1": {
+    "relatedTags": null,
+    "created_at": "2018-06-22",
+    "timeArr": [
+      2018,
+      5,
+      22,
+      0,
+      0,
+      0,
+      0
+    ],
+    "title": "一些被忽略的js知识1",
+    "uuid": "7f574c8ed284705a049ad19e6b43a77dbe30c6f2",
+    "summary": "<p>一些JS基础(1)</p>\n<h4>硬绑定不会覆盖硬绑定，但new会覆盖硬绑定</h4>\n<ul>\n<li>硬绑定不会覆盖硬绑定</li>\n</ul>\n<pre class=\"hljs\"><code><span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">show</span>(<span class=\"hljs-params\">s</span>)</span>{\n  <span class=\"hljs-keyword\">this</span>.a=s\n}\n\n<span class=\"hljs-keyword\">var</span> obj1={}\n<span class=\"hljs-keyword\">var</span> obj2={}\n\nshow=show.bind(obj1)\nshow(<span class=\"hljs-number\">5</span>)\nobj1.a  <span class=\"hljs-comment\">// 5</span>\n\nsho...</code></pre>",
+    "slug": "yi-xie-bei-hu-lve-de-js-zhi-shi-1",
+    "sha": "5965a8eef20c8f12cc64d0794de2cf6b851589a9"
+  },
+  "hyperapp-patch": {
+    "relatedTags": [
+      "源码",
+      "github"
+    ],
+    "created_at": "2018-07-02",
+    "timeArr": [
+      2018,
+      6,
+      2,
+      0,
+      0,
+      0,
+      0
+    ],
+    "title": "hyperapp-patch",
+    "uuid": "ab4d7fd4fc306830807768df35b00d9bc91c9d20",
+    "summary": "<h4>hyperapp-patch</h4>\n<p><a href=\"https://github.com/stonehank/sourcecode-analysis/blob/master/source-code.hyperapp/README.md\">完整源码说明注释</a></p>\n<p>patch是hyperapp进行节点更新的核心，主要步骤：</p>\n<ul>\n<li>先判断n...</li>\n</ul>",
+    "slug": "hyperapp-patch",
+    "sha": "59bb573e47697c7551bfe0191079a8772342b529"
+  },
+  "shi-yong-git-subtree-he-bing-duo-ge-cang-ku-bing-bao-cun-git-ji-lu": {
+    "relatedTags": [
+      "git"
+    ],
+    "created_at": "2018-10-15",
+    "timeArr": [
+      2018,
+      9,
+      15,
+      0,
+      0,
+      0,
+      0
+    ],
+    "title": "使用git-subtree合并多个仓库并保存git记录",
+    "uuid": "8f18e156230f2d648d08410062a8bf8183c0628e",
+    "summary": "<h4>步骤解释：</h4>\n<ol>\n<li>\n<p>创建remote连接\ngit remote add 自定义远程仓库名 远程仓库地址 远程仓库分支</p>\n</li>\n<li>\n<p>添加subtree\ngit subtree add --prefix=当前仓库的子目录名称(可以使用/进行分割)  远程仓库地址 远程仓库分支 &lt;--squash&gt;添加squash则...</p>\n</li>\n</ol>",
+    "slug": "shi-yong-git-subtree-he-bing-duo-ge-cang-ku-bing-bao-cun-git-ji-lu",
+    "sha": "45b974064ac9411014a451c0abd392f2b223e760"
+  },
+  "css-bu-que": {
+    "relatedTags": [
+      "css"
+    ],
+    "created_at": "2018-07-27",
+    "timeArr": [
+      2018,
+      6,
+      27,
+      0,
+      0,
+      0,
+      0
+    ],
+    "title": "css补缺",
+    "uuid": "4f7f64522646a72cae1c94073ca8d665ecf77efd",
+    "summary": "<h4>@charset</h4>\n<p>@charset 在外部样式表文件内使用。指定该样式表使用的字符编码。</p>\n<pre class=\"hljs\"><code>@charset &quot;utf-8&quot;;\nbody {  }\ndiv {  }\n</code></pre>\n<h4>inline-flex</h4>\n<p>inline-flex和flex 是针对flex容器的内联显示改变，而它内部的flex-item...</p>",
+    "slug": "css-bu-que",
+    "sha": "4a1043ffaa6c98e2971a83f9fba138ad8462eafa"
+  },
+  "shen-ru-hai-ming-ju-li": {
+    "relatedTags": null,
+    "created_at": "2018-08-23",
+    "timeArr": [
+      2018,
+      7,
+      23,
+      0,
+      0,
+      0,
+      0
+    ],
+    "title": "深入海明距离",
+    "uuid": "a5bed495fbfaa670dcb632ac350bfa5c527e6eca",
+    "summary": "<p>通常海明距离的计算使用 <code>^</code>，再计算1的次数</p>\n<p>但如果遇到大量数据，并且需要计算相互的海明距离，这种方法就不合适了，因为每次计算1的次数相对消耗是巨大的</p>\n<p>另一种计算海明距离的方法：</p>\n<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n* <span class=\"hljs-doctag\">@param </span>nums {Array}\n* <span class=\"hljs-doctag\">@returns <span class=\"hljs-type\">{number}</span></span>\n*/</span>\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">cal</span>...</span></code></pre>",
+    "slug": "shen-ru-hai-ming-ju-li",
+    "sha": "4a3568d093ea0316f644a973e4b91143b8563bd4"
+  }
+}

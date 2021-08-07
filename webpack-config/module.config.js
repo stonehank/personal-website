@@ -57,12 +57,12 @@ module.exports= {
                 babelrc: true,
               }
             },
-            {
-              loader: 'eslint-loader',
-              options: {
-                fix:true
-              }
-            }
+            // {
+            //   loader: 'eslint-loader',
+            //   options: {
+            //     fix:true
+            //   }
+            // }
           ]
         },
         {

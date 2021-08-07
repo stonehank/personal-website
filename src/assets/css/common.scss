@@ -1,10 +1,11 @@
-//*{
-//  padding:0;
-//  margin:0;
-//  box-sizing: border-box;
-//}
+
 html{
   overflow:auto !important;
+  *{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+  }
 }
 body{
   background-color:var(--background-color);
@@ -12,11 +13,47 @@ body{
 }
 
 a {
+  text-decoration: none;
   color:var(--text-primary);
   &:link {color:var(--text-primary)}
   &:visited {color:var(--text-primary)}
   &:hover {color:var(--theme-primary)}
   &:active {color:var(--text-primary)}
 }
+
+
+.h-100{
+  height:100% !important;
+}
+
+.text-primary{
+  color:var(--text-primary)
+}
+.text-secondary{
+  color:var(--text-secondary)
+}
+.text-blur{
+  color:var(--text-blur)
+}
+.text-muted{
+  color:var(--text-muted)
+}
+
+.text-xl{
+  font-size:1.5rem;
+}
+.text-lg{
+  font-size:1.25rem;
+}
+.text-mid{
+  font-size:1rem;
+}
+.text-sm{
+  font-size:0.85rem;
+}
+.text-xs{
+  font-size:0.7rem;
+}
+
 
 @import "./overwrite/index";

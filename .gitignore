@@ -332,5 +332,6 @@ ASALocalRun/
 
 draft/
 coverage/
+backend/
 dist/
 .env

@@ -1,6 +1,13 @@
 <template>
-
-    <v-tooltip bottom>
+    <v-switch
+            v-if="$vuetify.breakpoint.smAndDown"
+            v-model="isDarkActive"
+            inset
+            hide-details
+            color="#000"
+    >
+    </v-switch>
+    <v-tooltip bottom v-else>
         <template v-slot:activator="{ on, attrs }">
             <div
                     v-bind="attrs"
@@ -12,7 +19,6 @@
                         hide-details
                         color="#000"
                 >
-
                 </v-switch>
             </div>
         </template>

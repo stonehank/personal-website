@@ -1,14 +1,32 @@
 <template>
-    <div>
-        <v-btn to="/" text large>首页</v-btn>
-        <v-btn to="/blogs" text large>博客</v-btn>
-        <v-btn to="/projects" text large>项目</v-btn>
+    <Sidebar v-if="$vuetify.breakpoint.smAndDown" :items="items" />
+    <div v-else>
+        <v-btn
+                v-for="item in items"
+                :key="item.title"
+                :to="item.to"
+                text
+                large
+        >
+            {{item.title}}
+        </v-btn>
     </div>
 </template>
 
 <script>
+    import Sidebar from "pagesDir/index/src/components/Navigation/components/Sidebar";
     export default {
-        name: "Action"
+        name: "Action",
+        components: {Sidebar},
+        data(){
+            return {
+                items:[
+                    {title:'首页',icon:'fas fa-home',to:"/"},
+                    {title:'博客',icon:'fas fa-file',to:"/blogs"},
+                    {title:'项目',icon:'fas fa-project-diagram',to:"/projects"},
+                ]
+            }
+        }
     }
 </script>
 

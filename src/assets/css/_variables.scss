@@ -5,6 +5,8 @@ $background-color-light: #ffffff;
 $theme-primary-light:#005CAF;
 $theme-secondary-light: #af5300;
 
+$border-color-light: #dfe2e5;
+
 $text-primary-light:rgba(0,0,0,.87);
 $text-secondary-light:rgba(0, 0, 0, 0.6);
 $text-muted-light:rgba(0, 0, 0, 0.38);
@@ -20,8 +22,10 @@ $warning-color-light:#FFC107;
 $foreground-color-dark:#303030;
 $background-color-dark: #121012;
 
-$theme-primary-dark: #0056a7;
+$theme-primary-dark: #0264bd;
 $theme-secondary-dark: #a54c00;
+
+$border-color-dark: #444141;
 
 $text-primary-dark:rgba(255,255,255,.87);
 $text-secondary-dark:rgba(255,255,255, 0.6);
@@ -38,6 +42,7 @@ $warning-color-dark:#FFC107;
 .pw-theme-light {
   --background-color: #{$background-color-light};
   --foreground-color: #{$foreground-color-light};
+  --border-color:#{$border-color-light};
   --theme-primary: #{$theme-primary-light};
   --theme-secondary: #{$theme-secondary-light};
   --text-primary: #{$text-primary-light};
@@ -53,6 +58,7 @@ $warning-color-dark:#FFC107;
 .pw-theme-dark {
   --background-color: #{$background-color-dark};
   --foreground-color: #{$foreground-color-dark};
+  --border-color:#{$border-color-dark};
   --theme-primary: #{$theme-primary-dark};
   --theme-secondary: #{$theme-secondary-dark};
   --text-primary: #{$text-primary-dark};

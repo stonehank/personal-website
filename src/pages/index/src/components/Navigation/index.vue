@@ -5,13 +5,13 @@
             fixed
             elevate-on-scroll
     >
-        <v-app-bar-nav-icon v-if="$vuetify.breakpoint.smAndDown"></v-app-bar-nav-icon>
 
         <Action />
 
         <v-spacer></v-spacer>
         <Search class="mr-2"/>
         <Theme />
+
     </v-app-bar>
 </template>
 
@@ -29,5 +29,7 @@
 </script>
 
 <style scoped>
-
+    #nav-header{
+        z-index: 900;
+    }
 </style>

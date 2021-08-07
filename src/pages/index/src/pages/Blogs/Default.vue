@@ -1,10 +1,12 @@
 <template>
-    <h2>Blogs</h2>
+    <section>
+
+    </section>
 </template>
 
 <script>
     export default {
-        name: "Blogs"
+        name: "Default"
     }
 </script>
 

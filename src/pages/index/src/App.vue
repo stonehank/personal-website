@@ -1,24 +1,44 @@
 <template>
     <v-app>
         <Navigation />
-        <main
-                :style="{
-                    marginTop:navH + 'px'
-                }"
+        <Valine appId="s8REl9WtWtOw7omr7frVIpMP-MdYXbMMI"
+                appKey="amadgvU7WzMYQ9eqMatTHLWM"
+                :editMode=true
+                CommentClass="Comment_blog"
+                CounterClass="Counter_blog"
+                placeholder="说点什么吧，: 开启表情输入"
+                :themeMode="$vuetify.theme.isDark ? 'dark' : 'light'"
         >
-            <transition name="fade">
+            <main
+                    :style="{
+                        marginTop:navH + 'px'
+                    }"
+            >
                 <router-view></router-view>
-            </transition>
-        </main>
-
+            </main>
+        </Valine>
+        <ScrTopBtn />
     </v-app>
 </template>
 
 <script>
+
+    import {modify_hljs, Valine,ValinePanel} from "./utils/react-valine/react-valine.js"
+    import {applyReactInVue} from 'vuereact-combined'
+    modify_hljs((hljs)=>{
+        const python = require('highlight.js/lib/languages/python')
+        hljs.registerLanguage('python', python)
+        return hljs
+    })
     import Navigation from "pagesDir/index/src/components/Navigation/index";
+    import ScrTopBtn from "pagesDir/index/src/components/ScrTopBtn";
     export default {
         name: "App",
-        components: {Navigation},
+        components: {
+            ScrTopBtn,
+            Navigation,
+            Valine:applyReactInVue(Valine),
+        },
         data(){
             return {
                 navH:64,

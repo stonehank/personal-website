@@ -4,3 +4,9 @@
   opacity: 1 !important;
   z-index: -1;
 }
+.v-list-item__icon{
+  justify-content: center !important;
+}
+.theme--light.v-application .markdown-body code{
+  background-color:transparent !important;
+}
