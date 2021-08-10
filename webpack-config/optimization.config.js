@@ -6,7 +6,7 @@ const isDev = process.env.NODE_ENV === 'development'
 module.exports={
   minimize: !isDev,
     minimizer: [new TerserJSPlugin({
-  cache: true,
+  cache: false,
   parallel: true,
   terserOptions: {
     parse: {

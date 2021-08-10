@@ -3,7 +3,7 @@
         <v-chip
                 v-for="(tag,idx) in tags"
                 :key="idx"
-                class="mr-1"
+                class="mr-1 mb-1"
                 label
                 small
         >

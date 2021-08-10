@@ -14,7 +14,7 @@
                 </v-card-title>
                 <v-card-subtitle>
                     <ArticleTags :tags="articleDetails.relatedTags" />
-                    <div class="text-sm d-flex justify-space-between">
+                    <div class="text-sm d-flex justify-space-between mt-2">
                         <div class="d-flex align-center">
                             <DateRender :date="articleDetails.created_at" />
                             <b class="text-md mx-2">·</b>
@@ -65,6 +65,7 @@
                 let navH=this.$custom_data.getNavH()
                 for(let i=this.tocId.length-1;i>=0;i--){
                     let curIdHash=this.tocId[i]
+                    // console.log(curIdHash)
                     if(curScrTop + navH + 16 > $(curIdHash).offset().top){
                         if(this.$route.hash!==curIdHash){
                             this.$router.replace({hash:curIdHash})

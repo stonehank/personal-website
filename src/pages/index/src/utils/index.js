@@ -7,7 +7,7 @@ export function scrollTo(top=0){
             console.log('The parameter element not exist')
             return
         }
-        realTop=Math.floor(Math.max(realTop,$(top).offset().top - this.$custom_data.getNavH() - 8))
+        realTop=Math.floor(Math.max(realTop,$(top).offset().top - ($('#nav-header').outerHeight()) - 8))
     }
     console.log(top,realTop)
     try {

@@ -1,38 +1,27 @@
 <template>
-    <section>
-        <v-list>
-            <v-list-item-group
-                    multiple
-            >
-                <template v-for="(item, index) in blogList">
-                    <BlogCard  :articleHeader="item"
-                               :comment-count="12"
-                    />
-                    <v-divider
-                            v-if="index < blogList.length - 1"
-                            :key="index"
-                    ></v-divider>
-                </template>
-            </v-list-item-group>
-        </v-list>
-    </section>
+    <v-skeleton-loader
+            v-if="blogList==null"
+            type="article,image,list-item-two-line"
+    ></v-skeleton-loader>
+    <ArticleList class="pa-3" v-else :list="blogList"/>
 </template>
 
 <script>
     import blogListJson from 'assetsDir/doc/blog/.blog-list.json'
-    import ArticleTags from "pagesDir/index/src/commons/ArticleTags";
-    import DateRender from "pagesDir/index/src/commons/DateRender";
-    import BlogCard from "pagesDir/index/src/components/Blogs/BlogCard";
+    import ArticleList from "pagesDir/index/src/components/ArticleList";
     export default {
         name: "Default",
-        components: {BlogCard, DateRender, ArticleTags},
-        computed:{
-            blogList:function(){
-                let arr=[]
-                for(let k in blogListJson){
-                    arr.push(blogListJson[k])
-                }
-                return arr.sort((a,b)=>a.created_at <= b.created_at ? 1 : -1).slice(0,10)
+        components: {ArticleList},
+        mounted(){
+            let arr=[]
+            for(let k in blogListJson){
+                arr.push(blogListJson[k])
+            }
+            this.blogList=arr
+        },
+        data(){
+            return {
+                blogList:null
             }
         }
     }

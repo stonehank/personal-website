@@ -1,5 +1,9 @@
 <template>
-    <ArticleInfo v-if="articleDetails"
+    <v-skeleton-loader
+            v-if="articleDetails==null"
+            type="article,image,list-item-two-line"
+    ></v-skeleton-loader>
+    <ArticleInfo v-else
                  :articleDetails="articleDetails"
     />
 </template>
@@ -28,6 +32,13 @@
             .then((module)=>{
                 this.articleDetails=module.default
             })
+            .catch(err=>{
+                return import('assetsDir/doc/sourceCode/'+slug+'.json')
+                .then((module)=>{
+                    this.articleDetails=module.default
+                })
+            })
+
         }
     }
 </script>

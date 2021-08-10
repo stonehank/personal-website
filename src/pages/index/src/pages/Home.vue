@@ -5,7 +5,7 @@
                 <h2>最新博客</h2>
             </v-col>
             <v-col cols="12" md="4" v-for="blogData in latestBlogList" :key="blogData.uuid">
-                <BlogCard
+                <ArticleCard
                         :articleHeader="blogData"
                         :comment-count="12"
                 />
@@ -27,12 +27,12 @@
 <script>
     import {ValinePanel} from "../utils/react-valine/react-valine.js"
     import {applyReactInVue} from 'vuereact-combined'
-    import BlogCard from "pagesDir/index/src/components/Blogs/BlogCard";
+    import ArticleCard from "pagesDir/index/src/components/Articles/ArticleCard";
     import blogListJson from 'assetsDir/doc/blog/.blog-list.json'
     export default {
         name: "Home",
         components:{
-            BlogCard,
+            ArticleCard,
             ValinePanel:applyReactInVue(ValinePanel),
         },
         computed:{

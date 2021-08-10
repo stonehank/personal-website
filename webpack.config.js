@@ -5,7 +5,7 @@ const { publicPath } = require('./webpack-config/config')
 module.exports = {
 
   mode: isDev ? 'development' : 'production',
-  
+
   entry: require('./webpack-config/entry.config.js'),
 
   output: {
@@ -13,15 +13,15 @@ module.exports = {
     filename: isDev ? 'assets/js/[name].js' : 'assets/js/[name].[contenthash:8].js',
     publicPath: isDev ? '/' : (publicPath === '' ? '/' : publicPath)
   },
-  
+
   resolve: require('./webpack-config/resolve.config.js'),
-  
+
   devtool: isDev ? 'cheap-module-source-map' : false,
-  
+
   plugins: require('./webpack-config/plugins.config.js'),
-  
+
   optimization: require('./webpack-config/optimization.config.js'),
-  
+
   module: require('./webpack-config/module.config.js'),
 
   stats:'errors-only',
@@ -34,7 +34,12 @@ module.exports = {
     port: 3030,
     host: getIP(),
   } : {},
-}
+
+  watch:isDev,
+  watchOptions: isDev ? {
+    poll:1000,
+    ignored: /node_modules/,
+  } : {}}
 
 function getIP (force) {
   if (force) return force

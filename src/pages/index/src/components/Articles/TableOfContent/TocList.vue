@@ -13,8 +13,8 @@
                     :to="'#'+decodeURI(item.anchor)"
                     @click="()=>scrollTo('#'+item.anchor)"
                     active-class="active"
+                    v-html="item.text"
             >
-                {{item.text}}
             </v-btn>
             <TocList v-if="item.children" :curLevelToc="item.children"/>
         </li>

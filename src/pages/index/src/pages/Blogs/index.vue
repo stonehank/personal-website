@@ -28,7 +28,7 @@
                 </v-list-item>
             </v-list>
         </v-navigation-drawer>
-        <v-container fluid :style="$vuetify.breakpoint.mdAndUp ? 'margin-left:256px' : ''">
+        <v-container class="pa-0" fluid :style="$vuetify.breakpoint.mdAndUp ? 'margin-left:256px' : ''">
             <keep-alive>
                 <router-view></router-view>
             </keep-alive>

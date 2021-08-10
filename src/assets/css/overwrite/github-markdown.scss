@@ -24,3 +24,12 @@
 .markdown-body .highlight pre, .markdown-body pre{
   background:var(--foreground-color) !important;
 }
+
+.summary-body{
+  *{
+    opacity:0.8;
+  }
+  img{
+    max-width:400px !important;
+  }
+}

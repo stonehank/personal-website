@@ -32,7 +32,8 @@ const router = new VueRouter({
 Vue.prototype.$custom_data = {
     getNavH: function () {
         return $('#nav-header').outerHeight()
-    }
+    },
+
 }
 
 window.router = router

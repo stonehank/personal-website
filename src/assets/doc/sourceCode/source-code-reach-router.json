@@ -1,0 +1,45 @@
+{
+  "content": "<h1 id=\"source-codereach-router\">source-code.reach-router</h1>\n<p>v1.1.1</p>\n<h2 id=\"chu-shi\">初识</h2>\n<p>一张导图：</p>\n<p><img src=\"https://raw.githubusercontent.com/stonehank/sourcecode-analysis/master/source-code.reach-router/reachRouter.png\" alt=\"\"></p>\n<p>对几个亮点进行说明：</p>\n<ul>\n<li>匹配顺序</li>\n</ul>\n<p>源码中是使用了一个评分的方法：</p>\n<ol>\n<li>先对路径去除头尾的<code>/</code> ，并且按<code>/</code>分割成路径片段数组</li>\n<li>对数组使用reduce方法计算分值，如下：<pre><code><pre class=\"hljs\"><code>let SEGMENT_POINTS = 4;     // 基本分值，每一个路径片段都有\nlet STATIC_POINTS = 3;      // 静态路径，如：/abc\nlet DYNAMIC_POINTS = 2;     // 动态路径，如：/:section\nlet SPLAT_PENALTY = 1;      // 通配符（减分），如：/*，此处遇到通配符会先减去基本分值，再减1分（优先权很低）\nlet ROOT_POINTS = 1;        // 根路径</code></pre>\n</code></pre>\n可知优先权排序为：</li>\n</ol>\n<p>静态路径 &gt; 动态路径 &gt; 根路径 &gt; 通配符</p>\n<ul>\n<li>相对路径</li>\n</ul>\n<p>涉及到3个方法：</p>\n<p><code>./index.js--&gt;createRoute</code></p>\n<p><code>./lib/utils.js--&gt;resolve</code></p>\n<p><code>./lib/util.js--&gt;pick</code></p>\n<p>首先是通过<code>basepath</code>(一个Router自定义属性，用作路径的公共前缀)结合每一个children(即Route Component)的path通过<code>createRoute</code>方法计算出一个绝对路径</p>\n<p>再通过<code>pick</code>方法与当前<code>pathname</code>(即window.location.pathname)进行匹配，计算得出一个非通配(*)路径匹配值(baseuri)，<code>例如：&#39;a/*&#39; --&gt;匹配出 basuri:&#39;/a&#39;</code></p>\n<p>这个baseuri会作为<code>BaseContext</code>(React.createContext)的context传递给内部组件，最后使用<code>resolve</code>方法对Link上的to的路径(可能是绝对路径，也可能是相对路径)搭配<code>baseuri</code>进行解析(转换成绝对路径)，并且跳转</p>\n<ul>\n<li>自动focus</li>\n</ul>\n<p>对屏幕阅读器特别友好，每次通过Link跳转后，会自动focus到当前跳转对应的Component，也就是不需要再通过大量的tab按钮去寻找内容页面</p>\n<h2 id=\"shen-ru\">深入</h2>\n<p>首先看源码最后，输出了什么：</p>\n<pre><code><pre class=\"hljs\"><code>export {\n  Link,\n  Location,\n  LocationProvider,\n  Match,\n  Redirect,\n  Router,\n  ServerLocation,\n  createHistory,\n  createMemorySource,\n  isRedirect,\n  navigate,\n  redirectTo\n};</code></pre>\n</code></pre>\n<p>而这些输出的组件有些是方法，有些是组件，它们的构造基本围绕着3个context，就是导图中的蓝，绿，红</p>\n<p>关于React中Provider和Consumer的2个特性：</p>\n<ol>\n<li>Consumer会获取离它最近的父元素Provider的context</li>\n<li>每当Provider内部value改变，其内部的Consumer都会被重新渲染</li>\n</ol>\n<p>源码中对context结构的书写，都是Consumer包裹Provider，这就能形成：\n<code>最外层无context(无defaultValue的情况)，而嵌套层能获取上一层的Provider</code></p>\n<p>因此对这3个context分析：</p>\n<ul>\n<li>BaseContext</li>\n</ul>\n<p>context有默认值 &quot;/&quot;：</p>\n<p><code>basepath       //公共前缀路径，自定义</code></p>\n<p><code>baseuri        //非通配匹配路径，自动对路径匹配计算得出</code></p>\n<p>只有Router包含BaseContext.Provider(在<code>RouterImpl</code>中渲染)</p>\n<p><code>RouterImpl</code>对每一个children(Route Component)进行当前<code>location</code>路径匹配，匹配成功的路径作为<code>BaseContext</code>的context，\n如果children内部还有children，会使用一个新的<code>Router --&gt;primary=true</code>包裹内部的children</p>\n<p>因此只有被Router包裹的内部的标签才能获取到context值（当前的动态的basepath和baseuri）</p>\n<p>而Router外部的标签或者Router本身则为默认值&quot;/&quot;</p>\n<ul>\n<li>LocationContext</li>\n</ul>\n<p>context无默认值</p>\n<p><code>location       //pushState的&quot;state&quot;，&quot;key&quot;(时间戳)，window.location的&quot;pathname&quot;和&quot;search&quot;</code></p>\n<p><code>navigate        //一个跳转方法，默认使用pushState，每次跳转都会自动更新location</code></p>\n<p>首次渲染会加载<code>LocationProvider</code>，后续加载会直接调用<code>children(contnext)</code>，</p>\n<p>而<code>LocationProvider</code>通过history的listen方法绑定了每次调用navigate都会更新location，返回值是<code>Provider</code>，传递了location和navigate给context</p>\n<p>由于首次渲染是Router组件，Router中context为undefined，但它加载<code>LocationProvider</code>计算出context，\n后续渲染的组件则能获取到<code>Provider</code>的context</p>\n<ul>\n<li>FocusContext</li>\n</ul>\n<p>context无默认值</p>\n<p><code>requestFocus       // 是否需要自动获取焦点</code></p>\n<p>在<code>BaseContext.Provider</code>内部渲染，而且要检查Router组件的<code>primary</code>属性是否为true，<code>primary</code>为true会渲染<code>FocusHandler</code>，否则默认渲染div</p>\n<p><code>FocusHandler</code>内部就是Consumer包裹<code>FocusHandlerImpl</code>，通过pathname和uri进行判定，满足2个条件确定当前组件的<code>shouldFocus</code>属性为true：</p>\n<ol>\n<li>url路径有变动</li>\n<li>不为通配符(*)匹配路径，可以是动态匹配(:section)</li>\n</ol>\n<p>当<code>shouldFocus</code>为true，便可通过context(即requestFocus)进行获取焦点，这里this.node就是这个<code>FocusHandlerImpl</code>返回值(div)的ref</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code> <span class=\"hljs-keyword\">if</span> (requestFocus) {\n      requestFocus(<span class=\"hljs-keyword\">this</span>.node);\n    } <span class=\"hljs-keyword\">else</span> {\n  <span class=\"hljs-comment\">/*...*/</span>\n    }</code></pre>\n</code></pre>\n<p>再看<code>requestFocus</code>内部：</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code>requestFocus = <span class=\"hljs-function\"><span class=\"hljs-params\">node</span> =&gt;</span> {\n    <span class=\"hljs-comment\">// 内部判断shouldFocus要为false</span>\n    <span class=\"hljs-keyword\">if</span> (!<span class=\"hljs-keyword\">this</span>.state.shouldFocus) {\n      node.focus();\n    }\n  };</code></pre>\n</code></pre>\n<p>内部判断<code>shouldFocus</code>要为false又是怎么回事呢？</p>\n<p>注意，此处的this是箭头函数静态绑定，也就是通过context传过来时的this，也就是父级FocusHandlerImpl的this</p>\n<p>而当子级的uri变化时，父级的uri是不变的（如果在同一个父级下），因此父级的<code>shouldFocus</code>是false，触发子级dom的focus</p>\n<p>如果不在同一个父级下，例如从父级a的子级a1, 直接跳转到父级b的子级b1，那么父级uri不同，父级的<code>shouldFocus</code>为true，不触发子级dom的focus</p>\n<p>而再去判断父级的父级的uri是否相等，当判断相同，父级的父级的<code>shouldFocus</code>为false，因此会触发父级(b)dom的focus</p>\n<p>见动图：</p>\n<p><img src=\"https://raw.githubusercontent.com/stonehank/sourcecode-analysis/master/source-code.reach-router/reachRouter-Focus.gif\" alt=\"\"></p>\n<p><a href=\"https://codesandbox.io/s/lpv0165m1q\">例子源码</a></p>\n<hr>\n<ul>\n<li>history</li>\n</ul>\n<p>其实大部分方法和组件都贯穿于上面3个context中，另还有一个history.js主要做了以下事情：</p>\n<ol>\n<li>判断当前平台，如果非浏览器，则模拟一个history对象，</li>\n<li>新建一个location方法，里面有pathname，search，state(pushState的参数1),key(跳转的时间戳)</li>\n<li>创建一个navigate方法，用于跳转，内部默认使用pushState和replaceState，会自动更新上面location对象</li>\n<li>export</li>\n</ol>\n<h2 id=\"liu-cheng\">流程</h2>\n<p>当点击Link---&gt;调用navigate---&gt;内部调用pushState---&gt;更新当前location---&gt;Router会更新context为最新的location\n---&gt;Router中将children的路径与当前pathname匹配---&gt;匹配成功的进行配置props和渲染</p>\n",
+  "toc": [
+    {
+      "anchor": "source-codereach-router",
+      "level": 1,
+      "text": "source-code.reach-router"
+    },
+    {
+      "anchor": "chu-shi",
+      "level": 2,
+      "text": "初识"
+    },
+    {
+      "anchor": "shen-ru",
+      "level": 2,
+      "text": "深入"
+    },
+    {
+      "anchor": "liu-cheng",
+      "level": 2,
+      "text": "流程"
+    }
+  ],
+  "relatedTags": [
+    "源码",
+    "router",
+    "react"
+  ],
+  "created_at": "2018-07-15",
+  "timeArr": [
+    2018,
+    6,
+    15,
+    16,
+    20,
+    8,
+    0
+  ],
+  "title": "源码阅读-reach-router",
+  "uuid": "d4c20e9d6e2481885bd702b49e92a75e20ff8bef",
+  "summary": "<h4>source-code.reach-router</h4>\n<p>v1.1.1</p>\n<h4>初识</h4>\n<p>一张导图：</p>\n<p>![](https://raw.githubusercontent.com/stonehank/sourcecode-analysis/master/source-code.reach-router/reachRouter...</p>",
+  "slug": "source-code-reach-router",
+  "sha": "60c69717e8096ec7bcc17c42915f3fb679f32077"
+}

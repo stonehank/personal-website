@@ -1,22 +1,23 @@
 <template>
     <v-app>
         <Navigation />
-        <Valine appId="s8REl9WtWtOw7omr7frVIpMP-MdYXbMMI"
-                appKey="amadgvU7WzMYQ9eqMatTHLWM"
-                :editMode=true
-                CommentClass="Comment_blog"
-                CounterClass="Counter_blog"
-                placeholder="说点什么吧，: 开启表情输入"
-                :themeMode="$vuetify.theme.isDark ? 'dark' : 'light'"
-        >
-            <main
-                    :style="{
+        <main
+                :style="{
                         marginTop:navH + 'px'
                     }"
-            >
-                <router-view></router-view>
-            </main>
-        </Valine>
+        >
+            <router-view></router-view>
+        </main>
+<!--        <Valine appId="s8REl9WtWtOw7omr7frVIpMP-MdYXbMMI"-->
+<!--                appKey="amadgvU7WzMYQ9eqMatTHLWM"-->
+<!--                :editMode=true-->
+<!--                CommentClass="Comment_blog"-->
+<!--                CounterClass="Counter_blog"-->
+<!--                placeholder="说点什么吧，: 开启表情输入"-->
+<!--                :themeMode="$vuetify.theme.isDark ? 'dark' : 'light'"-->
+<!--        >-->
+<!--           -->
+<!--        </Valine>-->
         <ScrTopBtn />
     </v-app>
 </template>

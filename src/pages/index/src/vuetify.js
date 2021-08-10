@@ -32,7 +32,7 @@ let vuetify= new Vuetify({
                 warning: '#FFC107',
             },
             dark:{
-                primary: '#0056a7',
+                primary: '#5ca8ec',
                 secondary: '#a54c00',
                 accent: '#82B1FF',
                 error: '#cf1d1d',

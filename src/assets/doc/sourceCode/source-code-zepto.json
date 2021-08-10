@@ -1,0 +1,28 @@
+{
+  "content": "<h1 id=\"source-codezepto\">source-code.zepto</h1>\n<p>Zepto v1.2.0 </p>\n<p>阅读<a href=\"https://github.com/stonehank/sourcecode-analysis/blob/master/source-code.zepto/src/zepto.js\">zepto源码</a></p>\n",
+  "toc": [
+    {
+      "anchor": "source-codezepto",
+      "level": 1,
+      "text": "source-code.zepto"
+    }
+  ],
+  "relatedTags": [
+    "源码"
+  ],
+  "created_at": "2018-07-15",
+  "timeArr": [
+    2018,
+    6,
+    15,
+    16,
+    20,
+    8,
+    0
+  ],
+  "title": "源码阅读-zepto",
+  "uuid": "dbc119259f2d6bc6fb636050446ffdf3cd320af1",
+  "summary": "<h4>source-code.zepto</h4>\n<p>Zepto v1.2.0</p>\n<p>阅读<a href=\"https://github.com/stonehank/sourcecode-analysis/blob/master/source-code.zepto/src/zepto.js\">zepto源码</a>\n...</p>",
+  "slug": "source-code-zepto",
+  "sha": "5f736c0f3e3709c79088cd4f60899e05280f35ce"
+}

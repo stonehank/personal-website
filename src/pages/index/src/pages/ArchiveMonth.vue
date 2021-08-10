@@ -4,7 +4,7 @@
 
 <script>
     export default {
-        name: "BlogList"
+        name: "ArchiveMonth"
     }
 </script>
 

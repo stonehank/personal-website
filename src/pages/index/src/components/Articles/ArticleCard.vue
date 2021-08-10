@@ -1,15 +1,15 @@
 <template>
     <v-card
-            flat
             class="mx-auto h-100 d-flex flex-column"
             :to="'/articles/'+articleHeader.slug"
+            v-bind="$attrs"
     >
         <v-card-title class="pt-2 pb-1 text-break">
             <h3 class="text-lg">{{articleHeader.title}}</h3>
         </v-card-title>
 
         <v-card-text class="d-flex flex-column justify-space-between flex-grow-1">
-            <div class="text-secondary text-mid overflow-hidden" v-html="articleHeader.summary"></div>
+            <div class="text-secondary text-xs summary-body" v-html="articleHeader.summary"></div>
             <div class="mt-2">
                 <ArticleTags :tags="articleHeader.relatedTags"/>
                 <div class="text-sm d-flex justify-space-start mt-2">
@@ -28,7 +28,7 @@
     import CommentCount from "pagesDir/index/src/commons/CommentCount";
     import DateRender from "pagesDir/index/src/commons/DateRender";
     export default {
-        name: "BlogCard",
+        name: "ArticleCard",
         components: {DateRender, CommentCount, ArticleTags},
         props:{
             articleHeader:{

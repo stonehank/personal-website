@@ -36,6 +36,14 @@ const routes = [
         path:'/articles/:slug',
         component:()=>import('./pages/Article')
     },
+    {
+        path:'/archive/:slug',
+        component:()=>import('./pages/ArchiveMonth')
+    },
+    {
+        path:'/algorithm/:slug',
+        component:()=>import('./pages/Algorithm')
+    },
 
     {
         path:'/projects',

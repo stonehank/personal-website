@@ -1,0 +1,24 @@
+{
+  "content": "<p>一个js性能监控器，使用canvas绘制，简洁美观，思想也不复杂</p>\n<ol>\n<li><p>通过<code>performance.now</code>获取当前开始时间，每次调用时，计算时间差，每隔1秒计算每一帧平均消耗的毫秒数，从而计算1000毫秒的帧数。</p>\n</li>\n<li><p>根据传入的当前fps和给定的最高fps绘制canvas，分为整体层，字体层，柱状条层。</p>\n</li>\n<li><p>因为不使用clearRect清除画布，每次新创建的柱状条不会被清除，从而展示出监测器的效果。</p>\n</li>\n</ol>\n<p>stat：</p>\n<p><img src=\"https://raw.githubusercontent.com/stonehank/sourcecode-analysis/master/source-code.stat/Stat.png\" alt=\"\"></p>\n",
+  "toc": [],
+  "relatedTags": [
+    "源码",
+    "canvas",
+    "性能"
+  ],
+  "created_at": "2018-08-28",
+  "timeArr": [
+    2018,
+    7,
+    28,
+    14,
+    34,
+    42,
+    0
+  ],
+  "title": "源码阅读-stat",
+  "uuid": "52494eaeba83ec352ddf9911253c8da79c8e67fd",
+  "summary": "<p>一个js性能监控器，使用canvas绘制，简洁美观，思想也不复杂</p>\n<ol>\n<li>\n<p>通过<code>performance.now</code>获取当前开始时间，每次调用时，计算时间差，每隔1秒计算每一帧平均消耗的毫秒数，从而计算1000毫秒的帧数。</p>\n</li>\n<li>\n<p>根据传入的当前fps和给定的最高fps绘制canvas，分为整体层，字体层，柱状条层。</p>\n</li>\n</ol>\n<p>3...</p>",
+  "slug": "source-code-stat",
+  "sha": "63fbb1b85f485cc67805eb912f3d38c366d33e41"
+}

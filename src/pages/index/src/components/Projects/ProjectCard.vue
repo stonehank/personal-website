@@ -9,7 +9,7 @@
         </v-card-title>
 
         <v-card-text>
-            <p class="text-secondary text-mid">{{articleHeader.description}}</p>
+            <p class="text-secondary text-xs">{{articleHeader.description}}</p>
             <ArticleTags />
             <div class="text-sm d-flex justify-space-between">
                 <CommentCount :commentCount="commentCount" />
@@ -25,7 +25,7 @@
     import CommentCount from "pagesDir/index/src/commons/CommentCount";
     import DateRender from "pagesDir/index/src/commons/DateRender";
     export default {
-        name: "BlogCard",
+        name: "ProjectCard",
         components: {DateRender, CommentCount, ArticleTags},
         props:{
             articleHeader:{
