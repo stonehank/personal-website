@@ -12,12 +12,16 @@
             startFrom:{
                 default:0
             },
-            start:Boolean
+            start:Boolean,
+            animate:{
+                default:true,
+            }
         },
         watch:{
             start:{
                 immediate:true,
                 handler(newV){
+                    if(!this.animate)return
                     if(newV){
                         this.animeNumber(this.finalNum)
                     }else{
@@ -28,7 +32,7 @@
         },
         data(){
             return {
-                num:this.startFrom
+                num:this.animate ? this.startFrom : (this.shrink ? Math.floor(this.finalNum / 1000) : this.finalNum)
             }
         },
         methods:{

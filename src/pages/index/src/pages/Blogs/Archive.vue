@@ -1,69 +1,74 @@
 <template>
-    <div id="fullpage-archive">
-        <div class="section"
-             v-for="(archiveData,index) in archiveList"
-             :key="index">
-            <YearArchive
-                    :archiveData="archiveData"
-                    :start="startList[index]"
-            />
+<!--    <section>-->
+        <div id="fullpage-archive">
+            <div class="section"
+                 :data-anchor="archiveData.year"
+                 v-for="(archiveData,index) in archiveList"
+                 :key="index">
+                <YearArchive
+                        :archiveData="archiveData"
+                        :start="startList[index]"
+                />
+            </div>
         </div>
-    </div>
+<!--        <div id="fp-nav" class="left" style="margin-top: -43.5px; left: 280px;">-->
+<!--            <ul>-->
+<!--                <li v-for="(archiveData,index) in archiveList" :key="index">-->
+<!--                    <a :href="'#'+archiveData.year" :class="{-->
+<!--                        'active':$route.hash==='#'+archiveData.year-->
+<!--                    }"><span></span>-->
+<!--                    </a>-->
+<!--                    <div class="fp-tooltip left">{{archiveData.year}}</div>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+<!--    </section>-->
 </template>
 
 <script>
-    import  'fullpage.js'
+    import 'fullpage.js'
+    import 'fullpage.js/dist/jquery.fullpage.css'
     import 'wow.js/css/libs/animate.css'
     import YearArchive from "pagesDir/index/src/components/YearArchive/index.vue";
+    import {getAllYearsInfo} from "pagesDir/index/src/utils/list-json-controller";
+
     export default {
         name: "Archive",
         components: {YearArchive},
-        data(){
+        data() {
             return {
                 options: {
-                    dragAndMove:'fingersonly',
-                    anchors: ['page1', 'page2', 'page3'],
-                    sectionsColor: ['#41b883', '#ff5f45', '#0798ec']
+                    dragAndMove: 'fingersonly',
+                    navigation: true,
+                    navigationPosition: 'left',
+                    navigationTooltips: getAllYearsInfo().map(obj => obj.year)
                 },
-                archiveList:[
-                    {
-                        year:'2018',
-                        blog_count:142,
-                        view_count:1244354,
-                        month_counts:Array(12).fill(0).map(_=>Math.random() * 75),
-                    },
-                    {
-                        year:'2019',
-                        blog_count:102,
-                        view_count:744354,
-                        month_counts:Array(12).fill(0).map(_=>Math.random() * 75),
-                    },
-                    {
-                        year:'2020',
-                        blog_count:62,
-                        view_count:44354,
-                        month_counts:Array(12).fill(0).map(_=>Math.random() * 75),
-                    }
-
-                ],
-                startList:[false,false,false]
+                archiveList: getAllYearsInfo(),
+                startList: [false, false, false]
             }
         },
-        mounted(){
-            let self=this
+        mounted() {
+            let self = this
+            if ($.fn.fullpage && $.fn.fullpage.destroy) {
+                $.fn.fullpage.destroy(true)
+            }
             $('#fullpage-archive').fullpage({
-                verticalCentered:false,
-                afterLoad(_,which){
-                    let idx=which-1
-                    let newStartList=Array(self.archiveList.length).fill(false)
-                    newStartList[idx]=true
-                    self.startList=newStartList
+                ...this.options,
+                afterRender() {
+                    $('#fp-nav').css({
+                        left: 280
+                    })
+                },
+                afterLoad(_, which) {
+                    let idx = which - 1
+                    let newStartList = Array(self.archiveList.length).fill(false)
+                    newStartList[idx] = true
+                    self.startList = newStartList
                 }
             })
         },
         destroyed() {
-            console.log('destroyed')
-            if($.fn.fullpage){
+            if ($.fn.fullpage) {
                 $.fn.fullpage.destroy(true)
             }
         }

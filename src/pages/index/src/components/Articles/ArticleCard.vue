@@ -1,11 +1,12 @@
 <template>
     <v-card
             class="mx-auto h-100 d-flex flex-column"
-            :to="'/articles/'+articleHeader.slug"
             v-bind="$attrs"
     >
         <v-card-title class="pt-2 pb-1 text-break">
-            <h3 class="text-lg">{{articleHeader.title}}</h3>
+            <router-link :to="'/articles/'+articleHeader.slug">
+                <h3 class="text-lg">{{articleHeader.title}}</h3>
+            </router-link>
         </v-card-title>
 
         <v-card-text class="d-flex flex-column justify-space-between flex-grow-1">

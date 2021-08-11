@@ -29,9 +29,7 @@
             </v-list>
         </v-navigation-drawer>
         <v-container class="pa-0" fluid :style="$vuetify.breakpoint.mdAndUp ? 'margin-left:256px' : ''">
-            <keep-alive>
-                <router-view></router-view>
-            </keep-alive>
+            <router-view></router-view>
         </v-container>
     </section>
 </template>

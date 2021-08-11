@@ -4,7 +4,7 @@
             <v-col cols="4" md="3" v-for="(percent,index) in percentH" :key="index">
                 <div ref="month-card"
                      class="h-100"
-                     style="transform:translateX(-50px);opacity:0;">
+                     style="opacity:0;">
                     <v-card
                             :to="`/archive/${year}-${index+1}`"
                             class="h-100 position-relative d-flex justify-center align-center count-box"
@@ -30,7 +30,7 @@
         name: "MonthCardInYearArchive",
         components: {AutoGrowLine},
         props:{
-            year:String,
+            year:Number,
             counts:Array,
             start:Boolean,
         },
@@ -58,18 +58,16 @@
                     if(newV){
                         anime({
                             targets:this.$refs['month-card'],
-                            translateX:0,
                             opacity:1,
                             easing:'easeOutCirc',
                             delay:function(eles,idx){
-                                return idx * 50
+                                return idx * 100
                             }
                         })
                     }else{
                         anime.remove(this.$refs['month-card'])
                         $(this.$refs['month-card']).css({
                             opacity:0,
-                            transform:'translateX(-50px)'
                         })
                     }
                 }

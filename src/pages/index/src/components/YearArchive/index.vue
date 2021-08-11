@@ -1,6 +1,6 @@
 <template>
     <section class="d-flex justify-start align-center timeline-wrapper" :style="`height:${wrapperH}px`">
-        <div class="timeline-left pa-4" v-if="$vuetify.breakpoint.mdAndUp">
+        <div class="timeline-left" v-if="$vuetify.breakpoint.mdAndUp">
             <YearInfo :archiveData="archiveData" :start="start" />
         </div>
         <div class="timeline-axis">
