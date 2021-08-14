@@ -29,6 +29,7 @@
 		"vue": "^2.6.11",
 		"vue-js-modal": "^2.0.0-rc.6",
 		"vue-router": "^3.5.2",
+		"vue2-scrollbar": "0.0.3",
 		"vuera": "^0.2.7",
 		"vuereact-combined": "^1.1.1",
 		"vuetify": "^2.5.8",

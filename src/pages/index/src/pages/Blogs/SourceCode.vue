@@ -17,10 +17,15 @@
             for(let k in sourceCodeList){
                 arr.push(sourceCodeList[k])
             }
-            this.sourceCodeList=arr
+            this.timer=setTimeout(()=>this.sourceCodeList=arr,200)
+
+        },
+        destroyed() {
+            clearTimeout(this.timer)
         },
         data(){
             return {
+                timer:null,
                 sourceCodeList:null
             }
         }

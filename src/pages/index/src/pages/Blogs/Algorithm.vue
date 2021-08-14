@@ -41,27 +41,14 @@
             for(let k in algorithmJson){
                 arr.push(algorithmJson[k])
             }
-            this.algorithmList=arr
+            this.timer=setTimeout(()=>this.algorithmList=arr,200)
+        },
+        destroyed() {
+            clearTimeout(this.timer)
         },
         data(){
-            /*
-"LCP-18-zao-can-zu-he": {
-    "lang": [
-      "javascript"
-    ],
-    "uniqueID": "LCP 18",
-    "difficultNum": 1,
-    "difficult": "Easy",
-    "hasThinking": false,
-    "title": "LCP 18. 早餐组合",
-    "relatedTags": [
-      "数组",
-      "双指针",
-      "二分查找",
-      "排序"
-    ]
-  },*/
             return {
+                timer:null,
                 algorithmList:null,
                 headers: [
                     { text: '题目', align: 'start', value: 'title',},

@@ -16,7 +16,7 @@ module.exports = {
 
   resolve: require('./webpack-config/resolve.config.js'),
 
-  devtool: isDev ? 'cheap-module-source-map' : false,
+  devtool: isDev ? 'source-map' : false,
 
   plugins: require('./webpack-config/plugins.config.js'),
 

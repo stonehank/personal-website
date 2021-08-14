@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex align-center" style="max-width:250px;">
+    <div class="d-flex align-center" :style="$vuetify.breakpoint.xsOnly ? '' : 'max-width:250px'">
         <v-select
                 class="mr-2"
                 :items="orderList"

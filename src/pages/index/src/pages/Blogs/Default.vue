@@ -17,10 +17,14 @@
             for(let k in blogListJson){
                 arr.push(blogListJson[k])
             }
-            this.blogList=arr
+            this.timer=setTimeout(()=>this.blogList=arr,200)
+        },
+        destroyed() {
+            clearTimeout(this.timer)
         },
         data(){
             return {
+                timer:null,
                 blogList:null
             }
         }

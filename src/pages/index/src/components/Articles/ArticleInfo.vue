@@ -65,7 +65,7 @@
                 let navH=this.$custom_data.getNavH()
                 for(let i=this.tocId.length-1;i>=0;i--){
                     let curIdHash=this.tocId[i]
-                    // console.log(curIdHash)
+                    console.log(curIdHash)
                     if(curScrTop + navH + 16 > $(curIdHash).offset().top){
                         if(this.$route.hash!==curIdHash){
                             this.$router.replace({hash:curIdHash})
