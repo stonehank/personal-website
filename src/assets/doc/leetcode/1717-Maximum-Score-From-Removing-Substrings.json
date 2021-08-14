@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">s</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">x</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">y</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> maximumGain = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">s, x, y</span>) </span>{\n    <span class=\"hljs-keyword\">let</span> pat1=<span class=\"hljs-string\">''</span>,pat2=<span class=\"hljs-string\">''</span>\n    <span class=\"hljs-keyword\">let</span> p1=<span class=\"hljs-number\">0</span>,p2=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">if</span>(x&gt;=y){\n        pat1=<span class=\"hljs-string\">'ab'</span>\n        p1=x\n        pat2=<span class=\"hljs-string\">'ba'</span>\n        p2=y\n    }<span class=\"hljs-keyword\">else</span>{\n        pat1=<span class=\"hljs-string\">'ba'</span>\n        p1=y\n        pat2=<span class=\"hljs-string\">'ab'</span>\n        p2=x\n    }\n    <span class=\"hljs-keyword\">let</span> res=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">let</span> [newS,p]=resolve(s,pat1,p1)\n    res+=p\n    <span class=\"hljs-keyword\">let</span> [newS2,pp]=resolve(newS,pat2,p2)\n    <span class=\"hljs-keyword\">return</span> res+pp\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">resolve</span>(<span class=\"hljs-params\">str,patt,point</span>)</span>{\n        <span class=\"hljs-keyword\">let</span> p=<span class=\"hljs-number\">0</span>, c=<span class=\"hljs-number\">0</span>\n        <span class=\"hljs-keyword\">let</span> newS=<span class=\"hljs-string\">''</span>\n        <span class=\"hljs-keyword\">let</span> temp=<span class=\"hljs-string\">''</span>\n        <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> s <span class=\"hljs-keyword\">of</span> str){\n            <span class=\"hljs-keyword\">if</span>(s===patt[<span class=\"hljs-number\">0</span>]){\n                c++\n                temp+=s\n            }<span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span>(s===patt[<span class=\"hljs-number\">1</span>] &amp;&amp; c&gt;<span class=\"hljs-number\">0</span>){\n                c--\n                temp=temp.slice(<span class=\"hljs-number\">0</span>,temp.length<span class=\"hljs-number\">-1</span>)\n                p+=point\n            }<span class=\"hljs-keyword\">else</span>{\n                c=<span class=\"hljs-number\">0</span>\n                newS+=temp+s\n                temp=<span class=\"hljs-string\">''</span>\n            }\n        }\n        <span class=\"hljs-comment\">// console.log(str,newS)</span>\n        <span class=\"hljs-keyword\">return</span> [newS+temp,p]\n        \n    }\n}\n</code></pre>\n"
+  ],
+  "querySlug": "maximum-score-from-removing-substrings",
+  "created_at": "2021-01-17",
+  "timeArr": [
+    2021,
+    0,
+    17,
+    21,
+    56,
+    29,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给你一个字符串 <code>s</code> 和两个整数 <code>x</code> 和 <code>y</code> 。你可以执行下面两种操作任意次。</p>\n\n<ul>\n\t<li>删除子字符串 <code>\"ab\"</code> 并得到 <code>x</code> 分。\n\n\t<ul>\n\t\t<li>比方说，从 <code>\"c<strong>ab</strong>xbae\"</code> 删除 <code>ab</code> ，得到 <code>\"cxbae\"</code> 。</li>\n\t</ul>\n\t</li>\n\t<li>删除子字符串<code>\"ba\"</code> 并得到 <code>y</code> 分。\n\t<ul>\n\t\t<li>比方说，从 <code>\"cabx<strong>ba</strong>e\"</code> 删除 <code>ba</code> ，得到 <code>\"cabxe\"</code> 。</li>\n\t</ul>\n\t</li>\n</ul>\n\n<p>请返回对 <code>s</code> 字符串执行上面操作若干次能得到的最大得分。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre><b>输入：</b>s = \"cdbcbbaaabab\", x = 4, y = 5\n<b>输出：</b>19\n<strong>解释：</strong>\n- 删除 \"cdbcbbaaa<strong>ba</strong>b\" 中加粗的 \"ba\" ，得到 s = \"cdbcbbaaab\" ，加 5 分。\n- 删除 \"cdbcbbaa<strong>ab</strong>\" 中加粗的 \"ab\" ，得到 s = \"cdbcbbaa\" ，加 4 分。\n- 删除 \"cdbcb<strong>ba</strong>a\" 中加粗的 \"ba\" ，得到 s = \"cdbcba\" ，加 5 分。\n- 删除 \"cdbc<strong>ba</strong>\" 中加粗的 \"ba\" ，得到 s = \"cdbc\" ，加 5 分。\n总得分为 5 + 4 + 5 + 5 = 19 。</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre><b>输入：</b>s = \"aabbaaxybbaabb\", x = 5, y = 4\n<b>输出：</b>20\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length &lt;= 10<sup>5</sup></code></li>\n\t<li><code>1 &lt;= x, y &lt;= 10<sup>4</sup></code></li>\n\t<li><code>s</code> 只包含小写英文字母。</li>\n</ul>\n",
+  "title": "1717. 删除子字符串的最大得分",
+  "relatedTags": [
+    "栈",
+    "贪心",
+    "字符串"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "1717",
+  "slug": "1717-Maximum-Score-From-Removing-Substrings"
+}

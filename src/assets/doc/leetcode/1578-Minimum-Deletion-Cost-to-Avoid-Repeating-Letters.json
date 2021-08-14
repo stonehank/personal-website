@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">s</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">cost</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> minCost = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">s, cost</span>) </span>{\n    <span class=\"hljs-keyword\">let</span> last=s[<span class=\"hljs-number\">0</span>]\n    <span class=\"hljs-keyword\">let</span> lastCost=cost[<span class=\"hljs-number\">0</span>]\n    <span class=\"hljs-keyword\">let</span> res=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">1</span>;i&lt;s.length;i++){\n        <span class=\"hljs-keyword\">if</span>(s[i]!==last){\n            last=s[i]\n            lastCost=cost[i]\n        }<span class=\"hljs-keyword\">else</span>{\n            curCost=cost[i]\n            res+=<span class=\"hljs-built_in\">Math</span>.min(curCost,lastCost)\n            lastCost=<span class=\"hljs-built_in\">Math</span>.max(curCost,lastCost)\n        }\n    }\n    <span class=\"hljs-keyword\">return</span> res\n};\n</code></pre>\n"
+  ],
+  "querySlug": "minimum-deletion-cost-to-avoid-repeating-letters",
+  "created_at": "2020-09-06",
+  "timeArr": [
+    2020,
+    8,
+    6,
+    11,
+    43,
+    26,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给你一个字符串 <code>s</code> 和一个整数数组 <code>cost</code> ，其中 <code>cost[i]</code> 是从 <code>s</code> 中删除字符 <code>i</code> 的代价。</p>\n\n<p>返回使字符串任意相邻两个字母不相同的最小删除成本。</p>\n\n<p>请注意，删除一个字符后，删除其他字符的成本不会改变。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>s = &quot;abaac&quot;, cost = [1,2,3,4,5]\n<strong>输出：</strong>3\n<strong>解释：</strong>删除字母 &quot;a&quot; 的成本为 3，然后得到 &quot;abac&quot;（字符串中相邻两个字母不相同）。\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>s = &quot;abc&quot;, cost = [1,2,3]\n<strong>输出：</strong>0\n<strong>解释：</strong>无需删除任何字母，因为字符串中不存在相邻两个字母相同的情况。\n</pre>\n\n<p><strong>示例 3：</strong></p>\n\n<pre>\n<strong>输入：</strong>s = &quot;aabaa&quot;, cost = [1,2,3,4,1]\n<strong>输出：</strong>2\n<strong>解释：</strong>删除第一个和最后一个字母，得到字符串 (&quot;aba&quot;) 。\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>s.length == cost.length</code></li>\n\t<li><code>1 &lt;= s.length, cost.length &lt;= 10^5</code></li>\n\t<li><code>1 &lt;= cost[i] &lt;=&nbsp;10^4</code></li>\n\t<li><code>s</code> 中只含有小写英文字母</li>\n</ul>\n",
+  "title": "1578. 避免重复字母的最小删除成本",
+  "relatedTags": [
+    "贪心",
+    "数组",
+    "字符串",
+    "动态规划"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "1578",
+  "slug": "1578-Minimum-Deletion-Cost-to-Avoid-Repeating-Letters"
+}

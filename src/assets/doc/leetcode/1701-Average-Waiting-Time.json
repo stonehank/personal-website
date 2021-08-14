@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[][]}</span> <span class=\"hljs-variable\">customers</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> averageWaitingTime = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">customers</span>) </span>{\n    <span class=\"hljs-keyword\">let</span> curTime=customers[<span class=\"hljs-number\">0</span>][<span class=\"hljs-number\">0</span>]\n    <span class=\"hljs-keyword\">let</span> waitTime=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> [arrived,consume] <span class=\"hljs-keyword\">of</span> customers){\n        curTime=<span class=\"hljs-built_in\">Math</span>.max(curTime,arrived)\n        curTime+=consume\n        waitTime+=curTime - arrived\n    }\n    <span class=\"hljs-keyword\">return</span> waitTime / customers.length\n};\n</code></pre>\n"
+  ],
+  "querySlug": "average-waiting-time",
+  "created_at": "2021-01-10",
+  "timeArr": [
+    2021,
+    0,
+    10,
+    15,
+    0,
+    20,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>有一个餐厅，只有一位厨师。你有一个顾客数组 <code>customers</code> ，其中 <code>customers[i] = [arrival<sub>i</sub>, time<sub>i</sub>]</code> ：</p>\n\n<ul>\n\t<li><code>arrival<sub>i</sub></code> 是第 <code>i</code> 位顾客到达的时间，到达时间按 <strong>非递减</strong> 顺序排列。</li>\n\t<li><code>time<sub>i</sub></code> 是给第 <code>i</code> 位顾客做菜需要的时间。</li>\n</ul>\n\n<p>当一位顾客到达时，他将他的订单给厨师，厨师一旦空闲的时候就开始做这位顾客的菜。每位顾客会一直等待到厨师完成他的订单。厨师同时只能做一个人的订单。厨师会严格按照 <strong>订单给他的顺序</strong> 做菜。</p>\n\n<p>请你返回所有顾客需要等待的 <strong>平均 </strong>时间。与标准答案误差在 <code>10<sup>-5</sup></code> 范围以内，都视为正确结果。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<b>输入：</b>customers = [[1,2],[2,5],[4,3]]\n<b>输出：</b>5.00000\n<strong>解释：\n</strong>1) 第一位顾客在时刻 1 到达，厨师拿到他的订单并在时刻 1 立马开始做菜，并在时刻 3 完成，第一位顾客等待时间为 3 - 1 = 2 。\n2) 第二位顾客在时刻 2 到达，厨师在时刻 3 开始为他做菜，并在时刻 8 完成，第二位顾客等待时间为 8 - 2 = 6 。\n3) 第三位顾客在时刻 4 到达，厨师在时刻 8 开始为他做菜，并在时刻 11 完成，第三位顾客等待时间为 11 - 4 = 7 。\n平均等待时间为 (2 + 6 + 7) / 3 = 5 。\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<b>输入：</b>customers = [[5,2],[5,4],[10,3],[20,1]]\n<b>输出：</b>3.25000\n<strong>解释：\n</strong>1) 第一位顾客在时刻 5 到达，厨师拿到他的订单并在时刻 5 立马开始做菜，并在时刻 7 完成，第一位顾客等待时间为 7 - 5 = 2 。\n2) 第二位顾客在时刻 5 到达，厨师在时刻 7 开始为他做菜，并在时刻 11 完成，第二位顾客等待时间为 11 - 5 = 6 。\n3) 第三位顾客在时刻 10 到达，厨师在时刻 11 开始为他做菜，并在时刻 14 完成，第三位顾客等待时间为 14 - 10 = 4 。\n4) 第四位顾客在时刻 20 到达，厨师拿到他的订单并在时刻 20 立马开始做菜，并在时刻 21 完成，第四位顾客等待时间为 21 - 20 = 1 。\n平均等待时间为 (2 + 6 + 4 + 1) / 4 = 3.25 。\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= customers.length <= 10<sup>5</sup></code></li>\n\t<li><code>1 <= arrival<sub>i</sub>, time<sub>i</sub> <= 10<sup>4</sup></code></li>\n\t<li><code>arrival<sub>i </sub><= arrival<sub>i+1</sub></code></li>\n</ul>\n",
+  "title": "1701. 平均等待时间",
+  "relatedTags": [
+    "数组",
+    "模拟"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "1701",
+  "slug": "1701-Average-Waiting-Time"
+}

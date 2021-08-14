@@ -1,28 +1,15 @@
 <template>
-<!--    <section>-->
-        <div id="fullpage-archive">
-            <div class="section"
-                 :data-anchor="archiveData.year"
-                 v-for="(archiveData,index) in archiveList"
-                 :key="index">
-                <YearArchive
-                        :archiveData="archiveData"
-                        :start="startList[index]"
-                />
-            </div>
+    <div id="fullpage-archive">
+        <div class="section"
+             :data-anchor="archiveData.year"
+             v-for="(archiveData,index) in archiveList"
+             :key="index">
+            <YearArchive
+                    :archiveData="archiveData"
+                    :start="startList[index]"
+            />
         </div>
-<!--        <div id="fp-nav" class="left" style="margin-top: -43.5px; left: 280px;">-->
-<!--            <ul>-->
-<!--                <li v-for="(archiveData,index) in archiveList" :key="index">-->
-<!--                    <a :href="'#'+archiveData.year" :class="{-->
-<!--                        'active':$route.hash==='#'+archiveData.year-->
-<!--                    }"><span></span>-->
-<!--                    </a>-->
-<!--                    <div class="fp-tooltip left">{{archiveData.year}}</div>-->
-<!--                </li>-->
-<!--            </ul>-->
-<!--        </div>-->
-<!--    </section>-->
+    </div>
 </template>
 
 <script>
@@ -55,9 +42,7 @@
             $('#fullpage-archive').fullpage({
                 ...this.options,
                 afterRender() {
-                    $('#fp-nav').css({
-                        left: 280
-                    })
+                    self.updateFpNavPos()
                 },
                 afterLoad(_, which) {
                     let idx = which - 1
@@ -66,10 +51,19 @@
                     self.startList = newStartList
                 }
             })
+            $(window).on('resize',this.updateFpNavPos)
         },
         destroyed() {
+            $(window).off('resize',this.updateFpNavPos)
             if ($.fn.fullpage) {
                 $.fn.fullpage.destroy(true)
+            }
+        },
+        methods:{
+            updateFpNavPos(){
+                $('#fp-nav').css({
+                    left: this.$vuetify.breakpoint.mdAndUp ? 280 : 0
+                })
             }
         }
     }

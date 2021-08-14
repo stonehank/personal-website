@@ -23,12 +23,12 @@
                 <v-list-item to="/blogs/archive">
                     <v-list-item-title>时间归档</v-list-item-title>
                 </v-list-item>
-                <v-list-item to="/blogs/tags">
+                <v-list-item to="/blogs/labels">
                     <v-list-item-title>标签归档</v-list-item-title>
                 </v-list-item>
             </v-list>
         </v-navigation-drawer>
-        <v-container class="pa-0" fluid :style="$vuetify.breakpoint.mdAndUp ? 'margin-left:256px' : ''">
+        <v-container class="pa-0"  :style="$vuetify.breakpoint.mdAndUp ? 'margin-left:256px' : ''">
             <router-view></router-view>
         </v-container>
     </section>

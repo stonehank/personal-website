@@ -1,0 +1,22 @@
+{
+  "content": "<p>Generators函数的双向传递</p>\n<p>每次调用<code>answer()</code>，相当于在<code>generators</code>函数的next方法加入参数，这个参数会返回给<code>yield</code>的返回值</p>\n<p>在函数内部可以判断这个返回值，实现双向传递</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code>  <span class=\"hljs-keyword\">let</span> stepCount=<span class=\"hljs-number\">1</span>\n  <span class=\"hljs-keyword\">let</span> currentPoint=<span class=\"hljs-number\">1</span>\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> *<span class=\"hljs-title\">stepToStep</span>(<span class=\"hljs-params\"></span>)</span>{\n    <span class=\"hljs-keyword\">while</span>(stepCount&lt;<span class=\"hljs-number\">4</span>){\n      <span class=\"hljs-keyword\">let</span> choose=<span class=\"hljs-keyword\">yield</span> <span class=\"hljs-string\">'Choose Left or Right ?Call \"answer()\" to answer!'</span>\n      <span class=\"hljs-keyword\">if</span>(choose===<span class=\"hljs-string\">'left'</span>)currentPoint+=stepCount++;\n      <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (choose===<span class=\"hljs-string\">'right'</span>)currentPoint+=<span class=\"hljs-number\">1</span>+stepCount++;\n      <span class=\"hljs-built_in\">console</span>.log(<span class=\"hljs-string\">`You have arrived at point <span class=\"hljs-subst\">${currentPoint}</span>`</span>)\n    }\n    <span class=\"hljs-keyword\">if</span>(currentPoint===<span class=\"hljs-number\">9</span>)<span class=\"hljs-built_in\">console</span>.log(<span class=\"hljs-string\">'Good End'</span>)\n    <span class=\"hljs-keyword\">else</span> <span class=\"hljs-built_in\">console</span>.log(<span class=\"hljs-string\">'Bad End'</span>)\n  }\n  <span class=\"hljs-keyword\">let</span> start= stepToStep()\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">answer</span>(<span class=\"hljs-params\">answer</span>)</span>{\n    <span class=\"hljs-built_in\">console</span>.log(start.next(answer.toLowerCase()).value)\n  }\n  <span class=\"hljs-built_in\">console</span>.log(start.next().value)</code></pre>\n</code></pre>\n",
+  "toc": [],
+  "relatedTags": [
+    "es6"
+  ],
+  "created_at": "2018-09-14",
+  "timeArr": [
+    2018,
+    8,
+    14,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "ES6的Generators函数双向传值",
+  "uuid": "a20bb2e8ea076042017b4a5a990e2aac82af6a1b",
+  "summary": "<p>Generators函数的双向传递</p>\n<p>每次调用<code>answer()</code>，相当于在<code>generators</code>函数的next方法加入参数，这个参数会返回给<code>yield</code>的返回值</p>\n<p>在函数内部可以判断这个返回值，实现双向传递</p>\n<pre class=\"hljs\"><code>  <span class=\"hljs-keyword\">let</span> stepCount=<span class=\"hljs-number\">1</span>\n  <span class=\"hljs-keyword\">let</span> currentPoint=<span class=\"hljs-number\">1</span>\n  functi...</code></pre>",
+  "slug": "ES6-de-Generators-han-shu-shuang-xiang-chuan-zhi",
+  "sha": "cacba9466975c15e93a9cba0db310bf12752a2c2"
+}

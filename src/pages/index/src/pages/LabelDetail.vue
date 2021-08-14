@@ -1,0 +1,119 @@
+<template>
+    <v-skeleton-loader
+            v-if="curLabelList==null"
+            type="table"
+    ></v-skeleton-loader>
+    <section v-else>
+        <v-navigation-drawer
+                v-if="$vuetify.breakpoint.mdAndUp"
+                permanent
+                width="320"
+                fixed
+                class="pa-4"
+                :style="{
+                    top: $custom_data.getNavH() + 'px',
+                    left:0,
+                }"
+        >
+            <div class="text-right">
+                <v-btn icon x-large to="/blogs/labels">
+                    <v-icon large>fas fa-long-arrow-alt-left</v-icon>
+                </v-btn>
+                <v-chip large
+                        label
+                        style="min-width:120px;"
+                        class="justify-center display-1"
+                        :color="labelColor[label]"
+                        text-color="white"
+                >
+                    {{label}}
+                </v-chip>
+                <p class="text-lg">总共 {{curLabelList.length}} 篇</p>
+            </div>
+        </v-navigation-drawer>
+        <div :style="$vuetify.breakpoint.mdAndUp ? 'margin-left:320px;' : ''">
+            <div v-if="$vuetify.breakpoint.smAndDown">
+                <h1>
+                    <v-chip label :color="labelColor[label]" text-color="white">
+                        {{label}}
+                    </v-chip>
+                    <span class="text-md">总共 {{curLabelList.length}} 篇</span>
+                </h1>
+
+            </div>
+            <ArticleTableList
+                    :headers="headers"
+                    :items="curLabelList"
+            />
+        </div>
+    </section>
+</template>
+
+<script>
+    import { getTagsObj} from "pagesDir/index/src/utils/list-json-controller";
+    import labelColor from "pagesDir/index/src/utils/label-color";
+    import ArticleTableList from "pagesDir/index/src/components/ArticleList/ArticleTableList";
+
+    export default {
+        name: "LabelDetail",
+        components: {ArticleTableList},
+        computed:{
+            labelColor:()=>labelColor,
+        },
+        watch:{
+            "$route.params.slug":{
+                immediate:true,
+                handler:function(newV,oldV){
+                    if(newV!==oldV){
+                        this.label=newV
+                        this.curLabelList=getTagsObj(this.label)
+                        this.sortLabel()
+                    }
+                }
+
+            }
+        },
+        data(){
+            return {
+                curLabelList:null,
+                label:null,
+                fetchError:false,
+                loading:true,
+                headers: [
+                    { text: '标题', align: 'start', value: 'title',},
+                    { text: '类型', align: 'center', value: 'flag' },
+                    { text: '时间', align: 'center', value: 'created_at' },
+                    {
+                        text: '相关标签',
+                        align: 'start',
+                        value: 'relatedTags',
+                        sort:function(a,b){
+                            return a.length-b.length
+                        }
+                    },
+                ],
+            }
+        },
+        created(){
+            this.loading=true
+            this.label=this.$route.params.slug
+            if(!this.label){
+                this.loading=false
+                this.fetchError=true
+            }
+            this.curLabelList=getTagsObj(this.label)
+            this.sortLabel()
+        },
+        methods:{
+            sortLabel(){
+                this.curLabelList.forEach(obj=>{
+                    obj.relatedTags.sort((a,b)=>a===this.label ? -1 : 1)
+                })
+            }
+        }
+    }
+</script>
+
+<style scoped>
+
+</style>

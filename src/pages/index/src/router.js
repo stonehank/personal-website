@@ -19,8 +19,8 @@ const routes = [
                 component:()=>import('./pages/Blogs/Archive')
             },
             {
-                path:'tags',
-                component:()=>import('./pages/Blogs/BlogTags')
+                path:'labels',
+                component:()=>import('./pages/Blogs/Tags')
             },
             {
                 path:'sourcecode',
@@ -43,6 +43,10 @@ const routes = [
     {
         path:'/algorithm/:slug',
         component:()=>import('./pages/Algorithm')
+    },
+    {
+        path:'/labels/:slug',
+        component:()=>import('./pages/LabelDetail.vue')
     },
 
     {

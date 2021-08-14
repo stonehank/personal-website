@@ -2,10 +2,9 @@
     <v-fab-transition>
         <v-btn icon
                v-scroll="onScroll"
-               style="background:var(--theme-primary)"
+               style="background:var(--theme-primary);bottom:96px;"
                fixed
                right
-               bottom
                elevation="4"
                large
                v-show="show"

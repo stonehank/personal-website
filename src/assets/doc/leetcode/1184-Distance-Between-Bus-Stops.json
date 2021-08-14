@@ -1,0 +1,28 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">distance</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">start</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">destination</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> distanceBetweenBusStops = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">distance, start, destination</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> dis1=<span class=\"hljs-number\">0</span>,dis2=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">let</span> n=distance.length\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=start;;i++){\n    <span class=\"hljs-keyword\">let</span> id=(i+n) % n\n    <span class=\"hljs-keyword\">if</span>(id===destination)<span class=\"hljs-keyword\">break</span>\n    dis1+=distance[id]\n  }\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=start<span class=\"hljs-number\">-1</span>;;i--){\n   \n    <span class=\"hljs-keyword\">let</span> id=(i+n) % n\n    dis2+=distance[id]\n    <span class=\"hljs-keyword\">if</span>(id===destination)<span class=\"hljs-keyword\">break</span>\n  }  \n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-built_in\">Math</span>.min(dis1,dis2)\n};\n</code></pre>\n"
+  ],
+  "querySlug": "distance-between-bus-stops",
+  "created_at": "2019-09-08",
+  "timeArr": [
+    2019,
+    8,
+    8,
+    10,
+    36,
+    24,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>环形公交路线上有&nbsp;<code>n</code>&nbsp;个站，按次序从&nbsp;<code>0</code>&nbsp;到&nbsp;<code>n - 1</code>&nbsp;进行编号。我们已知每一对相邻公交站之间的距离，<code>distance[i]</code>&nbsp;表示编号为&nbsp;<code>i</code>&nbsp;的车站和编号为&nbsp;<code>(i + 1) % n</code>&nbsp;的车站之间的距离。</p>\n\n<p>环线上的公交车都可以按顺时针和逆时针的方向行驶。</p>\n\n<p>返回乘客从出发点&nbsp;<code>start</code>&nbsp;到目的地&nbsp;<code>destination</code>&nbsp;之间的最短距离。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 1：</strong></p>\n\n<p><img alt=\"\" src=\"https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/09/08/untitled-diagram-1.jpg\" style=\"height: 240px; width: 388px;\"></p>\n\n<pre><strong>输入：</strong>distance = [1,2,3,4], start = 0, destination = 1\n<strong>输出：</strong>1\n<strong>解释：</strong>公交站 0 和 1 之间的距离是 1 或 9，最小值是 1。</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 2：</strong></p>\n\n<p><img alt=\"\" src=\"https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/09/08/untitled-diagram-1-1.jpg\" style=\"height: 240px; width: 388px;\"></p>\n\n<pre><strong>输入：</strong>distance = [1,2,3,4], start = 0, destination = 2\n<strong>输出：</strong>3\n<strong>解释：</strong>公交站 0 和 2 之间的距离是 3 或 7，最小值是 3。\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 3：</strong></p>\n\n<p><img alt=\"\" src=\"https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/09/08/untitled-diagram-1-2.jpg\" style=\"height: 240px; width: 388px;\"></p>\n\n<pre><strong>输入：</strong>distance = [1,2,3,4], start = 0, destination = 3\n<strong>输出：</strong>4\n<strong>解释：</strong>公交站 0 和 3 之间的距离是 6 或 4，最小值是 4。\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n&nbsp;&lt;= 10^4</code></li>\n\t<li><code>distance.length == n</code></li>\n\t<li><code>0 &lt;= start, destination &lt; n</code></li>\n\t<li><code>0 &lt;= distance[i] &lt;= 10^4</code></li>\n</ul>\n",
+  "title": "1184. 公交站间的距离",
+  "relatedTags": [
+    "数组"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "1184",
+  "slug": "1184-Distance-Between-Bus-Stops"
+}

@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">n</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[][]}</span> <span class=\"hljs-variable\">connections</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> minReorder = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">n, connections</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> g=<span class=\"hljs-built_in\">Array</span>(n).fill().map(<span class=\"hljs-function\"><span class=\"hljs-params\">()</span>=&gt;</span>[])\n  <span class=\"hljs-keyword\">let</span> hash={}\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> [f,t] <span class=\"hljs-keyword\">of</span> connections){\n    g[f].push(t)\n    <span class=\"hljs-keyword\">if</span>(t===<span class=\"hljs-number\">0</span> || hash[t]){\n      hash[f]=<span class=\"hljs-literal\">true</span>\n    }\n  }\n  <span class=\"hljs-keyword\">let</span> res=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">let</span> used={}\n  hash[<span class=\"hljs-number\">0</span>]=<span class=\"hljs-literal\">true</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;n;i++){\n    <span class=\"hljs-keyword\">if</span>(used[i])<span class=\"hljs-keyword\">continue</span>\n    dfs(i,<span class=\"hljs-string\">'--'</span>)\n  }\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">dfs</span>(<span class=\"hljs-params\">pos,last</span>)</span>{\n    used[pos]=<span class=\"hljs-literal\">true</span>\n    <span class=\"hljs-comment\">// console.log(pos,last,hash)</span>\n    <span class=\"hljs-keyword\">if</span>(hash[last] &amp;&amp; !hash[pos]){\n      <span class=\"hljs-comment\">// console.log(last,pos)</span>\n      res++\n      hash[pos]=<span class=\"hljs-literal\">true</span>\n    }<span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span>(hash[pos] &amp;&amp; !hash[last] &amp;&amp; last!==<span class=\"hljs-string\">'--'</span>){\n      hash[last]=<span class=\"hljs-literal\">true</span>\n    }\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;g[pos].length;i++){\n      dfs(g[pos][i],pos)\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> res\n};\n</code></pre>\n"
+  ],
+  "querySlug": "reorder-routes-to-make-all-paths-lead-to-the-city-zero",
+  "created_at": "2020-05-31",
+  "timeArr": [
+    2020,
+    4,
+    31,
+    11,
+    25,
+    32,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p><code>n</code> 座城市，从 <code>0</code> 到 <code>n-1</code> 编号，其间共有 <code>n-1</code> 条路线。因此，要想在两座不同城市之间旅行只有唯一一条路线可供选择（路线网形成一颗树）。去年，交通运输部决定重新规划路线，以改变交通拥堵的状况。</p>\n\n<p>路线用 <code>connections</code> 表示，其中 <code>connections[i] = [a, b]</code> 表示从城市 <code>a</code> 到 <code>b</code> 的一条有向路线。</p>\n\n<p>今年，城市 0 将会举办一场大型比赛，很多游客都想前往城市 0 。</p>\n\n<p>请你帮助重新规划路线方向，使每个城市都可以访问城市 0 。返回需要变更方向的最小路线数。</p>\n\n<p>题目数据 <strong>保证</strong> 每个城市在重新规划路线方向后都能到达城市 0 。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 1：</strong></p>\n\n<p><strong><img alt=\"\" src=\"https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/05/30/sample_1_1819.png\" style=\"height: 150px; width: 240px;\"></strong></p>\n\n<pre><strong>输入：</strong>n = 6, connections = [[0,1],[1,3],[2,3],[4,0],[4,5]]\n<strong>输出：</strong>3\n<strong>解释：</strong>更改以红色显示的路线的方向，使每个城市都可以到达城市 0 。</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<p><strong><img alt=\"\" src=\"https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/05/30/sample_2_1819.png\" style=\"height: 60px; width: 380px;\"></strong></p>\n\n<pre><strong>输入：</strong>n = 5, connections = [[1,0],[1,2],[3,2],[3,4]]\n<strong>输出：</strong>2\n<strong>解释：</strong>更改以红色显示的路线的方向，使每个城市都可以到达城市 0 。</pre>\n\n<p><strong>示例 3：</strong></p>\n\n<pre><strong>输入：</strong>n = 3, connections = [[1,0],[2,0]]\n<strong>输出：</strong>0\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>2 &lt;= n &lt;= 5 * 10^4</code></li>\n\t<li><code>connections.length == n-1</code></li>\n\t<li><code>connections[i].length == 2</code></li>\n\t<li><code>0 &lt;= connections[i][0], connections[i][1] &lt;= n-1</code></li>\n\t<li><code>connections[i][0] != connections[i][1]</code></li>\n</ul>\n",
+  "title": "1466. 重新规划路线",
+  "relatedTags": [
+    "深度优先搜索",
+    "广度优先搜索",
+    "图"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "1466",
+  "slug": "1466-Reorder-Routes-to-Make-All-Paths-Lead-to-the-City-Zero"
+}

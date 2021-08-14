@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">n</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> OrderedStream = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">n</span>) </span>{\n    <span class=\"hljs-keyword\">this</span>.stream=<span class=\"hljs-built_in\">Array</span>(n).fill(<span class=\"hljs-literal\">null</span>)\n    <span class=\"hljs-keyword\">this</span>.startIdx=<span class=\"hljs-number\">0</span>\n};\n\n<span class=\"hljs-comment\">/** \n * @param {number} id \n * @param {string} value\n * @return {string[]}\n */</span>\nOrderedStream.prototype.insert = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">id, value</span>) </span>{\n    <span class=\"hljs-keyword\">let</span> idx=id<span class=\"hljs-number\">-1</span>\n    <span class=\"hljs-keyword\">this</span>.stream[idx]=value\n    <span class=\"hljs-keyword\">let</span> res=[]\n    <span class=\"hljs-keyword\">while</span>(<span class=\"hljs-keyword\">this</span>.stream[<span class=\"hljs-keyword\">this</span>.startIdx]!=<span class=\"hljs-literal\">null</span>){\n        res.push(<span class=\"hljs-keyword\">this</span>.stream[<span class=\"hljs-keyword\">this</span>.startIdx])\n        <span class=\"hljs-keyword\">this</span>.startIdx++\n    }\n    <span class=\"hljs-keyword\">return</span> res\n};\n\n<span class=\"hljs-comment\">/**\n * Your OrderedStream object will be instantiated and called as such:\n * var obj = new OrderedStream(n)\n * var param_1 = obj.insert(id,value)\n */</span>\n</code></pre>\n"
+  ],
+  "querySlug": "design-an-ordered-stream",
+  "created_at": "2020-11-22",
+  "timeArr": [
+    2020,
+    10,
+    22,
+    10,
+    26,
+    32,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>有 <code>n</code> 个 <code>(id, value)</code> 对，其中 <code>id</code> 是 <code>1</code> 到 <code>n</code> 之间的一个整数，<code>value</code> 是一个字符串。不存在 <code>id</code> 相同的两个 <code>(id, value)</code> 对。</p>\n\n<p>设计一个流，以 <strong>任意</strong> 顺序获取 <code>n</code> 个 <code>(id, value)</code> 对，并在多次调用时 <strong>按 <code>id</code> 递增的顺序</strong> 返回一些值。</p>\n\n<p>实现 <code>OrderedStream</code> 类：</p>\n\n<ul>\n\t<li><code>OrderedStream(int n)</code> 构造一个能接收 <code>n</code> 个值的流，并将当前指针 <code>ptr</code> 设为 <code>1</code> 。</li>\n\t<li><code>String[] insert(int id, String value)</code> 向流中存储新的 <code>(id, value)</code> 对。存储后：\n\t<ul>\n\t\t<li>如果流存储有 <code>id = ptr</code> 的 <code>(id, value)</code> 对，则找出从 <code>id = ptr</code> 开始的 <strong>最长 id 连续递增序列</strong> ，并 <strong>按顺序</strong> 返回与这些 id 关联的值的列表。然后，将 <code>ptr</code> 更新为最后那个  <code>id + 1</code> 。</li>\n\t\t<li>\n\t\t<p>否则，返回一个空列表。</p>\n\t\t</li>\n\t</ul>\n\t</li>\n</ul>\n\n<p> </p>\n\n<p><strong>示例：</strong></p>\n\n<p><strong><img alt=\"\" src=\"https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/11/15/q1.gif\" style=\"width: 682px; height: 240px;\" /></strong></p>\n\n<pre>\n<strong>输入</strong>\n[\"OrderedStream\", \"insert\", \"insert\", \"insert\", \"insert\", \"insert\"]\n[[5], [3, \"ccccc\"], [1, \"aaaaa\"], [2, \"bbbbb\"], [5, \"eeeee\"], [4, \"ddddd\"]]\n<strong>输出</strong>\n[null, [], [\"aaaaa\"], [\"bbbbb\", \"ccccc\"], [], [\"ddddd\", \"eeeee\"]]\n\n<strong>解释</strong>\nOrderedStream os= new OrderedStream(5);\nos.insert(3, \"ccccc\"); // 插入 (3, \"ccccc\")，返回 []\nos.insert(1, \"aaaaa\"); // 插入 (1, \"aaaaa\")，返回 [\"aaaaa\"]\nos.insert(2, \"bbbbb\"); // 插入 (2, \"bbbbb\")，返回 [\"bbbbb\", \"ccccc\"]\nos.insert(5, \"eeeee\"); // 插入 (5, \"eeeee\")，返回 []\nos.insert(4, \"ddddd\"); // 插入 (4, \"ddddd\")，返回 [\"ddddd\", \"eeeee\"]\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= n <= 1000</code></li>\n\t<li><code>1 <= id <= n</code></li>\n\t<li><code>value.length == 5</code></li>\n\t<li><code>value</code> 仅由小写字母组成</li>\n\t<li>每次调用 <code>insert</code> 都会使用一个唯一的 <code>id</code></li>\n\t<li>恰好调用 <code>n</code> 次 <code>insert</code></li>\n</ul>\n",
+  "title": "1656. 设计有序流",
+  "relatedTags": [
+    "设计",
+    "数组",
+    "哈希表",
+    "数据流"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "1656",
+  "slug": "1656-Design-an-Ordered-Stream"
+}

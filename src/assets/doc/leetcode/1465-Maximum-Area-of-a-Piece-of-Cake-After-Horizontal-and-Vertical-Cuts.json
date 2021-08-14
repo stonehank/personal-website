@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">h</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">w</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">horizontalCuts</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">verticalCuts</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> maxArea = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">h, w, horizontalCuts, verticalCuts</span>) </span>{\n  horizontalCuts.sort(<span class=\"hljs-function\">(<span class=\"hljs-params\">a,b</span>)=&gt;</span>a-b)\n  verticalCuts.sort(<span class=\"hljs-function\">(<span class=\"hljs-params\">a,b</span>)=&gt;</span>a-b)\n  <span class=\"hljs-keyword\">let</span> gapW=[]\n  <span class=\"hljs-keyword\">let</span> gapH=[]\n  <span class=\"hljs-keyword\">let</span> MOD=<span class=\"hljs-number\">1e9</span>+<span class=\"hljs-number\">7</span>\n  verticalCuts.unshift(<span class=\"hljs-number\">0</span>)\n  horizontalCuts.unshift(<span class=\"hljs-number\">0</span>)\n  verticalCuts.push(w)\n  horizontalCuts.push(h)\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">1</span>;i&lt;verticalCuts.length;i++){\n    gapW.push(verticalCuts[i]-verticalCuts[i<span class=\"hljs-number\">-1</span>])\n  }\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">1</span>;i&lt;horizontalCuts.length;i++){\n    gapH.push(horizontalCuts[i]-horizontalCuts[i<span class=\"hljs-number\">-1</span>])\n  }\n  <span class=\"hljs-keyword\">let</span> maxW=<span class=\"hljs-built_in\">Math</span>.max.apply(<span class=\"hljs-built_in\">Math</span>,gapW)\n  <span class=\"hljs-keyword\">let</span> maxH=<span class=\"hljs-built_in\">Math</span>.max.apply(<span class=\"hljs-built_in\">Math</span>,gapH)\n  <span class=\"hljs-comment\">// console.log(gapW,maxW,gapH,maxH)</span>\n  <span class=\"hljs-keyword\">return</span> maxW*maxH % MOD\n};\n</code></pre>\n"
+  ],
+  "querySlug": "maximum-area-of-a-piece-of-cake-after-horizontal-and-vertical-cuts",
+  "created_at": "2020-05-31",
+  "timeArr": [
+    2020,
+    4,
+    31,
+    10,
+    45,
+    50,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>矩形蛋糕的高度为 <code>h</code> 且宽度为 <code>w</code>，给你两个整数数组 <code>horizontalCuts</code> 和 <code>verticalCuts</code>，其中 <code>horizontalCuts[i]</code> 是从矩形蛋糕顶部到第&nbsp; <code>i</code> 个水平切口的距离，类似地， <code>verticalCuts[j]</code> 是从矩形蛋糕的左侧到第 <code>j</code> 个竖直切口的距离。</p>\n\n<p>请你按数组 <em><code>horizontalCuts</code> </em>和<em> <code>verticalCuts</code> </em>中提供的水平和竖直位置切割后，请你找出 <strong>面积最大</strong> 的那份蛋糕，并返回其 <strong>面积</strong> 。由于答案可能是一个很大的数字，因此需要将结果对 <code>10^9 + 7</code> 取余后返回。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 1：</strong></p>\n\n<p><img alt=\"\" src=\"https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/05/30/leetcode_max_area_2.png\" style=\"height: 320px; width: 300px;\"></p>\n\n<pre><strong>输入：</strong>h = 5, w = 4, horizontalCuts = [1,2,4], verticalCuts = [1,3]\n<strong>输出：</strong>4 \n<strong>解释：</strong>上图所示的矩阵蛋糕中，红色线表示水平和竖直方向上的切口。切割蛋糕后，绿色的那份蛋糕面积最大。\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<p><strong><img alt=\"\" src=\"https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/05/30/leetcode_max_area_3.png\" style=\"height: 320px; width: 300px;\"></strong></p>\n\n<pre><strong>输入：</strong>h = 5, w = 4, horizontalCuts = [3,1], verticalCuts = [1]\n<strong>输出：</strong>6\n<strong>解释：</strong>上图所示的矩阵蛋糕中，红色线表示水平和竖直方向上的切口。切割蛋糕后，绿色和黄色的两份蛋糕面积最大。</pre>\n\n<p><strong>示例 3：</strong></p>\n\n<pre><strong>输入：</strong>h = 5, w = 4, horizontalCuts = [3], verticalCuts = [3]\n<strong>输出：</strong>9\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>2 &lt;= h,&nbsp;w &lt;= 10^9</code></li>\n\t<li><code>1 &lt;=&nbsp;horizontalCuts.length &lt;&nbsp;min(h, 10^5)</code></li>\n\t<li><code>1 &lt;=&nbsp;verticalCuts.length &lt; min(w, 10^5)</code></li>\n\t<li><code>1 &lt;=&nbsp;horizontalCuts[i] &lt; h</code></li>\n\t<li><code>1 &lt;=&nbsp;verticalCuts[i] &lt; w</code></li>\n\t<li>题目数据保证 <code>horizontalCuts</code> 中的所有元素各不相同</li>\n\t<li>题目数据保证 <code>verticalCuts</code>&nbsp;中的所有元素各不相同</li>\n</ul>\n",
+  "title": "1465. 切割后面积最大的蛋糕",
+  "relatedTags": [
+    "贪心",
+    "数组",
+    "排序"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "1465",
+  "slug": "1465-Maximum-Area-of-a-Piece-of-Cake-After-Horizontal-and-Vertical-Cuts"
+}

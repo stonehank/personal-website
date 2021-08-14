@@ -1,0 +1,28 @@
+{
+  "content": "<h2 id=\"biao-dan-yan-zheng-yuan-sheng\">表单验证原生</h2>\n<ul>\n<li><p>查看是否通过验证：\n<code>ele.checkValidity</code></p>\n</li>\n<li><p>验证不通过的时候的提示（只读）：\n<code>ele.validationMessage</code></p>\n<p>  可以通过setCustomValidity修改，设为空字符串表示取消自定义提示，但要设定条件，否则默认不通过</p>\n<p>  <code>ele.setCustomValidity(&quot;自定义报错内容&quot;)</code></p>\n</li>\n<li><p>查看是否在submit时进行验证（只读）：\n<code>ele.willValidate</code> </p>\n</li>\n<li><p>不使用自带验证</p>\n</li>\n</ul>\n<p><code>novalidate</code>用于&lt;form&gt;</p>\n<p><code>formnovalidate</code>用于&lt;内部控件&gt;</p>\n<p>参考:<a href=\"https://wangdoc.com/javascript/bom/form.html\">https://wangdoc.com/javascript/bom/form.html</a></p>\n",
+  "toc": [
+    {
+      "anchor": "biao-dan-yan-zheng-yuan-sheng",
+      "level": 2,
+      "text": "表单验证原生"
+    }
+  ],
+  "relatedTags": [
+    "表单"
+  ],
+  "created_at": "2018-08-17",
+  "timeArr": [
+    2018,
+    7,
+    17,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "原生表单验证相关",
+  "uuid": "bd9804a5d37884a5eff1d06717429f0517cd2782",
+  "summary": "<h4>表单验证原生</h4>\n<ul>\n<li>\n<p>查看是否通过验证：\n<code>ele.checkValidity</code></p>\n</li>\n<li>\n<p>验证不通过的时候的提示（只读）：\n<code>ele.validationMessage</code></p>\n<p>可以通过setCustomValidity修改，设为空字符串表示取消自定义提示，但要设定条件，否则默认不通过</p>\n<p>`ele.set...</p>\n</li>\n</ul>",
+  "slug": "yuan-sheng-biao-dan-yan-zheng-xiang-guan",
+  "sha": "9d6992f642b20f00a885c2f614ed58f5ff23a0e4"
+}

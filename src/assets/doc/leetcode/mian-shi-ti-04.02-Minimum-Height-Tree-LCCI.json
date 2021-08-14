@@ -1,0 +1,32 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * Definition for a binary tree node.\n * function TreeNode(val) {\n *     this.val = val;\n *     this.left = this.right = null;\n * }\n */</span>\n<span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">nums</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{TreeNode}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> sortedArrayToBST = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">nums</span>) </span>{\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">createTree</span>(<span class=\"hljs-params\">arr</span>)</span>{\n    <span class=\"hljs-keyword\">if</span>(arr.length===<span class=\"hljs-number\">0</span>)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">null</span>\n    <span class=\"hljs-keyword\">let</span> mid=<span class=\"hljs-built_in\">Math</span>.floor(arr.length/<span class=\"hljs-number\">2</span>)\n    <span class=\"hljs-keyword\">let</span> root=<span class=\"hljs-keyword\">new</span> TreeNode(arr[mid])\n    root.left=createTree(arr.slice(<span class=\"hljs-number\">0</span>,mid))\n    root.right=createTree(arr.slice(mid+<span class=\"hljs-number\">1</span>))\n    <span class=\"hljs-keyword\">return</span> root\n  }\n  <span class=\"hljs-keyword\">return</span> createTree(nums)\n};\n</code></pre>\n"
+  ],
+  "querySlug": "minimum-height-tree-lcci",
+  "created_at": "2020-05-26",
+  "timeArr": [
+    2020,
+    4,
+    26,
+    17,
+    20,
+    8,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给定一个有序整数数组，元素各不相同且按升序排列，编写一个算法，创建一棵高度最小的二叉搜索树。</p><strong>示例:</strong><pre>给定有序数组: [-10,-3,0,5,9],<br><br>一个可能的答案是：[0,-3,9,-10,null,5]，它可以表示下面这个高度平衡二叉搜索树：<br><br>          0 <br>         / &#92 <br>       -3   9 <br>       /   / <br>     -10  5 <br></pre>",
+  "title": "面试题 04.02. 最小高度树",
+  "relatedTags": [
+    "树",
+    "二叉搜索树",
+    "数组",
+    "分治",
+    "二叉树"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "面试题 04.02",
+  "slug": "mian-shi-ti-04.02-Minimum-Height-Tree-LCCI"
+}

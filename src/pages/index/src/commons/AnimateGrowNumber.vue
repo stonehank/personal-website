@@ -18,6 +18,12 @@
             }
         },
         watch:{
+            finalNum(newV,oldV){
+                if(newV===oldV)return
+                if(this.start || !this.animate){
+                    this.num=newV
+                }
+            },
             start:{
                 immediate:true,
                 handler(newV){

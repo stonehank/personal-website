@@ -259,5 +259,7413 @@
       "双指针",
       "排序"
     ]
+  },
+  "jian-zhi-Offer-59-II-dui-lie-de-zui-da-zhi-LCOF": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "剑指 Offer 59 - II",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-03-22",
+    "timeArr": [
+      2020,
+      2,
+      22,
+      18,
+      49,
+      30,
+      0
+    ],
+    "hasThinking": false,
+    "title": "剑指 Offer 59 - II. 队列的最大值",
+    "slug": "jian-zhi-Offer-59-II-dui-lie-de-zui-da-zhi-LCOF",
+    "relatedTags": [
+      "设计",
+      "队列",
+      "单调队列"
+    ]
+  },
+  "jian-zhi-Offer-57-II-he-wei-s-de-lian-xu-zheng-shu-xu-lie-LCOF": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "剑指 Offer 57 - II",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-03-06",
+    "timeArr": [
+      2020,
+      2,
+      6,
+      22,
+      33,
+      34,
+      0
+    ],
+    "hasThinking": false,
+    "title": "剑指 Offer 57 - II. 和为s的连续正数序列",
+    "slug": "jian-zhi-Offer-57-II-he-wei-s-de-lian-xu-zheng-shu-xu-lie-LCOF",
+    "relatedTags": [
+      "数学",
+      "双指针",
+      "枚举"
+    ]
+  },
+  "jian-zhi-Offer-22-lian-biao-zhong-dao-shu-di-k-ge-jie-dian-LCOF": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "剑指 Offer 22",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-03-22",
+    "timeArr": [
+      2020,
+      2,
+      22,
+      18,
+      59,
+      10,
+      0
+    ],
+    "hasThinking": false,
+    "title": "剑指 Offer 22. 链表中倒数第k个节点",
+    "slug": "jian-zhi-Offer-22-lian-biao-zhong-dao-shu-di-k-ge-jie-dian-LCOF",
+    "relatedTags": [
+      "链表",
+      "双指针"
+    ]
+  },
+  "jian-zhi-Offer-29-shun-shi-zhen-da-yin-ju-zhen-LCOF": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "剑指 Offer 29",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-03-22",
+    "timeArr": [
+      2020,
+      2,
+      22,
+      17,
+      11,
+      4,
+      0
+    ],
+    "hasThinking": false,
+    "title": "剑指 Offer 29. 顺时针打印矩阵",
+    "slug": "jian-zhi-Offer-29-shun-shi-zhen-da-yin-ju-zhen-LCOF",
+    "relatedTags": [
+      "数组",
+      "矩阵",
+      "模拟"
+    ]
+  },
+  "jian-zhi-Offer-10-II-qing-wa-tiao-tai-jie-wen-ti-LCOF": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "剑指 Offer 10- II",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-03-22",
+    "timeArr": [
+      2020,
+      2,
+      22,
+      17,
+      27,
+      37,
+      0
+    ],
+    "hasThinking": false,
+    "title": "剑指 Offer 10- II. 青蛙跳台阶问题",
+    "slug": "jian-zhi-Offer-10-II-qing-wa-tiao-tai-jie-wen-ti-LCOF",
+    "relatedTags": [
+      "记忆化搜索",
+      "数学",
+      "动态规划"
+    ]
+  },
+  "mian-shi-ti-03.06-Animal-Shelter-LCCI": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "面试题 03.06",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-05-26",
+    "timeArr": [
+      2020,
+      4,
+      26,
+      18,
+      7,
+      33,
+      0
+    ],
+    "hasThinking": false,
+    "title": "面试题 03.06. 动物收容所",
+    "slug": "mian-shi-ti-03.06-Animal-Shelter-LCCI",
+    "relatedTags": [
+      "设计",
+      "队列"
+    ]
+  },
+  "mian-shi-ti-03.03-Stack-of-Plates-LCCI": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "面试题 03.03",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-04-24",
+    "timeArr": [
+      2020,
+      3,
+      24,
+      20,
+      42,
+      1,
+      0
+    ],
+    "hasThinking": false,
+    "title": "面试题 03.03. 堆盘子",
+    "slug": "mian-shi-ti-03.03-Stack-of-Plates-LCCI",
+    "relatedTags": [
+      "栈",
+      "设计",
+      "链表"
+    ]
+  },
+  "mian-shi-ti-04.02-Minimum-Height-Tree-LCCI": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "面试题 04.02",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-05-26",
+    "timeArr": [
+      2020,
+      4,
+      26,
+      17,
+      20,
+      8,
+      0
+    ],
+    "hasThinking": false,
+    "title": "面试题 04.02. 最小高度树",
+    "slug": "mian-shi-ti-04.02-Minimum-Height-Tree-LCCI",
+    "relatedTags": [
+      "树",
+      "二叉搜索树",
+      "数组",
+      "分治",
+      "二叉树"
+    ]
+  },
+  "mian-shi-ti-03.05-Sort-of-Stacks-LCCI": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "面试题 03.05",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-05-26",
+    "timeArr": [
+      2020,
+      4,
+      26,
+      22,
+      40,
+      36,
+      0
+    ],
+    "hasThinking": false,
+    "title": "面试题 03.05. 栈排序",
+    "slug": "mian-shi-ti-03.05-Sort-of-Stacks-LCCI",
+    "relatedTags": [
+      "栈",
+      "设计",
+      "单调栈"
+    ]
+  },
+  "mian-shi-ti-04.01-Route-Between-Nodes-LCCI": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "面试题 04.01",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-05-26",
+    "timeArr": [
+      2020,
+      4,
+      26,
+      21,
+      34,
+      27,
+      0
+    ],
+    "hasThinking": false,
+    "title": "面试题 04.01. 节点间通路",
+    "slug": "mian-shi-ti-04.01-Route-Between-Nodes-LCCI",
+    "relatedTags": [
+      "深度优先搜索",
+      "广度优先搜索",
+      "图"
+    ]
+  },
+  "LCP-01-Guess-Numbers": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "LCP 01",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2019-09-24",
+    "timeArr": [
+      2019,
+      8,
+      24,
+      21,
+      32,
+      9,
+      0
+    ],
+    "hasThinking": false,
+    "title": "LCP 01. 猜数字",
+    "slug": "LCP-01-Guess-Numbers",
+    "relatedTags": [
+      "数组"
+    ]
+  },
+  "LCP-03-Programmable-Robot": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "LCP 03",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-09-24",
+    "timeArr": [
+      2019,
+      8,
+      24,
+      22,
+      38,
+      42,
+      0
+    ],
+    "hasThinking": false,
+    "title": "LCP 03. 机器人大冒险",
+    "slug": "LCP-03-Programmable-Robot",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "模拟"
+    ]
+  },
+  "LCP-05-Coin-Bonus": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "LCP 05",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2019-09-25",
+    "timeArr": [
+      2019,
+      8,
+      25,
+      0,
+      17,
+      16,
+      0
+    ],
+    "hasThinking": false,
+    "title": "LCP 05. 发 LeetCoin",
+    "slug": "LCP-05-Coin-Bonus",
+    "relatedTags": [
+      "树状数组",
+      "线段树",
+      "数组"
+    ]
+  },
+  "LCP-02-Deep-Dark-Fraction": {
+    "lang": [
+      "javascript",
+      "python"
+    ],
+    "uniqueID": "LCP 02",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "hasThinking": false,
+    "title": "LCP 02. 分式化简",
+    "slug": "LCP-02-Deep-Dark-Fraction",
+    "relatedTags": [
+      "数组",
+      "数学",
+      "数论",
+      "模拟"
+    ]
+  },
+  "1727-Largest-Submatrix-With-Rearrangements": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1727",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2021-02-26",
+    "timeArr": [
+      2021,
+      1,
+      26,
+      9,
+      53,
+      17,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1727. 重新排列后的最大子矩阵",
+    "slug": "1727-Largest-Submatrix-With-Rearrangements",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "矩阵",
+      "排序"
+    ]
+  },
+  "1725-Number-Of-Rectangles-That-Can-Form-The-Largest-Square": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1725",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2021-02-24",
+    "timeArr": [
+      2021,
+      1,
+      24,
+      9,
+      4,
+      17,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1725. 可以形成最大正方形的矩形数目",
+    "slug": "1725-Number-Of-Rectangles-That-Can-Form-The-Largest-Square",
+    "relatedTags": [
+      "数组"
+    ]
+  },
+  "1722-Minimize-Hamming-Distance-After-Swap-Operations": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1722",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2021-02-27",
+    "timeArr": [
+      2021,
+      1,
+      27,
+      13,
+      23,
+      41,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1722. 执行交换操作后的最小汉明距离",
+    "slug": "1722-Minimize-Hamming-Distance-After-Swap-Operations",
+    "relatedTags": [
+      "深度优先搜索",
+      "并查集",
+      "数组"
+    ]
+  },
+  "1720-Decode-XORed-Array": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1720",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2021-01-21",
+    "timeArr": [
+      2021,
+      0,
+      21,
+      14,
+      46,
+      1,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1720. 解码异或后的数组",
+    "slug": "1720-Decode-XORed-Array",
+    "relatedTags": [
+      "位运算",
+      "数组"
+    ]
+  },
+  "1712-Ways-to-Split-Array-Into-Three-Subarrays": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1712",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2021-01-17",
+    "timeArr": [
+      2021,
+      0,
+      17,
+      12,
+      6,
+      10,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1712. 将数组分成三个子数组的方案数",
+    "slug": "1712-Ways-to-Split-Array-Into-Three-Subarrays",
+    "relatedTags": [
+      "数组",
+      "双指针",
+      "二分查找",
+      "前缀和"
+    ]
+  },
+  "1711-Count-Good-Meals": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1711",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2021-01-17",
+    "timeArr": [
+      2021,
+      0,
+      17,
+      11,
+      4,
+      35,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1711. 大餐计数",
+    "slug": "1711-Count-Good-Meals",
+    "relatedTags": [
+      "数组",
+      "哈希表"
+    ]
+  },
+  "1710-Maximum-Units-on-a-Truck": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1710",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2021-01-16",
+    "timeArr": [
+      2021,
+      0,
+      16,
+      12,
+      38,
+      1,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1710. 卡车上的最大单元数",
+    "slug": "1710-Maximum-Units-on-a-Truck",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "排序"
+    ]
+  },
+  "1705-Maximum-Number-of-Eaten-Apples": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1705",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2021-01-10",
+    "timeArr": [
+      2021,
+      0,
+      10,
+      17,
+      57,
+      19,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1705. 吃苹果的最大数目",
+    "slug": "1705-Maximum-Number-of-Eaten-Apples",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "堆（优先队列）"
+    ]
+  },
+  "1704-Determine-if-String-Halves-Are-Alike": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1704",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2021-01-10",
+    "timeArr": [
+      2021,
+      0,
+      10,
+      15,
+      26,
+      44,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1704. 判断字符串的两半是否相似",
+    "slug": "1704-Determine-if-String-Halves-Are-Alike",
+    "relatedTags": [
+      "字符串",
+      "计数"
+    ]
+  },
+  "1718-Construct-the-Lexicographically-Largest-Valid-Sequence": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1718",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2021-01-20",
+    "timeArr": [
+      2021,
+      0,
+      20,
+      21,
+      41,
+      21,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1718. 构建字典序最大的可行序列",
+    "slug": "1718-Construct-the-Lexicographically-Largest-Valid-Sequence",
+    "relatedTags": [
+      "数组",
+      "回溯"
+    ]
+  },
+  "1717-Maximum-Score-From-Removing-Substrings": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1717",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2021-01-17",
+    "timeArr": [
+      2021,
+      0,
+      17,
+      21,
+      56,
+      29,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1717. 删除子字符串的最大得分",
+    "slug": "1717-Maximum-Score-From-Removing-Substrings",
+    "relatedTags": [
+      "栈",
+      "贪心",
+      "字符串"
+    ]
+  },
+  "1716-Calculate-Money-in-Leetcode-Bank": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1716",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2021-01-17",
+    "timeArr": [
+      2021,
+      0,
+      17,
+      17,
+      7,
+      36,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1716. 计算力扣银行的钱",
+    "slug": "1716-Calculate-Money-in-Leetcode-Bank",
+    "relatedTags": [
+      "数学"
+    ]
+  },
+  "1696-Jump-Game-VI": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1696",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-12-25",
+    "timeArr": [
+      2020,
+      11,
+      25,
+      23,
+      16,
+      0,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1696. 跳跃游戏 VI",
+    "slug": "1696-Jump-Game-VI",
+    "relatedTags": [
+      "队列",
+      "数组",
+      "动态规划",
+      "滑动窗口",
+      "单调队列",
+      "堆（优先队列）"
+    ]
+  },
+  "1695-Maximum-Erasure-Value": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1695",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-12-25",
+    "timeArr": [
+      2020,
+      11,
+      25,
+      20,
+      44,
+      22,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1695. 删除子数组的最大得分",
+    "slug": "1695-Maximum-Erasure-Value",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "滑动窗口"
+    ]
+  },
+  "1694-Reformat-Phone-Number": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1694",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-12-25",
+    "timeArr": [
+      2020,
+      11,
+      25,
+      17,
+      23,
+      19,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1694. 重新格式化电话号码",
+    "slug": "1694-Reformat-Phone-Number",
+    "relatedTags": [
+      "字符串"
+    ]
+  },
+  "1689-Partitioning-Into-Minimum-Number-Of-Deci-Binary-Numbers": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1689",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-12-21",
+    "timeArr": [
+      2020,
+      11,
+      21,
+      23,
+      11,
+      14,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1689. 十-二进制数的最少数目",
+    "slug": "1689-Partitioning-Into-Minimum-Number-Of-Deci-Binary-Numbers",
+    "relatedTags": [
+      "贪心",
+      "字符串"
+    ]
+  },
+  "1688-Count-of-Matches-in-Tournament": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1688",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-12-21",
+    "timeArr": [
+      2020,
+      11,
+      21,
+      22,
+      44,
+      48,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1688. 比赛中的配对次数",
+    "slug": "1688-Count-of-Matches-in-Tournament",
+    "relatedTags": [
+      "数学",
+      "模拟"
+    ]
+  },
+  "1702-Maximum-Binary-String-After-Change": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1702",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2021-01-10",
+    "timeArr": [
+      2021,
+      0,
+      10,
+      15,
+      18,
+      5,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1702. 修改后的最大二进制字符串",
+    "slug": "1702-Maximum-Binary-String-After-Change",
+    "relatedTags": [
+      "贪心",
+      "字符串"
+    ]
+  },
+  "1701-Average-Waiting-Time": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1701",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2021-01-10",
+    "timeArr": [
+      2021,
+      0,
+      10,
+      15,
+      0,
+      20,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1701. 平均等待时间",
+    "slug": "1701-Average-Waiting-Time",
+    "relatedTags": [
+      "数组",
+      "模拟"
+    ]
+  },
+  "1700-Number-of-Students-Unable-to-Eat-Lunch": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1700",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2021-01-10",
+    "timeArr": [
+      2021,
+      0,
+      10,
+      14,
+      52,
+      39,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1700. 无法吃午餐的学生数量",
+    "slug": "1700-Number-of-Students-Unable-to-Eat-Lunch",
+    "relatedTags": [
+      "栈",
+      "队列",
+      "数组",
+      "模拟"
+    ]
+  },
+  "1680-Concatenation-of-Consecutive-Binary-Numbers": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1680",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-12-19",
+    "timeArr": [
+      2020,
+      11,
+      19,
+      9,
+      34,
+      50,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1680. 连接连续二进制数字",
+    "slug": "1680-Concatenation-of-Consecutive-Binary-Numbers",
+    "relatedTags": [
+      "位运算",
+      "数学",
+      "模拟"
+    ]
+  },
+  "1679-Max-Number-of-K-Sum-Pairs": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1679",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-12-18",
+    "timeArr": [
+      2020,
+      11,
+      18,
+      21,
+      14,
+      8,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1679. K 和数对的最大数目",
+    "slug": "1679-Max-Number-of-K-Sum-Pairs",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "双指针",
+      "排序"
+    ]
+  },
+  "1678-Goal-Parser-Interpretation": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1678",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-12-18",
+    "timeArr": [
+      2020,
+      11,
+      18,
+      20,
+      38,
+      14,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1678. 设计 Goal 解析器",
+    "slug": "1678-Goal-Parser-Interpretation",
+    "relatedTags": [
+      "字符串"
+    ]
+  },
+  "1674-Minimum-Moves-to-Make-Array-Complementary": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1674",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-12-13",
+    "timeArr": [
+      2020,
+      11,
+      13,
+      10,
+      30,
+      17,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1674. 使数组互补的最少操作次数",
+    "slug": "1674-Minimum-Moves-to-Make-Array-Complementary",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "前缀和"
+    ]
+  },
+  "1673-Find-the-Most-Competitive-Subsequence": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1673",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-12-06",
+    "timeArr": [
+      2020,
+      11,
+      6,
+      13,
+      13,
+      44,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1673. 找出最具竞争力的子序列",
+    "slug": "1673-Find-the-Most-Competitive-Subsequence",
+    "relatedTags": [
+      "栈",
+      "贪心",
+      "数组",
+      "单调栈"
+    ]
+  },
+  "1672-Richest-Customer-Wealth": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1672",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-12-06",
+    "timeArr": [
+      2020,
+      11,
+      6,
+      11,
+      8,
+      3,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1672. 最富有客户的资产总量",
+    "slug": "1672-Richest-Customer-Wealth",
+    "relatedTags": [
+      "数组",
+      "矩阵"
+    ]
+  },
+  "1686-Stone-Game-VI": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1686",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-12-19",
+    "timeArr": [
+      2020,
+      11,
+      19,
+      12,
+      14,
+      49,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1686. 石子游戏 VI",
+    "slug": "1686-Stone-Game-VI",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "数学",
+      "博弈",
+      "排序",
+      "堆（优先队列）"
+    ]
+  },
+  "1685-Sum-of-Absolute-Differences-in-a-Sorted-Array": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1685",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-12-19",
+    "timeArr": [
+      2020,
+      11,
+      19,
+      11,
+      21,
+      37,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1685. 有序数组中差绝对值之和",
+    "slug": "1685-Sum-of-Absolute-Differences-in-a-Sorted-Array",
+    "relatedTags": [
+      "数组",
+      "数学",
+      "前缀和"
+    ]
+  },
+  "1684-Count-the-Number-of-Consistent-Strings": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1684",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-12-19",
+    "timeArr": [
+      2020,
+      11,
+      19,
+      9,
+      41,
+      42,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1684. 统计一致字符串的数目",
+    "slug": "1684-Count-the-Number-of-Consistent-Strings",
+    "relatedTags": [
+      "位运算",
+      "数组",
+      "哈希表",
+      "字符串"
+    ]
+  },
+  "1664-Ways-to-Make-a-Fair-Array": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1664",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-11-24",
+    "timeArr": [
+      2020,
+      10,
+      24,
+      18,
+      4,
+      0,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1664. 生成平衡数组的方案数",
+    "slug": "1664-Ways-to-Make-a-Fair-Array",
+    "relatedTags": [
+      "数组",
+      "动态规划"
+    ]
+  },
+  "1663-Smallest-String-With-A-Given-Numeric-Value": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1663",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-11-23",
+    "timeArr": [
+      2020,
+      10,
+      23,
+      22,
+      54,
+      9,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1663. 具有给定数值的最小字符串",
+    "slug": "1663-Smallest-String-With-A-Given-Numeric-Value",
+    "relatedTags": [
+      "贪心",
+      "字符串"
+    ]
+  },
+  "1662-Check-If-Two-String-Arrays-are-Equivalent": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1662",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-11-23",
+    "timeArr": [
+      2020,
+      10,
+      23,
+      21,
+      51,
+      43,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1662. 检查两个字符串数组是否相等",
+    "slug": "1662-Check-If-Two-String-Arrays-are-Equivalent",
+    "relatedTags": [
+      "数组",
+      "字符串"
+    ]
+  },
+  "1657-Determine-if-Two-Strings-Are-Close": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1657",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-11-22",
+    "timeArr": [
+      2020,
+      10,
+      22,
+      10,
+      37,
+      38,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1657. 确定两个字符串是否接近",
+    "slug": "1657-Determine-if-Two-Strings-Are-Close",
+    "relatedTags": [
+      "哈希表",
+      "字符串",
+      "排序"
+    ]
+  },
+  "1658-Minimum-Operations-to-Reduce-X-to-Zero": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1658",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-11-22",
+    "timeArr": [
+      2020,
+      10,
+      22,
+      11,
+      21,
+      10,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1658. 将 x 减到 0 的最小操作数",
+    "slug": "1658-Minimum-Operations-to-Reduce-X-to-Zero",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "双指针",
+      "二分查找",
+      "前缀和"
+    ]
+  },
+  "1656-Design-an-Ordered-Stream": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1656",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-11-22",
+    "timeArr": [
+      2020,
+      10,
+      22,
+      10,
+      26,
+      32,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1656. 设计有序流",
+    "slug": "1656-Design-an-Ordered-Stream",
+    "relatedTags": [
+      "设计",
+      "数组",
+      "哈希表",
+      "数据流"
+    ]
+  },
+  "1647-Minimum-Deletions-to-Make-Character-Frequencies-Unique": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1647",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-12-26",
+    "timeArr": [
+      2020,
+      11,
+      26,
+      20,
+      58,
+      29,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1647. 字符频次唯一的最小删除次数",
+    "slug": "1647-Minimum-Deletions-to-Make-Character-Frequencies-Unique",
+    "relatedTags": [
+      "贪心",
+      "字符串",
+      "排序"
+    ]
+  },
+  "1646-Get-Maximum-in-Generated-Array": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1646",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-12-26",
+    "timeArr": [
+      2020,
+      11,
+      26,
+      18,
+      1,
+      19,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1646. 获取生成数组中的最大值",
+    "slug": "1646-Get-Maximum-in-Generated-Array",
+    "relatedTags": [
+      "数组",
+      "动态规划",
+      "模拟"
+    ]
+  },
+  "1670-Design-Front-Middle-Back-Queue": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1670",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-12-06",
+    "timeArr": [
+      2020,
+      11,
+      6,
+      10,
+      50,
+      3,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1670. 设计前中后队列",
+    "slug": "1670-Design-Front-Middle-Back-Queue",
+    "relatedTags": [
+      "设计",
+      "队列",
+      "数组",
+      "链表",
+      "数据流"
+    ]
+  },
+  "1669-Merge-In-Between-Linked-Lists": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1669",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-12-05",
+    "timeArr": [
+      2020,
+      11,
+      5,
+      16,
+      34,
+      53,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1669. 合并两个链表",
+    "slug": "1669-Merge-In-Between-Linked-Lists",
+    "relatedTags": [
+      "链表"
+    ]
+  },
+  "1668-Maximum-Repeating-Substring": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1668",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-12-05",
+    "timeArr": [
+      2020,
+      11,
+      5,
+      16,
+      16,
+      19,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1668. 最大重复子字符串",
+    "slug": "1668-Maximum-Repeating-Substring",
+    "relatedTags": [
+      "字符串",
+      "字符串匹配"
+    ]
+  },
+  "1642-Furthest-Building-You-Can-Reach": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1642",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2021-03-04",
+    "timeArr": [
+      2021,
+      2,
+      4,
+      12,
+      22,
+      45,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1642. 可以到达的最远建筑",
+    "slug": "1642-Furthest-Building-You-Can-Reach",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "堆（优先队列）"
+    ]
+  },
+  "1641-Count-Sorted-Vowel-Strings": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1641",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2021-03-04",
+    "timeArr": [
+      2021,
+      2,
+      4,
+      8,
+      34,
+      47,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1641. 统计字典序元音字符串的数目",
+    "slug": "1641-Count-Sorted-Vowel-Strings",
+    "relatedTags": [
+      "动态规划"
+    ]
+  },
+  "1640-Check-Array-Formation-Through-Concatenation": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1640",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2021-03-04",
+    "timeArr": [
+      2021,
+      2,
+      4,
+      7,
+      50,
+      34,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1640. 能否连接形成数组",
+    "slug": "1640-Check-Array-Formation-Through-Concatenation",
+    "relatedTags": [
+      "数组",
+      "哈希表"
+    ]
+  },
+  "1654-Minimum-Jumps-to-Reach-Home": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1654",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-12-16",
+    "timeArr": [
+      2020,
+      11,
+      16,
+      22,
+      29,
+      24,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1654. 到家的最少跳跃次数",
+    "slug": "1654-Minimum-Jumps-to-Reach-Home",
+    "relatedTags": [
+      "广度优先搜索",
+      "数组",
+      "动态规划"
+    ]
+  },
+  "1653-Minimum-Deletions-to-Make-String-Balanced": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1653",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-11-28",
+    "timeArr": [
+      2020,
+      10,
+      28,
+      12,
+      55,
+      5,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1653. 使字符串平衡的最少删除次数",
+    "slug": "1653-Minimum-Deletions-to-Make-String-Balanced",
+    "relatedTags": [
+      "栈",
+      "字符串",
+      "动态规划"
+    ]
+  },
+  "1652-Defuse-the-Bomb": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1652",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-11-25",
+    "timeArr": [
+      2020,
+      10,
+      25,
+      20,
+      55,
+      10,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1652. 拆炸弹",
+    "slug": "1652-Defuse-the-Bomb",
+    "relatedTags": [
+      "数组"
+    ]
+  },
+  "1637-Widest-Vertical-Area-Between-Two-Points-Containing-No-Points": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1637",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-11-04",
+    "timeArr": [
+      2020,
+      10,
+      4,
+      20,
+      57,
+      47,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1637. 两点之间不包含任何点的最宽垂直面积",
+    "slug": "1637-Widest-Vertical-Area-Between-Two-Points-Containing-No-Points",
+    "relatedTags": [
+      "数组",
+      "排序"
+    ]
+  },
+  "1616-Split-Two-Strings-to-Make-Palindrome": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1616",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-10-17",
+    "timeArr": [
+      2020,
+      9,
+      17,
+      16,
+      19,
+      30,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1616. 分割两个字符串得到回文串",
+    "slug": "1616-Split-Two-Strings-to-Make-Palindrome",
+    "relatedTags": [
+      "贪心",
+      "双指针",
+      "字符串"
+    ]
+  },
+  "1615-Maximal-Network-Rank": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1615",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-10-13",
+    "timeArr": [
+      2020,
+      9,
+      13,
+      10,
+      15,
+      33,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1615. 最大网络秩",
+    "slug": "1615-Maximal-Network-Rank",
+    "relatedTags": [
+      "图"
+    ]
+  },
+  "1614-Maximum-Nesting-Depth-of-the-Parentheses": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1614",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-10-12",
+    "timeArr": [
+      2020,
+      9,
+      12,
+      17,
+      31,
+      8,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1614. 括号的最大嵌套深度",
+    "slug": "1614-Maximum-Nesting-Depth-of-the-Parentheses",
+    "relatedTags": [
+      "栈",
+      "字符串"
+    ]
+  },
+  "1609-Even-Odd-Tree": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1609",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-10-17",
+    "timeArr": [
+      2020,
+      9,
+      17,
+      16,
+      33,
+      56,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1609. 奇偶树",
+    "slug": "1609-Even-Odd-Tree",
+    "relatedTags": [
+      "树",
+      "广度优先搜索",
+      "二叉树"
+    ]
+  },
+  "1608-Special-Array-With-X-Elements-Greater-Than-or-Equal-X": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1608",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-10-17",
+    "timeArr": [
+      2020,
+      9,
+      17,
+      16,
+      23,
+      12,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1608. 特殊数组的特征值",
+    "slug": "1608-Special-Array-With-X-Elements-Greater-Than-or-Equal-X",
+    "relatedTags": [
+      "数组",
+      "二分查找",
+      "排序"
+    ]
+  },
+  "1594-Maximum-Non-Negative-Product-in-a-Matrix": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1594",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-09-26",
+    "timeArr": [
+      2020,
+      8,
+      26,
+      19,
+      8,
+      43,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1594. 矩阵的最大非负积",
+    "slug": "1594-Maximum-Non-Negative-Product-in-a-Matrix",
+    "relatedTags": [
+      "数组",
+      "动态规划",
+      "矩阵"
+    ]
+  },
+  "1593-Split-a-String-Into-the-Max-Number-of-Unique-Substrings": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1593",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-09-26",
+    "timeArr": [
+      2020,
+      8,
+      26,
+      17,
+      11,
+      1,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1593. 拆分字符串使唯一子字符串的数目最大",
+    "slug": "1593-Split-a-String-Into-the-Max-Number-of-Unique-Substrings",
+    "relatedTags": [
+      "哈希表",
+      "字符串",
+      "回溯"
+    ]
+  },
+  "1603-Design-Parking-System": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1603",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2021-03-19",
+    "timeArr": [
+      2021,
+      2,
+      19,
+      7,
+      8,
+      9,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1603. 设计停车系统",
+    "slug": "1603-Design-Parking-System",
+    "relatedTags": [
+      "设计",
+      "计数",
+      "模拟"
+    ]
+  },
+  "1584-Min-Cost-to-Connect-All-Points": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1584",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-09-13",
+    "timeArr": [
+      2020,
+      8,
+      13,
+      11,
+      53,
+      54,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1584. 连接所有点的最小费用",
+    "slug": "1584-Min-Cost-to-Connect-All-Points",
+    "relatedTags": [
+      "并查集",
+      "数组",
+      "最小生成树"
+    ]
+  },
+  "1583-Count-Unhappy-Friends": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1583",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-09-13",
+    "timeArr": [
+      2020,
+      8,
+      13,
+      11,
+      36,
+      4,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1583. 统计不开心的朋友",
+    "slug": "1583-Count-Unhappy-Friends",
+    "relatedTags": [
+      "数组",
+      "模拟"
+    ]
+  },
+  "1582-Special-Positions-in-a-Binary-Matrix": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1582",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-09-13",
+    "timeArr": [
+      2020,
+      8,
+      13,
+      11,
+      36,
+      10,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1582. 二进制矩阵中的特殊位置",
+    "slug": "1582-Special-Positions-in-a-Binary-Matrix",
+    "relatedTags": [
+      "数组",
+      "矩阵"
+    ]
+  },
+  "1578-Minimum-Deletion-Cost-to-Avoid-Repeating-Letters": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1578",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-09-06",
+    "timeArr": [
+      2020,
+      8,
+      6,
+      11,
+      43,
+      26,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1578. 避免重复字母的最小删除成本",
+    "slug": "1578-Minimum-Deletion-Cost-to-Avoid-Repeating-Letters",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "字符串",
+      "动态规划"
+    ]
+  },
+  "1577-Number-of-Ways-Where-Square-of-Number-Is-Equal-to-Product-of-Two-Numbers": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1577",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-09-06",
+    "timeArr": [
+      2020,
+      8,
+      6,
+      11,
+      55,
+      31,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1577. 数的平方等于两数乘积的方法数",
+    "slug": "1577-Number-of-Ways-Where-Square-of-Number-Is-Equal-to-Product-of-Two-Numbers",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "数学",
+      "双指针"
+    ]
+  },
+  "1576-Replace-All-s-to-Avoid-Consecutive-Repeating-Characters": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1576",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-09-06",
+    "timeArr": [
+      2020,
+      8,
+      6,
+      10,
+      40,
+      44,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1576. 替换所有的问号",
+    "slug": "1576-Replace-All-s-to-Avoid-Consecutive-Repeating-Characters",
+    "relatedTags": [
+      "字符串"
+    ]
+  },
+  "1589-Maximum-Sum-Obtained-of-Any-Permutation": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1589",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-09-20",
+    "timeArr": [
+      2020,
+      8,
+      20,
+      11,
+      7,
+      5,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1589. 所有排列中的最大和",
+    "slug": "1589-Maximum-Sum-Obtained-of-Any-Permutation",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "前缀和",
+      "排序"
+    ]
+  },
+  "1590-Make-Sum-Divisible-by-P": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1590",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-09-20",
+    "timeArr": [
+      2020,
+      8,
+      20,
+      13,
+      58,
+      56,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1590. 使数组和能被 P 整除",
+    "slug": "1590-Make-Sum-Divisible-by-P",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "前缀和"
+    ]
+  },
+  "1588-Sum-of-All-Odd-Length-Subarrays": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1588",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-09-20",
+    "timeArr": [
+      2020,
+      8,
+      20,
+      10,
+      39,
+      56,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1588. 所有奇数长度子数组的和",
+    "slug": "1588-Sum-of-All-Odd-Length-Subarrays",
+    "relatedTags": [
+      "数组",
+      "前缀和"
+    ]
+  },
+  "1568-Minimum-Number-of-Days-to-Disconnect-Island": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1568",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2020-08-30",
+    "timeArr": [
+      2020,
+      7,
+      30,
+      12,
+      6,
+      13,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1568. 使陆地分离的最少天数",
+    "slug": "1568-Minimum-Number-of-Days-to-Disconnect-Island",
+    "relatedTags": [
+      "深度优先搜索",
+      "广度优先搜索",
+      "数组",
+      "矩阵",
+      "强连通分量"
+    ]
+  },
+  "1567-Maximum-Length-of-Subarray-With-Positive-Product": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1567",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-08-30",
+    "timeArr": [
+      2020,
+      7,
+      30,
+      11,
+      8,
+      2,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1567. 乘积为正数的最长子数组长度",
+    "slug": "1567-Maximum-Length-of-Subarray-With-Positive-Product",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "动态规划"
+    ]
+  },
+  "1566-Detect-Pattern-of-Length-M-Repeated-K-or-More-Times": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1566",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-08-30",
+    "timeArr": [
+      2020,
+      7,
+      30,
+      10,
+      46,
+      20,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1566. 重复至少 K 次且长度为 M 的模式",
+    "slug": "1566-Detect-Pattern-of-Length-M-Repeated-K-or-More-Times",
+    "relatedTags": [
+      "数组",
+      "枚举"
+    ]
+  },
+  "1560-Most-Visited-Sector-in-a-Circular-Track": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1560",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-08-23",
+    "timeArr": [
+      2020,
+      7,
+      23,
+      17,
+      16,
+      43,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1560. 圆形赛道上经过次数最多的扇区",
+    "slug": "1560-Most-Visited-Sector-in-a-Circular-Track",
+    "relatedTags": [
+      "数组",
+      "模拟"
+    ]
+  },
+  "1572-Matrix-Diagonal-Sum": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1572",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-09-26",
+    "timeArr": [
+      2020,
+      8,
+      26,
+      21,
+      54,
+      5,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1572. 矩阵对角线元素的和",
+    "slug": "1572-Matrix-Diagonal-Sum",
+    "relatedTags": [
+      "数组",
+      "矩阵"
+    ]
+  },
+  "1552-Magnetic-Force-Between-Two-Balls": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1552",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-08-16",
+    "timeArr": [
+      2020,
+      7,
+      16,
+      21,
+      20,
+      24,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1552. 两球之间的磁力",
+    "slug": "1552-Magnetic-Force-Between-Two-Balls",
+    "relatedTags": [
+      "数组",
+      "二分查找",
+      "排序"
+    ]
+  },
+  "1551-Minimum-Operations-to-Make-Array-Equal": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1551",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-08-16",
+    "timeArr": [
+      2020,
+      7,
+      16,
+      18,
+      42,
+      42,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1551. 使数组中所有元素相等的最小操作数",
+    "slug": "1551-Minimum-Operations-to-Make-Array-Equal",
+    "relatedTags": [
+      "数学"
+    ]
+  },
+  "1545-Find-Kth-Bit-in-Nth-Binary-String": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1545",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-08-09",
+    "timeArr": [
+      2020,
+      7,
+      9,
+      12,
+      34,
+      49,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1545. 找出第 N 个二进制字符串中的第 K 位",
+    "slug": "1545-Find-Kth-Bit-in-Nth-Binary-String",
+    "relatedTags": [
+      "递归",
+      "字符串"
+    ]
+  },
+  "1544-Make-The-String-Great": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1544",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-08-09",
+    "timeArr": [
+      2020,
+      7,
+      9,
+      12,
+      29,
+      24,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1544. 整理字符串",
+    "slug": "1544-Make-The-String-Great",
+    "relatedTags": [
+      "栈",
+      "字符串"
+    ]
+  },
+  "1536-Minimum-Swaps-to-Arrange-a-Binary-Grid": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1536",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-08-02",
+    "timeArr": [
+      2020,
+      7,
+      2,
+      17,
+      25,
+      9,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1536. 排布二进制网格的最少交换次数",
+    "slug": "1536-Minimum-Swaps-to-Arrange-a-Binary-Grid",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "矩阵"
+    ]
+  },
+  "1535-Find-the-Winner-of-an-Array-Game": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1535",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-08-02",
+    "timeArr": [
+      2020,
+      7,
+      2,
+      10,
+      38,
+      55,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1535. 找出数组游戏的赢家",
+    "slug": "1535-Find-the-Winner-of-an-Array-Game",
+    "relatedTags": [
+      "数组",
+      "模拟"
+    ]
+  },
+  "1534-Count-Good-Triplets": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1534",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-08-02",
+    "timeArr": [
+      2020,
+      7,
+      2,
+      10,
+      32,
+      43,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1534. 统计好三元组",
+    "slug": "1534-Count-Good-Triplets",
+    "relatedTags": [
+      "数组",
+      "枚举"
+    ]
+  },
+  "1530-Number-of-Good-Leaf-Nodes-Pairs": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1530",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-07-26",
+    "timeArr": [
+      2020,
+      6,
+      26,
+      15,
+      15,
+      36,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1530. 好叶子节点对的数量",
+    "slug": "1530-Number-of-Good-Leaf-Nodes-Pairs",
+    "relatedTags": [
+      "树",
+      "深度优先搜索",
+      "二叉树"
+    ]
+  },
+  "1529-Bulb-Switcher-IV": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1529",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-07-26",
+    "timeArr": [
+      2020,
+      6,
+      26,
+      10,
+      37,
+      31,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1529. 灯泡开关 IV",
+    "slug": "1529-Bulb-Switcher-IV",
+    "relatedTags": [
+      "贪心",
+      "字符串"
+    ]
+  },
+  "1528-Shuffle-String": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1528",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-07-26",
+    "timeArr": [
+      2020,
+      6,
+      26,
+      10,
+      35,
+      10,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1528. 重新排列字符串",
+    "slug": "1528-Shuffle-String",
+    "relatedTags": [
+      "数组",
+      "字符串"
+    ]
+  },
+  "1546-Maximum-Number-of-Non-Overlapping-Subarrays-With-Sum-Equals-Target": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1546",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-08-17",
+    "timeArr": [
+      2020,
+      7,
+      17,
+      15,
+      37,
+      55,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1546. 和为目标值且不重叠的非空子数组的最大数目",
+    "slug": "1546-Maximum-Number-of-Non-Overlapping-Subarrays-With-Sum-Equals-Target",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "哈希表",
+      "前缀和"
+    ]
+  },
+  "1519-Number-of-Nodes-in-the-Sub-Tree-With-the-Same-Label": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1519",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-07-19",
+    "timeArr": [
+      2020,
+      6,
+      19,
+      10,
+      55,
+      28,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1519. 子树中标签相同的节点数",
+    "slug": "1519-Number-of-Nodes-in-the-Sub-Tree-With-the-Same-Label",
+    "relatedTags": [
+      "树",
+      "深度优先搜索",
+      "广度优先搜索"
+    ]
+  },
+  "1518-Water-Bottles": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1518",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-07-19",
+    "timeArr": [
+      2020,
+      6,
+      19,
+      10,
+      33,
+      47,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1518. 换酒问题",
+    "slug": "1518-Water-Bottles",
+    "relatedTags": [
+      "数学",
+      "模拟"
+    ]
+  },
+  "1515-Best-Position-for-a-Service-Centre": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1515",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2020-07-12",
+    "timeArr": [
+      2020,
+      6,
+      12,
+      11,
+      30,
+      58,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1515. 服务中心的最佳位置",
+    "slug": "1515-Best-Position-for-a-Service-Centre",
+    "relatedTags": [
+      "几何",
+      "数学",
+      "随机化"
+    ]
+  },
+  "1513-Number-of-Substrings-With-Only-1s": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1513",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-07-12",
+    "timeArr": [
+      2020,
+      6,
+      12,
+      10,
+      41,
+      47,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1513. 仅含 1 的子串数",
+    "slug": "1513-Number-of-Substrings-With-Only-1s",
+    "relatedTags": [
+      "数学",
+      "字符串"
+    ]
+  },
+  "1512-Number-of-Good-Pairs": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1512",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-07-12",
+    "timeArr": [
+      2020,
+      6,
+      12,
+      10,
+      31,
+      48,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1512. 好数对的数目",
+    "slug": "1512-Number-of-Good-Pairs",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "数学",
+      "计数"
+    ]
+  },
+  "1525-Number-of-Good-Ways-to-Split-a-String": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1525",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-08-08",
+    "timeArr": [
+      2020,
+      7,
+      8,
+      16,
+      51,
+      1,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1525. 字符串的好分割数目",
+    "slug": "1525-Number-of-Good-Ways-to-Split-a-String",
+    "relatedTags": [
+      "位运算",
+      "字符串",
+      "动态规划"
+    ]
+  },
+  "1524-Number-of-Sub-arrays-With-Odd-Sum": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1524",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-08-08",
+    "timeArr": [
+      2020,
+      7,
+      8,
+      17,
+      27,
+      55,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1524. 和为奇数的子数组数目",
+    "slug": "1524-Number-of-Sub-arrays-With-Odd-Sum",
+    "relatedTags": [
+      "数组",
+      "数学",
+      "动态规划",
+      "前缀和"
+    ]
+  },
+  "1504-Count-Submatrices-With-All-Ones": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1504",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-07-05",
+    "timeArr": [
+      2020,
+      6,
+      5,
+      12,
+      56,
+      49,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1504. 统计全 1 子矩形",
+    "slug": "1504-Count-Submatrices-With-All-Ones",
+    "relatedTags": [
+      "栈",
+      "数组",
+      "动态规划",
+      "矩阵",
+      "单调栈"
+    ]
+  },
+  "1503-Last-Moment-Before-All-Ants-Fall-Out-of-a-Plank": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1503",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-07-05",
+    "timeArr": [
+      2020,
+      6,
+      5,
+      12,
+      24,
+      56,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1503. 所有蚂蚁掉下来前的最后一刻",
+    "slug": "1503-Last-Moment-Before-All-Ants-Fall-Out-of-a-Plank",
+    "relatedTags": [
+      "脑筋急转弯",
+      "数组",
+      "模拟"
+    ]
+  },
+  "1502-Can-Make-Arithmetic-Progression-From-Sequence": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1502",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-07-05",
+    "timeArr": [
+      2020,
+      6,
+      5,
+      10,
+      31,
+      17,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1502. 判断能否形成等差数列",
+    "slug": "1502-Can-Make-Arithmetic-Progression-From-Sequence",
+    "relatedTags": [
+      "数组",
+      "排序"
+    ]
+  },
+  "1498-Number-of-Subsequences-That-Satisfy-the-Given-Sum-Condition": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1498",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-06-28",
+    "timeArr": [
+      2020,
+      5,
+      28,
+      18,
+      18,
+      28,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1498. 满足条件的子序列数目",
+    "slug": "1498-Number-of-Subsequences-That-Satisfy-the-Given-Sum-Condition",
+    "relatedTags": [
+      "数组",
+      "双指针",
+      "二分查找",
+      "排序"
+    ]
+  },
+  "1497-Check-If-Array-Pairs-Are-Divisible-by-k": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1497",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-06-28",
+    "timeArr": [
+      2020,
+      5,
+      28,
+      11,
+      12,
+      22,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1497. 检查数组对是否可以被 k 整除",
+    "slug": "1497-Check-If-Array-Pairs-Are-Divisible-by-k",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "计数"
+    ]
+  },
+  "1496-Path-Crossing": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1496",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-06-28",
+    "timeArr": [
+      2020,
+      5,
+      28,
+      10,
+      54,
+      35,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1496. 判断路径是否相交",
+    "slug": "1496-Path-Crossing",
+    "relatedTags": [
+      "哈希表",
+      "字符串"
+    ]
+  },
+  "1488-Avoid-Flood-in-The-City": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1488",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-06-21",
+    "timeArr": [
+      2020,
+      5,
+      21,
+      11,
+      56,
+      41,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1488. 避免洪水泛滥",
+    "slug": "1488-Avoid-Flood-in-The-City",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "哈希表",
+      "二分查找",
+      "堆（优先队列）"
+    ]
+  },
+  "1487-Making-File-Names-Unique": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1487",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-06-21",
+    "timeArr": [
+      2020,
+      5,
+      21,
+      10,
+      52,
+      37,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1487. 保证文件名唯一",
+    "slug": "1487-Making-File-Names-Unique",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "字符串"
+    ]
+  },
+  "1486-XOR-Operation-in-an-Array": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1486",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-06-21",
+    "timeArr": [
+      2020,
+      5,
+      21,
+      10,
+      32,
+      5,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1486. 数组异或操作",
+    "slug": "1486-XOR-Operation-in-an-Array",
+    "relatedTags": [
+      "位运算",
+      "数学"
+    ]
+  },
+  "1493-Longest-Subarray-of-1s-After-Deleting-One-Element": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1493",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-07-08",
+    "timeArr": [
+      2020,
+      6,
+      8,
+      10,
+      18,
+      59,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1493. 删掉一个元素以后全为 1 的最长子数组",
+    "slug": "1493-Longest-Subarray-of-1s-After-Deleting-One-Element",
+    "relatedTags": [
+      "数学",
+      "动态规划",
+      "滑动窗口"
+    ]
+  },
+  "1492-The-kth-Factor-of-n": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1492",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-07-08",
+    "timeArr": [
+      2020,
+      6,
+      8,
+      10,
+      11,
+      22,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1492. n 的第 k 个因子",
+    "slug": "1492-The-kth-Factor-of-n",
+    "relatedTags": [
+      "数学"
+    ]
+  },
+  "1491-Average-Salary-Excluding-the-Minimum-and-Maximum-Salary": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1491",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-07-08",
+    "timeArr": [
+      2020,
+      6,
+      8,
+      10,
+      8,
+      45,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1491. 去掉最低工资和最高工资后的工资平均值",
+    "slug": "1491-Average-Salary-Excluding-the-Minimum-and-Maximum-Salary",
+    "relatedTags": [
+      "数组",
+      "排序"
+    ]
+  },
+  "1472-Design-Browser-History": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1472",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-06-07",
+    "timeArr": [
+      2020,
+      5,
+      7,
+      10,
+      48,
+      40,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1472. 设计浏览器历史记录",
+    "slug": "1472-Design-Browser-History",
+    "relatedTags": [
+      "栈",
+      "设计",
+      "数组",
+      "链表",
+      "数据流",
+      "双向链表"
+    ]
+  },
+  "1471-The-k-Strongest-Values-in-an-Array": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1471",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-06-07",
+    "timeArr": [
+      2020,
+      5,
+      7,
+      10,
+      38,
+      21,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1471. 数组中的 k 个最强值",
+    "slug": "1471-The-k-Strongest-Values-in-an-Array",
+    "relatedTags": [
+      "数组",
+      "双指针",
+      "排序"
+    ]
+  },
+  "1470-Shuffle-the-Array": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1470",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-06-07",
+    "timeArr": [
+      2020,
+      5,
+      7,
+      10,
+      32,
+      38,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1470. 重新排列数组",
+    "slug": "1470-Shuffle-the-Array",
+    "relatedTags": [
+      "数组"
+    ]
+  },
+  "1466-Reorder-Routes-to-Make-All-Paths-Lead-to-the-City-Zero": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1466",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-05-31",
+    "timeArr": [
+      2020,
+      4,
+      31,
+      11,
+      25,
+      32,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1466. 重新规划路线",
+    "slug": "1466-Reorder-Routes-to-Make-All-Paths-Lead-to-the-City-Zero",
+    "relatedTags": [
+      "深度优先搜索",
+      "广度优先搜索",
+      "图"
+    ]
+  },
+  "1465-Maximum-Area-of-a-Piece-of-Cake-After-Horizontal-and-Vertical-Cuts": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1465",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-05-31",
+    "timeArr": [
+      2020,
+      4,
+      31,
+      10,
+      45,
+      50,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1465. 切割后面积最大的蛋糕",
+    "slug": "1465-Maximum-Area-of-a-Piece-of-Cake-After-Horizontal-and-Vertical-Cuts",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "排序"
+    ]
+  },
+  "1464-Maximum-Product-of-Two-Elements-in-an-Array": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1464",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-05-31",
+    "timeArr": [
+      2020,
+      4,
+      31,
+      10,
+      39,
+      18,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1464. 数组中两元素的最大乘积",
+    "slug": "1464-Maximum-Product-of-Two-Elements-in-an-Array",
+    "relatedTags": [
+      "数组",
+      "排序",
+      "堆（优先队列）"
+    ]
+  },
+  "1458-Max-Dot-Product-of-Two-Subsequences": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1458",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2020-05-24",
+    "timeArr": [
+      2020,
+      4,
+      24,
+      13,
+      57,
+      24,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1458. 两个子序列的最大点积",
+    "slug": "1458-Max-Dot-Product-of-Two-Subsequences",
+    "relatedTags": [
+      "数组",
+      "动态规划"
+    ]
+  },
+  "1457-Pseudo-Palindromic-Paths-in-a-Binary-Tree": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1457",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-05-24",
+    "timeArr": [
+      2020,
+      4,
+      24,
+      10,
+      57,
+      54,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1457. 二叉树中的伪回文路径",
+    "slug": "1457-Pseudo-Palindromic-Paths-in-a-Binary-Tree",
+    "relatedTags": [
+      "位运算",
+      "树",
+      "深度优先搜索",
+      "广度优先搜索",
+      "二叉树"
+    ]
+  },
+  "1456-Maximum-Number-of-Vowels-in-a-Substring-of-Given-Length": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1456",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-05-24",
+    "timeArr": [
+      2020,
+      4,
+      24,
+      10,
+      38,
+      14,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1456. 定长子串中元音的最大数目",
+    "slug": "1456-Maximum-Number-of-Vowels-in-a-Substring-of-Given-Length",
+    "relatedTags": [
+      "字符串",
+      "滑动窗口"
+    ]
+  },
+  "1455-Check-If-a-Word-Occurs-As-a-Prefix-of-Any-Word-in-a-Sentence": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1455",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-05-24",
+    "timeArr": [
+      2020,
+      4,
+      24,
+      10,
+      32,
+      53,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1455. 检查单词是否为句中其他单词的前缀",
+    "slug": "1455-Check-If-a-Word-Occurs-As-a-Prefix-of-Any-Word-in-a-Sentence",
+    "relatedTags": [
+      "字符串",
+      "字符串匹配"
+    ]
+  },
+  "1453-Maximum-Number-of-Darts-Inside-of-a-Circular-Dartboard": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1453",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2020-05-17",
+    "timeArr": [
+      2020,
+      4,
+      17,
+      11,
+      41,
+      45,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1453. 圆形靶内的最大飞镖数量",
+    "slug": "1453-Maximum-Number-of-Darts-Inside-of-a-Circular-Dartboard",
+    "relatedTags": [
+      "几何",
+      "数组",
+      "数学"
+    ]
+  },
+  "1452-People-Whose-List-of-Favorite-Companies-Is-Not-a-Subset-of-Another-List": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1452",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-05-17",
+    "timeArr": [
+      2020,
+      4,
+      17,
+      10,
+      53,
+      14,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1452. 收藏清单",
+    "slug": "1452-People-Whose-List-of-Favorite-Companies-Is-Not-a-Subset-of-Another-List",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "字符串"
+    ]
+  },
+  "1451-Rearrange-Words-in-a-Sentence": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1451",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-05-17",
+    "timeArr": [
+      2020,
+      4,
+      17,
+      10,
+      38,
+      14,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1451. 重新排列句子中的单词",
+    "slug": "1451-Rearrange-Words-in-a-Sentence",
+    "relatedTags": [
+      "字符串",
+      "排序"
+    ]
+  },
+  "1450-Number-of-Students-Doing-Homework-at-a-Given-Time": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1450",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-05-17",
+    "timeArr": [
+      2020,
+      4,
+      17,
+      10,
+      32,
+      25,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1450. 在既定时间做作业的学生人数",
+    "slug": "1450-Number-of-Students-Doing-Homework-at-a-Given-Time",
+    "relatedTags": [
+      "数组"
+    ]
+  },
+  "1444-Number-of-Ways-of-Cutting-a-Pizza": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1444",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2020-05-10",
+    "timeArr": [
+      2020,
+      4,
+      10,
+      11,
+      52,
+      44,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1444. 切披萨的方案数",
+    "slug": "1444-Number-of-Ways-of-Cutting-a-Pizza",
+    "relatedTags": [
+      "记忆化搜索",
+      "数组",
+      "动态规划",
+      "矩阵"
+    ]
+  },
+  "1443-Minimum-Time-to-Collect-All-Apples-in-a-Tree": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1443",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-05-10",
+    "timeArr": [
+      2020,
+      4,
+      10,
+      11,
+      28,
+      17,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1443. 收集树上所有苹果的最少时间",
+    "slug": "1443-Minimum-Time-to-Collect-All-Apples-in-a-Tree",
+    "relatedTags": [
+      "树",
+      "深度优先搜索",
+      "广度优先搜索",
+      "哈希表"
+    ]
+  },
+  "1442-Count-Triplets-That-Can-Form-Two-Arrays-of-Equal-XOR": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1442",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-05-10",
+    "timeArr": [
+      2020,
+      4,
+      10,
+      11,
+      0,
+      8,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1442. 形成两个异或相等数组的三元组数目",
+    "slug": "1442-Count-Triplets-That-Can-Form-Two-Arrays-of-Equal-XOR",
+    "relatedTags": [
+      "位运算",
+      "数组",
+      "哈希表",
+      "数学",
+      "前缀和"
+    ]
+  },
+  "1441-Build-an-Array-With-Stack-Operations": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1441",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-05-10",
+    "timeArr": [
+      2020,
+      4,
+      10,
+      10,
+      34,
+      51,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1441. 用栈操作构建数组",
+    "slug": "1441-Build-an-Array-With-Stack-Operations",
+    "relatedTags": [
+      "栈",
+      "数组",
+      "模拟"
+    ]
+  },
+  "1424-Diagonal-Traverse-II": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1424",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-04-26",
+    "timeArr": [
+      2020,
+      3,
+      26,
+      17,
+      6,
+      30,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1424. 对角线遍历 II",
+    "slug": "1424-Diagonal-Traverse-II",
+    "relatedTags": [
+      "数组",
+      "排序",
+      "堆（优先队列）"
+    ]
+  },
+  "1423-Maximum-Points-You-Can-Obtain-from-Cards": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1423",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-04-26",
+    "timeArr": [
+      2020,
+      3,
+      26,
+      11,
+      11,
+      55,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1423. 可获得的最大点数",
+    "slug": "1423-Maximum-Points-You-Can-Obtain-from-Cards",
+    "relatedTags": [
+      "数组",
+      "前缀和",
+      "滑动窗口"
+    ]
+  },
+  "1422-Maximum-Score-After-Splitting-a-String": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1422",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-04-26",
+    "timeArr": [
+      2020,
+      3,
+      26,
+      10,
+      36,
+      48,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1422. 分割字符串的最大得分",
+    "slug": "1422-Maximum-Score-After-Splitting-a-String",
+    "relatedTags": [
+      "字符串"
+    ]
+  },
+  "1419-Minimum-Number-of-Frogs-Croaking": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1419",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-04-19",
+    "timeArr": [
+      2020,
+      3,
+      19,
+      11,
+      27,
+      53,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1419. 数青蛙",
+    "slug": "1419-Minimum-Number-of-Frogs-Croaking",
+    "relatedTags": [
+      "字符串",
+      "计数"
+    ]
+  },
+  "1418-Display-Table-of-Food-Orders-in-a-Restaurant": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1418",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-04-19",
+    "timeArr": [
+      2020,
+      3,
+      19,
+      10,
+      56,
+      10,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1418. 点菜展示表",
+    "slug": "1418-Display-Table-of-Food-Orders-in-a-Restaurant",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "字符串",
+      "有序集合",
+      "排序"
+    ]
+  },
+  "1417-Reformat-The-String": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1417",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-04-19",
+    "timeArr": [
+      2020,
+      3,
+      19,
+      10,
+      35,
+      7,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1417. 重新格式化字符串",
+    "slug": "1417-Reformat-The-String",
+    "relatedTags": [
+      "字符串"
+    ]
+  },
+  "1411-Number-of-Ways-to-Paint-N-×-3-Grid": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1411",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2020-04-12",
+    "timeArr": [
+      2020,
+      3,
+      12,
+      13,
+      33,
+      5,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1411. 给 N x 3 网格图涂色的方案数",
+    "slug": "1411-Number-of-Ways-to-Paint-N-×-3-Grid",
+    "relatedTags": [
+      "动态规划"
+    ]
+  },
+  "1410-HTML-Entity-Parser": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1410",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-04-12",
+    "timeArr": [
+      2020,
+      3,
+      12,
+      10,
+      43,
+      20,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1410. HTML 实体解析器",
+    "slug": "1410-HTML-Entity-Parser",
+    "relatedTags": [
+      "哈希表",
+      "字符串"
+    ]
+  },
+  "1409-Queries-on-a-Permutation-With-Key": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1409",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-04-12",
+    "timeArr": [
+      2020,
+      3,
+      12,
+      10,
+      39,
+      31,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1409. 查询带键的排列",
+    "slug": "1409-Queries-on-a-Permutation-With-Key",
+    "relatedTags": [
+      "树状数组",
+      "数组",
+      "模拟"
+    ]
+  },
+  "1408-String-Matching-in-an-Array": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1408",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-04-12",
+    "timeArr": [
+      2020,
+      3,
+      12,
+      10,
+      34,
+      5,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1408. 数组中的字符串匹配",
+    "slug": "1408-String-Matching-in-an-Array",
+    "relatedTags": [
+      "字符串",
+      "字符串匹配"
+    ]
+  },
+  "1406-Stone-Game-III": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1406",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2020-04-05",
+    "timeArr": [
+      2020,
+      3,
+      5,
+      13,
+      26,
+      41,
+      0
+    ],
+    "hasThinking": true,
+    "title": "1406. 石子游戏 III",
+    "slug": "1406-Stone-Game-III",
+    "relatedTags": [
+      "数组",
+      "数学",
+      "动态规划",
+      "博弈"
+    ]
+  },
+  "1404-Number-of-Steps-to-Reduce-a-Number-in-Binary-Representation-to-One": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1404",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-04-05",
+    "timeArr": [
+      2020,
+      3,
+      5,
+      10,
+      43,
+      57,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1404. 将二进制表示减到 1 的步骤数",
+    "slug": "1404-Number-of-Steps-to-Reduce-a-Number-in-Binary-Representation-to-One",
+    "relatedTags": [
+      "位运算",
+      "字符串"
+    ]
+  },
+  "1403-Minimum-Subsequence-in-Non-Increasing-Order": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1403",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-04-05",
+    "timeArr": [
+      2020,
+      3,
+      5,
+      10,
+      34,
+      7,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1403. 非递增顺序的最小子序列",
+    "slug": "1403-Minimum-Subsequence-in-Non-Increasing-Order",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "排序"
+    ]
+  },
+  "1416-Restore-The-Array": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1416",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2020-04-19",
+    "timeArr": [
+      2020,
+      3,
+      19,
+      0,
+      38,
+      39,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1416. 恢复数组",
+    "slug": "1416-Restore-The-Array",
+    "relatedTags": [
+      "字符串",
+      "动态规划"
+    ]
+  },
+  "1415-The-k-th-Lexicographical-String-of-All-Happy-Strings-of-Length-n": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1415",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-04-18",
+    "timeArr": [
+      2020,
+      3,
+      18,
+      23,
+      40,
+      5,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1415. 长度为 n 的开心字符串中字典序第 k 小的字符串",
+    "slug": "1415-The-k-th-Lexicographical-String-of-All-Happy-Strings-of-Length-n",
+    "relatedTags": [
+      "字符串",
+      "回溯"
+    ]
+  },
+  "1414-Find-the-Minimum-Number-of-Fibonacci-Numbers-Whose-Sum-Is-K": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1414",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-04-18",
+    "timeArr": [
+      2020,
+      3,
+      18,
+      23,
+      47,
+      32,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1414. 和为 K 的最少斐波那契数字数目",
+    "slug": "1414-Find-the-Minimum-Number-of-Fibonacci-Numbers-Whose-Sum-Is-K",
+    "relatedTags": [
+      "贪心"
+    ]
+  },
+  "1413-Minimum-Value-to-Get-Positive-Step-by-Step-Sum": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1413",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-04-18",
+    "timeArr": [
+      2020,
+      3,
+      18,
+      22,
+      32,
+      46,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1413. 逐步求和得到正数的最小值",
+    "slug": "1413-Minimum-Value-to-Get-Positive-Step-by-Step-Sum",
+    "relatedTags": [
+      "数组",
+      "前缀和"
+    ]
+  },
+  "1396-Design-Underground-System": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1396",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-03-29",
+    "timeArr": [
+      2020,
+      2,
+      29,
+      11,
+      34,
+      15,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1396. 设计地铁系统",
+    "slug": "1396-Design-Underground-System",
+    "relatedTags": [
+      "设计",
+      "哈希表",
+      "字符串"
+    ]
+  },
+  "1395-Count-Number-of-Teams": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1395",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-03-29",
+    "timeArr": [
+      2020,
+      2,
+      29,
+      11,
+      13,
+      54,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1395. 统计作战单位数",
+    "slug": "1395-Count-Number-of-Teams",
+    "relatedTags": [
+      "树状数组",
+      "数组",
+      "动态规划"
+    ]
+  },
+  "1394-Find-Lucky-Integer-in-an-Array": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1394",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-03-29",
+    "timeArr": [
+      2020,
+      2,
+      29,
+      10,
+      39,
+      37,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1394. 找出数组中的幸运数",
+    "slug": "1394-Find-Lucky-Integer-in-an-Array",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "计数"
+    ]
+  },
+  "1392-Longest-Happy-Prefix": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1392",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2020-03-22",
+    "timeArr": [
+      2020,
+      2,
+      22,
+      11,
+      57,
+      10,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1392. 最长快乐前缀",
+    "slug": "1392-Longest-Happy-Prefix",
+    "relatedTags": [
+      "字符串",
+      "字符串匹配",
+      "哈希函数",
+      "滚动哈希"
+    ]
+  },
+  "1391-Check-if-There-is-a-Valid-Path-in-a-Grid": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1391",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-03-22",
+    "timeArr": [
+      2020,
+      2,
+      22,
+      11,
+      46,
+      22,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1391. 检查网格中是否存在有效路径",
+    "slug": "1391-Check-if-There-is-a-Valid-Path-in-a-Grid",
+    "relatedTags": [
+      "深度优先搜索",
+      "广度优先搜索",
+      "并查集",
+      "数组",
+      "矩阵"
+    ]
+  },
+  "1389-Create-Target-Array-in-the-Given-Order": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1389",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-03-22",
+    "timeArr": [
+      2020,
+      2,
+      22,
+      10,
+      32,
+      37,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1389. 按既定顺序创建目标数组",
+    "slug": "1389-Create-Target-Array-in-the-Given-Order",
+    "relatedTags": [
+      "数组",
+      "模拟"
+    ]
+  },
+  "1383-Maximum-Performance-of-a-Team": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1383",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2020-03-15",
+    "timeArr": [
+      2020,
+      2,
+      15,
+      11,
+      53,
+      26,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1383. 最大的团队表现值",
+    "slug": "1383-Maximum-Performance-of-a-Team",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "排序",
+      "堆（优先队列）"
+    ]
+  },
+  "1381-Design-a-Stack-With-Increment-Operation": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1381",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-03-15",
+    "timeArr": [
+      2020,
+      2,
+      15,
+      10,
+      41,
+      59,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1381. 设计一个支持增量操作的栈",
+    "slug": "1381-Design-a-Stack-With-Increment-Operation",
+    "relatedTags": [
+      "栈",
+      "设计",
+      "数组"
+    ]
+  },
+  "1380-Lucky-Numbers-in-a-Matrix": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1380",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-03-15",
+    "timeArr": [
+      2020,
+      2,
+      15,
+      10,
+      35,
+      18,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1380. 矩阵中的幸运数",
+    "slug": "1380-Lucky-Numbers-in-a-Matrix",
+    "relatedTags": [
+      "数组",
+      "矩阵"
+    ]
+  },
+  "1377-Frog-Position-After-T-Seconds": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1377",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2020-03-08",
+    "timeArr": [
+      2020,
+      2,
+      8,
+      11,
+      44,
+      24,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1377. T 秒后青蛙的位置",
+    "slug": "1377-Frog-Position-After-T-Seconds",
+    "relatedTags": [
+      "树",
+      "深度优先搜索",
+      "广度优先搜索",
+      "图"
+    ]
+  },
+  "1376-Time-Needed-to-Inform-All-Employees": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1376",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-03-08",
+    "timeArr": [
+      2020,
+      2,
+      8,
+      11,
+      17,
+      35,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1376. 通知所有员工所需的时间",
+    "slug": "1376-Time-Needed-to-Inform-All-Employees",
+    "relatedTags": [
+      "树",
+      "深度优先搜索",
+      "广度优先搜索"
+    ]
+  },
+  "1375-Bulb-Switcher-III": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1375",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-03-08",
+    "timeArr": [
+      2020,
+      2,
+      8,
+      10,
+      52,
+      6,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1375. 灯泡开关 III",
+    "slug": "1375-Bulb-Switcher-III",
+    "relatedTags": [
+      "数组"
+    ]
+  },
+  "1374-Generate-a-String-With-Characters-That-Have-Odd-Counts": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1374",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-03-08",
+    "timeArr": [
+      2020,
+      2,
+      8,
+      10,
+      32,
+      22,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1374. 生成每种字符都是奇数个的字符串",
+    "slug": "1374-Generate-a-String-With-Characters-That-Have-Odd-Counts",
+    "relatedTags": [
+      "字符串"
+    ]
+  },
+  "1368-Minimum-Cost-to-Make-at-Least-One-Valid-Path-in-a-Grid": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1368",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2020-03-01",
+    "timeArr": [
+      2020,
+      2,
+      1,
+      12,
+      20,
+      29,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1368. 使网格图至少有一条有效路径的最小代价",
+    "slug": "1368-Minimum-Cost-to-Make-at-Least-One-Valid-Path-in-a-Grid",
+    "relatedTags": [
+      "广度优先搜索",
+      "图",
+      "数组",
+      "矩阵",
+      "最短路",
+      "堆（优先队列）"
+    ]
+  },
+  "1367-Linked-List-in-Binary-Tree": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1367",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-03-01",
+    "timeArr": [
+      2020,
+      2,
+      1,
+      11,
+      33,
+      50,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1367. 二叉树中的列表",
+    "slug": "1367-Linked-List-in-Binary-Tree",
+    "relatedTags": [
+      "树",
+      "深度优先搜索",
+      "广度优先搜索",
+      "链表",
+      "二叉树"
+    ]
+  },
+  "1366-Rank-Teams-by-Votes": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1366",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-03-01",
+    "timeArr": [
+      2020,
+      2,
+      1,
+      10,
+      50,
+      26,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1366. 通过投票对团队排名",
+    "slug": "1366-Rank-Teams-by-Votes",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "字符串",
+      "计数",
+      "排序"
+    ]
+  },
+  "1365-How-Many-Numbers-Are-Smaller-Than-the-Current-Number": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1365",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-03-01",
+    "timeArr": [
+      2020,
+      2,
+      1,
+      10,
+      32,
+      22,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1365. 有多少小于当前数字的数字",
+    "slug": "1365-How-Many-Numbers-Are-Smaller-Than-the-Current-Number",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "计数",
+      "排序"
+    ]
+  },
+  "1354-Construct-Target-Array-With-Multiple-Sums": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1354",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2020-02-16",
+    "timeArr": [
+      2020,
+      1,
+      16,
+      11,
+      32,
+      18,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1354. 多次求和构造目标数组",
+    "slug": "1354-Construct-Target-Array-With-Multiple-Sums",
+    "relatedTags": [
+      "数组",
+      "堆（优先队列）"
+    ]
+  },
+  "1353-Maximum-Number-of-Events-That-Can-Be-Attended": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1353",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-02-16",
+    "timeArr": [
+      2020,
+      1,
+      16,
+      15,
+      32,
+      58,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1353. 最多可以参加的会议数目",
+    "slug": "1353-Maximum-Number-of-Events-That-Can-Be-Attended",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "堆（优先队列）"
+    ]
+  },
+  "1352-Product-of-the-Last-K-Numbers": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1352",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-02-16",
+    "timeArr": [
+      2020,
+      1,
+      16,
+      10,
+      40,
+      19,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1352. 最后 K 个数的乘积",
+    "slug": "1352-Product-of-the-Last-K-Numbers",
+    "relatedTags": [
+      "设计",
+      "队列",
+      "数组",
+      "数学",
+      "数据流"
+    ]
+  },
+  "1351-Count-Negative-Numbers-in-a-Sorted-Matrix": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1351",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-02-16",
+    "timeArr": [
+      2020,
+      1,
+      16,
+      10,
+      32,
+      7,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1351. 统计有序矩阵中的负数",
+    "slug": "1351-Count-Negative-Numbers-in-a-Sorted-Matrix",
+    "relatedTags": [
+      "数组",
+      "二分查找",
+      "矩阵"
+    ]
+  },
+  "1347-Minimum-Number-of-Steps-to-Make-Two-Strings-Anagram": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1347",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-02-09",
+    "timeArr": [
+      2020,
+      1,
+      9,
+      10,
+      46,
+      28,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1347. 制造字母异位词的最小步骤数",
+    "slug": "1347-Minimum-Number-of-Steps-to-Make-Two-Strings-Anagram",
+    "relatedTags": [
+      "哈希表",
+      "字符串"
+    ]
+  },
+  "1346-Check-If-N-and-Its-Double-Exist": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1346",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-02-09",
+    "timeArr": [
+      2020,
+      1,
+      9,
+      10,
+      31,
+      29,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1346. 检查整数及其两倍数是否存在",
+    "slug": "1346-Check-If-N-and-Its-Double-Exist",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "双指针",
+      "二分查找",
+      "排序"
+    ]
+  },
+  "1340-Jump-Game-V": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1340",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2020-02-02",
+    "timeArr": [
+      2020,
+      1,
+      2,
+      11,
+      16,
+      40,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1340. 跳跃游戏 V",
+    "slug": "1340-Jump-Game-V",
+    "relatedTags": [
+      "数组",
+      "动态规划",
+      "排序"
+    ]
+  },
+  "1339-Maximum-Product-of-Splitted-Binary-Tree": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1339",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-02-02",
+    "timeArr": [
+      2020,
+      1,
+      2,
+      11,
+      2,
+      6,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1339. 分裂二叉树的最大乘积",
+    "slug": "1339-Maximum-Product-of-Splitted-Binary-Tree",
+    "relatedTags": [
+      "树",
+      "深度优先搜索",
+      "二叉树"
+    ]
+  },
+  "1338-Reduce-Array-Size-to-The-Half": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1338",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-02-02",
+    "timeArr": [
+      2020,
+      1,
+      2,
+      10,
+      41,
+      22,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1338. 数组大小减半",
+    "slug": "1338-Reduce-Array-Size-to-The-Half",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "哈希表",
+      "排序",
+      "堆（优先队列）"
+    ]
+  },
+  "1337-The-K-Weakest-Rows-in-a-Matrix": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1337",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-02-02",
+    "timeArr": [
+      2020,
+      1,
+      2,
+      10,
+      34,
+      14,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1337. 矩阵中战斗力最弱的 K 行",
+    "slug": "1337-The-K-Weakest-Rows-in-a-Matrix",
+    "relatedTags": [
+      "数组",
+      "二分查找",
+      "矩阵",
+      "排序",
+      "堆（优先队列）"
+    ]
+  },
+  "1358-Number-of-Substrings-Containing-All-Three-Characters": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1358",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-02-28",
+    "timeArr": [
+      2020,
+      1,
+      28,
+      15,
+      25,
+      59,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1358. 包含所有三种字符的子字符串数目",
+    "slug": "1358-Number-of-Substrings-Containing-All-Three-Characters",
+    "relatedTags": [
+      "哈希表",
+      "字符串",
+      "滑动窗口"
+    ]
+  },
+  "1357-Apply-Discount-Every-n-Orders": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1357",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-02-28",
+    "timeArr": [
+      2020,
+      1,
+      28,
+      15,
+      12,
+      47,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1357. 每隔 n 个顾客打折",
+    "slug": "1357-Apply-Discount-Every-n-Orders",
+    "relatedTags": [
+      "设计",
+      "数组",
+      "哈希表"
+    ]
+  },
+  "1356-Sort-Integers-by-The-Number-of-1-Bits": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1356",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-02-28",
+    "timeArr": [
+      2020,
+      1,
+      28,
+      14,
+      59,
+      6,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1356. 根据数字二进制下 1 的数目排序",
+    "slug": "1356-Sort-Integers-by-The-Number-of-1-Bits",
+    "relatedTags": [
+      "位运算",
+      "数组",
+      "计数",
+      "排序"
+    ]
+  },
+  "1334-Find-the-City-With-the-Smallest-Number-of-Neighbors-at-a-Threshold-Distance": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1334",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-01-31",
+    "timeArr": [
+      2020,
+      0,
+      31,
+      14,
+      27,
+      32,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1334. 阈值距离内邻居最少的城市",
+    "slug": "1334-Find-the-City-With-the-Smallest-Number-of-Neighbors-at-a-Threshold-Distance",
+    "relatedTags": [
+      "图",
+      "动态规划",
+      "最短路"
+    ]
+  },
+  "1333-Filter-Restaurants-by-Vegan-Friendly-Price-and-Distance": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1333",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-01-31",
+    "timeArr": [
+      2020,
+      0,
+      31,
+      11,
+      18,
+      54,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1333. 餐厅过滤器",
+    "slug": "1333-Filter-Restaurants-by-Vegan-Friendly-Price-and-Distance",
+    "relatedTags": [
+      "数组",
+      "排序"
+    ]
+  },
+  "1332-Remove-Palindromic-Subsequences": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1332",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-01-31",
+    "timeArr": [
+      2020,
+      0,
+      31,
+      11,
+      1,
+      26,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1332. 删除回文子序列",
+    "slug": "1332-Remove-Palindromic-Subsequences",
+    "relatedTags": [
+      "双指针",
+      "字符串"
+    ]
+  },
+  "1326-Minimum-Number-of-Taps-to-Open-to-Water-a-Garden": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1326",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2020-01-19",
+    "timeArr": [
+      2020,
+      0,
+      19,
+      12,
+      8,
+      29,
+      0
+    ],
+    "hasThinking": true,
+    "title": "1326. 灌溉花园的最少水龙头数目",
+    "slug": "1326-Minimum-Number-of-Taps-to-Open-to-Water-a-Garden",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "动态规划"
+    ]
+  },
+  "1325-Delete-Leaves-With-a-Given-Value": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1325",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-01-19",
+    "timeArr": [
+      2020,
+      0,
+      19,
+      10,
+      45,
+      43,
+      0
+    ],
+    "hasThinking": true,
+    "title": "1325. 删除给定值的叶子节点",
+    "slug": "1325-Delete-Leaves-With-a-Given-Value",
+    "relatedTags": [
+      "树",
+      "深度优先搜索",
+      "广度优先搜索",
+      "哈希表",
+      "二叉树"
+    ]
+  },
+  "1324-Print-Words-Vertically": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1324",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-01-19",
+    "timeArr": [
+      2020,
+      0,
+      19,
+      10,
+      39,
+      58,
+      0
+    ],
+    "hasThinking": true,
+    "title": "1324. 竖直打印单词",
+    "slug": "1324-Print-Words-Vertically",
+    "relatedTags": [
+      "数组",
+      "字符串",
+      "模拟"
+    ]
+  },
+  "1323-Maximum-69-Number": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1323",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-01-19",
+    "timeArr": [
+      2020,
+      0,
+      19,
+      10,
+      32,
+      31,
+      0
+    ],
+    "hasThinking": true,
+    "title": "1323. 6 和 9 组成的最大数字",
+    "slug": "1323-Maximum-69-Number",
+    "relatedTags": [
+      "贪心",
+      "数学"
+    ]
+  },
+  "1320-Minimum-Distance-to-Type-a-Word-Using-Two-Fingers": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1320",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2020-01-12",
+    "timeArr": [
+      2020,
+      0,
+      12,
+      11,
+      48,
+      0,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1320. 二指输入的的最小距离",
+    "slug": "1320-Minimum-Distance-to-Type-a-Word-Using-Two-Fingers",
+    "relatedTags": [
+      "字符串",
+      "动态规划"
+    ]
+  },
+  "1319-Number-of-Operations-to-Make-Network-Connected": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1319",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-01-12",
+    "timeArr": [
+      2020,
+      0,
+      12,
+      10,
+      54,
+      2,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1319. 连通网络的操作次数",
+    "slug": "1319-Number-of-Operations-to-Make-Network-Connected",
+    "relatedTags": [
+      "深度优先搜索",
+      "广度优先搜索",
+      "并查集",
+      "图"
+    ]
+  },
+  "1318-Minimum-Flips-to-Make-a-OR-b-Equal-to-c": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1318",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-01-12",
+    "timeArr": [
+      2020,
+      0,
+      12,
+      10,
+      44,
+      44,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1318. 或运算的最小翻转次数",
+    "slug": "1318-Minimum-Flips-to-Make-a-OR-b-Equal-to-c",
+    "relatedTags": [
+      "位运算"
+    ]
+  },
+  "1317-Convert-Integer-to-the-Sum-of-Two-No-Zero-Integers": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1317",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-01-12",
+    "timeArr": [
+      2020,
+      0,
+      12,
+      10,
+      32,
+      32,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1317. 将整数转换为两个无零整数的和",
+    "slug": "1317-Convert-Integer-to-the-Sum-of-Two-No-Zero-Integers",
+    "relatedTags": [
+      "数学"
+    ]
+  },
+  "1312-Minimum-Insertion-Steps-to-Make-a-String-Palindrome": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1312",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2020-01-05",
+    "timeArr": [
+      2020,
+      0,
+      5,
+      12,
+      43,
+      12,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1312. 让字符串成为回文串的最少插入次数",
+    "slug": "1312-Minimum-Insertion-Steps-to-Make-a-String-Palindrome",
+    "relatedTags": [
+      "字符串",
+      "动态规划"
+    ]
+  },
+  "1311-Get-Watched-Videos-by-Your-Friends": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1311",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-01-05",
+    "timeArr": [
+      2020,
+      0,
+      5,
+      10,
+      59,
+      28,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1311. 获取你好友已观看的视频",
+    "slug": "1311-Get-Watched-Videos-by-Your-Friends",
+    "relatedTags": [
+      "广度优先搜索",
+      "数组",
+      "哈希表",
+      "排序"
+    ]
+  },
+  "1310-XOR-Queries-of-a-Subarray": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1310",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-01-05",
+    "timeArr": [
+      2020,
+      0,
+      5,
+      10,
+      47,
+      48,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1310. 子数组异或查询",
+    "slug": "1310-XOR-Queries-of-a-Subarray",
+    "relatedTags": [
+      "位运算",
+      "数组",
+      "前缀和"
+    ]
+  },
+  "1309-Decrypt-String-from-Alphabet-to-Integer-Mapping": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1309",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-01-05",
+    "timeArr": [
+      2020,
+      0,
+      5,
+      10,
+      37,
+      43,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1309. 解码字母到整数映射",
+    "slug": "1309-Decrypt-String-from-Alphabet-to-Integer-Mapping",
+    "relatedTags": [
+      "字符串"
+    ]
+  },
+  "1307-Verbal-Arithmetic-Puzzle": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1307",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2019-12-29",
+    "timeArr": [
+      2019,
+      11,
+      29,
+      11,
+      48,
+      0,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1307. 口算难题",
+    "slug": "1307-Verbal-Arithmetic-Puzzle",
+    "relatedTags": [
+      "数组",
+      "数学",
+      "字符串",
+      "回溯"
+    ]
+  },
+  "1306-Jump-Game-III": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1306",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-12-29",
+    "timeArr": [
+      2019,
+      11,
+      29,
+      10,
+      48,
+      44,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1306. 跳跃游戏 III",
+    "slug": "1306-Jump-Game-III",
+    "relatedTags": [
+      "深度优先搜索",
+      "广度优先搜索",
+      "数组"
+    ]
+  },
+  "1305-All-Elements-in-Two-Binary-Search-Trees": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1305",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-12-29",
+    "timeArr": [
+      2019,
+      11,
+      29,
+      10,
+      37,
+      52,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1305. 两棵二叉搜索树中的所有元素",
+    "slug": "1305-All-Elements-in-Two-Binary-Search-Trees",
+    "relatedTags": [
+      "树",
+      "深度优先搜索",
+      "二叉搜索树",
+      "二叉树",
+      "排序"
+    ]
+  },
+  "1304-Find-N-Unique-Integers-Sum-up-to-Zero": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1304",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2019-12-29",
+    "timeArr": [
+      2019,
+      11,
+      29,
+      10,
+      32,
+      30,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1304. 和为零的N个唯一整数",
+    "slug": "1304-Find-N-Unique-Integers-Sum-up-to-Zero",
+    "relatedTags": [
+      "数组",
+      "数学"
+    ]
+  },
+  "1298-Maximum-Candies-You-Can-Get-from-Boxes": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1298",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2019-12-22",
+    "timeArr": [
+      2019,
+      11,
+      22,
+      11,
+      59,
+      10,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1298. 你能从盒子里获得的最大糖果数",
+    "slug": "1298-Maximum-Candies-You-Can-Get-from-Boxes",
+    "relatedTags": [
+      "广度优先搜索",
+      "数组"
+    ]
+  },
+  "1297-Maximum-Number-of-Occurrences-of-a-Substring": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1297",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-12-22",
+    "timeArr": [
+      2019,
+      11,
+      22,
+      13,
+      24,
+      28,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1297. 子串的最大出现次数",
+    "slug": "1297-Maximum-Number-of-Occurrences-of-a-Substring",
+    "relatedTags": [
+      "哈希表",
+      "字符串",
+      "滑动窗口"
+    ]
+  },
+  "1296-Divide-Array-in-Sets-of-K-Consecutive-Numbers": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1296",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-12-22",
+    "timeArr": [
+      2019,
+      11,
+      22,
+      11,
+      1,
+      31,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1296. 划分数组为连续数字的集合",
+    "slug": "1296-Divide-Array-in-Sets-of-K-Consecutive-Numbers",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "哈希表",
+      "排序"
+    ]
+  },
+  "1295-Find-Numbers-with-Even-Number-of-Digits": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1295",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2019-12-22",
+    "timeArr": [
+      2019,
+      11,
+      22,
+      10,
+      32,
+      10,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1295. 统计位数为偶数的数字",
+    "slug": "1295-Find-Numbers-with-Even-Number-of-Digits",
+    "relatedTags": [
+      "数组"
+    ]
+  },
+  "1293-Shortest-Path-in-a-Grid-with-Obstacles-Elimination": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1293",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2019-12-15",
+    "timeArr": [
+      2019,
+      11,
+      15,
+      11,
+      36,
+      37,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1293. 网格中的最短路径",
+    "slug": "1293-Shortest-Path-in-a-Grid-with-Obstacles-Elimination",
+    "relatedTags": [
+      "广度优先搜索",
+      "数组",
+      "矩阵"
+    ]
+  },
+  "1292-Maximum-Side-Length-of-a-Square-with-Sum-Less-than-or-Equal-to-Threshold": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1292",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-12-15",
+    "timeArr": [
+      2019,
+      11,
+      15,
+      12,
+      39,
+      24,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1292. 元素和小于等于阈值的正方形的最大边长",
+    "slug": "1292-Maximum-Side-Length-of-a-Square-with-Sum-Less-than-or-Equal-to-Threshold",
+    "relatedTags": [
+      "数组",
+      "二分查找",
+      "矩阵",
+      "前缀和"
+    ]
+  },
+  "1290-Convert-Binary-Number-in-a-Linked-List-to-Integer": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1290",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2019-12-15",
+    "timeArr": [
+      2019,
+      11,
+      15,
+      10,
+      31,
+      28,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1290. 二进制链表转整数",
+    "slug": "1290-Convert-Binary-Number-in-a-Linked-List-to-Integer",
+    "relatedTags": [
+      "链表",
+      "数学"
+    ]
+  },
+  "1284-Minimum-Number-of-Flips-to-Convert-Binary-Matrix-to-Zero-Matrix": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1284",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2019-12-08",
+    "timeArr": [
+      2019,
+      11,
+      8,
+      11,
+      24,
+      24,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1284. 转化为全零矩阵的最少反转次数",
+    "slug": "1284-Minimum-Number-of-Flips-to-Convert-Binary-Matrix-to-Zero-Matrix",
+    "relatedTags": [
+      "位运算",
+      "广度优先搜索",
+      "数组",
+      "矩阵"
+    ]
+  },
+  "1283-Find-the-Smallest-Divisor-Given-a-Threshold": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1283",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-12-08",
+    "timeArr": [
+      2019,
+      11,
+      8,
+      10,
+      47,
+      2,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1283. 使结果不超过阈值的最小除数",
+    "slug": "1283-Find-the-Smallest-Divisor-Given-a-Threshold",
+    "relatedTags": [
+      "数组",
+      "二分查找"
+    ]
+  },
+  "1282-Group-the-People-Given-the-Group-Size-They-Belong-To": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1282",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-12-08",
+    "timeArr": [
+      2019,
+      11,
+      8,
+      10,
+      40,
+      43,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1282. 用户分组",
+    "slug": "1282-Group-the-People-Given-the-Group-Size-They-Belong-To",
+    "relatedTags": [
+      "数组",
+      "哈希表"
+    ]
+  },
+  "1281-Subtract-the-Product-and-Sum-of-Digits-of-an-Integer": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1281",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2019-12-08",
+    "timeArr": [
+      2019,
+      11,
+      8,
+      10,
+      32,
+      41,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1281. 整数的各位积和之差",
+    "slug": "1281-Subtract-the-Product-and-Sum-of-Digits-of-an-Integer",
+    "relatedTags": [
+      "数学"
+    ]
+  },
+  "1278-Palindrome-Partitioning-III": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1278",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2019-12-01",
+    "timeArr": [
+      2019,
+      11,
+      1,
+      11,
+      47,
+      18,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1278. 分割回文串 III",
+    "slug": "1278-Palindrome-Partitioning-III",
+    "relatedTags": [
+      "字符串",
+      "动态规划"
+    ]
+  },
+  "1277-Count-Square-Submatrices-with-All-Ones": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1277",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-12-01",
+    "timeArr": [
+      2019,
+      11,
+      1,
+      11,
+      29,
+      1,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1277. 统计全为 1 的正方形子矩阵",
+    "slug": "1277-Count-Square-Submatrices-with-All-Ones",
+    "relatedTags": [
+      "数组",
+      "动态规划",
+      "矩阵"
+    ]
+  },
+  "1276-Number-of-Burgers-with-No-Waste-of-Ingredients": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1276",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-12-01",
+    "timeArr": [
+      2019,
+      11,
+      1,
+      11,
+      9,
+      57,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1276. 不浪费原料的汉堡制作方案",
+    "slug": "1276-Number-of-Burgers-with-No-Waste-of-Ingredients",
+    "relatedTags": [
+      "数学"
+    ]
+  },
+  "1275-Find-Winner-on-a-Tic-Tac-Toe-Game": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1275",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2019-12-01",
+    "timeArr": [
+      2019,
+      11,
+      1,
+      11,
+      1,
+      23,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1275. 找出井字棋的获胜者",
+    "slug": "1275-Find-Winner-on-a-Tic-Tac-Toe-Game",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "矩阵",
+      "模拟"
+    ]
+  },
+  "1269-Number-of-Ways-to-Stay-in-the-Same-Place-After-Some-Steps": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1269",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2019-11-24",
+    "timeArr": [
+      2019,
+      10,
+      24,
+      11,
+      26,
+      36,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1269. 停在原地的方案数",
+    "slug": "1269-Number-of-Ways-to-Stay-in-the-Same-Place-After-Some-Steps",
+    "relatedTags": [
+      "动态规划"
+    ]
+  },
+  "1268-Search-Suggestions-System": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1268",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-11-24",
+    "timeArr": [
+      2019,
+      10,
+      24,
+      10,
+      59,
+      56,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1268. 搜索推荐系统",
+    "slug": "1268-Search-Suggestions-System",
+    "relatedTags": [
+      "字典树",
+      "数组",
+      "字符串"
+    ]
+  },
+  "1267-Count-Servers-that-Communicate": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1267",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-11-24",
+    "timeArr": [
+      2019,
+      10,
+      24,
+      10,
+      49,
+      18,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1267. 统计参与通信的服务器",
+    "slug": "1267-Count-Servers-that-Communicate",
+    "relatedTags": [
+      "深度优先搜索",
+      "广度优先搜索",
+      "并查集",
+      "数组",
+      "计数",
+      "矩阵"
+    ]
+  },
+  "1266-Minimum-Time-Visiting-All-Points": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1266",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2019-11-24",
+    "timeArr": [
+      2019,
+      10,
+      24,
+      10,
+      35,
+      34,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1266. 访问所有点的最小时间",
+    "slug": "1266-Minimum-Time-Visiting-All-Points",
+    "relatedTags": [
+      "几何",
+      "数组",
+      "数学"
+    ]
+  },
+  "1263-Minimum-Moves-to-Move-a-Box-to-Their-Target-Location": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1263",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2019-11-17",
+    "timeArr": [
+      2019,
+      10,
+      17,
+      13,
+      24,
+      31,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1263. 推箱子",
+    "slug": "1263-Minimum-Moves-to-Move-a-Box-to-Their-Target-Location",
+    "relatedTags": [
+      "广度优先搜索",
+      "数组",
+      "矩阵",
+      "堆（优先队列）"
+    ]
+  },
+  "1262-Greatest-Sum-Divisible-by-Three": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1262",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-11-17",
+    "timeArr": [
+      2019,
+      10,
+      17,
+      11,
+      27,
+      44,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1262. 可被三整除的最大和",
+    "slug": "1262-Greatest-Sum-Divisible-by-Three",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "动态规划"
+    ]
+  },
+  "1261-Find-Elements-in-a-Contaminated-Binary-Tree": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1261",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-11-17",
+    "timeArr": [
+      2019,
+      10,
+      17,
+      11,
+      3,
+      19,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1261. 在受污染的二叉树中查找元素",
+    "slug": "1261-Find-Elements-in-a-Contaminated-Binary-Tree",
+    "relatedTags": [
+      "树",
+      "深度优先搜索",
+      "广度优先搜索",
+      "设计",
+      "二叉树"
+    ]
+  },
+  "1260-Shift-2D-Grid": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1260",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2019-11-17",
+    "timeArr": [
+      2019,
+      10,
+      17,
+      10,
+      51,
+      16,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1260. 二维网格迁移",
+    "slug": "1260-Shift-2D-Grid",
+    "relatedTags": [
+      "数组",
+      "矩阵",
+      "模拟"
+    ]
+  },
+  "1253-Reconstruct-a-2-Row-Binary-Matrix": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1253",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-04-24",
+    "timeArr": [
+      2020,
+      3,
+      24,
+      23,
+      14,
+      32,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1253. 重构 2 行二进制矩阵",
+    "slug": "1253-Reconstruct-a-2-Row-Binary-Matrix",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "矩阵"
+    ]
+  },
+  "1726-Tuple-with-Same-Product": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1726",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2021-02-24",
+    "timeArr": [
+      2021,
+      1,
+      24,
+      10,
+      7,
+      44,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1726. 同积元组",
+    "slug": "1726-Tuple-with-Same-Product",
+    "relatedTags": [
+      "数组",
+      "哈希表"
+    ]
+  },
+  "1239-Maximum-Length-of-a-Concatenated-String-with-Unique-Characters": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1239",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-10-27",
+    "timeArr": [
+      2019,
+      9,
+      27,
+      11,
+      20,
+      38,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1239. 串联字符串的最大长度",
+    "slug": "1239-Maximum-Length-of-a-Concatenated-String-with-Unique-Characters",
+    "relatedTags": [
+      "位运算",
+      "数组",
+      "字符串",
+      "回溯"
+    ]
+  },
+  "1238-Circular-Permutation-in-Binary-Representation": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1238",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-10-27",
+    "timeArr": [
+      2019,
+      9,
+      27,
+      12,
+      42,
+      39,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1238. 循环码排列",
+    "slug": "1238-Circular-Permutation-in-Binary-Representation",
+    "relatedTags": [
+      "位运算",
+      "数学",
+      "回溯"
+    ]
+  },
+  "1237-Find-Positive-Integer-Solution-for-a-Given-Equation": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1237",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-10-27",
+    "timeArr": [
+      2019,
+      9,
+      27,
+      10,
+      34,
+      7,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1237. 找出给定方程的正整数解",
+    "slug": "1237-Find-Positive-Integer-Solution-for-a-Given-Equation",
+    "relatedTags": [
+      "数学",
+      "双指针",
+      "二分查找",
+      "交互"
+    ]
+  },
+  "1224-Maximum-Equal-Frequency": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1224",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2019-10-13",
+    "timeArr": [
+      2019,
+      9,
+      13,
+      12,
+      20,
+      9,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1224. 最大相等频率",
+    "slug": "1224-Maximum-Equal-Frequency",
+    "relatedTags": [
+      "数组",
+      "哈希表"
+    ]
+  },
+  "1223-Dice-Roll-Simulation": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1223",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2019-10-13",
+    "timeArr": [
+      2019,
+      9,
+      13,
+      11,
+      25,
+      55,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1223. 掷骰子模拟",
+    "slug": "1223-Dice-Roll-Simulation",
+    "relatedTags": [
+      "数组",
+      "动态规划"
+    ]
+  },
+  "1222-Queens-That-Can-Attack-the-King": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1222",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-10-13",
+    "timeArr": [
+      2019,
+      9,
+      13,
+      10,
+      48,
+      45,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1222. 可以攻击国王的皇后",
+    "slug": "1222-Queens-That-Can-Attack-the-King",
+    "relatedTags": [
+      "数组",
+      "矩阵",
+      "模拟"
+    ]
+  },
+  "1221-Split-a-String-in-Balanced-Strings": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1221",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2019-10-13",
+    "timeArr": [
+      2019,
+      9,
+      13,
+      10,
+      33,
+      18,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1221. 分割平衡字符串",
+    "slug": "1221-Split-a-String-in-Balanced-Strings",
+    "relatedTags": [
+      "贪心",
+      "字符串",
+      "计数"
+    ]
+  },
+  "1220-Count-Vowels-Permutation": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1220",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2019-10-06",
+    "timeArr": [
+      2019,
+      9,
+      6,
+      11,
+      31,
+      17,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1220. 统计元音字母序列的数目",
+    "slug": "1220-Count-Vowels-Permutation",
+    "relatedTags": [
+      "动态规划"
+    ]
+  },
+  "1219-Path-with-Maximum-Gold": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1219",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-10-06",
+    "timeArr": [
+      2019,
+      9,
+      6,
+      11,
+      11,
+      26,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1219. 黄金矿工",
+    "slug": "1219-Path-with-Maximum-Gold",
+    "relatedTags": [
+      "数组",
+      "回溯",
+      "矩阵"
+    ]
+  },
+  "1218-Longest-Arithmetic-Subsequence-of-Given-Difference": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1218",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-10-06",
+    "timeArr": [
+      2019,
+      9,
+      6,
+      10,
+      46,
+      59,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1218. 最长定差子序列",
+    "slug": "1218-Longest-Arithmetic-Subsequence-of-Given-Difference",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "动态规划"
+    ]
+  },
+  "1217-Minimum-Cost-to-Move-Chips-to-The-Same-Position": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1217",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2021-06-11",
+    "timeArr": [
+      2021,
+      5,
+      11,
+      22,
+      30,
+      3,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1217. 玩筹码",
+    "slug": "1217-Minimum-Cost-to-Move-Chips-to-The-Same-Position",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "数学"
+    ]
+  },
+  "1514-Path-with-Maximum-Probability": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1514",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-07-18",
+    "timeArr": [
+      2020,
+      6,
+      18,
+      20,
+      40,
+      15,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1514. 概率最大的路径",
+    "slug": "1514-Path-with-Maximum-Probability",
+    "relatedTags": [
+      "图",
+      "最短路",
+      "堆（优先队列）"
+    ]
+  },
+  "1706-Where-Will-the-Ball-Fall": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1706",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2021-01-16",
+    "timeArr": [
+      2021,
+      0,
+      16,
+      12,
+      2,
+      50,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1706. 球会落何处",
+    "slug": "1706-Where-Will-the-Ball-Fall",
+    "relatedTags": [
+      "深度优先搜索",
+      "数组",
+      "动态规划",
+      "矩阵",
+      "模拟"
+    ]
+  },
+  "1210-Minimum-Moves-to-Reach-Target-with-Rotations": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1210",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2019-09-29",
+    "timeArr": [
+      2019,
+      8,
+      29,
+      12,
+      7,
+      4,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1210. 穿过迷宫的最少移动次数",
+    "slug": "1210-Minimum-Moves-to-Reach-Target-with-Rotations",
+    "relatedTags": [
+      "广度优先搜索",
+      "数组",
+      "矩阵"
+    ]
+  },
+  "1208-Get-Equal-Substrings-Within-Budget": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1208",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-09-29",
+    "timeArr": [
+      2019,
+      8,
+      29,
+      10,
+      45,
+      50,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1208. 尽可能使字符串相等",
+    "slug": "1208-Get-Equal-Substrings-Within-Budget",
+    "relatedTags": [
+      "字符串",
+      "二分查找",
+      "前缀和",
+      "滑动窗口"
+    ]
+  },
+  "1209-Remove-All-Adjacent-Duplicates-in-String-II": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1209",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-09-29",
+    "timeArr": [
+      2019,
+      8,
+      29,
+      11,
+      2,
+      59,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1209. 删除字符串中的所有相邻重复项 II",
+    "slug": "1209-Remove-All-Adjacent-Duplicates-in-String-II",
+    "relatedTags": [
+      "栈",
+      "字符串"
+    ]
+  },
+  "1207-Unique-Number-of-Occurrences": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1207",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2019-09-29",
+    "timeArr": [
+      2019,
+      8,
+      29,
+      10,
+      32,
+      29,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1207. 独一无二的出现次数",
+    "slug": "1207-Unique-Number-of-Occurrences",
+    "relatedTags": [
+      "数组",
+      "哈希表"
+    ]
+  },
+  "1202-Smallest-String-With-Swaps": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1202",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-09-22",
+    "timeArr": [
+      2019,
+      8,
+      22,
+      11,
+      57,
+      16,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1202. 交换字符串中的元素",
+    "slug": "1202-Smallest-String-With-Swaps",
+    "relatedTags": [
+      "深度优先搜索",
+      "广度优先搜索",
+      "并查集",
+      "哈希表",
+      "字符串"
+    ]
+  },
+  "1201-Ugly-Number-III": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1201",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-09-22",
+    "timeArr": [
+      2019,
+      8,
+      22,
+      12,
+      32,
+      58,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1201. 丑数 III",
+    "slug": "1201-Ugly-Number-III",
+    "relatedTags": [
+      "数学",
+      "二分查找",
+      "数论"
+    ]
+  },
+  "1200-Minimum-Absolute-Difference": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1200",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2019-09-22",
+    "timeArr": [
+      2019,
+      8,
+      22,
+      10,
+      34,
+      42,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1200. 最小绝对差",
+    "slug": "1200-Minimum-Absolute-Difference",
+    "relatedTags": [
+      "数组",
+      "排序"
+    ]
+  },
+  "1405-Longest-Happy-String": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1405",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-04-05",
+    "timeArr": [
+      2020,
+      3,
+      5,
+      10,
+      59,
+      18,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1405. 最长快乐字符串",
+    "slug": "1405-Longest-Happy-String",
+    "relatedTags": [
+      "贪心",
+      "字符串",
+      "堆（优先队列）"
+    ]
+  },
+  "1192-Critical-Connections-in-a-Network": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1192",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2019-09-15",
+    "timeArr": [
+      2019,
+      8,
+      15,
+      15,
+      22,
+      16,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1192. 查找集群内的「关键连接」",
+    "slug": "1192-Critical-Connections-in-a-Network",
+    "relatedTags": [
+      "深度优先搜索",
+      "图",
+      "双连通分量"
+    ]
+  },
+  "1191-K-Concatenation-Maximum-Sum": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1191",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-09-15",
+    "timeArr": [
+      2019,
+      8,
+      15,
+      10,
+      54,
+      56,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1191. K 次串联后最大子数组之和",
+    "slug": "1191-K-Concatenation-Maximum-Sum",
+    "relatedTags": [
+      "数组",
+      "动态规划"
+    ]
+  },
+  "1190-Reverse-Substrings-Between-Each-Pair-of-Parentheses": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1190",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-09-15",
+    "timeArr": [
+      2019,
+      8,
+      15,
+      10,
+      42,
+      58,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1190. 反转每对括号间的子串",
+    "slug": "1190-Reverse-Substrings-Between-Each-Pair-of-Parentheses",
+    "relatedTags": [
+      "栈",
+      "字符串"
+    ]
+  },
+  "1189-Maximum-Number-of-Balloons": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1189",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2019-09-15",
+    "timeArr": [
+      2019,
+      8,
+      15,
+      10,
+      36,
+      12,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1189. “气球” 的最大数量",
+    "slug": "1189-Maximum-Number-of-Balloons",
+    "relatedTags": [
+      "哈希表",
+      "字符串",
+      "计数"
+    ]
+  },
+  "1550-Three-Consecutive-Odds": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1550",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-08-16",
+    "timeArr": [
+      2020,
+      7,
+      16,
+      18,
+      37,
+      37,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1550. 存在连续三个奇数的数组",
+    "slug": "1550-Three-Consecutive-Odds",
+    "relatedTags": [
+      "数组"
+    ]
+  },
+  "1185-Day-of-the-Week": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1185",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2019-09-08",
+    "timeArr": [
+      2019,
+      8,
+      8,
+      10,
+      41,
+      10,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1185. 一周中的第几天",
+    "slug": "1185-Day-of-the-Week",
+    "relatedTags": [
+      "数学"
+    ]
+  },
+  "1186-Maximum-Subarray-Sum-with-One-Deletion": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1186",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-09-08",
+    "timeArr": [
+      2019,
+      8,
+      8,
+      12,
+      36,
+      38,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1186. 删除一次得到子数组最大和",
+    "slug": "1186-Maximum-Subarray-Sum-with-One-Deletion",
+    "relatedTags": [
+      "数组",
+      "动态规划"
+    ]
+  },
+  "1184-Distance-Between-Bus-Stops": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1184",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2019-09-08",
+    "timeArr": [
+      2019,
+      8,
+      8,
+      10,
+      36,
+      24,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1184. 公交站间的距离",
+    "slug": "1184-Distance-Between-Bus-Stops",
+    "relatedTags": [
+      "数组"
+    ]
+  },
+  "1425-Constrained-Subsequence-Sum": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1425",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2020-04-26",
+    "timeArr": [
+      2020,
+      3,
+      26,
+      16,
+      36,
+      7,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1425. 带限制的子序列和",
+    "slug": "1425-Constrained-Subsequence-Sum",
+    "relatedTags": [
+      "队列",
+      "数组",
+      "动态规划",
+      "滑动窗口",
+      "单调队列",
+      "堆（优先队列）"
+    ]
+  },
+  "1382-Balance-a-Binary-Search-Tree": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1382",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-03-15",
+    "timeArr": [
+      2020,
+      2,
+      15,
+      10,
+      57,
+      21,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1382. 将二叉搜索树变平衡",
+    "slug": "1382-Balance-a-Binary-Search-Tree",
+    "relatedTags": [
+      "贪心",
+      "树",
+      "深度优先搜索",
+      "二叉搜索树",
+      "分治",
+      "二叉树"
+    ]
+  },
+  "1390-Four-Divisors": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1390",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-03-22",
+    "timeArr": [
+      2020,
+      2,
+      22,
+      10,
+      41,
+      16,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1390. 四因数",
+    "slug": "1390-Four-Divisors",
+    "relatedTags": [
+      "数组",
+      "数学"
+    ]
+  },
+  "1178-Number-of-Valid-Words-for-Each-Puzzle": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1178",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2019-09-01",
+    "timeArr": [
+      2019,
+      8,
+      1,
+      13,
+      7,
+      16,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1178. 猜字谜",
+    "slug": "1178-Number-of-Valid-Words-for-Each-Puzzle",
+    "relatedTags": [
+      "位运算",
+      "字典树",
+      "数组",
+      "哈希表",
+      "字符串"
+    ]
+  },
+  "1177-Can-Make-Palindrome-from-Substring": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1177",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-09-01",
+    "timeArr": [
+      2019,
+      8,
+      1,
+      11,
+      30,
+      15,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1177. 构建回文串检测",
+    "slug": "1177-Can-Make-Palindrome-from-Substring",
+    "relatedTags": [
+      "位运算",
+      "哈希表",
+      "字符串",
+      "前缀和"
+    ]
+  },
+  "1176-Diet-Plan-Performance": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1176",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2019-09-01",
+    "timeArr": [
+      2019,
+      8,
+      1,
+      10,
+      49,
+      35,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1176. 健身计划评估",
+    "slug": "1176-Diet-Plan-Performance",
+    "relatedTags": [
+      "数组",
+      "滑动窗口"
+    ]
+  },
+  "1175-Prime-Arrangements": {
+    "lang": [
+      "javascript",
+      "python"
+    ],
+    "uniqueID": "1175",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "hasThinking": false,
+    "title": "1175. 质数排列",
+    "slug": "1175-Prime-Arrangements",
+    "relatedTags": [
+      "数学"
+    ]
+  },
+  "1363-Largest-Multiple-of-Three": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1363",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2020-02-23",
+    "timeArr": [
+      2020,
+      1,
+      23,
+      11,
+      29,
+      25,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1363. 形成三的最大倍数",
+    "slug": "1363-Largest-Multiple-of-Three",
+    "relatedTags": [
+      "贪心",
+      "数组",
+      "动态规划"
+    ]
+  },
+  "1362-Closest-Divisors": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1362",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-02-23",
+    "timeArr": [
+      2020,
+      1,
+      23,
+      10,
+      58,
+      21,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1362. 最接近的因数",
+    "slug": "1362-Closest-Divisors",
+    "relatedTags": [
+      "数学"
+    ]
+  },
+  "1361-Validate-Binary-Tree-Nodes": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1361",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-02-23",
+    "timeArr": [
+      2020,
+      1,
+      23,
+      10,
+      47,
+      44,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1361. 验证二叉树",
+    "slug": "1361-Validate-Binary-Tree-Nodes",
+    "relatedTags": [
+      "树",
+      "深度优先搜索",
+      "广度优先搜索",
+      "并查集",
+      "图",
+      "二叉树"
+    ]
+  },
+  "1360-Number-of-Days-Between-Two-Dates": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1360",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-02-23",
+    "timeArr": [
+      2020,
+      1,
+      23,
+      10,
+      32,
+      30,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1360. 日期之间隔几天",
+    "slug": "1360-Number-of-Days-Between-Two-Dates",
+    "relatedTags": [
+      "数学",
+      "字符串"
+    ]
+  },
+  "1170-Compare-Strings-by-Frequency-of-the-Smallest-Character": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1170",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-08-25",
+    "timeArr": [
+      2019,
+      7,
+      25,
+      11,
+      4,
+      31,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1170. 比较字符串最小字母出现频次",
+    "slug": "1170-Compare-Strings-by-Frequency-of-the-Smallest-Character",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "字符串",
+      "二分查找",
+      "排序"
+    ]
+  },
+  "1169-Invalid-Transactions": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1169",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-08-25",
+    "timeArr": [
+      2019,
+      7,
+      25,
+      10,
+      58,
+      15,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1169. 查询无效交易",
+    "slug": "1169-Invalid-Transactions",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "字符串",
+      "排序"
+    ]
+  },
+  "1172-Dinner-Plate-Stacks": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1172",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2019-08-25",
+    "timeArr": [
+      2019,
+      7,
+      25,
+      11,
+      55,
+      9,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1172. 餐盘栈",
+    "slug": "1172-Dinner-Plate-Stacks",
+    "relatedTags": [
+      "栈",
+      "设计",
+      "哈希表",
+      "堆（优先队列）"
+    ]
+  },
+  "1171-Remove-Zero-Sum-Consecutive-Nodes-from-Linked-List": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1171",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-08-25",
+    "timeArr": [
+      2019,
+      7,
+      25,
+      11,
+      34,
+      51,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1171. 从链表中删去总和值为零的连续节点",
+    "slug": "1171-Remove-Zero-Sum-Consecutive-Nodes-from-Linked-List",
+    "relatedTags": [
+      "哈希表",
+      "链表"
+    ]
+  },
+  "1155-Number-of-Dice-Rolls-With-Target-Sum": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1155",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-08-11",
+    "timeArr": [
+      2019,
+      7,
+      11,
+      10,
+      45,
+      44,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1155. 掷骰子的N种方法",
+    "slug": "1155-Number-of-Dice-Rolls-With-Target-Sum",
+    "relatedTags": [
+      "动态规划"
+    ]
+  },
+  "1157-Online-Majority-Element-In-Subarray": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1157",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2019-08-11",
+    "timeArr": [
+      2019,
+      7,
+      11,
+      11,
+      33,
+      50,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1157. 子数组中占绝大多数的元素",
+    "slug": "1157-Online-Majority-Element-In-Subarray",
+    "relatedTags": [
+      "设计",
+      "树状数组",
+      "线段树",
+      "数组",
+      "二分查找"
+    ]
+  },
+  "1156-Swap-For-Longest-Repeated-Character-Substring": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1156",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-08-11",
+    "timeArr": [
+      2019,
+      7,
+      11,
+      12,
+      7,
+      18,
+      0
+    ],
+    "hasThinking": true,
+    "title": "1156. 单字符重复子串的最大长度",
+    "slug": "1156-Swap-For-Longest-Repeated-Character-Substring",
+    "relatedTags": [
+      "字符串",
+      "滑动窗口"
+    ]
+  },
+  "1154-Day-of-the-Year": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1154",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2019-08-11",
+    "timeArr": [
+      2019,
+      7,
+      11,
+      10,
+      34,
+      14,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1154. 一年中的第几天",
+    "slug": "1154-Day-of-the-Year",
+    "relatedTags": [
+      "数学",
+      "字符串"
+    ]
+  },
+  "1331-Rank-Transform-of-an-Array": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1331",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2020-01-31",
+    "timeArr": [
+      2020,
+      0,
+      31,
+      11,
+      4,
+      55,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1331. 数组序号转换",
+    "slug": "1331-Rank-Transform-of-an-Array",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "排序"
+    ]
+  },
+  "1329-Sort-the-Matrix-Diagonally": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1329",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-01-31",
+    "timeArr": [
+      2020,
+      0,
+      31,
+      11,
+      5,
+      18,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1329. 将矩阵按对角线排序",
+    "slug": "1329-Sort-the-Matrix-Diagonally",
+    "relatedTags": [
+      "数组",
+      "矩阵",
+      "排序"
+    ]
+  },
+  "1328-Break-a-Palindrome": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1328",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2020-01-31",
+    "timeArr": [
+      2020,
+      0,
+      31,
+      11,
+      5,
+      40,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1328. 破坏回文串",
+    "slug": "1328-Break-a-Palindrome",
+    "relatedTags": [
+      "贪心",
+      "字符串"
+    ]
+  },
+  "1143-Longest-Common-Subsequence": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1143",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2021-04-03",
+    "timeArr": [
+      2021,
+      3,
+      3,
+      11,
+      28,
+      4,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1143. 最长公共子序列",
+    "slug": "1143-Longest-Common-Subsequence",
+    "relatedTags": [
+      "字符串",
+      "动态规划"
+    ]
+  },
+  "1146-Snapshot-Array": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1146",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-08-04",
+    "timeArr": [
+      2019,
+      7,
+      4,
+      11,
+      56,
+      40,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1146. 快照数组",
+    "slug": "1146-Snapshot-Array",
+    "relatedTags": [
+      "设计",
+      "数组",
+      "哈希表",
+      "二分查找"
+    ]
+  },
+  "1145-Binary-Tree-Coloring-Game": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1145",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-08-04",
+    "timeArr": [
+      2019,
+      7,
+      4,
+      12,
+      34,
+      56,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1145. 二叉树着色游戏",
+    "slug": "1145-Binary-Tree-Coloring-Game",
+    "relatedTags": [
+      "树",
+      "深度优先搜索",
+      "二叉树"
+    ]
+  },
+  "1144-Decrease-Elements-To-Make-Array-Zigzag": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1144",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-08-04",
+    "timeArr": [
+      2019,
+      7,
+      4,
+      12,
+      20,
+      8,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1144. 递减元素使数组呈锯齿状",
+    "slug": "1144-Decrease-Elements-To-Make-Array-Zigzag",
+    "relatedTags": [
+      "贪心",
+      "数组"
+    ]
+  },
+  "1140-Stone-Game-II": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1140",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-07-28",
+    "timeArr": [
+      2019,
+      6,
+      28,
+      13,
+      25,
+      4,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1140. 石子游戏 II",
+    "slug": "1140-Stone-Game-II",
+    "relatedTags": [
+      "数组",
+      "数学",
+      "动态规划",
+      "博弈"
+    ]
+  },
+  "1139-Largest-1-Bordered-Square": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1139",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-07-28",
+    "timeArr": [
+      2019,
+      6,
+      28,
+      12,
+      18,
+      46,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1139. 最大的以 1 为边界的正方形",
+    "slug": "1139-Largest-1-Bordered-Square",
+    "relatedTags": [
+      "数组",
+      "动态规划",
+      "矩阵"
+    ]
+  },
+  "1138-Alphabet-Board-Path": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1138",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-07-28",
+    "timeArr": [
+      2019,
+      6,
+      28,
+      11,
+      16,
+      40,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1138. 字母板上的路径",
+    "slug": "1138-Alphabet-Board-Path",
+    "relatedTags": [
+      "哈希表",
+      "字符串"
+    ]
+  },
+  "1137-N-th-Tribonacci-Number": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1137",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2019-07-28",
+    "timeArr": [
+      2019,
+      6,
+      28,
+      10,
+      34,
+      17,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1137. 第 N 个泰波那契数",
+    "slug": "1137-N-th-Tribonacci-Number",
+    "relatedTags": [
+      "记忆化搜索",
+      "数学",
+      "动态规划"
+    ]
+  },
+  "1131-Maximum-of-Absolute-Value-Expression": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1131",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-07-21",
+    "timeArr": [
+      2019,
+      6,
+      21,
+      12,
+      25,
+      35,
+      0
+    ],
+    "hasThinking": true,
+    "title": "1131. 绝对值表达式的最大值",
+    "slug": "1131-Maximum-of-Absolute-Value-Expression",
+    "relatedTags": [
+      "数组",
+      "数学"
+    ]
+  },
+  "1129-Shortest-Path-with-Alternating-Colors": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1129",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-07-21",
+    "timeArr": [
+      2019,
+      6,
+      21,
+      11,
+      12,
+      58,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1129. 颜色交替的最短路径",
+    "slug": "1129-Shortest-Path-with-Alternating-Colors",
+    "relatedTags": [
+      "广度优先搜索",
+      "图"
+    ]
+  },
+  "1130-Minimum-Cost-Tree-From-Leaf-Values": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1130",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-07-21",
+    "timeArr": [
+      2019,
+      6,
+      21,
+      11,
+      27,
+      14,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1130. 叶值的最小代价生成树",
+    "slug": "1130-Minimum-Cost-Tree-From-Leaf-Values",
+    "relatedTags": [
+      "栈",
+      "贪心",
+      "动态规划",
+      "单调栈"
+    ]
+  },
+  "1128-Number-of-Equivalent-Domino-Pairs": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1128",
+    "difficultNum": 1,
+    "difficult": "Easy",
+    "created_at": "2019-07-21",
+    "timeArr": [
+      2019,
+      6,
+      21,
+      10,
+      52,
+      38,
+      0
+    ],
+    "hasThinking": false,
+    "title": "1128. 等价多米诺骨牌对的数量",
+    "slug": "1128-Number-of-Equivalent-Domino-Pairs",
+    "relatedTags": [
+      "数组",
+      "哈希表",
+      "计数"
+    ]
+  },
+  "1125-Smallest-Sufficient-Team": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1125",
+    "difficultNum": 3,
+    "difficult": "Hard",
+    "created_at": "2019-07-14",
+    "timeArr": [
+      2019,
+      6,
+      14,
+      12,
+      28,
+      44,
+      0
+    ],
+    "hasThinking": true,
+    "title": "1125. 最小的必要团队",
+    "slug": "1125-Smallest-Sufficient-Team",
+    "relatedTags": [
+      "位运算",
+      "数组",
+      "动态规划",
+      "状态压缩"
+    ]
+  },
+  "1124-Longest-Well-Performing-Interval": {
+    "lang": [
+      "javascript"
+    ],
+    "uniqueID": "1124",
+    "difficultNum": 2,
+    "difficult": "Middle",
+    "created_at": "2019-07-14",
+    "timeArr": [
+      2019,
+      6,
+      14,
+      11,
+      19,
+      14,
+      0
+    ],
+    "hasThinking": true,
+    "title": "1124. 表现良好的最长时间段",
+    "slug": "1124-Longest-Well-Performing-Interval",
+    "relatedTags": [
+      "栈",
+      "数组",
+      "哈希表",
+      "前缀和",
+      "单调栈"
+    ]
   }
 }

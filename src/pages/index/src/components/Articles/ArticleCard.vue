@@ -9,9 +9,8 @@
             </router-link>
         </v-card-title>
 
-        <v-card-text class="d-flex flex-column justify-space-between flex-grow-1">
-            <div class="text-secondary text-xs summary-body" v-html="articleHeader.summary"></div>
-            <div class="mt-2">
+        <v-card-text class="d-flex flex-column justify-space-start flex-grow-1">
+            <div>
                 <ArticleTags :tags="articleHeader.relatedTags"/>
                 <div class="text-sm d-flex justify-space-start mt-2">
                     <DateRender :date="articleHeader.created_at" />
@@ -19,6 +18,7 @@
                     <CommentCount :commentCount="15" />
                 </div>
             </div>
+            <div class="text-secondary text-xs summary-body" v-html="articleHeader.summary"></div>
         </v-card-text>
 
     </v-card>

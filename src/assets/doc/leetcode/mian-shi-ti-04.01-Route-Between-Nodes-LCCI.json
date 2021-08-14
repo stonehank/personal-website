@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">n</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[][]}</span> <span class=\"hljs-variable\">graph</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">start</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">target</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{boolean}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> findWhetherExistsPath = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">n, graph, start, target</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> g=<span class=\"hljs-built_in\">Array</span>(n).fill().map(<span class=\"hljs-function\"><span class=\"hljs-params\">()</span>=&gt;</span>[])\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> [f,e] <span class=\"hljs-keyword\">of</span> graph){\n    g[f].push(e)\n  }\n  <span class=\"hljs-keyword\">let</span> hash={}\n  <span class=\"hljs-keyword\">let</span> arr=[start]\n  hash[start]=<span class=\"hljs-literal\">true</span>\n  <span class=\"hljs-keyword\">while</span>(arr.length&gt;<span class=\"hljs-number\">0</span>){\n    <span class=\"hljs-keyword\">let</span> len=arr.length\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;len;i++){\n      <span class=\"hljs-keyword\">let</span> curIdx=arr.shift()\n      <span class=\"hljs-keyword\">let</span> next=g[curIdx]\n      <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> j=<span class=\"hljs-number\">0</span>;j&lt;next.length;j++){\n        <span class=\"hljs-keyword\">let</span> nextIdx=next[j]\n        <span class=\"hljs-keyword\">if</span>(nextIdx===target)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n        <span class=\"hljs-keyword\">if</span>(hash[nextIdx])<span class=\"hljs-keyword\">continue</span>\n        hash[nextIdx]=<span class=\"hljs-literal\">true</span>\n        arr.push(nextIdx)\n      }\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n};\n</code></pre>\n"
+  ],
+  "querySlug": "route-between-nodes-lcci",
+  "created_at": "2020-05-26",
+  "timeArr": [
+    2020,
+    4,
+    26,
+    21,
+    34,
+    27,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>节点间通路。给定有向图，设计一个算法，找出两个节点之间是否存在一条路径。</p>\n\n<p><strong>示例1:</strong></p>\n\n<pre><strong> 输入</strong>：n = 3, graph = [[0, 1], [0, 2], [1, 2], [1, 2]], start = 0, target = 2\n<strong> 输出</strong>：true\n</pre>\n\n<p><strong>示例2:</strong></p>\n\n<pre><strong> 输入</strong>：n = 5, graph = [[0, 1], [0, 2], [0, 4], [0, 4], [0, 1], [1, 3], [1, 4], [1, 3], [2, 3], [3, 4]], start = 0, target = 4\n<strong> 输出</strong> true\n</pre>\n\n<p><strong>提示：</strong></p>\n\n<ol>\n\t<li>节点数量n在[0, 1e5]范围内。</li>\n\t<li>节点编号大于等于 0 小于 n。</li>\n\t<li>图中可能存在自环和平行边。</li>\n</ol>\n",
+  "title": "面试题 04.01. 节点间通路",
+  "relatedTags": [
+    "深度优先搜索",
+    "广度优先搜索",
+    "图"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "面试题 04.01",
+  "slug": "mian-shi-ti-04.01-Route-Between-Nodes-LCCI"
+}

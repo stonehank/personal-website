@@ -1,0 +1,29 @@
+{
+  "content": "<h2 id=\"lu-jing-pi-pei-you-xian-quan-wen-ti\">路径匹配优先权问题</h2>\n<p>先假设一个问题：</p>\n<p>有一个匹配路径： <code>doc/artical</code></p>\n<p>待匹配路径有3个：</p>\n<p><code>doc/:section</code></p>\n<p><code>doc/*</code></p>\n<p><code>doc/artical</code></p>\n<p>该优先对哪个匹配呢？</p>\n<p>源码中是使用了一个评分的方法：</p>\n<ul>\n<li>先对路径去除头尾的&quot;/&quot; ，并且按&quot;/&quot;分割成路径片段数组</li>\n<li>对数组使用reduce方法计算分值，如下：<pre><code><pre class=\"hljs\"><code>let SEGMENT_POINTS = 4;     // 基本分值，每一个路径片段都有\nlet STATIC_POINTS = 3;      // 静态路径，如：/abc\nlet DYNAMIC_POINTS = 2;     // 动态路径，如：/:section\nlet SPLAT_PENALTY = 1;      // 通配符（减分），如：/*，此处遇到通配符会先减去基本分值，再减1分（优先权很低）\nlet ROOT_POINTS = 1;        // 根路径</code></pre>\n</code></pre>\n可知优先权排序为：</li>\n</ul>\n<p>静态路径 &gt; 动态路径 &gt; 根路径 &gt; 通配符</p>\n<p>因此上面的问题会优先匹配<code>doc/artical</code>，第二有优先度为<code>doc/:section</code></p>\n",
+  "toc": [
+    {
+      "anchor": "lu-jing-pi-pei-you-xian-quan-wen-ti",
+      "level": 2,
+      "text": "路径匹配优先权问题"
+    }
+  ],
+  "relatedTags": [
+    "源码",
+    "router"
+  ],
+  "created_at": "2018-07-06",
+  "timeArr": [
+    2018,
+    6,
+    6,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "源码阅读-reach-router源码学习到的2",
+  "uuid": "cc5d864eab97f30e3cb11aff77b2ac5a7ad4ed86",
+  "summary": "<h4>路径匹配优先权问题</h4>\n<p>先假设一个问题：</p>\n<p>有一个匹配路径： <code>doc/artical</code></p>\n<p>待匹配路径有3个：</p>\n<p><code>doc/:section</code></p>\n<p><code>doc/*</code></p>\n<p><code>doc/artical</code></p>\n<p>该优先对哪个匹配呢？</p>\n<p>源码中是使用了一个评分的方法：</p>\n<ul>\n<li>先对路径去除头尾的&quot;/&quot; ，并且按&quot;/&quot;分割成路径片段数组\n...</li>\n</ul>",
+  "slug": "yuan-ma-yue-du-reach-router-yuan-ma-xue-xi-dao-de-2",
+  "sha": "a36a3611a3b4eab9e4d4f48583424f9a869764b8"
+}

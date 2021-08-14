@@ -1,0 +1,23 @@
+{
+  "content": "<p>reach-router是一个轻量级的router组件，当然功能也相对于react-router少了一些。</p>\n<p>近期使用的时候遇到以下问题，在这里总结一次</p>\n<ol>\n<li><p>router遇到<code>url:parameter</code> ，当无法匹配的情况，默认会一直读取loading组件，因为它不知道这个参数是否有效，</p>\n<p> 需要自行判断<code>parameter</code>是不是有效参数，然后再处理不匹配的情况(可以使用navigate)</p>\n</li>\n<li><p>react-router有一个功能，<code>url:?params</code>意思是存在或者不存在params都能匹配到，而reach-router并没有</p>\n<p> 因此遇到url参数可有可无状况可以使用以下写法：</p>\n<pre><code><pre class=\"hljs\"><code>&lt;Home path=&quot;/&quot; page={1} /&gt;\n&lt;Home path=&quot;page/:page&quot; /&gt;</code></pre>\n</code></pre>\n</li>\n<li><p>关于router的点击后会自动scroll的问题</p>\n<p> 这应该是一个SPA的通病，点击link就像锚链接一样，跳转到link的位置，也是需要自己解决，如下：</p>\n<pre><code><pre class=\"hljs\"><code>componentDidMount() {\n  requestAnimationFrame(() =&gt; {\n    window.scrollTo(0, 0);\n  });\n}</code></pre>\n</code></pre>\n</li>\n</ol>\n",
+  "toc": [],
+  "relatedTags": [
+    "router",
+    "react"
+  ],
+  "created_at": "2018-10-11",
+  "timeArr": [
+    2018,
+    9,
+    11,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "关于近期使用reach-router的一些总结",
+  "uuid": "d8bf00a3ca68fe4e1b5c7acde9855e2148c7762f",
+  "summary": "<p>reach-router是一个轻量级的router组件，当然功能也相对于react-router少了一些。</p>\n<p>近期使用的时候遇到以下问题，在这里总结一次</p>\n<ol>\n<li>\n<p>router遇到<code>url:parameter</code> ，当无法匹配的情况，默认会一直读取loading组件，因为它不知道这个参数是否有效，</p>\n<p>需要自行判断`...</p>\n</li>\n</ol>",
+  "slug": "guan-yu-jin-qi-shi-yong-reach-router-de-yi-xie-zong-jie",
+  "sha": "3a57533a3dc20f28769f523891951917242119ad"
+}

@@ -1,9 +1,10 @@
 import blogListJson from 'assetsDir/doc/blog/.blog-list.json';
 import algorithmJson from 'assetsDir/doc/leetcode/.leetcode-list.json'
 import sourceCodeList from 'assetsDir/doc/sourceCode/.sourceCode-list.json'
-import {convertToList} from './list-json-parser'
+import {convertToList, objGroupBy} from './list-json-parser'
 let yearInfoCache=null
 
+/* Archive --- Start --- */
 export function allListOnSpecificYearMonth(year,month){
     return convertToList(
         [blogListJson,algorithmJson,sourceCodeList],
@@ -20,6 +21,19 @@ export function getYearInfo(year){
     year = +year
     let allYear=getAllYearsInfo()
     return allYear.find(obj=>obj.year===year)
+}
+
+export function getYearMonthInfo(year,month){
+    year = +year
+    let allYear=getAllYearsInfo()
+    let yearInfo= allYear.find(obj=>obj.year===year)
+    let yearMonthInfo={}
+    yearMonthInfo.year=yearInfo.year
+    yearMonthInfo.month=month
+    let allYearBlogsCount=yearInfo.month_counts.reduce((a,b)=>a+b)
+    yearMonthInfo.view_count=yearInfo.view_count / allYearBlogsCount * yearInfo.month_counts[month-1]
+    yearMonthInfo.blog_count=yearInfo.month_counts[month-1]
+    return yearMonthInfo
 }
 
 
@@ -42,7 +56,9 @@ export function getAllYearsInfo(){
 function __getJsonYearInfo(json,yearsObj){
     for(let k in json){
         if(!json.hasOwnProperty(k))continue
+        if(!json[k].timeArr)continue
         let [year,monthIdx]=json[k].timeArr
+        if(year==null)continue
         if(yearsObj[year]==null){
             yearsObj[year]={
                 view_count:0,
@@ -56,3 +72,39 @@ function __getJsonYearInfo(json,yearsObj){
         yearsObj[year].view_count += Math.floor( ((new Date().getTime() - new Date().setFullYear(year,0,1)) / 1000 / 3600 / 24  ))
     }
 }
+
+/* Archive --- End --- */
+
+
+/* Tags --- Start --- */
+
+export function getTagsCount(specificProp=null){
+    let countsObj= objGroupBy(
+        convertToList([blogListJson,algorithmJson,sourceCodeList], ['随笔','算法','源码阅读']),
+        'relatedTags',
+        {
+            onlyCount:true,
+            specificProp:specificProp
+        }
+    )
+    let list=[]
+    for(let key in countsObj){
+        let obj={label:key,count:countsObj[key]}
+        list.push(obj)
+    }
+    countsObj=null
+    return list
+}
+export function getTagsObj(specificProp=null){
+    return objGroupBy(
+        convertToList([blogListJson,algorithmJson,sourceCodeList], ['随笔','算法','源码阅读']),
+        'relatedTags',
+        {
+            specificProp:specificProp
+        }
+    )
+}
+
+
+
+/* Tags --- End --- */

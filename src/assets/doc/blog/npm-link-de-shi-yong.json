@@ -1,0 +1,23 @@
+{
+  "content": "<p>关于<code>npm-link</code>的使用</p>\n<p>当开发项目时，有时候会想用一个本地的工具，复制源码什么的太麻烦了，发布到npm也很麻烦，就只想直接用。\n那么可以考虑使用<code>npm-link</code>。</p>\n<p>现在我有一个工具项目叫做<code>tool</code></p>\n<p>我可以先注册到全局</p>\n<p><code>npm link tool</code></p>\n<p>接着，找到我想导入的项目：<code>cd project</code>，在当前项目目录下：</p>\n<p><code>npm link tool</code></p>\n<p>这样，就会将这个<code>tool</code>加载到<code>node_modules</code>里面，直接<code>import</code>或者<code>require</code>就可以使用了。</p>\n",
+  "toc": [],
+  "relatedTags": [
+    "npm",
+    "源码"
+  ],
+  "created_at": "2018-10-12",
+  "timeArr": [
+    2018,
+    9,
+    12,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "npm-link的使用",
+  "uuid": "4e6c7ab04e26dcf8fee1500f1d90cb218b836309",
+  "summary": "<p>关于<code>npm-link</code>的使用</p>\n<p>当开发项目时，有时候会想用一个本地的工具，复制源码什么的太麻烦了，发布到npm也很麻烦，就只想直接用。\n那么可以考虑使用<code>npm-link</code>。</p>\n<p>现在我有一个工具项目叫做<code>tool</code></p>\n<p>我可以先注册到全局</p>\n<p><code>npm link tool</code></p>\n<p>接着，找到我想导入的项目：`cd proje...</p>",
+  "slug": "npm-link-de-shi-yong",
+  "sha": "622748c94137c2c180569b7e9ea94fee9140add1"
+}

@@ -1,0 +1,28 @@
+{
+  "content": "<h4 id=\"yi-xie-chang-yong-de-chu-shi-hua-shu-zu-wei-index-de-fang-fa-de-xing-neng-bi-jiao\">一些常用的初始化数组为index的方法的性能比较</h4>\n<p>注释为执行时间，这就是为什么循环推荐使用for循环了</p>\n<p>(整段复制到控制台执行)</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-comment\">// 一、</span>\n<span class=\"hljs-keyword\">var</span> a=performance.now()\n<span class=\"hljs-keyword\">var</span> arr=[];\n<span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;<span class=\"hljs-number\">10000000</span>;i++){\n    arr[i]=i;\n}\n<span class=\"hljs-built_in\">console</span>.log(performance.now()-a)\n<span class=\"hljs-comment\">// 319ms</span>\n\n\n<span class=\"hljs-comment\">// 二、</span>\n<span class=\"hljs-keyword\">var</span> a=performance.now()\n<span class=\"hljs-keyword\">var</span> arr=<span class=\"hljs-built_in\">Array</span>(<span class=\"hljs-number\">10000000</span>).fill(<span class=\"hljs-literal\">null</span>).map(<span class=\"hljs-function\">(<span class=\"hljs-params\">_, i</span>)=&gt;</span> i )\n<span class=\"hljs-built_in\">console</span>.log(performance.now()-a)\n<span class=\"hljs-comment\">// 2210ms</span>\n\n\n<span class=\"hljs-comment\">// 三、</span>\n<span class=\"hljs-keyword\">var</span> a=performance.now()\n<span class=\"hljs-keyword\">var</span> arr=[...Array(<span class=\"hljs-number\">10000000</span>)].map(<span class=\"hljs-function\">(<span class=\"hljs-params\">_, i</span>)=&gt;</span> i)\n<span class=\"hljs-built_in\">console</span>.log(performance.now()-a)\n<span class=\"hljs-comment\">// 2563ms</span>\n\n\n<span class=\"hljs-comment\">// 四、</span>\n<span class=\"hljs-keyword\">var</span> a=performance.now()\n<span class=\"hljs-keyword\">var</span> arr=<span class=\"hljs-built_in\">Array</span>.from({ <span class=\"hljs-attr\">length</span>: <span class=\"hljs-number\">10000000</span> }, (_, i) =&gt; i)\n<span class=\"hljs-built_in\">console</span>.log(performance.now()-a)\n<span class=\"hljs-comment\">// 1843ms</span></code></pre>\n</code></pre>\n",
+  "toc": [
+    {
+      "anchor": "yi-xie-chang-yong-de-chu-shi-hua-shu-zu-wei-index-de-fang-fa-de-xing-neng-bi-jiao",
+      "level": 4,
+      "text": "一些常用的初始化数组为index的方法的性能比较"
+    }
+  ],
+  "relatedTags": [
+    "性能"
+  ],
+  "created_at": "2018-06-19",
+  "timeArr": [
+    2018,
+    5,
+    19,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "初始化数组的性能比较",
+  "uuid": "1bc31bd290d4582fbd008d35949802c4ed8ba93e",
+  "summary": "<h4>一些常用的初始化数组为index的方法的性能比较</h4>\n<p>注释为执行时间，这就是为什么循环推荐使用for循环了</p>\n<p>(整段复制到控制台执行)</p>\n<pre class=\"hljs\"><code><span class=\"hljs-comment\">// 一、</span>\n<span class=\"hljs-keyword\">var</span> a=performance.now()\n<span class=\"hljs-keyword\">var</span> arr=[];\n<span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;<span class=\"hljs-number\">10000000</span>;i++){\n    arr[i]=...</code></pre>",
+  "slug": "chu-shi-hua-shu-zu-de-xing-neng-bi-jiao",
+  "sha": "933a48b25bde1a4296a5e153484a755778fd792c"
+}

@@ -2,21 +2,13 @@
     <v-card
             class="mx-auto"
     >
-        <v-img :src="articleHeader.img" height="200px"></v-img>
-
+        <v-img :src="projectHeader.img" height="200px"></v-img>
         <v-card-title class="pt-2 pb-1 text-lg">
-            <router-link :to="'/blogs/'+articleHeader.slug">{{articleHeader.title}}</router-link>
+            <router-link :to="'/blogs/'+projectHeader.slug">{{projectHeader.title}}</router-link>
         </v-card-title>
-
         <v-card-text>
-            <p class="text-secondary text-xs">{{articleHeader.description}}</p>
-            <ArticleTags />
-            <div class="text-sm d-flex justify-space-between">
-                <CommentCount :commentCount="commentCount" />
-                <DateRender :date="articleHeader.date" />
-            </div>
+            <p class="text-secondary text-xs">{{projectHeader.description}}</p>
         </v-card-text>
-
     </v-card>
 </template>
 
@@ -28,7 +20,7 @@
         name: "ProjectCard",
         components: {DateRender, CommentCount, ArticleTags},
         props:{
-            articleHeader:{
+            projectHeader:{
                 default:()=>({
                         title:String,
                         img:{

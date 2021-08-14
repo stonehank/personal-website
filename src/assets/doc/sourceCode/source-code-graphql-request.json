@@ -1,0 +1,23 @@
+{
+  "content": "<p><code>graphql-request</code>一个极小的<code>graphql</code>请求方法</p>\n<p>如果不太了解<code>graphql</code>，看一下这个库，或许能知道它的请求就可以这么简单...</p>\n<p>就是熟悉的<code>fetch</code>，这里使用了<code>cross-fetch</code>(兼容的fetch)</p>\n<ol>\n<li><code>Content-Type</code>设置为<code>application/json</code></li>\n<li><code>method</code>设置为<code>POST</code></li>\n<li>合并自定义<code>headers</code></li>\n<li>传入<code>query</code>(<code>graphql</code>的查询模板)，<code>variables</code>(查询模板中的变量，可选)</li>\n</ol>\n<p>剩下的只需要等待数据返回。</p>\n",
+  "toc": [],
+  "relatedTags": [
+    "graphql",
+    "源码"
+  ],
+  "created_at": "2018-12-21",
+  "timeArr": [
+    2018,
+    11,
+    21,
+    23,
+    12,
+    52,
+    0
+  ],
+  "title": "源码阅读-graphql-request",
+  "uuid": "003e6a0839f7a3aa25452aa0631217c7d52b51b0",
+  "summary": "<p><code>graphql-request</code>一个极小的<code>graphql</code>请求方法</p>\n<p>如果不太了解<code>graphql</code>，看一下这个库，或许能知道它的请求就可以这么简单...</p>\n<p>就是熟悉的<code>fetch</code>，这里使用了<code>cross-fetch</code>(兼容的fetch)</p>\n<ol>\n<li><code>Content-Type</code>设置为`application/js...</li>\n</ol>",
+  "slug": "source-code-graphql-request",
+  "sha": "2153a5389109334a02980708ba72e829b64515a2"
+}

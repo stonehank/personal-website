@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">nums</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> getMaxLen = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">nums</span>) </span>{\n    <span class=\"hljs-keyword\">let</span> res=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">let</span> arr=[]\n    <span class=\"hljs-keyword\">let</span> cur=[]\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;nums.length;i++){\n        <span class=\"hljs-keyword\">if</span>(nums[i]===<span class=\"hljs-number\">0</span>){\n            <span class=\"hljs-keyword\">if</span>(cur.length&gt;<span class=\"hljs-number\">0</span>)arr.push(cur)\n            cur=[]\n        }<span class=\"hljs-keyword\">else</span> cur.push(nums[i])\n    }\n    <span class=\"hljs-keyword\">if</span>(cur.length&gt;<span class=\"hljs-number\">0</span>)arr.push(cur)\n    <span class=\"hljs-comment\">// console.log(arr)</span>\n    <span class=\"hljs-keyword\">let</span> aux=[]\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;arr.length;i++){\n        <span class=\"hljs-keyword\">let</span> minus=[]\n        <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> j=<span class=\"hljs-number\">0</span>;j&lt;arr[i].length;j++){\n            <span class=\"hljs-keyword\">if</span>(arr[i][j]&lt;<span class=\"hljs-number\">0</span>){\n                minus.push(j)\n            }\n        }\n        <span class=\"hljs-comment\">// console.log(minus,i)</span>\n        <span class=\"hljs-keyword\">if</span>(minus.length % <span class=\"hljs-number\">2</span>===<span class=\"hljs-number\">0</span>){\n            res=<span class=\"hljs-built_in\">Math</span>.max(res,arr[i].length)\n        }<span class=\"hljs-keyword\">else</span>{\n            res=<span class=\"hljs-built_in\">Math</span>.max(res,arr[i].length-minus[<span class=\"hljs-number\">0</span>]<span class=\"hljs-number\">-1</span>,minus[minus.length<span class=\"hljs-number\">-1</span>])\n        }\n    }\n    <span class=\"hljs-comment\">// console.log('--------------end')</span>\n    <span class=\"hljs-keyword\">return</span> res\n};\n</code></pre>\n"
+  ],
+  "querySlug": "maximum-length-of-subarray-with-positive-product",
+  "created_at": "2020-08-30",
+  "timeArr": [
+    2020,
+    7,
+    30,
+    11,
+    8,
+    2,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给你一个整数数组 <code>nums</code>&nbsp;，请你求出乘积为正数的最长子数组的长度。</p>\n\n<p>一个数组的子数组是由原数组中零个或者更多个连续数字组成的数组。</p>\n\n<p>请你返回乘积为正数的最长子数组长度。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例&nbsp; 1：</strong></p>\n\n<pre><strong>输入：</strong>nums = [1,-2,-3,4]\n<strong>输出：</strong>4\n<strong>解释：</strong>数组本身乘积就是正数，值为 24 。\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre><strong>输入：</strong>nums = [0,1,-2,-3,-4]\n<strong>输出：</strong>3\n<strong>解释：</strong>最长乘积为正数的子数组为 [1,-2,-3] ，乘积为 6 。\n注意，我们不能把 0 也包括到子数组中，因为这样乘积为 0 ，不是正数。</pre>\n\n<p><strong>示例 3：</strong></p>\n\n<pre><strong>输入：</strong>nums = [-1,-2,-3,0,1]\n<strong>输出：</strong>2\n<strong>解释：</strong>乘积为正数的最长子数组是 [-1,-2] 或者 [-2,-3] 。\n</pre>\n\n<p><strong>示例 4：</strong></p>\n\n<pre><strong>输入：</strong>nums = [-1,2]\n<strong>输出：</strong>1\n</pre>\n\n<p><strong>示例 5：</strong></p>\n\n<pre><strong>输入：</strong>nums = [1,2,3,5,-6,4,0,10]\n<strong>输出：</strong>4\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= nums.length &lt;= 10^5</code></li>\n\t<li><code>-10^9 &lt;= nums[i]&nbsp;&lt;= 10^9</code></li>\n</ul>\n",
+  "title": "1567. 乘积为正数的最长子数组长度",
+  "relatedTags": [
+    "贪心",
+    "数组",
+    "动态规划"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "1567",
+  "slug": "1567-Maximum-Length-of-Subarray-With-Positive-Product"
+}

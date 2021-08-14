@@ -7,7 +7,7 @@
             <div class="timeline-dot"></div>
             <div class="timeline-line"></div>
         </div>
-        <div class="timeline-right d-flex flex-column" style="flex:1">
+        <div class="timeline-right d-flex flex-column  pb-4" style="flex:1">
             <div class="w-100" v-if="$vuetify.breakpoint.smAndDown">
                 <YearInfo :archiveData="archiveData" :start="start" />
             </div>
