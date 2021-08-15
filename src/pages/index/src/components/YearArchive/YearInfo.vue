@@ -17,7 +17,7 @@
                                        :start="start"
                                        :animate="animate"
                     />
-                    篇随笔
+                    篇
                 </p>
                 <p class="text-secondary"
                    :class="isMobile ? 'text-md' : 'text-lg'"

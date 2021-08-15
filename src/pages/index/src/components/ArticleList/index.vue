@@ -4,31 +4,35 @@
                         v-model="selectedInfo"
                         :allLength="articleList.length"
                         :perPage="perPage"
+                        ref="listControllerRef"
+                        class="position-fixed py-2 w-100"
+                        style="background:var(--background-color);z-index: 2"
+                        :style="{
+                            top:$custom_data.getNavH() + 'px',
+                            left: ($vuetify.breakpoint.smAndDown ? 0 : 256 + 12) + 'px',
+                        }"
         />
-        <v-divider class="mt-4" />
-        <vue2-scrollbar
-                v-if="filterArticleList"
-                ref="Scrollbar"
+        <v-divider
+                v-if="mounted"
                 :style="{
-                    maxHeight: winH - 48 - $custom_data.getNavH() - 28 - 20 + 'px'
+                    marginTop:($refs.listControllerRef.$el.offsetHeight - 12) + 'px'
                 }"
-        >
-            <v-list ref="listGroup">
-                <v-list-item-group>
-                    <template v-for="(item, index) in filterArticleList">
-                        <ArticleCard
-                                :articleHeader="item"
-                                :comment-count="12"
-                                flat
-                        />
-                        <v-divider
-                                v-if="index < filterArticleList.length - 1"
-                                :key="index"
-                        ></v-divider>
-                    </template>
-                </v-list-item-group>
-            </v-list>
-        </vue2-scrollbar>
+        />
+        <v-list ref="listGroup">
+            <v-list-item-group>
+                <template v-for="(item, index) in filterArticleList">
+                    <ArticleCard
+                            :articleHeader="item"
+                            :comment-count="12"
+                            flat
+                    />
+                    <v-divider
+                            v-if="index < filterArticleList.length - 1"
+                            :key="index"
+                    ></v-divider>
+                </template>
+            </v-list-item-group>
+        </v-list>
     </section>
 </template>
 
@@ -39,6 +43,7 @@
     import DateRender from "pagesDir/index/src/commons/DateRender";
     import ArticleCard from "pagesDir/index/src/components/Articles/ArticleCard";
     import ListController from "pagesDir/index/src/commons/ListController/index";
+    import {scrollTo} from "pagesDir/index/src/utils";
     export default {
         name: "ArticleList",
         components: {ListController, ArticleCard, DateRender, ArticleTags,Vue2Scrollbar},
@@ -57,13 +62,7 @@
                     }
                     if(page!==this.realPage){
                         this.realPage=page
-                        if(this.$refs.Scrollbar) {
-                            this.$refs.Scrollbar.scrollToY(0)
-                        }
-                    }else{
-                        this.$nextTick(function(){
-                            this.$refs.Scrollbar.scrollToY(Math.min(this.$refs.Scrollbar.top, this.$refs.listGroup.$el.offsetHeight - 600))
-                        })
+                        scrollTo(0,true)
                     }
                     this.filterArticleList=this.articleList.slice(this.perPage * (page - 1),this.perPage * page)
                 }
@@ -76,8 +75,12 @@
                 page:1
             }
         },
+        mounted(){
+            this.mounted=true
+        },
         data(){
             return {
+                mounted:false,
                 winH:window.innerHeight,
                 articleList:this.list,
                 filterArticleList:null,

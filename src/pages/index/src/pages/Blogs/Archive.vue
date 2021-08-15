@@ -1,5 +1,7 @@
 <template>
-    <div id="fullpage-archive">
+    <div id="fullpage-archive" :style="{
+        marginTop:-$custom_data.getNavH() + 'px'
+    }">
         <div class="section"
              :data-anchor="archiveData.year"
              v-for="(archiveData,index) in archiveList"
@@ -15,7 +17,6 @@
 <script>
     import 'fullpage.js'
     import 'fullpage.js/dist/jquery.fullpage.css'
-    import 'wow.js/css/libs/animate.css'
     import YearArchive from "pagesDir/index/src/components/YearArchive/index.vue";
     import {getAllYearsInfo} from "pagesDir/index/src/utils/list-json-controller";
 
@@ -25,13 +26,15 @@
         data() {
             return {
                 options: {
+                    paddingTop:this.$custom_data.getNavH() + 'px',
                     dragAndMove: 'fingersonly',
                     navigation: true,
                     navigationPosition: 'left',
                     navigationTooltips: getAllYearsInfo().map(obj => obj.year)
                 },
                 archiveList: getAllYearsInfo(),
-                startList: [false, false, false]
+                startList: [false, false, false],
+                timer:null
             }
         },
         mounted() {
@@ -54,6 +57,7 @@
             $(window).on('resize',this.updateFpNavPos)
         },
         destroyed() {
+            clearTimeout(this.timer)
             $(window).off('resize',this.updateFpNavPos)
             if ($.fn.fullpage) {
                 $.fn.fullpage.destroy(true)
@@ -61,9 +65,12 @@
         },
         methods:{
             updateFpNavPos(){
-                $('#fp-nav').css({
-                    left: this.$vuetify.breakpoint.mdAndUp ? 280 : 0
-                })
+                this.timer=setTimeout(()=>{
+                    console.log(this.$vuetify.breakpoint.mdAndUp)
+                    $('#fp-nav').css({
+                        left: this.$vuetify.breakpoint.mdAndUp ? 280 : 0
+                    })
+                },200)
             }
         }
     }

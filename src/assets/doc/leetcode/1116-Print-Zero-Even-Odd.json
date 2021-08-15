@@ -1,0 +1,28 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">ZeroEvenOdd</span><span class=\"hljs-params\">(object)</span>:</span>\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">__init__</span><span class=\"hljs-params\">(self, n)</span>:</span>\n        self.n = n\n        self.oddP=<span class=\"hljs-number\">1</span>\n        self.evenP=<span class=\"hljs-number\">2</span>\n        self.zeroP=<span class=\"hljs-literal\">False</span>\n        self.done=<span class=\"hljs-literal\">False</span>\n        \n        \n\t<span class=\"hljs-comment\"># printNumber(x) outputs \"x\", where x is an integer.</span>\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">zero</span><span class=\"hljs-params\">(self, printNumber)</span>:</span>\n        <span class=\"hljs-string\">\"\"\"\n        :type printNumber: method\n        :rtype: void\n        \"\"\"</span>\n        <span class=\"hljs-keyword\">if</span> self.done:<span class=\"hljs-keyword\">return</span>\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> range(<span class=\"hljs-number\">0</span>,self.n):\n            <span class=\"hljs-keyword\">while</span> self.zeroP:<span class=\"hljs-keyword\">continue</span>\n\n            printNumber(<span class=\"hljs-number\">0</span>)\n\n            self.zeroP=<span class=\"hljs-literal\">True</span>\n        \n        \n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">even</span><span class=\"hljs-params\">(self, printNumber)</span>:</span>\n        <span class=\"hljs-string\">\"\"\"\n        :type printNumber: method\n        :rtype: void\n        \"\"\"</span>\n        <span class=\"hljs-keyword\">if</span> self.done:<span class=\"hljs-keyword\">return</span>\n        length=(self.n+<span class=\"hljs-number\">1</span>)//<span class=\"hljs-number\">2</span>\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> range(<span class=\"hljs-number\">0</span>,length):\n            <span class=\"hljs-keyword\">while</span> <span class=\"hljs-keyword\">not</span> self.zeroP <span class=\"hljs-keyword\">or</span> self.oddP&lt;self.evenP:<span class=\"hljs-keyword\">continue</span>\n\n            printNumber(self.evenP)\n\n            self.evenP+=<span class=\"hljs-number\">2</span>\n            <span class=\"hljs-keyword\">if</span> self.evenP==self.n:self.done=<span class=\"hljs-literal\">True</span>\n            self.zeroP=<span class=\"hljs-literal\">False</span>\n        \n        \n        \n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">odd</span><span class=\"hljs-params\">(self, printNumber)</span>:</span>\n        <span class=\"hljs-string\">\"\"\"\n        :type printNumber: method\n        :rtype: void\n        \"\"\"</span>\n        <span class=\"hljs-keyword\">if</span> self.done:<span class=\"hljs-keyword\">return</span>\n        length=self.n//<span class=\"hljs-number\">2</span>\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> range(<span class=\"hljs-number\">0</span>,length):\n            <span class=\"hljs-keyword\">while</span> <span class=\"hljs-keyword\">not</span> self.zeroP <span class=\"hljs-keyword\">or</span> self.oddP&gt;self.evenP:<span class=\"hljs-keyword\">continue</span>\n\n            printNumber(self.oddP)\n\n            self.oddP+=<span class=\"hljs-number\">2</span>\n            <span class=\"hljs-keyword\">if</span> self.oddP==self.n:self.done=<span class=\"hljs-literal\">True</span>\n            self.zeroP=<span class=\"hljs-literal\">False</span>\n</code></pre>\n"
+  ],
+  "querySlug": "print-zero-even-odd",
+  "created_at": "2019-07-13",
+  "timeArr": [
+    2019,
+    6,
+    13,
+    13,
+    48,
+    30,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>假设有这么一个类：</p>\n\n<pre>class ZeroEvenOdd {\n&nbsp; public ZeroEvenOdd(int n) { ... }&nbsp;     // 构造函数\n  public void zero(printNumber) { ... }  // 仅打印出 0\n  public void even(printNumber) { ... }  // 仅打印出 偶数\n  public void odd(printNumber) { ... }   // 仅打印出 奇数\n}\n</pre>\n\n<p>相同的一个&nbsp;<code>ZeroEvenOdd</code>&nbsp;类实例将会传递给三个不同的线程：</p>\n\n<ol>\n\t<li>线程 A 将调用&nbsp;<code>zero()</code>，它只输出 0 。</li>\n\t<li>线程 B 将调用&nbsp;<code>even()</code>，它只输出偶数。</li>\n\t<li>线程 C 将调用&nbsp;<code>odd()</code>，它只输出奇数。</li>\n</ol>\n\n<p>每个线程都有一个&nbsp;<code>printNumber</code> 方法来输出一个整数。请修改给出的代码以输出整数序列&nbsp;<code>010203040506</code>... ，其中序列的长度必须为 2<em>n</em>。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre><strong>输入：</strong>n = 2\n<strong>输出：</strong>&quot;0102&quot;\n<strong>说明：</strong>三条线程异步执行，其中一个调用 zero()，另一个线程调用 even()，最后一个线程调用odd()。正确的输出为 &quot;0102&quot;。\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre><strong>输入：</strong>n = 5\n<strong>输出：</strong>&quot;0102030405&quot;\n</pre>\n",
+  "title": "1116. 打印零与奇偶数",
+  "relatedTags": [
+    "多线程"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "python"
+  ],
+  "uniqueID": "1116",
+  "slug": "1116-Print-Zero-Even-Odd"
+}

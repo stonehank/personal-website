@@ -36,7 +36,7 @@
   ],
   "title": "single-spa-微前端的路由管理系统",
   "uuid": "386fc98fbb6d77826458755f0e09b60919b215bc",
-  "summary": "<p><code>single-spa</code>一个页面路由管理工具，当一个页面存在多个框架<code>React</code>, <code>Vue</code>, <code>Angular</code>等等时，单个框架路由已经不能适用，需要一个纯粹的<code>js</code>路由进行管理。</p>\n<p>我的项目结构：</p>\n<pre class=\"hljs\"><code>├── index.js\n├── react-blog\n|  ├── ...other files（内部...</code></pre>",
+  "summary": "<p><code>single-spa</code>一个页面路由管理工具，当一个页面存在多个框架<code>React</code>, <code>Vue</code>, <code>Angular</code>等等时，单个框架路由已经不能适用，需要一个纯粹的<code>js</code>路由进行管理。</p>\n<h4>项目结构：</h4>\n<pre class=\"hljs\"><code>├── index.js\n├── react-blog\n|  ├── ...other files...</code></pre>",
   "slug": "single-spa-wei-qian-duan-de-lu-you-guan-li-xi-tong",
   "sha": "68aa212db545b2cf71c29d34fbbce9f30fe3e228"
 }

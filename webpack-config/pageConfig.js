@@ -1,1 +1,3 @@
-module.exports={}
+module.exports={
+    domain:'https://stonehank.github.io'
+}

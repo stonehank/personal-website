@@ -4,6 +4,7 @@
                 class="mr-2"
                 :items="orderList"
                 label="排序类型"
+                readonly
                 dense
                 hide-details
                 v-model="selectedOrder"

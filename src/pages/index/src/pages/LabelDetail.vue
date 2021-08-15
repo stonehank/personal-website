@@ -53,6 +53,7 @@
     import { getTagsObj} from "pagesDir/index/src/utils/list-json-controller";
     import labelColor from "pagesDir/index/src/utils/label-color";
     import ArticleTableList from "pagesDir/index/src/components/ArticleList/ArticleTableList";
+    import AutoMeta from "pagesDir/index/src/utils/AutoMeta";
 
     export default {
         name: "LabelDetail",
@@ -103,6 +104,16 @@
             }
             this.curLabelList=getTagsObj(this.label)
             this.sortLabel()
+
+            AutoMeta(this.$route,{},{
+                "title": this.label +'标签下文章',
+                "og_title": this.label +'标签下文章',
+                "keywords": this.curLabelList.map(obj=>obj.relatedTags).join(','),
+                "og_url": window.wmpConfig.domain + this.$route.path,
+                "description": this.label +'标签下文章包括：'+this.curLabelList.map(obj=>obj.title).join(','),
+                "og_description": this.label +'标签下文章包括：'+this.curLabelList.map(obj=>obj.title).join(','),
+                "og_image": null
+            })
         },
         methods:{
             sortLabel(){

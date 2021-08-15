@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * Definition for a binary tree node.\n * function TreeNode(val) {\n *     this.val = val;\n *     this.left = this.right = null;\n * }\n */</span>\n<span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{TreeNode}</span> <span class=\"hljs-variable\">root</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">to_delete</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{TreeNode[]}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> delNodes = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">root, to_delete</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> res=[root]\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">remove</span>(<span class=\"hljs-params\">root,val</span>)</span>{\n    <span class=\"hljs-keyword\">if</span>(!root)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">null</span>\n    <span class=\"hljs-keyword\">if</span>(root.val===val){\n      <span class=\"hljs-keyword\">if</span>(root.left){\n        res.push(root.left)\n      }\n      <span class=\"hljs-keyword\">if</span>(root.right){\n        res.push(root.right)\n      }\n      <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">null</span>\n    }\n    <span class=\"hljs-keyword\">if</span>(root.left)root.left=remove(root.left,val)\n    <span class=\"hljs-keyword\">if</span>(root.right)root.right=remove(root.right,val)\n    <span class=\"hljs-keyword\">return</span> root\n  }\n  \n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> val <span class=\"hljs-keyword\">of</span> to_delete){\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;res.length;i++){\n      res[i]=remove(res[i],val)\n    }\n  }\n  \n  <span class=\"hljs-keyword\">let</span> ans=[]\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> node <span class=\"hljs-keyword\">of</span> res){\n    <span class=\"hljs-keyword\">if</span>(node)ans.push(node)\n  }\n  \n  <span class=\"hljs-keyword\">return</span> ans\n  \n};\n</code></pre>\n"
+  ],
+  "querySlug": "delete-nodes-and-return-forest",
+  "created_at": "2019-07-07",
+  "timeArr": [
+    2019,
+    6,
+    7,
+    10,
+    50,
+    5,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给出二叉树的根节点&nbsp;<code>root</code>，树上每个节点都有一个不同的值。</p>\n\n<p>如果节点值在&nbsp;<code>to_delete</code>&nbsp;中出现，我们就把该节点从树上删去，最后得到一个森林（一些不相交的树构成的集合）。</p>\n\n<p>返回森林中的每棵树。你可以按任意顺序组织答案。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例：</strong></p>\n\n<p><strong><img alt=\"\" src=\"https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/07/05/screen-shot-2019-07-01-at-53836-pm.png\" style=\"height: 150px; width: 237px;\"></strong></p>\n\n<pre><strong>输入：</strong>root = [1,2,3,4,5,6,7], to_delete = [3,5]\n<strong>输出：</strong>[[1,2,null,4],[6],[7]]\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li>树中的节点数最大为&nbsp;<code>1000</code>。</li>\n\t<li>每个节点都有一个介于&nbsp;<code>1</code> 到&nbsp;<code>1000</code>&nbsp;之间的值，且各不相同。</li>\n\t<li><code>to_delete.length &lt;= 1000</code></li>\n\t<li><code>to_delete</code> 包含一些从&nbsp;<code>1</code> 到&nbsp;<code>1000</code>、各不相同的值。</li>\n</ul>\n",
+  "title": "1110. 删点成林",
+  "relatedTags": [
+    "树",
+    "深度优先搜索",
+    "二叉树"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "1110",
+  "slug": "1110-Delete-Nodes-And-Return-Forest"
+}

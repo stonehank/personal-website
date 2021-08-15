@@ -1,8 +1,33 @@
 import blogListJson from 'assetsDir/doc/blog/.blog-list.json';
-import algorithmJson from 'assetsDir/doc/leetcode/.leetcode-list.json'
+import _algorithmJson from 'assetsDir/doc/leetcode/.leetcode-list.json'
 import sourceCodeList from 'assetsDir/doc/sourceCode/.sourceCode-list.json'
 import {convertToList, objGroupBy} from './list-json-parser'
 let yearInfoCache=null
+let algorithmJson={}
+for(let k in _algorithmJson){
+    if(_algorithmJson[k].hasThinking){
+        algorithmJson[k]=_algorithmJson[k]
+    }
+}
+
+
+export function getDemo(type,count){
+    let json=null
+    if(type==='blog'){
+        json=blogListJson
+    }else if(type==='leetcode' || type==='algorithm'){
+        json=algorithmJson
+    }else if(type==='sourceCode'){
+        json=sourceCodeList
+    }else{
+        return
+    }
+    return convertToList([json])
+    .sort((a,b)=>a.created_at <= b.created_at ? 1 : -1)
+    .slice(0,count)
+}
+
+
 
 /* Archive --- Start --- */
 export function allListOnSpecificYearMonth(year,month){

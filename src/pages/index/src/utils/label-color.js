@@ -4,12 +4,12 @@ let tagsCountList=getTagsCount()
 
 let colorList=[
     [2,'#9c9c9c'],
-    [5,'#94c270'],
-    [10,'#599c11'],
-    [15,'#3c68b1'],
-    [30,'#95389e'],
-    [50,'#d49f47'],
-    [Infinity,'#c23c6d'],
+    [5,'#96cb7a'],
+    [10,'#7ea748'],
+    [15,'#4474bf'],
+    [30,'#bf3ac9'],
+    [50,'#c98b27'],
+    [Infinity,'#b3124b'],
 ]
 
 let labelColor={}

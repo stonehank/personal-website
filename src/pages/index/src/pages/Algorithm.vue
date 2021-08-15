@@ -11,6 +11,7 @@
 <script>
     import ArticleInfo from "pagesDir/index/src/components/Articles/AlgorithmInfo";
     import AlgorithmInfo from "pagesDir/index/src/components/Articles/AlgorithmInfo";
+    import AutoMeta from "pagesDir/index/src/utils/AutoMeta";
     export default {
         name: "Algorithm",
         components: {AlgorithmInfo, ArticleInfo},
@@ -32,6 +33,17 @@
             import('assetsDir/doc/leetcode/'+slug+'.json')
             .then((module)=>{
                 this.articleDetails=module.default
+            })
+            .then(()=>{
+                AutoMeta(this.$route,{},{
+                    "title": '算法思路-'+this.articleDetails.title,
+                    "og_title": '算法思路-'+this.articleDetails.title,
+                    "keywords": this.articleDetails.relatedTags.join(','),
+                    "og_url": window.wmpConfig.domain + this.$route.path,
+                    "description": this.articleDetails.title,
+                    "og_description": this.articleDetails.title,
+                    "og_image": null
+                })
             })
         }
     }

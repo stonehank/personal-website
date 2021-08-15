@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code>\n<span class=\"hljs-keyword\">var</span> RecentCounter = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"></span>) </span>{\n  <span class=\"hljs-keyword\">this</span>.timer=[]\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">bsEnd</span>(<span class=\"hljs-params\">arr,n</span>)</span>{\n    <span class=\"hljs-keyword\">let</span> lo=<span class=\"hljs-number\">0</span>,hi=arr.length<span class=\"hljs-number\">-1</span>\n    <span class=\"hljs-keyword\">while</span>(lo&lt;hi){\n      <span class=\"hljs-keyword\">let</span> mid=<span class=\"hljs-built_in\">Math</span>.floor((lo+hi)/<span class=\"hljs-number\">2</span>)\n      <span class=\"hljs-keyword\">if</span>(arr[mid]&lt;n)lo=mid+<span class=\"hljs-number\">1</span>\n      <span class=\"hljs-keyword\">else</span> hi=mid\n    }\n    <span class=\"hljs-keyword\">return</span> hi\n  }  \n  <span class=\"hljs-keyword\">this</span>.insert=<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">t</span>)</span>{\n    <span class=\"hljs-keyword\">this</span>.timer.push(t)\n    <span class=\"hljs-keyword\">let</span> idx=bsEnd(<span class=\"hljs-keyword\">this</span>.timer,t<span class=\"hljs-number\">-3000</span>)\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">this</span>.timer.length-idx\n  }\n};\n\n<span class=\"hljs-comment\">/** \n * @param {number} t\n * @return {number}\n */</span>\nRecentCounter.prototype.ping = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">t</span>) </span>{\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">this</span>.insert(t)\n};\n\n<span class=\"hljs-comment\">/** \n * Your RecentCounter object will be instantiated and called as such:\n * var obj = Object.create(RecentCounter).createNew()\n * var param_1 = obj.ping(t)\n */</span>\n</code></pre>\n"
+  ],
+  "querySlug": "number-of-recent-calls",
+  "created_at": "2019-04-24",
+  "timeArr": [
+    2019,
+    3,
+    24,
+    20,
+    10,
+    9,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>由于每次的<code>t</code>都更大，因此<code>push</code>进数组就是一个有序数组，再通过二分法查找<code>t-3000</code>的位置<code>idx</code>，<code>t.length-idx</code>就是结果。</p>\n",
+  "content": "<p>写一个 <code>RecentCounter</code> 类来计算特定时间范围内最近的请求。</p>\n\n<p>请你实现 <code>RecentCounter</code> 类：</p>\n\n<ul>\n\t<li><code>RecentCounter()</code> 初始化计数器，请求数为 0 。</li>\n\t<li><code>int ping(int t)</code> 在时间 <code>t</code> 添加一个新请求，其中 <code>t</code> 表示以毫秒为单位的某个时间，并返回过去 <code>3000</code> 毫秒内发生的所有请求数（包括新请求）。确切地说，返回在 <code>[t-3000, t]</code> 内发生的请求数。</li>\n</ul>\n\n<p><strong>保证</strong> 每次对 <code>ping</code> 的调用都使用比之前更大的 <code>t</code> 值。</p>\n\n<p> </p>\n\n<p><strong>示例：</strong></p>\n\n<pre>\n<strong>输入：</strong>\n[\"RecentCounter\", \"ping\", \"ping\", \"ping\", \"ping\"]\n[[], [1], [100], [3001], [3002]]\n<strong>输出：</strong>\n[null, 1, 2, 3, 3]\n\n<strong>解释：</strong>\nRecentCounter recentCounter = new RecentCounter();\nrecentCounter.ping(1);     // requests = [<strong>1</strong>]，范围是 [-2999,1]，返回 1\nrecentCounter.ping(100);   // requests = [<strong>1</strong>, <strong>100</strong>]，范围是 [-2900,100]，返回 2\nrecentCounter.ping(3001);  // requests = [<strong>1</strong>, <strong>100</strong>, <strong>3001</strong>]，范围是 [1,3001]，返回 3\nrecentCounter.ping(3002);  // requests = [1, <strong>100</strong>, <strong>3001</strong>, <strong>3002</strong>]，范围是 [2,3002]，返回 3\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= t <= 10<sup>9</sup></code></li>\n\t<li>保证每次对 <code>ping</code> 调用所使用的 <code>t</code> 值都 <strong>严格递增</strong></li>\n\t<li>至多调用 <code>ping</code> 方法 <code>10<sup>4</sup></code> 次</li>\n</ul>\n",
+  "title": "933. 最近的请求次数",
+  "relatedTags": [
+    "设计",
+    "队列",
+    "数据流"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "933",
+  "slug": "933-Number-of-Recent-Calls"
+}

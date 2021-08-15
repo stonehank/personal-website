@@ -33,12 +33,18 @@
     })
     import Navigation from "pagesDir/index/src/components/Navigation/index";
     import ScrTopBtn from "pagesDir/index/src/commons/ScrTopBtn";
+    import AutoMeta from "pagesDir/index/src/utils/AutoMeta";
     export default {
         name: "App",
         components: {
             ScrTopBtn,
             Navigation,
             Valine:applyReactInVue(Valine),
+        },
+        watch:{
+            $route:{
+                handler:AutoMeta
+            }
         },
         data(){
             return {

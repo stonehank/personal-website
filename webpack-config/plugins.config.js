@@ -23,6 +23,9 @@ const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin')
 const PurgecssPlugin = require('purgecss-webpack-plugin')
 const DuplicatePackageCheckerPlugin = require('duplicate-package-checker-webpack-plugin')
 const { VuetifyLoaderPlugin } = require('vuetify-loader')
+const PrerenderSPAPlugin = require('prerender-spa-plugin')
+const Renderer = PrerenderSPAPlugin.PuppeteerRenderer
+
 
 otherLangList.unshift(primaryLang)
 const allLangList=otherLangList
@@ -73,6 +76,18 @@ const configPlugins = [
     filename: isDev ? 'assets/css/[name].css' : 'assets/css/[name].[contenthash:8].css',
     chunkFilename: isDev ? 'assets/css/[name].css' : 'assets/css/[name].[contenthash:8].css',
   }),
+  !isDev && new PrerenderSPAPlugin({
+    // Required - The path to the webpack-outputted app to prerender.
+    staticDir: path.join(dirVars.staticRootDir, 'dist'),
+    // Required - Routes to render.
+    routes: require('./getRouteInSpa'),
+    renderer: new Renderer({
+      consoleHandler:function(route,message){
+        console.log(route,message)
+      },
+      maxConcurrentRoutes: 12,
+    })
+  })
 ]
 
 function resolveFlat(page,langList,fullPagePath){

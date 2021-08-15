@@ -1,27 +1,23 @@
 {
-  "single-spa-wei-qian-duan-de-lu-you-guan-li-xi-tong": {
+  "JS-zhong-wei-cao-zuo": {
     "relatedTags": [
-      "react",
-      "vue",
-      "router",
-      "webpack",
-      "promise"
+      "位操作"
     ],
-    "created_at": "2021-06-07",
+    "created_at": "2018-07-03",
     "timeArr": [
-      2021,
-      5,
-      7,
+      2018,
+      6,
+      3,
       0,
       0,
       0,
       0
     ],
-    "title": "single-spa-微前端的路由管理系统",
-    "uuid": "386fc98fbb6d77826458755f0e09b60919b215bc",
-    "summary": "<p><code>single-spa</code>一个页面路由管理工具，当一个页面存在多个框架<code>React</code>, <code>Vue</code>, <code>Angular</code>等等时，单个框架路由已经不能适用，需要一个纯粹的<code>js</code>路由进行管理。</p>\n<p>我的项目结构：</p>\n<pre class=\"hljs\"><code>├── index.js\n├── react-blog\n|  ├── ...other files（内部...</code></pre>",
-    "slug": "single-spa-wei-qian-duan-de-lu-you-guan-li-xi-tong",
-    "sha": "68aa212db545b2cf71c29d34fbbce9f30fe3e228"
+    "title": "JS中位操作",
+    "uuid": "18afb8f32bc7fc0b2ce146673e4998010db08a12",
+    "summary": "<h4>JS按位操作符</h4>\n<ul>\n<li>按位异或(^)：二进制编码中，每一位两者相同，则为0，两者不同，则为1</li>\n<li>按位与 (&amp;)：二进制编码中，每一位两者都为1，则为1，否则，则为0</li>\n<li>按位或 (|)：二进制编码中，每一位两者其中一个为1，则为1，否则，则为0</li>\n<li>按位非(~)：二进制编码中，每一位的反码，1为0，0为1（十进...</li>\n</ul>",
+    "slug": "JS-zhong-wei-cao-zuo",
+    "sha": "50c40330555ea317421cc46a84ff4b6fe23f1cc1"
   },
   "react-router2-ge-ji-qiao": {
     "relatedTags": [
@@ -810,6 +806,53 @@
     "summary": "<h4>正则 exec和match</h4>\n<ul>\n<li>都是返回数组，包括小括号内部</li>\n<li>非全局 一致</li>\n<li>match全局，匹配多个值</li>\n<li>exec全局，匹配单个值，但每次执行会继续从上一次匹配数据之后开始</li>\n</ul>\n<pre class=\"hljs\"><code><span class=\"hljs-keyword\">let</span> str=<span class=\"hljs-string\">'this is a stick'</span>\n\n<span class=\"hljs-keyword\">let</span> reg=<span class=\"hljs-regexp\">/.is/</span>\nreg.exec(str)   /...</code></pre>",
     "slug": "zheng-ze-yi-lou-dian",
     "sha": "150a56b6eb7cd88a1e0662000a7a8f23e0c8003a"
+  },
+  "pei-zhi-Larvael8-wen-ti-ji-lu": {
+    "relatedTags": [
+      "vue",
+      "webpack",
+      "npm",
+      "git"
+    ],
+    "created_at": "2021-08-09",
+    "timeArr": [
+      2021,
+      7,
+      9,
+      0,
+      0,
+      0,
+      0
+    ],
+    "title": "配置Larvael8问题记录",
+    "uuid": "e0183343ceb8acf22211aa4b6df0a043841fcdbe",
+    "summary": "<p>lcobucci/jwt 4.1.4 requires ext-sodium * -&gt; the requested PHP extension sodium is missing from your system.</p>",
+    "slug": "pei-zhi-Larvael8-wen-ti-ji-lu",
+    "sha": "db56556d07b55c00d61de20b7c057a7ad0c1e236"
+  },
+  "single-spa-wei-qian-duan-de-lu-you-guan-li-xi-tong": {
+    "relatedTags": [
+      "react",
+      "vue",
+      "router",
+      "webpack",
+      "promise"
+    ],
+    "created_at": "2021-06-07",
+    "timeArr": [
+      2021,
+      5,
+      7,
+      0,
+      0,
+      0,
+      0
+    ],
+    "title": "single-spa-微前端的路由管理系统",
+    "uuid": "386fc98fbb6d77826458755f0e09b60919b215bc",
+    "summary": "<p><code>single-spa</code>一个页面路由管理工具，当一个页面存在多个框架<code>React</code>, <code>Vue</code>, <code>Angular</code>等等时，单个框架路由已经不能适用，需要一个纯粹的<code>js</code>路由进行管理。</p>\n<h4>项目结构：</h4>\n<pre class=\"hljs\"><code>├── index.js\n├── react-blog\n|  ├── ...other files...</code></pre>",
+    "slug": "single-spa-wei-qian-duan-de-lu-you-guan-li-xi-tong",
+    "sha": "68aa212db545b2cf71c29d34fbbce9f30fe3e228"
   },
   "yuan-ma-yue-du-pubsub-js": {
     "relatedTags": [
@@ -2848,48 +2891,5 @@
     "summary": "<p>一些JS基础(3)</p>\n<h4>for...of</h4>\n<p><code>for..of</code>会寻找内置或者自定义的 @@iterator 对象并调用它的 next() 方法来遍历数据值</p>\n<p>array默认带有iterator，因此可以直接使用for...of</p>\n<pre class=\"hljs\"><code><span class=\"hljs-keyword\">var</span> arr=[<span class=\"hljs-number\">1</span>,<span class=\"hljs-number\">2</span>,<span class=\"hljs-number\">3</span>];\n<span class=\"hljs-keyword\">var</span> it=arr[Symbo...</code></pre>",
     "slug": "yi-xie-bei-hu-lve-de-js-zhi-shi-3",
     "sha": "4fd90b9ee966a8e1972197c101a2e960a01d9493"
-  },
-  "JS-zhong-wei-cao-zuo": {
-    "relatedTags": [
-      "位操作"
-    ],
-    "created_at": "2018-07-03",
-    "timeArr": [
-      2018,
-      6,
-      3,
-      0,
-      0,
-      0,
-      0
-    ],
-    "title": "JS中位操作",
-    "uuid": "18afb8f32bc7fc0b2ce146673e4998010db08a12",
-    "summary": "<h4>JS按位操作符</h4>\n<ul>\n<li>按位异或(^)：二进制编码中，每一位两者相同，则为0，两者不同，则为1</li>\n<li>按位与 (&amp;)：二进制编码中，每一位两者都为1，则为1，否则，则为0</li>\n<li>按位或 (|)：二进制编码中，每一位两者其中一个为1，则为1，否则，则为0</li>\n<li>按位非(~)：二进制编码中，每一位的反码，1为0，0为1（十进...</li>\n</ul>",
-    "slug": "JS-zhong-wei-cao-zuo",
-    "sha": "50c40330555ea317421cc46a84ff4b6fe23f1cc1"
-  },
-  "pei-zhi-Larvael8-wen-ti-ji-lu": {
-    "relatedTags": [
-      "vue",
-      "webpack",
-      "npm",
-      "git"
-    ],
-    "created_at": "2021-08-09",
-    "timeArr": [
-      2021,
-      7,
-      9,
-      0,
-      0,
-      0,
-      0
-    ],
-    "title": "配置Larvael8问题记录",
-    "uuid": "e0183343ceb8acf22211aa4b6df0a043841fcdbe",
-    "summary": "<p>lcobucci/jwt 4.1.4 requires ext-sodium * -&gt; the requested PHP extension sodium is missing from your system.</p>",
-    "slug": "pei-zhi-Larvael8-wen-ti-ji-lu",
-    "sha": "db56556d07b55c00d61de20b7c057a7ad0c1e236"
   }
 }

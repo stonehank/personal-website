@@ -2,7 +2,7 @@
     <v-card
             class="mx-auto  h-100 d-flex flex-column"
     >
-        <img :src="projectInfo.img" style="height:200px" :preview="Math.floor(Math.random() * 1e9+7)" />
+        <img :src="projectInfo.img" style="height:200px;cursor:zoom-in;" :preview="Math.floor(Math.random() * 1e9+7)" />
         <div class="flex-grow-1">
             <v-card-title class="pt-2 pb-1 text-lg">
                 {{projectInfo.title}}

@@ -1,4 +1,4 @@
-export function scrollTo(top=0){
+export function scrollTo(top=0,immediate=false){
     let realTop=0.001
     if(typeof top==='number'){
         realTop=top
@@ -14,7 +14,7 @@ export function scrollTo(top=0){
         // $('html,body').animate({scrollTop:realTop},400);
         window.scrollTo({
             top: realTop,
-            behavior: 'smooth'
+            behavior: immediate ? 'instant' : 'smooth'
         })
     } catch (_) {
         (document.documentElement || document.body).scrollTop=realTop

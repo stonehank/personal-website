@@ -1,15 +1,17 @@
 /**
  * 将json转换为列表，通过自定义filter过滤不需要的
- * @param jsons Array
+ * @param jsonList Array
  * @param flags Array 定义每一个json数据的类型
  * @param filter Function
  * @returns {[]}
  */
-export function convertToList(jsons,flags,filter){
+export function convertToList(jsonList,flags,filter){
   if(!filter)filter=(_)=>true
+  if(!Array.isArray(jsonList))jsonList=[jsonList]
+  if(!Array.isArray(flags))flags=[]
   let list=[]
-  for(let i=0;i<jsons.length;i++){
-    let json=jsons[i]
+  for(let i=0;i<jsonList.length;i++){
+    let json=jsonList[i]
     let flag=flags[i]
     for(let k in json){
       if(!json.hasOwnProperty(k))continue
@@ -159,9 +161,9 @@ export function objSortBy(obj,sortKey,asc){
  * Tested
  * @param objOrList {Array,Object}
  * @param key
- * @param priorityProps
- * @param onlyCount
- * @param specificProp
+ * @param priorityProps 优先分组
+ * @param onlyCount     对所有数据仅获取数量
+ * @param specificProp  仅仅提取特定的key数据
  * @returns {{}}
  */
 // 第三个参数，优先分组，如果发现不存在的，将不存在的单独分组
@@ -219,10 +221,10 @@ export function objGroupBy(objOrList,key, {
     }
   }
   if(specificProp){
-    // 特定prop只能一个key
+    // 在specificProp下，结果只能由一个key
     let keys=Object.keys(result)
     if(keys.length!==1){
-      throw new Error('特定prop只能一个key')
+      throw new Error('在specificProp下，结果只能由一个key')
     }
     return result[keys[0]]
   }

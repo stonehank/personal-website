@@ -75,11 +75,11 @@
             },
             onResize(){
                 this.tagsCountRenderList=null
-                let gap=this.$vuetify.breakpoint.xsOnly ? 4 : 12
+                let gap=this.$vuetify.breakpoint.xsOnly ? 4 : 14
                 // console.log($('#tags-render-wrapper'))
                 let containerW=Math.min(window.innerWidth,$('#tags-render-wrapper').width())
                 let containerH=window.innerHeight * 0.8
-                let limit=this.$vuetify.breakpoint.xsOnly ? 2 : 5
+                let limit=this.$vuetify.breakpoint.xsOnly ? 5 : 2
                 let shrink=this.$vuetify.breakpoint.xsOnly
                 if(this.tagGenerator){
                     this.tagGenerator.update({

@@ -19,3 +19,6 @@
     flex-flow:row nowrap !important;
   }
 }
+.v-application .theme--dark.v-icon{
+  color:var(--text-secondary)
+}
