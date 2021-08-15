@@ -79,19 +79,15 @@
                 // console.log($('#tags-render-wrapper'))
                 let containerW=Math.min(window.innerWidth,$('#tags-render-wrapper').width())
                 let containerH=window.innerHeight * 0.8
-                let maxW=this.$vuetify.breakpoint.xsOnly ? 96 : 128 + gap
-                let maxH=this.$vuetify.breakpoint.xsOnly ? 36 : 54
-                let minW=48
-                let minH=24
                 let limit=this.$vuetify.breakpoint.xsOnly ? 2 : 5
                 let shrink=this.$vuetify.breakpoint.xsOnly
                 if(this.tagGenerator){
                     this.tagGenerator.update({
-                        containerW, containerH, maxW, maxH, minW, minH, gap,shrink,limit
+                        containerW, containerH,  gap,shrink,limit
                     })
                 }else{
                     this.tagGenerator=new TagsGenerator(this.tagsCountList,{
-                        containerW, containerH, maxW, maxH, minW, minH, gap,shrink,limit
+                        containerW, containerH,  gap,shrink,limit
                     })
                 }
                 this.tagsCountRenderList=this.tagGenerator.output().sort((a,b)=>b.orderIdx-a.orderIdx)

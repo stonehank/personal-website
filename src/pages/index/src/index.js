@@ -6,8 +6,10 @@ import App from "./App"
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import vModal from 'vue-js-modal'
+import preview from 'vue-photo-preview'
+import 'vue-photo-preview/dist/skin.css'
 
-
+Vue.use(preview)
 Vue.use(vModal)
 Vue.use(VueRouter)
 

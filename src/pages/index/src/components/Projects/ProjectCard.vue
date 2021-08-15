@@ -1,26 +1,40 @@
 <template>
     <v-card
-            class="mx-auto"
+            class="mx-auto  h-100 d-flex flex-column"
     >
-        <v-img :src="projectHeader.img" height="200px"></v-img>
-        <v-card-title class="pt-2 pb-1 text-lg">
-            <router-link :to="'/blogs/'+projectHeader.slug">{{projectHeader.title}}</router-link>
-        </v-card-title>
-        <v-card-text>
-            <p class="text-secondary text-xs">{{projectHeader.description}}</p>
-        </v-card-text>
+        <img :src="projectInfo.img" style="height:200px" :preview="Math.floor(Math.random() * 1e9+7)" />
+        <div class="flex-grow-1">
+            <v-card-title class="pt-2 pb-1 text-lg">
+                {{projectInfo.title}}
+            </v-card-title>
+            <v-card-text>
+                <p class="text-secondary text-md" v-html="projectInfo.description"></p>
+            </v-card-text>
+        </div>
+        <v-card-actions >
+            <v-btn :href="projectInfo.path"
+                   style="text-transform: none"
+                   text
+                   color="primary">
+                Explore on github
+            </v-btn>
+            <v-spacer></v-spacer>
+            <v-btn v-if="projectInfo.preview_path"
+                   :href="projectInfo.preview_path"
+                   text
+                   color="success"
+            >
+                Demo
+            </v-btn>
+        </v-card-actions>
     </v-card>
 </template>
 
 <script>
-    import ArticleTags from "pagesDir/index/src/commons/ArticleTags";
-    import CommentCount from "pagesDir/index/src/commons/CommentCount";
-    import DateRender from "pagesDir/index/src/commons/DateRender";
     export default {
         name: "ProjectCard",
-        components: {DateRender, CommentCount, ArticleTags},
         props:{
-            projectHeader:{
+            projectInfo:{
                 default:()=>({
                         title:String,
                         img:{
@@ -28,11 +42,8 @@
                             default:'https://picsum.photos/500'
                         },
                         description:String,
-                        date:String,
-                        tags:Array,
                     })
             },
-            commentCount:Number,
         }
     }
 </script>

@@ -6,10 +6,8 @@ function TagsGenerator(tagsList,{
     shrink=false,
     limit=0
 }={}){
-    this.shrink=shrink
     this.limit=limit
     this.originTagList=tagsList
-    this._initList()
     this.containerW=containerW
     this.containerH=containerH
     this.gap=gap
@@ -19,9 +17,24 @@ function TagsGenerator(tagsList,{
         y:this.containerH/2
     }
     this.eachStep=8
+    this._initSize(shrink)
+    this._initList()
     this.start()
 }
 
+
+
+TagsGenerator.prototype._initSize=function(shrink){
+    if(shrink){
+        this.widthArr=[48,56,64,72,88]
+        this.heightArr=[18,20,24,24,28]
+        this.fontSize=[12,14,16,18,22]
+    }else{
+        this.widthArr=[64,72,88,96,128]
+        this.heightArr=[28,30,32,36,48]
+        this.fontSize=[14,16,18,22,28]
+    }
+}
 TagsGenerator.prototype._initList=function(){
     this.blockList=JSON.parse(JSON.stringify(this.originTagList))
     this.blockList=this.blockList.filter((obj)=>obj.count>this.limit)
@@ -30,6 +43,7 @@ TagsGenerator.prototype._initList=function(){
         return obj
     })
     this.maxCount=this.blockList[this.blockList.length-1].count
+    this.allLen=this.blockList.length
 }
 TagsGenerator.prototype.update=function({
     containerW=1024,
@@ -39,7 +53,6 @@ TagsGenerator.prototype.update=function({
     limit=0
 }){
     this.limit=limit
-    this.shrink=shrink
     this.containerW=containerW
     this.containerH=containerH
     this.gap=gap
@@ -49,6 +62,7 @@ TagsGenerator.prototype.update=function({
         y:this.containerH/2
     }
     this.finalBlockList=[]
+    this._initSize(shrink)
     this._initList()
     this.start()
 }
@@ -69,15 +83,12 @@ TagsGenerator.prototype.start=function(){
 }
 TagsGenerator.prototype.__createBiggestBlock=function(block){
     // 最多的取正中间
-    let w=142, h=72,fontSize=32
-    if(this.shrink){
-        w=98
-        h=48
-        fontSize=20
-    }
+    let w=this.widthArr[this.widthArr.length-1]
+    let h=this.heightArr[this.heightArr.length-1]
+    let fontSize=this.fontSize[this.fontSize.length-1]
+
     let len=bytesCount(block.label)
-    w = Math.max(len * 13 * fontSize / 16, w)
-    // fontSize=Math.max(len *
+    w = Math.max(len * 13 * fontSize / this.fontSize[0], w)
     return {
         w: w + 2 * this.gap,
         h: h + 2 * this.gap,
@@ -103,40 +114,28 @@ function bytesCount(str){
 
 TagsGenerator.prototype.__getValidDegData=function(block,radDeg){
     let w,h,fontSize
-    if(block.orderIdx < 10){
-        w=80
-        h=28
-        fontSize=16
-        if(this.shrink){
-            w=56
-            h=22
-            fontSize=12
-        }
-    }else if(block.orderIdx < 15){
-        w=96
-        h=36
-        fontSize=20
-        if(this.shrink){
-            w=64
-            h=28
-            fontSize=14
-        }
+    // orderIdx 越小，大小应该越小
+    // 分隔按照 length 的 40% 65% 85% 99.999%
+    if(block.orderIdx < this.allLen * 0.4){
+        w=this.widthArr[0]
+        h=this.heightArr[0]
+        fontSize=this.fontSize[0]
+    }else if(block.orderIdx < this.allLen * 0.65){
+        w=this.widthArr[1]
+        h=this.heightArr[1]
+        fontSize=this.fontSize[1]
+    }else if(block.orderIdx < this.allLen * 0.85){
+        w=this.widthArr[2]
+        h=this.heightArr[2]
+        fontSize=this.fontSize[2]
     }else{
-        w=116
-        h=48
-        fontSize=24
-        if(this.shrink){
-            w=72
-            h=36
-            fontSize=16
-        }
+        w=this.widthArr[3]
+        h=this.heightArr[3]
+        fontSize=this.fontSize[3]
     }
 
     let len=bytesCount(block.label)
-    w = Math.max(len * 13 * fontSize / 16,w)
-    if(this.shrink){
-        w = Math.max(len * 13 * fontSize / 12,w)
-    }
+    w = Math.max(len * 13 * fontSize / this.fontSize[0],w)
     w = w + 2 * this.gap
     h = h + 2 * this.gap
     let radian=0
