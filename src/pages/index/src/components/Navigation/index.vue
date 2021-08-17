@@ -3,7 +3,7 @@
             id="nav-header"
             color="var(--foreground-color)"
             fixed
-            elevate-on-scroll
+            flat
     >
 
         <Action />

@@ -1,7 +1,7 @@
 <template>
     <span>
         <v-icon small>far fa-comment-alt</v-icon>
-        {{commentCount}}
+        <slot></slot>
     </span>
 </template>
 

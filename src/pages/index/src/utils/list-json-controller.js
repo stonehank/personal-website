@@ -56,7 +56,7 @@ export function getYearMonthInfo(year,month){
     yearMonthInfo.year=yearInfo.year
     yearMonthInfo.month=month
     let allYearBlogsCount=yearInfo.month_counts.reduce((a,b)=>a+b)
-    yearMonthInfo.view_count=yearInfo.view_count / allYearBlogsCount * yearInfo.month_counts[month-1]
+    yearMonthInfo.view_count=Math.floor(yearInfo.view_count / allYearBlogsCount * yearInfo.month_counts[month-1])
     yearMonthInfo.blog_count=yearInfo.month_counts[month-1]
     return yearMonthInfo
 }

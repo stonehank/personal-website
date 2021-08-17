@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 
 export default class Drawer extends React.Component{
   constructor(props){
@@ -51,8 +52,8 @@ export default class Drawer extends React.Component{
   render(){
     const {open,anchor,onClose}=this.props
     let cls='drawer-content-'+anchor
-    return (
-      <div className={'drawer-panel-wrapper'} style={{display:open ? 'block' : 'none'}}>
+    return  ReactDOM.createPortal(
+      <div className={'drawer-panel-wrapper react-valine'} style={{display:open ? 'block' : 'none'}}>
         {
           open
             ? <>
@@ -63,7 +64,8 @@ export default class Drawer extends React.Component{
               </>
             : null
         }
-      </div>
+      </div>,
+        document.body
     )
   }
 }

@@ -6,31 +6,14 @@
                         marginTop:navH + 'px'
                     }"
         >
-            <router-view></router-view>
+            <router-view :a="3"></router-view>
         </main>
-<!--        <Valine appId="s8REl9WtWtOw7omr7frVIpMP-MdYXbMMI"-->
-<!--                appKey="amadgvU7WzMYQ9eqMatTHLWM"-->
-<!--                :editMode=true-->
-<!--                CommentClass="Comment_blog"-->
-<!--                CounterClass="Counter_blog"-->
-<!--                placeholder="说点什么吧，: 开启表情输入"-->
-<!--                :themeMode="$vuetify.theme.isDark ? 'dark' : 'light'"-->
-<!--        >-->
-<!--           -->
-<!--        </Valine>-->
         <ScrTopBtn />
     </v-app>
 </template>
 
 <script>
 
-    import {modify_hljs, Valine,ValinePanel} from "./utils/react-valine/react-valine.js"
-    import {applyReactInVue} from 'vuereact-combined'
-    modify_hljs((hljs)=>{
-        const python = require('highlight.js/lib/languages/python')
-        hljs.registerLanguage('python', python)
-        return hljs
-    })
     import Navigation from "pagesDir/index/src/components/Navigation/index";
     import ScrTopBtn from "pagesDir/index/src/commons/ScrTopBtn";
     import AutoMeta from "pagesDir/index/src/utils/AutoMeta";
@@ -39,7 +22,6 @@
         components: {
             ScrTopBtn,
             Navigation,
-            Valine:applyReactInVue(Valine),
         },
         watch:{
             $route:{

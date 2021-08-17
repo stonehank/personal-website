@@ -30,8 +30,7 @@
                         title:'Diy Resume',
                         img:require('../../../../assets/images/diy-resume.png'),
                         description:`<ul>
-                            <li class="mb-0">在线创建你的简历，免费下载或者导出为<code>json</code>格式</li>
-                            <li class="mb-0">无后端，无 api 请求，使用 <code>IndexedDB</code> / <code>LocalStorage</code> / <code>Cookie</code> 保存用户输入</li>
+                            <li class="mb-0">纯前端在线创建简历，免费下载或者导出</li>
                             <li class="mb-0">在<b>桌面端</b>可以通过拖拽，定义标签属性等创建或者修改模板</li>
                             </ul>
                         `,

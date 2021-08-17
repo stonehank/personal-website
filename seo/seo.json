@@ -1,7 +1,7 @@
 {
     "/": {
-        "title": "个人博客，源码记录，项目展示",
-        "og_title": "个人博客，源码记录，项目展示",
+        "title": "个人博客",
+        "og_title": "个人博客",
         "keywords": "博客，项目，算法思路，源码阅读，开源项目",
         "og_url": "https://stonehank.github.io/",
         "description": "记录一些日常笔记，源码阅读笔记归纳，还有个人一些项目展示",

@@ -14,7 +14,9 @@
                         <div class="d-flex align-center">
                             <DifficultRender :difficult="articleDetails.difficult" />
                             <b class="text-md mx-2">·</b>
-                            <CommentCount :commentCount="15" />
+                            <CommentCount>
+                                <ValineCounterInVue :uniq-str="'algorithm-'+articleDetails.sha" />
+                            </CommentCount>
                         </div>
                     </div>
                 </v-card-subtitle>
@@ -29,6 +31,8 @@
                     </div>
                 </v-card-text>
             </v-card>
+            <v-divider class="my-4" />
+            <ValineInVue :uniq-str="'algorithm-'+articleDetails.sha" />
         </v-container>
     </section>
 </template>
@@ -37,6 +41,8 @@
     import ArticleTags from "pagesDir/index/src/commons/ArticleTags";
     import CommentCount from "pagesDir/index/src/commons/CommentCount";
     import DifficultRender from "pagesDir/index/src/commons/DifficultRender";
+    import ValineInVue from "pagesDir/index/src/components/ValineInVue";
+    import ValineCounterInVue from "pagesDir/index/src/components/ValineCounterInVue";
     export default {
         name: "AlgorithmInfo",
         props:{
@@ -45,7 +51,7 @@
                 type:Object
             },
         },
-        components: {DifficultRender, CommentCount, ArticleTags},
+        components: {ValineCounterInVue, ValineInVue, DifficultRender, CommentCount, ArticleTags},
     }
 </script>
 

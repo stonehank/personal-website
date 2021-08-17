@@ -13,6 +13,13 @@ Vue.use(preview)
 Vue.use(vModal)
 Vue.use(VueRouter)
 
+Vue.mixin({
+    computed:{
+        isMobile:function(){
+            return this.$vuetify.breakpoint.smAndDown
+        }
+    }
+})
 
 const router = new VueRouter({
     routes: Routes,

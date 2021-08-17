@@ -50,11 +50,6 @@
                 default:true,
             }
         },
-        computed:{
-            isMobile(){
-                return this.$vuetify.breakpoint.smAndDown
-            }
-        },
         watch:{
             start:{
                 immediate:true,

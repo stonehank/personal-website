@@ -18,7 +18,9 @@
                         <div class="d-flex align-center">
                             <DateRender :date="articleDetails.created_at" />
                             <b class="text-md mx-2">·</b>
-                            <CommentCount :commentCount="15" />
+                            <CommentCount>
+                                <ValineCounterInVue :uniq-str="'article-'+articleDetails.sha" />
+                            </CommentCount>
                         </div>
                     </div>
                 </v-card-subtitle>
@@ -26,6 +28,8 @@
                     <div class="text-primary markdown-body" v-html="articleDetails.content"></div>
                 </v-card-text>
             </v-card>
+            <v-divider class="my-4" />
+            <ValineInVue :uniq-str="'article-'+articleDetails.sha" />
         </v-container>
     </section>
 </template>
@@ -35,6 +39,8 @@
     import CommentCount from "pagesDir/index/src/commons/CommentCount";
     import DateRender from "pagesDir/index/src/commons/DateRender";
     import TableOfContent from "pagesDir/index/src/components/Articles/TableOfContent";
+    import ValineInVue from "pagesDir/index/src/components/ValineInVue";
+    import ValineCounterInVue from "pagesDir/index/src/components/ValineCounterInVue";
     export default {
         name: "ArticleInfo",
         props:{
@@ -43,7 +49,7 @@
                 type:Object
             },
         },
-        components: {TableOfContent, DateRender, CommentCount, ArticleTags},
+        components: {ValineCounterInVue, ValineInVue, TableOfContent, DateRender, CommentCount, ArticleTags},
         data(){
             return {
                 tocId:Array(this.articleDetails.toc.length).fill('')

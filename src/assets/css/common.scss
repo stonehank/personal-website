@@ -53,7 +53,9 @@ a {
 .text-info{
   color:var(--info-color)
 }
-
+.text-xxl{
+  font-size:2rem;
+}
 .text-xl{
   font-size:1.5rem;
 }
@@ -82,3 +84,4 @@ a {
 }
 
 @import "./overwrite/index";
+@import "./accordion";
