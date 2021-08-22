@@ -1,5 +1,5 @@
 <template>
-
+    <h1 class="display-1">404 Error!</h1>
 </template>
 
 <script>

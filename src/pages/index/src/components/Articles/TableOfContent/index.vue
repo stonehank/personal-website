@@ -4,7 +4,7 @@
             fixed
             class="pa-4"
             :style="{
-                    top: $custom_data.getNavH() + 'px',
+                    top: $state.getNavH() + 'px',
                     left:0,
                 }"
     >
@@ -25,31 +25,17 @@
         },
         data(){
             return {
-                // toc: [
-                //     {level:1, text:'H1 Title', anchor:'H1 Title'},
-                //     {level:2, text:'H2 Title', anchor:'H2 Title'},
-                //     {level:3, text:'H3 Title', anchor:'H3 Title'},
-                //     {level:3, text:'H3 Title', anchor:'H3 Title'},
-                //     {level:2, text:'H2 Title', anchor:'H3 Title'},
-                //     {level:3, text:'H3 Title', anchor:'H3 Title'},
-                //     {level:4, text:'H4 Title', anchor:'H3 Title'},
-                //     {level:5, text:'H5 Title', anchor:'H3 Title'},
-                //     {level:6, text:'H6 Title', anchor:'H3 Title'},
-                //     {level:6, text:'H6 Title', anchor:'H3 Title'},
-                //     {level:5, text:'H5 Title', anchor:'H3 Title'},
-                //     {level:4, text:'H4 Title', anchor:'H3 Title'},
-                //     {level:2, text:'H2 Title', anchor:'H3 Title'},
-                //     {level:3, text:'H3 Title', anchor:'H3 Title'},
-                //     {level:3, text:'H3 Title', anchor:'H3 Title'},
-                //     {level:2, text:'H2 Title', anchor:'H3 Title'},
-                //     {level:5, text:'H5 Title', anchor:'H3 Title'},
-                //     {level:5, text:'H5 Title', anchor:'H3 Title'},
-                // ],
                 curToc:null
             }
         },
-        mounted(){
-            this.curToc=this.parseTocNest(this.toc)
+        watch:{
+            toc:{
+                immediate:true,
+                deep:true,
+                handler:function (newToc) {
+                    this.curToc=this.parseTocNest(newToc)
+                }
+            }
         },
         methods:{
             parseTocNest(toc){

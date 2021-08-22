@@ -1,18 +1,19 @@
 <template>
     <div>
-        <section>
+        <section :style="{marginTop:- $state.getNavH() + 'px'}" >
             <HomeOverview :run="run" />
         </section>
-        <section :style="{
-            minHeight:`calc(100vh - ${$custom_data.getNavH()}px)`
-        }" >
+        <section style="height:100vh;" v-intersect="{
+            threshold: 0.5,
+            handler:onIntersect
+        }">
             <v-container>
                 <v-row>
-                    <v-col cols="12">
+                    <v-col cols="12"   :style="{marginTop:$state.getNavH() + 'px'}">
                         <h2>评论区</h2>
                     </v-col>
-                    <v-col cols="12">
-                        <ValineInVue uniq-str="home-page" />
+                    <v-col cols="12" v-if="renderMore">
+                        <CommentSysPanel uniq-str="home-page" />
                     </v-col>
                 </v-row>
             </v-container>
@@ -22,18 +23,18 @@
 
 <script>
     import HomeOverview from "pagesDir/index/src/components/HomeOverview";
-    import ValineInVue from "pagesDir/index/src/components/ValineInVue";
     export default {
         name: "Home",
         components:{
-            ValineInVue,
+            CommentSysPanel:()=>import("pagesDir/index/src/commons/CommentSystem/CommentSysPanel"),
             HomeOverview,
         },
         data(){
             return {
+                renderMore:false,
                 run:false,
                 options: {
-                    paddingTop:this.$custom_data.getNavH() + 'px',
+                    paddingTop:this.$state.getNavH() + 'px',
                 },
                 startList: [false, false, false],
                 latestBlogList:null,
@@ -50,6 +51,13 @@
         destroyed() {
             clearTimeout(this.timer)
         },
+        methods:{
+            onIntersect(_,__,isIntersect){
+                if(isIntersect){
+                    this.renderMore=true
+                }
+            }
+        }
     }
 </script>
 

@@ -9,6 +9,7 @@
                 :color="labelColor[tag]"
                 text-color="white"
                 :to="'/labels/'+tag"
+                @click="clickEvent"
         >
             {{tag}}
         </v-chip>
@@ -22,6 +23,10 @@
         name: "ArticleTags",
         props:{
             tags:Array,
+            clickEvent:{
+                type:Function,
+                default:()=>{}
+            }
         },
         computed:{
             labelColor:()=>labelColor

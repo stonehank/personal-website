@@ -16,18 +16,16 @@
                     <div class="accord-content">
                         <h4>{{info.title}}</h4>
                         <div class="smoky mt-2">
-                            <p>
-                                {{info.message}}
-                                <v-btn
-                                        v-if="curSelected===index"
-                                        color="success"
-                                        fab
-                                        depressed
-                                        :to="info.path"
-                                >
-                                    Go
-                                </v-btn>
-                            </p>
+                            <p>{{info.message}}</p>
+                            <v-btn
+                                    v-if="curSelected===index"
+                                    class="mt-2"
+                                    color="success"
+                                    depressed
+                                    :to="info.path"
+                            >
+                                更多
+                            </v-btn>
                         </div>
                     </div>
                 </div>
@@ -37,7 +35,7 @@
 </template>
 
 <script>
-    import anime from 'animejs'
+    // import anime from 'animejs'
 
     export default {
         name: "HomeOverview",
@@ -94,7 +92,7 @@
         },
         methods: {
             updateSize(){
-                this.wrapperHeight=window.innerHeight - this.$custom_data.getNavH()
+                this.wrapperHeight=window.innerHeight
             },
             startAnimation() {
                 if (this.isMobile) {
@@ -102,7 +100,7 @@
                 }
                 // anime({
                 //     targets: '.skew-box',
-                //     translateY: '0%',
+                //     translateY: ['-100%','0%'],
                 //     delay: (el, i) => i * 100,
                 //     duration: 300,
                 //     easing: 'easeInCirc'

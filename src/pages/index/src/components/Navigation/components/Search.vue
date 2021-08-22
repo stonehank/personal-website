@@ -7,6 +7,8 @@
             <v-icon>fas fa-search</v-icon>
         </v-btn>
         <CommonModal
+                :shiftY="0"
+                width="100%"
                 name="nav-search"
                 v-model="showSearchModal"
         >
@@ -14,16 +16,7 @@
                 <h3 class="modal-title">Search</h3>
             </div>
             <div class="modal-body">
-                <v-text-field
-                        rounded
-                        dense
-                        outlined
-                        hide-details
-                >
-                    <template v-slot:append>
-                        <v-icon>fas fa-search</v-icon>
-                    </template>
-                </v-text-field>
+                <SearchSystem v-if="renderSearchSystem" :hideSearch="hideSearch" />
             </div>
         </CommonModal>
     </div>
@@ -34,16 +27,25 @@
     import CommonModal from "pagesDir/index/src/commons/CommonModal";
     export default {
         name: "Search",
-        components: {CommonModal},
+        components: {
+            SearchSystem:()=>import("pagesDir/index/src/commons/SearchSystem"),
+            CommonModal
+        },
         data(){
             return {
+                winW:window.innerWidth,
                 showSearchModal:false,
                 searchShrink:true,
+                renderSearchSystem:false,
             }
         },
         methods:{
             showSearch(){
                 this.showSearchModal=true
+                this.renderSearchSystem=true
+            },
+            hideSearch(){
+                this.showSearchModal=false
             }
         }
     }

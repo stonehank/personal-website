@@ -5,6 +5,8 @@
            height="auto"
            :scrollable="true"
            :classes="classes"
+           @before-open="beforeOpen"
+           @before-close="beforeClose"
            @opened="opened"
            @closed="closed"
            v-bind="$attrs"
@@ -53,18 +55,46 @@
         data(){
             return {
                 uuid:uuidv4(),
-                newShow:this.show
+                newShow:this.show,
+                scrollBarW:this.getScrollbarWidth(),
+                prevPadRight:null,
             }
         },
         mounted(){
             this.appendInBody()
         },
         methods: {
+            hasScrollbar() {
+                return document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight)
+            },
+            getScrollbarWidth() {
+                let scrollDiv = document.createElement("div")
+                scrollDiv.style.cssText = 'width: 99px; height: 99px; overflow: scroll; position: absolute; top: -9999px;'
+                document.body.appendChild(scrollDiv)
+                let scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth
+                document.body.removeChild(scrollDiv)
+                return scrollbarWidth
+            },
             appendInBody() {
                 document.getElementById('taskInfoModalWrap').appendChild(this.$refs[this.modalName].$el)
             },
+            beforeOpen(){
+                if(this.hasScrollbar()){
+                    let $html=$('html')
+                    this.prevPadRight=$html.css('paddingRight')
+                    $html.css('overflow','hidden')
+                    $html.css('paddingRight',this.scrollBarW+'px')
+                }
+                this.$emit('before-open')
+            },
             opened(){
                 this.$emit('opened')
+            },
+            beforeClose(){
+                let $html=$('html')
+                $html.css('overflow','auto')
+                $html.css('paddingRight',this.prevPadRight)
+                this.$emit('before-close')
             },
             closed(){
                 this.$emit('closed')

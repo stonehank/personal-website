@@ -27,6 +27,11 @@ export function getDemo(type,count){
     .slice(0,count)
 }
 
+export function allList(){
+    return convertToList(
+        [blogListJson,algorithmJson,sourceCodeList],
+        ['随笔','算法','源码阅读'])
+}
 
 
 /* Archive --- Start --- */

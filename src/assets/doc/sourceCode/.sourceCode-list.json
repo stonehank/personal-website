@@ -302,7 +302,7 @@
     "slug": "source-code-fast-memoizeVSnano-memoize",
     "sha": "7253519654d49748be385ec948aa3d448a6d4a7c"
   },
-  "source-code-create-react-app(webpack-pei-zhi-)": {
+  "source-code-create-react-app-webpack-pei-zhi": {
     "relatedTags": [
       "webpack",
       "react",
@@ -321,7 +321,7 @@
     "title": "源码阅读-create-react-app(webpack配置)",
     "uuid": "2bbdd2a09d1bce1b097fe092c4929ed1a7673f6d",
     "summary": "<ul>\n<li>\n<p>7-29：更新至webpack-config-dev.js</p>\n</li>\n<li>\n<p>9-25：更新webpackDevServer.config.js</p>\n</li>\n<li>\n<p>10-16：更新webpack.config.prod.js</p>\n</li>\n</ul>\n<p>粗读了一遍<code>create-react-app.js</code>，主要是用node对检测和创建上的操作，还有安装依赖，\n下次...</p>",
-    "slug": "source-code-create-react-app(webpack配置)",
+    "slug": "source-code-create-react-app-webpack-pei-zhi",
     "sha": "6e444f7cb5dd23463be4f5eb867ac6e67ebc2bce"
   },
   "source-code-reach-router": {

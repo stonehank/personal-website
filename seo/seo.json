@@ -55,15 +55,15 @@
                 "og_description": "记录一些日常笔记，读书笔记，日常问题解决记录，源码阅读笔记，源码流程图，热门项目源码，算法解析，算法思路等等",
                 "og_image": null
             }
-        },
-        "/projects": {
-            "title": "个人项目展示",
-            "og_title": "个人项目展示",
-            "keywords": "博客，项目，算法思路，源码阅读，开源项目",
-            "og_url": "https://stonehank.github.io/",
-            "description": "记录个人部分开源项目，项目说明以及项目Demo",
-            "og_description": "记录个人部分开源项目，项目说明以及项目Demo",
-            "og_image": null
         }
+    },
+    "/projects": {
+        "title": "个人项目展示",
+        "og_title": "个人项目展示",
+        "keywords": "博客，项目，算法思路，源码阅读，开源项目",
+        "og_url": "https://stonehank.github.io/",
+        "description": "记录个人部分开源项目，项目说明以及项目Demo",
+        "og_description": "记录个人部分开源项目，项目说明以及项目Demo",
+        "og_image": null
     }
 }

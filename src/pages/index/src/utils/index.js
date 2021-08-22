@@ -9,7 +9,6 @@ export function scrollTo(top=0,immediate=false){
         }
         realTop=Math.floor(Math.max(realTop,$(top).offset().top - ($('#nav-header').outerHeight()) - 8))
     }
-    console.log(top,realTop)
     try {
         // $('html,body').animate({scrollTop:realTop},400);
         window.scrollTo({

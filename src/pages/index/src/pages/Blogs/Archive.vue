@@ -1,6 +1,6 @@
 <template>
     <div id="fullpage-archive" :style="{
-        marginTop:-$custom_data.getNavH() + 'px'
+        marginTop:-$state.getNavH() + 'px'
     }">
         <div class="section"
              :data-anchor="archiveData.year"
@@ -26,7 +26,7 @@
         data() {
             return {
                 options: {
-                    paddingTop:this.$custom_data.getNavH() + 'px',
+                    paddingTop:this.$state.getNavH() + 'px',
                     dragAndMove: 'fingersonly',
                     navigation: true,
                     navigationPosition: 'left',
@@ -45,7 +45,7 @@
             $('#fullpage-archive').fullpage({
                 ...this.options,
                 afterRender() {
-                    self.updateFpNavPos()
+                    self.updateFpNavPos('immediate')
                 },
                 afterLoad(_, which) {
                     let idx = which - 1
@@ -64,13 +64,12 @@
             }
         },
         methods:{
-            updateFpNavPos(){
+            updateFpNavPos(type=''){
                 this.timer=setTimeout(()=>{
-                    console.log(this.$vuetify.breakpoint.mdAndUp)
                     $('#fp-nav').css({
                         left: this.$vuetify.breakpoint.mdAndUp ? 280 : 0
                     })
-                },200)
+                },type==='immediate' ? 0 : 200)
             }
         }
     }

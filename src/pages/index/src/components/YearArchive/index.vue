@@ -43,7 +43,7 @@
         },
         methods:{
             updateWrapperH(){
-                this.wrapperH=window.innerHeight - this.$custom_data.getNavH()
+                this.wrapperH=window.innerHeight - this.$state.getNavH()
             }
         }
     }

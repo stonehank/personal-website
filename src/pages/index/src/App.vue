@@ -1,15 +1,18 @@
 <template>
-    <v-app>
-        <Navigation />
-        <main
-                :style="{
+        <v-app>
+
+            <Navigation :show="navShowing" />
+            <main
+                    :style="{
                         marginTop:navH + 'px'
                     }"
-        >
-            <router-view :a="3"></router-view>
-        </main>
-        <ScrTopBtn />
-    </v-app>
+            >
+                <router-view></router-view>
+            </main>
+            <ScrTopBtn />
+            <div id="taskInfoModalWrap"></div>
+        </v-app>
+
 </template>
 
 <script>
@@ -23,6 +26,11 @@
             ScrTopBtn,
             Navigation,
         },
+        computed:{
+            navH:function(){
+                return this.$vuetify.breakpoint.smAndDown ? 56 : 64
+            }
+        },
         watch:{
             $route:{
                 handler:AutoMeta
@@ -30,13 +38,39 @@
         },
         data(){
             return {
-                navH:64,
+                navShowing:false,
             }
         },
         mounted(){
-            this.navH = $('#nav-header').outerHeight()
-            console.log(this.navH)
+            // this.$state.add('showNav',this.showNav)
+            // this.$state.add('hideNav',this.hideNav)
+            $(window).on('scroll',this.toggleNavOnScroll)
         },
+        destroyed() {
+            $(window).off('scroll',this.toggleNavOnScroll)
+        },
+        updated(){
+            this.toggleNavOnScroll()
+        },
+        methods:{
+            toggleNavOnScroll(){
+                if(window.location.pathname!=='/'){
+                    this.showNav()
+                    return
+                }
+                if($(document).scrollTop() >= window.innerHeight * 0.1){
+                    this.showNav()
+                }else{
+                    this.hideNav()
+                }
+            },
+            showNav(){
+                this.navShowing=true
+            },
+            hideNav(){
+                this.navShowing=false
+            }
+        }
     }
 </script>
 

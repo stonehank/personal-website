@@ -6,10 +6,13 @@ import App from "./App"
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import vModal from 'vue-js-modal'
+import PerfectScrollbar from 'vue2-perfect-scrollbar'
+import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'
 import preview from 'vue-photo-preview'
 import 'vue-photo-preview/dist/skin.css'
 
 Vue.use(preview)
+Vue.use(PerfectScrollbar)
 Vue.use(vModal)
 Vue.use(VueRouter)
 
@@ -38,12 +41,15 @@ const router = new VueRouter({
     }
 })
 
-Vue.prototype.$custom_data = {
+Vue.prototype.$state = {
     getNavH: function () {
         return $('#nav-header').outerHeight()
     },
-
+    add:function(key,value){
+        Vue.prototype.$state[key]=value
+    }
 }
+
 
 window.router = router
 let vm = new Vue({

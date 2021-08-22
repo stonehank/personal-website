@@ -56,8 +56,8 @@ const configPlugins = [
   }),
   !isDev && new ImageCompressPlugin(),
   new VueLoaderPlugin(),
-  new FriendlyErrorsWebpackPlugin(),
-  new ErrorOverlayPlugin(),
+  // new FriendlyErrorsWebpackPlugin(),
+  // new ErrorOverlayPlugin(),
   new VuetifyLoaderPlugin(),
   new CopyPlugin(
     isDev
@@ -82,9 +82,9 @@ const configPlugins = [
     // Required - Routes to render.
     routes: require('./getRouteInSpa'),
     renderer: new Renderer({
-      consoleHandler:function(route,message){
-        console.log(route,message)
-      },
+      // consoleHandler:function(route,message){
+      //   console.log(route,message)
+      // },
       maxConcurrentRoutes: 12,
     })
   })

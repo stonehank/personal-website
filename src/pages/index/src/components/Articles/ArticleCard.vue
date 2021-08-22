@@ -12,10 +12,10 @@
         <v-card-text class="d-flex flex-column justify-space-start flex-grow-1">
             <div>
                 <ArticleTags :tags="articleHeader.relatedTags"/>
-                <div class="text-sm d-flex justify-space-start mt-2">
+                <div class="text-sm d-flex justify-space-start">
                     <DateRender :date="articleHeader.created_at" />
-                    <b class="text-md mx-2">·</b>
-                    <CommentCount :commentCount="15" />
+<!--                    <b class="text-md mx-2">·</b>-->
+<!--                    <CommentCount :commentCount="15" />-->
                 </div>
             </div>
             <div class="text-secondary text-xs summary-body" v-html="articleHeader.summary"></div>

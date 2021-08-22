@@ -27,9 +27,9 @@ module.exports = {
   stats:'errors-only',
 
   devServer: isDev ? {
-    noInfo: true,
+    // noInfo: true,
     historyApiFallback: true,
-    clientLogLevel: 'silent',
+    // clientLogLevel: 'silent',
     hot: true,
     port: 3030,
     host: getIP(),

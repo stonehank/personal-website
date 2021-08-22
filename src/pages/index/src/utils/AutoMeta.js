@@ -1,13 +1,15 @@
 import seoData from '../../../../../seo/seo.json'
+
 let defaultMetaObj= {
-    "title": "Task2bid",
-    "og_title": "Task2bid",
-    "keywords": "Task2bid",
-    "og_url": "https://www.task2bid.comdefault",
-    "description": "Task2bid Category",
-    "og_description": "Task2bid Category",
-    "og_image": "https://www.task2bid.com/images/link-share-thumbnail.png"
+    "title": "个人博客",
+    "og_title": "个人博客",
+    "keywords": "博客，项目，算法思路，源码阅读，开源项目",
+    "og_url": "https://stonehank.github.io/",
+    "description": "记录一些日常笔记，源码阅读笔记归纳，还有个人一些项目展示",
+    "og_description": "记录一些日常笔记，源码阅读笔记归纳，还有个人一些项目展示",
+    "og_image": null
 }
+
 export default (to, from,customMeta) => {
     let toPath=to.path
     let pathArr=toPath.split('/').slice(1)

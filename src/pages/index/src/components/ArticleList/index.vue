@@ -8,7 +8,7 @@
                         class="position-fixed py-2 w-100"
                         style="background:var(--background-color);z-index: 2"
                         :style="{
-                            top:$custom_data.getNavH() + 'px',
+                            top:$state.getNavH() + 'px',
                             left: ($vuetify.breakpoint.smAndDown ? 0 : 256 + 12) + 'px',
                         }"
         />
@@ -57,8 +57,11 @@
                     if(!newV)return
                     let order=newV.order, type=newV.type, page=newV.page
                     if(!order || !type || !page)return
-                    if(order && type){
+                    console.log(order,type)
+                    if(type && order==='created_at'){
                         this.articleList=this.sortBy(this.articleList,order,type)
+                    }else if(type && order==='relatedTags'){
+                        this.articleList=this.sortByLabels(this.articleList,order,type)
                     }
                     if(page!==this.realPage){
                         this.realPage=page
@@ -90,6 +93,20 @@
             }
         },
         methods:{
+            sortByLabels(arr,order,type){
+                let res= type==='asc' ? -1 : 1
+                return arr.sort((a,b)=>{
+                    if(!a[order])return res
+                    else if(!b[order])return -res
+                    else{
+                        return a[order].length === b[order].length
+                            ? 0
+                            : a[order].length < b[order].length
+                                ? res
+                                : -res
+                    }
+                })
+            },
             sortBy(arr,order,type){
                 let res= type==='asc' ? -1 : 1
                 return arr.sort((a,b)=>{

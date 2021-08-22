@@ -1,4 +1,3 @@
-
 <template>
     <Valine appId="s8REl9WtWtOw7omr7frVIpMP-MdYXbMMI"
             appKey="amadgvU7WzMYQ9eqMatTHLWM"
@@ -8,12 +7,12 @@
             placeholder="说点什么吧，: 开启表情输入"
             :themeMode="$vuetify.theme.isDark ? 'dark' : 'light'"
     >
-        <ValineCount :uniqStr="uniqStr"  />
+        <slot></slot>
     </Valine>
 </template>
 
 <script>
-    import {modify_hljs, Valine,ValineCount} from "../utils/react-valine/react-valine.js"
+    import {modify_hljs, Valine} from "../../../utils/react-valine/react-valine.js"
     import {applyReactInVue} from 'vuereact-combined'
     modify_hljs((hljs)=>{
         const python = require('highlight.js/lib/languages/python')
@@ -21,16 +20,9 @@
         return hljs
     })
     export default {
-        name: "ValineCounterInVue",
-        props:{
-            uniqStr:{
-                type:String,
-                default:decodeURI(window.location.origin+window.location.pathname)
-            }
-        },
+        name: "ContextVue",
         components:{
-            Valine:applyReactInVue(Valine),
-            ValineCount:applyReactInVue(ValineCount),
+            Valine:applyReactInVue(Valine)
         }
     }
 </script>
