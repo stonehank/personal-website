@@ -1,0 +1,32 @@
+language: node_js
+node_js:
+  - "12.18.3"
+
+# S: Build Lifecycle
+install:
+  - npm install
+
+
+script:
+  - npm run build
+
+after_script:
+  - mv -f README.md dist
+  - git clone "https://${GH_TOKEN}@${GHIO_REF}" demo
+  - rm -rf demo/assets
+  - cp -R dist/* demo/
+  - cd ./demo
+  - git config user.name "stonehank"
+  - git config user.email "stonehank310@gmail.com"
+  - git add .
+  - git commit -m "Update"
+  - git push --force --quiet "https://${GH_TOKEN}@${GHIO_REF}" master:master >/dev/null 2>&1
+
+# E: Build LifeCycle
+
+branches:
+  only:
+    - main
+env:
+  global:
+     - GHIO_REF: github.com/stonehank/stonehank.github.io

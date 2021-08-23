@@ -54,7 +54,7 @@ const configPlugins = [
    anime: ['animejs', 'default'],
 
   }),
-  // !isDev && new ImageCompressPlugin(),
+  !isDev && new ImageCompressPlugin(),
   new VueLoaderPlugin(),
   // new FriendlyErrorsWebpackPlugin(),
   // new ErrorOverlayPlugin(),
@@ -76,13 +76,13 @@ const configPlugins = [
     filename: isDev ? 'assets/css/[name].css' : 'assets/css/[name].[contenthash:8].css',
     chunkFilename: isDev ? 'assets/css/[name].css' : 'assets/css/[name].[contenthash:8].css',
   }),
-  // !isDev && new PrerenderSPAPlugin({
-  //   staticDir: path.join(dirVars.staticRootDir, 'dist'),
-  //   routes: require('./getRouteInSpa'),
-  //   renderer: new Renderer({
-  //     maxConcurrentRoutes: 12,
-  //   })
-  // })
+  !isDev && new PrerenderSPAPlugin({
+    staticDir: path.join(dirVars.staticRootDir, 'dist'),
+    routes: require('./getRouteInSpa'),
+    renderer: new Renderer({
+      maxConcurrentRoutes: 12,
+    })
+  })
 ]
 
 function resolveFlat(page,langList,fullPagePath){
