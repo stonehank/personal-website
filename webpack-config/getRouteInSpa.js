@@ -37,7 +37,7 @@ function resolve(dir,prefixPath,excludes=[]){
     }
     for(let i=0;i<dirData.length;i++){
         if(excludes.includes(dirData[i]))continue
-        res.push(prefixPath + '/' + dirData[i])
+        res.push(prefixPath + '/' + path.parse(dirData[i]).name)
     }
     return res
 }
