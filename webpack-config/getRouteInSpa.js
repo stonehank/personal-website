@@ -14,11 +14,6 @@ let staticRoute=[
 
 
 
-
-
-
-
-
 let blogDir=path.resolve(dirVars.assetsDir,'doc/blog')
 let leetcodeDir=path.resolve(dirVars.assetsDir,'doc/leetcode')
 let sourceCodeDir=path.resolve(dirVars.assetsDir,'doc/sourceCode')

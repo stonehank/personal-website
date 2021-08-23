@@ -54,7 +54,7 @@ const configPlugins = [
    anime: ['animejs', 'default'],
 
   }),
-  !isDev && new ImageCompressPlugin(),
+  // !isDev && new ImageCompressPlugin(),
   new VueLoaderPlugin(),
   // new FriendlyErrorsWebpackPlugin(),
   // new ErrorOverlayPlugin(),
@@ -76,18 +76,13 @@ const configPlugins = [
     filename: isDev ? 'assets/css/[name].css' : 'assets/css/[name].[contenthash:8].css',
     chunkFilename: isDev ? 'assets/css/[name].css' : 'assets/css/[name].[contenthash:8].css',
   }),
-  !isDev && new PrerenderSPAPlugin({
-    // Required - The path to the webpack-outputted app to prerender.
-    staticDir: path.join(dirVars.staticRootDir, 'dist'),
-    // Required - Routes to render.
-    routes: require('./getRouteInSpa'),
-    renderer: new Renderer({
-      // consoleHandler:function(route,message){
-      //   console.log(route,message)
-      // },
-      maxConcurrentRoutes: 12,
-    })
-  })
+  // !isDev && new PrerenderSPAPlugin({
+  //   staticDir: path.join(dirVars.staticRootDir, 'dist'),
+  //   routes: require('./getRouteInSpa'),
+  //   renderer: new Renderer({
+  //     maxConcurrentRoutes: 12,
+  //   })
+  // })
 ]
 
 function resolveFlat(page,langList,fullPagePath){
@@ -115,7 +110,7 @@ function resolveFlat(page,langList,fullPagePath){
         customPageConfig,
         isDev
       },
-      chunks: [page, 'commons', 'libs', 'manifest']
+      chunks: [page, 'vendor','commons', 'libs', 'manifest']
     })
     configPlugins.unshift(htmlPlugin)
   })
@@ -132,7 +127,7 @@ function resolveDeep(pathArr,langList){
     [folderName1,folderName2,pageName,fullPagePath]=pathArr
   }
   let filename=''
-  const chunks = [folderName1 + '_' + (folderName2 ? (folderName2 + '_') : '') + pageName, 'commons', 'libs', 'manifest']
+  const chunks = [folderName1 + '_' + (folderName2 ? (folderName2 + '_') : '') + pageName, 'vendor', 'commons', 'libs', 'manifest']
   let outputPath='./'+folderName1 + '/' + (folderName2 ? folderName2 + '/' : '') + pageName
   langList.forEach(lang => {
     if (lang === primaryLang) {

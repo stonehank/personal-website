@@ -37,7 +37,7 @@ module.exports={
     libs: {
       test: /node_modules/,
         name: 'libs',
-        minChunks: 4,
+        minChunks: 3,
         minSize: 0,
         priority: 30,
     },
@@ -48,7 +48,12 @@ module.exports={
         minSize: 0,
         priority: 20,
     },
-    vendors:false,
+    vendors: {
+      test: /[\\/]node_modules[\\/](jquery|vue-js-modal|vue|vue-photo-preview|vue-router|vue2-perfect-scrollbar|vuetify)[\\/]/,
+        name: "vendor",
+        enforce: true,
+        priority:10
+    },
   default: false
   },
 },

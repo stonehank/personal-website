@@ -28,7 +28,7 @@
                     <p v-if="this.bmList.length===0" class="text-secondary text-lg">
                         还没有书签
                     </p>
-                    <v-list dense class="w-100">
+                    <v-list v-else dense class="w-100">
                         <v-list-item v-for="(bm,index) in bmList"
                                      :to="bm.pathname + bm.hash"
                                      @click="()=>onClick(bm)"

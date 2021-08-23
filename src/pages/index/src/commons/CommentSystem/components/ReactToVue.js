@@ -1,4 +1,4 @@
-import {modify_hljs, Valine,ValineCount,ValinePanel,ValinePageview} from "../../../utils/react-valine/react-valine.js"
+import {modify_hljs, Valine,ValineCount,ValinePanel,ValinePageview} from "react-valine"
 import {applyReactInVue} from 'vuereact-combined'
 
 modify_hljs((hljs)=>{
