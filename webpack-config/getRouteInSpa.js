@@ -31,7 +31,7 @@ function resolve(dir,prefixPath,excludes=[]){
     let res=[]
     let dirData
     try{
-        dirData=fs.readdirSync(blogDir)
+        dirData=fs.readdirSync(dir)
     }catch(_){
         dirData=[]
     }
@@ -41,6 +41,5 @@ function resolve(dir,prefixPath,excludes=[]){
     }
     return res
 }
-
 
 module.exports=[...staticRoute,...blogRoute,...leetcodeRoute,...sourceCodeRoute]
