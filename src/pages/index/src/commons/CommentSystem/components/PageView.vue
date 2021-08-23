@@ -1,11 +1,10 @@
 
 <template>
-    <ValinePageview :uniqStr="uniqStr"  />
+    <VueValinePageview :uniqStr="uniqStr"  />
 </template>
 
 <script>
-    import {ValinePageview} from "../../../utils/react-valine/react-valine.js"
-    import {applyReactInVue} from 'vuereact-combined'
+    import {VueValinePageview} from './ReactToVue'
     export default {
         name: "PageViewVue",
         props:{
@@ -15,7 +14,7 @@
             }
         },
         components:{
-            ValinePageview:applyReactInVue(ValinePageview),
+            VueValinePageview,
         }
     }
 </script>

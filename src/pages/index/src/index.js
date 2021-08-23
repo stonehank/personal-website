@@ -43,7 +43,8 @@ const router = new VueRouter({
 
 Vue.prototype.$state = {
     getNavH: function () {
-        return $('#nav-header').outerHeight()
+        let $nav=$('#nav-header')
+        return $nav.length>0 ? $nav.outerHeight() : (vm.$vuetify.breakpoint.smAndDown ? 56 : 64)
     },
     add:function(key,value){
         Vue.prototype.$state[key]=value

@@ -1,10 +1,9 @@
 <template>
-    <ValinePanel :uniqStr="uniqStr"  />
+    <VueValinePanel :uniqStr="uniqStr"  />
 </template>
 
 <script>
-    import { ValinePanel} from "../../../utils/react-valine/react-valine.js"
-    import {applyReactInVue} from 'vuereact-combined'
+    import { VueValinePanel} from "./ReactToVue"
     export default {
         name: "PanelVue",
         props:{
@@ -14,7 +13,7 @@
             }
         },
         components:{
-            ValinePanel:applyReactInVue(ValinePanel),
+            VueValinePanel,
         }
     }
 </script>

@@ -90,11 +90,11 @@
             opened(){
                 this.$emit('opened')
             },
-            beforeClose(){
+            beforeClose(event){
                 let $html=$('html')
                 $html.css('overflow','auto')
                 $html.css('paddingRight',this.prevPadRight)
-                this.$emit('before-close')
+                this.$emit('before-close',event)
             },
             closed(){
                 this.$emit('closed')

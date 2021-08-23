@@ -36,6 +36,9 @@
                 initTimer:null,
             }
         },
+        updated(){
+            console.log('update toc list')
+        },
         mounted(){
             $(document).ready(()=>{
                 this.initTimer=setTimeout(()=>{

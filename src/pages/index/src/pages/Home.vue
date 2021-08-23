@@ -4,15 +4,15 @@
             <HomeOverview :run="run" />
         </section>
         <section style="height:100vh;" v-intersect="{
-            threshold: 0.5,
+            options:{threshold: 0.5},
             handler:onIntersect
         }">
-            <v-container>
+            <v-container v-if="renderMore">
                 <v-row>
                     <v-col cols="12"   :style="{marginTop:$state.getNavH() + 'px'}">
                         <h2>评论区</h2>
                     </v-col>
-                    <v-col cols="12" v-if="renderMore">
+                    <v-col cols="12" >
                         <CommentSysPanel uniq-str="home-page" />
                     </v-col>
                 </v-row>
@@ -26,7 +26,7 @@
     export default {
         name: "Home",
         components:{
-            CommentSysPanel:()=>import("pagesDir/index/src/commons/CommentSystem/CommentSysPanel"),
+            CommentSysPanel:()=>import(/* webpackChunkName: "comment" */ "pagesDir/index/src/commons/CommentSystem/CommentSysPanel"),
             HomeOverview,
         },
         data(){
@@ -53,6 +53,7 @@
         },
         methods:{
             onIntersect(_,__,isIntersect){
+                console.log(_,__,isIntersect)
                 if(isIntersect){
                     this.renderMore=true
                 }

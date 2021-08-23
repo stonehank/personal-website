@@ -54,7 +54,7 @@
         },
         data() {
             return {
-                wrapperHeight:0,
+                wrapperHeight:window.innerHeight,
                 runAnimation: false,
                 curSelected: null,
                 infoList: [
@@ -75,9 +75,6 @@
                     },
                 ]
             }
-        },
-        created(){
-            this.updateSize()
         },
         mounted() {
             let self = this

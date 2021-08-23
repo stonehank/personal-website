@@ -1,11 +1,10 @@
 
 <template>
-    <ValineCount :uniqStr="uniqStr"  />
+    <VueValineCount :uniqStr="uniqStr"  />
 </template>
 
 <script>
-    import {ValineCount} from "../../../utils/react-valine/react-valine.js"
-    import {applyReactInVue} from 'vuereact-combined'
+    import {VueValineCount} from "./ReactToVue"
     export default {
         name: "CounterVue",
         props:{
@@ -15,7 +14,7 @@
             }
         },
         components:{
-            ValineCount:applyReactInVue(ValineCount),
+            VueValineCount,
         }
     }
 </script>

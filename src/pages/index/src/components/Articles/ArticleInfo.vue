@@ -86,7 +86,7 @@
                 let navH=this.$state.getNavH()
                 for(let i=this.tocIdList.length-1;i>=0;i--){
                     let curIdHash=this.tocIdList[i]
-                    console.log(curIdHash)
+                    // console.log(curIdHash)
                     if(curScrTop + navH + 16 > $(curIdHash).offset().top){
                         if(this.$route.hash!==curIdHash){
                             this.$router.replace({hash:curIdHash})
