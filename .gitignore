@@ -335,3 +335,5 @@ coverage/
 backend/
 dist/
 .env
+leetcode-thinking/
+blogs/
