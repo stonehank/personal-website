@@ -76,6 +76,9 @@
                 ]
             }
         },
+        created(){
+            this.wrapperHeight=window.innerHeight
+        },
         mounted() {
             let self = this
             $('.skew-box').on('click', function () {

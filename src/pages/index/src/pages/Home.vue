@@ -1,5 +1,6 @@
 <template>
-    <div>
+    <HomepageLoading v-if="pageLoading"></HomepageLoading>
+    <div v-else>
         <section :style="{marginTop:- $state.getNavH() + 'px'}" >
             <HomeOverview :run="run" />
         </section>
@@ -23,14 +24,17 @@
 
 <script>
     import HomeOverview from "pagesDir/index/src/components/HomeOverview";
+    import HomepageLoading from "pagesDir/index/src/components/HomepageLoading";
     export default {
         name: "Home",
         components:{
+            HomepageLoading,
             CommentSysPanel:()=>import(/* webpackChunkName: "comment" */ "pagesDir/index/src/commons/CommentSystem/CommentSysPanel"),
             HomeOverview,
         },
         data(){
             return {
+                pageLoading:true,
                 renderMore:false,
                 run:false,
                 options: {
@@ -43,17 +47,18 @@
             }
         },
         mounted() {
-            this.timer=setTimeout(()=>{
-                this.run=true
-            },200)
-
+            $(document).ready(()=>{
+                this.timer=setTimeout(()=>{
+                    this.run=true
+                    this.pageLoading=false
+                },0)
+            })
         },
         destroyed() {
             clearTimeout(this.timer)
         },
         methods:{
             onIntersect(_,__,isIntersect){
-                console.log(_,__,isIntersect)
                 if(isIntersect){
                     this.renderMore=true
                 }

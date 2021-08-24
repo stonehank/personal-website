@@ -112,8 +112,8 @@ $splitTo:3;
       transition: opacity 0.3s linear 0.3s;
       position:relative !important;
       opacity: 1 !important;
-      user-select:initial;
-      pointer-events:initial;
+      user-select:initial !important;
+      pointer-events:initial !important;
       p{
         text-shadow: 0 0 8px #000;
         font-size: 16px;
