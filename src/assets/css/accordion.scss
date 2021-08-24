@@ -12,21 +12,22 @@ $splitTo:3;
 
 
 .accord-wrapper {
+
+  height:100vh;
   width:100%;
   overflow: hidden;
   background-size: cover;
   background-position: center center;
   display: flex;
   flex-flow:column;
-  //*{
-  //  transition: all 0.3s ease-out;
-  //}
+
   .skew-box {
     transition:
-            flex-grow 0.3s ease-out,
-            font-size 0.3s ease-out,
-            text-shadow 0.3s ease-out,
-            width 0.3s ease-out;
+            flex-grow 0.3s linear,
+            font-size 0.3s linear,
+            text-shadow 0.3s linear,
+            width 0.3s linear,
+            opacity 0.3s linear;
     cursor:pointer;
     background-color: transparent;
     width:100%;
@@ -59,11 +60,16 @@ $splitTo:3;
       & .smoky {
         width: 100%;
         opacity: 0;
-        position:absolute;;
+        user-select:none;
+        pointer-events:none;
+        position:absolute;
       }
     }
 
     .accord-content h4 {
+      white-space: nowrap;
+      overflow: hidden;
+      width: 100%;
       text-align: center;
       font-size:30px;
     }
@@ -89,6 +95,7 @@ $splitTo:3;
   }
 
   .widthlow{
+    //transition: all 0.3s;
     flex-basis: $widthMin-sm;
     flex-shrink: 0;
     flex-grow:0;
@@ -102,8 +109,11 @@ $splitTo:3;
       text-shadow: 0 0 6px #000;
     }
     .smoky {
+      transition: opacity 0.3s linear 0.3s;
       position:relative !important;
       opacity: 1 !important;
+      user-select:initial;
+      pointer-events:initial;
       p{
         text-shadow: 0 0 8px #000;
         font-size: 16px;
