@@ -51,7 +51,7 @@
                 this.timer=setTimeout(()=>{
                     this.run=true
                     this.pageLoading=false
-                },0)
+                },1000)
             })
         },
         destroyed() {
