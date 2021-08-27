@@ -12,9 +12,10 @@ let defaultMetaObj= {
 
 export default (to, from,customMeta) => {
     let toPath=to.path
-    let pathArr=toPath.split('/').slice(1)
+    let pathArr=toPath.split('/').slice(1).filter(Boolean)
     let defaultMeta=Object.assign(defaultMetaObj,customMeta)
     let curMeta=seoData['/'+pathArr[0]]
+    // console.log(pathArr)
     if(!curMeta){
         curMeta=defaultMeta
     }else if(pathArr.length>1){
