@@ -4,6 +4,7 @@ node_js:
 
 # S: Build Lifecycle
 install:
+  - travis_wait mvn install
   - npm install
 
 
