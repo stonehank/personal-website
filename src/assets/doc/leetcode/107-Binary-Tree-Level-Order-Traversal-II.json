@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * Definition for a binary tree node.\n * function TreeNode(val) {\n *     this.val = val;\n *     this.left = this.right = null;\n * }\n */</span>\n<span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{TreeNode}</span> <span class=\"hljs-variable\">root</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number[][]}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> levelOrderBottom = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">root</span>) </span>{ \n  <span class=\"hljs-keyword\">let</span> result=[]\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">dsfWithLevel</span>(<span class=\"hljs-params\">node,level</span>)</span>{\n    <span class=\"hljs-keyword\">if</span>(!node)<span class=\"hljs-keyword\">return</span>\n    <span class=\"hljs-keyword\">if</span>(!result[level])result[level]=[]\n    result[level].push(node.val)\n    <span class=\"hljs-keyword\">if</span>(node.left)dsfWithLevel(node.left,level+<span class=\"hljs-number\">1</span>)\n    <span class=\"hljs-keyword\">if</span>(node.right)dsfWithLevel(node.right,level+<span class=\"hljs-number\">1</span>)\n  }\n  dsfWithLevel(root,<span class=\"hljs-number\">0</span>)\n  <span class=\"hljs-keyword\">return</span> result.reverse()\n};\n</code></pre>\n"
+  ],
+  "querySlug": "binary-tree-level-order-traversal-ii",
+  "created_at": "2019-03-18",
+  "timeArr": [
+    2019,
+    2,
+    18,
+    13,
+    55,
+    50,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>除了最后结果倒序，与<code>NO.102</code>完全一致。</p>\n",
+  "content": "<p>给定一个二叉树，返回其节点值自底向上的层序遍历。 （即按从叶子节点所在层到根节点所在的层，逐层从左向右遍历）</p>\n\n<p>例如：<br />\n给定二叉树 <code>[3,9,20,null,null,15,7]</code>,</p>\n\n<pre>\n    3\n   / \\\n  9  20\n    /  \\\n   15   7\n</pre>\n\n<p>返回其自底向上的层序遍历为：</p>\n\n<pre>\n[\n  [15,7],\n  [9,20],\n  [3]\n]\n</pre>\n",
+  "title": "107. 二叉树的层序遍历 II",
+  "relatedTags": [
+    "树",
+    "广度优先搜索",
+    "二叉树"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "107",
+  "slug": "107-Binary-Tree-Level-Order-Traversal-II"
+}

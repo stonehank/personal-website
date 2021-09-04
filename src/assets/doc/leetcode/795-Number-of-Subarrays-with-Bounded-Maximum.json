@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">A</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">L</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">R</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> numSubarrayBoundedMax = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">A, L, R</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> dp=<span class=\"hljs-built_in\">Array</span>(A.length+<span class=\"hljs-number\">1</span>).fill(<span class=\"hljs-number\">0</span>)\n  <span class=\"hljs-keyword\">let</span> lastExceed=<span class=\"hljs-number\">0</span>,lastValid=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">1</span>;i&lt;dp.length;i++){\n    <span class=\"hljs-keyword\">if</span>(A[i<span class=\"hljs-number\">-1</span>]&gt;=L &amp;&amp; A[i<span class=\"hljs-number\">-1</span>]&lt;=R){\n      dp[i]=i-lastExceed\n      lastValid=i\n    }<span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span>(A[i<span class=\"hljs-number\">-1</span>]&lt;L){\n      <span class=\"hljs-keyword\">if</span>(lastValid&gt;lastExceed)dp[i]=dp[lastValid]\n    }<span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span>(A[i<span class=\"hljs-number\">-1</span>]&gt;R){\n      lastExceed=i\n      dp[i]=<span class=\"hljs-number\">0</span>\n    }\n  }\n  <span class=\"hljs-keyword\">let</span> res=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> n <span class=\"hljs-keyword\">of</span> dp)res+=n\n  <span class=\"hljs-keyword\">return</span> res\n};\n</code></pre>\n"
+  ],
+  "querySlug": "number-of-subarrays-with-bounded-maximum",
+  "created_at": "2019-03-15",
+  "timeArr": [
+    2019,
+    2,
+    15,
+    17,
+    16,
+    44,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给定一个元素都是正整数的数组<code>A</code>&nbsp;，正整数 <code>L</code>&nbsp;以及&nbsp;<code>R</code>&nbsp;(<code>L &lt;= R</code>)。</p>\n\n<p>求连续、非空且其中最大元素满足大于等于<code>L</code>&nbsp;小于等于<code>R</code>的子数组个数。</p>\n\n<pre><strong>例如 :</strong>\n<strong>输入:</strong> \nA = [2, 1, 4, 3]\nL = 2\nR = 3\n<strong>输出:</strong> 3\n<strong>解释:</strong> 满足条件的子数组: [2], [2, 1], [3].\n</pre>\n\n<p><strong>注意:</strong></p>\n\n<ul>\n\t<li>L, R&nbsp; 和&nbsp;<code>A[i]</code> 都是整数，范围在&nbsp;<code>[0, 10^9]</code>。</li>\n\t<li>数组&nbsp;<code>A</code>&nbsp;的长度范围在<code>[1, 50000]</code>。</li>\n</ul>\n",
+  "title": "795. 区间子数组个数",
+  "relatedTags": [
+    "数组",
+    "双指针"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "795",
+  "slug": "795-Number-of-Subarrays-with-Bounded-Maximum"
+}

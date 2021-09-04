@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">num1</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">num2</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{string}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> addStrings = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">num1, num2</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> dig=[<span class=\"hljs-number\">0</span>,<span class=\"hljs-number\">1</span>,<span class=\"hljs-number\">2</span>,<span class=\"hljs-number\">3</span>,<span class=\"hljs-number\">4</span>,<span class=\"hljs-number\">5</span>,<span class=\"hljs-number\">6</span>,<span class=\"hljs-number\">7</span>,<span class=\"hljs-number\">8</span>,<span class=\"hljs-number\">9</span>]\n  <span class=\"hljs-keyword\">let</span> i=num1.length<span class=\"hljs-number\">-1</span>,j=num2.length<span class=\"hljs-number\">-1</span>,carry=<span class=\"hljs-number\">0</span>,res=<span class=\"hljs-string\">''</span>\n  <span class=\"hljs-keyword\">while</span>(i&gt;=<span class=\"hljs-number\">0</span> || j&gt;=<span class=\"hljs-number\">0</span>){\n    <span class=\"hljs-keyword\">let</span> n1=i&lt;<span class=\"hljs-number\">0</span> ? <span class=\"hljs-number\">0</span> : num1[i--],\n        n2=j&lt;<span class=\"hljs-number\">0</span> ? <span class=\"hljs-number\">0</span> : num2[j--],\n        s=dig[n1]+dig[n2]+carry\n    carry=<span class=\"hljs-built_in\">Math</span>.floor(s/<span class=\"hljs-number\">10</span>)\n    res=s%<span class=\"hljs-number\">10</span> + res\n  }\n  <span class=\"hljs-keyword\">if</span>(carry&gt;<span class=\"hljs-number\">0</span>)res=carry+res\n  <span class=\"hljs-keyword\">return</span> res\n};\n</code></pre>\n"
+  ],
+  "querySlug": "add-strings",
+  "created_at": "2019-03-25",
+  "timeArr": [
+    2019,
+    2,
+    25,
+    10,
+    40,
+    33,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给定两个字符串形式的非负整数&nbsp;<code>num1</code> 和<code>num2</code>&nbsp;，计算它们的和。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ol>\n\t<li><code>num1</code> 和<code>num2</code>&nbsp;的长度都小于 5100</li>\n\t<li><code>num1</code> 和<code>num2</code> 都只包含数字&nbsp;<code>0-9</code></li>\n\t<li><code>num1</code> 和<code>num2</code> 都不包含任何前导零</li>\n\t<li><strong>你不能使用任何內建 BigInteger 库，&nbsp;也不能直接将输入的字符串转换为整数形式</strong></li>\n</ol>\n",
+  "title": "415. 字符串相加",
+  "relatedTags": [
+    "数学",
+    "字符串",
+    "模拟"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "415",
+  "slug": "415-Add-Strings"
+}

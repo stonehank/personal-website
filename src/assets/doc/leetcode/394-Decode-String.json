@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">s</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{string}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> decodeString = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">s</span>) </span>{\n  <span class=\"hljs-keyword\">return</span> decode(s)[<span class=\"hljs-number\">0</span>]\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">decode</span>(<span class=\"hljs-params\">s</span>)</span>{\n    <span class=\"hljs-keyword\">let</span> count=<span class=\"hljs-number\">0</span>,str=<span class=\"hljs-string\">''</span>\n    <span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">for</span>(;i&lt;s.length;i++){\n      <span class=\"hljs-keyword\">if</span>(s[i]===<span class=\"hljs-string\">\"[\"</span>){\n        <span class=\"hljs-keyword\">let</span> [res,nxtId]=decode(s.substring(i+<span class=\"hljs-number\">1</span>))\n        str+=res.repeat(count)\n        count=<span class=\"hljs-number\">0</span>\n        i+=nxtId+<span class=\"hljs-number\">1</span>\n      }<span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span>(s[i]===<span class=\"hljs-string\">\"]\"</span>){\n        <span class=\"hljs-keyword\">break</span>\n      }<span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span>(<span class=\"hljs-regexp\">/\\d/</span>.test(s[i])){\n        count=count*<span class=\"hljs-number\">10</span>+(+s[i])\n      }<span class=\"hljs-keyword\">else</span>{\n        str+=s[i]\n      }\n    }\n    <span class=\"hljs-keyword\">return</span> [str,i]\n  }\n};\n</code></pre>\n"
+  ],
+  "querySlug": "decode-string",
+  "created_at": "2019-04-09",
+  "timeArr": [
+    2019,
+    3,
+    9,
+    11,
+    10,
+    51,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>典型的存在括号的递归问题，具体在代码中注释了。</p>\n",
+  "content": "<p>给定一个经过编码的字符串，返回它解码后的字符串。</p>\n\n<p>编码规则为: <code>k[encoded_string]</code>，表示其中方括号内部的 <em>encoded_string</em> 正好重复 <em>k</em> 次。注意 <em>k</em> 保证为正整数。</p>\n\n<p>你可以认为输入字符串总是有效的；输入字符串中没有额外的空格，且输入的方括号总是符合格式要求的。</p>\n\n<p>此外，你可以认为原始数据不包含数字，所有的数字只表示重复的次数 <em>k</em> ，例如不会出现像&nbsp;<code>3a</code>&nbsp;或&nbsp;<code>2[4]</code>&nbsp;的输入。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre><strong>输入：</strong>s = &quot;3[a]2[bc]&quot;\n<strong>输出：</strong>&quot;aaabcbc&quot;\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre><strong>输入：</strong>s = &quot;3[a2[c]]&quot;\n<strong>输出：</strong>&quot;accaccacc&quot;\n</pre>\n\n<p><strong>示例 3：</strong></p>\n\n<pre><strong>输入：</strong>s = &quot;2[abc]3[cd]ef&quot;\n<strong>输出：</strong>&quot;abcabccdcdcdef&quot;\n</pre>\n\n<p><strong>示例 4：</strong></p>\n\n<pre><strong>输入：</strong>s = &quot;abc3[cd]xyz&quot;\n<strong>输出：</strong>&quot;abccdcdcdxyz&quot;\n</pre>\n",
+  "title": "394. 字符串解码",
+  "relatedTags": [
+    "栈",
+    "递归",
+    "字符串"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "394",
+  "slug": "394-Decode-String"
+}

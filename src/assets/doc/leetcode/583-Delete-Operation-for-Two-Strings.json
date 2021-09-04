@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">word1</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">word2</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> minDistance = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">word1, word2</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> len1=word1.length,len2=word2.length\n  <span class=\"hljs-keyword\">let</span> dp=<span class=\"hljs-built_in\">Array</span>(len1+<span class=\"hljs-number\">1</span>).fill().map(<span class=\"hljs-function\"><span class=\"hljs-params\">n</span>=&gt;</span><span class=\"hljs-built_in\">Array</span>(len2+<span class=\"hljs-number\">1</span>).fill(<span class=\"hljs-number\">0</span>))\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;=len1;i++) dp[i][<span class=\"hljs-number\">0</span>]=i\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;=len2;i++) dp[<span class=\"hljs-number\">0</span>][i]=i\n  \n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">1</span>;i&lt;=len1;i++){\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> j=<span class=\"hljs-number\">1</span>;j&lt;=len2;j++){\n      <span class=\"hljs-keyword\">if</span>(word1[i<span class=\"hljs-number\">-1</span>]===word2[j<span class=\"hljs-number\">-1</span>]){\n        dp[i][j]=dp[i<span class=\"hljs-number\">-1</span>][j<span class=\"hljs-number\">-1</span>]\n      }<span class=\"hljs-keyword\">else</span>{\n        dp[i][j]=<span class=\"hljs-built_in\">Math</span>.min(dp[i<span class=\"hljs-number\">-1</span>][j],dp[i][j<span class=\"hljs-number\">-1</span>])+<span class=\"hljs-number\">1</span>\n      }\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> dp[len1][len2]\n};\n</code></pre>\n"
+  ],
+  "querySlug": "delete-operation-for-two-strings",
+  "created_at": "2019-03-25",
+  "timeArr": [
+    2019,
+    2,
+    25,
+    22,
+    39,
+    3,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给定两个单词&nbsp;<em>word1&nbsp;</em>和&nbsp;<em>word2</em>，找到使得&nbsp;<em>word1&nbsp;</em>和&nbsp;<em>word2&nbsp;</em>相同所需的最小步数，每步可以删除任意一个字符串中的一个字符。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例：</strong></p>\n\n<pre><strong>输入:</strong> &quot;sea&quot;, &quot;eat&quot;\n<strong>输出:</strong> 2\n<strong>解释:</strong> 第一步将&quot;sea&quot;变为&quot;ea&quot;，第二步将&quot;eat&quot;变为&quot;ea&quot;\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ol>\n\t<li>给定单词的长度不超过500。</li>\n\t<li>给定单词中的字符只含有小写字母。</li>\n</ol>\n",
+  "title": "583. 两个字符串的删除操作",
+  "relatedTags": [
+    "字符串",
+    "动态规划"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "583",
+  "slug": "583-Delete-Operation-for-Two-Strings"
+}

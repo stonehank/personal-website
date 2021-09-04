@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">n</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">k</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{string}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> crackSafe = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">n, k</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> c=[]\n  fillC(<span class=\"hljs-string\">''</span>)\n  <span class=\"hljs-keyword\">let</span> visited=<span class=\"hljs-built_in\">Array</span>(c.length).fill(<span class=\"hljs-literal\">false</span>)\n  <span class=\"hljs-keyword\">let</span> startsHash={}\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;c.length;i++){\n    <span class=\"hljs-keyword\">let</span> starts=c[i].substring(<span class=\"hljs-number\">0</span>,n<span class=\"hljs-number\">-1</span>)\n    <span class=\"hljs-keyword\">if</span>(startsHash[starts]==<span class=\"hljs-literal\">null</span>)startsHash[starts]=[i]\n    <span class=\"hljs-keyword\">else</span> startsHash[starts].push(i)\n  }\n  <span class=\"hljs-keyword\">let</span> res=<span class=\"hljs-literal\">null</span>\n  visited[<span class=\"hljs-number\">0</span>]=<span class=\"hljs-literal\">true</span>\n  dfs(c[<span class=\"hljs-number\">0</span>])\n  <span class=\"hljs-keyword\">return</span> res\n  \n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">fillC</span>(<span class=\"hljs-params\">str</span>)</span>{\n    <span class=\"hljs-keyword\">if</span>(str.length===n)<span class=\"hljs-keyword\">return</span> c.push(str)\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;k;i++){\n      fillC(str+i)\n    }\n  }\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">dfs</span>(<span class=\"hljs-params\">str</span>)</span>{\n    <span class=\"hljs-keyword\">if</span>(res)<span class=\"hljs-keyword\">return</span> \n    <span class=\"hljs-keyword\">if</span>(str.length===c.length+n<span class=\"hljs-number\">-1</span>){\n      <span class=\"hljs-keyword\">return</span> res=str\n    }\n    <span class=\"hljs-keyword\">let</span> starts=str.substring(str.length-n+<span class=\"hljs-number\">1</span>)\n    <span class=\"hljs-keyword\">let</span> candidates=startsHash[starts]\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;candidates.length;i++){\n      <span class=\"hljs-keyword\">let</span> id=candidates[i]\n      <span class=\"hljs-keyword\">if</span>(visited[id])<span class=\"hljs-keyword\">continue</span>\n      visited[id]=<span class=\"hljs-literal\">true</span>\n      dfs(str+c[id].substring(n<span class=\"hljs-number\">-1</span>))\n      visited[id]=<span class=\"hljs-literal\">false</span>\n    }\n  }\n};\n</code></pre>\n"
+  ],
+  "querySlug": "cracking-the-safe",
+  "created_at": "2019-04-01",
+  "timeArr": [
+    2019,
+    3,
+    1,
+    23,
+    23,
+    2,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>有一个需要密码才能打开的保险箱。密码是&nbsp;<code>n</code> 位数, 密码的每一位是&nbsp;<code>k</code>&nbsp;位序列&nbsp;<code>0, 1, ..., k-1</code>&nbsp;中的一个 。</p>\n\n<p>你可以随意输入密码，保险箱会自动记住最后&nbsp;<code>n</code>&nbsp;位输入，如果匹配，则能够打开保险箱。</p>\n\n<p>举个例子，假设密码是&nbsp;<code>&quot;345&quot;</code>，你可以输入&nbsp;<code>&quot;012345&quot;</code>&nbsp;来打开它，只是你输入了 6&nbsp;个字符.</p>\n\n<p>请返回一个能打开保险箱的最短字符串。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例1:</strong></p>\n\n<pre><strong>输入:</strong> n = 1, k = 2\n<strong>输出:</strong> &quot;01&quot;\n<strong>说明:</strong> &quot;10&quot;也可以打开保险箱。\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>示例2:</strong></p>\n\n<pre><strong>输入:</strong> n = 2, k = 2\n<strong>输出:</strong> &quot;00110&quot;\n<strong>说明: </strong>&quot;01100&quot;, &quot;10011&quot;, &quot;11001&quot; 也能打开保险箱。\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ol>\n\t<li><code>n</code> 的范围是&nbsp;<code>[1, 4]</code>。</li>\n\t<li><code>k</code> 的范围是&nbsp;<code>[1, 10]</code>。</li>\n\t<li><code>k^n</code> 最大可能为&nbsp;<code>4096</code>。</li>\n</ol>\n\n<p>&nbsp;</p>\n",
+  "title": "753. 破解保险箱",
+  "relatedTags": [
+    "深度优先搜索",
+    "图",
+    "欧拉回路"
+  ],
+  "difficult": "Hard",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "753",
+  "slug": "753-Cracking-the-Safe"
+}

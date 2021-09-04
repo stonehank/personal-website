@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">numRows</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number[][]}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> generate = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">numRows</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> matrix=<span class=\"hljs-built_in\">Array</span>(numRows).fill(<span class=\"hljs-literal\">null</span>)\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;numRows;i++){\n    matrix[i]=<span class=\"hljs-built_in\">Array</span>(i+<span class=\"hljs-number\">1</span>).fill(<span class=\"hljs-number\">1</span>)\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> j=<span class=\"hljs-number\">1</span>;j&lt;i;j++){\n      matrix[i][j]=matrix[i<span class=\"hljs-number\">-1</span>][j<span class=\"hljs-number\">-1</span>]+matrix[i<span class=\"hljs-number\">-1</span>][j]\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> matrix\n};\n</code></pre>\n"
+  ],
+  "querySlug": "pascals-triangle",
+  "created_at": "2019-03-12",
+  "timeArr": [
+    2019,
+    2,
+    12,
+    21,
+    8,
+    29,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>要求输出整个三角形，使用<code>temp</code>保留上一层的数组，通过<code>temp</code>计算当前层。</p>\n",
+  "content": "<p>给定一个非负整数 <em><code>numRows</code>，</em>生成「杨辉三角」的前 <em><code>numRows</code> </em>行。</p>\n\n<p><small>在「杨辉三角」中，每个数是它左上方和右上方的数的和。</small></p>\n\n<p><img alt=\"\" src=\"https://pic.leetcode-cn.com/1626927345-DZmfxB-PascalTriangleAnimated2.gif\" /></p>\n\n<p> </p>\n\n<p><strong>示例 1:</strong></p>\n\n<pre>\n<strong>输入:</strong> numRows = 5\n<strong>输出:</strong> [[1],[1,1],[1,2,1],[1,3,3,1],[1,4,6,4,1]]\n</pre>\n\n<p><strong>示例 2:</strong></p>\n\n<pre>\n<strong>输入:</strong> numRows = 1\n<strong>输出:</strong> [[1]]\n</pre>\n\n<p> </p>\n\n<p><strong>提示:</strong></p>\n\n<ul>\n\t<li><code>1 <= numRows <= 30</code></li>\n</ul>\n",
+  "title": "118. 杨辉三角",
+  "relatedTags": [
+    "数组",
+    "动态规划"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "118",
+  "slug": "118-Pascals-Triangle"
+}

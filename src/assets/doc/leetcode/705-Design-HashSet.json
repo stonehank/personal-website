@@ -1,0 +1,32 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * Initialize your data structure here.\n */</span>\n<span class=\"hljs-keyword\">var</span> MyHashSet = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"></span>) </span>{\n  <span class=\"hljs-keyword\">this</span>.hash={}\n};\n\n<span class=\"hljs-comment\">/** \n * @param {number} key\n * @return {void}\n */</span>\nMyHashSet.prototype.add = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">key</span>) </span>{\n  <span class=\"hljs-keyword\">this</span>.hash[key]=key\n};\n\n<span class=\"hljs-comment\">/** \n * @param {number} key\n * @return {void}\n */</span>\nMyHashSet.prototype.remove = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">key</span>) </span>{\n  <span class=\"hljs-keyword\">this</span>.hash[key]=<span class=\"hljs-literal\">null</span>\n};\n\n<span class=\"hljs-comment\">/**\n * Returns true if this set contains the specified element \n * @param {number} key\n * @return {boolean}\n */</span>\nMyHashSet.prototype.contains = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">key</span>) </span>{\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">this</span>.hash[key]!=<span class=\"hljs-literal\">null</span>\n};\n\n<span class=\"hljs-comment\">/** \n * Your MyHashSet object will be instantiated and called as such:\n * var obj = new MyHashSet()\n * obj.add(key)\n * obj.remove(key)\n * var param_3 = obj.contains(key)\n */</span>\n</code></pre>\n"
+  ],
+  "querySlug": "design-hashset",
+  "created_at": "2019-04-06",
+  "timeArr": [
+    2019,
+    3,
+    6,
+    22,
+    49,
+    20,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>不使用任何内建的哈希表库设计一个哈希集合（HashSet）。</p>\n\n<p>实现 <code>MyHashSet</code> 类：</p>\n\n<ul>\n\t<li><code>void add(key)</code> 向哈希集合中插入值 <code>key</code> 。</li>\n\t<li><code>bool contains(key)</code> 返回哈希集合中是否存在这个值 <code>key</code> 。</li>\n\t<li><code>void remove(key)</code> 将给定值 <code>key</code> 从哈希集合中删除。如果哈希集合中没有这个值，什么也不做。</li>\n</ul>\n \n\n<p><strong>示例：</strong></p>\n\n<pre>\n<strong>输入：</strong>\n[\"MyHashSet\", \"add\", \"add\", \"contains\", \"contains\", \"add\", \"contains\", \"remove\", \"contains\"]\n[[], [1], [2], [1], [3], [2], [2], [2], [2]]\n<strong>输出：</strong>\n[null, null, null, true, false, null, true, null, false]\n\n<strong>解释：</strong>\nMyHashSet myHashSet = new MyHashSet();\nmyHashSet.add(1);      // set = [1]\nmyHashSet.add(2);      // set = [1, 2]\nmyHashSet.contains(1); // 返回 True\nmyHashSet.contains(3); // 返回 False ，（未找到）\nmyHashSet.add(2);      // set = [1, 2]\nmyHashSet.contains(2); // 返回 True\nmyHashSet.remove(2);   // set = [1]\nmyHashSet.contains(2); // 返回 False ，（已移除）</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>0 <= key <= 10<sup>6</sup></code></li>\n\t<li>最多调用 <code>10<sup>4</sup></code> 次 <code>add</code>、<code>remove</code> 和 <code>contains</code> 。</li>\n</ul>\n\n<p> </p>\n\n<p><strong>进阶：</strong>你可以不使用内建的哈希集合库解决此问题吗？</p>\n",
+  "title": "705. 设计哈希集合",
+  "relatedTags": [
+    "设计",
+    "数组",
+    "哈希表",
+    "链表",
+    "哈希函数"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "705",
+  "slug": "705-Design-HashSet"
+}

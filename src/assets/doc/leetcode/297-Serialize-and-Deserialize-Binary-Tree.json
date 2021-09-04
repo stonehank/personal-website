@@ -1,0 +1,33 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * Definition for a binary tree node.\n * function TreeNode(val) {\n *     this.val = val;\n *     this.left = this.right = null;\n * }\n */</span>\n\n<span class=\"hljs-comment\">/**\n * Encodes a tree to a single string.\n *\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{TreeNode}</span> <span class=\"hljs-variable\">root</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{string}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> serialize = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">root</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> str=<span class=\"hljs-string\">''</span>\n  <span class=\"hljs-keyword\">let</span> arr=[root]\n  <span class=\"hljs-keyword\">while</span>(arr.length&gt;<span class=\"hljs-number\">0</span>){\n    <span class=\"hljs-keyword\">let</span> len=arr.length\n    <span class=\"hljs-keyword\">let</span> newStr=<span class=\"hljs-string\">''</span>,valid=<span class=\"hljs-literal\">false</span>\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;len;i++){\n      <span class=\"hljs-keyword\">let</span> node=arr.shift()\n      <span class=\"hljs-keyword\">if</span>(!node)newStr+=<span class=\"hljs-string\">',#'</span>\n      <span class=\"hljs-keyword\">else</span> newStr+=<span class=\"hljs-string\">','</span>+node.val\n      <span class=\"hljs-keyword\">if</span>(!node)<span class=\"hljs-keyword\">continue</span>\n      valid=<span class=\"hljs-literal\">true</span>\n      arr.push(node.left)\n      arr.push(node.right)\n    }\n    <span class=\"hljs-keyword\">if</span>(valid)str+=newStr\n  }\n  <span class=\"hljs-keyword\">return</span> str.slice(<span class=\"hljs-number\">1</span>)\n};\n\n<span class=\"hljs-comment\">/**\n * Decodes your encoded data to tree.\n *\n * @param {string} data\n * @return {TreeNode}\n */</span>\n<span class=\"hljs-keyword\">var</span> deserialize = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">data</span>) </span>{\n  <span class=\"hljs-keyword\">if</span>(data===<span class=\"hljs-string\">\"\"</span>)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">null</span>\n  <span class=\"hljs-keyword\">let</span> arr=data.split(<span class=\"hljs-string\">','</span>), idx=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">let</span> root=create(idx++)\n  <span class=\"hljs-keyword\">let</span> aux=[root]\n  <span class=\"hljs-keyword\">while</span>(aux.length&gt;<span class=\"hljs-number\">0</span>){\n    <span class=\"hljs-keyword\">let</span> len=aux.length\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;len;i++){\n      <span class=\"hljs-keyword\">let</span> node=aux.shift()\n      <span class=\"hljs-keyword\">if</span>(!node)<span class=\"hljs-keyword\">continue</span>\n      node.left=create(idx++)\n      node.right=create(idx++)\n      aux.push(node.left,node.right)\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> root\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">create</span>(<span class=\"hljs-params\">idx</span>)</span>{\n    <span class=\"hljs-keyword\">if</span>(idx&gt;=arr.length)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">null</span>\n    <span class=\"hljs-keyword\">if</span>(arr[idx]===<span class=\"hljs-string\">\"#\"</span>)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">null</span>\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">new</span> TreeNode(arr[idx])\n  }\n};\n\n<span class=\"hljs-comment\">/**\n * Your functions will be called as such:\n * deserialize(serialize(root));\n */</span>\n</code></pre>\n"
+  ],
+  "querySlug": "serialize-and-deserialize-binary-tree",
+  "created_at": "2019-03-18",
+  "timeArr": [
+    2019,
+    2,
+    18,
+    22,
+    30,
+    23,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>序列化是将一个数据结构或者对象转换为连续的比特位的操作，进而可以将转换后的数据存储在一个文件或者内存中，同时也可以通过网络传输到另一个计算机环境，采取相反方式重构得到原数据。</p>\n\n<p>请设计一个算法来实现二叉树的序列化与反序列化。这里不限定你的序列 / 反序列化算法执行逻辑，你只需要保证一个二叉树可以被序列化为一个字符串并且将这个字符串反序列化为原始的树结构。</p>\n\n<p><strong>提示: </strong>输入输出格式与 LeetCode 目前使用的方式一致，详情请参阅 <a href=\"/faq/#binary-tree\">LeetCode 序列化二叉树的格式</a>。你并非必须采取这种方式，你也可以采用其他的方法解决这个问题。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/09/15/serdeser.jpg\" style=\"width: 442px; height: 324px;\" />\n<pre>\n<strong>输入：</strong>root = [1,2,3,null,null,4,5]\n<strong>输出：</strong>[1,2,3,null,null,4,5]\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>root = []\n<strong>输出：</strong>[]\n</pre>\n\n<p><strong>示例 3：</strong></p>\n\n<pre>\n<strong>输入：</strong>root = [1]\n<strong>输出：</strong>[1]\n</pre>\n\n<p><strong>示例 4：</strong></p>\n\n<pre>\n<strong>输入：</strong>root = [1,2]\n<strong>输出：</strong>[1,2]\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li>树中结点数在范围 <code>[0, 10<sup>4</sup>]</code> 内</li>\n\t<li><code>-1000 <= Node.val <= 1000</code></li>\n</ul>\n",
+  "title": "297. 二叉树的序列化与反序列化",
+  "relatedTags": [
+    "树",
+    "深度优先搜索",
+    "广度优先搜索",
+    "设计",
+    "字符串",
+    "二叉树"
+  ],
+  "difficult": "Hard",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "297",
+  "slug": "297-Serialize-and-Deserialize-Binary-Tree"
+}

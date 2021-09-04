@@ -1,0 +1,28 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">n</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> largestPalindrome = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">n</span>) </span>{\n  <span class=\"hljs-keyword\">if</span>(n===<span class=\"hljs-number\">8</span>)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">475</span>\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">prevP</span>(<span class=\"hljs-params\">s</span>)</span>{\n    <span class=\"hljs-keyword\">if</span>(s===<span class=\"hljs-string\">'10'</span> || s===<span class=\"hljs-string\">'11'</span>)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">'9'</span>\n    <span class=\"hljs-keyword\">let</span> m1=<span class=\"hljs-built_in\">Math</span>.floor(s.length/<span class=\"hljs-number\">2</span>),m2=<span class=\"hljs-built_in\">Math</span>.ceil(s.length/<span class=\"hljs-number\">2</span>)\n    <span class=\"hljs-keyword\">let</span> left=s.substring(<span class=\"hljs-number\">0</span>,m1),mid=s.substring(m1,m2),right=s.substring(m2)\n    <span class=\"hljs-keyword\">let</span> nxtL,nxtR\n    <span class=\"hljs-keyword\">if</span>(+reverse(left)&gt;=+right) nxtL=+(left+mid)<span class=\"hljs-number\">-1</span> + <span class=\"hljs-string\">''</span>\n    <span class=\"hljs-keyword\">else</span> nxtL=left+mid\n    nxtR=reverse(nxtL.substring(<span class=\"hljs-number\">0</span>,m1))\n\t  <span class=\"hljs-keyword\">if</span>(s.length % <span class=\"hljs-number\">2</span>===<span class=\"hljs-number\">0</span> &amp;&amp; nxtL.length&lt;(left+mid).length)<span class=\"hljs-keyword\">return</span> nxtL+<span class=\"hljs-string\">'9'</span>+nxtR\n    <span class=\"hljs-keyword\">return</span> nxtL+nxtR\n  }\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">reverse</span>(<span class=\"hljs-params\">s</span>)</span>{\n    <span class=\"hljs-keyword\">return</span> s.split(<span class=\"hljs-string\">''</span>).reverse().join(<span class=\"hljs-string\">''</span>)\n  }\n  <span class=\"hljs-keyword\">let</span> startNum=+<span class=\"hljs-string\">'9'</span>.repeat(n)\n  <span class=\"hljs-keyword\">let</span> str=<span class=\"hljs-string\">'9'</span>.repeat(n*<span class=\"hljs-number\">2</span>)\n  <span class=\"hljs-keyword\">while</span>(<span class=\"hljs-literal\">true</span>){\n    <span class=\"hljs-comment\">// console.log(str)</span>\n    <span class=\"hljs-keyword\">let</span> sqrt=<span class=\"hljs-built_in\">Math</span>.sqrt(str),\n        ceilSqrt=<span class=\"hljs-built_in\">Math</span>.ceil(sqrt)\n  \n    <span class=\"hljs-keyword\">if</span>(sqrt===ceilSqrt){\n  \n      <span class=\"hljs-keyword\">return</span> str % <span class=\"hljs-number\">1337</span>\n    }\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=startNum;i&gt;=ceilSqrt;i--){\n      <span class=\"hljs-comment\">// console.log(ceilSqrt,i)</span>\n      <span class=\"hljs-keyword\">if</span>(str % i===<span class=\"hljs-number\">0</span>){\n        <span class=\"hljs-comment\">// console.log(str,i)</span>\n        <span class=\"hljs-keyword\">return</span> str % <span class=\"hljs-number\">1337</span>\n      }\n    }\n\n    str=prevP(str)\n  }\n  <span class=\"hljs-comment\">// function myMod(str,i){</span>\n  <span class=\"hljs-comment\">//   if(str.length&lt;=10)return (+str) % i</span>\n  <span class=\"hljs-comment\">//   let len=str.length</span>\n  <span class=\"hljs-comment\">//   str=str.substring(0,len-6)+'.'+str.substring(len-6)</span>\n  <span class=\"hljs-comment\">//   return Math.floor(((str % i) * 1000000  + i) % i)</span>\n  <span class=\"hljs-comment\">// }</span>\n  <span class=\"hljs-comment\">// function mySqrt(str){</span>\n  <span class=\"hljs-comment\">//   if(str.length&lt;=10)return Math.sqrt(+str)</span>\n  <span class=\"hljs-comment\">//   let len=str.length</span>\n  <span class=\"hljs-comment\">//   str=str.substring(0,len-6)+'.'+str.substring(len-6)</span>\n  <span class=\"hljs-comment\">//   // console.log(str)</span>\n  <span class=\"hljs-comment\">//   return Math.sqrt(str)*1000</span>\n  <span class=\"hljs-comment\">// }</span>\n};\n</code></pre>\n"
+  ],
+  "querySlug": "largest-palindrome-product",
+  "created_at": "2019-04-28",
+  "timeArr": [
+    2019,
+    3,
+    28,
+    10,
+    15,
+    53,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>你需要找到由两个 n 位数的乘积组成的最大回文数。</p>\n\n<p>由于结果会很大，你只需返回最大回文数 mod 1337得到的结果。</p>\n\n<p><strong>示例:</strong></p>\n\n<p>输入: 2</p>\n\n<p>输出: 987</p>\n\n<p>解释: 99 x 91 = 9009, 9009 % 1337 = 987</p>\n\n<p><strong>说明:</strong></p>\n\n<p>n 的取值范围为&nbsp;[1,8]。</p>\n",
+  "title": "479. 最大回文数乘积",
+  "relatedTags": [
+    "数学"
+  ],
+  "difficult": "Hard",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "479",
+  "slug": "479-Largest-Palindrome-Product"
+}

@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * Definition for singly-linked list.\n * function ListNode(val) {\n *     this.val = val;\n *     this.next = null;\n * }\n */</span>\n<span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{ListNode}</span> <span class=\"hljs-variable\">head</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">k</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{ListNode}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> reverseKGroup = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">head, k</span>) </span>{\n  <span class=\"hljs-keyword\">if</span>(!head)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">null</span>\n  <span class=\"hljs-keyword\">let</span> len=<span class=\"hljs-number\">0</span>,node=head\n  <span class=\"hljs-keyword\">while</span>(node){\n    node=node.next\n    len++\n  }\n  <span class=\"hljs-keyword\">let</span> root=<span class=\"hljs-keyword\">new</span> ListNode(<span class=\"hljs-literal\">null</span>)\n  root.next=head\n  <span class=\"hljs-keyword\">let</span> startNode=root,tailNode=startNode.next\n  node=root.next\n  <span class=\"hljs-keyword\">let</span> t=<span class=\"hljs-built_in\">Math</span>.floor(len/k)\n  <span class=\"hljs-keyword\">while</span>(t--&gt;<span class=\"hljs-number\">0</span>){\n    <span class=\"hljs-keyword\">let</span> n=k\n    node=node.next\n    <span class=\"hljs-keyword\">while</span>(n--&gt;<span class=\"hljs-number\">1</span>){\n      <span class=\"hljs-keyword\">let</span> secondNode=startNode.next\n      <span class=\"hljs-keyword\">let</span> nxt=node.next\n      startNode.next=node\n      node.next=secondNode\n      tailNode.next=nxt\n      node=nxt\n    }\n    startNode=tailNode\n    tailNode=startNode.next\n  }\n  <span class=\"hljs-keyword\">return</span> root.next\n};\n</code></pre>\n"
+  ],
+  "querySlug": "reverse-nodes-in-k-group",
+  "created_at": "2019-04-20",
+  "timeArr": [
+    2019,
+    3,
+    20,
+    11,
+    4,
+    13,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>相当于重复多个链表的部分转换，参考<code>NO.92</code>。</p>\n<p>首先计算出原链表<code>head</code>的长度，计算出反转<code>k</code>个节点，能执行几次反转。</p>\n<p>反转链表需要一个一个节点来处理。</p>\n<p>例如 <code>[1-&gt;2-&gt;3-&gt;4-&gt;5],k=3</code></p>\n<p>反转从第<code>1</code>个节点开始，我们首先要找到头部节点(一个空的新节点)，因为后续所有的反转都是在头部节点的<code>next</code>上处理的。</p>\n<p>同时，我们需要找到一个尾巴节点，例如反转<code>3</code>的时候，节点<code>1</code>就是尾巴节点，它的作用就是将要反转的<code>3</code>后面的节点连接起来。</p>\n<p>这两个节点<code>头部节点(空)</code>和<code>尾巴节点(1)</code>是不变的。</p>\n<p>当反转<code>2</code>时，将<code>头结点</code>和<code>2</code>相连，<code>2</code>和<code>1</code>相连，<code>1</code>和<code>3</code>相连；</p>\n<p>当反转<code>3</code>时，将<code>头结点</code>和<code>3</code>相连，<code>3</code>和<code>2</code>相连，<code>1</code>和<code>4</code>相连。</p>\n",
+  "content": "<p>给你一个链表，每 <em>k </em>个节点一组进行翻转，请你返回翻转后的链表。</p>\n\n<p><em>k </em>是一个正整数，它的值小于或等于链表的长度。</p>\n\n<p>如果节点总数不是 <em>k </em>的整数倍，那么请将最后剩余的节点保持原有顺序。</p>\n\n<p><strong>进阶：</strong></p>\n\n<ul>\n\t<li>你可以设计一个只使用常数额外空间的算法来解决此问题吗？</li>\n\t<li><strong>你不能只是单纯的改变节点内部的值</strong>，而是需要实际进行节点交换。</li>\n</ul>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/10/03/reverse_ex1.jpg\" style=\"width: 542px; height: 222px;\" />\n<pre>\n<strong>输入：</strong>head = [1,2,3,4,5], k = 2\n<strong>输出：</strong>[2,1,4,3,5]\n</pre>\n\n<p><strong>示例 2：</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/10/03/reverse_ex2.jpg\" style=\"width: 542px; height: 222px;\" />\n<pre>\n<strong>输入：</strong>head = [1,2,3,4,5], k = 3\n<strong>输出：</strong>[3,2,1,4,5]\n</pre>\n\n<p><strong>示例 3：</strong></p>\n\n<pre>\n<strong>输入：</strong>head = [1,2,3,4,5], k = 1\n<strong>输出：</strong>[1,2,3,4,5]\n</pre>\n\n<p><strong>示例 4：</strong></p>\n\n<pre>\n<strong>输入：</strong>head = [1], k = 1\n<strong>输出：</strong>[1]\n</pre>\n\n<ul>\n</ul>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li>列表中节点的数量在范围 <code>sz</code> 内</li>\n\t<li><code>1 <= sz <= 5000</code></li>\n\t<li><code>0 <= Node.val <= 1000</code></li>\n\t<li><code>1 <= k <= sz</code></li>\n</ul>\n",
+  "title": "25. K 个一组翻转链表",
+  "relatedTags": [
+    "递归",
+    "链表"
+  ],
+  "difficult": "Hard",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "25",
+  "slug": "25-Reverse-Nodes-in-k-Group"
+}

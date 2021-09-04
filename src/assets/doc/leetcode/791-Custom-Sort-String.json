@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">S</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">T</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{string}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> customSortString = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">S, T</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> hash={}\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> s <span class=\"hljs-keyword\">of</span> T){\n    <span class=\"hljs-keyword\">if</span>(hash[s]==<span class=\"hljs-literal\">null</span>)hash[s]=<span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">else</span> hash[s]++\n  }\n  <span class=\"hljs-keyword\">let</span> res=<span class=\"hljs-string\">''</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;S.length;i++){\n    <span class=\"hljs-keyword\">while</span>(hash[S[i]]&gt;<span class=\"hljs-number\">0</span>){\n      res+=S[i]\n      hash[S[i]]--\n    }\n  }\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> k <span class=\"hljs-keyword\">in</span> hash){\n    <span class=\"hljs-keyword\">while</span>(hash[k]&gt;<span class=\"hljs-number\">0</span>){\n      res+=k\n      hash[k]--\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> res\n  \n};\n</code></pre>\n"
+  ],
+  "querySlug": "custom-sort-string",
+  "created_at": "2019-03-27",
+  "timeArr": [
+    2019,
+    2,
+    27,
+    23,
+    0,
+    17,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>字符串<code>S</code>和 <code>T</code> 只包含小写字符。在<code>S</code>中，所有字符只会出现一次。</p>\n\n<p><code>S</code> 已经根据某种规则进行了排序。我们要根据<code>S</code>中的字符顺序对<code>T</code>进行排序。更具体地说，如果<code>S</code>中<code>x</code>在<code>y</code>之前出现，那么返回的字符串中<code>x</code>也应出现在<code>y</code>之前。</p>\n\n<p>返回任意一种符合条件的字符串<code>T</code>。</p>\n\n<pre>\n<strong>示例:</strong>\n<strong>输入:</strong>\nS = &quot;cba&quot;\nT = &quot;abcd&quot;\n<strong>输出:</strong> &quot;cbad&quot;\n<strong>解释:</strong> \nS中出现了字符 &quot;a&quot;, &quot;b&quot;, &quot;c&quot;, 所以 &quot;a&quot;, &quot;b&quot;, &quot;c&quot; 的顺序应该是 &quot;c&quot;, &quot;b&quot;, &quot;a&quot;. \n由于 &quot;d&quot; 没有在S中出现, 它可以放在T的任意位置. &quot;dcba&quot;, &quot;cdba&quot;, &quot;cbda&quot; 都是合法的输出。\n</pre>\n\n<p><strong>注意:</strong></p>\n\n<ul>\n\t<li><code>S</code>的最大长度为<code>26</code>，其中没有重复的字符。</li>\n\t<li><code>T</code>的最大长度为<code>200</code>。</li>\n\t<li><code>S</code>和<code>T</code>只包含小写字符。</li>\n</ul>\n",
+  "title": "791. 自定义字符串排序",
+  "relatedTags": [
+    "哈希表",
+    "字符串",
+    "排序"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "791",
+  "slug": "791-Custom-Sort-String"
+}

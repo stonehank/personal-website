@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">Solution</span><span class=\"hljs-params\">(object)</span>:</span>\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">maxProfit</span><span class=\"hljs-params\">(self, prices)</span>:</span>\n        <span class=\"hljs-string\">\"\"\"\n        :type prices: List[int]\n        :rtype: int\n        \"\"\"</span>\n        <span class=\"hljs-comment\"># 引入辅助数组sells和buys</span>\n\n        <span class=\"hljs-comment\"># sells[i]表示在第i天不持有股票所能获得的最大累计收益</span>\n        \n        <span class=\"hljs-comment\"># buys[i]表示在第i天持有股票所能获得的最大累计收益</span>\n        \n        n = len(prices)\n        <span class=\"hljs-keyword\">if</span> n &lt; <span class=\"hljs-number\">2</span>:\n            <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>\n        sells = [<span class=\"hljs-number\">0</span>] * n\n        buys = [<span class=\"hljs-number\">0</span>] * n\n        sells[<span class=\"hljs-number\">0</span>], sells[<span class=\"hljs-number\">1</span>] = <span class=\"hljs-number\">0</span>, max(<span class=\"hljs-number\">0</span>, prices[<span class=\"hljs-number\">1</span>] - prices[<span class=\"hljs-number\">0</span>])\n        buys[<span class=\"hljs-number\">0</span>], buys[<span class=\"hljs-number\">1</span>] = -prices[<span class=\"hljs-number\">0</span>], max(-prices[<span class=\"hljs-number\">0</span>], -prices[<span class=\"hljs-number\">1</span>])\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> range(<span class=\"hljs-number\">2</span>, n):\n            sells[i] = max(sells[i<span class=\"hljs-number\">-1</span>], buys[i<span class=\"hljs-number\">-1</span>] + prices[i])\n            buys[i] = max(buys[i<span class=\"hljs-number\">-1</span>], sells[i<span class=\"hljs-number\">-2</span>] - prices[i])\n        <span class=\"hljs-keyword\">return</span> sells[<span class=\"hljs-number\">-1</span>]\n</code></pre>\n"
+  ],
+  "querySlug": "best-time-to-buy-and-sell-stock-with-cooldown",
+  "created_at": "2019-03-01",
+  "timeArr": [
+    2019,
+    2,
+    1,
+    23,
+    19,
+    4,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给定一个整数数组，其中第<em>&nbsp;i</em>&nbsp;个元素代表了第&nbsp;<em>i</em>&nbsp;天的股票价格 。​</p>\n\n<p>设计一个算法计算出最大利润。在满足以下约束条件下，你可以尽可能地完成更多的交易（多次买卖一支股票）:</p>\n\n<ul>\n\t<li>你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。</li>\n\t<li>卖出股票后，你无法在第二天买入股票 (即冷冻期为 1 天)。</li>\n</ul>\n\n<p><strong>示例:</strong></p>\n\n<pre><strong>输入:</strong> [1,2,3,0,2]\n<strong>输出: </strong>3 \n<strong>解释:</strong> 对应的交易状态为: [买入, 卖出, 冷冻期, 买入, 卖出]</pre>\n",
+  "title": "309. 最佳买卖股票时机含冷冻期",
+  "relatedTags": [
+    "数组",
+    "动态规划"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "python"
+  ],
+  "uniqueID": "309",
+  "slug": "309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown"
+}

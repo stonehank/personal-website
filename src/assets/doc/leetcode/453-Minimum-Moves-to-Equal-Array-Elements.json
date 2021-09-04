@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">nums</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> minMoves = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">nums</span>) </span>{ \n  nums.sort(<span class=\"hljs-function\">(<span class=\"hljs-params\">a,b</span>)=&gt;</span>a-b)\n  <span class=\"hljs-keyword\">let</span> steps=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">let</span> id=nums.length<span class=\"hljs-number\">-1</span>\n  <span class=\"hljs-keyword\">let</span> same=<span class=\"hljs-number\">1</span>\n  <span class=\"hljs-keyword\">while</span>(nums[id]===nums[id<span class=\"hljs-number\">-1</span>]){\n    id--\n    same++\n  }\n  \n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=id;i&gt;=<span class=\"hljs-number\">1</span>;i--){\n    <span class=\"hljs-keyword\">let</span> gap=nums[i]-nums[i<span class=\"hljs-number\">-1</span>]\n    <span class=\"hljs-comment\">// console.log(nums,i,gap,same)</span>\n    steps+=same*gap\n    same++\n  }\n  <span class=\"hljs-keyword\">return</span> steps\n};\n</code></pre>\n"
+  ],
+  "querySlug": "minimum-moves-to-equal-array-elements",
+  "created_at": "2019-04-01",
+  "timeArr": [
+    2019,
+    3,
+    1,
+    10,
+    34,
+    59,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给定一个长度为 <em>n</em> 的 <strong>非空 </strong>整数数组，每次操作将会使 <em>n</em> - 1 个元素增加 1。找出让数组所有元素相等的最小操作次数。</p>\n\n<p> </p>\n\n<p><strong>示例：</strong></p>\n\n<pre>\n<strong>输入：</strong>\n[1,2,3]\n<strong>输出：</strong>\n3\n<strong>解释：</strong>\n只需要3次操作（注意每次操作会增加两个元素的值）：\n[1,2,3]  =>  [2,3,3]  =>  [3,4,3]  =>  [4,4,4]\n</pre>\n",
+  "title": "453. 最小操作次数使数组元素相等",
+  "relatedTags": [
+    "数组",
+    "数学"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "453",
+  "slug": "453-Minimum-Moves-to-Equal-Array-Elements"
+}

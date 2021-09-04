@@ -1,0 +1,28 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">s</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> countSegments = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">s</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> count=<span class=\"hljs-number\">0</span>,hasWord=<span class=\"hljs-literal\">false</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;s.length;i++){\n    <span class=\"hljs-keyword\">if</span>(s[i]===<span class=\"hljs-string\">' '</span>){\n      <span class=\"hljs-keyword\">if</span>(hasWord){\n        hasWord=<span class=\"hljs-literal\">false</span>\n        count++\n      }\n    }<span class=\"hljs-keyword\">else</span>{\n      hasWord=<span class=\"hljs-literal\">true</span>\n    }\n  }\n  <span class=\"hljs-keyword\">if</span>(hasWord)count++\n  <span class=\"hljs-keyword\">return</span> count\n};\n</code></pre>\n"
+  ],
+  "querySlug": "number-of-segments-in-a-string",
+  "created_at": "2019-03-25",
+  "timeArr": [
+    2019,
+    2,
+    25,
+    10,
+    53,
+    46,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>统计字符串中的单词个数，这里的单词指的是连续的不是空格的字符。</p>\n\n<p>请注意，你可以假定字符串里不包括任何不可打印的字符。</p>\n\n<p><strong>示例:</strong></p>\n\n<pre><strong>输入:</strong> &quot;Hello, my name is John&quot;\n<strong>输出:</strong> 5\n<strong>解释: </strong>这里的单词是指连续的不是空格的字符，所以 &quot;Hello,&quot; 算作 1 个单词。\n</pre>\n",
+  "title": "434. 字符串中的单词数",
+  "relatedTags": [
+    "字符串"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "434",
+  "slug": "434-Number-of-Segments-in-a-String"
+}

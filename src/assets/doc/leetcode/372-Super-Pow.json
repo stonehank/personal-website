@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">a</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">b</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> superPow = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">a, b</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> aux=<span class=\"hljs-built_in\">Array</span>(b.length).fill(<span class=\"hljs-number\">1</span>)\n  aux[aux.length<span class=\"hljs-number\">-1</span>]=a\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=b.length<span class=\"hljs-number\">-2</span>;i&gt;=<span class=\"hljs-number\">0</span>;i--){\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> j=<span class=\"hljs-number\">0</span>;j&lt;<span class=\"hljs-number\">10</span>;j++){\n      aux[i]=(aux[i] * aux[i+<span class=\"hljs-number\">1</span>]) % <span class=\"hljs-number\">1337</span>\n    }\n  }\n  <span class=\"hljs-comment\">// console.log(aux)</span>\n  <span class=\"hljs-keyword\">let</span> res=<span class=\"hljs-number\">1</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;b.length;i++){\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> j=<span class=\"hljs-number\">0</span>;j&lt;b[i];j++){\n      res=(res*aux[i]) % <span class=\"hljs-number\">1337</span>\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> res\n};\n</code></pre>\n"
+  ],
+  "querySlug": "super-pow",
+  "created_at": "2019-03-31",
+  "timeArr": [
+    2019,
+    2,
+    31,
+    22,
+    28,
+    23,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>一个次方的转换<code>a^12345 === a^5 * a^10^4 * a^100^3 * a^1000^2 * a^10000^1</code></p>\n<p>反向遍历<code>b</code>，每次遍历<code>a=pow(a,10)</code>，然后再求<code>pow(a,b[i])</code></p>\n<p>这里<code>pow</code>函数很好写，就是普通的次方再<code>%MOD</code></p>\n",
+  "content": "<p>你的任务是计算 <code>a<sup>b</sup></code> 对 <code>1337</code> 取模，<code>a</code> 是一个正整数，<code>b</code> 是一个非常大的正整数且会以数组形式给出。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>a = 2, b = [3]\n<strong>输出：</strong>8\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>a = 2, b = [1,0]\n<strong>输出：</strong>1024\n</pre>\n\n<p><strong>示例 3：</strong></p>\n\n<pre>\n<strong>输入：</strong>a = 1, b = [4,3,3,8,5,2]\n<strong>输出：</strong>1\n</pre>\n\n<p><strong>示例 4：</strong></p>\n\n<pre>\n<strong>输入：</strong>a = 2147483647, b = [2,0,0]\n<strong>输出：</strong>1198\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= a <= 2<sup>31</sup> - 1</code></li>\n\t<li><code>1 <= b.length <= 2000</code></li>\n\t<li><code>0 <= b[i] <= 9</code></li>\n\t<li><code>b</code> 不含前导 0</li>\n</ul>\n",
+  "title": "372. 超级次方",
+  "relatedTags": [
+    "数学",
+    "分治"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "372",
+  "slug": "372-Super-Pow"
+}

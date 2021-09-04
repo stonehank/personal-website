@@ -1,0 +1,32 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">A</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{boolean}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> splitArraySameAverage = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">A</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> N=A.length\n  <span class=\"hljs-keyword\">let</span> sum=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> n <span class=\"hljs-keyword\">of</span> A)sum+=n\n  <span class=\"hljs-keyword\">let</span> dp=<span class=\"hljs-built_in\">Array</span>(sum+<span class=\"hljs-number\">1</span>).fill().map(<span class=\"hljs-function\"><span class=\"hljs-params\">()</span>=&gt;</span><span class=\"hljs-built_in\">Array</span>(<span class=\"hljs-built_in\">Math</span>.floor(N/<span class=\"hljs-number\">2</span>)+<span class=\"hljs-number\">1</span>).fill(<span class=\"hljs-literal\">false</span>))\n  dp[<span class=\"hljs-number\">0</span>][<span class=\"hljs-number\">0</span>]=<span class=\"hljs-literal\">true</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> num <span class=\"hljs-keyword\">of</span> A){\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=sum;i&gt;=num;i--){\n      <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> j=<span class=\"hljs-number\">1</span>;j&lt;dp[i].length;j++){\n        dp[i][j]=dp[i][j]||dp[i-num][j<span class=\"hljs-number\">-1</span>]\n      }\n    }\n  }\n  <span class=\"hljs-keyword\">for</span> (<span class=\"hljs-keyword\">let</span> i = <span class=\"hljs-number\">1</span>; i &lt;= A.length/<span class=\"hljs-number\">2</span>; ++i) \n      <span class=\"hljs-keyword\">if</span> (sum*i% N == <span class=\"hljs-number\">0</span> &amp;&amp; dp[sum*i/N][i]) <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>;\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>; \n};\n</code></pre>\n"
+  ],
+  "querySlug": "split-array-with-same-average",
+  "created_at": "2019-04-02",
+  "timeArr": [
+    2019,
+    3,
+    2,
+    13,
+    38,
+    10,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给定的整数数组 A ，我们要将 A数组 中的每个元素移动到 B数组 或者 C数组中。（B数组和C数组在开始的时候都为空）</p>\n\n<p>返回<code>true</code> ，当且仅当在我们的完成这样的移动后，可使得B数组的平均值和C数组的平均值相等，并且B数组和C数组都不为空。</p>\n\n<pre>\n<strong>示例:</strong>\n<strong>输入:</strong> \n[1,2,3,4,5,6,7,8]\n<strong>输出:</strong> true\n<strong>解释: </strong>我们可以将数组分割为 [1,4,5,8] 和 [2,3,6,7], 他们的平均值都是4.5。\n</pre>\n\n<p><strong>注意:</strong></p>\n\n<ul>\n\t<li><code>A</code> 数组的长度范围为 <code>[1, 30]</code>.</li>\n\t<li><code>A[i]</code> 的数据范围为 <code>[0, 10000]</code>.</li>\n</ul>\n",
+  "title": "805. 数组的均值分割",
+  "relatedTags": [
+    "位运算",
+    "数组",
+    "数学",
+    "动态规划",
+    "状态压缩"
+  ],
+  "difficult": "Hard",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "805",
+  "slug": "805-Split-Array-With-Same-Average"
+}

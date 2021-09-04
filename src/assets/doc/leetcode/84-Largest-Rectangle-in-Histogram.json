@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">heights</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> largestRectangleArea = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">heights</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> stack=[<span class=\"hljs-number\">-1</span>]\n  <span class=\"hljs-keyword\">let</span> area=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;heights.length;i++){\n    <span class=\"hljs-keyword\">while</span>(stack.length&gt;<span class=\"hljs-number\">1</span> &amp;&amp; heights[stack[stack.length<span class=\"hljs-number\">-1</span>]]&gt;heights[i]){\n      <span class=\"hljs-keyword\">let</span> cur=stack.pop()\n      area=<span class=\"hljs-built_in\">Math</span>.max(area,(i-stack[stack.length<span class=\"hljs-number\">-1</span>]<span class=\"hljs-number\">-1</span>)*heights[cur])\n    }\n    stack.push(i)\n  }\n  <span class=\"hljs-keyword\">let</span> last=stack[stack.length<span class=\"hljs-number\">-1</span>]\n  <span class=\"hljs-keyword\">while</span>(stack.length&gt;<span class=\"hljs-number\">1</span>){\n    <span class=\"hljs-keyword\">let</span> cur=stack.pop()\n    area=<span class=\"hljs-built_in\">Math</span>.max(area,(last-stack[stack.length<span class=\"hljs-number\">-1</span>])*heights[cur])\n  }\n  <span class=\"hljs-keyword\">return</span> area\n};\n</code></pre>\n"
+  ],
+  "querySlug": "largest-rectangle-in-histogram",
+  "created_at": "2019-03-12",
+  "timeArr": [
+    2019,
+    2,
+    12,
+    18,
+    3,
+    44,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>利用栈构建一个递增序列，如果存在一个递增序列，例如<code>[1,3,5]</code>，那么<code>3</code>这个高度对应的宽度就很好计算了。</p>\n<p>举个例子：<code>[2,4,5,3,1]</code></p>\n<p>假设现在<code>stack</code>为<code>[2,4,5]</code>，当前是遍历的值是<code>3</code>；</p>\n<p>现在不满足递增序列了，因此<code>pop</code>，删除<code>5</code>，那么就要计算删掉的<code>5</code>它对应的宽度<code>width</code>。</p>\n<p><code>5</code>的宽度就是在<code>4</code>和<code>3</code>之间的所有索引，也就是<code>idx(3)-idx(4)-1</code>，相当于<code>i-stack[stack.lenght-1]-1</code>；</p>\n<p>同理，接下来删除<code>4</code>，<code>4</code>的宽度就是<code>idx(3)-idx(1)-1</code>；</p>\n<p>栈变为<code>[2,3]</code>，遇到下一个值<code>1</code>，继续上面的步骤，当前不能满足递增序列，删<code>3</code>，删<code>2</code>；</p>\n<p>注意，这里删除<code>2</code>的时候，由于<code>2</code>已经是当前栈的最后一个值，因此<code>2</code>的宽度其实就是<code>idx(1)</code>，我将初始<code>stack</code>设置为<code>-1</code>，也是为了可以继续套用<code>i-stack[stack.lenght-1]-1</code>。</p>\n",
+  "content": "<p>给定 <em>n</em> 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。</p>\n\n<p>求在该柱状图中，能够勾勒出来的矩形的最大面积。</p>\n\n<p> </p>\n\n<p><strong>示例 1:</strong></p>\n\n<p><img src=\"https://assets.leetcode.com/uploads/2021/01/04/histogram.jpg\" /></p>\n\n<pre>\n<strong>输入：</strong>heights = [2,1,5,6,2,3]\n<strong>输出：</strong>10\n<strong>解释：</strong>最大的矩形为图中红色区域，面积为 10\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<p><img src=\"https://assets.leetcode.com/uploads/2021/01/04/histogram-1.jpg\" /></p>\n\n<pre>\n<strong>输入：</strong> heights = [2,4]\n<b>输出：</b> 4</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= heights.length <=10<sup>5</sup></code></li>\n\t<li><code>0 <= heights[i] <= 10<sup>4</sup></code></li>\n</ul>\n",
+  "title": "84. 柱状图中最大的矩形",
+  "relatedTags": [
+    "栈",
+    "数组",
+    "单调栈"
+  ],
+  "difficult": "Hard",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "84",
+  "slug": "84-Largest-Rectangle-in-Histogram"
+}

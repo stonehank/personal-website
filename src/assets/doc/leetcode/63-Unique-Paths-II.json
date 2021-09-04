@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">Solution</span><span class=\"hljs-params\">(object)</span>:</span>\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">uniquePathsWithObstacles</span><span class=\"hljs-params\">(self, obstacleGrid)</span>:</span>\n        <span class=\"hljs-string\">\"\"\"\n        :type obstacleGrid: List[List[int]]\n        :rtype: int\n        \"\"\"</span>\n        r=len(obstacleGrid)\n        <span class=\"hljs-keyword\">if</span> r==<span class=\"hljs-number\">0</span>:<span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>\n        c=len(obstacleGrid[<span class=\"hljs-number\">0</span>])\n        <span class=\"hljs-keyword\">if</span> obstacleGrid[<span class=\"hljs-number\">0</span>][<span class=\"hljs-number\">0</span>]==<span class=\"hljs-number\">1</span>:<span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>\n        dp=[[<span class=\"hljs-number\">0</span>]*c <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> range(r)]\n        dp[<span class=\"hljs-number\">0</span>][<span class=\"hljs-number\">0</span>]=<span class=\"hljs-number\">1</span>\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> range(r):\n          <span class=\"hljs-keyword\">for</span> j <span class=\"hljs-keyword\">in</span> range(c):\n            <span class=\"hljs-keyword\">if</span> obstacleGrid[i][j]==<span class=\"hljs-number\">1</span>:<span class=\"hljs-keyword\">continue</span>\n            <span class=\"hljs-keyword\">if</span> i&lt;r<span class=\"hljs-number\">-1</span> <span class=\"hljs-keyword\">and</span> obstacleGrid[i+<span class=\"hljs-number\">1</span>][j]!=<span class=\"hljs-number\">1</span>:\n              dp[i+<span class=\"hljs-number\">1</span>][j]+=dp[i][j]\n            <span class=\"hljs-keyword\">if</span> j&lt;c<span class=\"hljs-number\">-1</span> <span class=\"hljs-keyword\">and</span> obstacleGrid[i][j+<span class=\"hljs-number\">1</span>]!=<span class=\"hljs-number\">1</span>:\n              dp[i][j+<span class=\"hljs-number\">1</span>]+=dp[i][j]\n        <span class=\"hljs-keyword\">return</span> dp[<span class=\"hljs-number\">-1</span>][<span class=\"hljs-number\">-1</span>]\n</code></pre>\n"
+  ],
+  "querySlug": "unique-paths-ii",
+  "created_at": "2019-02-28",
+  "timeArr": [
+    2019,
+    1,
+    28,
+    10,
+    46,
+    22,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>比<code>NO.62</code>多了一个条件：障碍，同样还是<code>DP</code>的思路；</p>\n<p><code>dp[i][j]</code>表示从开始到当前<code>[i,j]</code>位置，总共有多少种不同的路径；</p>\n<p>对于每一个<code>dp[i][j]</code>，因为机器人只能<strong>向右</strong>和<strong>向下</strong>；</p>\n<p>那么右侧同样也能继承当前<code>[i,j]</code>的路径，即<code>dp[i][j+1]+=dp[i][j]</code>，下侧同理，<code>dp[i+1][j]+=dp[i][j]</code>；</p>\n<p>如果遇到障碍则不能去计算，可以对所有障碍设置为<code>dp[x][y]=null</code>，因此在状态转移方程中，\n需要额外一个判断条件：<code>dp[i+1][j]!=null</code>或者<code>dp[i][j+1]!=null</code>。</p>\n",
+  "content": "<p>一个机器人位于一个 <em>m x n </em>网格的左上角 （起始点在下图中标记为“Start” ）。</p>\n\n<p>机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为“Finish”）。</p>\n\n<p>现在考虑网格中有障碍物。那么从左上角到右下角将会有多少条不同的路径？</p>\n\n<p><img src=\"https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/10/22/robot_maze.png\" style=\"height: 183px; width: 400px;\" /></p>\n\n<p>网格中的障碍物和空位置分别用 <code>1</code> 和 <code>0</code> 来表示。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/11/04/robot1.jpg\" style=\"width: 242px; height: 242px;\" />\n<pre>\n<strong>输入：</strong>obstacleGrid = [[0,0,0],[0,1,0],[0,0,0]]\n<strong>输出：</strong>2\n<strong>解释：</strong>\n3x3 网格的正中间有一个障碍物。\n从左上角到右下角一共有 <code>2</code> 条不同的路径：\n1. 向右 -> 向右 -> 向下 -> 向下\n2. 向下 -> 向下 -> 向右 -> 向右\n</pre>\n\n<p><strong>示例 2：</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/11/04/robot2.jpg\" style=\"width: 162px; height: 162px;\" />\n<pre>\n<strong>输入：</strong>obstacleGrid = [[0,1],[0,0]]\n<strong>输出：</strong>1\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>m == obstacleGrid.length</code></li>\n\t<li><code>n == obstacleGrid[i].length</code></li>\n\t<li><code>1 <= m, n <= 100</code></li>\n\t<li><code>obstacleGrid[i][j]</code> 为 <code>0</code> 或 <code>1</code></li>\n</ul>\n",
+  "title": "63. 不同路径 II",
+  "relatedTags": [
+    "数组",
+    "动态规划",
+    "矩阵"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "python"
+  ],
+  "uniqueID": "63",
+  "slug": "63-Unique-Paths-II"
+}

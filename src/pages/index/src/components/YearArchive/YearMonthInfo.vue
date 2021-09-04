@@ -25,19 +25,19 @@
                     />
                     篇随笔
                 </p>
-                <p class="text-secondary"
-                   :class="isMobile ? 'text-md' : 'text-lg'"
-                   :style="animate ? 'opacity:0;' : ''"
-                   ref="year-info-2"
-                >
-                    总共阅读次数
-                    <AnimateGrowNumber :class="isMobile ? 'text-lg' : 'display-1'"
-                                       :final-num="archiveMonthData.view_count"
-                                       :shrink="archiveMonthData.view_count > 99999"
-                                       :start="start"
-                                       :animate="animate"
-                    />
-                </p>
+<!--                <p class="text-secondary"-->
+<!--                   :class="isMobile ? 'text-md' : 'text-lg'"-->
+<!--                   :style="animate ? 'opacity:0;' : ''"-->
+<!--                   ref="year-info-2"-->
+<!--                >-->
+<!--                    总共阅读次数-->
+<!--                    <AnimateGrowNumber :class="isMobile ? 'text-lg' : 'display-1'"-->
+<!--                                       :final-num="archiveMonthData.view_count"-->
+<!--                                       :shrink="archiveMonthData.view_count > 99999"-->
+<!--                                       :start="start"-->
+<!--                                       :animate="animate"-->
+<!--                    />-->
+<!--                </p>-->
             </v-col>
         </v-row>
     </v-container>

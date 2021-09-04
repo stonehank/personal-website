@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">n</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{string[]}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> generateParenthesis = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">n</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> hash={<span class=\"hljs-string\">'('</span>:n,<span class=\"hljs-string\">\")\"</span>:n}\n  <span class=\"hljs-keyword\">let</span> res=[]\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">backtrack</span>(<span class=\"hljs-params\">str</span>)</span>{\n    <span class=\"hljs-keyword\">if</span>(hash[<span class=\"hljs-string\">\"(\"</span>]&gt;hash[<span class=\"hljs-string\">\")\"</span>])<span class=\"hljs-keyword\">return</span>\n    <span class=\"hljs-keyword\">if</span>(hash[<span class=\"hljs-string\">\"(\"</span>]===<span class=\"hljs-number\">0</span> &amp;&amp; hash[<span class=\"hljs-string\">\")\"</span>]===<span class=\"hljs-number\">0</span>){\n      res.push(str)\n    }\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> k <span class=\"hljs-keyword\">in</span> hash){\n      <span class=\"hljs-keyword\">if</span>(hash[k]&gt;<span class=\"hljs-number\">0</span>){\n        hash[k]--\n        backtrack(str+k)\n        hash[k]++\n      }\n    }\n  }\n  backtrack(<span class=\"hljs-string\">''</span>)\n  <span class=\"hljs-keyword\">return</span> res\n};\n</code></pre>\n"
+  ],
+  "querySlug": "generate-parentheses",
+  "created_at": "2019-03-21",
+  "timeArr": [
+    2019,
+    2,
+    21,
+    20,
+    39,
+    51,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>每一个位置都有2个选择，放置<code>(</code>或者<code>)</code>。</p>\n<p>如果<code>(</code>的数量超过了<code>n</code>说明一定不成立；</p>\n<p>如果<code>)</code>的数量超过了<code>(</code>的数量，也一定不成立；</p>\n<p>如果两个的数量都为<code>n</code>，那么就是一个有效的完整组合。</p>\n",
+  "content": "<p>数字 <code>n</code>&nbsp;代表生成括号的对数，请你设计一个函数，用于能够生成所有可能的并且 <strong>有效的 </strong>括号组合。</p>\n\n<p>有效括号组合需满足：左括号必须以正确的顺序闭合。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>n = 3\n<strong>输出：</strong>[\"((()))\",\"(()())\",\"(())()\",\"()(())\",\"()()()\"]\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>n = 1\n<strong>输出：</strong>[\"()\"]\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 8</code></li>\n</ul>\n",
+  "title": "22. 括号生成",
+  "relatedTags": [
+    "字符串",
+    "动态规划",
+    "回溯"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "22",
+  "slug": "22-Generate-Parentheses"
+}

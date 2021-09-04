@@ -1,0 +1,32 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">nums</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{void}</span> </span>Do not return anything, modify nums in-place instead.\n */</span>\n<span class=\"hljs-keyword\">var</span> wiggleSort = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">nums</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> arr=nums.slice()\n  arr.sort(<span class=\"hljs-function\">(<span class=\"hljs-params\">a,b</span>)=&gt;</span>a-b)\n  <span class=\"hljs-keyword\">var</span> len = nums.length\n  <span class=\"hljs-keyword\">var</span> left = <span class=\"hljs-built_in\">Math</span>.ceil(len/<span class=\"hljs-number\">2</span>)<span class=\"hljs-number\">-1</span>\n  <span class=\"hljs-keyword\">var</span> right = len<span class=\"hljs-number\">-1</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">var</span> i = <span class=\"hljs-number\">0</span>; i&lt;nums.length; i++) {\n    <span class=\"hljs-keyword\">if</span>(i%<span class=\"hljs-number\">2</span>==<span class=\"hljs-number\">1</span>) {\n      nums[i] = arr[right--]\n    }<span class=\"hljs-keyword\">else</span> {\n      nums[i] = arr[left--]\n    }\n  }\n};\n</code></pre>\n"
+  ],
+  "querySlug": "wiggle-sort-ii",
+  "created_at": "2019-04-23",
+  "timeArr": [
+    2019,
+    3,
+    23,
+    14,
+    54,
+    6,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>对<code>nums</code>从小到大排序，之后2个指针，指针1<code>left</code>初始在中间，指针2<code>right</code>初始在末尾，向左移动并且逐个配对。</p>\n",
+  "content": "<p>给你一个整数数组 <code>nums</code>，将它重新排列成 <code>nums[0] < nums[1] > nums[2] < nums[3]...</code> 的顺序。</p>\n\n<p>你可以假设所有输入数组都可以得到满足题目要求的结果。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>nums = [1,5,1,1,6,4]\n<strong>输出：</strong>[1,6,1,5,1,4]\n<strong>解释：</strong>[1,4,1,5,1,6] 同样是符合题目要求的结果，可以被判题程序接受。\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>nums = [1,3,2,2,3,1]\n<strong>输出：</strong>[2,3,1,3,1,2]\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= nums.length <= 5 * 10<sup>4</sup></code></li>\n\t<li><code>0 <= nums[i] <= 5000</code></li>\n\t<li>题目数据保证，对于给定的输入 <code>nums</code> ，总能产生满足题目要求的结果</li>\n</ul>\n\n<p> </p>\n\n<p><strong>进阶：</strong>你能用 O(n) 时间复杂度和 / 或原地 O(1) 额外空间来实现吗？</p>\n",
+  "title": "324. 摆动排序 II",
+  "relatedTags": [
+    "数组",
+    "分治",
+    "快速选择",
+    "排序"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "324",
+  "slug": "324-Wiggle-Sort-II"
+}

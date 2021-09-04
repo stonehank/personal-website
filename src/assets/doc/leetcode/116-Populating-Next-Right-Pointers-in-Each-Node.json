@@ -1,0 +1,32 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * // Definition for a Node.\n * function Node(val,left,right,next) {\n *    this.val = val;\n *    this.left = left;\n *    this.right = right;\n *    this.next = next;\n * };\n */</span>\n<span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{Node}</span> <span class=\"hljs-variable\">root</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{Node}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> connect = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">root</span>) </span>{\n  <span class=\"hljs-keyword\">if</span>(!root)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">null</span>\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">getLeft</span>(<span class=\"hljs-params\">root</span>)</span>{\n    <span class=\"hljs-keyword\">return</span> root.left || root.right\n  }\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">getRight</span>(<span class=\"hljs-params\">root</span>)</span>{\n    <span class=\"hljs-keyword\">return</span> root.right || root.left\n  }\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">con</span>(<span class=\"hljs-params\">root1,root2</span>)</span>{\n    <span class=\"hljs-keyword\">if</span>(!root1 || !root2)<span class=\"hljs-keyword\">return</span>\n    root1.next=root2\n    con(root1.left,root1.right)\n    con(root2.left,root2.right)\n    <span class=\"hljs-keyword\">let</span> l=getRight(root1),\n        r=getLeft(root2)\n    con(l,r)\n  }\n  con(root.left,root.right)\n  <span class=\"hljs-keyword\">return</span> root\n};\n</code></pre>\n"
+  ],
+  "querySlug": "populating-next-right-pointers-in-each-node",
+  "created_at": "2019-03-18",
+  "timeArr": [
+    2019,
+    2,
+    18,
+    15,
+    32,
+    57,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>这道题要求不能使用额外空间 或者 使用递归。</p>\n<p>递归的思想就是，对于左支<code>leftNode</code>和右支<code>rightNode</code>，先分别将他们内部左支和右支的<code>next</code>连接，\n再将左支<code>leftNode</code>内最右的子支和右支<code>rightNode</code>内最左的子支的<code>next</code>连接。</p>\n",
+  "content": "<p>给定一个 <strong>完美二叉树 </strong>，其所有叶子节点都在同一层，每个父节点都有两个子节点。二叉树定义如下：</p>\n\n<pre>\nstruct Node {\n  int val;\n  Node *left;\n  Node *right;\n  Node *next;\n}</pre>\n\n<p>填充它的每个 next 指针，让这个指针指向其下一个右侧节点。如果找不到下一个右侧节点，则将 next 指针设置为 <code>NULL</code>。</p>\n\n<p>初始状态下，所有 next 指针都被设置为 <code>NULL</code>。</p>\n\n<p> </p>\n\n<p><strong>进阶：</strong></p>\n\n<ul>\n\t<li>你只能使用常量级额外空间。</li>\n\t<li>使用递归解题也符合要求，本题中递归程序占用的栈空间不算做额外的空间复杂度。</li>\n</ul>\n\n<p> </p>\n\n<p><strong>示例：</strong></p>\n\n<p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2019/02/14/116_sample.png\" style=\"height: 205px; width: 600px;\" /></p>\n\n<pre>\n<b>输入：</b>root = [1,2,3,4,5,6,7]\n<b>输出：</b>[1,#,2,3,#,4,5,6,7,#]\n<b>解释：</b>给定二叉树如图 A 所示，你的函数应该填充它的每个 next 指针，以指向其下一个右侧节点，如图 B 所示。序列化的输出按层序遍历排列，同一层节点由 next 指针连接，'#' 标志着每一层的结束。\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li>树中节点的数量少于 <code>4096</code></li>\n\t<li><code>-1000 <= node.val <= 1000</code></li>\n</ul>\n",
+  "title": "116. 填充每个节点的下一个右侧节点指针",
+  "relatedTags": [
+    "树",
+    "深度优先搜索",
+    "广度优先搜索",
+    "二叉树"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "116",
+  "slug": "116-Populating-Next-Right-Pointers-in-Each-Node"
+}

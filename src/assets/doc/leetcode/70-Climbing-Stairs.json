@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">Solution</span><span class=\"hljs-params\">(object)</span>:</span>\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">climbStairs</span><span class=\"hljs-params\">(self, n)</span>:</span>\n        <span class=\"hljs-string\">\"\"\"\n        :type n: int\n        :rtype: int\n        \"\"\"</span>\n        dp=[<span class=\"hljs-number\">0</span>]*(n+<span class=\"hljs-number\">1</span>)\n        dp[<span class=\"hljs-number\">0</span>]=<span class=\"hljs-number\">1</span>\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> range(<span class=\"hljs-number\">1</span>,n+<span class=\"hljs-number\">1</span>):\n          <span class=\"hljs-keyword\">if</span> i&gt;<span class=\"hljs-number\">1</span>:\n            dp[i]+=dp[i<span class=\"hljs-number\">-2</span>]\n          dp[i]+=dp[i<span class=\"hljs-number\">-1</span>]\n        <span class=\"hljs-keyword\">return</span> dp[<span class=\"hljs-number\">-1</span>]\n</code></pre>\n"
+  ],
+  "querySlug": "climbing-stairs",
+  "created_at": "2019-02-28",
+  "timeArr": [
+    2019,
+    1,
+    28,
+    10,
+    55,
+    56,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p><code>DP</code>，<code>dp[i]</code>表示当前楼梯有几种走法，<code>dp[i]=dp[i-1]+dp[i-2]</code>。</p>\n",
+  "content": "<p>假设你正在爬楼梯。需要 <em>n</em>&nbsp;阶你才能到达楼顶。</p>\n\n<p>每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？</p>\n\n<p><strong>注意：</strong>给定 <em>n</em> 是一个正整数。</p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre><strong>输入：</strong> 2\n<strong>输出：</strong> 2\n<strong>解释：</strong> 有两种方法可以爬到楼顶。\n1.  1 阶 + 1 阶\n2.  2 阶</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre><strong>输入：</strong> 3\n<strong>输出：</strong> 3\n<strong>解释：</strong> 有三种方法可以爬到楼顶。\n1.  1 阶 + 1 阶 + 1 阶\n2.  1 阶 + 2 阶\n3.  2 阶 + 1 阶\n</pre>\n",
+  "title": "70. 爬楼梯",
+  "relatedTags": [
+    "记忆化搜索",
+    "数学",
+    "动态规划"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "python"
+  ],
+  "uniqueID": "70",
+  "slug": "70-Climbing-Stairs"
+}

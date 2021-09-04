@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">p1</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">p2</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">p3</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">p4</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{boolean}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> validSquare = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">p1, p2, p3, p4</span>) </span>{\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">getDis</span>(<span class=\"hljs-params\">p1,p2</span>)</span>{\n    <span class=\"hljs-keyword\">let</span> dx=p1[<span class=\"hljs-number\">0</span>]-p2[<span class=\"hljs-number\">0</span>],dy=p1[<span class=\"hljs-number\">1</span>]-p2[<span class=\"hljs-number\">1</span>]\n    <span class=\"hljs-keyword\">return</span> dx*dx+dy*dy\n  }\n  <span class=\"hljs-keyword\">let</span> points=[p1,p2,p3,p4]\n  <span class=\"hljs-keyword\">let</span> counts={}\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;points.length<span class=\"hljs-number\">-1</span>;i++){\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> j=i+<span class=\"hljs-number\">1</span>;j&lt;points.length;j++){\n      <span class=\"hljs-keyword\">let</span> edge=getDis(points[i],points[j])\n      <span class=\"hljs-keyword\">if</span>(counts[edge]==<span class=\"hljs-literal\">null</span>)counts[edge]=<span class=\"hljs-number\">1</span>\n      <span class=\"hljs-keyword\">else</span> counts[edge]++     \n    }\n  }\n  <span class=\"hljs-keyword\">let</span> edge4=<span class=\"hljs-literal\">false</span>,edge2=<span class=\"hljs-literal\">false</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> k <span class=\"hljs-keyword\">in</span> counts){\n    <span class=\"hljs-keyword\">if</span>(!edge2 &amp;&amp; counts[k]===<span class=\"hljs-number\">2</span>)edge2=<span class=\"hljs-literal\">true</span>\n    <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span>(!edge4 &amp;&amp; counts[k]===<span class=\"hljs-number\">4</span>)edge4=<span class=\"hljs-literal\">true</span>\n    <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n  }\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n};\n</code></pre>\n"
+  ],
+  "querySlug": "valid-square",
+  "created_at": "2019-04-01",
+  "timeArr": [
+    2019,
+    3,
+    1,
+    17,
+    32,
+    0,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给定二维空间中四点的坐标，返回四点是否可以构造一个正方形。</p>\n\n<p>一个点的坐标（x，y）由一个有两个整数的整数数组表示。</p>\n\n<p><strong>示例:</strong></p>\n\n<pre>\n<strong>输入:</strong> p1 = [0,0], p2 = [1,1], p3 = [1,0], p4 = [0,1]\n<strong>输出:</strong> True\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>注意:</strong></p>\n\n<ol>\n\t<li>所有输入整数都在 [-10000，10000] 范围内。</li>\n\t<li>一个有效的正方形有四个等长的正长和四个等角（90度角）。</li>\n\t<li>输入点没有顺序。</li>\n</ol>\n",
+  "title": "593. 有效的正方形",
+  "relatedTags": [
+    "几何",
+    "数学"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "593",
+  "slug": "593-Valid-Square"
+}

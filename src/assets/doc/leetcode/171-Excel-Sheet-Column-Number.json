@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">s</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> titleToNumber = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">s</span>) </span>{\n  <span class=\"hljs-keyword\">if</span>(s===<span class=\"hljs-string\">''</span>)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">return</span> (s.charCodeAt(<span class=\"hljs-number\">0</span>)<span class=\"hljs-number\">-65</span>+<span class=\"hljs-number\">1</span>)*<span class=\"hljs-built_in\">Math</span>.pow(<span class=\"hljs-number\">26</span>,s.length<span class=\"hljs-number\">-1</span>) + titleToNumber(s.slice(<span class=\"hljs-number\">1</span>))\n};\n</code></pre>\n"
+  ],
+  "querySlug": "excel-sheet-column-number",
+  "created_at": "2019-03-29",
+  "timeArr": [
+    2019,
+    2,
+    29,
+    16,
+    23,
+    54,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给你一个字符串&nbsp;<code>columnTitle</code> ，表示 Excel 表格中的列名称。返回该列名称对应的列序号。</p>\n\n<p>&nbsp;</p>\n\n<p>例如，</p>\n\n<pre>\n    A -&gt; 1\n    B -&gt; 2\n    C -&gt; 3\n    ...\n    Z -&gt; 26\n    AA -&gt; 27\n    AB -&gt; 28 \n    ...\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 1:</strong></p>\n\n<pre>\n<strong>输入:</strong> columnTitle = \"A\"\n<strong>输出:</strong> 1\n</pre>\n\n<p><strong>示例&nbsp;2:</strong></p>\n\n<pre>\n<strong>输入: </strong>columnTitle = \"AB\"\n<strong>输出:</strong> 28\n</pre>\n\n<p><strong>示例&nbsp;3:</strong></p>\n\n<pre>\n<strong>输入: </strong>columnTitle = \"ZY\"\n<strong>输出:</strong> 701</pre>\n\n<p><strong>示例 4:</strong></p>\n\n<pre>\n<strong>输入: </strong>columnTitle = \"FXSHRXW\"\n<strong>输出: </strong>2147483647\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= columnTitle.length &lt;= 7</code></li>\n\t<li><code>columnTitle</code> 仅由大写英文组成</li>\n\t<li><code>columnTitle</code> 在范围 <code>[\"A\", \"FXSHRXW\"]</code> 内</li>\n</ul>\n",
+  "title": "171. Excel 表列序号",
+  "relatedTags": [
+    "数学",
+    "字符串"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "171",
+  "slug": "171-Excel-Sheet-Column-Number"
+}

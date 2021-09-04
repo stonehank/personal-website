@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">S</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string[]}</span> <span class=\"hljs-variable\">words</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> expressiveWords = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">S, words</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> counts=[]\n  <span class=\"hljs-keyword\">let</span> letters=[]\n  <span class=\"hljs-keyword\">let</span> j=<span class=\"hljs-number\">-1</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;S.length;i++){\n    <span class=\"hljs-keyword\">if</span>(i&gt;<span class=\"hljs-number\">0</span> &amp;&amp; S[i]===S[i<span class=\"hljs-number\">-1</span>]){\n      counts[j]++\n    }<span class=\"hljs-keyword\">else</span>{\n      counts[++j]=<span class=\"hljs-number\">1</span>\n      letters.push(S[i])\n    }\n  }\n  <span class=\"hljs-keyword\">let</span> res=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> word <span class=\"hljs-keyword\">of</span> words){\n    <span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>,k=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">while</span>(i&lt;word.length){\n      <span class=\"hljs-keyword\">if</span>(word[i]!==letters[k])<span class=\"hljs-keyword\">break</span>\n      <span class=\"hljs-keyword\">let</span> id=i+<span class=\"hljs-number\">1</span>,count=<span class=\"hljs-number\">1</span>\n      <span class=\"hljs-keyword\">while</span>(id&lt;word.length &amp;&amp; word[id<span class=\"hljs-number\">-1</span>]===word[id]){\n        count++\n        id++\n      }\n      <span class=\"hljs-keyword\">if</span>(counts[k]&lt;count)<span class=\"hljs-keyword\">break</span>\n      <span class=\"hljs-keyword\">if</span>(counts[k]&lt;<span class=\"hljs-number\">3</span> &amp;&amp; counts[k]!==count)<span class=\"hljs-keyword\">break</span>\n      i=id\n      k++\n    }\n    <span class=\"hljs-keyword\">if</span>(k===counts.length)res++\n  }\n  <span class=\"hljs-keyword\">return</span> res\n};\n</code></pre>\n"
+  ],
+  "querySlug": "expressive-words",
+  "created_at": "2019-03-28",
+  "timeArr": [
+    2019,
+    2,
+    28,
+    10,
+    52,
+    46,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>有时候人们会用重复写一些字母来表示额外的感受，比如 <code>\"hello\" -> \"heeellooo\"</code>, <code>\"hi\" -> \"hiii\"</code>。我们将相邻字母都相同的一串字符定义为相同字母组，例如：\"h\", \"eee\", \"ll\", \"ooo\"。</p>\n\n<p>对于一个给定的字符串 S ，如果另一个单词能够通过将一些字母组扩张从而使其和 S 相同，我们将这个单词定义为可扩张的（stretchy）。扩张操作定义如下：选择一个字母组（包含字母 <code>c</code> ），然后往其中添加相同的字母 <code>c</code> 使其长度达到 3 或以上。</p>\n\n<p>例如，以 \"hello\" 为例，我们可以对字母组 \"o\" 扩张得到 \"hellooo\"，但是无法以同样的方法得到 \"helloo\" 因为字母组 \"oo\" 长度小于 3。此外，我们可以进行另一种扩张 \"ll\" -> \"lllll\" 以获得 \"helllllooo\"。如果 <code>S = \"helllllooo\"</code>，那么查询词 \"hello\" 是可扩张的，因为可以对它执行这两种扩张操作使得 <code>query = \"hello\" -> \"hellooo\" -> \"helllllooo\" = S</code>。</p>\n\n<p>输入一组查询单词，输出其中可扩张的单词数量。</p>\n\n<p> </p>\n\n<p><strong>示例：</strong></p>\n\n<pre>\n<strong>输入：</strong> \nS = \"heeellooo\"\nwords = [\"hello\", \"hi\", \"helo\"]\n<strong>输出：</strong>1\n<strong>解释</strong>：\n我们能通过扩张 \"hello\" 的 \"e\" 和 \"o\" 来得到 \"heeellooo\"。\n我们不能通过扩张 \"helo\" 来得到 \"heeellooo\" 因为 \"ll\" 的长度小于 3 。\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>0 <= len(S) <= 100</code>。</li>\n\t<li><code>0 <= len(words) <= 100</code>。</li>\n\t<li><code>0 <= len(words[i]) <= 100</code>。</li>\n\t<li><code>S</code> 和所有在 <code>words</code> 中的单词都只由小写字母组成。</li>\n</ul>\n",
+  "title": "809. 情感丰富的文字",
+  "relatedTags": [
+    "数组",
+    "双指针",
+    "字符串"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "809",
+  "slug": "809-Expressive-Words"
+}

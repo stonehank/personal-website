@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">Solution</span><span class=\"hljs-params\">(object)</span>:</span>\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">countNumbersWithUniqueDigits</span><span class=\"hljs-params\">(self, n)</span>:</span>\n        <span class=\"hljs-string\">\"\"\"\n        :type n: int\n        :rtype: int\n        \"\"\"</span>\n        dp=[<span class=\"hljs-number\">0</span>]*(n+<span class=\"hljs-number\">1</span>)\n        dp[<span class=\"hljs-number\">0</span>]=<span class=\"hljs-number\">1</span>\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> range(<span class=\"hljs-number\">1</span>,n+<span class=\"hljs-number\">1</span>):\n            multi=<span class=\"hljs-number\">9</span>\n            m=<span class=\"hljs-number\">9</span>\n            k=i<span class=\"hljs-number\">-1</span>\n            <span class=\"hljs-keyword\">while</span> k&gt;<span class=\"hljs-number\">0</span>:\n                multi*=m\n                m-=<span class=\"hljs-number\">1</span>\n                k-=<span class=\"hljs-number\">1</span>\n            dp[i]=multi+dp[i<span class=\"hljs-number\">-1</span>]\n        <span class=\"hljs-comment\"># print dp</span>\n        <span class=\"hljs-keyword\">return</span> dp[<span class=\"hljs-number\">-1</span>]\n</code></pre>\n"
+  ],
+  "querySlug": "count-numbers-with-unique-digits",
+  "created_at": "2019-03-02",
+  "timeArr": [
+    2019,
+    2,
+    2,
+    14,
+    53,
+    30,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给定一个<strong>非负</strong>整数 n，计算各位数字都不同的数字 x 的个数，其中 0 &le; x &lt; 10<sup>n&nbsp;</sup>。</p>\n\n<p><strong>示例:</strong></p>\n\n<pre><strong>输入: </strong>2\n<strong>输出: </strong>91 \n<strong>解释: </strong>答案应为除去 <code>11,22,33,44,55,66,77,88,99 </code>外，在 [0,100) 区间内的所有数字。\n</pre>\n",
+  "title": "357. 计算各个位数不同的数字个数",
+  "relatedTags": [
+    "数学",
+    "动态规划",
+    "回溯"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "python"
+  ],
+  "uniqueID": "357",
+  "slug": "357-Count-Numbers-with-Unique-Digits"
+}

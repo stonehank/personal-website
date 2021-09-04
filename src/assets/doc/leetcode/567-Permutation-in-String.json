@@ -1,0 +1,32 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">s1</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">s2</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{boolean}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> checkInclusion = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">s1, s2</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> map=<span class=\"hljs-keyword\">new</span> <span class=\"hljs-built_in\">Array</span>(<span class=\"hljs-number\">26</span>).fill(<span class=\"hljs-number\">0</span>)\n  <span class=\"hljs-keyword\">let</span> aCode=<span class=\"hljs-string\">'a'</span>.charCodeAt(<span class=\"hljs-number\">0</span>)\n  <span class=\"hljs-keyword\">let</span> len1=s1.length,len2=s2.length\n\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">checkAllZero</span>(<span class=\"hljs-params\">arr</span>)</span>{\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;arr.length;i++){\n      <span class=\"hljs-keyword\">if</span>(arr[i]!==<span class=\"hljs-number\">0</span>)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n    }\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n  }\n  \n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;len1;i++){\n    map[s1.charCodeAt(i)-aCode]--\n    map[s2.charCodeAt(i)-aCode]++\n  }\n  <span class=\"hljs-keyword\">if</span>(checkAllZero(map))<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=len1;i&lt;len2;i++){\n    map[s2.charCodeAt(i-len1)-aCode]--\n    map[s2.charCodeAt(i)-aCode]++\n    <span class=\"hljs-keyword\">if</span>(checkAllZero(map))<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n  }\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n};\n</code></pre>\n"
+  ],
+  "querySlug": "permutation-in-string",
+  "created_at": "2019-04-11",
+  "timeArr": [
+    2019,
+    3,
+    11,
+    23,
+    14,
+    7,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>可以使用<code>window slide</code>解决，首先统计<code>s1</code>的字母频率<code>count1</code>。</p>\n<p>在遍历<code>s2</code>的同时，构建一个开始索引<code>i</code>，一个结束索引<code>j</code>，我们统计在<code>i</code>和<code>j</code>之前的字母频率<code>count2</code>。</p>\n<p>如果发现<code>s2[j]</code>在<code>count2</code>的频率比<code>count1</code>的更大<code>count2[s2[j]]&gt;count1[s2[j]]</code>，说明在<code>i</code>和<code>j</code>之间有<code>s1</code>不存在的字母，需要不断<code>i++</code>，\n同时减少对应的频率<code>--count[s2[i]]</code>，直到<code>count2[s2[j]]</code>不大于<code>count1[s2[j]]</code>。</p>\n<p>最后每次遍历的最后，检查<code>j-i+1</code>的长度，如果为<code>s1.length</code>，则返回<code>true</code>。</p>\n",
+  "content": "<p>给你两个字符串&nbsp;<code>s1</code>&nbsp;和&nbsp;<code>s2</code> ，写一个函数来判断 <code>s2</code> 是否包含 <code>s1</code><strong>&nbsp;</strong>的排列。</p>\n\n<p>换句话说，<code>s1</code> 的排列之一是 <code>s2</code> 的 <strong>子串</strong> 。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>s1 = \"ab\" s2 = \"eidbaooo\"\n<strong>输出：</strong>true\n<strong>解释：</strong>s2 包含 s1 的排列之一 (\"ba\").\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>s1= \"ab\" s2 = \"eidboaoo\"\n<strong>输出：</strong>false\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s1.length, s2.length &lt;= 10<sup>4</sup></code></li>\n\t<li><code>s1</code> 和 <code>s2</code> 仅包含小写字母</li>\n</ul>\n",
+  "title": "567. 字符串的排列",
+  "relatedTags": [
+    "哈希表",
+    "双指针",
+    "字符串",
+    "滑动窗口"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "567",
+  "slug": "567-Permutation-in-String"
+}

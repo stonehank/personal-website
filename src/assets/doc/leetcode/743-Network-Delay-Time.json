@@ -1,0 +1,33 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[][]}</span> <span class=\"hljs-variable\">times</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">N</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">K</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> networkDelayTime = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">times, N, K</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> shortestDis=<span class=\"hljs-built_in\">Array</span>(N+<span class=\"hljs-number\">1</span>).fill(<span class=\"hljs-literal\">Infinity</span>)\n  shortestDis[K]=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">let</span> graph=<span class=\"hljs-built_in\">Array</span>(N+<span class=\"hljs-number\">1</span>).fill().map(<span class=\"hljs-function\"><span class=\"hljs-params\">()</span>=&gt;</span>[])\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;times.length;i++){\n    <span class=\"hljs-keyword\">let</span> [u,v,w]=times[i]\n    graph[u].push([v,w])\n  }\n  <span class=\"hljs-keyword\">let</span> arr=[K],visited=<span class=\"hljs-built_in\">Array</span>(N+<span class=\"hljs-number\">1</span>).fill(<span class=\"hljs-literal\">false</span>)\n  <span class=\"hljs-keyword\">while</span>(arr.length&gt;<span class=\"hljs-number\">0</span>){\n    <span class=\"hljs-keyword\">let</span> len=arr.length\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;len;i++){\n      <span class=\"hljs-keyword\">let</span> <span class=\"hljs-keyword\">from</span>=arr.shift()\n      <span class=\"hljs-keyword\">if</span>(visited[<span class=\"hljs-keyword\">from</span>])<span class=\"hljs-keyword\">continue</span>\n      visited[<span class=\"hljs-keyword\">from</span>]=<span class=\"hljs-literal\">true</span>\n      <span class=\"hljs-keyword\">let</span> adj=graph[<span class=\"hljs-keyword\">from</span>]\n      <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> j=<span class=\"hljs-number\">0</span>;j&lt;adj.length;j++){\n        <span class=\"hljs-keyword\">let</span> [to,lag]=adj[j]\n        <span class=\"hljs-keyword\">if</span>(shortestDis[to]&gt;shortestDis[<span class=\"hljs-keyword\">from</span>]+lag){\n          shortestDis[to]=shortestDis[<span class=\"hljs-keyword\">from</span>]+lag\n          visited[to]=<span class=\"hljs-literal\">false</span>\n          arr.push(to)\n        }\n      }\n    }\n  }\n  <span class=\"hljs-keyword\">let</span> max=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">1</span>;i&lt;shortestDis.length;i++){\n    max=<span class=\"hljs-built_in\">Math</span>.max(max,shortestDis[i])\n  }\n  <span class=\"hljs-keyword\">if</span>(max===<span class=\"hljs-literal\">Infinity</span>)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">-1</span>\n  <span class=\"hljs-keyword\">return</span> max\n};\n</code></pre>\n"
+  ],
+  "querySlug": "network-delay-time",
+  "created_at": "2019-04-10",
+  "timeArr": [
+    2019,
+    3,
+    10,
+    15,
+    57,
+    1,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>这是一个有向加权图，题目就是求从<code>K</code>出发，到任意点的最短距离的最大值。</p>\n<p><code>Dijkstra</code>算法，通过<code>BFS</code>不断求出下一组点的最短距离，如果发现存在更短的距离，则更新并且对该点重新执行<code>BFS</code>。</p>\n<p><code>Bellman Ford</code>算法，对于每一个点的每一条边，都计算一次，筛选出最短距离。</p>\n",
+  "content": "<p>有 <code>n</code> 个网络节点，标记为&nbsp;<code>1</code>&nbsp;到 <code>n</code>。</p>\n\n<p>给你一个列表&nbsp;<code>times</code>，表示信号经过 <strong>有向</strong> 边的传递时间。&nbsp;<code>times[i] = (u<sub>i</sub>, v<sub>i</sub>, w<sub>i</sub>)</code>，其中&nbsp;<code>u<sub>i</sub></code>&nbsp;是源节点，<code>v<sub>i</sub></code>&nbsp;是目标节点， <code>w<sub>i</sub></code>&nbsp;是一个信号从源节点传递到目标节点的时间。</p>\n\n<p>现在，从某个节点&nbsp;<code>K</code>&nbsp;发出一个信号。需要多久才能使所有节点都收到信号？如果不能使所有节点收到信号，返回&nbsp;<code>-1</code> 。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 1：</strong></p>\n\n<p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2019/05/23/931_example_1.png\" style=\"height: 220px; width: 200px;\" /></p>\n\n<pre>\n<strong>输入：</strong>times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2\n<strong>输出：</strong>2\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>times = [[1,2,1]], n = 2, k = 1\n<strong>输出：</strong>1\n</pre>\n\n<p><strong>示例 3：</strong></p>\n\n<pre>\n<strong>输入：</strong>times = [[1,2,1]], n = 2, k = 2\n<strong>输出：</strong>-1\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= k &lt;= n &lt;= 100</code></li>\n\t<li><code>1 &lt;= times.length &lt;= 6000</code></li>\n\t<li><code>times[i].length == 3</code></li>\n\t<li><code>1 &lt;= u<sub>i</sub>, v<sub>i</sub> &lt;= n</code></li>\n\t<li><code>u<sub>i</sub> != v<sub>i</sub></code></li>\n\t<li><code>0 &lt;= w<sub>i</sub> &lt;= 100</code></li>\n\t<li>所有 <code>(u<sub>i</sub>, v<sub>i</sub>)</code> 对都 <strong>互不相同</strong>（即，不含重复边）</li>\n</ul>\n",
+  "title": "743. 网络延迟时间",
+  "relatedTags": [
+    "深度优先搜索",
+    "广度优先搜索",
+    "图",
+    "最短路",
+    "堆（优先队列）"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "743",
+  "slug": "743-Network-Delay-Time"
+}

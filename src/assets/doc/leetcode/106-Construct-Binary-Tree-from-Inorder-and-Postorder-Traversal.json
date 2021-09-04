@@ -1,0 +1,33 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * Definition for a binary tree node.\n * function TreeNode(val) {\n *     this.val = val;\n *     this.left = this.right = null;\n * }\n */</span>\n<span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">inorder</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">postorder</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{TreeNode}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> buildTree = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">inorder, postorder</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> id=postorder.length<span class=\"hljs-number\">-1</span>\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">create</span>(<span class=\"hljs-params\">start,end</span>)</span>{\n    <span class=\"hljs-keyword\">if</span>(start&gt;end)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">null</span>\n    <span class=\"hljs-keyword\">let</span> val=postorder[id--]\n    <span class=\"hljs-keyword\">let</span> root=<span class=\"hljs-keyword\">new</span> TreeNode(val)\n    <span class=\"hljs-keyword\">let</span> splitID=inorder.indexOf(val)\n    root.right=create(splitID+<span class=\"hljs-number\">1</span>,end)\n    root.left=create(start,splitID<span class=\"hljs-number\">-1</span>)\n    <span class=\"hljs-keyword\">return</span> root\n  }\n  <span class=\"hljs-keyword\">return</span> create(<span class=\"hljs-number\">0</span>,inorder.length<span class=\"hljs-number\">-1</span>)\n};\n</code></pre>\n"
+  ],
+  "querySlug": "construct-binary-tree-from-inorder-and-postorder-traversal",
+  "created_at": "2019-03-12",
+  "timeArr": [
+    2019,
+    2,
+    12,
+    20,
+    54,
+    50,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>按照<code>postorder</code>的倒序从<code>inorder</code>内部查找，对于查找到的索引<code>idx</code>，将当前<code>inorder</code>的左<code>lo</code>和右<code>hi</code>边界继续分割为<code>[lo,idx-1]</code>和<code>[idx+1,hi]</code>，继续递归处理。</p>\n<p>和<code>NO.105</code>的区别在于<code>postorder</code>需要从右向左，并且先<code>right</code>子树再<code>left</code>子树。</p>\n",
+  "content": "<p>根据一棵树的中序遍历与后序遍历构造二叉树。</p>\n\n<p><strong>注意:</strong><br>\n你可以假设树中没有重复的元素。</p>\n\n<p>例如，给出</p>\n\n<pre>中序遍历 inorder =&nbsp;[9,3,15,20,7]\n后序遍历 postorder = [9,15,7,20,3]</pre>\n\n<p>返回如下的二叉树：</p>\n\n<pre>    3\n   / \\\n  9  20\n    /  \\\n   15   7\n</pre>\n",
+  "title": "106. 从中序与后序遍历序列构造二叉树",
+  "relatedTags": [
+    "树",
+    "数组",
+    "哈希表",
+    "分治",
+    "二叉树"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "106",
+  "slug": "106-Construct-Binary-Tree-from-Inorder-and-Postorder-Traversal"
+}

@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code>\n<span class=\"hljs-keyword\">var</span> MyCalendarThree = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"></span>) </span>{\n    <span class=\"hljs-keyword\">this</span>.map={}\n};\n\n<span class=\"hljs-comment\">/** \n * @param {number} start \n * @param {number} end\n * @return {number}\n */</span>\nMyCalendarThree.prototype.book = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">start, end</span>) </span>{\n    <span class=\"hljs-keyword\">if</span>(!<span class=\"hljs-keyword\">this</span>.map[start])<span class=\"hljs-keyword\">this</span>.map[start]=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">this</span>.map[start]++\n    <span class=\"hljs-keyword\">if</span>(!<span class=\"hljs-keyword\">this</span>.map[end])<span class=\"hljs-keyword\">this</span>.map[end]=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">this</span>.map[end]--\n    <span class=\"hljs-keyword\">let</span> max=<span class=\"hljs-number\">-1</span>,cur=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> key <span class=\"hljs-keyword\">in</span> <span class=\"hljs-keyword\">this</span>.map){\n        cur+=<span class=\"hljs-keyword\">this</span>.map[key]\n        <span class=\"hljs-keyword\">if</span>(cur&gt;max)max=cur\n    }\n    <span class=\"hljs-keyword\">return</span> max\n};\n\n<span class=\"hljs-comment\">/** \n * Your MyCalendarThree object will be instantiated and called as such:\n * var obj = Object.create(MyCalendarThree).createNew()\n * var param_1 = obj.book(start,end)\n */</span>\n</code></pre>\n"
+  ],
+  "querySlug": "my-calendar-iii",
+  "created_at": "2019-04-30",
+  "timeArr": [
+    2019,
+    3,
+    30,
+    1,
+    22,
+    38,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>2个方法，</p>\n<ol>\n<li>比较好理解，类似<code>NO.798</code>，通过一个<code>map</code>保存区间的叠加状态。</li>\n</ol>\n<p>对于一个区间<code>[start,end]</code>是否叠加，不需要对每一个位置增加，<code>map[start]++</code>，<code>map[start+1]++</code>，<code>...map[end]++</code>，\n因为<code>start&lt;=10^9</code>，一定会<code>TLE</code>，只需要<code>map[start]++</code>，<code>map[end]--</code>，在通过前缀和的方式计算它们的叠加状态。</p>\n<pre class=\"hljs\"><code><span class=\"hljs-keyword\">var</span> MyCalendarThree = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"></span>) </span>{\n    <span class=\"hljs-keyword\">this</span>.map={}\n};\n\n<span class=\"hljs-comment\">/** \n * @param {number} start \n * @param {number} end\n * @return {number}\n */</span>\nMyCalendarThree.prototype.book = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">start, end</span>) </span>{\n    <span class=\"hljs-keyword\">if</span>(!<span class=\"hljs-keyword\">this</span>.map[start])<span class=\"hljs-keyword\">this</span>.map[start]=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">this</span>.map[start]++\n    <span class=\"hljs-keyword\">if</span>(!<span class=\"hljs-keyword\">this</span>.map[end])<span class=\"hljs-keyword\">this</span>.map[end]=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">this</span>.map[end]--\n    <span class=\"hljs-keyword\">let</span> max=<span class=\"hljs-number\">-1</span>,cur=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> key <span class=\"hljs-keyword\">in</span> <span class=\"hljs-keyword\">this</span>.map){\n        cur+=<span class=\"hljs-keyword\">this</span>.map[key]\n        <span class=\"hljs-keyword\">if</span>(cur&gt;max)max=cur\n    }\n    <span class=\"hljs-keyword\">return</span> max\n};\n</code></pre>\n<ol start=\"2\">\n<li>对于每次提供的区间<code>[start,end]</code>，直接对之前的每一个区间分析，将它精确插入内部，然后处理可能发生的拆分和合并。</li>\n</ol>\n<p>例如：以下两个区间<code>[a,b]</code>和<code>[c,d]</code>，拆分后应该为<code>[a,c]</code>，<code>[c,b]</code>，<code>[b,d]</code></p>\n<pre class=\"hljs\"><code>  a      b\n   ------\n     c           d\n      -----------\n</code></pre>\n",
+  "content": "<p>当 <code>k</code> 个日程安排有一些时间上的交叉时（例如 <code>k</code> 个日程安排都在同一时间内），就会产生 <code>k</code> 次预订。</p>\n\n<p>给你一些日程安排 <code>[start, end)</code> ，请你在每个日程安排添加后，返回一个整数 <code>k</code> ，表示所有先前日程安排会产生的最大 <code>k</code> 次预订。</p>\n\n<p>实现一个 <code>MyCalendarThree</code> 类来存放你的日程安排，你可以一直添加新的日程安排。</p>\n\n<ul>\n\t<li><code>MyCalendarThree()</code> 初始化对象。</li>\n\t<li><code>int book(int start, int end)</code> 返回一个整数 <code>k</code> ，表示日历中存在的 <code>k</code> 次预订的最大值。</li>\n</ul>\n\n<p> </p>\n\n<p><strong>示例：</strong></p>\n\n<pre>\n<strong>输入：</strong>\n[\"MyCalendarThree\", \"book\", \"book\", \"book\", \"book\", \"book\", \"book\"]\n[[], [10, 20], [50, 60], [10, 40], [5, 15], [5, 10], [25, 55]]\n<strong>输出：</strong>\n[null, 1, 1, 2, 3, 3, 3]\n\n<strong>解释：</strong>\nMyCalendarThree myCalendarThree = new MyCalendarThree();\nmyCalendarThree.book(10, 20); // 返回 1 ，第一个日程安排可以预订并且不存在相交，所以最大 k 次预订是 1 次预订。\nmyCalendarThree.book(50, 60); // 返回 1 ，第二个日程安排可以预订并且不存在相交，所以最大 k 次预订是 1 次预订。\nmyCalendarThree.book(10, 40); // 返回 2 ，第三个日程安排 [10, 40) 与第一个日程安排相交，所以最大 k 次预订是 2 次预订。\nmyCalendarThree.book(5, 15); // 返回 3 ，剩下的日程安排的最大 k 次预订是 3 次预订。\nmyCalendarThree.book(5, 10); // 返回 3\nmyCalendarThree.book(25, 55); // 返回 3\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>0 <= start < end <= 10<sup>9</sup></code></li>\n\t<li>每个测试用例，调用 <code>book</code> 函数最多不超过 <code>400</code>次</li>\n</ul>\n",
+  "title": "732. 我的日程安排表 III",
+  "relatedTags": [
+    "设计",
+    "线段树",
+    "有序集合"
+  ],
+  "difficult": "Hard",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "732",
+  "slug": "732-My-Calendar-III"
+}

@@ -1,0 +1,32 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * Initialize your data structure here.\n */</span>\n<span class=\"hljs-keyword\">var</span> MapSum = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"></span>) </span>{\n  <span class=\"hljs-keyword\">this</span>.tire={}\n};\n\n<span class=\"hljs-comment\">/** \n * @param {string} key \n * @param {number} val\n * @return {void}\n */</span>\nMapSum.prototype.insert = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">key, val</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> t=<span class=\"hljs-keyword\">this</span>.tire\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;key.length;i++){\n    <span class=\"hljs-keyword\">let</span> l=key[i]\n    <span class=\"hljs-keyword\">if</span>(t[l]==<span class=\"hljs-literal\">null</span>)t[l]={}\n    <span class=\"hljs-keyword\">if</span>(i===key.length<span class=\"hljs-number\">-1</span>)t[l].val=val\n    t=t[l]\n  }\n};\n\n<span class=\"hljs-comment\">/** \n * @param {string} prefix\n * @return {number}\n */</span>\nMapSum.prototype.sum = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">prefix</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> sum=<span class=\"hljs-number\">0</span>,t=<span class=\"hljs-keyword\">this</span>.tire\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;prefix.length;i++){\n    <span class=\"hljs-keyword\">let</span> l=prefix[i]\n    <span class=\"hljs-keyword\">if</span>(t[l]==<span class=\"hljs-literal\">null</span>)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>\n    t=t[l]\n    <span class=\"hljs-keyword\">if</span>(i===prefix.length<span class=\"hljs-number\">-1</span>){\n      sum+=dfs(t)\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> sum\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">dfs</span>(<span class=\"hljs-params\">t</span>)</span>{\n    <span class=\"hljs-keyword\">if</span>(!t)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">let</span> s=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">if</span>(t.val!=<span class=\"hljs-literal\">null</span>)s+=t.val\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> k <span class=\"hljs-keyword\">in</span> t){\n      s+=dfs(t[k])\n    }\n    <span class=\"hljs-keyword\">return</span> s\n  }\n};\n\n<span class=\"hljs-comment\">/** \n * Your MapSum object will be instantiated and called as such:\n * var obj = new MapSum()\n * obj.insert(key,val)\n * var param_2 = obj.sum(prefix)\n */</span>\n</code></pre>\n"
+  ],
+  "querySlug": "map-sum-pairs",
+  "created_at": "2019-04-24",
+  "timeArr": [
+    2019,
+    3,
+    24,
+    15,
+    51,
+    53,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>建立<code>tire</code>树，每次<code>insert</code>的时候，对当前<code>key</code>的每个字母逐个遍历，建立<code>tire</code>的分支，到最后一个字母，添加<code>tire.val=val</code>。</p>\n<p>每次<code>sum</code>的时候，逐个遍历<code>tire</code>，如果当前分支<code>tire[key[i]]</code>不存在，说明无法匹配到这个前缀，返回<code>0</code>，当前缀成功匹配，接着<code>dfs</code>\n找出前缀之后的所有单词的<code>val</code>。</p>\n",
+  "content": "<p>实现一个 <code>MapSum</code> 类，支持两个方法，<code>insert</code> 和 <code>sum</code>：</p>\n\n<ul>\n\t<li><code>MapSum()</code> 初始化 <code>MapSum</code> 对象</li>\n\t<li><code>void insert(String key, int val)</code> 插入 <code>key-val</code> 键值对，字符串表示键 <code>key</code> ，整数表示值 <code>val</code> 。如果键 <code>key</code> 已经存在，那么原来的键值对将被替代成新的键值对。</li>\n\t<li><code>int sum(string prefix)</code> 返回所有以该前缀 <code>prefix</code> 开头的键 <code>key</code> 的值的总和。</li>\n</ul>\n\n<p> </p>\n\n<p><strong>示例：</strong></p>\n\n<pre>\n<strong>输入：</strong>\n[\"MapSum\", \"insert\", \"sum\", \"insert\", \"sum\"]\n[[], [\"apple\", 3], [\"ap\"], [\"app\", 2], [\"ap\"]]\n<strong>输出：</strong>\n[null, null, 3, null, 5]\n\n<strong>解释：</strong>\nMapSum mapSum = new MapSum();\nmapSum.insert(\"apple\", 3);  \nmapSum.sum(\"ap\");           // return 3 (<u>ap</u>ple = 3)\nmapSum.insert(\"app\", 2);    \nmapSum.sum(\"ap\");           // return 5 (<u>ap</u>ple + <u>ap</u>p = 3 + 2 = 5)\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= key.length, prefix.length <= 50</code></li>\n\t<li><code>key</code> 和 <code>prefix</code> 仅由小写英文字母组成</li>\n\t<li><code>1 <= val <= 1000</code></li>\n\t<li>最多调用 <code>50</code> 次 <code>insert</code> 和 <code>sum</code></li>\n</ul>\n",
+  "title": "677. 键值映射",
+  "relatedTags": [
+    "设计",
+    "字典树",
+    "哈希表",
+    "字符串"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "677",
+  "slug": "677-Map-Sum-Pairs"
+}

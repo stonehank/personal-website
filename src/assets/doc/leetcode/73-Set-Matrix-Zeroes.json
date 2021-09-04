@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[][]}</span> <span class=\"hljs-variable\">matrix</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{void}</span> </span>Do not return anything, modify matrix in-place instead.\n */</span>\n<span class=\"hljs-keyword\">var</span> setZeroes = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">matrix</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> topHasZero=matrix[<span class=\"hljs-number\">0</span>].includes(<span class=\"hljs-number\">0</span>)\n  <span class=\"hljs-keyword\">let</span> m=matrix.length,n=matrix[<span class=\"hljs-number\">0</span>].length\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">1</span>;i&lt;m;i++){\n    <span class=\"hljs-keyword\">if</span>(matrix[i].includes(<span class=\"hljs-number\">0</span>)){\n      <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> j=<span class=\"hljs-number\">0</span>;j&lt;n;j++){\n        <span class=\"hljs-keyword\">if</span>(matrix[i][j]===<span class=\"hljs-number\">0</span>)matrix[<span class=\"hljs-number\">0</span>][j]=<span class=\"hljs-number\">0</span>\n        <span class=\"hljs-keyword\">else</span> matrix[i][j]=<span class=\"hljs-number\">0</span>\n      }\n    }\n  }\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;n;i++){\n    <span class=\"hljs-keyword\">if</span>(matrix[<span class=\"hljs-number\">0</span>][i]===<span class=\"hljs-number\">0</span>){\n      <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> j=<span class=\"hljs-number\">0</span>;j&lt;m;j++){\n        matrix[j][i]=<span class=\"hljs-number\">0</span>\n      }\n    }\n  }\n\n  <span class=\"hljs-keyword\">if</span>(topHasZero){\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;n;i++){\n      matrix[<span class=\"hljs-number\">0</span>][i]=<span class=\"hljs-number\">0</span>\n    }\n  }\n  \n};\n</code></pre>\n"
+  ],
+  "querySlug": "set-matrix-zeroes",
+  "created_at": "2019-03-12",
+  "timeArr": [
+    2019,
+    2,
+    12,
+    15,
+    10,
+    17,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<ol>\n<li>\n<p><code>O(mn)</code>空间：重新创造一个新的<code>matrix</code>即可。</p>\n</li>\n<li>\n<p><code>O(m+n)</code>空间：遍历<code>matrix</code>，发现<code>0</code>，就保存当前的行和列，最后将保存的行和列置零。</p>\n</li>\n<li>\n<p><code>O(1)</code>空间：使用一个变量记录第一行初始是否有0，然后遍历，发现<code>0</code>，将当前列的第一行设置为<code>0</code>，\n并且当前行也要重置为<code>0</code>。</p>\n<p>最后将第一行存在<code>0</code>的列全部设置为<code>0</code>，并且如果第一行初始有<code>0</code>，重置为<code>0</code>。</p>\n</li>\n</ol>\n",
+  "content": "<p>给定一个 <code><em>m</em> x <em>n</em></code> 的矩阵，如果一个元素为 <strong>0 </strong>，则将其所在行和列的所有元素都设为 <strong>0</strong> 。请使用 <strong><a href=\"http://baike.baidu.com/item/%E5%8E%9F%E5%9C%B0%E7%AE%97%E6%B3%95\" target=\"_blank\">原地</a></strong> 算法<strong>。</strong></p>\n\n<p><strong>进阶：</strong></p>\n\n<ul>\n\t<li>一个直观的解决方案是使用  <code>O(<em>m</em><em>n</em>)</code> 的额外空间，但这并不是一个好的解决方案。</li>\n\t<li>一个简单的改进方案是使用 <code>O(<em>m</em> + <em>n</em>)</code> 的额外空间，但这仍然不是最好的解决方案。</li>\n\t<li>你能想出一个仅使用常量空间的解决方案吗？</li>\n</ul>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/08/17/mat1.jpg\" style=\"width: 450px; height: 169px;\" />\n<pre>\n<strong>输入：</strong>matrix = [[1,1,1],[1,0,1],[1,1,1]]\n<strong>输出：</strong>[[1,0,1],[0,0,0],[1,0,1]]\n</pre>\n\n<p><strong>示例 2：</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/08/17/mat2.jpg\" style=\"width: 450px; height: 137px;\" />\n<pre>\n<strong>输入：</strong>matrix = [[0,1,2,0],[3,4,5,2],[1,3,1,5]]\n<strong>输出：</strong>[[0,0,0,0],[0,4,5,0],[0,3,1,0]]\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>m == matrix.length</code></li>\n\t<li><code>n == matrix[0].length</code></li>\n\t<li><code>1 <= m, n <= 200</code></li>\n\t<li><code>-2<sup>31</sup> <= matrix[i][j] <= 2<sup>31</sup> - 1</code></li>\n</ul>\n",
+  "title": "73. 矩阵置零",
+  "relatedTags": [
+    "数组",
+    "哈希表",
+    "矩阵"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "73",
+  "slug": "73-Set-Matrix-Zeroes"
+}
