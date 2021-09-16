@@ -15,7 +15,7 @@
                                 <DifficultRender :difficult="articleDetails.difficult"/>
                                 <b class="text-md mx-2">·</b>
                                 <CommentCount>
-                                    <CommentSysCounter :uniq-str="'algorithm-'+articleDetails.sha"/>
+                                    <CommentSysCounter :uniq-str="'algorithm-'+articleDetails.slug"/>
                                 </CommentCount>
                             </div>
                         </div>
@@ -33,7 +33,7 @@
                     </v-card-text>
                 </v-card>
                 <v-divider class="my-4"/>
-                <CommentSysPanel :uniq-str="'algorithm-'+articleDetails.sha"/>
+                <CommentSysPanel :uniq-str="'algorithm-'+articleDetails.slug"/>
             </v-container>
         </section>
 </template>
