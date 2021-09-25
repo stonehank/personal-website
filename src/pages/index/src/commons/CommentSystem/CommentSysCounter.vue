@@ -1,15 +1,12 @@
 <template>
-    <ContextVue>
-        <CounterVue :uniqStr="uniqStr" />
-    </ContextVue>
+    <vue-bbs-counter :uniqStr="uniqStr"/>
 </template>
 
 <script>
-    import ContextVue from "pagesDir/index/src/commons/CommentSystem/components/Context";
-    import CounterVue from "pagesDir/index/src/commons/CommentSystem/components/Counter";
+    import VueBbsCounter from "vue-bbs/dist/vue-bbs-counter";
     export default {
         name: "CommentSysCounter",
-        components: {CounterVue, ContextVue},
+        components: {VueBbsCounter},
         props:{
             uniqStr:{
                 type:String,

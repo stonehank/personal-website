@@ -1,15 +1,12 @@
 <template>
-    <ContextVue>
-        <PageViewVue :uniqStr="uniqStr" />
-    </ContextVue>
+    <vue-bbs-pageview :uniqStr="uniqStr"/>
 </template>
 
 <script>
-    import ContextVue from "pagesDir/index/src/commons/CommentSystem/components/Context";
-    import PageViewVue from "pagesDir/index/src/commons/CommentSystem/components/PageView";
+    import VueBbsPageview from "vue-bbs/dist/vue-bbs-pageview";
     export default {
         name: "CommentSysPageView",
-        components: {PageViewVue, ContextVue},
+        components: {VueBbsPageview},
         props:{
             uniqStr:{
                 type:String,

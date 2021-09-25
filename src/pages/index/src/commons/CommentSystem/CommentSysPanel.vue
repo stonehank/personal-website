@@ -1,15 +1,12 @@
 <template>
-    <ContextVue>
-        <PanelVue :uniqStr="uniqStr" />
-    </ContextVue>
+    <vue-bbs :uniqStr="uniqStr"/>
 </template>
 
 <script>
-    import ContextVue from "pagesDir/index/src/commons/CommentSystem/components/Context";
-    import PanelVue from "pagesDir/index/src/commons/CommentSystem/components/Panel";
+    import VueBbs from "vue-bbs/dist/vue-bbs";
     export default {
         name: "CommentSysPanel",
-        components: {PanelVue, ContextVue},
+        components: {VueBbs},
         props:{
             uniqStr:{
                 type:String,

@@ -10,7 +10,15 @@ import PerfectScrollbar from 'vue2-perfect-scrollbar'
 import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'
 import preview from 'vue-photo-preview'
 import 'vue-photo-preview/dist/skin.css'
+import bbsReg from 'vue-bbs/dist/register'
 
+bbsReg(Vue,{
+    appId:"s8REl9WtWtOw7omr7frVIpMP-MdYXbMMI",
+    appKey:"amadgvU7WzMYQ9eqMatTHLWM",
+    serverURLs:"s8rel9wt.api.lncldglobal.com",
+    CommentClass:"Comment_blog",
+    CounterClass:"Counter_blog",
+})
 Vue.use(preview)
 Vue.use(PerfectScrollbar)
 Vue.use(vModal)
