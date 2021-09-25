@@ -1,10 +1,10 @@
 <template>
-    <vue-bbs :uniqStr="uniqStr"/>
+    <vue-bbs :uniqStr="uniqStr" :offset="$state.getNavH() + 8"/>
 </template>
 
 <script>
-    // import VueBbs from "vue-bbs/dist/vue-bbs";
-    import VueBbs from "../../utils/vue-bbs/components/ServerlessBBSPanel";
+    import VueBbs from "vue-bbs/dist/vue-bbs";
+    // import VueBbs from "../../utils/vue-bbs/components/ServerlessBBSPanel";
     export default {
         name: "CommentSysPanel",
         components: {VueBbs},

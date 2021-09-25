@@ -3,8 +3,8 @@
 </template>
 
 <script>
-    // import VueBbsCounter from "vue-bbs/dist/vue-bbs-counter";
-    import VueBbsCounter from "../../utils/vue-bbs/components/ServerlessBBSCounter";
+    import VueBbsCounter from "vue-bbs/dist/vue-bbs-counter";
+    // import VueBbsCounter from "../../utils/vue-bbs/components/ServerlessBBSCounter";
     export default {
         name: "CommentSysCounter",
         components: {VueBbsCounter},

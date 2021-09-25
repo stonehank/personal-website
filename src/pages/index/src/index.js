@@ -10,8 +10,8 @@ import PerfectScrollbar from 'vue2-perfect-scrollbar'
 import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'
 import preview from 'vue-photo-preview'
 import 'vue-photo-preview/dist/skin.css'
-// import bbsReg from 'vue-bbs/dist/register'
-import bbsReg from './utils/vue-bbs/register'
+import bbsReg from 'vue-bbs/dist/register'
+// import bbsReg from './utils/vue-bbs/register'
 
 bbsReg(Vue,{
     appId:"s8REl9WtWtOw7omr7frVIpMP-MdYXbMMI",
