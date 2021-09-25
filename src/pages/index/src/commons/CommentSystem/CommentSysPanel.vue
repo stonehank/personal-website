@@ -3,7 +3,8 @@
 </template>
 
 <script>
-    import VueBbs from "vue-bbs/dist/vue-bbs";
+    // import VueBbs from "vue-bbs/dist/vue-bbs";
+    import VueBbs from "../../utils/vue-bbs/components/ServerlessBBSPanel";
     export default {
         name: "CommentSysPanel",
         components: {VueBbs},
