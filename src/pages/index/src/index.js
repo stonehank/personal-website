@@ -11,14 +11,15 @@ import 'vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css'
 import preview from 'vue-photo-preview'
 import 'vue-photo-preview/dist/skin.css'
 import bbsReg from 'vue-bbs/dist/register'
+// import VueBBS from 'vue-bbs'
 // import bbsReg from './utils/vue-bbs/register'
 
 bbsReg(Vue,{
-    appId:"s8REl9WtWtOw7omr7frVIpMP-MdYXbMMI",
-    appKey:"amadgvU7WzMYQ9eqMatTHLWM",
-    serverURLs:"s8rel9wt.api.lncldglobal.com",
-    CommentClass:"Comment_blog",
-    CounterClass:"Counter_blog",
+    appId:"6PqQxaHNKFRo3zNn0gvacAPe-MdYXbMMI",
+    appKey:"Tch5BpC3rniA0yFjrw6xlxdj",
+    serverURLs:"6pqqxahn.api.lncldglobal.com",
+    CommentClass:"Comments",
+    CounterClass:"Counters",
 })
 Vue.use(preview)
 Vue.use(PerfectScrollbar)

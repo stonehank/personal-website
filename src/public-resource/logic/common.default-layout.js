@@ -9,6 +9,7 @@ import 'cssDir/_variables.scss'
 import 'cssDir/common.scss'
 import 'cssDir/github.scss'
 import 'cssDir/github-markdown-css.css'
+import 'cssDir/vue-bbs-theme.scss'
 import 'jsDir/themeDetect.js'
 import {scrollTo} from "pagesDir/index/src/utils";
 

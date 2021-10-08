@@ -3,8 +3,9 @@
 </template>
 
 <script>
-    import VueBbsCounter from "vue-bbs/dist/vue-bbs-counter";
-    // import VueBbsCounter from "../../utils/vue-bbs/components/ServerlessBBSCounter";
+    import VueBbsCounter from "vue-bbs/dist/lib/vue-bbs-counter";
+    import LeancloudLayer from 'vue-bbs/dist/backend/leancloud'
+    VueBbsCounter.extends.extends=LeancloudLayer
     export default {
         name: "CommentSysCounter",
         components: {VueBbsCounter},

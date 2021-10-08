@@ -1,0 +1,15 @@
+
+.serverless-bbs{
+  --bbs-background-color: var(--background-color) !important;
+  --bbs-primary: var(--theme-primary) !important;
+  --bbs-secondary: var(--theme-secondary) !important;
+  --bbs-text-primary: var(--text-primary) !important;
+  --bbs-text-secondary: var(--text-secondary) !important;
+  --bbs-text-muted: var(--text-muted) !important;
+  --bbs-separator-color: var(--separator-color) !important;
+  --bbs-separator-background: var(--separator-background) !important;
+  --bbs-success-color: var(--success-color) !important;
+  --bbs-error-color: var(--error-color) !important;
+  --bbs-info-color: var(--info-color) !important;
+  --bbs-warning-color: var(--warning-color) !important;
+}

@@ -3,8 +3,9 @@
 </template>
 
 <script>
-    import VueBbsPageview from "vue-bbs/dist/vue-bbs-pageview";
-    // import VueBbsPageview from "../../utils/vue-bbs/components/ServerlessBBSPageView";
+    import VueBbsPageview from "vue-bbs/dist/lib/vue-bbs-pageview";
+    import LeancloudLayer from 'vue-bbs/dist/backend/leancloud'
+    VueBbsPageview.extends.extends=LeancloudLayer
     export default {
         name: "CommentSysPageView",
         components: {VueBbsPageview},

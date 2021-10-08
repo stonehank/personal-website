@@ -3,8 +3,9 @@
 </template>
 
 <script>
-    import VueBbs from "vue-bbs/dist/vue-bbs";
-    // import VueBbs from "../../utils/vue-bbs/components/ServerlessBBSPanel";
+    import VueBbs from "vue-bbs/dist/lib/vue-bbs";
+    import LeancloudLayer from 'vue-bbs/dist/backend/leancloud'
+    VueBbs.extends.extends=LeancloudLayer
     export default {
         name: "CommentSysPanel",
         components: {VueBbs},

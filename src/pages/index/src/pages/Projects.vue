@@ -8,23 +8,30 @@
                 <ProjectCard :project-info="projectInfo" />
             </v-col>
         </v-row>
+        <v-row id="project-comments">
+            <h3 class="mb-4 mt-12">评论区</h3>
+            <v-col cols="12" >
+                <CommentSysPanel uniq-str="project-page" />
+            </v-col>
+        </v-row>
     </v-container>
 </template>
 
 <script>
     import ProjectCard from "pagesDir/index/src/components/Projects/ProjectCard";
+    import CommentSysPanel from "pagesDir/index/src/commons/CommentSystem/CommentSysPanel";
     export default {
         name: "Projects",
-        components: {ProjectCard},
+        components: {CommentSysPanel, ProjectCard},
         data(){
             return {
                 projectList:[
                     {
-                        title:'React Valine',
+                        title:'Vue BBS',
                         img:require('../../../../assets/images/react-valine.png'),
-                        description:'轻量级评论插件，后端数据保存使用<a href="https://www.leancloud.cn/">LeanCloud</a>，支持编辑评论功能',
-                        path:'https://github.com/stonehank/react-valine',
-                        preview_path:'https://stonehank.github.io/react-valine/'
+                        description:'Serverless评论插件，后端数据保存使用Leancloud和Firebase，支持编辑评论功能',
+                        path:'https://github.com/stonehank/vue-bbs',
+                        preview_path:'https://stonehank.github.io/vue-bbs/'
                     },
                     {
                         title:'Diy Resume',
@@ -52,6 +59,27 @@
                         preview_path:null
                     }
                 ]
+            }
+        },
+        mounted(){
+            setTimeout(()=>{
+                this.detectHash()
+            },500)
+        },
+        methods:{
+            detectHash(){
+                let hash=this.$route.hash
+                let hashEle=document.getElementById(hash.slice(1))
+                if(hashEle){
+                    try{
+                        window.scrollTo({
+                            top:hashEle.offsetTop
+                        })
+                    }catch(_){
+                        let doc=document.documentElement || document.body
+                        doc.scrollTop=hashEle.offsetTop
+                    }
+                }
             }
         }
     }
