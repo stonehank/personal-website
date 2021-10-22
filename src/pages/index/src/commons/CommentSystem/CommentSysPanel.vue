@@ -5,7 +5,8 @@
 <script>
     import VueBbs from "vue-bbs/dist/lib/vue-bbs";
     import LeancloudLayer from 'vue-bbs/dist/backend/leancloud'
-    VueBbs.extends.extends=LeancloudLayer
+    import registerServer from 'vue-bbs/dist/registerServer'
+    registerServer(VueBbs,LeancloudLayer)
     export default {
         name: "CommentSysPanel",
         components: {VueBbs},
