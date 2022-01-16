@@ -179,7 +179,7 @@
                                 else curProp=prop
                                 initProp=prop
                             }
-                            let lowerCase=curData[curProp].toLowerCase()
+                            let lowerCase=typeof curData[curProp]==='string' ? curData[curProp].toLowerCase() : ''
                             let matchIdx=searchCore(patternValue,lowerCase,precisionMatchArr,i)
                             let [prefix,match,affix]=simpleSplit(curData,curProp,matchIdx,patternValue)
                             let finalMatchDate= matchIdx===-1
