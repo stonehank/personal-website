@@ -1,0 +1,44 @@
+{
+  "content": "<h2 id=\"reselect-yuan-ma-jie-shao\">reselect源码介绍</h2>\n<p>v3.0.1</p>\n<p>导图：\n<img src=\"https://raw.githubusercontent.com/stonehank/sourcecode-analysis/master/source-code.reselect/reselect.png\" alt=\"\"></p>\n<h3 id=\"defaultmemoize\">defaultMemoize</h3>\n<p>一个缓存函数，其内部：</p>\n<ol>\n<li>通过闭包保存参数和结果</li>\n<li>每次调用对参数进行浅比较</li>\n<li>参数比较结果相同，返回缓存的结果</li>\n</ol>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">defaultMemoize</span>(<span class=\"hljs-params\">func, equalityCheck = defaultEqualityCheck</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> lastArgs = <span class=\"hljs-literal\">null</span>\n  <span class=\"hljs-keyword\">let</span> lastResult = <span class=\"hljs-literal\">null</span>\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> (<span class=\"hljs-params\"></span>) </span>{\n    <span class=\"hljs-comment\">// 判断当前参数和上一次的参数是否相同，默认为 ===(全等)</span>\n    <span class=\"hljs-keyword\">if</span> (!areArgumentsShallowlyEqual(equalityCheck, lastArgs, <span class=\"hljs-built_in\">arguments</span>)) {\n      <span class=\"hljs-comment\">// apply arguments instead of spreading for performance.</span>\n      <span class=\"hljs-comment\">// 不同则调用func</span>\n      lastResult = func.apply(<span class=\"hljs-literal\">null</span>, <span class=\"hljs-built_in\">arguments</span>)\n    }\n    <span class=\"hljs-comment\">// 保存当前参数</span>\n    lastArgs = <span class=\"hljs-built_in\">arguments</span>\n    <span class=\"hljs-comment\">// 返回result</span>\n    <span class=\"hljs-keyword\">return</span> lastResult\n  }\n}</code></pre>\n</code></pre>\n<hr>\n<h3 id=\"createselectorcreator-createselector\">createSelectorCreator, createSelector</h3>\n<p>reselect最主要函数</p>\n<ol>\n<li><p><code>createSelectorCreator</code>接收一个参数，缓存函数，返回一个函数，称为<code>createSelector</code></p>\n<p> <code>const createSelector = createSelectorCreator(defaultMemoize)</code></p>\n</li>\n<li><p><code>createSelector</code>接受2类参数</p>\n<p> <code>依赖数据函数</code>(可以有多个)：</p>\n<p> 它的结果会传递给<code>数据处理函数</code>作为它的参数</p>\n<p> <code>数据处理函数</code>(必须放在参数的最后)：</p>\n<p> 它接受的参数就是<code>依赖数据函数</code>的返回值</p>\n</li>\n<li><p><code>createSelector</code>的内部操作</p>\n<ol>\n<li>对<code>依赖数据函数</code>和<code>数据处理函数</code>执行缓存函数</li>\n<li>每次执行<code>createSelector</code>的时候，会先执行<code>依赖数据函数</code>的缓存函数，检查参数是否相等，相等则返回旧的结果；\n如果不相等，才会再执行<code>数据处理函数</code>的缓存函数，进行比较。这样处理就可以知道要想返回缓存的结果，必须要达到以下条件任一：<ol>\n<li><code>依赖数据函数</code>的参数(一般为<code>store</code>)全等比较为true</li>\n<li><code>依赖数据函数</code>的参数(一般为<code>store</code>)全等比较为false, <code>数据处理函数</code>的参数全等比较为true</li>\n</ol>\n</li>\n</ol>\n</li>\n<li><p>返回<code>依赖数据函数</code></p>\n<p> <a href=\"https://codesandbox.io/s/jlpozpjprw\">reselect使用例子</a></p>\n</li>\n</ol>\n<hr>\n<h3 id=\"createstructuredselector\">createStructuredSelector</h3>\n<p>一个便利的函数，可以用于变更数据的key值，通过嵌套可以变更数据的结构</p>\n<p>它的内部正是调用了<code>createSelector</code></p>\n<ol>\n<li><p>接受2个函数，分别为一个(参数1)对象，一个(参数2)<code>selectorCreator</code>(默认就是createSelector)</p>\n</li>\n<li><p>调用<code>createSelector</code>，将参数1(对象)的value值作为<code>依赖数据函数</code>，\n其<code>数据处理函数</code>就是一个将参数1(对象)的key值和<code>依赖数据函数</code>的返回值组成一个新的对象的过程。</p>\n<p> <a href=\"https://codesandbox.io/s/53kvl30564\">createStructuredSelector使用例子</a></p>\n</li>\n</ol>\n<hr>\n<p>注意点：</p>\n<ol>\n<li><p>缓存函数只能保存上一次缓存的值(单个)。</p>\n</li>\n<li><p>缓存函数是通过对比参数而进行判断的，因此必须保证所提供的<code>依赖数据函数</code>和<code>数据处理函数</code>都是纯函数，而且它只保存上一次函数。</p>\n<p> <a href=\"https://codesandbox.io/s/n6y126v2p\">非纯函数例子</a></p>\n</li>\n<li><p>要想取消缓存，必须取消引用，包括<code>依赖数据函数</code>参数(store)的引用和内部<code>数据处理函数</code>的参数引用</p>\n<p> <a href=\"https://codesandbox.io/s/lx1kq3lj39\">取消缓存例子</a></p>\n</li>\n</ol>\n",
+  "toc": [
+    {
+      "anchor": "reselect-yuan-ma-jie-shao",
+      "level": 2,
+      "text": "reselect源码介绍"
+    },
+    {
+      "anchor": "defaultmemoize",
+      "level": 3,
+      "text": "defaultMemoize"
+    },
+    {
+      "anchor": "createselectorcreator-createselector",
+      "level": 3,
+      "text": "createSelectorCreator, createSelector"
+    },
+    {
+      "anchor": "createstructuredselector",
+      "level": 3,
+      "text": "createStructuredSelector"
+    }
+  ],
+  "relatedTags": [
+    "源码",
+    "缓存"
+  ],
+  "created_at": "2018-07-15",
+  "timeArr": [
+    2018,
+    6,
+    15,
+    16,
+    20,
+    8,
+    0
+  ],
+  "title": "源码阅读-reselect",
+  "uuid": "a73ced0b51daf6b55d0965e613d5ed55304f6638",
+  "summary": "<h4>reselect源码介绍</h4>\n<p>v3.0.1</p>\n<p>导图：\n<img src=\"https://raw.githubusercontent.com/stonehank/sourcecode-analysis/master/source-code.reselect/reselect.png\" alt=\"\"></p>\n<h4>defaultMemoize</h4>\n<p>...</p>",
+  "slug": "source-code-reselect",
+  "sha": "1337a25798f1710973ee215c3e6322aec34e79c8"
+}

@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">a</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">b</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> add = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">a, b</span>) </span>{\n  <span class=\"hljs-keyword\">while</span>(b!==<span class=\"hljs-number\">0</span>){\n    <span class=\"hljs-keyword\">let</span> sum=a^b\n    <span class=\"hljs-keyword\">let</span> carry=(a&amp;b) &lt;&lt; <span class=\"hljs-number\">1</span>\n    a=sum\n    b=carry\n  }\n  <span class=\"hljs-keyword\">return</span> a\n};\n</code></pre>\n"
+  ],
+  "querySlug": "add-without-plus-lcci",
+  "created_at": "2020-04-18",
+  "timeArr": [
+    2020,
+    3,
+    18,
+    10,
+    38,
+    41,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>设计一个函数把两个数字相加。不得使用 + 或者其他算术运算符。</p>\n\n<p><strong>示例:</strong></p>\n\n<pre><strong>输入:</strong> a = 1, b = 1\n<strong>输出:</strong> 2</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>a</code>,&nbsp;<code>b</code>&nbsp;均可能是负数或 0</li>\n\t<li>结果不会溢出 32 位整数</li>\n</ul>\n",
+  "title": "面试题 17.01. 不用加号的加法",
+  "relatedTags": [
+    "位运算",
+    "数学"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "面试题 17.01",
+  "slug": "mian-shi-ti-17.01-Add-Without-Plus-LCCI"
+}

@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * Definition for singly-linked list.\n * function ListNode(val, next) {\n *     this.val = (val===undefined ? 0 : val)\n *     this.next = (next===undefined ? null : next)\n * }\n */</span>\n<span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{ListNode}</span> <span class=\"hljs-variable\">head</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">k</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{ListNode}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> rotateRight = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">head, k</span>) </span>{\n    <span class=\"hljs-keyword\">if</span>(!head)<span class=\"hljs-keyword\">return</span> head\n    <span class=\"hljs-keyword\">let</span> len=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">let</span> root=head\n    <span class=\"hljs-keyword\">while</span>(root){\n        len++\n        root=root.next\n    }\n    <span class=\"hljs-keyword\">let</span> realRotate=k % len\n    <span class=\"hljs-keyword\">if</span>(realRotate===<span class=\"hljs-number\">0</span>)<span class=\"hljs-keyword\">return</span> head\n    <span class=\"hljs-keyword\">let</span> reverseStep=len-realRotate\n    root=head\n    <span class=\"hljs-keyword\">let</span> header=head\n    <span class=\"hljs-keyword\">while</span>(root &amp;&amp; reverseStep&gt;<span class=\"hljs-number\">1</span>){\n        reverseStep--\n        root=root.next\n    }\n    <span class=\"hljs-keyword\">let</span> rotateRoot=root\n    <span class=\"hljs-keyword\">let</span> res=root.next\n    <span class=\"hljs-keyword\">while</span>(root.next){\n        root=root.next\n    }\n    rotateRoot.next=<span class=\"hljs-literal\">null</span>\n    root.next=header\n    <span class=\"hljs-keyword\">return</span> res\n\n};\n</code></pre>\n"
+  ],
+  "querySlug": "rotate-list",
+  "created_at": "2021-03-27",
+  "timeArr": [
+    2021,
+    2,
+    27,
+    9,
+    47,
+    0,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>首先这个<code>k</code>是循环旋转的，因此，先找出实际需要旋转的次数<code>realK=k % len</code>。</p>\n<p>接着就是和<code>NO.19</code>相似了，找出倒数第<code>realK</code>个节点，并且将它连接头部。</p>\n<p>定义<code>双指针</code>，其中<code>指针2</code>比<code>指针1</code>慢<code>n</code>，等到<code>指针1</code>到达最后的时候，需要旋转的就是<code>指针2.next</code>。</p>\n",
+  "content": "<p>给你一个链表的头节点 <code>head</code> ，旋转链表，将链表每个节点向右移动 <code>k</code><em> </em>个位置。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/11/13/rotate1.jpg\" style=\"width: 600px; height: 254px;\" />\n<pre>\n<strong>输入：</strong>head = [1,2,3,4,5], k = 2\n<strong>输出：</strong>[4,5,1,2,3]\n</pre>\n\n<p><strong>示例 2：</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/11/13/roate2.jpg\" style=\"width: 472px; height: 542px;\" />\n<pre>\n<strong>输入：</strong>head = [0,1,2], k = 4\n<strong>输出：</strong>[2,0,1]\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li>链表中节点的数目在范围 <code>[0, 500]</code> 内</li>\n\t<li><code>-100 <= Node.val <= 100</code></li>\n\t<li><code>0 <= k <= 2 * 10<sup>9</sup></code></li>\n</ul>\n",
+  "title": "61. 旋转链表",
+  "relatedTags": [
+    "链表",
+    "双指针"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "61",
+  "slug": "61-Rotate-List"
+}

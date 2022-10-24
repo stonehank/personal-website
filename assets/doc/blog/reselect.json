@@ -1,0 +1,30 @@
+{
+  "content": "<h2 id=\"reselect\">Reselect</h2>\n<p>当我们使用redux的<code>connect(mapStateToProps)</code>的时候</p>\n<p>有时候store的数据直接传进组件并不好，于是我们希望在将数据传进组件前，进行调整</p>\n<p>例如 store如下</p>\n<pre><code><pre class=\"hljs\"><code>const mockStore={\n  descriptions:[\n    {name:&quot;a&quot;,age:25},\n    {name:&quot;b&quot;,age:38},\n    {name:&quot;c&quot;,age:26}\n  ]\n}</code></pre>\n</code></pre>\n<p>我们希望传进组件的数据如下：</p>\n<pre><code><pre class=\"hljs\"><code>{\n  descriptions:{\n    name:[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;],\n    age:[25,38,26]\n  }\n}</code></pre>\n</code></pre>\n<p>通常的办法：</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-keyword\">const</span> mapStateToProps=<span class=\"hljs-function\">(<span class=\"hljs-params\">state</span>)=&gt;</span>{\n  <span class=\"hljs-keyword\">const</span> newDescriptions={}\n  state.descriptions.forEach(<span class=\"hljs-function\">(<span class=\"hljs-params\">obj</span>)=&gt;</span>{\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> key <span class=\"hljs-keyword\">in</span> obj){\n      <span class=\"hljs-keyword\">if</span>(obj.hasOwnProperty(key)){\n        <span class=\"hljs-keyword\">if</span>(!newDescriptions[key]){\n          newDescriptions[key]=[]\n        }\n        newDescriptions[key].push(obj[key])\n      }\n    }\n  })\n  <span class=\"hljs-keyword\">return</span> {<span class=\"hljs-attr\">descriptions</span>:newDescriptions}\n}\n<span class=\"hljs-built_in\">console</span>.log(mapStateToProps(mockStore)===mapStateToProps(mockStore))\n<span class=\"hljs-comment\">// false</span></code></pre>\n</code></pre>\n<p>缺陷：很明显这里每次执行都会返回一个全新的对象，因此redux的浅对比就会失效，造成多次重复渲染</p>\n<p>使用reselect</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-keyword\">import</span> {createSelector} <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'reselect'</span>\n\n<span class=\"hljs-keyword\">const</span> selectState=createSelector(\n  <span class=\"hljs-function\"><span class=\"hljs-params\">state</span>=&gt;</span>state.descriptions,\n  descriptions=&gt;{\n    <span class=\"hljs-keyword\">const</span> newDescriptions={}\n    descriptions.forEach(<span class=\"hljs-function\">(<span class=\"hljs-params\">obj</span>)=&gt;</span>{\n      <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> key <span class=\"hljs-keyword\">in</span> obj){\n        <span class=\"hljs-keyword\">if</span>(obj.hasOwnProperty(key)){\n          <span class=\"hljs-keyword\">if</span>(!newDescriptions[key]){\n            newDescriptions[key]=[]\n           }\n           newDescriptions[key].push(obj[key])\n        }\n      }\n    })\n    <span class=\"hljs-keyword\">return</span> {<span class=\"hljs-attr\">descriptions</span>:newDescriptions}\n  }\n)\n<span class=\"hljs-built_in\">console</span>.log(selectState(mockStore)===selectState(mockStore))\n<span class=\"hljs-comment\">// true</span></code></pre>\n</code></pre>\n<p>通过测试，会发现，每次的返回值都是引用相等的(===)，原因是因为reselect内部使用了缓存，\n当参数(mockStore)相同，直接返回缓存的结果</p>\n<p>注意：比较参数是建立在我们编写<em>纯函数</em>的基础上，如果内部不是纯函数，但参数相同，也会返回缓存值，就很可能会造成意外的bug</p>\n<p><a href=\"https://gist.github.com/stonehank/c5de2a4318ee9954503770047c998c7b\">详细代码</a></p>\n<p><a href=\"https://github.com/stonehank/sourcecode-analysis/blob/master/source-code.reselect/README.md\">更多关于reselect的学习</a></p>\n",
+  "toc": [
+    {
+      "anchor": "reselect",
+      "level": 2,
+      "text": "Reselect"
+    }
+  ],
+  "relatedTags": [
+    "缓存",
+    "redux",
+    "github"
+  ],
+  "created_at": "2018-06-28",
+  "timeArr": [
+    2018,
+    5,
+    28,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "reselect",
+  "uuid": "e28099171dfe31f2da457cda1c3b45aac1715cd2",
+  "summary": "<h4>Reselect</h4>\n<p>当我们使用redux的<code>connect(mapStateToProps)</code>的时候</p>\n<p>有时候store的数据直接传进组件并不好，于是我们希望在将数据传进组件前，进行调整</p>\n<p>例如 store如下</p>\n<pre class=\"hljs\"><code>const mockStore={\n  descriptions:[\n    {name:&quot;a...</code></pre>",
+  "slug": "reselect",
+  "sha": "f0d4f2e822ae9afefb2da674e748cd479eef8231"
+}

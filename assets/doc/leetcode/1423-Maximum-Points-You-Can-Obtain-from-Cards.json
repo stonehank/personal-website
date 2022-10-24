@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">cardPoints</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">k</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> maxScore = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">cardPoints, k</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> len=cardPoints.length\n  <span class=\"hljs-keyword\">if</span>(k&gt;=len)<span class=\"hljs-keyword\">return</span> cardPoints.reduce(<span class=\"hljs-function\">(<span class=\"hljs-params\">a,b</span>)=&gt;</span>a+b)\n  <span class=\"hljs-keyword\">let</span> left=cardPoints.slice(<span class=\"hljs-number\">0</span>,k)\n  <span class=\"hljs-keyword\">let</span> right=cardPoints.slice(len-k)\n  <span class=\"hljs-keyword\">let</span> leftSum=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">let</span> rightSum=right.reduce(<span class=\"hljs-function\">(<span class=\"hljs-params\">a,b</span>)=&gt;</span>a+b)\n  <span class=\"hljs-keyword\">let</span> max=rightSum\n  <span class=\"hljs-comment\">// console.log(left,right)</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;k;i++){\n    leftSum+=left[i]\n    rightSum-=right[i]\n    <span class=\"hljs-comment\">// res+=getSum(left.slice(0,i))</span>\n    <span class=\"hljs-comment\">// res+=getSum(right.slice(i,right.length))</span>\n    \n    max=<span class=\"hljs-built_in\">Math</span>.max(max,leftSum+rightSum)\n    <span class=\"hljs-comment\">// console.log(max,i)</span>\n  }\n  <span class=\"hljs-keyword\">return</span> max\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">getSum</span>(<span class=\"hljs-params\">arr</span>)</span>{\n    <span class=\"hljs-keyword\">let</span> s=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> n <span class=\"hljs-keyword\">of</span> arr){\n      s+=n\n    }\n    <span class=\"hljs-keyword\">return</span> s\n  }\n};\n</code></pre>\n"
+  ],
+  "querySlug": "maximum-points-you-can-obtain-from-cards",
+  "created_at": "2020-04-26",
+  "timeArr": [
+    2020,
+    3,
+    26,
+    11,
+    11,
+    55,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>几张卡牌<strong> 排成一行</strong>，每张卡牌都有一个对应的点数。点数由整数数组 <code>cardPoints</code> 给出。</p>\n\n<p>每次行动，你可以从行的开头或者末尾拿一张卡牌，最终你必须正好拿 <code>k</code> 张卡牌。</p>\n\n<p>你的点数就是你拿到手中的所有卡牌的点数之和。</p>\n\n<p>给你一个整数数组 <code>cardPoints</code> 和整数 <code>k</code>，请你返回可以获得的最大点数。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre><strong>输入：</strong>cardPoints = [1,2,3,4,5,6,1], k = 3\n<strong>输出：</strong>12\n<strong>解释：</strong>第一次行动，不管拿哪张牌，你的点数总是 1 。但是，先拿最右边的卡牌将会最大化你的可获得点数。最优策略是拿右边的三张牌，最终点数为 1 + 6 + 5 = 12 。\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre><strong>输入：</strong>cardPoints = [2,2,2], k = 2\n<strong>输出：</strong>4\n<strong>解释：</strong>无论你拿起哪两张卡牌，可获得的点数总是 4 。\n</pre>\n\n<p><strong>示例 3：</strong></p>\n\n<pre><strong>输入：</strong>cardPoints = [9,7,7,9,7,7,9], k = 7\n<strong>输出：</strong>55\n<strong>解释：</strong>你必须拿起所有卡牌，可以获得的点数为所有卡牌的点数之和。\n</pre>\n\n<p><strong>示例 4：</strong></p>\n\n<pre><strong>输入：</strong>cardPoints = [1,1000,1], k = 1\n<strong>输出：</strong>1\n<strong>解释：</strong>你无法拿到中间那张卡牌，所以可以获得的最大点数为 1 。 \n</pre>\n\n<p><strong>示例 5：</strong></p>\n\n<pre><strong>输入：</strong>cardPoints = [1,79,80,1,1,1,200,1], k = 3\n<strong>输出：</strong>202\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= cardPoints.length &lt;= 10^5</code></li>\n\t<li><code>1 &lt;= cardPoints[i] &lt;= 10^4</code></li>\n\t<li><code>1 &lt;= k &lt;= cardPoints.length</code></li>\n</ul>\n",
+  "title": "1423. 可获得的最大点数",
+  "relatedTags": [
+    "数组",
+    "前缀和",
+    "滑动窗口"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "1423",
+  "slug": "1423-Maximum-Points-You-Can-Obtain-from-Cards"
+}

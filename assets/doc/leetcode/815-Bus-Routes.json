@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[][]}</span> <span class=\"hljs-variable\">routes</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">S</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">T</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> numBusesToDestination = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">routes, S, T</span>) </span>{\n  <span class=\"hljs-keyword\">if</span>(S===T)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">let</span> stations=[]\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;routes.length;i++){\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> j=<span class=\"hljs-number\">0</span>;j&lt;routes[i].length;j++){\n      <span class=\"hljs-keyword\">let</span> cur=routes[i][j]\n      <span class=\"hljs-keyword\">if</span>(!stations[cur])stations[cur]=[i]\n      <span class=\"hljs-keyword\">else</span> stations[cur].push(i)\n    }\n  }\n  <span class=\"hljs-keyword\">let</span> arr=[],usedLine=[],usedStop=[]\n  arr.push(S)\n  usedStop[S]=<span class=\"hljs-literal\">true</span>\n  <span class=\"hljs-keyword\">let</span> step=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">while</span>(arr.length&gt;<span class=\"hljs-number\">0</span>){\n    step++\n    <span class=\"hljs-keyword\">let</span> len=arr.length\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;len;i++){\n      <span class=\"hljs-keyword\">let</span> curStop=arr.shift()\n      <span class=\"hljs-keyword\">let</span> lines=stations[curStop]\n      <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> j=<span class=\"hljs-number\">0</span>;j&lt;lines.length;j++){\n        <span class=\"hljs-keyword\">let</span> line=lines[j]\n        <span class=\"hljs-keyword\">if</span>(usedLine[line])<span class=\"hljs-keyword\">continue</span>\n        usedLine[line]=<span class=\"hljs-literal\">true</span>\n        <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> k=<span class=\"hljs-number\">0</span>;k&lt;routes[line].length;k++){\n          <span class=\"hljs-keyword\">let</span> nxtStop=routes[line][k]\n          <span class=\"hljs-keyword\">if</span>(usedStop[nxtStop])<span class=\"hljs-keyword\">continue</span>\n          usedStop[nxtStop]=<span class=\"hljs-literal\">true</span>\n          <span class=\"hljs-keyword\">if</span>(nxtStop===T)<span class=\"hljs-keyword\">return</span> step\n          arr.push(nxtStop)\n        }\n      }\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">-1</span>\n};\n</code></pre>\n"
+  ],
+  "querySlug": "bus-routes",
+  "created_at": "2019-04-16",
+  "timeArr": [
+    2019,
+    3,
+    16,
+    11,
+    51,
+    49,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>假设有无数个人一起去找最少的换乘数量(<code>BFS</code>核心思想)，定义<code>arr</code>，初始值只有<code>S</code>。</p>\n<p>遍历<code>arr</code>，找到所有路线中含有当前站<code>arr[i]</code>的巴士<code>line</code>，每辆巴士上去一个人，这个人的任务就是将这辆巴士后续的所有站点继续添加到<code>arr</code>中，重复之前的遍历计算。</p>\n<p>可以定义2个<code>hash</code>，一个保存已经乘坐过的巴士，一个保存已经处理过的站点。</p>\n",
+  "content": "<p>给你一个数组 <code>routes</code> ，表示一系列公交线路，其中每个 <code>routes[i]</code> 表示一条公交线路，第 <code>i</code> 辆公交车将会在上面循环行驶。</p>\n\n<ul>\n\t<li>例如，路线 <code>routes[0] = [1, 5, 7]</code> 表示第 <code>0</code> 辆公交车会一直按序列 <code>1 -> 5 -> 7 -> 1 -> 5 -> 7 -> 1 -> ...</code> 这样的车站路线行驶。</li>\n</ul>\n\n<p>现在从 <code>source</code> 车站出发（初始时不在公交车上），要前往 <code>target</code> 车站。 期间仅可乘坐公交车。</p>\n\n<p>求出 <strong>最少乘坐的公交车数量</strong> 。如果不可能到达终点车站，返回 <code>-1</code> 。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>routes = [[1,2,7],[3,6,7]], source = 1, target = 6\n<strong>输出：</strong>2\n<strong>解释：</strong>最优策略是先乘坐第一辆公交车到达车站 7 , 然后换乘第二辆公交车到车站 6 。 \n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>routes = [[7,12],[4,5,15],[6],[15,19],[9,12,13]], source = 15, target = 12\n<strong>输出：</strong>-1\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= routes.length <= 500</code>.</li>\n\t<li><code>1 <= routes[i].length <= 10<sup>5</sup></code></li>\n\t<li><code>routes[i]</code> 中的所有值 <strong>互不相同</strong></li>\n\t<li><code>sum(routes[i].length) <= 10<sup>5</sup></code></li>\n\t<li><code>0 <= routes[i][j] < 10<sup>6</sup></code></li>\n\t<li><code>0 <= source, target < 10<sup>6</sup></code></li>\n</ul>\n",
+  "title": "815. 公交路线",
+  "relatedTags": [
+    "广度优先搜索",
+    "数组",
+    "哈希表"
+  ],
+  "difficult": "Hard",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "815",
+  "slug": "815-Bus-Routes"
+}

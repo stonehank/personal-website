@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">Solution</span><span class=\"hljs-params\">(object)</span>:</span>\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">myPow</span><span class=\"hljs-params\">(self, x, n)</span>:</span>\n        <span class=\"hljs-string\">\"\"\"\n        :type x: float\n        :type n: int\n        :rtype: float\n        \"\"\"</span>\n        <span class=\"hljs-keyword\">if</span> x==<span class=\"hljs-number\">0</span>:<span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>\n        <span class=\"hljs-keyword\">if</span> n==<span class=\"hljs-number\">0</span>:<span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">1</span>\n        sign=<span class=\"hljs-number\">1</span>\n        <span class=\"hljs-keyword\">if</span> n&lt;<span class=\"hljs-number\">0</span>:\n            n=-n\n            sign=<span class=\"hljs-number\">0</span>\n        res=<span class=\"hljs-number\">1</span>\n        curSum=x\n        num=<span class=\"hljs-number\">1</span>\n        check=<span class=\"hljs-literal\">True</span>\n        <span class=\"hljs-keyword\">while</span> check:\n            num=<span class=\"hljs-number\">1</span>\n            check=<span class=\"hljs-literal\">False</span>\n            multi=x\n            <span class=\"hljs-keyword\">while</span> num&lt;n:\n                n-=num\n                num+=num\n                curSum*=multi\n                multi*=multi\n            <span class=\"hljs-keyword\">if</span> num&gt;<span class=\"hljs-number\">1</span>:check=<span class=\"hljs-literal\">True</span>\n        <span class=\"hljs-keyword\">if</span> sign==<span class=\"hljs-number\">0</span>:<span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">1</span>/curSum\n        <span class=\"hljs-keyword\">return</span> curSum\n</code></pre>\n"
+  ],
+  "querySlug": "powx-n",
+  "created_at": "2019-02-23",
+  "timeArr": [
+    2019,
+    1,
+    23,
+    14,
+    6,
+    44,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>先处理特殊情况<code>n===0</code>，<code>n===1</code>，<code>n===-1</code>；</p>\n<p>然后对<code>n</code>分别是偶数和奇数进行处理，最终目标就是让<code>n</code>为偶数，然后<code>pow(x,n)===pow(x*x,n/2)</code>。</p>\n",
+  "content": "<p>实现 <a href=\"https://www.cplusplus.com/reference/valarray/pow/\" target=\"_blank\">pow(<em>x</em>, <em>n</em>)</a> ，即计算 x 的 n 次幂函数（即，x<sup><span style=\"font-size:10.8333px\">n</span></sup>）。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>x = 2.00000, n = 10\n<strong>输出：</strong>1024.00000\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>x = 2.10000, n = 3\n<strong>输出：</strong>9.26100\n</pre>\n\n<p><strong>示例 3：</strong></p>\n\n<pre>\n<strong>输入：</strong>x = 2.00000, n = -2\n<strong>输出：</strong>0.25000\n<strong>解释：</strong>2<sup>-2</sup> = 1/2<sup>2</sup> = 1/4 = 0.25\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>-100.0 < x < 100.0</code></li>\n\t<li><code>-2<sup>31</sup> <= n <= 2<sup>31</sup>-1</code></li>\n\t<li><code>-10<sup>4</sup> <= x<sup>n</sup> <= 10<sup>4</sup></code></li>\n</ul>\n",
+  "title": "50. Pow(x, n)",
+  "relatedTags": [
+    "递归",
+    "数学"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "python"
+  ],
+  "uniqueID": "50",
+  "slug": "50-Pow(x-n)"
+}

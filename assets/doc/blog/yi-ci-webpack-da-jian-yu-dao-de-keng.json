@@ -1,0 +1,29 @@
+{
+  "content": "<h4 id=\"lu-jing-keng\">路径坑</h4>\n<ul>\n<li>html图片路径：</li>\n</ul>\n<p>要利用<code>html-loader</code>的 <code>attr</code> 处理，只有<code>attr</code>覆盖到了，才会打包它。</p>\n<p>例如<code>img</code>的<code>src</code>(img:src) 和<code>link</code>的<code>ref</code>(link:ref)，例如<code>favicon</code>，和一些用了<code>data-src</code>的，例如<code>lazyload</code></p>\n<p>关于路径问题，可以修改<code>html</code>的路径使图片能找到，这样它就会被抓取并且打包</p>\n<p>也可以对每一个定义一个子路径，就像我做的，<code>html</code>图片文件的路径是 <code>&lt;img src=&quot;/img/xxx.png&quot; /&gt;</code></p>\n<p>再给<code>html-loader</code>定义一个<code>root</code>，告诉html从哪个文件夹去抓取这些图片。</p>\n<ul>\n<li>js图片路径</li>\n</ul>\n<p>使用require</p>\n<ul>\n<li>css图片路径</li>\n</ul>\n<p>如果不需要<code>webpack</code>打包图片，那么将<code>css-loader</code>的<code>url</code>设为<code>false</code></p>\n<p>如果需要<code>webpack</code>打包，那么要将<code>url</code>设置为<code>true</code>，这样对于你<code>css</code>中每一个图片，<code>css-loader</code>会去抓取，并且用<code>file-loader</code>(或者<code>url-loader</code>)解析，\n解析成功，打包，重命名后，将新的路径写入到你的<code>css</code></p>\n<p>遇到的一个问题就是需要对<code>file-loader</code>的<code>publicPath</code>进行配置</p>\n<p>例如<code>css</code>中<code>background:url(../../assets/img/xxx.png)</code></p>\n<p>如果不配置，那么打包后的文件路径为<code>background:url(./image/xxx-xxx.png)</code>，这里<code>image</code>是我的图片输出目录</p>\n<p>注意这是个相对路径，最后在<code>html</code>打开实际路径为<code>/css/image/xxx-xxx.png</code>， 而我需要的是<code>/image/xxx-xxx.png</code></p>\n<p>因此对<code>publicPath</code>配置为<code>/</code>， 可以解决问题。</p>\n",
+  "toc": [
+    {
+      "anchor": "lu-jing-keng",
+      "level": 4,
+      "text": "路径坑"
+    }
+  ],
+  "relatedTags": [
+    "webpack",
+    "css"
+  ],
+  "created_at": "2019-08-03",
+  "timeArr": [
+    2019,
+    7,
+    3,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "一次webpack搭建遇到的坑",
+  "uuid": "f7dd6e266b1a5e851a141bd30cacb677f6cb8562",
+  "summary": "<h4>路径坑：</h4>\n<ul>\n<li>html图片路径：</li>\n</ul>\n<p>要利用<code>html-loader</code>的 <code>attr</code> 处理，只有<code>attr</code>覆盖到了，才会打包它。</p>\n<p>例如<code>img</code>的<code>src</code>(img:src) 和<code>link</code>的<code>ref</code>(link:ref)，例如<code>favicon</code>，和一些用了<code>data-src</code>的，例如`lazylo...</p>",
+  "slug": "yi-ci-webpack-da-jian-yu-dao-de-keng",
+  "sha": "af5982279e618f8e78c8acbd9a329c7a3d2f6087"
+}

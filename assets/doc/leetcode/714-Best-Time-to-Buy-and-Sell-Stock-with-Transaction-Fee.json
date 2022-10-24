@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">Solution</span><span class=\"hljs-params\">(object)</span>:</span>\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">maxProfit</span><span class=\"hljs-params\">(self, prices, fee)</span>:</span>\n        <span class=\"hljs-string\">\"\"\"\n        :type prices: List[int]\n        :type fee: int\n        :rtype: int\n        \"\"\"</span>\n        n=len(prices)\n        <span class=\"hljs-comment\"># dp=[[0]*n for i in range(2)]</span>\n        <span class=\"hljs-comment\"># dp[1][0]=-prices[0]</span>\n        <span class=\"hljs-comment\"># for i in range(1,n):</span>\n        <span class=\"hljs-comment\">#     dp[0][i]=max(dp[0][i-1],prices[i]+dp[1][i-1]-fee)</span>\n        <span class=\"hljs-comment\">#     dp[1][i]=max(dp[0][i-1]-prices[i],dp[1][i-1])</span>\n        <span class=\"hljs-comment\"># # print dp</span>\n        <span class=\"hljs-comment\"># return dp[0][-1]</span>\n        sell,buy=<span class=\"hljs-number\">0</span>,-prices[<span class=\"hljs-number\">0</span>]\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> range(<span class=\"hljs-number\">1</span>,n):\n          last_sell=sell\n          last_buy=buy\n          sell=max(last_sell,prices[i]+last_buy-fee)\n          buy=max(last_buy,last_sell-prices[i])\n        \n        <span class=\"hljs-keyword\">return</span> sell\n</code></pre>\n"
+  ],
+  "querySlug": "best-time-to-buy-and-sell-stock-with-transaction-fee",
+  "created_at": "2019-03-07",
+  "timeArr": [
+    2019,
+    2,
+    7,
+    12,
+    26,
+    43,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给定一个整数数组 <code>prices</code>，其中第 <code>i</code> 个元素代表了第 <code>i</code> 天的股票价格 ；整数 <code>fee</code> 代表了交易股票的手续费用。</p>\n\n<p>你可以无限次地完成交易，但是你每笔交易都需要付手续费。如果你已经购买了一个股票，在卖出它之前你就不能再继续购买股票了。</p>\n\n<p>返回获得利润的最大值。</p>\n\n<p><strong>注意：</strong>这里的一笔交易指买入持有并卖出股票的整个过程，每笔交易你只需要为支付一次手续费。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>prices = [1, 3, 2, 8, 4, 9], fee = 2\n<strong>输出：</strong>8\n<strong>解释：</strong>能够达到的最大利润:  \n在此处买入 prices[0] = 1\n在此处卖出 prices[3] = 8\n在此处买入 prices[4] = 4\n在此处卖出 prices[5] = 9\n总利润: ((8 - 1) - 2) + ((9 - 4) - 2) = 8</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>prices = [1,3,7,5,10,3], fee = 3\n<strong>输出：</strong>6\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= prices.length <= 5 * 10<sup>4</sup></code></li>\n\t<li><code>1 <= prices[i] < 5 * 10<sup>4</sup></code></li>\n\t<li><code>0 <= fee < 5 * 10<sup>4</sup></code></li>\n</ul>\n",
+  "title": "714. 买卖股票的最佳时机含手续费",
+  "relatedTags": [
+    "贪心",
+    "数组",
+    "动态规划"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "python"
+  ],
+  "uniqueID": "714",
+  "slug": "714-Best-Time-to-Buy-and-Sell-Stock-with-Transaction-Fee"
+}

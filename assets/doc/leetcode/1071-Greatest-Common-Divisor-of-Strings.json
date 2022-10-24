@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">str1</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">str2</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{string}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> gcdOfStrings = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">str1, str2</span>) </span>{\n <span class=\"hljs-keyword\">if</span> (str1 + str2 != str2 + str1) <span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">\"\"</span>;\n <span class=\"hljs-keyword\">return</span> str1.slice(<span class=\"hljs-number\">0</span>,gcd(str1.length,str2.length))\n <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">gcd</span>(<span class=\"hljs-params\">a,b</span>)</span>{\n   <span class=\"hljs-keyword\">return</span> a&lt;b ? gcd(b,a) : b===<span class=\"hljs-number\">0</span> ? a : gcd(b,a%b)\n }\n};\n</code></pre>\n"
+  ],
+  "querySlug": "greatest-common-divisor-of-strings",
+  "created_at": "2020-03-12",
+  "timeArr": [
+    2020,
+    2,
+    12,
+    23,
+    58,
+    8,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>模拟最大公因子计算公式，</p>\n<p>保证<code>str1.length&gt;str2.length</code></p>\n<p>例如：str1:'abababab'，str2:<code>ababab</code></p>\n<p>第一次计算递归后：str1:<code>ab</code>，str2:<code>ababab</code>  ===&gt;  str1:<code>ababab</code>，str2:<code>ab</code>；</p>\n<p>第二次计算递归后：str1:<code>abab</code>，str2:<code>ab</code>；</p>\n<p>第三次计算递归后：str1:<code>ab</code>，str2:<code>ab</code>；</p>\n<p>结果为<code>ab</code></p>\n",
+  "content": "<p>对于字符串 <code>S</code> 和 <code>T</code>，只有在 <code>S = T + ... + T</code>（<code>T</code> 自身连接 1 次或多次）时，我们才认定 “<code>T</code> 能除尽 <code>S</code>”。</p>\n\n<p>返回最长字符串 <code>X</code>，要求满足 <code>X</code> 能除尽 <code>str1</code> 且 <code>X</code> 能除尽 <code>str2</code>。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>str1 = \"ABCABC\", str2 = \"ABC\"\n<strong>输出：</strong>\"ABC\"\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>str1 = \"ABABAB\", str2 = \"ABAB\"\n<strong>输出：</strong>\"AB\"\n</pre>\n\n<p><strong>示例 3：</strong></p>\n\n<pre>\n<strong>输入：</strong>str1 = \"LEET\", str2 = \"CODE\"\n<strong>输出：</strong>\"\"\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ol>\n\t<li><code>1 <= str1.length <= 1000</code></li>\n\t<li><code>1 <= str2.length <= 1000</code></li>\n\t<li><code>str1[i]</code> 和 <code>str2[i]</code> 为大写英文字母</li>\n</ol>\n",
+  "title": "1071. 字符串的最大公因子",
+  "relatedTags": [
+    "数学",
+    "字符串"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "1071",
+  "slug": "1071-Greatest-Common-Divisor-of-Strings"
+}

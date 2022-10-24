@@ -1,0 +1,24 @@
+{
+  "content": "<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">myFunc</span>(<span class=\"hljs-params\">{x=<span class=\"hljs-number\">1</span>,y=<span class=\"hljs-number\">2</span>}</span>)</span>{\n  <span class=\"hljs-built_in\">console</span>.log(x,y)  \n  <span class=\"hljs-comment\">// ...</span>\n}\nmyFunc({})      <span class=\"hljs-comment\">// x:1,y:2</span>\nmyFunc()        <span class=\"hljs-comment\">// 报错</span>\nmyFunc(<span class=\"hljs-literal\">null</span>)    <span class=\"hljs-comment\">// 报错</span></code></pre>\n</code></pre>\n<p>不传参数，则从<code>undefined</code>里面查找x和y属性，报错。</p>\n<p>修正1 ：(可以自行调整是否支持null)</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">myFunc</span>(<span class=\"hljs-params\">obj</span>)</span>{\n  <span class=\"hljs-keyword\">if</span>(obj===<span class=\"hljs-literal\">null</span>)<span class=\"hljs-keyword\">throw</span> <span class=\"hljs-built_in\">Error</span>()\n  <span class=\"hljs-keyword\">let</span> finalObj=<span class=\"hljs-built_in\">Object</span>.assign({<span class=\"hljs-attr\">x</span>:<span class=\"hljs-number\">1</span>,<span class=\"hljs-attr\">y</span>:<span class=\"hljs-number\">2</span>},obj)\n  <span class=\"hljs-built_in\">console</span>.log(x,y)\n  <span class=\"hljs-comment\">// ...</span>\n}\nmyFunc({})          <span class=\"hljs-comment\">// x:1,y:2</span>\nmyFunc()            <span class=\"hljs-comment\">// x:1,y:2</span>\nmyFunc({<span class=\"hljs-attr\">x</span>:<span class=\"hljs-number\">2</span>,<span class=\"hljs-attr\">z</span>:<span class=\"hljs-number\">5</span>})   <span class=\"hljs-comment\">// x:2,y:2</span>\nmyFunc(<span class=\"hljs-literal\">null</span>)       <span class=\"hljs-comment\">// 报错</span></code></pre>\n</code></pre>\n<p>修正2 ：不支持null</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">myFunc</span>(<span class=\"hljs-params\">{x=<span class=\"hljs-number\">1</span>,y=<span class=\"hljs-number\">2</span>}={}</span>)</span>{\n  <span class=\"hljs-built_in\">console</span>.log(x,y)  \n  <span class=\"hljs-comment\">// ...</span>\n}\nmyFunc({})          <span class=\"hljs-comment\">// x:1,y:2</span>\nmyFunc()            <span class=\"hljs-comment\">// x:1,y:2</span>\nmyFunc({<span class=\"hljs-attr\">x</span>:<span class=\"hljs-number\">2</span>,<span class=\"hljs-attr\">z</span>:<span class=\"hljs-number\">5</span>})   <span class=\"hljs-comment\">// x:2,y:2</span>\nmyFunc(<span class=\"hljs-literal\">null</span>)       <span class=\"hljs-comment\">// 报错</span></code></pre>\n</code></pre>\n",
+  "toc": [],
+  "relatedTags": [
+    "源码",
+    "react",
+    "redux"
+  ],
+  "created_at": "2018-11-18",
+  "timeArr": [
+    2018,
+    10,
+    18,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "源码阅读-react-redux-参数为obj的默认参数写法",
+  "uuid": "42b4b2b7669e8fdbc1cd63d0eb42e60b98c48f8e",
+  "summary": "<pre class=\"hljs\"><code><span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">myFunc</span>(<span class=\"hljs-params\">{x=<span class=\"hljs-number\">1</span>,y=<span class=\"hljs-number\">2</span>}</span>)</span>{\n  <span class=\"hljs-built_in\">console</span>.log(x,y)  \n  <span class=\"hljs-comment\">// ...</span>\n}\nmyFunc({})      <span class=\"hljs-comment\">// x:1,y:2</span>\nmyFunc()        <span class=\"hljs-comment\">// 报错</span>\nmyFunc(<span class=\"hljs-literal\">null</span>)    <span class=\"hljs-comment\">// 报错</span>\n</code></pre>\n<p>不传参数，则从<code>undefined</code>里...</p>",
+  "slug": "yuan-ma-yue-du-react-redux-can-shu-wei-obj-de-mo-ren-can-shu-xie-fa",
+  "sha": "bca6508299954ec1022678e1f36b060954a8e990"
+}

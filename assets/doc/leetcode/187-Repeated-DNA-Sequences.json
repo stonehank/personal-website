@@ -1,0 +1,34 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">s</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{string[]}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> findRepeatedDnaSequences = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">s</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> hash={}\n  <span class=\"hljs-keyword\">let</span> res=[]\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;=s.length<span class=\"hljs-number\">-10</span>;i++){\n    <span class=\"hljs-keyword\">let</span> str=s.substring(i,i+<span class=\"hljs-number\">10</span>)\n    <span class=\"hljs-keyword\">if</span>(hash[str]==<span class=\"hljs-literal\">null</span>){\n      hash[str]=<span class=\"hljs-number\">1</span>\n    }<span class=\"hljs-keyword\">else</span>{\n      hash[str]++\n    }\n    <span class=\"hljs-keyword\">if</span>(hash[str]===<span class=\"hljs-number\">2</span>)res.push(str)\n  }\n  <span class=\"hljs-keyword\">return</span> res\n};\n</code></pre>\n"
+  ],
+  "querySlug": "repeated-dna-sequences",
+  "created_at": "2019-04-04",
+  "timeArr": [
+    2019,
+    3,
+    4,
+    20,
+    47,
+    37,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>每<code>10</code>个字符就存入<code>hash</code>，如果有重复，<code>hash</code>对应的<code>val</code>就<code>+1</code>，最终只返回<code>hash</code>中<code>val</code>为2的字符串，既重复出现了，也避免重复返回。</p>\n",
+  "content": "<p>所有 DNA 都由一系列缩写为 <code>'A'</code>，<code>'C'</code>，<code>'G'</code> 和 <code>'T'</code> 的核苷酸组成，例如：<code>\"ACGAATTCCG\"</code>。在研究 DNA 时，识别 DNA 中的重复序列有时会对研究非常有帮助。</p>\n\n<p>编写一个函数来找出所有目标子串，目标子串的长度为 10，且在 DNA 字符串 <code>s</code> 中出现次数超过一次。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>s = \"AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT\"\n<strong>输出：</strong>[\"AAAAACCCCC\",\"CCCCCAAAAA\"]\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>s = \"AAAAAAAAAAAAA\"\n<strong>输出：</strong>[\"AAAAAAAAAA\"]\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>0 <= s.length <= 10<sup>5</sup></code></li>\n\t<li><code>s[i]</code> 为 <code>'A'</code>、<code>'C'</code>、<code>'G'</code> 或 <code>'T'</code></li>\n</ul>\n",
+  "title": "187. 重复的DNA序列",
+  "relatedTags": [
+    "位运算",
+    "哈希表",
+    "字符串",
+    "滑动窗口",
+    "哈希函数",
+    "滚动哈希"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "187",
+  "slug": "187-Repeated-DNA-Sequences"
+}

@@ -1,0 +1,32 @@
+{
+  "content": "<h2 id=\"creat-react-appcreatereactappjs\">./creat-react-app/createReactApp.js</h2>\n<ul>\n<li><p>os.EOL</p>\n<p>  不同系统的行尾符号</p>\n<blockquote>\n<p>A string constant defining the operating system-specific end-of-line marker:</p>\n</blockquote>\n<p>  <code>\\n</code> on POSIX</p>\n<p>  <code>\\r\\n</code> on Windows</p>\n</li>\n<li><p>process.cwd()</p>\n<p>  返回当前node进程的目录</p>\n<blockquote>\n<p>The process.cwd() method returns the current working directory of the Node.js process.</p>\n</blockquote>\n</li>\n</ul>\n<ul>\n<li><p>child_process.spawn</p>\n<p>  使用给定的 command 和 args 中的命令行参数来衍生一个新进程</p>\n<p>  例如：</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-keyword\">const</span> {spawn}=<span class=\"hljs-built_in\">require</span>(<span class=\"hljs-string\">'child_process'</span>);\n<span class=\"hljs-keyword\">const</span> a=spawn(<span class=\"hljs-string\">'npm.cmd'</span>,[<span class=\"hljs-string\">'config'</span>,<span class=\"hljs-string\">'list'</span>])\na.stdout.on(<span class=\"hljs-string\">'data'</span>, (data) =&gt; {\n  <span class=\"hljs-built_in\">console</span>.log(<span class=\"hljs-string\">`stdout: <span class=\"hljs-subst\">${data}</span>`</span>);\n});</code></pre>\n</code></pre>\n<p>  注意，windows下要使用npm.cmd，否则会查找不到npm, \n  <a href=\"https://github.com/nodejs/node/issues/3675\">https://github.com/nodejs/node/issues/3675</a></p>\n<p>  或者使用<code>cross-spawn</code></p>\n</li>\n<li><p>semver</p>\n<p>  进行版本号对比，官网例子备忘</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code>semver.valid(<span class=\"hljs-string\">'1.2.3'</span>) <span class=\"hljs-comment\">// '1.2.3'</span>\nsemver.valid(<span class=\"hljs-string\">'a.b.c'</span>) <span class=\"hljs-comment\">// null</span>\nsemver.clean(<span class=\"hljs-string\">'  =v1.2.3   '</span>) <span class=\"hljs-comment\">// '1.2.3'</span>\nsemver.satisfies(<span class=\"hljs-string\">'1.2.3'</span>, <span class=\"hljs-string\">'1.x || &gt;=2.5.0 || 5.0.0 - 7.2.3'</span>) <span class=\"hljs-comment\">// true</span>\nsemver.gt(<span class=\"hljs-string\">'1.2.3'</span>, <span class=\"hljs-string\">'9.8.7'</span>) <span class=\"hljs-comment\">// false</span>\nsemver.lt(<span class=\"hljs-string\">'1.2.3'</span>, <span class=\"hljs-string\">'9.8.7'</span>) <span class=\"hljs-comment\">// true</span>\nsemver.valid(semver.coerce(<span class=\"hljs-string\">'v2'</span>)) <span class=\"hljs-comment\">// '2.0.0'</span>\nsemver.valid(semver.coerce(<span class=\"hljs-string\">'42.6.7.9.3-alpha'</span>)) <span class=\"hljs-comment\">// '42.6.7'</span></code></pre>\n</code></pre>\n</li>\n<li><p>path.delimiter</p>\n<p>  对不同平台的路径进行分割成数组</p>\n<p>  Windows 上是 ;(分号)</p>\n<p>  POSIX 上是 :(冒号)</p>\n</li>\n<li><p>一个Boolean的使用方法：</p>\n<p>  <code>process.env.NODE_PATH.split(path.delimiter).filter(Boolean)</code></p>\n<p>  这里的意思是先对<code>NODE_PATH</code>进行分割，再过滤出存在的值</p>\n</li>\n</ul>\n",
+  "toc": [
+    {
+      "anchor": "creat-react-appcreatereactappjs",
+      "level": 2,
+      "text": "./creat-react-app/createReactApp.js"
+    }
+  ],
+  "relatedTags": [
+    "react",
+    "源码",
+    "笔记",
+    "npm",
+    "github"
+  ],
+  "created_at": "2018-07-28",
+  "timeArr": [
+    2018,
+    6,
+    28,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "源码阅读-create-react-app一些收获(笔记备忘)",
+  "uuid": "f433b9ed4007a7781ed42e23c229928ae08ba1d8",
+  "summary": "<p>A string constant defining the operating system-specific end-of-line marker:</p>",
+  "slug": "yuan-ma-yue-du-create-react-app-yi-xie-shou-huo-(-bi-ji-bei-wang-)",
+  "sha": "0a29b597ea9aca0631c7bd70092eb31cf07d8250"
+}

@@ -1,0 +1,32 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * Initialize your data structure here.\n */</span>\n<span class=\"hljs-keyword\">var</span> WordDictionary = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"></span>) </span>{\n  <span class=\"hljs-keyword\">this</span>.tire={}\n};\n\n<span class=\"hljs-comment\">/**\n * Adds a word into the data structure. \n * @param {string} word\n * @return {void}\n */</span>\nWordDictionary.prototype.addWord = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">word</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> t=<span class=\"hljs-keyword\">this</span>.tire\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;word.length;i++){\n    <span class=\"hljs-keyword\">let</span> l=word[i]\n    <span class=\"hljs-keyword\">if</span>(t[l]==<span class=\"hljs-literal\">null</span>)t[l]={}\n    <span class=\"hljs-keyword\">if</span>(i===word.length<span class=\"hljs-number\">-1</span>)t[l][<span class=\"hljs-string\">'exact'</span>]=<span class=\"hljs-literal\">true</span>\n    t=t[l]\n  }\n};\n\n<span class=\"hljs-comment\">/**\n * Returns if the word is in the data structure. A word could contain the dot character '.' to represent any one letter. \n * @param {string} word\n * @return {boolean}\n */</span>\nWordDictionary.prototype.search = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">word</span>) </span>{\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">dfs</span>(<span class=\"hljs-params\">tire,idx</span>)</span>{\n    <span class=\"hljs-keyword\">if</span>(idx===word.length){\n      <span class=\"hljs-comment\">// if()return true</span>\n      <span class=\"hljs-keyword\">return</span> tire.exact\n    }\n    <span class=\"hljs-keyword\">let</span> l=word[idx]\n    <span class=\"hljs-keyword\">if</span>(l===<span class=\"hljs-string\">'.'</span>){\n      <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> k <span class=\"hljs-keyword\">in</span> tire){\n        <span class=\"hljs-keyword\">if</span>(dfs(tire[k],idx+<span class=\"hljs-number\">1</span>))<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n      }\n    }<span class=\"hljs-keyword\">else</span>{\n      <span class=\"hljs-keyword\">if</span>(tire[l]==<span class=\"hljs-literal\">null</span>)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n      <span class=\"hljs-keyword\">if</span>(dfs(tire[l],idx+<span class=\"hljs-number\">1</span>))<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n    }\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n  }\n  <span class=\"hljs-keyword\">return</span> dfs(<span class=\"hljs-keyword\">this</span>.tire,<span class=\"hljs-number\">0</span>)\n};\n\n<span class=\"hljs-comment\">/** \n * Your WordDictionary object will be instantiated and called as such:\n * var obj = new WordDictionary()\n * obj.addWord(word)\n * var param_2 = obj.search(word)\n */</span>\n</code></pre>\n"
+  ],
+  "querySlug": "design-add-and-search-words-data-structure",
+  "created_at": "2019-04-18",
+  "timeArr": [
+    2019,
+    3,
+    18,
+    14,
+    49,
+    50,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>先构建<code>Tire</code>树，可以简单的用<code>{}</code>嵌套构成。</p>\n<p><code>addWord</code>中，将单词每个字母添加到<code>tire</code>中，最后一个字母添加结尾标志。</p>\n<p><code>search</code>中，对每一个字符搜索，如果存在则进入更深一层继续搜索，其中<code>.</code>可以代表任意值，需要遍历当前<code>tire</code>所有的字母都尝试一遍，直到找到对应单词。</p>\n",
+  "content": "<p>请你设计一个数据结构，支持 添加新单词 和 查找字符串是否与任何先前添加的字符串匹配 。</p>\n\n<p>实现词典类 <code>WordDictionary</code> ：</p>\n\n<ul>\n\t<li><code>WordDictionary()</code> 初始化词典对象</li>\n\t<li><code>void addWord(word)</code> 将 <code>word</code> 添加到数据结构中，之后可以对它进行匹配</li>\n\t<li><code>bool search(word)</code> 如果数据结构中存在字符串与 <code>word</code> 匹配，则返回 <code>true</code> ；否则，返回  <code>false</code> 。<code>word</code> 中可能包含一些 <code>'.'</code> ，每个 <code>.</code> 都可以表示任何一个字母。</li>\n</ul>\n\n<p> </p>\n\n<p><strong>示例：</strong></p>\n\n<pre>\n<strong>输入：</strong>\n[\"WordDictionary\",\"addWord\",\"addWord\",\"addWord\",\"search\",\"search\",\"search\",\"search\"]\n[[],[\"bad\"],[\"dad\"],[\"mad\"],[\"pad\"],[\"bad\"],[\".ad\"],[\"b..\"]]\n<strong>输出：</strong>\n[null,null,null,null,false,true,true,true]\n\n<strong>解释：</strong>\nWordDictionary wordDictionary = new WordDictionary();\nwordDictionary.addWord(\"bad\");\nwordDictionary.addWord(\"dad\");\nwordDictionary.addWord(\"mad\");\nwordDictionary.search(\"pad\"); // return False\nwordDictionary.search(\"bad\"); // return True\nwordDictionary.search(\".ad\"); // return True\nwordDictionary.search(\"b..\"); // return True\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= word.length <= 500</code></li>\n\t<li><code>addWord</code> 中的 <code>word</code> 由小写英文字母组成</li>\n\t<li><code>search</code> 中的 <code>word</code> 由 '.' 或小写英文字母组成</li>\n\t<li>最多调用 <code>50000</code> 次 <code>addWord</code> 和 <code>search</code></li>\n</ul>\n",
+  "title": "211. 添加与搜索单词 - 数据结构设计",
+  "relatedTags": [
+    "深度优先搜索",
+    "设计",
+    "字典树",
+    "字符串"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "211",
+  "slug": "211-Design-Add-and-Search-Words-Data-Structure"
+}

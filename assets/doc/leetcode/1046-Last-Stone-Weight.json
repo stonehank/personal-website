@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">stones</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> lastStoneWeight = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">stones</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> pq=[]\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">insert</span>(<span class=\"hljs-params\">n</span>)</span>{\n    <span class=\"hljs-keyword\">if</span>(pq.length===<span class=\"hljs-number\">0</span> || n&gt;=pq[pq.length<span class=\"hljs-number\">-1</span>]){\n      pq.push(n)\n    }<span class=\"hljs-keyword\">else</span>{\n      pq.splice(bsEnd(pq,n),<span class=\"hljs-number\">0</span>,n)\n    }\n  }\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">bsEnd</span>(<span class=\"hljs-params\">arr,n</span>)</span>{\n    <span class=\"hljs-keyword\">let</span> lo=<span class=\"hljs-number\">0</span>,hi=arr.length<span class=\"hljs-number\">-1</span>\n    <span class=\"hljs-keyword\">while</span>(lo&lt;hi){\n      <span class=\"hljs-keyword\">let</span> mid=<span class=\"hljs-built_in\">Math</span>.floor((lo+hi)/<span class=\"hljs-number\">2</span>)\n      <span class=\"hljs-keyword\">if</span>(arr[mid]&lt;n)lo=mid+<span class=\"hljs-number\">1</span>\n      <span class=\"hljs-keyword\">else</span> hi=mid\n    }\n    <span class=\"hljs-keyword\">return</span> hi\n  }\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">delMax</span>(<span class=\"hljs-params\"></span>)</span>{\n    <span class=\"hljs-keyword\">return</span> pq.pop()\n  }\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> n <span class=\"hljs-keyword\">of</span> stones){\n    insert(n)\n  }\n  <span class=\"hljs-keyword\">while</span>(pq.length&gt;<span class=\"hljs-number\">1</span>){\n    <span class=\"hljs-keyword\">let</span> f=delMax(),\n        s=delMax()\n    <span class=\"hljs-keyword\">let</span> more=<span class=\"hljs-built_in\">Math</span>.max(f,s),\n        less=<span class=\"hljs-built_in\">Math</span>.min(f,s)\n    <span class=\"hljs-keyword\">if</span>(more===less)<span class=\"hljs-keyword\">continue</span>\n    more-=less\n    insert(more)\n  }\n  <span class=\"hljs-keyword\">if</span>(pq.length===<span class=\"hljs-number\">1</span>)<span class=\"hljs-keyword\">return</span> pq[<span class=\"hljs-number\">0</span>]\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>\n};\n</code></pre>\n"
+  ],
+  "querySlug": "last-stone-weight",
+  "created_at": "2019-05-19",
+  "timeArr": [
+    2019,
+    4,
+    19,
+    10,
+    35,
+    7,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>有一堆石头，每块石头的重量都是正整数。</p>\n\n<p>每一回合，从中选出两块<strong> 最重的</strong> 石头，然后将它们一起粉碎。假设石头的重量分别为 <code>x</code> 和 <code>y</code>，且 <code>x <= y</code>。那么粉碎的可能结果如下：</p>\n\n<ul>\n\t<li>如果 <code>x == y</code>，那么两块石头都会被完全粉碎；</li>\n\t<li>如果 <code>x != y</code>，那么重量为 <code>x</code> 的石头将会完全粉碎，而重量为 <code>y</code> 的石头新重量为 <code>y-x</code>。</li>\n</ul>\n\n<p>最后，最多只会剩下一块石头。返回此石头的重量。如果没有石头剩下，就返回 <code>0</code>。</p>\n\n<p> </p>\n\n<p><strong>示例：</strong></p>\n\n<pre>\n<strong>输入：</strong>[2,7,4,1,8,1]\n<strong>输出：</strong>1\n<strong>解释：</strong>\n先选出 7 和 8，得到 1，所以数组转换为 [2,4,1,1,1]，\n再选出 2 和 4，得到 2，所以数组转换为 [2,1,1,1]，\n接着是 2 和 1，得到 1，所以数组转换为 [1,1,1]，\n最后选出 1 和 1，得到 0，最终数组转换为 [1]，这就是最后剩下那块石头的重量。</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= stones.length <= 30</code></li>\n\t<li><code>1 <= stones[i] <= 1000</code></li>\n</ul>\n",
+  "title": "1046. 最后一块石头的重量",
+  "relatedTags": [
+    "数组",
+    "堆（优先队列）"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "1046",
+  "slug": "1046-Last-Stone-Weight"
+}

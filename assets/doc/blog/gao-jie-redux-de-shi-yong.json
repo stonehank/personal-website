@@ -1,0 +1,22 @@
+{
+  "content": "<p>###3 Redux的复用</p>\n<p>因为每一次dispatch都是遍历所有reducer寻找type，因此每一个action的type不能一致，\n当需要复用reducer时，可以使用prefix</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">generateReducer</span>(<span class=\"hljs-params\">prefix,state</span>)</span>{\n  <span class=\"hljs-keyword\">const</span> SOMETYPE=prefix+<span class=\"hljs-string\">'SOMETYPE'</span>;\n  <span class=\"hljs-keyword\">const</span> initialState={...state}\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">reducer</span>(<span class=\"hljs-params\">state=initialState,action</span>)</span>{\n    <span class=\"hljs-comment\">//...</span>\n  }\n}</code></pre>\n</code></pre>\n<p>###3 Redux的增强</p>\n<p>增强redux通过3点进行</p>\n<ul>\n<li>处理额外的action</li>\n<li>维护更多state</li>\n<li>action能传递给原始reducer处理</li>\n</ul>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">HOCReducer</span>(<span class=\"hljs-params\">reducer</span>)</span>{\n  <span class=\"hljs-comment\">// 此处可以配置更多state</span>\n  <span class=\"hljs-keyword\">const</span> initialState={}\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">state=initialState,action</span>)</span>{\n    <span class=\"hljs-comment\">// 此处处理额外的action</span>\n    <span class=\"hljs-keyword\">switch</span>(action.type){\n      <span class=\"hljs-keyword\">case</span> <span class=\"hljs-string\">'additionalType'</span>:\n        <span class=\"hljs-comment\">/*do something*/</span>\n        <span class=\"hljs-keyword\">return</span>  <span class=\"hljs-comment\">/*{...}*/</span>;\n      <span class=\"hljs-keyword\">default</span>:\n        <span class=\"hljs-comment\">// 遇到无匹配的action，返回给原始reducer处理</span>\n        <span class=\"hljs-keyword\">const</span> newState=reducer(initialState,action)\n        <span class=\"hljs-keyword\">return</span> <span class=\"hljs-comment\">/*{...}*/</span>\n    }\n  }\n}</code></pre>\n</code></pre>\n<p>调用：</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-keyword\">import</span> {createStroe} <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'redux'</span>;\n\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">reducer</span>(<span class=\"hljs-params\">state={},action</span>)</span>{\n  <span class=\"hljs-keyword\">switch</span>(action.type){\n    <span class=\"hljs-comment\">/* 初始的reducer*/</span>\n  }\n}\n<span class=\"hljs-keyword\">const</span> hocReducer=HOCReducer(reducer);\n<span class=\"hljs-keyword\">const</span> store=createStroe(hocReducer);\n\n<span class=\"hljs-comment\">/* dispatch后就会从hocReducer开始执行遍历*/</span></code></pre>\n</code></pre>\n",
+  "toc": [],
+  "relatedTags": [
+    "redux"
+  ],
+  "created_at": "2018-06-25",
+  "timeArr": [
+    2018,
+    5,
+    25,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "高阶redux的使用",
+  "uuid": "0c096d72d4add9e9c5b5fcc24624e4c8d6669aec",
+  "summary": "<p>###3 Redux的复用</p>\n<p>因为每一次dispatch都是遍历所有reducer寻找type，因此每一个action的type不能一致，\n当需要复用reducer时，可以使用prefix</p>\n<pre class=\"hljs\"><code><span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">generateReducer</span>(<span class=\"hljs-params\">prefix,state</span>)</span>{\n  <span class=\"hljs-keyword\">const</span> SOMETYPE=pr...</code></pre>",
+  "slug": "gao-jie-redux-de-shi-yong",
+  "sha": "1a051b70892a766030ca8e55ac15f3c3fbb2d887"
+}

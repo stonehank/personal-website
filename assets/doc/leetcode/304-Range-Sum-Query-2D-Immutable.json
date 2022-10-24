@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">NumMatrix</span><span class=\"hljs-params\">(object)</span>:</span>\n\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">__init__</span><span class=\"hljs-params\">(self, matrix)</span>:</span>\n        <span class=\"hljs-string\">\"\"\"\n        :type matrix: List[List[int]]\n        \"\"\"</span>\n        m=len(matrix)\n        <span class=\"hljs-keyword\">if</span> m==<span class=\"hljs-number\">0</span>:<span class=\"hljs-keyword\">return</span>\n        n=len(matrix[<span class=\"hljs-number\">0</span>])\n        sums=[[<span class=\"hljs-number\">0</span>]*n <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> range(m)]\n        sums[<span class=\"hljs-number\">0</span>][<span class=\"hljs-number\">0</span>]=matrix[<span class=\"hljs-number\">0</span>][<span class=\"hljs-number\">0</span>]\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> range(<span class=\"hljs-number\">1</span>,m): sums[i][<span class=\"hljs-number\">0</span>]=sums[i<span class=\"hljs-number\">-1</span>][<span class=\"hljs-number\">0</span>]+matrix[i][<span class=\"hljs-number\">0</span>]\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> range(<span class=\"hljs-number\">1</span>,n): sums[<span class=\"hljs-number\">0</span>][i]=sums[<span class=\"hljs-number\">0</span>][i<span class=\"hljs-number\">-1</span>]+matrix[<span class=\"hljs-number\">0</span>][i]\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> range(<span class=\"hljs-number\">1</span>,m):\n          <span class=\"hljs-keyword\">for</span> j <span class=\"hljs-keyword\">in</span> range(<span class=\"hljs-number\">1</span>,n):\n            sums[i][j]=matrix[i][j]+sums[i<span class=\"hljs-number\">-1</span>][j]+sums[i][j<span class=\"hljs-number\">-1</span>]-sums[i<span class=\"hljs-number\">-1</span>][j<span class=\"hljs-number\">-1</span>]\n        self.sums=sums\n        <span class=\"hljs-comment\"># print sums</span>\n\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">sumRegion</span><span class=\"hljs-params\">(self, row1, col1, row2, col2)</span>:</span>\n        <span class=\"hljs-string\">\"\"\"\n        :type row1: int\n        :type col1: int\n        :type row2: int\n        :type col2: int\n        :rtype: int\n        \"\"\"</span>\n        dr1,dc1,dr2,dc2,p1,p2=row1<span class=\"hljs-number\">-1</span>,col2,row2,col1<span class=\"hljs-number\">-1</span>,row1<span class=\"hljs-number\">-1</span>,col1<span class=\"hljs-number\">-1</span>\n        <span class=\"hljs-keyword\">if</span> dr1&lt;<span class=\"hljs-number\">0</span>: ds1=<span class=\"hljs-number\">0</span>\n        <span class=\"hljs-keyword\">else</span>: ds1=self.sums[dr1][dc1]\n        <span class=\"hljs-keyword\">if</span> dc2&lt;<span class=\"hljs-number\">0</span>: ds2=<span class=\"hljs-number\">0</span>\n        <span class=\"hljs-keyword\">else</span>: ds2=self.sums[dr2][dc2]\n        <span class=\"hljs-keyword\">if</span> p1&lt;<span class=\"hljs-number\">0</span> <span class=\"hljs-keyword\">or</span> p2&lt;<span class=\"hljs-number\">0</span>: ps=<span class=\"hljs-number\">0</span>\n        <span class=\"hljs-keyword\">else</span>: ps=self.sums[p1][p2]\n        <span class=\"hljs-keyword\">return</span> self.sums[row2][col2]-ds1-ds2+ps\n        \n\n<span class=\"hljs-comment\"># Your NumMatrix object will be instantiated and called as such:</span>\n<span class=\"hljs-comment\"># obj = NumMatrix(matrix)</span>\n<span class=\"hljs-comment\"># param_1 = obj.sumRegion(row1,col1,row2,col2)</span>\n</code></pre>\n"
+  ],
+  "querySlug": "range-sum-query-2d-immutable",
+  "created_at": "2019-03-01",
+  "timeArr": [
+    2019,
+    2,
+    1,
+    21,
+    16,
+    21,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p><big><small>给定一个二维矩阵 <code>matrix</code>，</small></big>以下类型的多个请求：</p>\n\n<ul>\n\t<li><big><small>计算其子矩形范围内元素的总和，该子矩阵的左上角为 <code>(row1, col1)</code> ，右下角为 <code>(row2, col2)</code> 。</small></big></li>\n</ul>\n\n<p>实现 <code>NumMatrix</code> 类：</p>\n\n<ul>\n\t<li><code>NumMatrix(int[][] matrix)</code> 给定整数矩阵 <code>matrix</code> 进行初始化</li>\n\t<li><code>int sumRegion(int row1, int col1, int row2, int col2)</code> 返回<big><small>左上角</small></big><big><small> <code>(row1, col1)</code> 、右下角 <code>(row2, col2)</code></small></big> 的子矩阵的元素总和。</li>\n</ul>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<p><img src=\"https://pic.leetcode-cn.com/1626332422-wUpUHT-image.png\" style=\"width: 200px;\" /></p>\n\n<pre>\n<strong>输入:</strong> \n[\"NumMatrix\",\"sumRegion\",\"sumRegion\",\"sumRegion\"]\n[[[[3,0,1,4,2],[5,6,3,2,1],[1,2,0,1,5],[4,1,0,1,7],[1,0,3,0,5]]],[2,1,4,3],[1,1,2,2],[1,2,2,4]]\n<strong>输出:</strong> \n[null, 8, 11, 12]\n\n<strong>解释:</strong>\nNumMatrix numMatrix = new NumMatrix([[3,0,1,4,2],[5,6,3,2,1],[1,2,0,1,5],[4,1,0,1,7],[1,0,3,0,5]]]);\nnumMatrix.sumRegion(2, 1, 4, 3); // return 8 (红色矩形框的元素总和)\nnumMatrix.sumRegion(1, 1, 2, 2); // return 11 (绿色矩形框的元素总和)\nnumMatrix.sumRegion(1, 2, 2, 4); // return 12 (蓝色矩形框的元素总和)\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>m == matrix.length</code></li>\n\t<li><code>n == matrix[i].length</code></li>\n\t<li><code>1 <= m, n <= 200</code><meta charset=\"UTF-8\" /></li>\n\t<li><code>-10<sup>5</sup> <= matrix[i][j] <= 10<sup>5</sup></code></li>\n\t<li><code>0 <= row1 <= row2 < m</code></li>\n\t<li><code>0 <= col1 <= col2 < n</code></li>\n\t<li><meta charset=\"UTF-8\" />最多调用 <code>10<sup>4</sup></code> 次 <code>sumRegion</code> 方法</li>\n</ul>\n",
+  "title": "304. 二维区域和检索 - 矩阵不可变",
+  "relatedTags": [
+    "设计",
+    "数组",
+    "矩阵",
+    "前缀和"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "python"
+  ],
+  "uniqueID": "304",
+  "slug": "304-Range-Sum-Query-2D-Immutable"
+}

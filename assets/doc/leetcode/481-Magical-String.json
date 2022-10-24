@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">n</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> magicalString = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">n</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> count2=<span class=\"hljs-number\">0</span>,nxt=<span class=\"hljs-string\">'1'</span>\n  <span class=\"hljs-keyword\">let</span> S=<span class=\"hljs-string\">'1221121221221121122'</span>,\n     freqS=<span class=\"hljs-string\">'122112122122'</span>\n  <span class=\"hljs-keyword\">while</span>(S.length&lt;n){\n   <span class=\"hljs-keyword\">let</span> nxtFreq=S.substring(freqS.length)\n   freqS+=nxtFreq\n   <span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>\n   <span class=\"hljs-keyword\">while</span>(i&lt;nxtFreq.length){\n     S+=nxt.repeat(nxtFreq[i++])\n     nxt=nxt===<span class=\"hljs-string\">\"1\"</span>?<span class=\"hljs-string\">\"2\"</span>:<span class=\"hljs-string\">\"1\"</span>\n   }\n  }\n  <span class=\"hljs-keyword\">let</span> res=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;n;i++){\n    <span class=\"hljs-keyword\">if</span>(S[i]===<span class=\"hljs-string\">'1'</span>)res++\n  }\n  <span class=\"hljs-keyword\">return</span> res\n};\n</code></pre>\n"
+  ],
+  "querySlug": "magical-string",
+  "created_at": "2019-04-30",
+  "timeArr": [
+    2019,
+    3,
+    30,
+    9,
+    40,
+    27,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>由于<code>N</code>最大为<code>100000</code>，完全可以模拟整个字符串，相当于是暴力解吧。</p>\n<p>题目已经给出了一部分神奇数字<code>S=1221121221221121122</code>，它的频率是<code>freqS=122112122122</code>，下一个数字<code>nxt=1</code>，那么接下来该怎么计算？</p>\n<p>接下来需要找出<code>freqS</code>还可以延长的部分，也就是当前<code>S</code>与<code>freqS</code>相差的那一部分，即<code>1121122</code>，作为接下来的频率，继续延长<code>S</code>，直到<code>S.length&gt;=n</code>。</p>\n",
+  "content": "<p>神奇字符串 <code>s</code> 仅由 <code>'1'</code> 和 <code>'2'</code> 组成，并需要遵守下面的规则：</p>\n\n<ul>\n\t<li>神奇字符串 s 的神奇之处在于，串联字符串中 <code>'1'</code> 和 <code>'2'</code> 的连续出现次数可以生成该字符串。</li>\n</ul>\n\n<p><code>s</code> 的前几个元素是 <code>s = \"1221121221221121122……\"</code> 。如果将 <code>s</code> 中连续的若干 <code>1</code> 和 <code>2</code> 进行分组，可以得到 <code>\"1 22 11 2 1 22 1 22 11 2 11 22 ......\"</code> 。每组中 <code>1</code> 或者 <code>2</code> 的出现次数分别是 <code>\"1 2 2 1 1 2 1 2 2 1 2 2 ......\"</code> 。上面的出现次数正是 <code>s</code> 自身。</p>\n\n<p>给你一个整数 <code>n</code> ，返回在神奇字符串 <code>s</code> 的前 <code>n</code> 个数字中 <code>1</code> 的数目。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>n = 6\n<strong>输出：</strong>3\n<strong>解释：</strong>神奇字符串 s 的前 6 个元素是 “<code>122112</code>”，它包含三个 1，因此返回 3 。 \n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>n = 1\n<strong>输出：</strong>1\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 10<sup>5</sup></code></li>\n</ul>\n",
+  "title": "481. 神奇字符串",
+  "relatedTags": [
+    "双指针",
+    "字符串"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "481",
+  "slug": "481-Magical-String"
+}

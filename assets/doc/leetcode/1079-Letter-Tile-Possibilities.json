@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">tiles</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> numTilePossibilities = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">tiles</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> hash={}\n  hash[<span class=\"hljs-string\">''</span>]=<span class=\"hljs-literal\">true</span>\n  <span class=\"hljs-keyword\">let</span> res=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">let</span> used=<span class=\"hljs-built_in\">Array</span>(tiles.length).fill(<span class=\"hljs-literal\">false</span>)\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">backtrack</span>(<span class=\"hljs-params\">str,used</span>)</span>{\n    <span class=\"hljs-keyword\">if</span>(!hash[str]){\n      hash[str]=<span class=\"hljs-literal\">true</span>\n      res++\n      <span class=\"hljs-comment\">// console.log(str)</span>\n    }\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;tiles.length;i++){\n      <span class=\"hljs-keyword\">if</span>(used[i])<span class=\"hljs-keyword\">continue</span>\n      used[i]=<span class=\"hljs-literal\">true</span>\n      backtrack(str+tiles[i],used)\n      used[i]=<span class=\"hljs-literal\">false</span>\n    }\n  }\n  backtrack(<span class=\"hljs-string\">''</span>,used)\n  <span class=\"hljs-keyword\">return</span> res\n};\n</code></pre>\n"
+  ],
+  "querySlug": "letter-tile-possibilities",
+  "created_at": "2019-06-09",
+  "timeArr": [
+    2019,
+    5,
+    9,
+    10,
+    39,
+    14,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>你有一套活字字模&nbsp;<code>tiles</code>，其中每个字模上都刻有一个字母&nbsp;<code>tiles[i]</code>。返回你可以印出的非空字母序列的数目。</p>\n\n<p><strong>注意：</strong>本题中，每个活字字模只能使用一次。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre><strong>输入：</strong>&quot;AAB&quot;\n<strong>输出：</strong>8\n<strong>解释：</strong>可能的序列为 &quot;A&quot;, &quot;B&quot;, &quot;AA&quot;, &quot;AB&quot;, &quot;BA&quot;, &quot;AAB&quot;, &quot;ABA&quot;, &quot;BAA&quot;。\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre><strong>输入：</strong>&quot;AAABBC&quot;\n<strong>输出：</strong>188\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ol>\n\t<li><code>1 &lt;= tiles.length &lt;= 7</code></li>\n\t<li><code>tiles</code> 由大写英文字母组成</li>\n</ol>\n",
+  "title": "1079. 活字印刷",
+  "relatedTags": [
+    "字符串",
+    "回溯"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "1079",
+  "slug": "1079-Letter-Tile-Possibilities"
+}

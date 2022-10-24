@@ -1,0 +1,32 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[][]}</span> <span class=\"hljs-variable\">grid</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> maxAreaOfIsland = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">grid</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> m=grid.length,n=grid[<span class=\"hljs-number\">0</span>].length\n  <span class=\"hljs-keyword\">let</span> visited=<span class=\"hljs-built_in\">Array</span>(m).fill().map(<span class=\"hljs-function\"><span class=\"hljs-params\">()</span>=&gt;</span><span class=\"hljs-built_in\">Array</span>(n).fill(<span class=\"hljs-literal\">false</span>))\n  <span class=\"hljs-keyword\">let</span> moves=[[<span class=\"hljs-number\">-1</span>,<span class=\"hljs-number\">0</span>],[<span class=\"hljs-number\">1</span>,<span class=\"hljs-number\">0</span>],[<span class=\"hljs-number\">0</span>,<span class=\"hljs-number\">1</span>],[<span class=\"hljs-number\">0</span>,<span class=\"hljs-number\">-1</span>]]\n  <span class=\"hljs-keyword\">let</span> maxArea=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">let</span> area=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;m;i++){\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> j=<span class=\"hljs-number\">0</span>;j&lt;n;j++){\n      <span class=\"hljs-keyword\">if</span>(grid[i][j]===<span class=\"hljs-number\">0</span>)<span class=\"hljs-keyword\">continue</span>\n      <span class=\"hljs-keyword\">if</span>(visited[i][j])<span class=\"hljs-keyword\">continue</span>\n      area=<span class=\"hljs-number\">0</span>\n      dfs([i,j])\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> maxArea\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">dfs</span>(<span class=\"hljs-params\">[x,y]</span>)</span>{\n    area++\n    visited[x][y]=<span class=\"hljs-literal\">true</span>\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> [dx,dy] <span class=\"hljs-keyword\">of</span> moves){\n      <span class=\"hljs-keyword\">let</span> nx=x+dx,ny=y+dy\n      <span class=\"hljs-keyword\">if</span>(nx&lt;<span class=\"hljs-number\">0</span> || ny&lt;<span class=\"hljs-number\">0</span> || nx&gt;=m || ny&gt;=n)<span class=\"hljs-keyword\">continue</span>\n      <span class=\"hljs-keyword\">if</span>(visited[nx][ny])<span class=\"hljs-keyword\">continue</span>\n      <span class=\"hljs-keyword\">if</span>(grid[nx][ny]!==<span class=\"hljs-number\">1</span>)<span class=\"hljs-keyword\">continue</span>\n      dfs([nx,ny])\n    }\n    maxArea=<span class=\"hljs-built_in\">Math</span>.max(area,maxArea)\n  }\n};\n</code></pre>\n"
+  ],
+  "querySlug": "max-area-of-island",
+  "created_at": "2020-03-15",
+  "timeArr": [
+    2020,
+    2,
+    15,
+    12,
+    17,
+    34,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给定一个包含了一些 <code>0</code> 和 <code>1</code> 的非空二维数组&nbsp;<code>grid</code> 。</p>\n\n<p>一个&nbsp;<strong>岛屿</strong>&nbsp;是由一些相邻的&nbsp;<code>1</code>&nbsp;(代表土地) 构成的组合，这里的「相邻」要求两个 <code>1</code> 必须在水平或者竖直方向上相邻。你可以假设&nbsp;<code>grid</code> 的四个边缘都被 <code>0</code>（代表水）包围着。</p>\n\n<p>找到给定的二维数组中最大的岛屿面积。(如果没有岛屿，则返回面积为 <code>0</code> 。)</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 1:</strong></p>\n\n<pre>[[0,0,1,0,0,0,0,1,0,0,0,0,0],\n [0,0,0,0,0,0,0,1,1,1,0,0,0],\n [0,1,1,0,1,0,0,0,0,0,0,0,0],\n [0,1,0,0,1,1,0,0,<strong>1</strong>,0,<strong>1</strong>,0,0],\n [0,1,0,0,1,1,0,0,<strong>1</strong>,<strong>1</strong>,<strong>1</strong>,0,0],\n [0,0,0,0,0,0,0,0,0,0,<strong>1</strong>,0,0],\n [0,0,0,0,0,0,0,1,1,1,0,0,0],\n [0,0,0,0,0,0,0,1,1,0,0,0,0]]\n</pre>\n\n<p>对于上面这个给定矩阵应返回&nbsp;<code>6</code>。注意答案不应该是 <code>11</code> ，因为岛屿只能包含水平或垂直的四个方向的 <code>1</code> 。</p>\n\n<p><strong>示例 2:</strong></p>\n\n<pre>[[0,0,0,0,0,0,0,0]]</pre>\n\n<p>对于上面这个给定的矩阵, 返回&nbsp;<code>0</code>。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>注意:&nbsp;</strong>给定的矩阵<code>grid</code>&nbsp;的长度和宽度都不超过 50。</p>\n",
+  "title": "695. 岛屿的最大面积",
+  "relatedTags": [
+    "深度优先搜索",
+    "广度优先搜索",
+    "并查集",
+    "数组",
+    "矩阵"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "695",
+  "slug": "695-Max-Area-of-Island"
+}

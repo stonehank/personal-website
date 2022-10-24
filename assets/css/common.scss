@@ -1,0 +1,104 @@
+.pw-theme-light, .pw-theme-dark{
+  overflow:auto;
+}
+html{
+  overflow:auto;
+  *{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+  }
+}
+body{
+  background-color:var(--background-color);
+  color:var(--text-primary)
+}
+
+a {
+  text-decoration: none;
+  color:var(--text-primary);
+  &:link {color:var(--text-primary)}
+  &:visited {color:var(--text-primary)}
+  &:hover {color:var(--theme-primary)}
+  &:active {color:var(--text-primary)}
+}
+
+.v-application{
+
+}
+
+.w-100{
+  width:100% !important;
+}
+.h-100{
+  height:100% !important;
+}
+
+.text-primary{
+  color:var(--text-primary)
+}
+.text-secondary{
+  color:var(--text-secondary)
+}
+.text-blur{
+  color:var(--text-blur)
+}
+.text-muted{
+  color:var(--text-muted)
+}
+
+.text-success{
+  color:var(--success-color)
+}
+.text-warning{
+  color:var(--warning-color)
+}
+.text-error{
+  color:var(--error-color)
+}
+.text-info{
+  color:var(--info-color)
+}
+.text-xxl{
+  font-size:2rem !important;
+}
+.text-xl{
+  font-size:1.5rem !important;
+}
+.text-lg{
+  font-size:1.25rem !important;
+}
+.text-mid{
+  font-size:1rem !important;
+}
+.text-sm{
+  font-size:0.85rem !important;
+}
+.text-xs{
+  font-size:0.7rem !important;
+}
+.position-relative{
+  position:relative !important;
+}
+
+.position-absolute{
+  position:absolute !important;
+}
+
+.position-fixed{
+  position:fixed !important;
+}
+
+.ellipse{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  word-break: break-all;
+  white-space: nowrap;
+}
+
+.ps{
+  height:400px;
+}
+
+@import "./overwrite/index";
+@import "./accordion";

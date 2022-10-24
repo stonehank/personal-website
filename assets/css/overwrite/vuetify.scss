@@ -1,0 +1,24 @@
+.v-input--switch__track.theme--dark{
+  color: var(--text-secondary) !important;
+  caret-color: var(--text-secondary) !important;
+  opacity: 1 !important;
+  z-index: 0;
+}
+.v-list-item__icon{
+  justify-content: center !important;
+}
+.theme--light.v-application .markdown-body code{
+  background-color:transparent !important;
+}
+@media (max-width:960px){
+
+  .v-application--is-ltr .v-data-footer__pagination {
+    margin: 0 12px 0 12px !important;
+  }
+  .v-data-footer{
+    flex-flow:row nowrap !important;
+  }
+}
+.v-application .theme--dark.v-icon{
+  color:var(--text-secondary)
+}

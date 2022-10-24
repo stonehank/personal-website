@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">time</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">m</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> minTime = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">time, m</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> sum=time.reduce(<span class=\"hljs-function\">(<span class=\"hljs-params\">a,b</span>)=&gt;</span>a+b)\n  <span class=\"hljs-keyword\">let</span> r=<span class=\"hljs-built_in\">Math</span>.ceil(sum/m),l=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">while</span>(l&lt;r){\n    <span class=\"hljs-keyword\">let</span> aux=<span class=\"hljs-built_in\">Array</span>(m).fill(<span class=\"hljs-number\">0</span>)\n    <span class=\"hljs-keyword\">let</span> biggest=<span class=\"hljs-built_in\">Array</span>(m).fill(-<span class=\"hljs-literal\">Infinity</span>)\n    <span class=\"hljs-keyword\">let</span> used=<span class=\"hljs-built_in\">Array</span>(m).fill(<span class=\"hljs-literal\">false</span>)\n    <span class=\"hljs-keyword\">let</span> idx=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">let</span> mid=<span class=\"hljs-built_in\">Math</span>.floor((l+r)/<span class=\"hljs-number\">2</span>)\n    <span class=\"hljs-keyword\">let</span> needLess=<span class=\"hljs-literal\">true</span>\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;time.length;i++){\n      <span class=\"hljs-keyword\">let</span> n=time[i]\n      <span class=\"hljs-comment\">// console.log(aux,used,n,mid)</span>\n      <span class=\"hljs-keyword\">if</span>(aux[idx]+n&lt;=mid){\n        aux[idx]+=n\n        <span class=\"hljs-keyword\">if</span>(!used[idx])biggest[idx]=<span class=\"hljs-built_in\">Math</span>.max(biggest[idx],n)\n      }<span class=\"hljs-keyword\">else</span>{\n        <span class=\"hljs-keyword\">if</span>(!used[idx]){\n          biggest[idx]=<span class=\"hljs-built_in\">Math</span>.max(biggest[idx],n)\n          used[idx]=<span class=\"hljs-literal\">true</span>\n          <span class=\"hljs-keyword\">if</span>(biggest[idx]===n){\n            <span class=\"hljs-keyword\">continue</span>\n          }<span class=\"hljs-keyword\">else</span>{\n            aux[idx]-=biggest[idx]\n            i--\n          }\n          \n        }<span class=\"hljs-keyword\">else</span>{\n          <span class=\"hljs-keyword\">if</span>(idx&lt;m<span class=\"hljs-number\">-1</span>){\n            idx++\n            i--\n          }<span class=\"hljs-keyword\">else</span>{\n             needLess=<span class=\"hljs-literal\">false</span>\n            <span class=\"hljs-keyword\">break</span>\n          }          \n        }\n      }\n    }\n    <span class=\"hljs-comment\">// console.log(mid,needLess)</span>\n    <span class=\"hljs-keyword\">if</span>(needLess)r=mid\n    <span class=\"hljs-keyword\">else</span> l=mid+<span class=\"hljs-number\">1</span>\n  }\n  <span class=\"hljs-keyword\">return</span> l\n};\n</code></pre>\n"
+  ],
+  "querySlug": "xiao-zhang-shua-ti-ji-hua",
+  "created_at": "2021-05-29",
+  "timeArr": [
+    2021,
+    4,
+    29,
+    22,
+    22,
+    4,
+    643
+  ],
+  "hasThinking": false,
+  "content": "<p>为了提高自己的代码能力，小张制定了 <code>LeetCode</code> 刷题计划，他选中了 <code>LeetCode</code> 题库中的 <code>n</code> 道题，编号从 <code>0</code> 到 <code>n-1</code>，并计划在 <code>m</code> 天内<strong>按照题目编号顺序</strong>刷完所有的题目（注意，小张不能用多天完成同一题）。</p>\n\n<p>在小张刷题计划中，小张需要用 <code>time[i]</code> 的时间完成编号 <code>i</code> 的题目。此外，小张还可以使用场外求助功能，通过询问他的好朋友小杨题目的解法，可以省去该题的做题时间。为了防止&ldquo;小张刷题计划&rdquo;变成&ldquo;小杨刷题计划&rdquo;，小张每天最多使用一次求助。</p>\n\n<p>我们定义 <code>m</code> 天中做题时间最多的一天耗时为 <code>T</code>（小杨完成的题目不计入做题总时间）。请你帮小张求出最小的 <code>T</code>是多少。</p>\n\n<p><strong>示例 1：</strong></p>\n\n<blockquote>\n<p>输入：<code>time = [1,2,3,3], m = 2</code></p>\n\n<p>输出：<code>3</code></p>\n\n<p>解释：第一天小张完成前三题，其中第三题找小杨帮忙；第二天完成第四题，并且找小杨帮忙。这样做题时间最多的一天花费了 3 的时间，并且这个值是最小的。</p>\n</blockquote>\n\n<p><strong>示例 2：</strong></p>\n\n<blockquote>\n<p>输入：<code>time = [999,999,999], m = 4</code></p>\n\n<p>输出：<code>0</code></p>\n\n<p>解释：在前三天中，小张每天求助小杨一次，这样他可以在三天内完成所有的题目并不花任何时间。</p>\n</blockquote>\n\n<p>&nbsp;</p>\n\n<p><strong>限制：</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= time.length &lt;= 10^5</code></li>\n\t<li><code>1 &lt;= time[i] &lt;= 10000</code></li>\n\t<li><code>1 &lt;= m &lt;= 1000</code></li>\n</ul>\n",
+  "title": "LCP 12. 小张刷题计划",
+  "relatedTags": [
+    "数组",
+    "二分查找"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "LCP 12",
+  "slug": "LCP-12-xiao-zhang-shua-ti-ji-hua"
+}

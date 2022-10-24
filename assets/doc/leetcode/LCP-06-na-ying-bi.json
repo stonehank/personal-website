@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">coins</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> minCount = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">coins</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> res=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> n <span class=\"hljs-keyword\">of</span> coins){\n    res+=<span class=\"hljs-built_in\">Math</span>.ceil(n/<span class=\"hljs-number\">2</span>)\n  }\n  <span class=\"hljs-keyword\">return</span> res\n};\n</code></pre>\n"
+  ],
+  "querySlug": "na-ying-bi",
+  "created_at": "2021-06-22",
+  "timeArr": [
+    2021,
+    5,
+    22,
+    16,
+    0,
+    11,
+    124
+  ],
+  "hasThinking": false,
+  "content": "<p>桌上有 <code>n</code> 堆力扣币，每堆的数量保存在数组 <code>coins</code> 中。我们每次可以选择任意一堆，拿走其中的一枚或者两枚，求拿完所有力扣币的最少次数。</p>\n\n<p><strong>示例 1：</strong></p>\n\n<blockquote>\n<p>输入：<code>[4,2,1]</code></p>\n\n<p>输出：<code>4</code></p>\n\n<p>解释：第一堆力扣币最少需要拿 2 次，第二堆最少需要拿 1 次，第三堆最少需要拿 1 次，总共 4 次即可拿完。</p>\n</blockquote>\n\n<p><strong>示例 2：</strong></p>\n\n<blockquote>\n<p>输入：<code>[2,3,10]</code></p>\n\n<p>输出：<code>8</code></p>\n</blockquote>\n\n<p><strong>限制：</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= n &lt;= 4</code></li>\n\t<li><code>1 &lt;= coins[i] &lt;= 10</code></li>\n</ul>\n",
+  "title": "LCP 06. 拿硬币",
+  "relatedTags": [
+    "数组",
+    "数学"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "LCP 06",
+  "slug": "LCP-06-na-ying-bi"
+}

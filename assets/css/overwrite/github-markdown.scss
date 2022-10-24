@@ -1,0 +1,35 @@
+.markdown-body {
+  color:var(--text-primary) !important;
+}
+
+.markdown-body blockquote{
+  padding: 5px 16px !important;
+  border-left: 5px solid var(--border-color) !important;
+  font-weight: 400 !important;
+  font-style: italic !important;
+}
+.markdown-body hr{
+  margin: 36px 20% !important;
+  border-top: 2px solid var(--border-color) !important;
+}
+.markdown-body code{
+  color:#c7254e !important;
+  background:var(--foreground-color) !important;
+}
+
+.markdown-body pre code{
+  color:inherit !important;
+}
+
+.markdown-body .highlight pre, .markdown-body pre{
+  background:var(--foreground-color) !important;
+}
+
+.summary-body{
+  *{
+    opacity:0.8;
+  }
+  img{
+    max-width:400px !important;
+  }
+}

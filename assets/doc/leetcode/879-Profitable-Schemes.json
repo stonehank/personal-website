@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">G</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">P</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">group</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">profit</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> profitableSchemes = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">G, P, group, profit</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> dp=<span class=\"hljs-built_in\">Array</span>(P+<span class=\"hljs-number\">1</span>).fill().map(<span class=\"hljs-function\"><span class=\"hljs-params\">()</span>=&gt;</span><span class=\"hljs-built_in\">Array</span>(G+<span class=\"hljs-number\">1</span>).fill(<span class=\"hljs-number\">0</span>))\n  <span class=\"hljs-keyword\">let</span> MOD=<span class=\"hljs-number\">1e9</span>+<span class=\"hljs-number\">7</span>\n  dp[<span class=\"hljs-number\">0</span>][<span class=\"hljs-number\">0</span>]=<span class=\"hljs-number\">1</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;group.length;i++){\n    <span class=\"hljs-keyword\">let</span> curG=group[i],curP=profit[i]\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> j=P;j&gt;=<span class=\"hljs-number\">0</span>;j--){\n      <span class=\"hljs-keyword\">let</span> maxP=<span class=\"hljs-built_in\">Math</span>.min(P,j+curP)\n      <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> k=G-curG;k&gt;=<span class=\"hljs-number\">0</span>;k--){\n        dp[maxP][k+curG]=(dp[maxP][k+curG] + dp[j][k]) % MOD\n      }\n    }\n  }\n  <span class=\"hljs-keyword\">let</span> ans=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;dp[P].length;i++)ans=(ans+dp[P][i]) % MOD\n  <span class=\"hljs-keyword\">return</span> ans\n};\n</code></pre>\n"
+  ],
+  "querySlug": "profitable-schemes",
+  "created_at": "2019-03-09",
+  "timeArr": [
+    2019,
+    2,
+    9,
+    14,
+    12,
+    38,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>集团里有 <code>n</code> 名员工，他们可以完成各种各样的工作创造利润。</p>\n\n<p>第 <code>i</code> 种工作会产生 <code>profit[i]</code> 的利润，它要求 <code>group[i]</code> 名成员共同参与。如果成员参与了其中一项工作，就不能参与另一项工作。</p>\n\n<p>工作的任何至少产生 <code>minProfit</code> 利润的子集称为 <strong>盈利计划</strong> 。并且工作的成员总数最多为 <code>n</code> 。</p>\n\n<p>有多少种计划可以选择？因为答案很大，所以<strong> 返回结果模 </strong><code>10^9 + 7</code><strong> 的值</strong>。</p>\n\n<div class=\"original__bRMd\">\n<div>\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>n = 5, minProfit = 3, group = [2,2], profit = [2,3]\n<strong>输出：</strong>2\n<strong>解释：</strong>至少产生 3 的利润，该集团可以完成工作 0 和工作 1 ，或仅完成工作 1 。\n总的来说，有两种计划。</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>n = 10, minProfit = 5, group = [2,3,5], profit = [6,7,8]\n<strong>输出：</strong>7\n<strong>解释：</strong>至少产生 5 的利润，只要完成其中一种工作就行，所以该集团可以完成任何工作。\n有 7 种可能的计划：(0)，(1)，(2)，(0,1)，(0,2)，(1,2)，以及 (0,1,2) 。</pre>\n</div>\n</div>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= n <= 100</code></li>\n\t<li><code>0 <= minProfit <= 100</code></li>\n\t<li><code>1 <= group.length <= 100</code></li>\n\t<li><code>1 <= group[i] <= 100</code></li>\n\t<li><code>profit.length == group.length</code></li>\n\t<li><code>0 <= profit[i] <= 100</code></li>\n</ul>\n",
+  "title": "879. 盈利计划",
+  "relatedTags": [
+    "数组",
+    "动态规划"
+  ],
+  "difficult": "Hard",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "879",
+  "slug": "879-Profitable-Schemes"
+}

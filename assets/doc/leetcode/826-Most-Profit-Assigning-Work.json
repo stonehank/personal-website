@@ -1,0 +1,33 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">difficulty</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">profit</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">worker</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> maxProfitAssignment = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">difficulty, profit, worker</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> difficultSort=[]\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;difficulty.length;i++){\n    difficultSort[i]=[difficulty[i],i]\n  }\n  difficultSort.sort(<span class=\"hljs-function\">(<span class=\"hljs-params\">a,b</span>)=&gt;</span>a[<span class=\"hljs-number\">0</span>]-b[<span class=\"hljs-number\">0</span>])\n  <span class=\"hljs-keyword\">let</span> maxProfit=[profit[difficultSort[<span class=\"hljs-number\">0</span>][<span class=\"hljs-number\">1</span>]]]\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">1</span>;i&lt;difficultSort.length;i++){\n    maxProfit[i]=<span class=\"hljs-built_in\">Math</span>.max(maxProfit[i<span class=\"hljs-number\">-1</span>],profit[difficultSort[i][<span class=\"hljs-number\">1</span>]])\n  }\n  <span class=\"hljs-comment\">// console.log(maxProfit,difficultSort)</span>\n  <span class=\"hljs-keyword\">let</span> profitSum=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;worker.length;i++){\n    <span class=\"hljs-keyword\">if</span>(worker[i]&lt;difficultSort[<span class=\"hljs-number\">0</span>][<span class=\"hljs-number\">0</span>])<span class=\"hljs-keyword\">continue</span>\n    <span class=\"hljs-keyword\">let</span> idx=bsFront(difficultSort,worker[i])\n    <span class=\"hljs-keyword\">let</span> curProfit=maxProfit[idx]\n    <span class=\"hljs-comment\">// console.log(curProfit,i,idx)</span>\n    profitSum+=curProfit\n  }\n  <span class=\"hljs-keyword\">return</span> profitSum\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">bsFront</span>(<span class=\"hljs-params\">arr,n</span>)</span>{\n    <span class=\"hljs-keyword\">let</span> lo=<span class=\"hljs-number\">0</span>,hi=arr.length<span class=\"hljs-number\">-1</span>\n    <span class=\"hljs-keyword\">while</span>(lo&lt;hi){\n      <span class=\"hljs-keyword\">let</span> mid=<span class=\"hljs-built_in\">Math</span>.ceil((lo+hi)/<span class=\"hljs-number\">2</span>)\n      <span class=\"hljs-keyword\">if</span>(arr[mid][<span class=\"hljs-number\">0</span>]&gt;n)hi=mid<span class=\"hljs-number\">-1</span>\n      <span class=\"hljs-keyword\">else</span> lo=mid\n    }\n    <span class=\"hljs-keyword\">return</span> lo\n  }\n};\n</code></pre>\n"
+  ],
+  "querySlug": "most-profit-assigning-work",
+  "created_at": "2019-04-12",
+  "timeArr": [
+    2019,
+    3,
+    12,
+    1,
+    14,
+    56,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>根据题目意思，就是要找出每一个<code>worker[i]</code>所能获得的最大收益，但是最大难度并不一定是最大收益，\n因此我们需要构建一个当前难度的最大收益列表<code>maxProfit</code>。</p>\n<p>但是当前<code>difficulty</code>并没有说是有序的，因此需要<code>difficultSort</code>，保存之前的索引并且排序。</p>\n<p>当得到一个有序的<code>difficulty</code>后，便可以构建<code>maxProfit</code>，当前难度的最大收益为<code>Math.max(当前难度的收益，小于这个难度的最大收益)</code>。</p>\n<p>当<code>maxProfit</code>构建完成，基本就结束了，只需要对每一个<code>worker[i]</code>，找出他所能接受的最大难度的最大收益(使用二分提升效率)。</p>\n",
+  "content": "<p>有一些工作：<code>difficulty[i]</code>&nbsp;表示第 <code>i</code> 个工作的难度，<code>profit[i]</code> 表示第 <code>i</code> 个工作的收益。</p>\n\n<p>现在我们有一些工人。<code>worker[i]</code> 是第 <code>i</code> 个工人的能力，即该工人只能完成难度小于等于 <code>worker[i]</code> 的工作。</p>\n\n<p>每一个工人都最多只能安排一个工作，但是一个工作可以完成多次。</p>\n\n<p>举个例子，如果 3 个工人都尝试完成一份报酬为 1 的同样工作，那么总收益为 $3。如果一个工人不能完成任何工作，他的收益为 $0 。</p>\n\n<p>我们能得到的最大收益是多少？</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例：</strong></p>\n\n<pre><strong>输入: </strong>difficulty = [2,4,6,8,10], profit = [10,20,30,40,50], worker = [4,5,6,7]\n<strong>输出: </strong>100 \n<strong>解释: </strong>工人被分配的工作难度是 [4,4,6,6] ，分别获得 [20,20,30,30] 的收益。</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= difficulty.length = profit.length &lt;= 10000</code></li>\n\t<li><code>1 &lt;= worker.length &lt;= 10000</code></li>\n\t<li><code>difficulty[i], profit[i], worker[i]</code>&nbsp; 的范围是&nbsp;<code>[1, 10^5]</code></li>\n</ul>\n",
+  "title": "826. 安排工作以达到最大收益",
+  "relatedTags": [
+    "贪心",
+    "数组",
+    "双指针",
+    "二分查找",
+    "排序"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "826",
+  "slug": "826-Most-Profit-Assigning-Work"
+}

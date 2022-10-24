@@ -1,0 +1,22 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">n</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> numSquares = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">n</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> dp=[<span class=\"hljs-number\">0</span>,<span class=\"hljs-number\">1</span>,<span class=\"hljs-number\">2</span>,<span class=\"hljs-number\">3</span>],sqrt=<span class=\"hljs-number\">2</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">4</span>;i&lt;=n;i++){\n    <span class=\"hljs-keyword\">if</span>(i===sqrt*sqrt){\n      dp[i]=<span class=\"hljs-number\">1</span>\n      sqrt++\n    }<span class=\"hljs-keyword\">else</span>{\n      <span class=\"hljs-keyword\">let</span> min=<span class=\"hljs-literal\">Infinity</span>\n      <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> j=<span class=\"hljs-number\">1</span>;j&lt;sqrt;j++){\n        <span class=\"hljs-keyword\">if</span>(dp[i-j*j]&lt;min)min=dp[i-j*j]\n      }\n      dp[i]=min+<span class=\"hljs-number\">1</span>\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> dp[n]\n};\n</code></pre>\n",
+    "<pre class=\"hljs\"><code><span class=\"hljs-keyword\">import</span> math\n<span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">Solution</span><span class=\"hljs-params\">(object)</span>:</span>\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">numSquares</span><span class=\"hljs-params\">(self, n)</span>:</span>\n        <span class=\"hljs-string\">\"\"\"\n        :type n: int\n        :rtype: int\n        \"\"\"</span>\n        dp=[float(<span class=\"hljs-string\">'inf'</span>)]*(n+<span class=\"hljs-number\">1</span>)\n        dp[<span class=\"hljs-number\">0</span>]=<span class=\"hljs-number\">0</span>\n        sqrt=<span class=\"hljs-number\">1</span>\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> range(<span class=\"hljs-number\">1</span>,n+<span class=\"hljs-number\">1</span>):\n          <span class=\"hljs-keyword\">if</span> sqrt**<span class=\"hljs-number\">2</span>==i:\n            dp[i]=<span class=\"hljs-number\">1</span>\n            sqrt+=<span class=\"hljs-number\">1</span>\n          <span class=\"hljs-keyword\">else</span>:\n            <span class=\"hljs-keyword\">for</span> j <span class=\"hljs-keyword\">in</span> range(<span class=\"hljs-number\">1</span>,sqrt):\n              dp[i]=min(dp[i],<span class=\"hljs-number\">1</span>+dp[i-j**<span class=\"hljs-number\">2</span>])\n              \n        <span class=\"hljs-keyword\">return</span> dp[n]\n</code></pre>\n"
+  ],
+  "querySlug": "perfect-squares",
+  "hasThinking": false,
+  "content": "<p>给定正整数 <em>n</em>，找到若干个完全平方数（比如 <code>1, 4, 9, 16, ...</code>）使得它们的和等于<em> n</em>。你需要让组成和的完全平方数的个数最少。</p>\n\n<p>给你一个整数 <code>n</code> ，返回和为 <code>n</code> 的完全平方数的 <strong>最少数量</strong> 。</p>\n\n<p><strong>完全平方数</strong> 是一个整数，其值等于另一个整数的平方；换句话说，其值等于一个整数自乘的积。例如，<code>1</code>、<code>4</code>、<code>9</code> 和 <code>16</code> 都是完全平方数，而 <code>3</code> 和 <code>11</code> 不是。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>n = <code>12</code>\n<strong>输出：</strong>3 \n<strong>解释：</strong><code>12 = 4 + 4 + 4</code></pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>n = <code>13</code>\n<strong>输出：</strong>2\n<strong>解释：</strong><code>13 = 4 + 9</code></pre>\n \n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= n <= 10<sup>4</sup></code></li>\n</ul>\n",
+  "title": "279. 完全平方数",
+  "relatedTags": [
+    "广度优先搜索",
+    "数学",
+    "动态规划"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript",
+    "python"
+  ],
+  "uniqueID": "279",
+  "slug": "279-Perfect-Squares"
+}

@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">n</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> findNthDigit = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">n</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> counts=[]\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">1</span>;i&lt;<span class=\"hljs-number\">32</span>;i++){\n    counts[i]=<span class=\"hljs-built_in\">Math</span>.pow(<span class=\"hljs-number\">10</span>,i<span class=\"hljs-number\">-1</span>)*<span class=\"hljs-number\">9</span>*i\n  }\n  <span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">1</span>,sum=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span>(;i&lt;<span class=\"hljs-number\">32</span>;i++){\n    <span class=\"hljs-keyword\">if</span>(sum+counts[i]&gt;n){\n      <span class=\"hljs-keyword\">let</span> res=<span class=\"hljs-built_in\">Math</span>.pow(<span class=\"hljs-number\">10</span>,i<span class=\"hljs-number\">-1</span>)<span class=\"hljs-number\">-1</span>\n      <span class=\"hljs-keyword\">let</span> rest=n-sum\n      <span class=\"hljs-keyword\">let</span> curNum=res+<span class=\"hljs-built_in\">Math</span>.floor(rest/i)\n      <span class=\"hljs-keyword\">let</span> m=rest % i\n      <span class=\"hljs-keyword\">if</span>(m===<span class=\"hljs-number\">0</span>){\n        <span class=\"hljs-keyword\">let</span> f=curNum+<span class=\"hljs-string\">''</span>\n        <span class=\"hljs-keyword\">return</span> +f[f.length<span class=\"hljs-number\">-1</span>]\n      }<span class=\"hljs-keyword\">else</span>{\n        <span class=\"hljs-keyword\">let</span> f=curNum+<span class=\"hljs-number\">1</span>+<span class=\"hljs-string\">''</span>\n        <span class=\"hljs-keyword\">return</span> +f[m<span class=\"hljs-number\">-1</span>]\n      }    \n    }\n    sum+=counts[i]\n  }\n};\n</code></pre>\n"
+  ],
+  "querySlug": "nth-digit",
+  "created_at": "2019-03-31",
+  "timeArr": [
+    2019,
+    2,
+    31,
+    18,
+    12,
+    54,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>在无限的整数序列 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ...中找到第 <code>n</code><em> </em>位数字。</p>\n\n<p> </p>\n\n<p><strong>注意：</strong><code>n</code><em> </em>是正数且在 32 位整数范围内（<code>n < 2<sup>31</sup></code>）。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>3\n<strong>输出：</strong>3\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>11\n<strong>输出：</strong>0\n<strong>解释：</strong>第 11 位数字在序列 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ... 里是 <strong>0 </strong>，它是 10 的一部分。\n</pre>\n",
+  "title": "400. 第 N 位数字",
+  "relatedTags": [
+    "数学",
+    "二分查找"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "400",
+  "slug": "400-Nth-Digit"
+}

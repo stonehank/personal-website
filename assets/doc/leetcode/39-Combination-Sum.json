@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">candidates</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">target</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number[][]}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> combinationSum = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">candidates, target</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> res=[]\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">bt</span>(<span class=\"hljs-params\">start,arr,sum</span>)</span>{\n    <span class=\"hljs-keyword\">if</span>(sum&gt;target)<span class=\"hljs-keyword\">return</span>\n    <span class=\"hljs-keyword\">if</span>(sum===target)<span class=\"hljs-keyword\">return</span> res.push(arr.slice())\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=start;i&lt;candidates.length;i++){\n      <span class=\"hljs-keyword\">if</span>(i&gt;start &amp;&amp; candidates[i]===candidates[i<span class=\"hljs-number\">-1</span>])<span class=\"hljs-keyword\">continue</span>\n      arr.push(candidates[i])\n      bt(i,arr,sum+candidates[i])\n      arr.pop()\n    }\n  }\n  bt(<span class=\"hljs-number\">0</span>,[],<span class=\"hljs-number\">0</span>)\n  <span class=\"hljs-keyword\">return</span> res\n};\n</code></pre>\n"
+  ],
+  "querySlug": "combination-sum",
+  "created_at": "2019-03-11",
+  "timeArr": [
+    2019,
+    2,
+    11,
+    16,
+    16,
+    39,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p><code>回溯</code>，每一次回溯，遍历当前数组尝试每一个值。</p>\n<p>由于要求不包含重复组合，不使用<code>hash</code>的话，就对每一次回溯都只遍历上一次遍历最后的索引<code>i</code>之后的值；</p>\n<p>但题目提示每个值都能重复使用无限次，因此每次遍历都从上一个<code>i</code>开始，既可以保证没有重复的组合，也确保每个值都尽可能的多用。</p>\n",
+  "content": "<p>给定一个<strong>无重复元素</strong>的正整数数组 <code>candidates</code> 和一个正整数 <code>target</code> ，找出 <code>candidates</code> 中所有可以使数字和为目标数 <code>target</code> 的唯一组合。</p>\n\n<p><code>candidates</code> 中的数字可以无限制重复被选取。如果至少一个所选数字数量不同，则两种组合是唯一的。 </p>\n\n<p>对于给定的输入，保证和为 <code>target</code> 的唯一组合数少于 <code>150</code> 个。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入: </strong>candidates = <code>[2,3,6,7], </code>target = <code>7</code>\n<strong>输出: </strong>[[7],[2,2,3]]\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入: </strong>candidates = [2,3,5]<code>, </code>target = 8\n<strong>输出: </strong>[[2,2,2,2],[2,3,3],[3,5]]</pre>\n\n<p><strong>示例 3：</strong></p>\n\n<pre>\n<strong>输入: </strong>candidates = <code>[2], </code>target = 1\n<strong>输出: </strong>[]\n</pre>\n\n<p><strong>示例 4：</strong></p>\n\n<pre>\n<strong>输入: </strong>candidates = <code>[1], </code>target = <code>1</code>\n<strong>输出: </strong>[[1]]\n</pre>\n\n<p><strong>示例 5：</strong></p>\n\n<pre>\n<strong>输入: </strong>candidates = <code>[1], </code>target = <code>2</code>\n<strong>输出: </strong>[[1,1]]\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= candidates.length <= 30</code></li>\n\t<li><code>1 <= candidates[i] <= 200</code></li>\n\t<li><code>candidate</code> 中的每个元素都是独一无二的。</li>\n\t<li><code>1 <= target <= 500</code></li>\n</ul>\n",
+  "title": "39. 组合总和",
+  "relatedTags": [
+    "数组",
+    "回溯"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "39",
+  "slug": "39-Combination-Sum"
+}

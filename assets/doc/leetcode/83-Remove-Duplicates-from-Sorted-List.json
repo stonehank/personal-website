@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * Definition for singly-linked list.\n * function ListNode(val, next) {\n *     this.val = (val===undefined ? 0 : val)\n *     this.next = (next===undefined ? null : next)\n * }\n */</span>\n<span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{ListNode}</span> <span class=\"hljs-variable\">head</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{ListNode}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> deleteDuplicates = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">head</span>) </span>{\n    <span class=\"hljs-keyword\">let</span> used={}\n    <span class=\"hljs-keyword\">let</span> root=head\n    <span class=\"hljs-keyword\">let</span> lastRoot=<span class=\"hljs-literal\">null</span>\n    <span class=\"hljs-keyword\">while</span>(root){\n        <span class=\"hljs-keyword\">let</span> val=root.val\n        <span class=\"hljs-keyword\">if</span>(used[val]){\n            lastRoot.next=root.next\n        }<span class=\"hljs-keyword\">else</span>{\n            lastRoot=root\n            used[val]=<span class=\"hljs-literal\">true</span>\n        }\n\n        root=root.next\n    }\n    <span class=\"hljs-keyword\">return</span> head\n\n};\n</code></pre>\n"
+  ],
+  "querySlug": "remove-duplicates-from-sorted-list",
+  "created_at": "2021-03-26",
+  "timeArr": [
+    2021,
+    2,
+    26,
+    7,
+    5,
+    6,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>只要每次遍历节点时检查下一个节点的<code>val</code>和当前节点的<code>val</code>是否相等，相等则将<code>node.next</code>连接到下一个节点的<code>next</code>上(架空下一个节点)。</p>\n",
+  "content": "<p>存在一个按升序排列的链表，给你这个链表的头节点 <code>head</code> ，请你删除所有重复的元素，使每个元素 <strong>只出现一次</strong> 。</p>\n\n<p>返回同样按升序排列的结果链表。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2021/01/04/list1.jpg\" style=\"width: 302px; height: 242px;\" />\n<pre>\n<strong>输入：</strong>head = [1,1,2]\n<strong>输出：</strong>[1,2]\n</pre>\n\n<p><strong>示例 2：</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2021/01/04/list2.jpg\" style=\"width: 542px; height: 222px;\" />\n<pre>\n<strong>输入：</strong>head = [1,1,2,3,3]\n<strong>输出：</strong>[1,2,3]\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li>链表中节点数目在范围 <code>[0, 300]</code> 内</li>\n\t<li><code>-100 <= Node.val <= 100</code></li>\n\t<li>题目数据保证链表已经按升序排列</li>\n</ul>\n",
+  "title": "83. 删除排序链表中的重复元素",
+  "relatedTags": [
+    "链表"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "83",
+  "slug": "83-Remove-Duplicates-from-Sorted-List"
+}

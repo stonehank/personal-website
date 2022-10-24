@@ -1,0 +1,10 @@
+.vm--modal{
+  background:var(--foreground-color) !important;
+}
+
+.transparent{
+  .vm--modal{
+    background:transparent !important;
+    box-shadow: none !important;
+  }
+}

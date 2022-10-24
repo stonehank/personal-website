@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">A</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">B</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{string[]}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> uncommonFromSentences = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">A, B</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> hash={}\n  <span class=\"hljs-keyword\">let</span> arrA=A.split(<span class=\"hljs-string\">' '</span>),arrB=B.split(<span class=\"hljs-string\">' '</span>)\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;arrA.length;i++){\n    <span class=\"hljs-keyword\">if</span>(hash[arrA[i]]==<span class=\"hljs-literal\">null</span>)hash[arrA[i]]=<span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">else</span> hash[arrA[i]]++\n  }\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;arrB.length;i++){\n    <span class=\"hljs-keyword\">if</span>(hash[arrB[i]]==<span class=\"hljs-literal\">null</span>)hash[arrB[i]]=<span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">else</span> hash[arrB[i]]++\n  }\n  <span class=\"hljs-keyword\">let</span> res=[]\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> k <span class=\"hljs-keyword\">in</span> hash){\n    <span class=\"hljs-keyword\">if</span>(hash[k]===<span class=\"hljs-number\">1</span>)res.push(k)\n  }\n  <span class=\"hljs-keyword\">return</span> res\n};\n</code></pre>\n"
+  ],
+  "querySlug": "uncommon-words-from-two-sentences",
+  "created_at": "2019-04-07",
+  "timeArr": [
+    2019,
+    3,
+    7,
+    22,
+    9,
+    49,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>分别对<code>A</code>和<code>B</code>的单词出现频率构建<code>hash</code>，最后<code>hash[k]===</code>的添加进结果。</p>\n",
+  "content": "<p>给定两个句子&nbsp;<code>A</code>&nbsp;和&nbsp;<code>B</code>&nbsp;。&nbsp;（<em>句子</em>是一串由空格分隔的单词。每个<em>单词</em>仅由小写字母组成。）</p>\n\n<p>如果一个单词在其中一个句子中只出现一次，在另一个句子中却没有出现，那么这个单词就是<em>不常见的</em>。</p>\n\n<p>返回所有不常用单词的列表。</p>\n\n<p>您可以按任何顺序返回列表。</p>\n\n<p>&nbsp;</p>\n\n<ol>\n</ol>\n\n<p><strong>示例 1：</strong></p>\n\n<pre><strong>输入：</strong>A = &quot;this apple is sweet&quot;, B = &quot;this apple is sour&quot;\n<strong>输出：</strong>[&quot;sweet&quot;,&quot;sour&quot;]\n</pre>\n\n<p><strong>示例&nbsp;2：</strong></p>\n\n<pre><strong>输入：</strong>A = &quot;apple apple&quot;, B = &quot;banana&quot;\n<strong>输出：</strong>[&quot;banana&quot;]\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ol>\n\t<li><code>0 &lt;= A.length &lt;= 200</code></li>\n\t<li><code>0 &lt;= B.length &lt;= 200</code></li>\n\t<li><code>A</code> 和&nbsp;<code>B</code>&nbsp;都只包含空格和小写字母。</li>\n</ol>\n",
+  "title": "884. 两句话中的不常见单词",
+  "relatedTags": [
+    "哈希表",
+    "字符串"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "884",
+  "slug": "884-Uncommon-Words-from-Two-Sentences"
+}

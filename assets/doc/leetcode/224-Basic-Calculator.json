@@ -1,0 +1,32 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">s</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> calculate = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">s</span>) </span>{\n  <span class=\"hljs-keyword\">return</span> resolve(s)[<span class=\"hljs-number\">0</span>]\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">resolve</span>(<span class=\"hljs-params\">s</span>)</span>{\n    <span class=\"hljs-keyword\">let</span> temp=<span class=\"hljs-string\">''</span>,sign=<span class=\"hljs-string\">'+'</span>,sum=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">for</span>(;i&lt;s.length;i++){\n      <span class=\"hljs-keyword\">if</span>(s[i]===<span class=\"hljs-string\">\" \"</span>){\n        <span class=\"hljs-keyword\">continue</span>\n      }<span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span>(<span class=\"hljs-regexp\">/[\\+\\-]/</span>.test(s[i])){\n        <span class=\"hljs-keyword\">if</span>(sign===<span class=\"hljs-string\">'+'</span>)sum+= +temp\n        <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span>(sign===<span class=\"hljs-string\">'-'</span>)sum+= -temp\n        sign=s[i]\n        temp=<span class=\"hljs-string\">''</span>\n      }<span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span>(s[i]===<span class=\"hljs-string\">\"(\"</span>){\n        <span class=\"hljs-keyword\">let</span> res=resolve(s.substring(i+<span class=\"hljs-number\">1</span>))\n        temp+=res[<span class=\"hljs-number\">0</span>]\n        i+=res[<span class=\"hljs-number\">1</span>]+<span class=\"hljs-number\">1</span>\n      }<span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span>(s[i]===<span class=\"hljs-string\">\")\"</span>){\n        <span class=\"hljs-keyword\">break</span>\n      }<span class=\"hljs-keyword\">else</span>{\n        temp+=s[i]\n      }\n    }\n    <span class=\"hljs-keyword\">if</span>(sign===<span class=\"hljs-string\">'+'</span>)sum+= +temp\n    <span class=\"hljs-keyword\">if</span>(sign===<span class=\"hljs-string\">'-'</span>)sum+= -temp\n    <span class=\"hljs-keyword\">return</span> [sum,i]\n  }\n};\n</code></pre>\n"
+  ],
+  "querySlug": "basic-calculator",
+  "created_at": "2019-03-29",
+  "timeArr": [
+    2019,
+    2,
+    29,
+    22,
+    58,
+    56,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>因为只有<code>+</code>，<code>-</code>，<code>(</code>，<code>)</code>4种符号，因此只需要考虑括号内的优先权。</p>\n<p>定义一个结果<code>sum</code>，一个变量<code>temp</code>保存需要执行运算的数字，遍历<code>s</code>，遇到空格跳过，</p>\n<p>当遇到<code>(</code>时，说明需要进入优先状态，递归执行<code>s.substring(i+1)</code>；</p>\n<p>当遇到<code>)</code>时，说明可以退出当前优先状态，<code>break</code>；</p>\n<p>当遇到<code>+</code>，<code>-</code>符号时，读取上一次的符号，如果上一次是<code>+</code>那么<code>sum+= +temp</code>，如果上一次是<code>-</code>，那么<code>sum+= -temp</code>；</p>\n<p>其他情况，加到<code>temp+=s[i]</code>。</p>\n",
+  "content": "<p>给你一个字符串表达式 <code>s</code> ，请你实现一个基本计算器来计算并返回它的值。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>s = \"1 + 1\"\n<strong>输出：</strong>2\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>s = \" 2-1 + 2 \"\n<strong>输出：</strong>3\n</pre>\n\n<p><strong>示例 3：</strong></p>\n\n<pre>\n<strong>输入：</strong>s = \"(1+(4+5+2)-3)+(6+8)\"\n<strong>输出：</strong>23\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= s.length <= 3 * 10<sup>5</sup></code></li>\n\t<li><code>s</code> 由数字、<code>'+'</code>、<code>'-'</code>、<code>'('</code>、<code>')'</code>、和 <code>' '</code> 组成</li>\n\t<li><code>s</code> 表示一个有效的表达式</li>\n</ul>\n",
+  "title": "224. 基本计算器",
+  "relatedTags": [
+    "栈",
+    "递归",
+    "数学",
+    "字符串"
+  ],
+  "difficult": "Hard",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "224",
+  "slug": "224-Basic-Calculator"
+}

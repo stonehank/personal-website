@@ -1,0 +1,28 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string[]}</span> <span class=\"hljs-variable\">strs</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{string}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> longestCommonPrefix = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">strs</span>) </span>{\n  <span class=\"hljs-keyword\">if</span>(strs.length===<span class=\"hljs-number\">0</span>)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">''</span>\n  <span class=\"hljs-keyword\">let</span> comPre=strs[<span class=\"hljs-number\">0</span>]\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">1</span>;i&lt;strs.length;i++){\n    <span class=\"hljs-keyword\">let</span> j=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">for</span>(;j&lt;strs[i].length;j++){\n      <span class=\"hljs-keyword\">if</span>(strs[i][j]!==comPre[j])<span class=\"hljs-keyword\">break</span>\n    }\n    <span class=\"hljs-keyword\">if</span>(j===<span class=\"hljs-number\">0</span>)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-string\">''</span>\n    comPre=comPre.substring(<span class=\"hljs-number\">0</span>,j)\n  }\n  <span class=\"hljs-keyword\">return</span> comPre\n};\n</code></pre>\n"
+  ],
+  "querySlug": "longest-common-prefix",
+  "created_at": "2019-03-21",
+  "timeArr": [
+    2019,
+    2,
+    21,
+    18,
+    54,
+    42,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>编写一个函数来查找字符串数组中的最长公共前缀。</p>\n\n<p>如果不存在公共前缀，返回空字符串&nbsp;<code>\"\"</code>。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>strs = [\"flower\",\"flow\",\"flight\"]\n<strong>输出：</strong>\"fl\"\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>strs = [\"dog\",\"racecar\",\"car\"]\n<strong>输出：</strong>\"\"\n<strong>解释：</strong>输入不存在公共前缀。</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= strs.length &lt;= 200</code></li>\n\t<li><code>0 &lt;= strs[i].length &lt;= 200</code></li>\n\t<li><code>strs[i]</code> 仅由小写英文字母组成</li>\n</ul>\n",
+  "title": "14. 最长公共前缀",
+  "relatedTags": [
+    "字符串"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "14",
+  "slug": "14-Longest-Common-Prefix"
+}

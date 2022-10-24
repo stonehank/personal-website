@@ -1,0 +1,32 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">hand</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">W</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{boolean}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> isNStraightHand = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">hand, W</span>) </span>{\n  <span class=\"hljs-keyword\">if</span>(W===<span class=\"hljs-number\">1</span>)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n  <span class=\"hljs-keyword\">let</span> n=hand.length\n  <span class=\"hljs-keyword\">if</span>(n % W!==<span class=\"hljs-number\">0</span>)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n  hand.sort(<span class=\"hljs-function\">(<span class=\"hljs-params\">a,b</span>)=&gt;</span>a-b)\n  <span class=\"hljs-keyword\">let</span> vals=[],counts=[]\n  <span class=\"hljs-keyword\">let</span> id=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;hand.length;i++){\n    <span class=\"hljs-keyword\">let</span> find=<span class=\"hljs-literal\">false</span>\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> j=<span class=\"hljs-number\">0</span>;j&lt;vals.length;j++){\n      <span class=\"hljs-keyword\">if</span>(vals[j]===hand[i]<span class=\"hljs-number\">-1</span>){\n        vals[j]=hand[i]\n        counts[j]++\n        find=<span class=\"hljs-literal\">true</span>\n        <span class=\"hljs-keyword\">if</span>(counts[j]===W){\n          counts.splice(j,<span class=\"hljs-number\">1</span>)\n          vals.splice(j,<span class=\"hljs-number\">1</span>)\n        }\n        <span class=\"hljs-keyword\">break</span>\n      }\n    }\n    <span class=\"hljs-keyword\">if</span>(!find){\n      vals.push(hand[i])\n      counts.push(<span class=\"hljs-number\">1</span>)\n    }\n  }\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;counts.length;i++){\n    <span class=\"hljs-keyword\">if</span>(counts[i]!==W)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n  }\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n};\n</code></pre>\n"
+  ],
+  "querySlug": "hand-of-straights",
+  "created_at": "2019-04-29",
+  "timeArr": [
+    2019,
+    3,
+    29,
+    20,
+    53,
+    45,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>排序<code>hand</code>，然后从后往前，如果存在当前<code>hand[i]+1</code>，则删除并且继续检查<code>hand[i]+2</code>，直到<code>hand[i]+N===W</code>；如果中途不存在某个值，返回<code>false</code>。</p>\n",
+  "content": "<p>爱丽丝有一手（<code>hand</code>）由整数数组给定的牌。 </p>\n\n<p>现在她想把牌重新排列成组，使得每个组的大小都是 <code>W</code>，且由 <code>W</code> 张连续的牌组成。</p>\n\n<p>如果她可以完成分组就返回 <code>true</code>，否则返回 <code>false</code>。</p>\n\n<p> </p>\n\n<p><strong>注意：</strong>此题目与 1296 重复：<a href=\"https://leetcode-cn.com/problems/divide-array-in-sets-of-k-consecutive-numbers/\" target=\"_blank\">https://leetcode-cn.com/problems/divide-array-in-sets-of-k-consecutive-numbers/</a></p>\n\n<p> </p>\n\n<ol>\n</ol>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>hand = [1,2,3,6,2,3,4,7,8], W = 3\n<strong>输出：</strong>true\n<strong>解释：</strong>爱丽丝的手牌可以被重新排列为 <code>[1,2,3]，[2,3,4]，[6,7,8]</code>。</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>hand = [1,2,3,4,5], W = 4\n<strong>输出：</strong>false\n<strong>解释：</strong>爱丽丝的手牌无法被重新排列成几个大小为 4 的组。</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= hand.length <= 10000</code></li>\n\t<li><code>0 <= hand[i] <= 10^9</code></li>\n\t<li><code>1 <= W <= hand.length</code></li>\n</ul>\n",
+  "title": "846. 一手顺子",
+  "relatedTags": [
+    "贪心",
+    "数组",
+    "哈希表",
+    "排序"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "846",
+  "slug": "846-Hand-of-Straights"
+}

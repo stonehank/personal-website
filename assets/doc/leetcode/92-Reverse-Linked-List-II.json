@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * Definition for singly-linked list.\n * function ListNode(val, next) {\n *     this.val = (val===undefined ? 0 : val)\n *     this.next = (next===undefined ? null : next)\n * }\n */</span>\n<span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{ListNode}</span> <span class=\"hljs-variable\">head</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">left</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">right</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{ListNode}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> reverseBetween = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">head, left, right</span>) </span>{\n    <span class=\"hljs-keyword\">if</span>(left===right)<span class=\"hljs-keyword\">return</span> head\n    <span class=\"hljs-keyword\">let</span> headNode=<span class=\"hljs-literal\">null</span>\n    <span class=\"hljs-keyword\">let</span> lastNode=<span class=\"hljs-literal\">null</span>\n    <span class=\"hljs-keyword\">let</span> lastEnd=<span class=\"hljs-literal\">null</span>\n    <span class=\"hljs-keyword\">let</span> root=<span class=\"hljs-keyword\">new</span> ListNode()\n    root.next=head\n    <span class=\"hljs-keyword\">let</span> curRoot=root\n    <span class=\"hljs-keyword\">let</span> step=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">while</span>(curRoot){\n        step++\n        <span class=\"hljs-keyword\">let</span> nextNode=curRoot.next\n        <span class=\"hljs-keyword\">if</span>(step===left){\n            headNode=curRoot\n            lastNode=curRoot.next\n            lastEnd=lastNode\n        }<span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span>(step&gt;left+<span class=\"hljs-number\">1</span> &amp;&amp; step&lt;=right+<span class=\"hljs-number\">1</span>){\n            <span class=\"hljs-comment\">// console.log(headNode,curRoot.val,lastNode.val,nextNode)</span>\n            headNode.next=curRoot\n            curRoot.next=lastNode\n            lastEnd.next=nextNode\n            lastNode=headNode.next\n        }\n        curRoot=nextNode\n    }\n    <span class=\"hljs-keyword\">return</span> root.next\n};\n</code></pre>\n"
+  ],
+  "querySlug": "reverse-linked-list-ii",
+  "created_at": "2021-03-18",
+  "timeArr": [
+    2021,
+    2,
+    18,
+    7,
+    53,
+    58,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>反转链表需要一个一个节点来处理。</p>\n<p>例如 <code>[1-&gt;2-&gt;3-&gt;4-&gt;5],m=2,n=4</code></p>\n<p>反转从第<code>2</code>个节点开始，我们首先要找到头部节点(第<code>1</code>个节点)，因为后续所有的反转都是在第<code>1</code>个节点的<code>next</code>上处理的。</p>\n<p>同时，我们需要找到一个尾巴节点，例如反转<code>3</code>的时候，节点<code>2</code>就是尾巴节点，它的作用就是将要反转的<code>3</code>后面的节点连接起来。</p>\n<p>这两个节点<code>头部节点(1)</code>和<code>尾巴节点(2)</code>是不变的。</p>\n<p>当反转<code>3</code>时，将<code>1</code>和<code>3</code>相连，<code>3</code>和<code>2</code>相连，<code>2</code>和<code>4</code>相连；</p>\n<p>当反转<code>4</code>时，将<code>1</code>和<code>4</code>相连，<code>4</code>和<code>3</code>相连，<code>2</code>和<code>5</code>相连。</p>\n",
+  "content": "给你单链表的头指针 <code>head</code> 和两个整数 <code>left</code> 和 <code>right</code> ，其中 <code>left <= right</code> 。请你反转从位置 <code>left</code> 到位置 <code>right</code> 的链表节点，返回 <strong>反转后的链表</strong> 。\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2021/02/19/rev2ex2.jpg\" style=\"width: 542px; height: 222px;\" />\n<pre>\n<strong>输入：</strong>head = [1,2,3,4,5], left = 2, right = 4\n<strong>输出：</strong>[1,4,3,2,5]\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>head = [5], left = 1, right = 1\n<strong>输出：</strong>[5]\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li>链表中节点数目为 <code>n</code></li>\n\t<li><code>1 <= n <= 500</code></li>\n\t<li><code>-500 <= Node.val <= 500</code></li>\n\t<li><code>1 <= left <= right <= n</code></li>\n</ul>\n\n<p> </p>\n\n<p><strong>进阶：</strong> 你可以使用一趟扫描完成反转吗？</p>\n",
+  "title": "92. 反转链表 II",
+  "relatedTags": [
+    "链表"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "92",
+  "slug": "92-Reverse-Linked-List-II"
+}

@@ -1,0 +1,32 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string[]}</span> <span class=\"hljs-variable\">timePoints</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> findMinDifference = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">timePoints</span>) </span>{\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">calcGap</span>(<span class=\"hljs-params\">time</span>)</span>{\n    <span class=\"hljs-keyword\">let</span> hour=+(time[<span class=\"hljs-number\">0</span>]+time[<span class=\"hljs-number\">1</span>]),\n        minute=+(time[<span class=\"hljs-number\">3</span>]+time[<span class=\"hljs-number\">4</span>]),\n        gap=hour*<span class=\"hljs-number\">60</span>+minute\n    <span class=\"hljs-keyword\">if</span>(gap&gt;<span class=\"hljs-number\">720</span>)<span class=\"hljs-keyword\">return</span> gap<span class=\"hljs-number\">-1440</span>\n    <span class=\"hljs-keyword\">return</span> gap\n  }\n  <span class=\"hljs-keyword\">let</span> aux=[]\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> t <span class=\"hljs-keyword\">of</span> timePoints){\n    aux.push(calcGap(t))\n  }\n  <span class=\"hljs-keyword\">let</span> len=aux.length\n  aux.sort(<span class=\"hljs-function\">(<span class=\"hljs-params\">a,b</span>)=&gt;</span>a-b)\n  <span class=\"hljs-keyword\">let</span> minGap=<span class=\"hljs-literal\">Infinity</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;len;i++){\n    <span class=\"hljs-keyword\">let</span> gap=<span class=\"hljs-built_in\">Math</span>.abs(aux[(i+<span class=\"hljs-number\">1</span>) % len]-aux[i])\n    <span class=\"hljs-keyword\">let</span> curGap=<span class=\"hljs-built_in\">Math</span>.min(gap,<span class=\"hljs-number\">1440</span>-gap)\n    <span class=\"hljs-keyword\">if</span>(curGap&lt;minGap){\n      minGap=curGap\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> minGap\n};\n</code></pre>\n"
+  ],
+  "querySlug": "minimum-time-difference",
+  "created_at": "2019-03-25",
+  "timeArr": [
+    2019,
+    2,
+    25,
+    16,
+    48,
+    59,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>两个时间的差值可以为<code>它们之间的差值G</code>和<code>1440(24小时)-它们之间的差值</code>。</p>\n<p>这里<code>Brute Force</code>就是对每两个时间，分别求出它们之间的2个差值，但是时间复杂度<code>O(N^2)</code>不符合要求。</p>\n<p>我们可以用一个数组<code>aux</code>保存每个时间相对于<code>00:00</code>的分钟差值，再进行排序，因此我们只需要计算邻近的两个时间的差值，\n最后再比较<code>1440-头尾的差值</code>。</p>\n",
+  "content": "<p>给定一个 24 小时制（小时:分钟 <strong>\"HH:MM\"</strong>）的时间列表，找出列表中任意两个时间的最小时间差并以分钟数表示。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>timePoints = [\"23:59\",\"00:00\"]\n<strong>输出：</strong>1\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>timePoints = [\"00:00\",\"23:59\",\"00:00\"]\n<strong>输出：</strong>0\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>2 <= timePoints <= 2 * 10<sup>4</sup></code></li>\n\t<li><code>timePoints[i]</code> 格式为 <strong>\"HH:MM\"</strong></li>\n</ul>\n",
+  "title": "539. 最小时间差",
+  "relatedTags": [
+    "数组",
+    "数学",
+    "字符串",
+    "排序"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "539",
+  "slug": "539-Minimum-Time-Difference"
+}

@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">nums</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> singleNumber = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">nums</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> a=<span class=\"hljs-number\">0</span>,b=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> n <span class=\"hljs-keyword\">of</span> nums){\n    a=(a^n) &amp; ~b\n    b=(b^n) &amp; ~a\n  }\n  <span class=\"hljs-keyword\">return</span> a\n};\n</code></pre>\n"
+  ],
+  "querySlug": "single-number-ii",
+  "created_at": "2019-04-20",
+  "timeArr": [
+    2019,
+    3,
+    20,
+    21,
+    39,
+    11,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>对于时间<code>O(n)</code>，空间<code>O(1)</code>的算法，需要编写一个状态机，当一个数出现<code>3</code>次，会抵消。</p>\n<p>如果单变量使用<code>^</code>，只能抵消偶数次数，如果要<code>3</code>次抵消，必须要有2个变量同时<code>^</code>。</p>\n<p><code>a=a^nums[i]</code></p>\n<p><code>b=b^nums[i]</code></p>\n<p>但仅仅这样两个变量完全一致，无法<code>3</code>次抵消。</p>\n<p>因此还需要使用<code>~</code>，<code>~</code>的作用是将<code>0</code>变为<code>1</code>，<code>1</code>变为<code>0</code>，同时也可以将当前状态逆转。</p>\n<p><code>a=(a^nums[i]) ~ b</code></p>\n<p><code>b=(b^nums[i]) ~ a</code></p>\n<p>例如一个数组<code>[2,2,2,2,2,2]</code>，它每次的<code>a</code>和<code>b</code>输出值为<code>2,0</code>，<code>0,2</code>，<code>0,0</code>，<code>2,0</code>，<code>0,2</code>，<code>0,0</code>，每<code>3</code>次置零。</p>\n",
+  "content": "<p>给你一个整数数组 <code>nums</code> ，除某个元素仅出现 <strong>一次</strong> 外，其余每个元素都恰出现 <strong>三次 。</strong>请你找出并返回那个只出现了一次的元素。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>nums = [2,2,3,2]\n<strong>输出：</strong>3\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>nums = [0,1,0,1,0,1,99]\n<strong>输出：</strong>99\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= nums.length <= 3 * 10<sup>4</sup></code></li>\n\t<li><code>-2<sup>31</sup> <= nums[i] <= 2<sup>31</sup> - 1</code></li>\n\t<li><code>nums</code> 中，除某个元素仅出现 <strong>一次</strong> 外，其余每个元素都恰出现 <strong>三次</strong></li>\n</ul>\n\n<p> </p>\n\n<p><strong>进阶：</strong>你的算法应该具有线性时间复杂度。 你可以不使用额外空间来实现吗？</p>\n",
+  "title": "137. 只出现一次的数字 II",
+  "relatedTags": [
+    "位运算",
+    "数组"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "137",
+  "slug": "137-Single-Number-II"
+}

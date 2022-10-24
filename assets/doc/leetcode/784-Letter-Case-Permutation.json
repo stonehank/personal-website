@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">S</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{string[]}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> letterCasePermutation = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">S</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> res=[]\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">backtrack</span>(<span class=\"hljs-params\">idx,str</span>)</span>{\n    <span class=\"hljs-keyword\">if</span>(idx===S.length){\n      <span class=\"hljs-keyword\">return</span> res.push(str)\n    }\n    <span class=\"hljs-keyword\">if</span>(<span class=\"hljs-regexp\">/[a-zA-Z]/</span>.test(S[idx])){\n      backtrack(idx+<span class=\"hljs-number\">1</span>,str+(S[idx].toLowerCase()))\n    }\n    backtrack(idx+<span class=\"hljs-number\">1</span>,str+(S[idx].toUpperCase()))\n  }\n  backtrack(<span class=\"hljs-number\">0</span>,<span class=\"hljs-string\">''</span>)\n  <span class=\"hljs-keyword\">return</span> res\n};\n</code></pre>\n"
+  ],
+  "querySlug": "letter-case-permutation",
+  "created_at": "2019-04-18",
+  "timeArr": [
+    2019,
+    3,
+    18,
+    20,
+    41,
+    33,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>检查每一个<code>S</code>的索引，如果是字母，则需要加上字母的小写和大写，数字则直接加上即可。</p>\n",
+  "content": "<p>给定一个字符串<code>S</code>，通过将字符串<code>S</code>中的每个字母转变大小写，我们可以获得一个新的字符串。返回所有可能得到的字符串集合。</p>\n\n<p>&nbsp;</p>\n\n<pre><strong>示例：</strong>\n<strong>输入：</strong>S = &quot;a1b2&quot;\n<strong>输出：</strong>[&quot;a1b2&quot;, &quot;a1B2&quot;, &quot;A1b2&quot;, &quot;A1B2&quot;]\n\n<strong>输入：</strong>S = &quot;3z4&quot;\n<strong>输出：</strong>[&quot;3z4&quot;, &quot;3Z4&quot;]\n\n<strong>输入：</strong>S = &quot;12345&quot;\n<strong>输出：</strong>[&quot;12345&quot;]\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>S</code>&nbsp;的长度不超过<code>12</code>。</li>\n\t<li><code>S</code>&nbsp;仅由数字和字母组成。</li>\n</ul>\n",
+  "title": "784. 字母大小写全排列",
+  "relatedTags": [
+    "位运算",
+    "字符串",
+    "回溯"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "784",
+  "slug": "784-Letter-Case-Permutation"
+}

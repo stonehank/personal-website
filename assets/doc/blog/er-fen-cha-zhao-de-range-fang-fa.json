@@ -1,0 +1,22 @@
+{
+  "content": "<p>通常二分查找算法是根据index进行查找，并且要求数据结构是已排序的。</p>\n<p>这里记录一个未排序的二分查找</p>\n<p>题目：在一个数组arr中，找出从小到大第n个的数字</p>\n<p>例如：<code>[6,3,8,1,4,7]</code>，找出第3位，结果是4</p>\n<p>使用排序也可以解决，当空间有限制时，时间复杂度是<code>O(N*lgN)</code>，<del>但二分查找的范围法可以控制到</del><code>O(N)</code>，二分也是<code>O(nlgn)</code></p>\n<p>使用<code>快速选择</code>能达到<code>O(n)</code>，最坏<code>O(n^2)</code>，具体代码在<code>2019-1-18</code></p>\n<p>思路是不断缩小查找范围直到范围长度为1，这时所在的位置就是对应的位数</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">getSpecificNum</span>(<span class=\"hljs-params\">arr,k</span>)</span>{\n  <span class=\"hljs-comment\">// 找出最大最小值</span>\n  <span class=\"hljs-keyword\">let</span> lo=<span class=\"hljs-literal\">Infinity</span>,hi=-<span class=\"hljs-literal\">Infinity</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;arr.length;i++){\n    <span class=\"hljs-keyword\">if</span>(arr[i]&lt;lo)lo=arr[i]\n    <span class=\"hljs-keyword\">if</span>(arr[i]&gt;hi)hi=arr[i]\n  }\n  <span class=\"hljs-comment\">// 缩小范围</span>\n  <span class=\"hljs-keyword\">while</span>(lo&lt;hi){\n    <span class=\"hljs-keyword\">let</span> mid=<span class=\"hljs-built_in\">Math</span>.floor((lo+hi)/<span class=\"hljs-number\">2</span>)\n    <span class=\"hljs-keyword\">let</span> count=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;arr.length;i++){\n      <span class=\"hljs-keyword\">if</span>(arr[i]&lt;=mid)count++\n    }\n    <span class=\"hljs-keyword\">if</span>(count&gt;=k)hi=mid\n    <span class=\"hljs-keyword\">else</span> lo=mid+<span class=\"hljs-number\">1</span>\n  }\n  <span class=\"hljs-keyword\">return</span> lo\n}</code></pre>\n</code></pre>\n",
+  "toc": [],
+  "relatedTags": [
+    "算法"
+  ],
+  "created_at": "2018-09-11",
+  "timeArr": [
+    2018,
+    8,
+    11,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "二分查找的range方法",
+  "uuid": "5ba1422eb5748f36ae6b36980b06e537d336b746",
+  "summary": "<p>通常二分查找算法是根据index进行查找，并且要求数据结构是已排序的。</p>\n<p>这里记录一个未排序的二分查找</p>\n<p>题目：在一个数组arr中，找出从小到大第n个的数字</p>\n<p>例如：<code>[6,3,8,1,4,7]</code>，找出第3位，结果是4</p>\n<p>使用排序也可以解决，当空间有限制时，时间复杂度是<code>O(N*lgN)</code>，~~但二分查找的范围法可以控...</p>",
+  "slug": "er-fen-cha-zhao-de-range-fang-fa",
+  "sha": "bcaa51d3db66e9c67d11b14a85afe0fed30faf07"
+}

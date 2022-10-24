@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">Solution</span><span class=\"hljs-params\">(object)</span>:</span>\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">findSubstringInWraproundString</span><span class=\"hljs-params\">(self, p)</span>:</span>\n        <span class=\"hljs-string\">\"\"\"\n        :type p: str\n        :rtype: int\n        \"\"\"</span>\n        N=len(p)\n        <span class=\"hljs-keyword\">if</span> N==<span class=\"hljs-number\">0</span>:<span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>\n        sums=[<span class=\"hljs-number\">0</span>]*<span class=\"hljs-number\">26</span>\n        dp=[<span class=\"hljs-number\">0</span>]*N\n        acode=ord(<span class=\"hljs-string\">'a'</span>)\n        initcode=ord(p[<span class=\"hljs-number\">0</span>])-acode\n        sums[initcode]=<span class=\"hljs-number\">1</span>\n        dp[<span class=\"hljs-number\">0</span>]=<span class=\"hljs-number\">1</span>\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> range(<span class=\"hljs-number\">1</span>,N):\n          curCode=ord(p[i])-acode\n          preCode=ord(p[i<span class=\"hljs-number\">-1</span>])-acode\n          <span class=\"hljs-keyword\">if</span> curCode-preCode==<span class=\"hljs-number\">1</span> <span class=\"hljs-keyword\">or</span> curCode-preCode==<span class=\"hljs-number\">-25</span>:\n            dp[i]=dp[i<span class=\"hljs-number\">-1</span>]+<span class=\"hljs-number\">1</span>\n          <span class=\"hljs-keyword\">else</span>:\n            dp[i]=<span class=\"hljs-number\">1</span>\n          sums[curCode]=max(dp[i],sums[curCode])\n        <span class=\"hljs-keyword\">return</span> sum(sums)\n</code></pre>\n"
+  ],
+  "querySlug": "unique-substrings-in-wraparound-string",
+  "created_at": "2019-03-04",
+  "timeArr": [
+    2019,
+    2,
+    4,
+    12,
+    7,
+    49,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>把字符串 <code>s</code> 看作是&ldquo;abcdefghijklmnopqrstuvwxyz&rdquo;的无限环绕字符串，所以&nbsp;<code>s</code> 看起来是这样的：&quot;...zabcdefghijklmnopqrstuvwxyzabcdefghijklmnopqrstuvwxyzabcd....&quot;.&nbsp;</p>\n\n<p>现在我们有了另一个字符串 <code>p</code> 。你需要的是找出 <code>s</code> 中有多少个唯一的 <code>p</code> 的非空子串，尤其是当你的输入是字符串 <code>p</code> ，你需要输出字符串&nbsp;<code>s</code> 中 <code>p</code> 的不同的非空子串的数目。&nbsp;</p>\n\n<p><strong>注意:</strong> <code>p</code>&nbsp;仅由小写的英文字母组成，p 的大小可能超过 10000。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例&nbsp;1:</strong></p>\n\n<pre>\n<strong>输入:</strong> &quot;a&quot;\n<strong>输出:</strong> 1\n<strong>解释:</strong> 字符串 S 中只有一个&quot;a&quot;子字符。\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 2:</strong></p>\n\n<pre>\n<strong>输入:</strong> &quot;cac&quot;\n<strong>输出:</strong> 2\n<strong>解释:</strong> 字符串 S 中的字符串&ldquo;cac&rdquo;只有两个子串&ldquo;a&rdquo;、&ldquo;c&rdquo;。.\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 3:</strong></p>\n\n<pre>\n<strong>输入:</strong> &quot;zab&quot;\n<strong>输出:</strong> 6\n<strong>解释:</strong> 在字符串 S 中有六个子串&ldquo;z&rdquo;、&ldquo;a&rdquo;、&ldquo;b&rdquo;、&ldquo;za&rdquo;、&ldquo;ab&rdquo;、&ldquo;zab&rdquo;。.\n</pre>\n\n<p>&nbsp;</p>\n",
+  "title": "467. 环绕字符串中唯一的子字符串",
+  "relatedTags": [
+    "字符串",
+    "动态规划"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "python"
+  ],
+  "uniqueID": "467",
+  "slug": "467-Unique-Substrings-in-Wraparound-String"
+}

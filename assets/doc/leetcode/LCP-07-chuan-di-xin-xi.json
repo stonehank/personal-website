@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">n</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[][]}</span> <span class=\"hljs-variable\">relation</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">k</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> numWays = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">n, relation, k</span>) </span>{\n  <span class=\"hljs-comment\">// if(n===2 &amp;&amp; k===1)return 1</span>\n  <span class=\"hljs-keyword\">let</span> hash={}\n  <span class=\"hljs-keyword\">let</span> realRel=<span class=\"hljs-built_in\">Array</span>(n).fill().map(<span class=\"hljs-function\"><span class=\"hljs-params\">()</span>=&gt;</span>[])\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> [s,e] <span class=\"hljs-keyword\">of</span> relation){\n    realRel[s].push(e)\n  }\n  <span class=\"hljs-keyword\">let</span> method=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> num <span class=\"hljs-keyword\">of</span> realRel[<span class=\"hljs-number\">0</span>]){\n    hash[num]=<span class=\"hljs-number\">1</span>\n  }\n  <span class=\"hljs-keyword\">let</span> arr=[...realRel[<span class=\"hljs-number\">0</span>]]\n  <span class=\"hljs-keyword\">let</span> step=<span class=\"hljs-number\">0</span>\n<span class=\"hljs-comment\">// console.log(realRel)</span>\n  <span class=\"hljs-keyword\">while</span>(arr.length&gt;<span class=\"hljs-number\">0</span>){\n    <span class=\"hljs-keyword\">let</span> len=arr.length\n    step++\n    <span class=\"hljs-comment\">// console.log(arr)</span>\n    <span class=\"hljs-keyword\">let</span> newHash={}\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;len;i++){\n      <span class=\"hljs-keyword\">let</span> nxtId=arr.shift()\n      <span class=\"hljs-keyword\">if</span>(step&gt;k)<span class=\"hljs-keyword\">continue</span>\n      <span class=\"hljs-keyword\">if</span>(nxtId===n<span class=\"hljs-number\">-1</span> &amp;&amp; step===k){\n        method+=hash[nxtId]\n        <span class=\"hljs-keyword\">continue</span>\n      }\n      <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> id <span class=\"hljs-keyword\">of</span> realRel[nxtId]){\n        <span class=\"hljs-keyword\">if</span>(newHash[id]==<span class=\"hljs-literal\">null</span>){\n          newHash[id]=hash[nxtId]\n          arr.push(id)\n        }<span class=\"hljs-keyword\">else</span>{\n          newHash[id]+=hash[nxtId]\n        }\n        \n      }\n    }\n    hash=newHash\n  }\n  <span class=\"hljs-keyword\">return</span> method\n};\n</code></pre>\n"
+  ],
+  "querySlug": "chuan-di-xin-xi",
+  "created_at": "2021-08-04",
+  "timeArr": [
+    2021,
+    7,
+    4,
+    1,
+    9,
+    12,
+    453
+  ],
+  "hasThinking": false,
+  "content": "<p>小朋友 A 在和 ta 的小伙伴们玩传信息游戏，游戏规则如下：</p>\n\n<ol>\n\t<li>有 n 名玩家，所有玩家编号分别为 0 ～ n-1，其中小朋友 A 的编号为 0</li>\n\t<li>每个玩家都有固定的若干个可传信息的其他玩家（也可能没有）。传信息的关系是单向的（比如 A 可以向 B 传信息，但 B 不能向 A 传信息）。</li>\n\t<li>每轮信息必须需要传递给另一个人，且信息可重复经过同一个人</li>\n</ol>\n\n<p>给定总玩家数 <code>n</code>，以及按 <code>[玩家编号,对应可传递玩家编号]</code> 关系组成的二维数组 <code>relation</code>。返回信息从小 A (编号 0 ) 经过 <code>k</code> 轮传递到编号为 n-1 的小伙伴处的方案数；若不能到达，返回 0。</p>\n\n<p><strong>示例 1：</strong></p>\n\n<blockquote>\n<p>输入：<code>n = 5, relation = [[0,2],[2,1],[3,4],[2,3],[1,4],[2,0],[0,4]], k = 3</code></p>\n\n<p>输出：<code>3</code></p>\n\n<p>解释：信息从小 A 编号 0 处开始，经 3 轮传递，到达编号 4。共有 3 种方案，分别是 0-&gt;2-&gt;0-&gt;4， 0-&gt;2-&gt;1-&gt;4， 0-&gt;2-&gt;3-&gt;4。</p>\n</blockquote>\n\n<p><strong>示例 2：</strong></p>\n\n<blockquote>\n<p>输入：<code>n = 3, relation = [[0,2],[2,1]], k = 2</code></p>\n\n<p>输出：<code>0</code></p>\n\n<p>解释：信息不能从小 A 处经过 2 轮传递到编号 2</p>\n</blockquote>\n\n<p><strong>限制：</strong></p>\n\n<ul>\n\t<li><code>2 &lt;= n &lt;= 10</code></li>\n\t<li><code>1 &lt;= k &lt;= 5</code></li>\n\t<li><code>1 &lt;= relation.length &lt;= 90, 且 relation[i].length == 2</code></li>\n\t<li><code>0 &lt;= relation[i][0],relation[i][1] &lt; n 且 relation[i][0] != relation[i][1]</code></li>\n</ul>\n",
+  "title": "LCP 07. 传递信息",
+  "relatedTags": [
+    "深度优先搜索",
+    "广度优先搜索",
+    "图",
+    "动态规划"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "LCP 07",
+  "slug": "LCP-07-chuan-di-xin-xi"
+}

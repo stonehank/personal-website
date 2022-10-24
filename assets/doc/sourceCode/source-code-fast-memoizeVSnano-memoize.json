@@ -1,0 +1,40 @@
+{
+  "content": "<p>至今天(2018年9月7日)，这2个工具的实现源码思想是极其相似的，基本上，只要阅读了其中一个源码，也就了解了另外一个的实现。</p>\n<p>fast-memoize导图:</p>\n<p><img src=\"https://raw.githubusercontent.com/stonehank/sourcecode-analysis/master/source-code.fast-memoizeVSnano-memoize/fast-memoize.png\" alt=\"\"></p>\n<h2 id=\"chu-shi\">初识</h2>\n<p>大概说说它们的实现思路：</p>\n<ol>\n<li>定义缓存结构，其中<code>fast</code>使用了<code>无prototype的对象</code>，<code>nano</code>使用了<code>普通对象</code>。</li>\n<li>定义序列化方法：当检测到是单参数时，都是选择JSON.stringify，而多个参数，两者有不同（后面再说）。</li>\n<li>定义策略：也就是缓存的具体方法，其实很简单，就是对当前缓存结构查找，找到就返回，找不到就重新运行，\n 两者都使用了<code>bind</code>方法注入参数，可以省去运行时再去查找参数。</li>\n</ol>\n<p>接着分析两者的异同：</p>\n<p>相同处：</p>\n<ul>\n<li>都使用了<code>JSON.stringify</code>作为序列化方法，因为它是原生的。</li>\n<li>都对返回的缓存函数进行了参数注入（这是一个极大提升性能的方法）。</li>\n<li>对单参数还是多参数的判断都是使用<code>func.length</code>(形参的数量判断)，因为<code>func.length</code>比<code>arguments.length</code>这种动态判断性能会好很多。</li>\n</ul>\n<p>不同点：</p>\n<ul>\n<li><code>fast</code>使用了<code>无prototype的对象</code>，<code>nano</code>使用了<code>普通对象</code>(这一点性能上相差不多)。</li>\n<li>当遇到多个参数时，<code>fast</code>还是继续对<code>arguments</code>进行序列化，而<code>nano</code>则复杂一点，它通过用数组将每一次多个参数保存起来，\n后续通过遍历每个参数进行全等对比<code>===</code>，判断是否从缓存调取结果。</li>\n<li>同样是多个参数，<code>nano</code>增加了一个参数<code>max</code>，可以让用户自定义需要进行对比参数的长度。</li>\n</ul>\n<h2 id=\"shen-ru\">深入</h2>\n<p>接着看下第二点不同点的源码：\n主要看<code>nano-memoize</code>：</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">multiple</span>(<span class=\"hljs-params\">f,k,v,eq,change,max=<span class=\"hljs-number\">0</span>,...args</span>) </span>{\n      <span class=\"hljs-comment\">// 用来储存i(当前对比的参数索引)和缓存值</span>\n      <span class=\"hljs-keyword\">const</span> rslt = {};\n      <span class=\"hljs-comment\">// k是一个专门存放多个参数的数组 格式类似</span>\n      <span class=\"hljs-comment\">// [[...args],[...args],[...args]...]</span>\n      <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;k.length;i++) { <span class=\"hljs-comment\">// an array of arrays of args</span>\n        <span class=\"hljs-keyword\">let</span> key = k[i];\n        <span class=\"hljs-comment\">// 判断是否需要使用max</span>\n        <span class=\"hljs-keyword\">if</span>(max) { key = key.slice(<span class=\"hljs-number\">0</span>,max); }\n        <span class=\"hljs-comment\">// 当前长度相等或者有max值，开始进行对比</span>\n        <span class=\"hljs-keyword\">if</span>(key.length===args.length || (max &amp;&amp; key.length&lt;args.length)) {\n          <span class=\"hljs-comment\">// 获取长度</span>\n          <span class=\"hljs-keyword\">const</span> max = key.length - <span class=\"hljs-number\">1</span>;\n          <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> j=<span class=\"hljs-number\">0</span>;j&lt;=max;j++) {\n            <span class=\"hljs-comment\">// 如果发现不等，直接跳出</span>\n            <span class=\"hljs-keyword\">if</span>(!eq(key[j],args[j])) { <span class=\"hljs-keyword\">break</span>; } <span class=\"hljs-comment\">// go to next key if args don't match</span>\n            <span class=\"hljs-comment\">// 当到了最后一项都没跳出 说明参数相同</span>\n            <span class=\"hljs-keyword\">if</span>(j===max) { <span class=\"hljs-comment\">// the args matched</span>\n              <span class=\"hljs-comment\">// 记录当前索引</span>\n              rslt.i = i;\n              <span class=\"hljs-comment\">// 调用当前参数的缓存</span>\n              rslt.v = v[i]; <span class=\"hljs-comment\">// get the cached value</span>\n            }\n          }\n        }\n      }\n      <span class=\"hljs-comment\">// 如果有i 说明是调用缓存，如果没有i，则添加缓存</span>\n      <span class=\"hljs-keyword\">const</span> i = rslt.i&gt;=<span class=\"hljs-number\">0</span> ? rslt.i : v.length;\n      <span class=\"hljs-keyword\">if</span>(change) { change(i); }\n      <span class=\"hljs-comment\">// 如果缓存不存在就执行func，存在直接返回缓存</span>\n      <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">typeof</span> rslt.v === <span class=\"hljs-string\">\"undefined\"</span> ? v[i] = f.call(<span class=\"hljs-keyword\">this</span>,...(k[i] = args)) : rslt.v;\n    }</code></pre>\n</code></pre>\n<p>可以看出，这是通过2次遍历，对<code> [[...args],[...args],[...args]...]</code>这样一种结构比较，外层遍历判断length，\nlength相等才会进入内层遍历，内层遍历就是逐个判断了。</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-comment\">// 注入参数，提升性能</span>\nf = multiple.bind(\n        <span class=\"hljs-keyword\">this</span>,\n        fn,\n        k,\n        v,\n        <span class=\"hljs-comment\">// 逐个判断方式默认为 ===</span>\n        equals || <span class=\"hljs-function\">(<span class=\"hljs-params\">(a,b</span>) =&gt;</span> a===b), <span class=\"hljs-comment\">// default to just a regular strict comparison</span>\n        (maxAge ? change.bind(<span class=\"hljs-keyword\">this</span>,v): <span class=\"hljs-literal\">null</span>), <span class=\"hljs-comment\">// turn change logging on and bind to arg cache v</span>\n        maxArgs\n      );</code></pre>\n</code></pre>\n<p>上面一段则是参数注入方式和默认的对比方式。</p>\n<h2 id=\"zong-jie\">总结</h2>\n<p>一个表格总结两者最大不同，假设：</p>\n<ul>\n<li>忽略===的执行时间</li>\n<li>使用的参数分为 引用相同 和 引用不同(但是深比较都为true)\n  例如：<code>{x:1}</code>和<code>{x:1}</code></li>\n</ul>\n<table>\n<thead>\n<tr>\n<th><em>耗时操作</em></th>\n<th><em>多个参数(引用相同)</em></th>\n<th></th>\n<th><em>多个参数(引用不同)</em></th>\n<th></th>\n</tr>\n</thead>\n<tbody><tr>\n<td>状态</td>\n<td>首次运行</td>\n<td>后续运行</td>\n<td>首次运行</td>\n<td>后续运行</td>\n</tr>\n<tr>\n<td>fast</td>\n<td>序列化+运行函数</td>\n<td>序列化比较</td>\n<td>序列化+运行函数</td>\n<td>序列化比较</td>\n</tr>\n<tr>\n<td>nano</td>\n<td>运行函数</td>\n<td>0(===比较)</td>\n<td>运行函数</td>\n<td>运行函数(===比较失败)</td>\n</tr>\n</tbody></table>\n",
+  "toc": [
+    {
+      "anchor": "chu-shi",
+      "level": 2,
+      "text": "初识"
+    },
+    {
+      "anchor": "shen-ru",
+      "level": 2,
+      "text": "深入"
+    },
+    {
+      "anchor": "zong-jie",
+      "level": 2,
+      "text": "总结"
+    }
+  ],
+  "relatedTags": [
+    "源码",
+    "缓存",
+    "性能"
+  ],
+  "created_at": "2018-09-09",
+  "timeArr": [
+    2018,
+    8,
+    9,
+    23,
+    10,
+    16,
+    0
+  ],
+  "title": "源码阅读-fast-memoizeVSnano-memoize",
+  "uuid": "192cb2d796eb6fa7798923cf1e642b9be3a00af6",
+  "summary": "<p>至今天(2018年9月7日)，这2个工具的实现源码思想是极其相似的，基本上，只要阅读了其中一个源码，也就了解了另外一个的实现。</p>\n<p>fast-memoize导图:</p>\n<p>![](https://raw.githubusercontent.com/stonehank/sourcecode-analysis/master/sou...</p>",
+  "slug": "source-code-fast-memoizeVSnano-memoize",
+  "sha": "7253519654d49748be385ec948aa3d448a6d4a7c"
+}

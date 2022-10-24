@@ -1,0 +1,23 @@
+{
+  "content": "<p>题目位置：<a href=\"https://leetcode.com/problems/nth-magical-number/description/\">https://leetcode.com/problems/nth-magical-number/description/</a></p>\n<p>题目：</p>\n<p>如果正整数 可被A  或B整除，则它是神奇的。</p>\n<p>返回第N个魔法数字。由于答案可能非常大，因此返回值需要模(%)10^9 + 7。</p>\n<p>例1：</p>\n<pre><code><pre class=\"hljs\"><code>输入： N = 1，A = 2，B = 3\n输出：2</code></pre>\n</code></pre>\n<p>例2：</p>\n<pre><code><pre class=\"hljs\"><code>输入： N = 4，A = 2，B = 3\n输出：6</code></pre>\n</code></pre>\n<p>例3：</p>\n<pre><code><pre class=\"hljs\"><code>输入： N = 5，A = 2，B = 4\n输出：10</code></pre>\n</code></pre>\n<p>例4：</p>\n<pre><code><pre class=\"hljs\"><code>输入： N = 3，A = 6，B = 4\n输出：8</code></pre>\n</code></pre>\n<hr>\n<p>要点；</p>\n<ol>\n<li><p>如果知道在N次内，a出现的次数i，b出现的次数j，那么就可以通过Math.max(a<em>i,b</em>j)求出结果</p>\n<pre><code><pre class=\"hljs\"><code>例如: N为5, a为3, b为4\n如果我们知道a出现了3次，b出现了2次，那么就可算出 9</code></pre>\n</code></pre>\n</li>\n<li><p>N是由a出现的次数i，b出现的次数j，和他们最小公倍数出现的次数k计算而得(N=i+j-k)</p>\n<pre><code><pre class=\"hljs\"><code>例如 N为5, a为2, b为3\na出现4次，b出现2次，最小公倍数出现1次，那么N=4+2-1</code></pre>\n</code></pre>\n</li>\n<li><p>假设某个数x，a出现的次数是Math.floor(x/a)，b出现的次数是Math.floor(x/b)，最小公倍数出现的次数是Math.floor(x/lcm)，因此我们要找出这个数，使得i+j-k===N</p>\n</li>\n</ol>\n<hr>\n<ul>\n<li><p>最大公约数 Lowest Common Multiple</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">GCD</span>(<span class=\"hljs-params\">a,b</span>)</span>{\n  <span class=\"hljs-keyword\">while</span>(a % b!==<span class=\"hljs-number\">0</span>){\n      <span class=\"hljs-keyword\">let</span> temp=a\n      a=b;\n      b=temp % b\n  }\n  <span class=\"hljs-keyword\">return</span> b\n}</code></pre>\n</code></pre>\n</li>\n<li><p>最小公倍数 greatest common divisor</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">LCM</span>(<span class=\"hljs-params\">a,b</span>)</span>{\n  <span class=\"hljs-keyword\">return</span> a*b/GCD(a,b)\n}</code></pre>\n</code></pre>\n</li>\n</ul>\n<hr>\n<ul>\n<li>完整代码\n```js\n/**</li>\n<li>@param {number} N</li>\n<li>@param {number} A</li>\n<li>@param {number} B</li>\n<li>@return {number}</li>\n<li>/\nvar nthMagicalNumber = function(N, A, B) {\n  let lo=0,hi=Number.MAX_SAFE_INTEGER,m=0;\n  let aCount,bCount;\n  while(lo&lt;hi){<pre><code><pre class=\"hljs\"><code>  let mid=Math.floor((lo+hi)/2);\n  aCount=Math.floor(mid/A);\n  bCount=Math.floor(mid/B);\n  let LCMCount=Math.floor(mid/LCM(A,B));\n  m=aCount+bCount-LCMCount;\n  if(m===N)break;\n  else if(m&gt;N)hi=mid;\n  else lo=mid+1;</code></pre>\n</code></pre>\n  }\n  function GCD(a,b){<pre><code><pre class=\"hljs\"><code>  while(a % b!==0){\n      let temp=a;\n      a=b;\n      b=temp % b\n  }\n  return b</code></pre>\n</code></pre>\n  }\n  function LCM(a,b){<pre><code><pre class=\"hljs\"><code>  return a*b/GCD(a,b)</code></pre>\n</code></pre>\n  }\n  return Math.max(A<em>aCount,B</em>bCount) % 1000000007\n};\n```</li>\n</ul>\n",
+  "toc": [],
+  "relatedTags": [
+    "算法",
+    "leetcode"
+  ],
+  "created_at": "2018-07-29",
+  "timeArr": [
+    2018,
+    6,
+    29,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "记一道二分查找算法题",
+  "uuid": "00c5d9ed2847e38150e59f8030c9eff752b313f7",
+  "summary": "<p>题目位置：https://leetcode.com/problems/nth-magical-number/description/</p>\n<p>题目：</p>\n<p>如果正整数 可被A  或B整除，则它是神奇的。</p>\n<p>返回第N个魔法数字。由于答案可能非常大，因此返回值需要模(%)10^9 + 7。</p>\n<p>例1：</p>\n<pre class=\"hljs\"><code>输入： N = 1，A ...</code></pre>",
+  "slug": "ji-yi-dao-er-fen-cha-zhao-suan-fa-ti",
+  "sha": "d3c6d7ae8150d554512c3b20c6ccc2cd575468c5"
+}

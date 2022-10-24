@@ -1,0 +1,28 @@
+{
+  "content": "<h1 id=\"source-codefullpage\">source-code.fullpage</h1>\n<p>fullPage 2.5.4</p>\n<p>阅读<a href=\"https://github.com/stonehank/sourcecode-analysis/blob/master/source-code.fullpage/src/jquery.fullPage.js\">fullpage源码(依赖jquery)</a></p>\n",
+  "toc": [
+    {
+      "anchor": "source-codefullpage",
+      "level": 1,
+      "text": "source-code.fullpage"
+    }
+  ],
+  "relatedTags": [
+    "源码"
+  ],
+  "created_at": "2018-07-15",
+  "timeArr": [
+    2018,
+    6,
+    15,
+    16,
+    20,
+    8,
+    0
+  ],
+  "title": "源码阅读-fullpage",
+  "uuid": "f68337e3bce79a95ca9f0a7524fba1c2773f2223",
+  "summary": "<h4>source-code.fullpage</h4>\n<p>fullPage 2.5.4</p>\n<p>阅读[fullpage源码(依赖jquery)](https://github.com/stonehank/sourcecode-analysis/blob/master/source-code.fullpage/src/jquery.fu...</p>",
+  "slug": "source-code-fullpage",
+  "sha": "9863e94895d22e63146b5b0f24f28bed4b5682f4"
+}

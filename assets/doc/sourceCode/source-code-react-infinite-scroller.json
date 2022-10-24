@@ -1,0 +1,74 @@
+{
+  "content": "<p><code>react-infinite-scroller</code>就是一个组件，主要逻辑就是<code>addEventListener</code>绑定<code>scroll</code>事件。</p>\n<p>看它的源码主要意义不在知道如何使用它，而是知道以后处理<code>滚动加载</code>要注意的东西。</p>\n<blockquote>\n<p>此处跳到<a href=\"#zong-jie\">总结</a>。</p>\n</blockquote>\n<h2 id=\"chu-shi\">初识</h2>\n<p>参数：</p>\n<pre><code><pre class=\"hljs\"><code>// 渲染出来的DOM元素name\nelement: 'div',\n// 是否能继续滚动渲染\nhasMore: false,\n// 是否在订阅事件的时候执行事件\ninitialLoad: true,\n// 表示当前翻页的值(每渲染一次递增)\npageStart: 0,\n// 传递ref，返回此组件渲染的 DOM\nref: null,\n// 触发渲染的距离\nthreshold: 250,\n// 是否在window上绑定和处理距离\nuseWindow: true,\n// 是否反向滚动，即到顶端后渲染\nisReverse: false,\n// 是否使用捕获模式\nuseCapture: false,\n// 渲染前的loading组件\nloader: null,\n// 自定义滚动组件的父元素\ngetScrollParent: null,</code></pre>\n</code></pre>\n<hr>\n<h2 id=\"shen-ru\">深入</h2>\n<h3 id=\"componentdidmount\">componentDidMount</h3>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code>componentDidMount() {\n  <span class=\"hljs-keyword\">this</span>.pageLoaded = <span class=\"hljs-keyword\">this</span>.props.pageStart;\n  <span class=\"hljs-keyword\">this</span>.attachScrollListener();\n}</code></pre>\n</code></pre>\n<p>执行<code>attachScrollListener</code></p>\n<hr>\n<h3 id=\"attachscrolllistener\">attachScrollListener</h3>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code>attachScrollListener() {\n  <span class=\"hljs-keyword\">const</span> parentElement = <span class=\"hljs-keyword\">this</span>.getParentElement(<span class=\"hljs-keyword\">this</span>.scrollComponent);\n  \n  <span class=\"hljs-keyword\">if</span> (!<span class=\"hljs-keyword\">this</span>.props.hasMore || !parentElement) {\n    <span class=\"hljs-keyword\">return</span>;\n  }\n\n  <span class=\"hljs-keyword\">let</span> scrollEl = <span class=\"hljs-built_in\">window</span>;\n  <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-keyword\">this</span>.props.useWindow === <span class=\"hljs-literal\">false</span>) {\n    scrollEl = parentElement;\n  }\n  scrollEl.addEventListener(\n    <span class=\"hljs-string\">'mousewheel'</span>,\n    <span class=\"hljs-keyword\">this</span>.mousewheelListener,\n    <span class=\"hljs-keyword\">this</span>.props.useCapture,\n  );\n  scrollEl.addEventListener(\n    <span class=\"hljs-string\">'scroll'</span>,\n    <span class=\"hljs-keyword\">this</span>.scrollListener,\n    <span class=\"hljs-keyword\">this</span>.props.useCapture,\n  );\n  scrollEl.addEventListener(\n    <span class=\"hljs-string\">'resize'</span>,\n    <span class=\"hljs-keyword\">this</span>.scrollListener,\n    <span class=\"hljs-keyword\">this</span>.props.useCapture,\n  );\n  \n  <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-keyword\">this</span>.props.initialLoad) {\n    <span class=\"hljs-keyword\">this</span>.scrollListener();\n  }\n}</code></pre>\n</code></pre>\n<p>此处通过<code>getParentElement</code>获取父组件(用户自定义父组件或者当前dom的parentNode)</p>\n<p>然后绑定了3个事件，分别是<code>scroll</code>,<code>resize</code>,<code>mousewheel</code></p>\n<p>前2种都绑定<code>scrollListener</code>，<code>mousewheel</code>是一个非标准事件，是不建议在生产模式中使用的。</p>\n<p>那么这里为什么要使用呢？</p>\n<hr>\n<h3 id=\"mousewheel-jie-jue-chrome-de-deng-dai-bug\">mousewheel解决chrome的等待bug</h3>\n<p>此处的<code>mousewheel</code>事件是为了处理<code>chrome</code>浏览器的一个特性(不知道是否是一种bug)。</p>\n<p><a href=\"https://stackoverflow.com/questions/47524205/random-high-content-download-time-in-chrome/47684257#47684257\">stackoverflow:Chrome的滚动等待问题</a></p>\n<p>上面这个问题主要描述，当在使用滚轮加载时，而且加载会触发<code>ajax请求</code>，当滚轮到达底部，会出现一个漫长而且无任何动作的等待(长达2-3s)。</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-built_in\">window</span>.addEventListener(<span class=\"hljs-string\">\"mousewheel\"</span>, (e) =&gt; {\n    <span class=\"hljs-keyword\">if</span> (e.deltaY === <span class=\"hljs-number\">1</span>) {\n        e.preventDefault()\n    }\n})</code></pre>\n</code></pre>\n<p>以上绑定可以消除这个&quot;bug&quot;。</p>\n<blockquote>\n<p>个人并没有遇到过这种情况，不知道是否有遇到过可以说说解决方案。</p>\n</blockquote>\n<hr>\n<h3 id=\"getparentelement\">getParentElement</h3>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code>getParentElement(el) {\n  <span class=\"hljs-keyword\">const</span> scrollParent =\n    <span class=\"hljs-keyword\">this</span>.props.getScrollParent &amp;&amp; <span class=\"hljs-keyword\">this</span>.props.getScrollParent();\n  <span class=\"hljs-keyword\">if</span> (scrollParent != <span class=\"hljs-literal\">null</span>) {\n    <span class=\"hljs-keyword\">return</span> scrollParent;\n  }\n  <span class=\"hljs-keyword\">return</span> el &amp;&amp; el.parentNode;\n}</code></pre>\n</code></pre>\n<p>上面用到了<code>getParentElement</code>，很好理解，使用用户自定义的父组件，或者当前组件<code>DOM.parentNode</code>。</p>\n<hr>\n<h3 id=\"scrolllistener\">scrollListener</h3>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code>scrollListener() {\n  <span class=\"hljs-keyword\">const</span> el = <span class=\"hljs-keyword\">this</span>.scrollComponent;\n  <span class=\"hljs-keyword\">const</span> scrollEl = <span class=\"hljs-built_in\">window</span>;\n  <span class=\"hljs-keyword\">const</span> parentNode = <span class=\"hljs-keyword\">this</span>.getParentElement(el);\n\n  <span class=\"hljs-keyword\">let</span> offset;\n  <span class=\"hljs-comment\">// 使用window的情况</span>\n  <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-keyword\">this</span>.props.useWindow) {\n    <span class=\"hljs-keyword\">const</span> doc = <span class=\"hljs-built_in\">document</span>.documentElement || <span class=\"hljs-built_in\">document</span>.body.parentNode || <span class=\"hljs-built_in\">document</span>.body;\n    <span class=\"hljs-keyword\">const</span> scrollTop = scrollEl.pageYOffset !== <span class=\"hljs-literal\">undefined</span>\n        ? scrollEl.pageYOffset\n        : doc.scrollTop;\n    <span class=\"hljs-comment\">// isReverse指 滚动到顶端，load新组件</span>\n    <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-keyword\">this</span>.props.isReverse) {\n      <span class=\"hljs-comment\">// 相反模式获取到顶端距离</span>\n      offset = scrollTop;\n    } <span class=\"hljs-keyword\">else</span> {\n      <span class=\"hljs-comment\">// 正常模式则获取到底端距离</span>\n      offset = <span class=\"hljs-keyword\">this</span>.calculateOffset(el, scrollTop);\n    }\n    <span class=\"hljs-comment\">// 不使用window的情况</span>\n  } <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-keyword\">this</span>.props.isReverse) {\n    <span class=\"hljs-comment\">// 相反模式组件到顶端的距离</span>\n    offset = parentNode.scrollTop;\n  } <span class=\"hljs-keyword\">else</span> {\n    <span class=\"hljs-comment\">// 正常模式组件到底端的距离</span>\n    offset = el.scrollHeight - parentNode.scrollTop - parentNode.clientHeight;\n  }\n\n  <span class=\"hljs-comment\">// 此处应该要判断确保滚动组件正常显示</span>\n  <span class=\"hljs-keyword\">if</span> (\n    offset &lt; <span class=\"hljs-built_in\">Number</span>(<span class=\"hljs-keyword\">this</span>.props.threshold) &amp;&amp;\n    (el &amp;&amp; el.offsetParent !== <span class=\"hljs-literal\">null</span>)\n  ) {\n    <span class=\"hljs-comment\">// 卸载事件</span>\n    <span class=\"hljs-keyword\">this</span>.detachScrollListener();\n    <span class=\"hljs-comment\">// 卸载事件后再执行 loadMore</span>\n    <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-keyword\">typeof</span> <span class=\"hljs-keyword\">this</span>.props.loadMore === <span class=\"hljs-string\">'function'</span>) {\n      <span class=\"hljs-keyword\">this</span>.props.loadMore((<span class=\"hljs-keyword\">this</span>.pageLoaded += <span class=\"hljs-number\">1</span>));\n    }\n  }\n}</code></pre>\n</code></pre>\n<p>组件核心。</p>\n<h3 id=\"ji-ge-xue-xi-fu-xi-dian\">几个学习/复习点</h3>\n<ol>\n<li><p><code>offsetParent</code></p>\n<p> <code>offsetParent</code>返回一个指向最近的包含该元素的定位元素.</p>\n<p> <code>offsetParent</code>很有用，因为计算<code>offsetTop</code>和<code>offsetLeft</code>都是相对于<code>offsetParent</code>边界的。</p>\n<p> <code>offsetParent</code>为 null 的几种情况:</p>\n<ul>\n<li>ele 为 body</li>\n<li>ele 的 position 为 fixed</li>\n<li>ele 的 display 为 none</li>\n</ul>\n<p> 此组件中<code>offsetParent</code>处理了2种情况</p>\n<ol>\n<li>在<code>useWindow</code>的情况下(即事件绑定在window，滚动作用在body) 通过递归获取<code>offsetParent</code>到达顶端的高度(<code>offsetTop</code>)。<pre><code class=\"language-js\"><pre class=\"hljs\"><code>calculateTopPosition(el) {\n <span class=\"hljs-keyword\">if</span> (!el) {\n   <span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">0</span>;   \n }\n <span class=\"hljs-keyword\">return</span> el.offsetTop + <span class=\"hljs-keyword\">this</span>.calculateTopPosition(el.offsetParent);   \n}</code></pre>\n</code></pre>\n</li>\n<li>通过判断<code>offsetParent</code>不为null的情况，确保滚动组件正常显示</li>\n</ol>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code>  <span class=\"hljs-keyword\">if</span> (\n    offset &lt; <span class=\"hljs-built_in\">Number</span>(<span class=\"hljs-keyword\">this</span>.props.threshold) &amp;&amp;\n    (el &amp;&amp; el.offsetParent !== <span class=\"hljs-literal\">null</span>)\n  ) {<span class=\"hljs-comment\">/* ... */</span> }</code></pre>\n</code></pre>\n</li>\n<li><p><code>scrollHeight</code>和<code>clientHeight</code></p>\n<p> 在无滚动的情况下，<code>scrollHeight</code>和<code>clientHeight</code>相等，都为<code>height</code>+<code>padding</code>*2</p>\n<p> 在有滚动的情况下，<code>scrollHeight</code>表示实际内容高度，<code>clientHeight</code>表示视口高度。</p>\n</li>\n<li><p>每次执行<code>loadMore</code>前卸载事件。</p>\n<p> 确保不会重复(过多)执行<code>loadMore</code>，因为先卸载事件再执行<code>loadMore</code>，可以确保在执行过程中，<code>scroll</code>事件是无效的，然后再每次<code>componentDidUpdate</code>的时候重新绑定事件。</p>\n</li>\n</ol>\n<h3 id=\"render\">render</h3>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code>render() {\n  <span class=\"hljs-comment\">// 获取porps</span>\n  <span class=\"hljs-keyword\">const</span> renderProps = <span class=\"hljs-keyword\">this</span>.filterProps(<span class=\"hljs-keyword\">this</span>.props);\n  <span class=\"hljs-keyword\">const</span> {\n    children,\n    element,\n    hasMore,\n    initialLoad,\n    isReverse,\n    loader,\n    loadMore,\n    pageStart,\n    ref,\n    threshold,\n    useCapture,\n    useWindow,\n    getScrollParent,\n    ...props\n  } = renderProps;\n\n  <span class=\"hljs-comment\">// 定义一个ref</span>\n  <span class=\"hljs-comment\">// 能将当前组件的DOM传出去</span>\n  props.ref = <span class=\"hljs-function\"><span class=\"hljs-params\">node</span> =&gt;</span> {\n    <span class=\"hljs-keyword\">this</span>.scrollComponent = node;\n    <span class=\"hljs-comment\">// 执行父组件传来的ref(如果有)</span>\n    <span class=\"hljs-keyword\">if</span> (ref) {\n      ref(node);\n    }\n  };\n\n  <span class=\"hljs-keyword\">const</span> childrenArray = [children];\n  <span class=\"hljs-comment\">// 执行loader</span>\n  <span class=\"hljs-keyword\">if</span> (hasMore) {\n    <span class=\"hljs-keyword\">if</span> (loader) {\n      isReverse ? childrenArray.unshift(loader) : childrenArray.push(loader);\n    } <span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span> (<span class=\"hljs-keyword\">this</span>.defaultLoader) {\n      isReverse\n        ? childrenArray.unshift(<span class=\"hljs-keyword\">this</span>.defaultLoader)\n        : childrenArray.push(<span class=\"hljs-keyword\">this</span>.defaultLoader);\n    }\n  }\n  <span class=\"hljs-comment\">// ref 传递给 'div'元素</span>\n  <span class=\"hljs-keyword\">return</span> React.createElement(element, props, childrenArray);\n}</code></pre>\n</code></pre>\n<p>这里一个小亮点就是，在<code>react</code>中，<code>this.props</code>是不允许修改的。</p>\n<p>这里使用了解构</p>\n<pre><code><pre class=\"hljs\"><code>getScrollParent,\n...props\n} = renderProps;</code></pre>\n</code></pre>\n<p>这里解构相当于<code>Object.assign</code>，定义了一个新的<code>object</code>，便可以添加属性了，并且<code>this.props</code>不会受到影响。</p>\n<h2 id=\"zong-jie\">总结</h2>\n<p><code>react-infinite-scroller</code>逻辑比较简单。</p>\n<p>一些注意/学习/复习点：</p>\n<ul>\n<li><p><code>Chrome</code>的一个滚动加载请求的bug。<a href=\"#mousewheel-jie-jue-chrome-de-deng-dai-bug\">本文位置</a></p>\n</li>\n<li><p><code>offsetParent</code>的一些实际用法。<a href=\"#ji-ge-xue-xi-fu-xi-dian\">本文位置</a></p>\n</li>\n<li><p>通过不断订阅和取消事件绑定让滚动执行函数不会频繁触发。<a href=\"#ji-ge-xue-xi-fu-xi-dian\">本文位置</a></p>\n</li>\n<li><p><code>scrollHeight</code>和<code>clientHeight</code>区别。<a href=\"#ji-ge-xue-xi-fu-xi-dian\">本文位置</a></p>\n</li>\n</ul>\n<p>此库建议使用在自定义的一些组件上并且不那么复杂的逻辑上。</p>\n<p>用在第三方库可以会无法获取正确的父组件，而通过<code>document.getElementBy..</code>传入。</p>\n<p>面对稍微复杂的逻辑，</p>\n<p>例如，一个搜索组件，订阅<code>onChange</code>事件显示内容，搜索&quot;a&quot;，呈现内容，滚动加载了3次，再添加搜索词&quot;b&quot;，这时候&quot;ab&quot;的内容呈现是在3次之后。</p>\n",
+  "toc": [
+    {
+      "anchor": "chu-shi",
+      "level": 2,
+      "text": "初识"
+    },
+    {
+      "anchor": "shen-ru",
+      "level": 2,
+      "text": "深入"
+    },
+    {
+      "anchor": "componentdidmount",
+      "level": 3,
+      "text": "componentDidMount"
+    },
+    {
+      "anchor": "attachscrolllistener",
+      "level": 3,
+      "text": "attachScrollListener"
+    },
+    {
+      "anchor": "mousewheel-jie-jue-chrome-de-deng-dai-bug",
+      "level": 3,
+      "text": "mousewheel解决chrome的等待bug"
+    },
+    {
+      "anchor": "getparentelement",
+      "level": 3,
+      "text": "getParentElement"
+    },
+    {
+      "anchor": "scrolllistener",
+      "level": 3,
+      "text": "scrollListener"
+    },
+    {
+      "anchor": "ji-ge-xue-xi-fu-xi-dian",
+      "level": 3,
+      "text": "几个学习/复习点"
+    },
+    {
+      "anchor": "render",
+      "level": 3,
+      "text": "render"
+    },
+    {
+      "anchor": "zong-jie",
+      "level": 2,
+      "text": "总结"
+    }
+  ],
+  "relatedTags": [
+    "源码",
+    "react"
+  ],
+  "created_at": "2018-11-25",
+  "timeArr": [
+    2018,
+    10,
+    25,
+    23,
+    37,
+    53,
+    0
+  ],
+  "title": "源码阅读-react-infinite-scroller",
+  "uuid": "7cbb6144b6cfb573e0e828cb0d5cbe5e805fe1d9",
+  "summary": "<p><code>react-infinite-scroller</code>就是一个组件，主要逻辑就是<code>addEventListener</code>绑定<code>scroll</code>事件。</p>\n<p>看它的源码主要意义不在知道如何使用它，而是知道以后处理<code>滚动加载</code>要注意的东西。</p>\n<blockquote>\n<p>此处跳到<a href=\"#zong-jie\">总结</a>。</p>\n</blockquote>\n<h4>初识</h4>\n<p>参数：</p>\n<pre class=\"hljs\"><code>// 渲染出来的...</code></pre>",
+  "slug": "source-code-react-infinite-scroller",
+  "sha": "5aba2eaf43528ba166b972e6b13b0b43de1c816c"
+}

@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">Solution</span><span class=\"hljs-params\">(object)</span>:</span>\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">getMoneyAmount</span><span class=\"hljs-params\">(self, n)</span>:</span>\n        <span class=\"hljs-string\">\"\"\"\n        :type n: int\n        :rtype: int\n        \"\"\"</span>\n        dp=[[float(<span class=\"hljs-string\">'inf'</span>)]*n <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> range(n)]\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> range(n):\n            dp[i][i]=<span class=\"hljs-number\">0</span>\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> range(<span class=\"hljs-number\">1</span>,n):\n            <span class=\"hljs-keyword\">for</span> j <span class=\"hljs-keyword\">in</span> range(<span class=\"hljs-number\">0</span>,n-i):\n                k=i+j\n                mid=(j+k) // <span class=\"hljs-number\">2</span>\n                <span class=\"hljs-keyword\">for</span> m <span class=\"hljs-keyword\">in</span> range(mid,k+<span class=\"hljs-number\">1</span>):\n                    left,right=<span class=\"hljs-number\">0</span>,<span class=\"hljs-number\">0</span>\n                    <span class=\"hljs-keyword\">if</span> m &gt;<span class=\"hljs-number\">0</span>:left=dp[j][m<span class=\"hljs-number\">-1</span>]\n                    <span class=\"hljs-keyword\">if</span> m &lt;k:right=dp[m+<span class=\"hljs-number\">1</span>][k]\n                    dp[j][k]=min(dp[j][k],max(left,right)+m+<span class=\"hljs-number\">1</span>)\n        <span class=\"hljs-comment\"># print dp</span>\n        <span class=\"hljs-keyword\">return</span> dp[<span class=\"hljs-number\">0</span>][<span class=\"hljs-number\">-1</span>]\n</code></pre>\n"
+  ],
+  "querySlug": "guess-number-higher-or-lower-ii",
+  "created_at": "2019-03-02",
+  "timeArr": [
+    2019,
+    2,
+    2,
+    17,
+    40,
+    10,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>我们正在玩一个猜数游戏，游戏规则如下：</p>\n\n<p>我从&nbsp;<strong>1&nbsp;</strong>到 <strong>n</strong> 之间选择一个数字，你来猜我选了哪个数字。</p>\n\n<p>每次你猜错了，我都会告诉你，我选的数字比你的大了或者小了。</p>\n\n<p>然而，当你猜了数字 x 并且猜错了的时候，你需要支付金额为 x 的现金。直到你猜到我选的数字，你才算赢得了这个游戏。</p>\n\n<p><strong>示例:</strong></p>\n\n<pre>n = 10, 我选择了8.\n\n第一轮: 你猜我选择的数字是5，我会告诉你，我的数字更大一些，然后你需要支付5块。\n第二轮: 你猜是7，我告诉你，我的数字更大一些，你支付7块。\n第三轮: 你猜是9，我告诉你，我的数字更小一些，你支付9块。\n\n游戏结束。8 就是我选的数字。\n\n你最终要支付 5 + 7 + 9 = 21 块钱。\n</pre>\n\n<p>给定&nbsp;<strong>n &ge; 1，</strong>计算你至少需要拥有多少现金才能确保你能赢得这个游戏。</p>\n",
+  "title": "375. 猜数字大小 II",
+  "relatedTags": [
+    "数学",
+    "动态规划",
+    "博弈"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "python"
+  ],
+  "uniqueID": "375",
+  "slug": "375-Guess-Number-Higher-or-Lower-II"
+}

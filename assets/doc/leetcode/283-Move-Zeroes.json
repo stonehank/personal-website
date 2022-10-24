@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">nums</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{void}</span> </span>Do not return anything, modify nums in-place instead.\n */</span>\n<span class=\"hljs-keyword\">var</span> moveZeroes = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">nums</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> start=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;nums.length;i++){\n    <span class=\"hljs-keyword\">if</span>(nums[i]===<span class=\"hljs-number\">0</span>)<span class=\"hljs-keyword\">continue</span>\n    swap(start++,i)\n  }\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">swap</span>(<span class=\"hljs-params\">i,j</span>)</span>{\n    <span class=\"hljs-keyword\">let</span> t=nums[i]\n    nums[i]=nums[j]\n    nums[j]=t\n  }\n};\n</code></pre>\n"
+  ],
+  "querySlug": "move-zeroes",
+  "created_at": "2019-03-13",
+  "timeArr": [
+    2019,
+    2,
+    13,
+    14,
+    22,
+    15,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给定一个数组 <code>nums</code>，编写一个函数将所有 <code>0</code> 移动到数组的末尾，同时保持非零元素的相对顺序。</p>\n\n<p><strong>示例:</strong></p>\n\n<pre><strong>输入:</strong> <code>[0,1,0,3,12]</code>\n<strong>输出:</strong> <code>[1,3,12,0,0]</code></pre>\n\n<p><strong>说明</strong>:</p>\n\n<ol>\n\t<li>必须在原数组上操作，不能拷贝额外的数组。</li>\n\t<li>尽量减少操作次数。</li>\n</ol>\n",
+  "title": "283. 移动零",
+  "relatedTags": [
+    "数组",
+    "双指针"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "283",
+  "slug": "283-Move-Zeroes"
+}

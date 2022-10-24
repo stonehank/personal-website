@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">deliciousness</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> countPairs = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">deliciousness</span>) </span>{\n    <span class=\"hljs-keyword\">let</span> MOD=<span class=\"hljs-number\">1e9</span>+<span class=\"hljs-number\">7</span>\n    <span class=\"hljs-keyword\">let</span> powList=[]\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;=<span class=\"hljs-number\">22</span>;i++){\n        powList[i]=<span class=\"hljs-built_in\">Math</span>.pow(<span class=\"hljs-number\">2</span>,i)\n    }\n    <span class=\"hljs-keyword\">let</span> curCount=<span class=\"hljs-keyword\">new</span> <span class=\"hljs-built_in\">Map</span>()\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> n <span class=\"hljs-keyword\">of</span> deliciousness){\n        <span class=\"hljs-keyword\">if</span>(!curCount.has(n)){\n            curCount.set(n,<span class=\"hljs-number\">1</span>)\n        }<span class=\"hljs-keyword\">else</span>{\n            curCount.set(n,curCount.get(n)+<span class=\"hljs-number\">1</span>)\n        }\n    }\n    <span class=\"hljs-keyword\">let</span> res=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> n <span class=\"hljs-keyword\">of</span> deliciousness){\n        curCount.set(n,curCount.get(n)<span class=\"hljs-number\">-1</span>)\n        <span class=\"hljs-keyword\">let</span> candi=[]\n        <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> pow <span class=\"hljs-keyword\">of</span> powList){\n            <span class=\"hljs-keyword\">let</span> c=pow-n\n            <span class=\"hljs-keyword\">if</span>(c&gt;=<span class=\"hljs-number\">0</span> &amp;&amp; curCount.get(c)&gt;<span class=\"hljs-number\">0</span>){\n                res  =( res+curCount.get(c)) % MOD\n            }\n        }\n        \n    }\n    <span class=\"hljs-keyword\">return</span> res\n\n};\n</code></pre>\n"
+  ],
+  "querySlug": "count-good-meals",
+  "created_at": "2021-01-17",
+  "timeArr": [
+    2021,
+    0,
+    17,
+    11,
+    4,
+    35,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p><strong>大餐</strong> 是指 <strong>恰好包含两道不同餐品</strong> 的一餐，其美味程度之和等于 2 的幂。</p>\n\n<p>你可以搭配 <strong>任意</strong> 两道餐品做一顿大餐。</p>\n\n<p>给你一个整数数组 <code>deliciousness</code> ，其中 <code>deliciousness[i]</code> 是第 <code>i<sup>​​​​​​</sup>​​​​</code>​​​​ 道餐品的美味程度，返回你可以用数组中的餐品做出的不同 <strong>大餐</strong> 的数量。结果需要对 <code>10<sup>9</sup> + 7</code> 取余。</p>\n\n<p>注意，只要餐品下标不同，就可以认为是不同的餐品，即便它们的美味程度相同。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>deliciousness = [1,3,5,7,9]\n<strong>输出：</strong>4\n<strong>解释：</strong>大餐的美味程度组合为 (1,3) 、(1,7) 、(3,5) 和 (7,9) 。\n它们各自的美味程度之和分别为 4 、8 、8 和 16 ，都是 2 的幂。\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>deliciousness = [1,1,1,3,3,3,7]\n<strong>输出：</strong>15\n<strong>解释：</strong>大餐的美味程度组合为 3 种 (1,1) ，9 种 (1,3) ，和 3 种 (1,7) 。</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= deliciousness.length <= 10<sup>5</sup></code></li>\n\t<li><code>0 <= deliciousness[i] <= 2<sup>20</sup></code></li>\n</ul>\n",
+  "title": "1711. 大餐计数",
+  "relatedTags": [
+    "数组",
+    "哈希表"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "1711",
+  "slug": "1711-Count-Good-Meals"
+}

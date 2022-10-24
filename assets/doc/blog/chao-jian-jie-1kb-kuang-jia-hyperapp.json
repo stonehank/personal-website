@@ -1,0 +1,30 @@
+{
+  "content": "<h2 id=\"hyperapp-kuang-jia\">hyperapp框架</h2>\n<p><a href=\"https://github.com/stonehank/sourcecode-analysis/blob/master/source-code.hyperapp/README.md\">完整源码说明注释</a></p>\n<p>一个极小的类react框架，也是通过 Virtual DOM对节点进行对比（通过key），再更新渲染</p>\n<p>思维导图：</p>\n<p><img src=\"https://stonehank.github.io/articles/img/hyperapp%E5%AF%BC%E5%9B%BE.jpg\" alt=\"\"></p>\n",
+  "toc": [
+    {
+      "anchor": "hyperapp-kuang-jia",
+      "level": 2,
+      "text": "hyperapp框架"
+    }
+  ],
+  "relatedTags": [
+    "源码",
+    "github",
+    "react"
+  ],
+  "created_at": "2018-07-01",
+  "timeArr": [
+    2018,
+    6,
+    1,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "超简洁1kb框架-hyperapp",
+  "uuid": "041e14e2880378f2920fae48877b46694fbfc26d",
+  "summary": "<h4>hyperapp框架</h4>\n<p><a href=\"https://github.com/stonehank/sourcecode-analysis/blob/master/source-code.hyperapp/README.md\">完整源码说明注释</a></p>\n<p>一个极小的类react框架，也是通过 Virtual DOM对节点进行对比（通过...</p>",
+  "slug": "chao-jian-jie-1kb-kuang-jia-hyperapp",
+  "sha": "ec662a13e128b776e46f1ef9ec3fdaa63e0d7381"
+}

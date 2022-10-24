@@ -1,0 +1,28 @@
+{
+  "content": "<h2 id=\"yi-ci-xhruploadonprogress-yu-multiparty-da-pei-de-cai-keng-ji-lu\">一次xhr.upload.onprogress与multiparty搭配的踩坑记录</h2>\n<p>有一个<a href=\"https://github.com/stonehank/blogs/blob/master/07-26-%E9%80%9A%E8%BF%87blob%E5%AE%9E%E7%8E%B0%E6%96%87%E4%BB%B6%E7%BB%AD%E4%BC%A0%E8%AE%B0%E5%BD%95(nodejs).md\">分段上传的demo</a>，设定每次上传大小为1MB，但当网速过慢的时候，进度条会等待很久(1MB上传完毕)\n才会增加变化，于是想通过<code>xhr.onprogress</code>对其进行实时监控</p>\n<p>因为是上传文件，需要使用<code>xhr.upload.onprogress</code>，但会发出跨域错误</p>\n<p>原来<code>xhr.upload.onprogress</code>会被认为是一个非简单请求，需要预检请求，而预检请求是一个OPTIONS方法，默认的跨域配置并不支持OPTIONS方法</p>\n<p>这就是问题原因</p>\n<p>解决办法：</p>\n<p>首先要在服务端添加OPTIONS处理方法</p>\n<p><code>res.setHeader(&quot;Access-Control-Allow-Methods&quot;, &quot;POST, GET, OPTIONS&quot;)</code></p>\n<p>结果还是不行，查看报错信息(此处使用了<code>multiparty</code>对<code>formData</code>解析)</p>\n<pre><code><pre class=\"hljs\"><code>Error: missing content-type header</code></pre>\n</code></pre>\n<p>原来在<code>multiparty</code>内部使用<code>form.parse(req)</code>时会检测<code>content-type</code>，而options请求不带<code>content-type</code>，因此会触发错误</p>\n<p>尝试1：在client内部进行添加<code>xhr.setRequestHeader(&#39;content-type&#39;, &#39;multipart/form-data&#39;)</code>，但是options并不会带上这个content-type</p>\n<p>最终解决：采取当method为<code>OPTIONS</code>时，直接返回204</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-keyword\">if</span>(req.method===<span class=\"hljs-string\">\"OPTIONS\"</span>){\n    res.statusCode=<span class=\"hljs-number\">204</span>\n    res.end()\n  }<span class=\"hljs-keyword\">else</span>{\n  <span class=\"hljs-comment\">//此处会检测content-type，而options请求不带content-type，因此会触发错误</span>\n    form.parse(req)\n  }</code></pre>\n</code></pre>\n",
+  "toc": [
+    {
+      "anchor": "yi-ci-xhruploadonprogress-yu-multiparty-da-pei-de-cai-keng-ji-lu",
+      "level": 2,
+      "text": "一次xhr.upload.onprogress与multiparty搭配的踩坑记录"
+    }
+  ],
+  "relatedTags": [
+    "github"
+  ],
+  "created_at": "2018-08-18",
+  "timeArr": [
+    2018,
+    7,
+    18,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "记录一次xhr.upload.onprogress填坑",
+  "uuid": "f72ad63b02516bf71d570ecbf6c39488e64deb8e",
+  "summary": "<h4>一次xhr.upload.onprogress与multiparty搭配的踩坑记录</h4>\n<p>有一个[分段上传的demo](https://github.com/stonehank/blogs/blob/master/07-26-%E9%80%9A%E8%BF%87blob%E5%AE%9E%E7%8E%B0%E6%96...</p>",
+  "slug": "ji-lu-yi-ci-xhr.upload.onprogress-tian-keng",
+  "sha": "bc7ed8c6eae00e50c69810221c75724e5987c3ef"
+}

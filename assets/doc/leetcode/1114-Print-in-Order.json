@@ -1,0 +1,28 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">Foo</span><span class=\"hljs-params\">(object)</span>:</span>\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">__init__</span><span class=\"hljs-params\">(self)</span>:</span>\n        self.memo={}\n        <span class=\"hljs-comment\"># pass</span>\n        <span class=\"hljs-comment\"># self.first=0</span>\n        <span class=\"hljs-comment\"># self.second=0</span>\n        <span class=\"hljs-comment\"># self.third=0</span>\n        <span class=\"hljs-comment\"># self.memo={}</span>\n\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">first</span><span class=\"hljs-params\">(self, printFirst)</span>:</span>\n        <span class=\"hljs-string\">\"\"\"\n        :type printFirst: method\n        :rtype: void\n        \"\"\"</span>\n        \n        <span class=\"hljs-comment\"># printFirst() outputs \"first\". Do not change or remove this line.</span>\n        printFirst()\n        self.first=<span class=\"hljs-number\">2</span>\n        <span class=\"hljs-comment\"># print self.memo</span>\n        <span class=\"hljs-keyword\">if</span> <span class=\"hljs-string\">'two'</span> <span class=\"hljs-keyword\">in</span> self.memo:\n          self.memo[<span class=\"hljs-string\">'two'</span>]()\n          self.second=<span class=\"hljs-number\">2</span>\n        <span class=\"hljs-keyword\">if</span> <span class=\"hljs-string\">'three'</span> <span class=\"hljs-keyword\">in</span> self.memo <span class=\"hljs-keyword\">and</span> self.second==<span class=\"hljs-number\">2</span>:\n          self.memo[<span class=\"hljs-string\">'three'</span>]()        \n\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">second</span><span class=\"hljs-params\">(self, printSecond)</span>:</span>\n        <span class=\"hljs-string\">\"\"\"\n        :type printSecond: method\n        :rtype: void\n        \"\"\"</span>\n        <span class=\"hljs-keyword\">if</span> self.first!=<span class=\"hljs-number\">2</span>:\n          self.second=<span class=\"hljs-number\">1</span>\n          self.memo[<span class=\"hljs-string\">'two'</span>]=printSecond\n          <span class=\"hljs-keyword\">return</span>\n        <span class=\"hljs-comment\"># printSecond() outputs \"second\". Do not change or remove this line.</span>\n        printSecond()\n        self.second=<span class=\"hljs-number\">2</span>\n        <span class=\"hljs-keyword\">if</span> <span class=\"hljs-string\">'three'</span> <span class=\"hljs-keyword\">in</span> self.memo:\n          self.memo[<span class=\"hljs-string\">'three'</span>]()   \n\n            \n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">third</span><span class=\"hljs-params\">(self, printThird)</span>:</span>\n        <span class=\"hljs-string\">\"\"\"\n        :type printThird: method\n        :rtype: void\n        \"\"\"</span>\n        <span class=\"hljs-keyword\">if</span> self.second!=<span class=\"hljs-number\">2</span>:\n          self.third=<span class=\"hljs-number\">1</span>\n          self.memo[<span class=\"hljs-string\">'three'</span>]=printThird\n          <span class=\"hljs-keyword\">return</span>\n        <span class=\"hljs-comment\"># printThird() outputs \"third\". Do not change or remove this line.</span>\n        printThird()\n\n</code></pre>\n"
+  ],
+  "querySlug": "print-in-order",
+  "created_at": "2019-07-13",
+  "timeArr": [
+    2019,
+    6,
+    13,
+    12,
+    29,
+    57,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>我们提供了一个类：</p>\n\n<pre>\npublic class Foo {\n  public void first() { print(\"first\"); }\n  public void second() { print(\"second\"); }\n  public void third() { print(\"third\"); }\n}</pre>\n\n<p>三个不同的线程 A、B、C 将会共用一个 <code>Foo</code> 实例。</p>\n\n<ul>\n\t<li>一个将会调用 <code>first()</code> 方法</li>\n\t<li>一个将会调用 <code>second()</code> 方法</li>\n\t<li>还有一个将会调用 <code>third()</code> 方法</li>\n</ul>\n\n<p>请设计修改程序，以确保 <code>second()</code> 方法在 <code>first()</code> 方法之后被执行，<code>third()</code> 方法在 <code>second()</code> 方法之后被执行。</p>\n\n<p> </p>\n\n<p><strong>示例 1:</strong></p>\n\n<pre>\n<strong>输入:</strong> [1,2,3]\n<strong>输出:</strong> \"firstsecondthird\"\n<strong>解释:</strong> \n有三个线程会被异步启动。\n输入 [1,2,3] 表示线程 A 将会调用 first() 方法，线程 B 将会调用 second() 方法，线程 C 将会调用 third() 方法。\n正确的输出是 \"firstsecondthird\"。\n</pre>\n\n<p><strong>示例 2:</strong></p>\n\n<pre>\n<strong>输入:</strong> [1,3,2]\n<strong>输出:</strong> \"firstsecondthird\"\n<strong>解释:</strong> \n输入 [1,3,2] 表示线程 A 将会调用 first() 方法，线程 B 将会调用 third() 方法，线程 C 将会调用 second() 方法。\n正确的输出是 \"firstsecondthird\"。</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li>尽管输入中的数字似乎暗示了顺序，但是我们并不保证线程在操作系统中的调度顺序。</li>\n\t<li>你看到的输入格式主要是为了确保测试的全面性。</li>\n</ul>\n",
+  "title": "1114. 按序打印",
+  "relatedTags": [
+    "多线程"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "python"
+  ],
+  "uniqueID": "1114",
+  "slug": "1114-Print-in-Order"
+}

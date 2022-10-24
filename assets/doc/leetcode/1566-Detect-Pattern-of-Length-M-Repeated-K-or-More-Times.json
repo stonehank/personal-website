@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">arr</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">m</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">k</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{boolean}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> containsPattern = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">arr, m, k</span>) </span>{\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">startCheck</span>(<span class=\"hljs-params\">idx</span>)</span>{\n        <span class=\"hljs-keyword\">let</span> template=<span class=\"hljs-string\">''</span>\n        <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=idx;i&lt;idx+m;i++){\n            template+=arr[i]\n        }\n        <span class=\"hljs-keyword\">let</span> count=<span class=\"hljs-number\">1</span>\n        <span class=\"hljs-comment\">// console.log(idx,template)</span>\n        <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=idx+m;i&lt;arr.length;i+=m){\n            <span class=\"hljs-keyword\">let</span> str=<span class=\"hljs-string\">''</span>\n            <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> j=i;j&lt;i+m;j++){\n                str+=arr[j]\n            }\n            <span class=\"hljs-keyword\">if</span>(str===template){\n                count++\n                <span class=\"hljs-keyword\">if</span>(count===k)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n            }<span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n        }\n        <span class=\"hljs-keyword\">return</span> count===k\n    }\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;arr.length-m;i++){\n        <span class=\"hljs-keyword\">if</span>(startCheck(i))<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n    }\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n};\n</code></pre>\n"
+  ],
+  "querySlug": "detect-pattern-of-length-m-repeated-k-or-more-times",
+  "created_at": "2020-08-30",
+  "timeArr": [
+    2020,
+    7,
+    30,
+    10,
+    46,
+    20,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给你一个正整数数组 <code>arr</code>，请你找出一个长度为 <code>m</code> 且在数组中至少重复 <code>k</code> 次的模式。</p>\n\n<p><strong>模式</strong> 是由一个或多个值组成的子数组（连续的子序列），<strong>连续</strong> 重复多次但 <strong>不重叠</strong> 。 模式由其长度和重复次数定义。</p>\n\n<p>如果数组中存在至少重复 <code>k</code> 次且长度为 <code>m</code> 的模式，则返回 <code>true</code> ，否则返回&nbsp; <code>false</code> 。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre><strong>输入：</strong>arr = [1,2,4,4,4,4], m = 1, k = 3\n<strong>输出：</strong>true\n<strong>解释：</strong>模式 <strong>(4)</strong> 的长度为 1 ，且连续重复 4 次。注意，模式可以重复 k 次或更多次，但不能少于 k 次。\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre><strong>输入：</strong>arr = [1,2,1,2,1,1,1,3], m = 2, k = 2\n<strong>输出：</strong>true\n<strong>解释：</strong>模式 <strong>(1,2)</strong> 长度为 2 ，且连续重复 2 次。另一个符合题意的模式是 <strong>(2,1) </strong>，同样重复 2 次。\n</pre>\n\n<p><strong>示例 3：</strong></p>\n\n<pre><strong>输入：</strong>arr = [1,2,1,2,1,3], m = 2, k = 3\n<strong>输出：</strong>false\n<strong>解释：</strong>模式 <strong>(1,2)</strong> 长度为 2 ，但是只连续重复 2 次。不存在长度为 2 且至少重复 3 次的模式。\n</pre>\n\n<p><strong>示例 4：</strong></p>\n\n<pre><strong>输入：</strong>arr = [1,2,3,1,2], m = 2, k = 2\n<strong>输出：</strong>false\n<strong>解释：</strong>模式 <strong>(1,2)</strong> 出现 2 次但并不连续，所以不能算作连续重复 2 次。\n</pre>\n\n<p><strong>示例 5：</strong></p>\n\n<pre><strong>输入：</strong>arr = [2,2,2,2], m = 2, k = 3\n<strong>输出：</strong>false\n<strong>解释：</strong>长度为 2 的模式只有 <strong>(2,2)</strong> ，但是只连续重复 2 次。注意，不能计算重叠的重复次数。\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>2 &lt;= arr.length &lt;= 100</code></li>\n\t<li><code>1 &lt;= arr[i] &lt;= 100</code></li>\n\t<li><code>1 &lt;= m&nbsp;&lt;= 100</code></li>\n\t<li><code>2 &lt;= k&nbsp;&lt;= 100</code></li>\n</ul>\n",
+  "title": "1566. 重复至少 K 次且长度为 M 的模式",
+  "relatedTags": [
+    "数组",
+    "枚举"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "1566",
+  "slug": "1566-Detect-Pattern-of-Length-M-Repeated-K-or-More-Times"
+}

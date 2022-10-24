@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">s</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> numSteps = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">s</span>) </span>{\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">addOne</span>(<span class=\"hljs-params\">str</span>)</span>{\n    <span class=\"hljs-keyword\">let</span> newRes=<span class=\"hljs-string\">''</span>\n    <span class=\"hljs-keyword\">let</span> p=<span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=str.length<span class=\"hljs-number\">-1</span>;i&gt;=<span class=\"hljs-number\">0</span>;i--){\n      <span class=\"hljs-keyword\">let</span> newS=+str[i]+p + <span class=\"hljs-string\">''</span>\n      <span class=\"hljs-keyword\">if</span>(newS===<span class=\"hljs-string\">'2'</span>){\n        newS=<span class=\"hljs-string\">'0'</span>\n        p=<span class=\"hljs-number\">1</span>\n      }<span class=\"hljs-keyword\">else</span>{\n        p=<span class=\"hljs-number\">0</span>\n      }\n      newRes=newS+newRes\n    }\n    <span class=\"hljs-keyword\">if</span>(p===<span class=\"hljs-number\">1</span>){\n      newRes=<span class=\"hljs-string\">'1'</span>+newRes\n    }\n    <span class=\"hljs-keyword\">return</span> newRes\n  }\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">div</span>(<span class=\"hljs-params\">str</span>)</span>{\n    <span class=\"hljs-keyword\">return</span> str.slice(<span class=\"hljs-number\">0</span>,str.length<span class=\"hljs-number\">-1</span>)\n  }\n  <span class=\"hljs-keyword\">let</span> step=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">while</span>(s!==<span class=\"hljs-string\">'1'</span>){\n    step++\n    <span class=\"hljs-keyword\">if</span>(s[s.length<span class=\"hljs-number\">-1</span>]===<span class=\"hljs-string\">'1'</span>){\n      s=addOne(s)\n    }<span class=\"hljs-keyword\">else</span>{\n      s=div(s)\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> step\n};\n</code></pre>\n"
+  ],
+  "querySlug": "number-of-steps-to-reduce-a-number-in-binary-representation-to-one",
+  "created_at": "2020-04-05",
+  "timeArr": [
+    2020,
+    3,
+    5,
+    10,
+    43,
+    57,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给你一个以二进制形式表示的数字 <code>s</code> 。请你返回按下述规则将其减少到 1 所需要的步骤数：</p>\n\n<ul>\n\t<li>\n\t<p>如果当前数字为偶数，则将其除以 2 。</p>\n\t</li>\n\t<li>\n\t<p>如果当前数字为奇数，则将其加上 1 。</p>\n\t</li>\n</ul>\n\n<p>题目保证你总是可以按上述规则将测试用例变为 1 。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre><strong>输入：</strong>s = &quot;1101&quot;\n<strong>输出：</strong>6\n<strong>解释：</strong>&quot;1101&quot; 表示十进制数 13 。\nStep 1) 13 是奇数，加 1 得到 14&nbsp;\nStep 2) 14 是偶数，除 2 得到 7\nStep 3) 7  是奇数，加 1 得到 8\nStep 4) 8  是偶数，除 2 得到 4&nbsp; \nStep 5) 4  是偶数，除 2 得到 2&nbsp;\nStep 6) 2  是偶数，除 2 得到 1&nbsp; \n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre><strong>输入：</strong>s = &quot;10&quot;\n<strong>输出：</strong>1\n<strong>解释：</strong>&quot;10&quot; 表示十进制数 2 。\nStep 1) 2 是偶数，除 2 得到 1 \n</pre>\n\n<p><strong>示例 3：</strong></p>\n\n<pre><strong>输入：</strong>s = &quot;1&quot;\n<strong>输出：</strong>0\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= s.length&nbsp;&lt;= 500</code></li>\n\t<li><code>s</code> 由字符 <code>&#39;0&#39;</code> 或 <code>&#39;1&#39;</code> 组成。</li>\n\t<li><code>s[0] == &#39;1&#39;</code></li>\n</ul>\n",
+  "title": "1404. 将二进制表示减到 1 的步骤数",
+  "relatedTags": [
+    "位运算",
+    "字符串"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "1404",
+  "slug": "1404-Number-of-Steps-to-Reduce-a-Number-in-Binary-Representation-to-One"
+}

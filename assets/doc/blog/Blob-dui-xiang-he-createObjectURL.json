@@ -1,0 +1,28 @@
+{
+  "content": "<h2 id=\"blob-yu-createobjecturl-da-pei-shi-yong\">Blob与createObjectURL搭配使用</h2>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-keyword\">var</span> blob = <span class=\"hljs-keyword\">new</span> Blob([<span class=\"hljs-built_in\">document</span>.querySelector(<span class=\"hljs-string\">'#worker'</span>).textContent]);\n<span class=\"hljs-keyword\">var</span> url = <span class=\"hljs-built_in\">window</span>.URL.createObjectURL(blob);\n<span class=\"hljs-keyword\">var</span> worker = <span class=\"hljs-keyword\">new</span> Worker(url);\n\nworker.onmessage = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> (<span class=\"hljs-params\">e</span>) </span>{\n  <span class=\"hljs-comment\">// e.data === 'some message'</span>\n};</code></pre>\n</code></pre>\n<blockquote>\n<p><code>Blob</code>对象表示一个不可变、原始数据的类文件对象，读取它需要使用FileReader</p>\n</blockquote>\n<blockquote>\n<p>URL.createObjectURL，一个实验性功能，但可以在webworker中使用，创建一个url，这个新的URL 对象表示指定的 File 对象或 Blob 对象。</p>\n</blockquote>\n<p>这里blob用来保存了一段<code>script</code>标签内部的内容，再通过<code>createObjectURL</code>将它创建成url格式，让<code>web worker</code>读取。</p>\n",
+  "toc": [
+    {
+      "anchor": "blob-yu-createobjecturl-da-pei-shi-yong",
+      "level": 2,
+      "text": "Blob与createObjectURL搭配使用"
+    }
+  ],
+  "relatedTags": [
+    "worker"
+  ],
+  "created_at": "2018-07-24",
+  "timeArr": [
+    2018,
+    6,
+    24,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "Blob对象和createObjectURL",
+  "uuid": "c2c3bf8775d224910f8bdac31eb7e0ff5a28d431",
+  "summary": "<h4>Blob与createObjectURL搭配使用</h4>\n<pre class=\"hljs\"><code><span class=\"hljs-keyword\">var</span> blob = <span class=\"hljs-keyword\">new</span> Blob([<span class=\"hljs-built_in\">document</span>.querySelector(<span class=\"hljs-string\">'#worker'</span>).textContent]);\n<span class=\"hljs-keyword\">var</span> url = <span class=\"hljs-built_in\">window</span>.URL.createObjectURL(blob);\n<span class=\"hljs-keyword\">var</span> worker ...</code></pre>",
+  "slug": "Blob-dui-xiang-he-createObjectURL",
+  "sha": "92b4e89a32882a49232d054e12b2f724a0e9fa68"
+}

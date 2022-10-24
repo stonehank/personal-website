@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string[]}</span> <span class=\"hljs-variable\">tokens</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> evalRPN = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">tokens</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> stack=[]\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;tokens.length;i++){\n    <span class=\"hljs-keyword\">let</span> cur=tokens[i]\n    <span class=\"hljs-keyword\">if</span>(<span class=\"hljs-regexp\">/\\d/</span>.test(cur)){\n      stack.push(cur)\n    }<span class=\"hljs-keyword\">else</span>{\n      <span class=\"hljs-keyword\">let</span> b=+stack.pop(),a=+stack.pop()\n      <span class=\"hljs-keyword\">if</span>(cur===<span class=\"hljs-string\">\"+\"</span>){\n        stack.push(a + b)\n      }<span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span>(cur===<span class=\"hljs-string\">\"-\"</span>){\n        stack.push(a - b)\n      }<span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span>(cur===<span class=\"hljs-string\">\"*\"</span>){\n        stack.push(a * b)\n      }<span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span>(cur===<span class=\"hljs-string\">\"/\"</span>){\n        stack.push(<span class=\"hljs-built_in\">Math</span>.trunc(a/b))\n      }\n    } \n    <span class=\"hljs-comment\">// console.log(stack)</span>\n  }\n  <span class=\"hljs-keyword\">return</span> stack[<span class=\"hljs-number\">0</span>]\n};\n</code></pre>\n"
+  ],
+  "querySlug": "evaluate-reverse-polish-notation",
+  "created_at": "2019-04-17",
+  "timeArr": [
+    2019,
+    3,
+    17,
+    9,
+    18,
+    57,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>因为题目指出了表达式总是有效的，因此使用<code>stack</code>，遇到数字则<code>push</code>，遇到运算符号，则<code>pop</code>2个拿出来运算后再<code>push</code>。</p>\n<p>注意：除数取整不能使用<code>Math.floor</code>，应该使用<code>Math.trunc</code>或者<code>~~</code>。</p>\n",
+  "content": "<p>根据<a href=\"https://baike.baidu.com/item/%E9%80%86%E6%B3%A2%E5%85%B0%E5%BC%8F/128437\" target=\"_blank\"> 逆波兰表示法</a>，求表达式的值。</p>\n\n<p>有效的算符包括 <code>+</code>、<code>-</code>、<code>*</code>、<code>/</code> 。每个运算对象可以是整数，也可以是另一个逆波兰表达式。</p>\n\n<p> </p>\n\n<p><strong>说明：</strong></p>\n\n<ul>\n\t<li>整数除法只保留整数部分。</li>\n\t<li>给定逆波兰表达式总是有效的。换句话说，表达式总会得出有效数值且不存在除数为 0 的情况。</li>\n</ul>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>tokens = [\"2\",\"1\",\"+\",\"3\",\"*\"]\n<strong>输出：</strong>9\n<strong>解释：</strong>该算式转化为常见的中缀算术表达式为：((2 + 1) * 3) = 9\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>tokens = [\"4\",\"13\",\"5\",\"/\",\"+\"]\n<strong>输出：</strong>6\n<strong>解释：</strong>该算式转化为常见的中缀算术表达式为：(4 + (13 / 5)) = 6\n</pre>\n\n<p><strong>示例 3：</strong></p>\n\n<pre>\n<strong>输入：</strong>tokens = [\"10\",\"6\",\"9\",\"3\",\"+\",\"-11\",\"*\",\"/\",\"*\",\"17\",\"+\",\"5\",\"+\"]\n<strong>输出：</strong>22\n<strong>解释：</strong>\n该算式转化为常见的中缀算术表达式为：\n  ((10 * (6 / ((9 + 3) * -11))) + 17) + 5\n= ((10 * (6 / (12 * -11))) + 17) + 5\n= ((10 * (6 / -132)) + 17) + 5\n= ((10 * 0) + 17) + 5\n= (0 + 17) + 5\n= 17 + 5\n= 22</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= tokens.length <= 10<sup>4</sup></code></li>\n\t<li><code>tokens[i]</code> 要么是一个算符（<code>\"+\"</code>、<code>\"-\"</code>、<code>\"*\"</code> 或 <code>\"/\"</code>），要么是一个在范围 <code>[-200, 200]</code> 内的整数</li>\n</ul>\n\n<p> </p>\n\n<p><strong>逆波兰表达式：</strong></p>\n\n<p>逆波兰表达式是一种后缀表达式，所谓后缀就是指算符写在后面。</p>\n\n<ul>\n\t<li>平常使用的算式则是一种中缀表达式，如 <code>( 1 + 2 ) * ( 3 + 4 )</code> 。</li>\n\t<li>该算式的逆波兰表达式写法为 <code>( ( 1 2 + ) ( 3 4 + ) * )</code> 。</li>\n</ul>\n\n<p>逆波兰表达式主要有以下两个优点：</p>\n\n<ul>\n\t<li>去掉括号后表达式无歧义，上式即便写成 <code>1 2 + 3 4 + * </code>也可以依据次序计算出正确结果。</li>\n\t<li>适合用栈操作运算：遇到数字则入栈；遇到算符则取出栈顶两个数字进行计算，并将结果压入栈中。</li>\n</ul>\n",
+  "title": "150. 逆波兰表达式求值",
+  "relatedTags": [
+    "栈",
+    "数组",
+    "数学"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "150",
+  "slug": "150-Evaluate-Reverse-Polish-Notation"
+}

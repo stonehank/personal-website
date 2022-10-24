@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[][]}</span> <span class=\"hljs-variable\">dominoes</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> numEquivDominoPairs = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">dominoes</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> hash={}\n  <span class=\"hljs-keyword\">let</span> memo={}\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;dominoes.length;i++){\n    <span class=\"hljs-keyword\">let</span> [f,e]=dominoes[i]\n    <span class=\"hljs-keyword\">let</span> min=<span class=\"hljs-built_in\">Math</span>.min(f,e)\n    <span class=\"hljs-keyword\">let</span> max=<span class=\"hljs-built_in\">Math</span>.max(f,e)\n    <span class=\"hljs-keyword\">if</span>(hash[min+<span class=\"hljs-string\">' '</span>+max]==<span class=\"hljs-literal\">null</span>)hash[min+<span class=\"hljs-string\">' '</span>+max]=<span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">else</span> hash[min+<span class=\"hljs-string\">' '</span>+max]++\n  }\n  \n  <span class=\"hljs-keyword\">let</span> res=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> k <span class=\"hljs-keyword\">in</span> hash){\n    res+=add(hash[k]<span class=\"hljs-number\">-1</span>)\n  }\n  \n  <span class=\"hljs-keyword\">return</span> res\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">add</span>(<span class=\"hljs-params\">n</span>)</span>{\n    <span class=\"hljs-keyword\">let</span> res=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">1</span>;i&lt;=n;i++){\n      res+=i\n    }\n    <span class=\"hljs-keyword\">return</span> res\n  }\n    \n  \n};\n</code></pre>\n"
+  ],
+  "querySlug": "number-of-equivalent-domino-pairs",
+  "created_at": "2019-07-21",
+  "timeArr": [
+    2019,
+    6,
+    21,
+    10,
+    52,
+    38,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给你一个由一些多米诺骨牌组成的列表&nbsp;<code>dominoes</code>。</p>\n\n<p>如果其中某一张多米诺骨牌可以通过旋转 <code>0</code>&nbsp;度或 <code>180</code> 度得到另一张多米诺骨牌，我们就认为这两张牌是等价的。</p>\n\n<p>形式上，<code>dominoes[i] = [a, b]</code>&nbsp;和&nbsp;<code>dominoes[j] = [c, d]</code>&nbsp;等价的前提是&nbsp;<code>a==c</code>&nbsp;且&nbsp;<code>b==d</code>，或是&nbsp;<code>a==d</code> 且&nbsp;<code>b==c</code>。</p>\n\n<p>在&nbsp;<code>0 &lt;= i &lt; j &lt; dominoes.length</code>&nbsp;的前提下，找出满足&nbsp;<code>dominoes[i]</code> 和&nbsp;<code>dominoes[j]</code>&nbsp;等价的骨牌对 <code>(i, j)</code> 的数量。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例：</strong></p>\n\n<pre><strong>输入：</strong>dominoes = [[1,2],[2,1],[3,4],[5,6]]\n<strong>输出：</strong>1\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= dominoes.length &lt;= 40000</code></li>\n\t<li><code>1 &lt;= dominoes[i][j] &lt;= 9</code></li>\n</ul>\n",
+  "title": "1128. 等价多米诺骨牌对的数量",
+  "relatedTags": [
+    "数组",
+    "哈希表",
+    "计数"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "1128",
+  "slug": "1128-Number-of-Equivalent-Domino-Pairs"
+}

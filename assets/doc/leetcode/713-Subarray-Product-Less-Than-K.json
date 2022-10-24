@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">nums</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">k</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> numSubarrayProductLessThanK = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">nums, k</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> ans=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">let</span> j=<span class=\"hljs-number\">0</span>,product=<span class=\"hljs-number\">1</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">1</span>;i&lt;nums.length+<span class=\"hljs-number\">1</span>;i++){\n    product*=nums[i<span class=\"hljs-number\">-1</span>]\n    <span class=\"hljs-keyword\">while</span>(j&lt;i &amp;&amp; product&gt;=k){\n      product/=nums[j++]\n    }\n    ans+=(i-j)\n  }\n  <span class=\"hljs-keyword\">return</span> ans\n};\n</code></pre>\n"
+  ],
+  "querySlug": "subarray-product-less-than-k",
+  "created_at": "2019-03-14",
+  "timeArr": [
+    2019,
+    2,
+    14,
+    21,
+    58,
+    43,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给定一个正整数数组 <code>nums</code>和整数 <code>k</code> 。</p>\n\n<p>请找出该数组内乘积小于 <code>k</code> 的连续的子数组的个数。</p>\n\n<p> </p>\n\n<p><strong>示例 1:</strong></p>\n\n<pre>\n<strong>输入:</strong> nums = [10,5,2,6], k = 100\n<strong>输出:</strong> 8\n<strong>解释:</strong> 8个乘积小于100的子数组分别为: [10], [5], [2], [6], [10,5], [5,2], [2,6], [5,2,6]。\n需要注意的是 [10,5,2] 并不是乘积小于100的子数组。\n</pre>\n\n<p><strong>示例 2:</strong></p>\n\n<pre>\n<strong>输入:</strong> nums = [1,2,3], k = 0\n<strong>输出:</strong> 0</pre>\n\n<p> </p>\n\n<p><strong>提示: </strong></p>\n\n<ul>\n\t<li><code>1 <= nums.length <= 3 * 10<sup>4</sup></code></li>\n\t<li><code>1 <= nums[i] <= 1000</code></li>\n\t<li><code>0 <= k <= 10<sup>6</sup></code></li>\n</ul>\n",
+  "title": "713. 乘积小于K的子数组",
+  "relatedTags": [
+    "数组",
+    "滑动窗口"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "713",
+  "slug": "713-Subarray-Product-Less-Than-K"
+}

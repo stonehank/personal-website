@@ -1,0 +1,23 @@
+{
+  "content": "<p>CORS通信就是服务端设置<code>Access-Control-Allow-Origin</code>等配置</p>\n<p>分为2类请求，简单请求和非简单请求</p>\n<ul>\n<li><p>简单请求：</p>\n<p>  无预检，直接传递数据的时候检查是否同源</p>\n<p>  Content-Type类型：</p>\n<p> <code>application/x-www-form-urlencoded</code> 键值对形式 a=1&amp;b=2</p>\n<p>  <code>multipart/form-data</code> 表单(键值对或者文件)，也就是使用了<code>new FormData()</code>再<code>xhr.send()</code>的格式</p>\n<p>  <code>text/plain</code>纯文本</p>\n</li>\n<li><p>非简单请求：</p>\n<p>  预检机制：</p>\n<p>  先检测是否通过同源机制，通过了再进行传递</p>\n</li>\n</ul>\n<p>参考：<a href=\"https://wangdoc.com/javascript/bom/cors.html\">https://wangdoc.com/javascript/bom/cors.html</a></p>\n",
+  "toc": [],
+  "relatedTags": [
+    "cors",
+    "表单"
+  ],
+  "created_at": "2018-08-14",
+  "timeArr": [
+    2018,
+    7,
+    14,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "CORS通信",
+  "uuid": "4aa3042e4e1e6dbca1c52b5895fc12ef898bb9a1",
+  "summary": "<p>CORS通信就是服务端设置<code>Access-Control-Allow-Origin</code>等配置</p>\n<p>分为2类请求，简单请求和非简单请求</p>\n<ul>\n<li>\n<p>简单请求：</p>\n<p>无预检，直接传递数据的时候检查是否同源</p>\n<p>Content-Type类型：</p>\n<p>`application/x-www-form-urlenco...</p>\n</li>\n</ul>",
+  "slug": "CORS-tong-xin",
+  "sha": "bc9cd7d945070b9e0abe4cde44baf13cf7044425"
+}

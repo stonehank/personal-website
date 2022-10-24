@@ -1,0 +1,32 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">s</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string[]}</span> <span class=\"hljs-variable\">d</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{string}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> findLongestWord = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">s, d</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> maxLen=<span class=\"hljs-number\">0</span>,maxS=<span class=\"hljs-string\">''</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> word <span class=\"hljs-keyword\">of</span> d){\n    <span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>,j=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">while</span>(i&lt;s.length &amp;&amp; j&lt;word.length){\n      <span class=\"hljs-keyword\">if</span>(s[i]===word[j]){\n        i++\n        j++\n      }<span class=\"hljs-keyword\">else</span>{\n        i++\n      }\n    }\n    <span class=\"hljs-keyword\">if</span>(j===word.length){\n      <span class=\"hljs-keyword\">if</span>(word.length&gt;maxLen){\n        maxLen=word.length\n        maxS=word\n      }<span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span>(word.length===maxLen){\n        <span class=\"hljs-keyword\">if</span>(word&lt;maxS){\n          maxS=word\n        }\n      }\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> maxS\n};\n</code></pre>\n"
+  ],
+  "querySlug": "longest-word-in-dictionary-through-deleting",
+  "created_at": "2019-04-11",
+  "timeArr": [
+    2019,
+    3,
+    11,
+    22,
+    14,
+    1,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>对<code>d</code>内的每一个<code>word</code>，判断是否<code>s</code>的子序列，如果是，判断长度和字典序。</p>\n<p>关于判断是否子序列问题，双指针分别指向<code>s</code>和<code>word</code>，如果<code>s[i]===word[j]</code>，那么2个指针同时增加<code>i++; j++</code>，否则只增加<code>s</code>的指针<code>i++</code>。</p>\n",
+  "content": "<p>给你一个字符串 <code>s</code> 和一个字符串数组 <code>dictionary</code> 作为字典，找出并返回字典中最长的字符串，该字符串可以通过删除 <code>s</code> 中的某些字符得到。</p>\n\n<p>如果答案不止一个，返回长度最长且字典序最小的字符串。如果答案不存在，则返回空字符串。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>s = \"abpcplea\", dictionary = [\"ale\",\"apple\",\"monkey\",\"plea\"]\n<strong>输出：</strong>\"apple\"\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>s = \"abpcplea\", dictionary = [\"a\",\"b\",\"c\"]\n<strong>输出：</strong>\"a\"\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= s.length <= 1000</code></li>\n\t<li><code>1 <= dictionary.length <= 1000</code></li>\n\t<li><code>1 <= dictionary[i].length <= 1000</code></li>\n\t<li><code>s</code> 和 <code>dictionary[i]</code> 仅由小写英文字母组成</li>\n</ul>\n",
+  "title": "524. 通过删除字母匹配到字典里最长单词",
+  "relatedTags": [
+    "数组",
+    "双指针",
+    "字符串",
+    "排序"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "524",
+  "slug": "524-Longest-Word-in-Dictionary-through-Deleting"
+}

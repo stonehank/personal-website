@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">nums</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{boolean}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> containsDuplicate = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">nums</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> hash={}\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> n <span class=\"hljs-keyword\">of</span> nums){\n    <span class=\"hljs-keyword\">if</span>(hash[n])<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n    hash[n]=<span class=\"hljs-literal\">true</span>\n  }\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n};\n</code></pre>\n"
+  ],
+  "querySlug": "contains-duplicate",
+  "created_at": "2019-03-13",
+  "timeArr": [
+    2019,
+    2,
+    13,
+    10,
+    37,
+    50,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给定一个整数数组，判断是否存在重复元素。</p>\n\n<p>如果存在一值在数组中出现至少两次，函数返回 <code>true</code> 。如果数组中每个元素都不相同，则返回 <code>false</code> 。</p>\n\n<p> </p>\n\n<p><strong>示例 1:</strong></p>\n\n<pre>\n<strong>输入:</strong> [1,2,3,1]\n<strong>输出:</strong> true</pre>\n\n<p><strong>示例 2:</strong></p>\n\n<pre>\n<strong>输入: </strong>[1,2,3,4]\n<strong>输出:</strong> false</pre>\n\n<p><strong>示例 3:</strong></p>\n\n<pre>\n<strong>输入: </strong>[1,1,1,3,3,4,3,2,4,2]\n<strong>输出:</strong> true</pre>\n",
+  "title": "217. 存在重复元素",
+  "relatedTags": [
+    "数组",
+    "哈希表",
+    "排序"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "217",
+  "slug": "217-Contains-Duplicate"
+}

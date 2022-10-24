@@ -1,0 +1,32 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * Definition for a binary tree node.\n * function TreeNode(val) {\n *     this.val = val;\n *     this.left = this.right = null;\n * }\n */</span>\n<span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">pre</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">post</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{TreeNode}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> constructFromPrePost = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">pre, post</span>) </span>{   \n  <span class=\"hljs-keyword\">if</span>(!pre.length || !post.length)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">null</span>\n  <span class=\"hljs-keyword\">let</span> root = <span class=\"hljs-keyword\">new</span> TreeNode(pre[<span class=\"hljs-number\">0</span>]);\n  <span class=\"hljs-keyword\">let</span> leftID = post.indexOf(pre[<span class=\"hljs-number\">1</span>]);\n  root.left = constructFromPrePost(pre.slice(<span class=\"hljs-number\">1</span>, leftID+<span class=\"hljs-number\">2</span>), post.slice(<span class=\"hljs-number\">0</span>, leftID+<span class=\"hljs-number\">1</span>));\n  root.right = constructFromPrePost(pre.slice(leftID+<span class=\"hljs-number\">2</span>), post.slice(leftID+<span class=\"hljs-number\">1</span>,post.length<span class=\"hljs-number\">-1</span>)); \n  <span class=\"hljs-keyword\">return</span> root;\n};\n</code></pre>\n"
+  ],
+  "querySlug": "construct-binary-tree-from-preorder-and-postorder-traversal",
+  "created_at": "2019-03-20",
+  "timeArr": [
+    2019,
+    2,
+    20,
+    22,
+    48,
+    21,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>返回与给定的前序和后序遍历匹配的任何二叉树。</p>\n\n<p>&nbsp;<code>pre</code>&nbsp;和&nbsp;<code>post</code>&nbsp;遍历中的值是不同的正整数。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例：</strong></p>\n\n<pre><strong>输入：</strong>pre = [1,2,4,5,3,6,7], post = [4,5,2,6,7,3,1]\n<strong>输出：</strong>[1,2,3,4,5,6,7]\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= pre.length == post.length &lt;= 30</code></li>\n\t<li><code>pre[]</code>&nbsp;和&nbsp;<code>post[]</code>&nbsp;都是&nbsp;<code>1, 2, ..., pre.length</code>&nbsp;的排列</li>\n\t<li>每个输入保证至少有一个答案。如果有多个答案，可以返回其中一个。</li>\n</ul>\n",
+  "title": "889. 根据前序和后序遍历构造二叉树",
+  "relatedTags": [
+    "树",
+    "数组",
+    "哈希表",
+    "分治",
+    "二叉树"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "889",
+  "slug": "889-Construct-Binary-Tree-from-Preorder-and-Postorder-Traversal"
+}

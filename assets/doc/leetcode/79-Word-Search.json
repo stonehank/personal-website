@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{character[][]}</span> <span class=\"hljs-variable\">board</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string}</span> <span class=\"hljs-variable\">word</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{boolean}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> exist = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">board, word</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> m=board.length,n=board[<span class=\"hljs-number\">0</span>].length\n  <span class=\"hljs-keyword\">let</span> moves=[[<span class=\"hljs-number\">-1</span>,<span class=\"hljs-number\">0</span>],[<span class=\"hljs-number\">1</span>,<span class=\"hljs-number\">0</span>],[<span class=\"hljs-number\">0</span>,<span class=\"hljs-number\">1</span>],[<span class=\"hljs-number\">0</span>,<span class=\"hljs-number\">-1</span>]]\n  <span class=\"hljs-keyword\">let</span> uniq=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">let</span> visited=<span class=\"hljs-built_in\">Array</span>(m).fill().map(<span class=\"hljs-function\"><span class=\"hljs-params\">()</span>=&gt;</span><span class=\"hljs-built_in\">Array</span>(n).fill(<span class=\"hljs-number\">0</span>))\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">dfs</span>(<span class=\"hljs-params\">[x,y],id</span>)</span>{\n    <span class=\"hljs-keyword\">if</span>(id===word.length)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> [dx,dy] <span class=\"hljs-keyword\">of</span> moves){\n      <span class=\"hljs-keyword\">let</span> nx=x+dx,ny=y+dy\n      <span class=\"hljs-keyword\">if</span>(nx&lt;<span class=\"hljs-number\">0</span> || ny&lt;<span class=\"hljs-number\">0</span> || nx&gt;=m || ny&gt;=n)<span class=\"hljs-keyword\">continue</span>\n      <span class=\"hljs-keyword\">if</span>(visited[nx][ny]===uniq)<span class=\"hljs-keyword\">continue</span>\n      <span class=\"hljs-keyword\">if</span>(board[nx][ny]!==word[id])<span class=\"hljs-keyword\">continue</span>\n      visited[nx][ny]=uniq\n      <span class=\"hljs-keyword\">if</span>(dfs([nx,ny],id+<span class=\"hljs-number\">1</span>))<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n      visited[nx][ny]=uniq<span class=\"hljs-number\">-1</span>\n    }\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n  }\n  <span class=\"hljs-keyword\">let</span> start=word[<span class=\"hljs-number\">0</span>]\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;m;i++){\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> j=<span class=\"hljs-number\">0</span>;j&lt;n;j++){\n      <span class=\"hljs-keyword\">if</span>(start===board[i][j]){\n        visited[i][j]=++uniq\n        <span class=\"hljs-keyword\">if</span>(dfs([i,j],<span class=\"hljs-number\">1</span>))<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n      }\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n};\n</code></pre>\n"
+  ],
+  "querySlug": "word-search",
+  "created_at": "2019-03-12",
+  "timeArr": [
+    2019,
+    2,
+    12,
+    17,
+    14,
+    9,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p><code>DFS</code>搜索，对于每一个<code>board[i][j]===word[0]</code>，都进行尝试，只要存在一个<code>true</code>，返回<code>true</code>。</p>\n<p>由于<code>dfs</code>过程中，使用<code>visited</code>，保存当前已经搜索过的路径，但每一次找到<code>board[i][j]===word[0]</code>，相当于需要一个全新的<code>visited</code>。</p>\n<p>个人之前做法，设定一个<code>uniq</code>值，初始为<code>0</code>，每当找到<code>board[i][j]===word[0]</code>，首先<code>uniq++</code>，每次检索路径<code>visited[i][j]=uniq</code>，检索完毕，<code>visited[i][j]=uniq-1</code>；\n这样做，需要创建<code>visited</code>，但只需要创建一次。</p>\n<p>更好的做法是，对于每次检索的路径，<code>board[i][j]='*'</code>，检查完毕，再改回来，这么做的最大优点是节省空间。</p>\n",
+  "content": "<p>给定一个 <code>m x n</code> 二维字符网格 <code>board</code> 和一个字符串单词 <code>word</code> 。如果 <code>word</code> 存在于网格中，返回 <code>true</code> ；否则，返回 <code>false</code> 。</p>\n\n<p>单词必须按照字母顺序，通过相邻的单元格内的字母构成，其中“相邻”单元格是那些水平相邻或垂直相邻的单元格。同一个单元格内的字母不允许被重复使用。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/11/04/word2.jpg\" style=\"width: 322px; height: 242px;\" />\n<pre>\n<strong>输入：</strong>board = [[\"A\",\"B\",\"C\",\"E\"],[\"S\",\"F\",\"C\",\"S\"],[\"A\",\"D\",\"E\",\"E\"]], word = \"ABCCED\"\n<strong>输出：</strong>true\n</pre>\n\n<p><strong>示例 2：</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/11/04/word-1.jpg\" style=\"width: 322px; height: 242px;\" />\n<pre>\n<strong>输入：</strong>board = [[\"A\",\"B\",\"C\",\"E\"],[\"S\",\"F\",\"C\",\"S\"],[\"A\",\"D\",\"E\",\"E\"]], word = \"SEE\"\n<strong>输出：</strong>true\n</pre>\n\n<p><strong>示例 3：</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/10/15/word3.jpg\" style=\"width: 322px; height: 242px;\" />\n<pre>\n<strong>输入：</strong>board = [[\"A\",\"B\",\"C\",\"E\"],[\"S\",\"F\",\"C\",\"S\"],[\"A\",\"D\",\"E\",\"E\"]], word = \"ABCB\"\n<strong>输出：</strong>false\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>m == board.length</code></li>\n\t<li><code>n = board[i].length</code></li>\n\t<li><code>1 <= m, n <= 6</code></li>\n\t<li><code>1 <= word.length <= 15</code></li>\n\t<li><code>board</code> 和 <code>word</code> 仅由大小写英文字母组成</li>\n</ul>\n\n<p> </p>\n\n<p><strong>进阶：</strong>你可以使用搜索剪枝的技术来优化解决方案，使其在 <code>board</code> 更大的情况下可以更快解决问题？</p>\n",
+  "title": "79. 单词搜索",
+  "relatedTags": [
+    "数组",
+    "回溯",
+    "矩阵"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "79",
+  "slug": "79-Word-Search"
+}

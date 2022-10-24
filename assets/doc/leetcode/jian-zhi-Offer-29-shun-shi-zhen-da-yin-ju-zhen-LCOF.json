@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[][]}</span> <span class=\"hljs-variable\">matrix</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number[]}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> spiralOrder = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">matrix</span>) </span>{\n  <span class=\"hljs-keyword\">if</span>(matrix.length===<span class=\"hljs-number\">0</span>)<span class=\"hljs-keyword\">return</span> []\n  <span class=\"hljs-keyword\">let</span> m=matrix.length, n=matrix[<span class=\"hljs-number\">0</span>].length\n  <span class=\"hljs-keyword\">let</span> moves=[[<span class=\"hljs-number\">0</span>,<span class=\"hljs-number\">1</span>],[<span class=\"hljs-number\">1</span>,<span class=\"hljs-number\">0</span>],[<span class=\"hljs-number\">0</span>,<span class=\"hljs-number\">-1</span>],[<span class=\"hljs-number\">-1</span>,<span class=\"hljs-number\">0</span>]]\n  <span class=\"hljs-keyword\">let</span> idx=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">let</span> res=[]\n  <span class=\"hljs-keyword\">let</span> hash={}\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">dfs</span>(<span class=\"hljs-params\">x,y,idx</span>)</span>{\n    <span class=\"hljs-keyword\">if</span>(res.length===m*n)<span class=\"hljs-keyword\">return</span>\n    hash[x+<span class=\"hljs-string\">' '</span>+y]=<span class=\"hljs-literal\">true</span>\n    res.push(matrix[x][y])\n    <span class=\"hljs-keyword\">let</span> [dx,dy]=moves[idx]\n    <span class=\"hljs-keyword\">let</span> nx=x+dx,ny=y+dy\n    <span class=\"hljs-keyword\">while</span>(<span class=\"hljs-literal\">true</span>){\n      <span class=\"hljs-keyword\">if</span>(nx&lt;<span class=\"hljs-number\">0</span> || nx&gt;=m || ny&lt;<span class=\"hljs-number\">0</span> || ny&gt;=n || hash[nx+<span class=\"hljs-string\">' '</span>+ny]){\n        nx-=dx\n        ny-=dy\n        <span class=\"hljs-keyword\">break</span>\n      }\n      res.push(matrix[nx][ny])\n      nx+=dx\n      ny+=dy\n    }\n    idx=(idx+<span class=\"hljs-number\">1</span> + <span class=\"hljs-number\">4</span>) % <span class=\"hljs-number\">4</span>\n    <span class=\"hljs-keyword\">let</span> [nexDx,nexDy]=moves[idx]\n    dfs(nx+nexDx,ny+nexDy,idx)\n  }\n  dfs(<span class=\"hljs-number\">0</span>,<span class=\"hljs-number\">0</span>,<span class=\"hljs-number\">0</span>)\n  <span class=\"hljs-keyword\">return</span> res\n};\n</code></pre>\n"
+  ],
+  "querySlug": "shun-shi-zhen-da-yin-ju-zhen-lcof",
+  "created_at": "2020-03-22",
+  "timeArr": [
+    2020,
+    2,
+    22,
+    17,
+    11,
+    4,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>输入一个矩阵，按照从外向里以顺时针的顺序依次打印出每一个数字。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre><strong>输入：</strong>matrix = [[1,2,3],[4,5,6],[7,8,9]]\n<strong>输出：</strong>[1,2,3,6,9,8,7,4,5]\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre><strong>输入：</strong>matrix =&nbsp;[[1,2,3,4],[5,6,7,8],[9,10,11,12]]\n<strong>输出：</strong>[1,2,3,4,8,12,11,10,9,5,6,7]\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>限制：</strong></p>\n\n<ul>\n\t<li><code>0 &lt;= matrix.length &lt;= 100</code></li>\n\t<li><code>0 &lt;= matrix[i].length&nbsp;&lt;= 100</code></li>\n</ul>\n\n<p>注意：本题与主站 54 题相同：<a href=\"https://leetcode-cn.com/problems/spiral-matrix/\">https://leetcode-cn.com/problems/spiral-matrix/</a></p>\n",
+  "title": "剑指 Offer 29. 顺时针打印矩阵",
+  "relatedTags": [
+    "数组",
+    "矩阵",
+    "模拟"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "剑指 Offer 29",
+  "slug": "jian-zhi-Offer-29-shun-shi-zhen-da-yin-ju-zhen-LCOF"
+}

@@ -1,0 +1,32 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{string[]}</span> <span class=\"hljs-variable\">A</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{string}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> shortestSuperstring = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">A</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> N=A.length\n  <span class=\"hljs-keyword\">let</span> insert=<span class=\"hljs-built_in\">Array</span>(N).fill().map(<span class=\"hljs-function\"><span class=\"hljs-params\">()</span>=&gt;</span><span class=\"hljs-built_in\">Array</span>(N).fill(<span class=\"hljs-number\">0</span>))\n  \n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;N;i++){\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> j=<span class=\"hljs-number\">0</span>;j&lt;N;j++){\n      <span class=\"hljs-keyword\">if</span>(i===j)<span class=\"hljs-keyword\">continue</span>\n      insert[i][j]=calcRepeat(A[i],A[j])\n    }\n  }\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">calcRepeat</span>(<span class=\"hljs-params\">s1,s2</span>)</span>{\n    <span class=\"hljs-keyword\">let</span> len=<span class=\"hljs-built_in\">Math</span>.min(s1.length,s2.length)\n    <span class=\"hljs-keyword\">let</span> candi=s2.substring(<span class=\"hljs-number\">0</span>,len)\n    <span class=\"hljs-keyword\">let</span> sID=s1.length-candi.length,cID=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=sID;i&lt;s1.length;i++){\n      <span class=\"hljs-keyword\">if</span>(s1[i]===candi[cID]) cID++\n      <span class=\"hljs-keyword\">else</span>{\n        cID=<span class=\"hljs-number\">0</span>\n        <span class=\"hljs-keyword\">if</span>(candi[cID]===s1[i])cID++\n      }\n    }\n    <span class=\"hljs-keyword\">return</span> cID\n  }\n\n  <span class=\"hljs-keyword\">let</span> finalState=(<span class=\"hljs-number\">1</span>&lt;&lt;N) <span class=\"hljs-number\">-1</span>\n  <span class=\"hljs-keyword\">let</span> dp=<span class=\"hljs-built_in\">Array</span>(<span class=\"hljs-number\">1</span>&lt;&lt;N).fill().map(<span class=\"hljs-function\"><span class=\"hljs-params\">()</span>=&gt;</span><span class=\"hljs-built_in\">Array</span>(N).fill(<span class=\"hljs-literal\">null</span>))\n  <span class=\"hljs-keyword\">let</span> maxLen=<span class=\"hljs-number\">-1</span>,ans=<span class=\"hljs-string\">''</span>\n\n  <span class=\"hljs-keyword\">return</span> dfs(<span class=\"hljs-number\">0</span>,<span class=\"hljs-literal\">null</span>)[<span class=\"hljs-number\">1</span>]\n  \n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">dfs</span>(<span class=\"hljs-params\">state,lastI</span>)</span>{\n    <span class=\"hljs-keyword\">if</span>(state===finalState)<span class=\"hljs-keyword\">return</span> [<span class=\"hljs-number\">0</span>,<span class=\"hljs-string\">''</span>]\n    <span class=\"hljs-keyword\">if</span>(dp[state][lastI]!=<span class=\"hljs-literal\">null</span>)<span class=\"hljs-keyword\">return</span> dp[state][lastI]\n    <span class=\"hljs-keyword\">let</span> curLen=<span class=\"hljs-number\">-1</span>,res=<span class=\"hljs-string\">''</span>\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;N;i++){\n      <span class=\"hljs-keyword\">if</span>((state &amp; <span class=\"hljs-number\">1</span>&lt;&lt;i)!=<span class=\"hljs-number\">0</span>)<span class=\"hljs-keyword\">continue</span>\n      <span class=\"hljs-keyword\">let</span> melt=<span class=\"hljs-number\">0</span>\n      <span class=\"hljs-keyword\">if</span>(lastI!=<span class=\"hljs-literal\">null</span>)melt=insert[lastI][i]\n      <span class=\"hljs-keyword\">let</span> meltStr=A[i].substring(melt)\n      <span class=\"hljs-keyword\">let</span> [curlong,curres]=dfs(state | <span class=\"hljs-number\">1</span>&lt;&lt;i,i)\n      <span class=\"hljs-keyword\">if</span>(curlong+melt&gt;curLen){\n        curLen=curlong+melt\n        res=meltStr+curres\n      }\n    }\n    dp[state][lastI]=[curLen,res]\n    <span class=\"hljs-keyword\">return</span> [curLen,res]\n  }\n\n};\n</code></pre>\n"
+  ],
+  "querySlug": "find-the-shortest-superstring",
+  "created_at": "2019-03-10",
+  "timeArr": [
+    2019,
+    2,
+    10,
+    0,
+    26,
+    13,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给定一个字符串数组 <code>words</code>，找到以 <code>words</code> 中每个字符串作为子字符串的最短字符串。如果有多个有效最短字符串满足题目条件，返回其中 <strong>任意一个</strong> 即可。</p>\n\n<p>我们可以假设 <code>words</code> 中没有字符串是 <code>words</code> 中另一个字符串的子字符串。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>words = [\"alex\",\"loves\",\"leetcode\"]\n<strong>输出：</strong>\"alexlovesleetcode\"\n<strong>解释：</strong>\"alex\"，\"loves\"，\"leetcode\" 的所有排列都会被接受。</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>words = [\"catg\",\"ctaagt\",\"gcta\",\"ttca\",\"atgcatc\"]\n<strong>输出：</strong>\"gctaagttcatgcatc\"</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= words.length <= 12</code></li>\n\t<li><code>1 <= words[i].length <= 20</code></li>\n\t<li><code>words[i]</code> 由小写英文字母组成</li>\n\t<li><code>words</code> 中的所有字符串 <strong>互不相同</strong></li>\n</ul>\n",
+  "title": "943. 最短超级串",
+  "relatedTags": [
+    "位运算",
+    "数组",
+    "字符串",
+    "动态规划",
+    "状态压缩"
+  ],
+  "difficult": "Hard",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "943",
+  "slug": "943-Find-the-Shortest-Superstring"
+}

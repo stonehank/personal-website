@@ -1,0 +1,12 @@
+.vue-scrollbar__scrollbar-vertical{
+  width:4px !important;
+  border-radius:8px;
+  &:hover, &:active{
+    width:12px !important;
+  }
+
+  .scrollbar{
+    border-radius:8px;
+    width:100% !important;
+  }
+}

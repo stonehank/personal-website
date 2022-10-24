@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">nums</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> longestConsecutive = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">nums</span>) </span>{\n    <span class=\"hljs-keyword\">let</span> map={},max=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;nums.length;i++){\n      <span class=\"hljs-keyword\">let</span> cur=nums[i]\n      <span class=\"hljs-keyword\">if</span>(map[cur]!=<span class=\"hljs-literal\">null</span>)<span class=\"hljs-keyword\">continue</span>\n      <span class=\"hljs-keyword\">let</span> left=map[cur<span class=\"hljs-number\">-1</span>]?map[cur<span class=\"hljs-number\">-1</span>]:<span class=\"hljs-number\">0</span>\n      <span class=\"hljs-keyword\">let</span> right=map[cur+<span class=\"hljs-number\">1</span>]?map[cur+<span class=\"hljs-number\">1</span>]:<span class=\"hljs-number\">0</span>\n      <span class=\"hljs-keyword\">let</span> sum=left+right+<span class=\"hljs-number\">1</span>\n      map[cur]=sum\n      max=<span class=\"hljs-built_in\">Math</span>.max(max,sum)\n      map[cur-left]=sum\n      map[cur+right]=sum\n    }\n    <span class=\"hljs-keyword\">return</span> max\n};\n</code></pre>\n"
+  ],
+  "querySlug": "longest-consecutive-sequence",
+  "created_at": "2019-03-13",
+  "timeArr": [
+    2019,
+    2,
+    13,
+    0,
+    7,
+    39,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>使用<code>hash</code>来保存每一个数字的连续长度，对于一个未访问过的数字<code>n</code>，它的连续长度就是<code>它左侧数字(n-1)的长度 + 它右侧数字(n+1)的长度 + 1</code>。</p>\n<p>并且保存当前长度，最后要更新它左侧和右侧的最新连续长度。</p>\n",
+  "content": "<p>给定一个未排序的整数数组 <code>nums</code> ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。</p>\n\n<p>请你设计并实现时间复杂度为 <code>O(n)</code><em> </em>的算法解决此问题。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>nums = [100,4,200,1,3,2]\n<strong>输出：</strong>4\n<strong>解释：</strong>最长数字连续序列是 <code>[1, 2, 3, 4]。它的长度为 4。</code></pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>nums = [0,3,7,2,5,8,4,6,0,1]\n<strong>输出：</strong>9\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>0 <= nums.length <= 10<sup>5</sup></code></li>\n\t<li><code>-10<sup>9</sup> <= nums[i] <= 10<sup>9</sup></code></li>\n</ul>\n",
+  "title": "128. 最长连续序列",
+  "relatedTags": [
+    "并查集",
+    "数组",
+    "哈希表"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "128",
+  "slug": "128-Longest-Consecutive-Sequence"
+}

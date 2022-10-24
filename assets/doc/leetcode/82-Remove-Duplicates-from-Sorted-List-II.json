@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * Definition for singly-linked list.\n * function ListNode(val, next) {\n *     this.val = (val===undefined ? 0 : val)\n *     this.next = (next===undefined ? null : next)\n * }\n */</span>\n<span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{ListNode}</span> <span class=\"hljs-variable\">head</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{ListNode}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> deleteDuplicates = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">head</span>) </span>{\n    <span class=\"hljs-keyword\">let</span> dup={}\n    <span class=\"hljs-keyword\">let</span> used={}\n    <span class=\"hljs-keyword\">let</span> first=head\n    <span class=\"hljs-keyword\">while</span>(first){\n        <span class=\"hljs-keyword\">if</span>(used[first.val]){\n            dup[first.val]=<span class=\"hljs-literal\">true</span>\n        }\n        used[first.val]=<span class=\"hljs-literal\">true</span>\n        first=first.next\n    }\n    <span class=\"hljs-keyword\">let</span> second=head\n    <span class=\"hljs-keyword\">let</span> res=<span class=\"hljs-keyword\">new</span> ListNode(<span class=\"hljs-literal\">null</span>)\n    res.next=second\n    <span class=\"hljs-keyword\">let</span> root=res\n    <span class=\"hljs-keyword\">let</span> lastRoot=<span class=\"hljs-literal\">null</span>\n    <span class=\"hljs-comment\">// console.log(dup)</span>\n    <span class=\"hljs-keyword\">while</span>(root){\n        <span class=\"hljs-comment\">// console.log(root.val,lastRoot)</span>\n        <span class=\"hljs-keyword\">let</span> val=root.val\n        <span class=\"hljs-keyword\">if</span>(!dup[val] &amp;&amp; lastRoot){\n            lastRoot.next=root\n            lastRoot=<span class=\"hljs-literal\">null</span>\n        }\n        <span class=\"hljs-keyword\">let</span> next=root.next\n        <span class=\"hljs-keyword\">if</span>(next){\n            <span class=\"hljs-keyword\">let</span> nextVal=next.val\n            <span class=\"hljs-keyword\">if</span>(dup[nextVal]){\n                <span class=\"hljs-keyword\">if</span>(!lastRoot)lastRoot=root\n            }\n        }\n\n        root=root.next\n    }\n    <span class=\"hljs-keyword\">if</span>(lastRoot)lastRoot.next=<span class=\"hljs-literal\">null</span>\n    <span class=\"hljs-keyword\">return</span> res.next\n};\n</code></pre>\n"
+  ],
+  "querySlug": "remove-duplicates-from-sorted-list-ii",
+  "created_at": "2021-03-25",
+  "timeArr": [
+    2021,
+    2,
+    25,
+    7,
+    47,
+    38,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>单链表中要删除一段列表，需要找到被删除点的前一个节点。</p>\n<p>定义<code>startNode</code>为当前数字的起始点的前一个位置，初始为一个新的节点<code>root</code>，<code>root=new ListNode(null); root.next=head</code>。</p>\n<p>定义<code>lastNode</code>为当前节点的上一个节点。</p>\n<p>在不断<code>next</code>遍历过程中，如果当前<code>node.val===lastNode.val</code>，说明这个数字存在重复，设置<code>needDel=true</code>，继续<code>next</code>遍历；</p>\n<p>如果<code>node.val!==lastNode.val</code>，说明是一个新的数字，这时要检查上一个数字的<code>needDel</code>，如果需要删除，\n那么<code>startNode</code>直接<code>next</code>连接到到当前<code>node</code>。</p>\n<p>最终返回<code>root.next</code>。</p>\n",
+  "content": "<p>存在一个按升序排列的链表，给你这个链表的头节点 <code>head</code> ，请你删除链表中所有存在数字重复情况的节点，只保留原始链表中 <strong>没有重复出现</strong><em> </em>的数字。</p>\n\n<p>返回同样按升序排列的结果链表。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2021/01/04/linkedlist1.jpg\" style=\"width: 500px; height: 142px;\" />\n<pre>\n<strong>输入：</strong>head = [1,2,3,3,4,4,5]\n<strong>输出：</strong>[1,2,5]\n</pre>\n\n<p><strong>示例 2：</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2021/01/04/linkedlist2.jpg\" style=\"width: 500px; height: 205px;\" />\n<pre>\n<strong>输入：</strong>head = [1,1,1,2,3]\n<strong>输出：</strong>[2,3]\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li>链表中节点数目在范围 <code>[0, 300]</code> 内</li>\n\t<li><code>-100 <= Node.val <= 100</code></li>\n\t<li>题目数据保证链表已经按升序排列</li>\n</ul>\n",
+  "title": "82. 删除排序链表中的重复元素 II",
+  "relatedTags": [
+    "链表",
+    "双指针"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "82",
+  "slug": "82-Remove-Duplicates-from-Sorted-List-II"
+}

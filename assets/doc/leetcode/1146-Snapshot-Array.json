@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">length</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> SnapshotArray = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">length</span>) </span>{\n  <span class=\"hljs-keyword\">this</span>.snapMemo={}\n  <span class=\"hljs-keyword\">this</span>.curSnap={}\n  <span class=\"hljs-keyword\">this</span>.snapId=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">this</span>.len=length\n};\n\n<span class=\"hljs-comment\">/** \n * @param {number} index \n * @param {number} val\n * @return {void}\n */</span>\nSnapshotArray.prototype.set = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">index, val</span>) </span>{\n  <span class=\"hljs-keyword\">this</span>.curSnap[index]=val\n};\n\n<span class=\"hljs-comment\">/**\n * @return {number}\n */</span>\nSnapshotArray.prototype.snap = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"></span>) </span>{\n  <span class=\"hljs-keyword\">let</span> curId=<span class=\"hljs-keyword\">this</span>.snapId\n  <span class=\"hljs-keyword\">let</span> _snap=<span class=\"hljs-built_in\">Object</span>.assign({},<span class=\"hljs-keyword\">this</span>.curSnap)\n  <span class=\"hljs-keyword\">this</span>.snapMemo[curId]=_snap\n  <span class=\"hljs-keyword\">this</span>.snapId++\n  <span class=\"hljs-keyword\">return</span> curId\n};\n\n<span class=\"hljs-comment\">/** \n * @param {number} index \n * @param {number} snap_id\n * @return {number}\n */</span>\nSnapshotArray.prototype.get = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">index, snap_id</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> getSnap=<span class=\"hljs-keyword\">this</span>.snapMemo[snap_id]\n  <span class=\"hljs-keyword\">return</span> getSnap[index] || <span class=\"hljs-number\">0</span>\n};\n\n<span class=\"hljs-comment\">/** \n * Your SnapshotArray object will be instantiated and called as such:\n * var obj = new SnapshotArray(length)\n * obj.set(index,val)\n * var param_2 = obj.snap()\n * var param_3 = obj.get(index,snap_id)\n */</span>\n</code></pre>\n"
+  ],
+  "querySlug": "snapshot-array",
+  "created_at": "2019-08-04",
+  "timeArr": [
+    2019,
+    7,
+    4,
+    11,
+    56,
+    40,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>实现支持下列接口的「快照数组」-&nbsp;SnapshotArray：</p>\n\n<ul>\n\t<li><code>SnapshotArray(int length)</code>&nbsp;- 初始化一个与指定长度相等的 类数组 的数据结构。<strong>初始时，每个元素都等于</strong><strong>&nbsp;0</strong>。</li>\n\t<li><code>void set(index, val)</code>&nbsp;- 会将指定索引&nbsp;<code>index</code>&nbsp;处的元素设置为&nbsp;<code>val</code>。</li>\n\t<li><code>int snap()</code>&nbsp;- 获取该数组的快照，并返回快照的编号&nbsp;<code>snap_id</code>（快照号是调用&nbsp;<code>snap()</code>&nbsp;的总次数减去&nbsp;<code>1</code>）。</li>\n\t<li><code>int get(index, snap_id)</code>&nbsp;- 根据指定的&nbsp;<code>snap_id</code>&nbsp;选择快照，并返回该快照指定索引 <code>index</code>&nbsp;的值。</li>\n</ul>\n\n<p>&nbsp;</p>\n\n<p><strong>示例：</strong></p>\n\n<pre><strong>输入：</strong>[&quot;SnapshotArray&quot;,&quot;set&quot;,&quot;snap&quot;,&quot;set&quot;,&quot;get&quot;]\n     [[3],[0,5],[],[0,6],[0,0]]\n<strong>输出：</strong>[null,null,0,null,5]\n<strong>解释：\n</strong>SnapshotArray snapshotArr = new SnapshotArray(3); // 初始化一个长度为 3 的快照数组\nsnapshotArr.set(0,5);  // 令 array[0] = 5\nsnapshotArr.snap();  // 获取快照，返回 snap_id = 0\nsnapshotArr.set(0,6);\nsnapshotArr.get(0,0);  // 获取 snap_id = 0 的快照中 array[0] 的值，返回 5</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= length&nbsp;&lt;= 50000</code></li>\n\t<li>题目最多进行<code>50000</code> 次<code>set</code>，<code>snap</code>，和&nbsp;<code>get</code>的调用 。</li>\n\t<li><code>0 &lt;= index&nbsp;&lt;&nbsp;length</code></li>\n\t<li><code>0 &lt;=&nbsp;snap_id &lt;&nbsp;</code>我们调用&nbsp;<code>snap()</code>&nbsp;的总次数</li>\n\t<li><code>0 &lt;=&nbsp;val &lt;= 10^9</code></li>\n</ul>\n",
+  "title": "1146. 快照数组",
+  "relatedTags": [
+    "设计",
+    "数组",
+    "哈希表",
+    "二分查找"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "1146",
+  "slug": "1146-Snapshot-Array"
+}

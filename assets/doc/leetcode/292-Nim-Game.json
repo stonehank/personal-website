@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">n</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{boolean}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> canWinNim = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">n</span>) </span>{\n  <span class=\"hljs-keyword\">return</span> n%<span class=\"hljs-number\">4</span>!==<span class=\"hljs-number\">0</span>\n};\n</code></pre>\n"
+  ],
+  "querySlug": "nim-game",
+  "created_at": "2019-04-26",
+  "timeArr": [
+    2019,
+    3,
+    26,
+    15,
+    30,
+    30,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>首先，到某一个人时<code>n==4</code>就一定输；</p>\n<p>因此如果一开始有<code>5,6,7</code>都能赢，因为可以拿走<code>1,2,3</code>个，让剩下的<code>n</code>为<code>4</code>。</p>\n<p>但是，一开始有<code>8</code>个，无论你拿几个，对方都能拿走几个，给你留下<code>4</code>个，因此到某一个人时<code>n===8</code>就一定输....</p>\n<p>继续推导下去，到某一个时<code>n===12</code>一定输，<code>n===16</code>一定输....</p>\n<p>也就是<code>n % 4===0</code>，一定输。</p>\n",
+  "content": "<p>你和你的朋友，两个人一起玩 <a href=\"https://baike.baidu.com/item/Nim游戏/6737105\" target=\"_blank\">Nim 游戏</a>：</p>\n\n<ul>\n\t<li>桌子上有一堆石头。</li>\n\t<li>你们轮流进行自己的回合，你作为先手。</li>\n\t<li>每一回合，轮到的人拿掉 1 - 3 块石头。</li>\n\t<li>拿掉最后一块石头的人就是获胜者。</li>\n</ul>\n\n<p>假设你们每一步都是最优解。请编写一个函数，来判断你是否可以在给定石头数量为 <code>n</code> 的情况下赢得游戏。如果可以赢，返回 <code>true</code>；否则，返回 <code>false</code> 。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong><code>n = 4</code>\n<strong>输出：</strong>false \n<strong>解释：</strong>如果堆中有 4 块石头，那么你永远不会赢得比赛；\n     因为无论你拿走 1 块、2 块 还是 3 块石头，最后一块石头总是会被你的朋友拿走。\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>n = 1\n<strong>输出：</strong>true\n</pre>\n\n<p><strong>示例 3：</strong></p>\n\n<pre>\n<strong>输入：</strong>n = 2\n<strong>输出：</strong>true\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= n <= 2<sup>31</sup> - 1</code></li>\n</ul>\n",
+  "title": "292. Nim 游戏",
+  "relatedTags": [
+    "脑筋急转弯",
+    "数学",
+    "博弈"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "292",
+  "slug": "292-Nim-Game"
+}

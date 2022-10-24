@@ -1,0 +1,24 @@
+{
+  "content": "<p>Provider组件中有2个生命周期函数：</p>\n<pre><code><pre class=\"hljs\"><code>componentWillUnmount() {\n  if (this.unsubscribe) this.unsubscribe()\n  this._isMounted = false\n}\n\ncomponentDidUpdate(prevProps) {\n  // 比较store是否相等,如果相等则跳过\n  if (this.props.store !== prevProps.store) {\n    // 取消订阅之前的，再订阅现在的(因为数据(store)不同了)\n    if (this.unsubscribe) this.unsubscribe()\n    this.subscribe()\n  }\n}</code></pre>\n</code></pre>\n<p>这2段的意思就是，每当数据变了，就取消上一次数据的订阅，在订阅本次的数据，\n当要销毁组件，取消订阅。</p>\n<p>这个逻辑用<code>Hooks</code>的<code>useEffect</code>简直完美匹配！</p>\n<pre><code class=\"language-jsx\"><pre class=\"hljs\"><code>useEffect(<span class=\"hljs-function\"><span class=\"hljs-params\">()</span>=&gt;</span>{\n  subscribe()\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-function\"><span class=\"hljs-params\">()</span>=&gt;</span>{\n    unSubscribe()\n  }\n},props.data)</code></pre>\n</code></pre>\n<p>这段的意思就是，当<code>props.data</code>发生改变，执行<code>unSubscribe()</code>，再执行<code>subscribe()</code>。</p>\n<p>逻辑完全一致！</p>\n",
+  "toc": [],
+  "relatedTags": [
+    "源码",
+    "react",
+    "redux"
+  ],
+  "created_at": "2018-11-18",
+  "timeArr": [
+    2018,
+    10,
+    18,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "源码阅读-react-redux-使用Hooks替换一处逻辑",
+  "uuid": "75b7a94b953a19ffc6d8a4b8352441ee521ee46e",
+  "summary": "<p>Provider组件中有2个生命周期函数：</p>\n<pre class=\"hljs\"><code>componentWillUnmount() {\n  if (this.unsubscribe) this.unsubscribe()\n  this._isMounted = false\n}\n\ncomponentDidUpdate(prevProps) {\n  //...</code></pre>",
+  "slug": "yuan-ma-yue-du-react-redux-shi-yong-Hooks-ti-huan-yi-chu-luo-ji",
+  "sha": "914eddfc21a7198b0e39080e62fc5cf7ec280993"
+}

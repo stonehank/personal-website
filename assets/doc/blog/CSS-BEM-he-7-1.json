@@ -1,0 +1,38 @@
+{
+  "content": "<h2 id=\"css--de-bem-fang-fa-he-7-1-gui-ze\">css 的BEM方法和7-1规则</h2>\n<h3 id=\"bem\">BEM</h3>\n<p>按照<code>Block__Element--Modifier</code>命名</p>\n<p>例如：</p>\n<pre><code><pre class=\"hljs\"><code>article__author\narticle__date\narticle__content-leftAlign\narticle__content-centerAlign</code></pre>\n</code></pre>\n<p>命名规则：</p>\n<ul>\n<li><p>B(Block)：表示模块，最小的可复用单元，功能独立，可以嵌套、组合使用</p>\n</li>\n<li><p>E(Element)：B的组成部分</p>\n</li>\n<li><p>M（Modifier）：表示E的状态（不同状态下的E有不同的功能和外观），也是B的组成部分</p>\n</li>\n</ul>\n<hr>\n<h3 id=\"7-1-gui-ze\">7-1规则</h3>\n<ul>\n<li><p>base: 样板代码，每次新项目都要使用的，例如消除margin等等</p>\n</li>\n<li><p>components: 页面的组件，例如 buttons, forms, swipers, popups</p>\n</li>\n<li><p>layout: layout结构，例如header，footer</p>\n</li>\n<li><p>pages: 一些特定的页面css</p>\n</li>\n<li><p>themes: 与主题相关的css</p>\n</li>\n<li><p>abstracts: 放置函数，变量和mixin等辅助类</p>\n</li>\n<li><p>vendors: 外部依赖，例如 Font Awesome file, Bootstrap</p>\n</li>\n</ul>\n",
+  "toc": [
+    {
+      "anchor": "css--de-bem-fang-fa-he-7-1-gui-ze",
+      "level": 2,
+      "text": "css 的BEM方法和7-1规则"
+    },
+    {
+      "anchor": "bem",
+      "level": 3,
+      "text": "BEM"
+    },
+    {
+      "anchor": "7-1-gui-ze",
+      "level": 3,
+      "text": "7-1规则"
+    }
+  ],
+  "relatedTags": [
+    "css"
+  ],
+  "created_at": "2018-08-08",
+  "timeArr": [
+    2018,
+    7,
+    8,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "CSS BEM和7-1",
+  "uuid": "7d006085fe6510e84760d5dac1964ffab407a64b",
+  "summary": "<h4>css 的BEM方法和7-1规则</h4>\n<h4>BEM</h4>\n<p>按照<code>Block__Element--Modifier</code>命名</p>\n<p>例如：</p>\n<pre class=\"hljs\"><code>article__author\narticle__date\narticle__content-leftAlign\narticle__content-centerAlign\n</code></pre>\n<p>...</p>",
+  "slug": "CSS-BEM-he-7-1",
+  "sha": "749d64da627880acf963a5302a4e38ce920592d5"
+}

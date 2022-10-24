@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[][]}</span> <span class=\"hljs-variable\">points</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> minTimeToVisitAllPoints = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">points</span>) </span>{\n  <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">getSec</span>(<span class=\"hljs-params\">a,b</span>)</span>{\n    <span class=\"hljs-keyword\">let</span> xGap=<span class=\"hljs-built_in\">Math</span>.abs(b[<span class=\"hljs-number\">0</span>]-a[<span class=\"hljs-number\">0</span>])\n    <span class=\"hljs-keyword\">let</span> yGap=<span class=\"hljs-built_in\">Math</span>.abs(b[<span class=\"hljs-number\">1</span>]-a[<span class=\"hljs-number\">1</span>])\n    <span class=\"hljs-keyword\">let</span> max=<span class=\"hljs-built_in\">Math</span>.max(xGap,yGap)\n    <span class=\"hljs-keyword\">return</span> max\n  }\n  <span class=\"hljs-keyword\">let</span> init=points[<span class=\"hljs-number\">0</span>]\n  <span class=\"hljs-keyword\">let</span> res=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">1</span>;i&lt;points.length;i++){\n    res+=getSec(init,points[i])\n    init=points[i]\n  }\n  <span class=\"hljs-keyword\">return</span> res\n};\n</code></pre>\n"
+  ],
+  "querySlug": "minimum-time-visiting-all-points",
+  "created_at": "2019-11-24",
+  "timeArr": [
+    2019,
+    10,
+    24,
+    10,
+    35,
+    34,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>平面上有 <code>n</code> 个点，点的位置用整数坐标表示 <code>points[i] = [x<sub>i</sub>, y<sub>i</sub>]</code> 。请你计算访问所有这些点需要的 <strong>最小时间</strong>（以秒为单位）。</p>\n\n<p>你需要按照下面的规则在平面上移动：</p>\n\n<ul>\n\t<li>每一秒内，你可以：\n\t<ul>\n\t\t<li>沿水平方向移动一个单位长度，或者</li>\n\t\t<li>沿竖直方向移动一个单位长度，或者</li>\n\t\t<li>跨过对角线移动 <code>sqrt(2)</code> 个单位长度（可以看作在一秒内向水平和竖直方向各移动一个单位长度）。</li>\n\t</ul>\n\t</li>\n\t<li>必须按照数组中出现的顺序来访问这些点。</li>\n\t<li>在访问某个点时，可以经过该点后面出现的点，但经过的那些点不算作有效访问。</li>\n</ul>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<p><img alt=\"\" src=\"https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/11/24/1626_example_1.png\" style=\"height: 428px; width: 500px;\" /></p>\n\n<pre>\n<strong>输入：</strong>points = [[1,1],[3,4],[-1,0]]\n<strong>输出：</strong>7\n<strong>解释：</strong>一条最佳的访问路径是： <strong>[1,1]</strong> -> [2,2] -> [3,3] -> <strong>[3,4] </strong>-> [2,3] -> [1,2] -> [0,1] -> <strong>[-1,0]</strong>   \n从 [1,1] 到 [3,4] 需要 3 秒 \n从 [3,4] 到 [-1,0] 需要 4 秒\n一共需要 7 秒</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>points = [[3,2],[-2,2]]\n<strong>输出：</strong>5\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>points.length == n</code></li>\n\t<li><code>1 <= n <= 100</code></li>\n\t<li><code>points[i].length == 2</code></li>\n\t<li><code>-1000 <= points[i][0], points[i][1] <= 1000</code></li>\n</ul>\n",
+  "title": "1266. 访问所有点的最小时间",
+  "relatedTags": [
+    "几何",
+    "数组",
+    "数学"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "1266",
+  "slug": "1266-Minimum-Time-Visiting-All-Points"
+}

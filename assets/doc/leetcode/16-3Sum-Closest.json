@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">nums</span></span>\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">target</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> threeSumClosest = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">nums, target</span>) </span>{\n  nums.sort(<span class=\"hljs-function\">(<span class=\"hljs-params\">a,b</span>)=&gt;</span>a-b)\n  <span class=\"hljs-keyword\">let</span> res=<span class=\"hljs-number\">0</span>,minGap=<span class=\"hljs-literal\">Infinity</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;nums.length;i++){\n    <span class=\"hljs-comment\">// let t=target-nums[i]</span>\n    <span class=\"hljs-keyword\">let</span> j=i+<span class=\"hljs-number\">1</span>,k=nums.length<span class=\"hljs-number\">-1</span>\n    <span class=\"hljs-keyword\">while</span>(j&lt;k){\n      <span class=\"hljs-keyword\">let</span> cur=nums[j]+nums[k]+nums[i]\n      <span class=\"hljs-keyword\">let</span> gap=<span class=\"hljs-built_in\">Math</span>.abs(cur-target)\n      <span class=\"hljs-keyword\">if</span>(gap&lt;minGap){\n        minGap=gap\n        res=cur\n      }\n      <span class=\"hljs-keyword\">if</span>(cur&lt;target){\n        j++\n      }<span class=\"hljs-keyword\">else</span> <span class=\"hljs-keyword\">if</span>(cur&gt;target){\n        k--\n      }<span class=\"hljs-keyword\">else</span>{\n        <span class=\"hljs-keyword\">return</span> cur\n      }\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> res\n};\n</code></pre>\n"
+  ],
+  "querySlug": "3sum-closest",
+  "created_at": "2019-03-11",
+  "timeArr": [
+    2019,
+    2,
+    11,
+    12,
+    43,
+    11,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>和<code>NO.15</code>基本一样的方式，相差在于：</p>\n<ol>\n<li>不需要去重。</li>\n<li>不需要完全相等，而是比较当前<code>sum</code>和<code>target</code>的绝对值的差。</li>\n</ol>\n",
+  "content": "<p>给定一个包括&nbsp;<em>n</em> 个整数的数组&nbsp;<code>nums</code><em>&nbsp;</em>和 一个目标值&nbsp;<code>target</code>。找出&nbsp;<code>nums</code><em>&nbsp;</em>中的三个整数，使得它们的和与&nbsp;<code>target</code>&nbsp;最接近。返回这三个数的和。假定每组输入只存在唯一答案。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例：</strong></p>\n\n<pre><strong>输入：</strong>nums = [-1,2,1,-4], target = 1\n<strong>输出：</strong>2\n<strong>解释：</strong>与 target 最接近的和是 2 (-1 + 2 + 1 = 2) 。\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>3 &lt;= nums.length &lt;= 10^3</code></li>\n\t<li><code>-10^3&nbsp;&lt;= nums[i]&nbsp;&lt;= 10^3</code></li>\n\t<li><code>-10^4&nbsp;&lt;= target&nbsp;&lt;= 10^4</code></li>\n</ul>\n",
+  "title": "16. 最接近的三数之和",
+  "relatedTags": [
+    "数组",
+    "双指针",
+    "排序"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "16",
+  "slug": "16-3Sum-Closest"
+}

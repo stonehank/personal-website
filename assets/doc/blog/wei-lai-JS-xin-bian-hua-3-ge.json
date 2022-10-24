@@ -1,0 +1,36 @@
+{
+  "content": "<blockquote>\n<p>ES</p>\n</blockquote>\n<h4 id=\"bian-hua-1\">变化1</h4>\n<p>原写法：</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-keyword\">const</span> data = {\n  <span class=\"hljs-attr\">user</span>: {},\n};\n<span class=\"hljs-keyword\">const</span> street = data &amp;&amp; data.user &amp;&amp; data.user.address &amp;&amp; data.user.address.street;\n<span class=\"hljs-built_in\">console</span>.log(data.user.address.street); <span class=\"hljs-comment\">// undefined</span></code></pre>\n</code></pre>\n<p>新写法：</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-keyword\">const</span> data = {\n  <span class=\"hljs-attr\">user</span>: {},\n};\n<span class=\"hljs-built_in\">console</span>.log(data.user?.address?.street); <span class=\"hljs-comment\">// undefined</span></code></pre>\n</code></pre>\n<p>遇到数组：</p>\n<p><code>data?.user?.address?.neighbors?.[number]</code></p>\n<p>遇到函数：</p>\n<p><code>data?.user?.someFunction?.()</code></p>\n<h4 id=\"bian-hua-2\">变化2</h4>\n<p>原写法：</p>\n<p><code>value != null ? value : &#39;default value&#39;;</code></p>\n<p>新写法：</p>\n<p><code>value ?? &#39;default value&#39;;</code></p>\n<h4 id=\"bian-hua-3\">变化3</h4>\n<p>原写法：</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">doubleSay</span> (<span class=\"hljs-params\">str</span>) </span>{\n  <span class=\"hljs-keyword\">return</span> str + <span class=\"hljs-string\">\", \"</span> + str;\n}\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">capitalize</span> (<span class=\"hljs-params\">str</span>) </span>{\n  <span class=\"hljs-keyword\">return</span> str[<span class=\"hljs-number\">0</span>].toUpperCase() + str.substring(<span class=\"hljs-number\">1</span>);\n}\n<span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">exclaim</span> (<span class=\"hljs-params\">str</span>) </span>{\n  <span class=\"hljs-keyword\">return</span> str + <span class=\"hljs-string\">'!'</span>;\n}\n<span class=\"hljs-keyword\">let</span> result = exclaim(capitalize(doubleSay(<span class=\"hljs-string\">\"hello\"</span>)));\nresult <span class=\"hljs-comment\">//=&gt; \"Hello, hello!\"</span></code></pre>\n</code></pre>\n<p>新写法：</p>\n<pre><code><pre class=\"hljs\"><code>let result = &quot;hello&quot;\n  |&gt; doubleSay\n  |&gt; capitalize\n  |&gt; exclaim;\n\nresult //=&gt; &quot;Hello, hello!&quot;</code></pre>\n</code></pre>\n<p>另外：也可以用composes</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span> <span class=\"hljs-title\">compose</span>(<span class=\"hljs-params\">...funcs</span>) </span>{\n  <span class=\"hljs-keyword\">if</span> (funcs.length === <span class=\"hljs-number\">0</span>) {\n    <span class=\"hljs-keyword\">return</span> <span class=\"hljs-function\"><span class=\"hljs-params\">arg</span> =&gt;</span> arg\n  }\n  <span class=\"hljs-keyword\">if</span> (funcs.length === <span class=\"hljs-number\">1</span>) {\n    <span class=\"hljs-keyword\">return</span> funcs[<span class=\"hljs-number\">0</span>]\n  }\n  <span class=\"hljs-keyword\">return</span> funcs.reduce(<span class=\"hljs-function\">(<span class=\"hljs-params\">a, b</span>) =&gt;</span> <span class=\"hljs-function\">(<span class=\"hljs-params\">...args</span>) =&gt;</span> a(b(...args)))\n}\n<span class=\"hljs-keyword\">let</span> result = compose(exclaim,capitalize,doubleSay)(<span class=\"hljs-string\">\"hello\"</span>);\nresult <span class=\"hljs-comment\">//=&gt; \"Hello, hello!\"</span></code></pre>\n</code></pre>\n",
+  "toc": [
+    {
+      "anchor": "bian-hua-1",
+      "level": 4,
+      "text": "变化1"
+    },
+    {
+      "anchor": "bian-hua-2",
+      "level": 4,
+      "text": "变化2"
+    },
+    {
+      "anchor": "bian-hua-3",
+      "level": 4,
+      "text": "变化3"
+    }
+  ],
+  "relatedTags": null,
+  "created_at": "2018-06-23",
+  "timeArr": [
+    2018,
+    5,
+    23,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "未来JS新变化3个",
+  "uuid": "19eb833c0872c308711633143c73c05509c956cd",
+  "summary": "<blockquote>\n<p>ES</p>\n</blockquote>\n<h4>变化1：</h4>\n<p>原写法：</p>\n<pre class=\"hljs\"><code><span class=\"hljs-keyword\">const</span> data = {\n  <span class=\"hljs-attr\">user</span>: {},\n};\n<span class=\"hljs-keyword\">const</span> street = data &amp;&amp; data.user &amp;&amp; data.user.address &amp;&amp; data.user.address.street;\n<span class=\"hljs-built_in\">console</span>.log(data.use...</code></pre>",
+  "slug": "wei-lai-JS-xin-bian-hua-3-ge",
+  "sha": "026909510ca57f701c4dfaa8c73e5cae0f6caab1"
+}

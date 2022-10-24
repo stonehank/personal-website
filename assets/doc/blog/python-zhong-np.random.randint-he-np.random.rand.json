@@ -1,0 +1,22 @@
+{
+  "content": "<p><code>np.random.randint</code>函数的作用是，返回一个随机整型数，范围从低（包括）到高（不包括），即[low, high)。\n如果没有写参数high的值，则返回[0,low)的值。</p>\n<p>参数如下：</p>\n<ul>\n<li><p>low: int<br>生成的数值最低要大于等于low。<br>（hign = None时，生成的数值要在[0, low)区间内）</p>\n</li>\n<li><p>high: int (可选)<br>如果使用这个值，则生成的数值在[low, high)区间。<br>size: int or tuple of ints(可选)<br>输出随机数的尺寸，比如size = (m * n* k)则输出同规模即m * n* k个随机数。默认是None的，仅仅返回满足要求的单一随机数。  </p>\n</li>\n<li><p>dtype: dtype(可选)：<br>想要输出的格式。如int64、int等等</p>\n</li>\n</ul>\n<p>例子:</p>\n<pre><code class=\"language-py\"><pre class=\"hljs\"><code>np.random.randint(<span class=\"hljs-number\">2</span>,size=<span class=\"hljs-number\">5</span>)\n<span class=\"hljs-comment\"># [0,1,1,0,0]</span>\nnp.random.randint(<span class=\"hljs-number\">2</span>,<span class=\"hljs-number\">5</span>,<span class=\"hljs-number\">10</span>)\n<span class=\"hljs-comment\"># [2 3 2 3 4 2 3 4 2 4]</span>\nnp.random.randint(<span class=\"hljs-number\">0</span>,<span class=\"hljs-number\">2</span>,(<span class=\"hljs-number\">1</span>,<span class=\"hljs-number\">10</span>))\n<span class=\"hljs-comment\"># [[0 0 1 1 0 1 0 0 0 0]]</span>\nnp.random.randint(<span class=\"hljs-number\">2</span>,size=(<span class=\"hljs-number\">1</span>,<span class=\"hljs-number\">10</span>))\n<span class=\"hljs-comment\"># 和上一个意思一样</span></code></pre>\n</code></pre>\n<p><code>np.random.rand</code>函数则是生成<code>N</code>维(根据参数数量)数组，但是每一个随机值都是<code>0-1</code>之间</p>\n<p>例如：</p>\n<pre><code class=\"language-py\"><pre class=\"hljs\"><code>np.random.rand(<span class=\"hljs-number\">2</span>)\n<span class=\"hljs-comment\"># 生成一维数组</span>\n<span class=\"hljs-comment\"># [0.40358037 0.06688054]</span>\nnp.random.rand(<span class=\"hljs-number\">2</span>,<span class=\"hljs-number\">1</span>)\n<span class=\"hljs-comment\"># 生成二维数组</span>\n<span class=\"hljs-comment\"># [[0.90992383]</span>\n   [<span class=\"hljs-number\">0.51200082</span>]]</code></pre>\n</code></pre>\n",
+  "toc": [],
+  "relatedTags": [
+    "python"
+  ],
+  "created_at": "2021-06-23",
+  "timeArr": [
+    2021,
+    5,
+    23,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "python中np.random.randint和np.random.rand",
+  "uuid": "69da2e3ca5800f073b160c6e0c7a8d842ca7209a",
+  "summary": "<p><code>np.random.randint</code>函数的作用是，返回一个随机整型数，范围从低（包括）到高（不包括），即[low, high)。\n如果没有写参数high的值，则返回[0,low)的值。</p>\n<p>参数如下：</p>\n<ul>\n<li>low: int<br>\n生成的数值最低要大于等于low。<br>\n（hign = None时，生成的数值要在[...</li>\n</ul>",
+  "slug": "python-zhong-np.random.randint-he-np.random.rand",
+  "sha": "e3f445d6ec3ac5ef8575d52929213c9491266c5d"
+}

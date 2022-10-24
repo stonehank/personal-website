@@ -1,0 +1,30 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">maxSize</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> CustomStack = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">maxSize</span>) </span>{\n  <span class=\"hljs-keyword\">this</span>.stack=[]\n  <span class=\"hljs-keyword\">this</span>.limit=maxSize\n};\n\n<span class=\"hljs-comment\">/** \n * @param {number} x\n * @return {void}\n */</span>\nCustomStack.prototype.push = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">x</span>) </span>{\n  <span class=\"hljs-keyword\">if</span>(<span class=\"hljs-keyword\">this</span>.stack.length&lt;<span class=\"hljs-keyword\">this</span>.limit)<span class=\"hljs-keyword\">this</span>.stack.push(x)\n};\n\n<span class=\"hljs-comment\">/**\n * @return {number}\n */</span>\nCustomStack.prototype.pop = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\"></span>) </span>{\n  <span class=\"hljs-keyword\">if</span>(<span class=\"hljs-keyword\">this</span>.stack.length===<span class=\"hljs-number\">0</span>)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">-1</span>\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-keyword\">this</span>.stack.pop()\n};\n\n<span class=\"hljs-comment\">/** \n * @param {number} k \n * @param {number} val\n * @return {void}\n */</span>\nCustomStack.prototype.increment = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">k, val</span>) </span>{\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;k;i++){\n    <span class=\"hljs-keyword\">if</span>(i&gt;=<span class=\"hljs-keyword\">this</span>.stack.length)<span class=\"hljs-keyword\">break</span>\n    <span class=\"hljs-keyword\">this</span>.stack[i]+=val\n  }\n};\n\n<span class=\"hljs-comment\">/**\n * Your CustomStack object will be instantiated and called as such:\n * var obj = new CustomStack(maxSize)\n * obj.push(x)\n * var param_2 = obj.pop()\n * obj.increment(k,val)\n */</span>\n</code></pre>\n"
+  ],
+  "querySlug": "design-a-stack-with-increment-operation",
+  "created_at": "2020-03-15",
+  "timeArr": [
+    2020,
+    2,
+    15,
+    10,
+    41,
+    59,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>请你设计一个支持下述操作的栈。</p>\n\n<p>实现自定义栈类 <code>CustomStack</code> ：</p>\n\n<ul>\n\t<li><code>CustomStack(int maxSize)</code>：用 <code>maxSize</code> 初始化对象，<code>maxSize</code> 是栈中最多能容纳的元素数量，栈在增长到 <code>maxSize</code> 之后则不支持 <code>push</code> 操作。</li>\n\t<li><code>void push(int x)</code>：如果栈还未增长到 <code>maxSize</code> ，就将 <code>x</code> 添加到栈顶。</li>\n\t<li><code>int pop()</code>：弹出栈顶元素，并返回栈顶的值，或栈为空时返回 <strong>-1</strong> 。</li>\n\t<li><code>void inc(int k, int val)</code>：栈底的 <code>k</code> 个元素的值都增加 <code>val</code> 。如果栈中元素总数小于 <code>k</code> ，则栈中的所有元素都增加 <code>val</code> 。</li>\n</ul>\n\n<p>&nbsp;</p>\n\n<p><strong>示例：</strong></p>\n\n<pre><strong>输入：</strong>\n[&quot;CustomStack&quot;,&quot;push&quot;,&quot;push&quot;,&quot;pop&quot;,&quot;push&quot;,&quot;push&quot;,&quot;push&quot;,&quot;increment&quot;,&quot;increment&quot;,&quot;pop&quot;,&quot;pop&quot;,&quot;pop&quot;,&quot;pop&quot;]\n[[3],[1],[2],[],[2],[3],[4],[5,100],[2,100],[],[],[],[]]\n<strong>输出：</strong>\n[null,null,null,2,null,null,null,null,null,103,202,201,-1]\n<strong>解释：</strong>\nCustomStack customStack = new CustomStack(3); // 栈是空的 []\ncustomStack.push(1);                          // 栈变为 [1]\ncustomStack.push(2);                          // 栈变为 [1, 2]\ncustomStack.pop();                            // 返回 2 --&gt; 返回栈顶值 2，栈变为 [1]\ncustomStack.push(2);                          // 栈变为 [1, 2]\ncustomStack.push(3);                          // 栈变为 [1, 2, 3]\ncustomStack.push(4);                          // 栈仍然是 [1, 2, 3]，不能添加其他元素使栈大小变为 4\ncustomStack.increment(5, 100);                // 栈变为 [101, 102, 103]\ncustomStack.increment(2, 100);                // 栈变为 [201, 202, 103]\ncustomStack.pop();                            // 返回 103 --&gt; 返回栈顶值 103，栈变为 [201, 202]\ncustomStack.pop();                            // 返回 202 --&gt; 返回栈顶值 202，栈变为 [201]\ncustomStack.pop();                            // 返回 201 --&gt; 返回栈顶值 201，栈变为 []\ncustomStack.pop();                            // 返回 -1 --&gt; 栈为空，返回 -1\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= maxSize &lt;= 1000</code></li>\n\t<li><code>1 &lt;= x &lt;= 1000</code></li>\n\t<li><code>1 &lt;= k &lt;= 1000</code></li>\n\t<li><code>0 &lt;= val &lt;= 100</code></li>\n\t<li>每种方法 <code>increment</code>，<code>push</code> 以及 <code>pop</code> 分别最多调用 <code>1000</code> 次</li>\n</ul>\n",
+  "title": "1381. 设计一个支持增量操作的栈",
+  "relatedTags": [
+    "栈",
+    "设计",
+    "数组"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "1381",
+  "slug": "1381-Design-a-Stack-With-Increment-Operation"
+}

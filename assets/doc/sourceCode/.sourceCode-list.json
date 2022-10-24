@@ -1,0 +1,542 @@
+{
+  "source-code-react-motion": {
+    "relatedTags": [
+      "react",
+      "源码",
+      "算法"
+    ],
+    "created_at": "2021-08-08",
+    "timeArr": [
+      2021,
+      7,
+      8,
+      11,
+      45,
+      40,
+      0
+    ],
+    "title": "源码阅读-react-motion",
+    "uuid": "f7719af5b1eadd4423c1b00da230569e16d39662",
+    "summary": "<h4>介绍</h4>\n<p><code>react-motion</code>是一个react的动画组件，只需要为UI元素设置一个弹力和阻力和目标位置，便可渲染出符合现实的弹性动画效果</p>\n<p>算法：</p>\n<p>弹性算法，算法本身([stepper.js](https://github.com/stonehank/sourcecode-analysis/blob/ma...</p>",
+    "slug": "source-code-react-motion",
+    "sha": "b8d21fe030902ab5d37cc67bc1955e0e28545c9c"
+  },
+  "source-code-pubsub-js": {
+    "relatedTags": [
+      "源码"
+    ],
+    "created_at": "2021-07-04",
+    "timeArr": [
+      2021,
+      6,
+      4,
+      12,
+      35,
+      31,
+      0
+    ],
+    "title": "源码阅读-pubsub-js",
+    "uuid": "24fa8b0bfed56ded378d93d387506bfc37b3b319",
+    "summary": "<p>pubsub-js: 一个用 JavaScript 编写的<code>基于主题</code>的发布/订阅库</p>",
+    "slug": "source-code-pubsub-js",
+    "sha": "b27fe9696b30d036d66f5bba75e75dde8bc13449"
+  },
+  "source-code-anime": {
+    "relatedTags": [
+      "源码",
+      "css",
+      "算法",
+      "promise"
+    ],
+    "created_at": "2018-07-20",
+    "timeArr": [
+      2018,
+      6,
+      20,
+      17,
+      13,
+      2,
+      0
+    ],
+    "title": "源码阅读-anime",
+    "uuid": "4eefd89367cd780830f848b989d9ff1f2ad1c9e9",
+    "summary": "<p>为了能更好的理解这个库，个人写了一个此库的压缩版，实现了核心的功能(主要也是为了更好理解核心功能)，内容更少方便阅读，\n地址在<a href=\"https://github.com/stonehank/simplify-anime\">这里</a></p>",
+    "slug": "source-code-anime",
+    "sha": "f2de765b0c50caf3a3f5e97ffda9d8b60e27ac0c"
+  },
+  "source-code-react-snapshot": {
+    "relatedTags": [
+      "react",
+      "源码",
+      "npm"
+    ],
+    "created_at": "2018-12-04",
+    "timeArr": [
+      2018,
+      11,
+      4,
+      8,
+      28,
+      32,
+      0
+    ],
+    "title": "源码阅读-react-snapshot",
+    "uuid": "a1837b08e3c7d440f06a453b4a0a19e1078abcfa",
+    "summary": "<p><code>react-snapshot</code>一个服务端渲染组件，由于内部依赖库和相关<code>API</code>较老，而且有1年没更新了，\n就不去太详细解释，有兴趣可以自行看源码内容<code>src目录</code>(带详细注释)。</p>\n<p>读了这个库，要了解<code>服务端渲染</code>是什么流程，因此这里主要讲<code>执行流程</code>。</p>\n<h4>配置</h4>\n<p>这个库需要更改<code>package.json</code>...</p>",
+    "slug": "source-code-react-snapshot",
+    "sha": "eee62b3fcb60e43c2db14c27b02e523dc16d5be4"
+  },
+  "source-code-react-waypoint": {
+    "relatedTags": [
+      "源码",
+      "react"
+    ],
+    "created_at": "2018-12-28",
+    "timeArr": [
+      2018,
+      11,
+      28,
+      19,
+      30,
+      43,
+      0
+    ],
+    "title": "源码阅读-react-waypoint",
+    "uuid": "ba215dff0ae6956dac40be3d218cd6ab5cd3c533",
+    "summary": "<p><code>react-waypoint</code>用于监控元素是否出现在用户定义的视口范围内。</p>",
+    "slug": "source-code-react-waypoint",
+    "sha": "f2384a371e4ab1abe1998ae1eb32ea5bed8a7ca9"
+  },
+  "source-code-jquery-mousewheel": {
+    "relatedTags": [
+      "源码"
+    ],
+    "created_at": "2018-07-15",
+    "timeArr": [
+      2018,
+      6,
+      15,
+      16,
+      20,
+      8,
+      0
+    ],
+    "title": "源码阅读-jquery-mousewheel",
+    "uuid": "3e19d01000962a53236a4d75fa6088929fb906b0",
+    "summary": "<h4>source-code.jquery-mousewheel</h4>\n<p>v3.1.13</p>\n<p>阅读[jquery-mousewheel源码](https://github.com/stonehank/sourcecode-analysis/blob/master/source-code.jquery-mousewheel/src/...</p>",
+    "slug": "source-code-jquery-mousewheel",
+    "sha": "e2e6ecfafb5dc2261961975823daf66d3005fa91"
+  },
+  "source-code-lodash": {
+    "relatedTags": [
+      "源码"
+    ],
+    "created_at": "2018-08-14",
+    "timeArr": [
+      2018,
+      7,
+      14,
+      23,
+      14,
+      50,
+      0
+    ],
+    "title": "源码阅读-lodash",
+    "uuid": "4902ccf3b4127bfc210513e3529617f88f760b4d",
+    "summary": "<h4>Lodash 源码注释...</h4>",
+    "slug": "source-code-lodash",
+    "sha": "dd07adcdb7946319494cf5b107890fa70800d860"
+  },
+  "source-code-hyperapp": {
+    "relatedTags": [
+      "源码",
+      "diff",
+      "react"
+    ],
+    "created_at": "2018-07-15",
+    "timeArr": [
+      2018,
+      6,
+      15,
+      16,
+      20,
+      8,
+      0
+    ],
+    "title": "源码阅读-hyperapp",
+    "uuid": "b9a6aca4245dad7a679816c10e50173b0357ef2e",
+    "summary": "<h4>source-code.hyperapp</h4>\n<p>v1.2.6</p>\n<p>一个极小的(1kb)类react框架，实现了virtual-dom，diff比较(需要key)，数据绑定到actions上，通过actions改变数据，会自动更新页面</p>\n<p>主要步骤：</p>\n<ul>\n<li>通过app()对其参数进行处理</li>\n<li>克隆state（不在原state上...</li>\n</ul>",
+    "slug": "source-code-hyperapp",
+    "sha": "c3e25401738f99932f31b1c1cb759018ab90d901"
+  },
+  "source-code-signature_pad": {
+    "relatedTags": [
+      "源码",
+      "算法",
+      "canvas",
+      "性能",
+      "github"
+    ],
+    "created_at": "2019-06-18",
+    "timeArr": [
+      2019,
+      5,
+      18,
+      17,
+      28,
+      15,
+      0
+    ],
+    "title": "源码阅读-signature_pad",
+    "uuid": "020a984c51cbbd2495a0d29f23c81b45f6751f6d",
+    "summary": "<p><a href=\"https://github.com/szimek/signature_pad\">signature_pad</a>一个基于Canvas的平滑手写画板工具</p>",
+    "slug": "source-code-signature_pad",
+    "sha": "b8278693dc6d16379d12a1d0c6876b60ec86f4e7"
+  },
+  "source-code-fullpage": {
+    "relatedTags": [
+      "源码"
+    ],
+    "created_at": "2018-07-15",
+    "timeArr": [
+      2018,
+      6,
+      15,
+      16,
+      20,
+      8,
+      0
+    ],
+    "title": "源码阅读-fullpage",
+    "uuid": "f68337e3bce79a95ca9f0a7524fba1c2773f2223",
+    "summary": "<h4>source-code.fullpage</h4>\n<p>fullPage 2.5.4</p>\n<p>阅读[fullpage源码(依赖jquery)](https://github.com/stonehank/sourcecode-analysis/blob/master/source-code.fullpage/src/jquery.fu...</p>",
+    "slug": "source-code-fullpage",
+    "sha": "9863e94895d22e63146b5b0f24f28bed4b5682f4"
+  },
+  "source-code-redux-observable": {
+    "relatedTags": [
+      "源码",
+      "redux",
+      "github"
+    ],
+    "created_at": "2018-08-02",
+    "timeArr": [
+      2018,
+      7,
+      2,
+      18,
+      41,
+      14,
+      0
+    ],
+    "title": "源码阅读-redux-observable",
+    "uuid": "d7c0278bb7ed377e72b7b8f38c777e8da7e1cbac",
+    "summary": "<h4>阅读前提：</h4>\n<ol>\n<li>有rxjs基础，对<code>Observable</code>, <code>Subject</code>,<code>pipe</code>和一些操作符(例如<code>filter</code>,<code>map</code>,<code>merge</code>,<code>mergeMap</code>)执行流程有基本了解，最起码遇到不清楚有去查阅的动力</li>\n<li>比较熟悉<code>redux</code>中间件的写法，否则像`createEpicMidd...</li>\n</ol>",
+    "slug": "source-code-redux-observable",
+    "sha": "93bd88b16c7b9dfc51ce170d182382f0ecefdd78"
+  },
+  "source-code-lazyestload": {
+    "relatedTags": [
+      "源码"
+    ],
+    "created_at": "2018-09-02",
+    "timeArr": [
+      2018,
+      8,
+      2,
+      16,
+      59,
+      32,
+      0
+    ],
+    "title": "源码阅读-lazyestload",
+    "uuid": "994f8990aab0296dacd6b9d0e6a892f4c81d24b0",
+    "summary": "<p>一个简单的图片延迟加载</p>\n<p><img src=\"https://raw.githubusercontent.com/stonehank/sourcecode-analysis/master/source-code.lazyestload/lazyestload.png\" alt=\"\">...</p>",
+    "slug": "source-code-lazyestload",
+    "sha": "95431918e3ec508fbccff663e21e575930976d60"
+  },
+  "source-code-react-loadable": {
+    "relatedTags": [
+      "源码",
+      "react",
+      "promise",
+      "webpack",
+      "babel",
+      "github"
+    ],
+    "created_at": "2018-09-10",
+    "timeArr": [
+      2018,
+      8,
+      10,
+      15,
+      44,
+      34,
+      0
+    ],
+    "title": "源码阅读-react-loadable",
+    "uuid": "5134ffe9303c7c82cc06321c03aa6dc4abdc9753",
+    "summary": "<h4>介绍</h4>\n<p><a href=\"https://github.com/jamiebuilds/react-loadable\">react-loadable</a>是一个组件延迟加载的工具，\n它本身也是一个组件，通过<code>HOC</code>的方式对参数组件进行处理，\n具体的延迟加载方式是使用<code>import().then()</code>方法，那么为什么要用这个组件呢？...</p>",
+    "slug": "source-code-react-loadable",
+    "sha": "7d1a1d670bb1ec624fdef1c489f683ce954302c1"
+  },
+  "source-code-fast-memoizeVSnano-memoize": {
+    "relatedTags": [
+      "源码",
+      "缓存",
+      "性能"
+    ],
+    "created_at": "2018-09-09",
+    "timeArr": [
+      2018,
+      8,
+      9,
+      23,
+      10,
+      16,
+      0
+    ],
+    "title": "源码阅读-fast-memoizeVSnano-memoize",
+    "uuid": "192cb2d796eb6fa7798923cf1e642b9be3a00af6",
+    "summary": "<p>至今天(2018年9月7日)，这2个工具的实现源码思想是极其相似的，基本上，只要阅读了其中一个源码，也就了解了另外一个的实现。</p>\n<p>fast-memoize导图:</p>\n<p>![](https://raw.githubusercontent.com/stonehank/sourcecode-analysis/master/sou...</p>",
+    "slug": "source-code-fast-memoizeVSnano-memoize",
+    "sha": "7253519654d49748be385ec948aa3d448a6d4a7c"
+  },
+  "source-code-create-react-app-webpack-pei-zhi": {
+    "relatedTags": [
+      "webpack",
+      "react",
+      "源码"
+    ],
+    "created_at": "2018-11-19",
+    "timeArr": [
+      2018,
+      10,
+      19,
+      15,
+      45,
+      55,
+      0
+    ],
+    "title": "源码阅读-create-react-app(webpack配置)",
+    "uuid": "2bbdd2a09d1bce1b097fe092c4929ed1a7673f6d",
+    "summary": "<ul>\n<li>\n<p>7-29：更新至webpack-config-dev.js</p>\n</li>\n<li>\n<p>9-25：更新webpackDevServer.config.js</p>\n</li>\n<li>\n<p>10-16：更新webpack.config.prod.js</p>\n</li>\n</ul>\n<p>粗读了一遍<code>create-react-app.js</code>，主要是用node对检测和创建上的操作，还有安装依赖，\n下次...</p>",
+    "slug": "source-code-create-react-app-webpack-pei-zhi",
+    "sha": "6e444f7cb5dd23463be4f5eb867ac6e67ebc2bce"
+  },
+  "source-code-reach-router": {
+    "relatedTags": [
+      "源码",
+      "router",
+      "react"
+    ],
+    "created_at": "2018-07-15",
+    "timeArr": [
+      2018,
+      6,
+      15,
+      16,
+      20,
+      8,
+      0
+    ],
+    "title": "源码阅读-reach-router",
+    "uuid": "d4c20e9d6e2481885bd702b49e92a75e20ff8bef",
+    "summary": "<h4>source-code.reach-router</h4>\n<p>v1.1.1</p>\n<h4>初识</h4>\n<p>一张导图：</p>\n<p>![](https://raw.githubusercontent.com/stonehank/sourcecode-analysis/master/source-code.reach-router/reachRouter...</p>",
+    "slug": "source-code-reach-router",
+    "sha": "60c69717e8096ec7bcc17c42915f3fb679f32077"
+  },
+  "source-code-stat": {
+    "relatedTags": [
+      "源码",
+      "canvas",
+      "性能"
+    ],
+    "created_at": "2018-08-28",
+    "timeArr": [
+      2018,
+      7,
+      28,
+      14,
+      34,
+      42,
+      0
+    ],
+    "title": "源码阅读-stat",
+    "uuid": "52494eaeba83ec352ddf9911253c8da79c8e67fd",
+    "summary": "<p>一个js性能监控器，使用canvas绘制，简洁美观，思想也不复杂</p>\n<ol>\n<li>\n<p>通过<code>performance.now</code>获取当前开始时间，每次调用时，计算时间差，每隔1秒计算每一帧平均消耗的毫秒数，从而计算1000毫秒的帧数。</p>\n</li>\n<li>\n<p>根据传入的当前fps和给定的最高fps绘制canvas，分为整体层，字体层，柱状条层。</p>\n</li>\n</ol>\n<p>3...</p>",
+    "slug": "source-code-stat",
+    "sha": "63fbb1b85f485cc67805eb912f3d38c366d33e41"
+  },
+  "source-code-zepto": {
+    "relatedTags": [
+      "源码"
+    ],
+    "created_at": "2018-07-15",
+    "timeArr": [
+      2018,
+      6,
+      15,
+      16,
+      20,
+      8,
+      0
+    ],
+    "title": "源码阅读-zepto",
+    "uuid": "dbc119259f2d6bc6fb636050446ffdf3cd320af1",
+    "summary": "<h4>source-code.zepto</h4>\n<p>Zepto v1.2.0</p>\n<p>阅读<a href=\"https://github.com/stonehank/sourcecode-analysis/blob/master/source-code.zepto/src/zepto.js\">zepto源码</a>\n...</p>",
+    "slug": "source-code-zepto",
+    "sha": "5f736c0f3e3709c79088cd4f60899e05280f35ce"
+  },
+  "source-code-redux": {
+    "relatedTags": [
+      "源码",
+      "redux"
+    ],
+    "created_at": "2018-08-02",
+    "timeArr": [
+      2018,
+      7,
+      2,
+      18,
+      41,
+      14,
+      0
+    ],
+    "title": "源码阅读-redux",
+    "uuid": "adc2f51181e5738a7702a3a284bff293b822edca",
+    "summary": "<h4>source-code.redux</h4>\n<p>v4.0.0</p>\n<p>redux源码设计真的很精妙</p>\n<p>改变状态是从store一层一层往下找，找到对应的type修改状态，再一层一层返回</p>\n<p>middleware是链式调用，每一环的返回值作为下一环的dispatch，就像滚雪球一样，最终能得到一个强大的dispatch</p>\n<p>那么读完了是...</p>",
+    "slug": "source-code-redux",
+    "sha": "5dc0af13b16222c98bb23e8923957ec20cd52eab"
+  },
+  "source-code-react-infinite-scroller": {
+    "relatedTags": [
+      "源码",
+      "react"
+    ],
+    "created_at": "2018-11-25",
+    "timeArr": [
+      2018,
+      10,
+      25,
+      23,
+      37,
+      53,
+      0
+    ],
+    "title": "源码阅读-react-infinite-scroller",
+    "uuid": "7cbb6144b6cfb573e0e828cb0d5cbe5e805fe1d9",
+    "summary": "<p><code>react-infinite-scroller</code>就是一个组件，主要逻辑就是<code>addEventListener</code>绑定<code>scroll</code>事件。</p>\n<p>看它的源码主要意义不在知道如何使用它，而是知道以后处理<code>滚动加载</code>要注意的东西。</p>\n<blockquote>\n<p>此处跳到<a href=\"#zong-jie\">总结</a>。</p>\n</blockquote>\n<h4>初识</h4>\n<p>参数：</p>\n<pre class=\"hljs\"><code>// 渲染出来的...</code></pre>",
+    "slug": "source-code-react-infinite-scroller",
+    "sha": "5aba2eaf43528ba166b972e6b13b0b43de1c816c"
+  },
+  "source-code-react-redux": {
+    "relatedTags": [
+      "源码",
+      "react",
+      "redux"
+    ],
+    "created_at": "2018-11-19",
+    "timeArr": [
+      2018,
+      10,
+      19,
+      15,
+      39,
+      31,
+      0
+    ],
+    "title": "源码阅读-react-redux",
+    "uuid": "61fc5f70332f76ba26036558a7f1f43790ca025b",
+    "summary": "<p>注意：文章很长，只想了解逻辑而不深入的，可以直接跳到最后的<a href=\"#zong-jie\">总结部分</a>。</p>",
+    "slug": "source-code-react-redux",
+    "sha": "53f1636d897b807f6392f3fa5cdce56274193679"
+  },
+  "source-code-unstated": {
+    "relatedTags": [
+      "源码",
+      "react",
+      "promise",
+      "redux"
+    ],
+    "created_at": "2018-12-08",
+    "timeArr": [
+      2018,
+      11,
+      8,
+      10,
+      29,
+      27,
+      0
+    ],
+    "title": "源码阅读-unstated",
+    "uuid": "1ec6d586c759db1ce817117277e391c08a8d1c01",
+    "summary": "<p>看它的简介：State so simple, it goes without saying</p>",
+    "slug": "source-code-unstated",
+    "sha": "471fa80d4139f88a0f770af34e991a0b73babacc"
+  },
+  "source-code-ant-design": {
+    "relatedTags": [
+      "源码",
+      "react",
+      "css"
+    ],
+    "created_at": "2018-08-07",
+    "timeArr": [
+      2018,
+      7,
+      7,
+      22,
+      27,
+      0,
+      0
+    ],
+    "title": "源码阅读-ant-design",
+    "uuid": "bd2212eb183cedc05eb9b873778391f62063fada",
+    "summary": "<h4>antd-comments</h4>\n<p>阅读ant-design源码（部分）</p>\n<h4>什么是整体？</h4>\n<p> 在我们阅读项目源码之前，如果你对它的功能一无所知，那简直是最可怕的事情...\n经常不知不觉就深入其中的逻辑，就像进入一团团迷雾，甚至会觉得有很多重复没必要的东西，完全不知道它们的区别。</p>\n<p> 当然，值的...</p>",
+    "slug": "source-code-ant-design",
+    "sha": "34b8759cdf2a2234851effc42681c04302784030"
+  },
+  "source-code-graphql-request": {
+    "relatedTags": [
+      "graphql",
+      "源码"
+    ],
+    "created_at": "2018-12-21",
+    "timeArr": [
+      2018,
+      11,
+      21,
+      23,
+      12,
+      52,
+      0
+    ],
+    "title": "源码阅读-graphql-request",
+    "uuid": "003e6a0839f7a3aa25452aa0631217c7d52b51b0",
+    "summary": "<p><code>graphql-request</code>一个极小的<code>graphql</code>请求方法</p>\n<p>如果不太了解<code>graphql</code>，看一下这个库，或许能知道它的请求就可以这么简单...</p>\n<p>就是熟悉的<code>fetch</code>，这里使用了<code>cross-fetch</code>(兼容的fetch)</p>\n<ol>\n<li><code>Content-Type</code>设置为`application/js...</li>\n</ol>",
+    "slug": "source-code-graphql-request",
+    "sha": "2153a5389109334a02980708ba72e829b64515a2"
+  },
+  "source-code-reselect": {
+    "relatedTags": [
+      "源码",
+      "缓存"
+    ],
+    "created_at": "2018-07-15",
+    "timeArr": [
+      2018,
+      6,
+      15,
+      16,
+      20,
+      8,
+      0
+    ],
+    "title": "源码阅读-reselect",
+    "uuid": "a73ced0b51daf6b55d0965e613d5ed55304f6638",
+    "summary": "<h4>reselect源码介绍</h4>\n<p>v3.0.1</p>\n<p>导图：\n<img src=\"https://raw.githubusercontent.com/stonehank/sourcecode-analysis/master/source-code.reselect/reselect.png\" alt=\"\"></p>\n<h4>defaultMemoize</h4>\n<p>...</p>",
+    "slug": "source-code-reselect",
+    "sha": "1337a25798f1710973ee215c3e6322aec34e79c8"
+  }
+}

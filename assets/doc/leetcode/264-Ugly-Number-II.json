@@ -1,0 +1,23 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">n</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> nthUglyNumber = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">n</span>) </span>{\n    <span class=\"hljs-keyword\">if</span>(n===<span class=\"hljs-number\">1</span>)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">let</span> arr=[<span class=\"hljs-number\">1</span>]\n    <span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>,j=<span class=\"hljs-number\">0</span>,k=<span class=\"hljs-number\">0</span>\n    <span class=\"hljs-keyword\">while</span>(n--&gt;<span class=\"hljs-number\">1</span>){\n        <span class=\"hljs-keyword\">let</span> v2=arr[i]*<span class=\"hljs-number\">2</span>\n        <span class=\"hljs-keyword\">let</span> v3=arr[j]*<span class=\"hljs-number\">3</span>\n        <span class=\"hljs-keyword\">let</span> v5=arr[k]*<span class=\"hljs-number\">5</span>\n        <span class=\"hljs-keyword\">let</span> min=<span class=\"hljs-built_in\">Math</span>.min(v2,v3,v5)\n        <span class=\"hljs-keyword\">if</span>(min===v2)i++\n        <span class=\"hljs-keyword\">if</span>(min===v3)j++\n        <span class=\"hljs-keyword\">if</span>(min===v5)k++\n        arr.push(min)\n    }\n    <span class=\"hljs-keyword\">return</span> arr[arr.length<span class=\"hljs-number\">-1</span>]\n};\n</code></pre>\n",
+    "<pre class=\"hljs\"><code><span class=\"hljs-class\"><span class=\"hljs-keyword\">class</span> <span class=\"hljs-title\">Solution</span><span class=\"hljs-params\">(object)</span>:</span>\n    <span class=\"hljs-function\"><span class=\"hljs-keyword\">def</span> <span class=\"hljs-title\">nthUglyNumber</span><span class=\"hljs-params\">(self, n)</span>:</span>\n        <span class=\"hljs-string\">\"\"\"\n        :type n: int\n        :rtype: int\n        \"\"\"</span>\n        id1,id2,id3=<span class=\"hljs-number\">0</span>,<span class=\"hljs-number\">0</span>,<span class=\"hljs-number\">0</span>\n        dp=[<span class=\"hljs-number\">0</span>]*n\n        dp[<span class=\"hljs-number\">0</span>]=<span class=\"hljs-number\">1</span>\n        <span class=\"hljs-keyword\">for</span> i <span class=\"hljs-keyword\">in</span> range(<span class=\"hljs-number\">1</span>,n):\n          curmin=min(dp[id1]*<span class=\"hljs-number\">2</span>,dp[id2]*<span class=\"hljs-number\">3</span>,dp[id3]*<span class=\"hljs-number\">5</span>)\n          <span class=\"hljs-keyword\">if</span> curmin==dp[id1]*<span class=\"hljs-number\">2</span>:id1+=<span class=\"hljs-number\">1</span>\n          <span class=\"hljs-keyword\">if</span> curmin==dp[id2]*<span class=\"hljs-number\">3</span>:id2+=<span class=\"hljs-number\">1</span>\n          <span class=\"hljs-keyword\">if</span> curmin==dp[id3]*<span class=\"hljs-number\">5</span>:id3+=<span class=\"hljs-number\">1</span>\n          dp[i]=curmin\n        <span class=\"hljs-keyword\">return</span> dp[<span class=\"hljs-number\">-1</span>]\n        \n</code></pre>\n"
+  ],
+  "querySlug": "ugly-number-ii",
+  "hasThinking": false,
+  "content": "<p>给你一个整数 <code>n</code> ，请你找出并返回第 <code>n</code> 个 <strong>丑数</strong> 。</p>\n\n<p><strong>丑数 </strong>就是只包含质因数 <code>2</code>、<code>3</code> 和/或 <code>5</code> 的正整数。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre>\n<strong>输入：</strong>n = 10\n<strong>输出：</strong>12\n<strong>解释：</strong>[1, 2, 3, 4, 5, 6, 8, 9, 10, 12] 是由前 10 个丑数组成的序列。\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>n = 1\n<strong>输出：</strong>1\n<strong>解释：</strong>1 通常被视为丑数。\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= n <= 1690</code></li>\n</ul>\n",
+  "title": "264. 丑数 II",
+  "relatedTags": [
+    "哈希表",
+    "数学",
+    "动态规划",
+    "堆（优先队列）"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript",
+    "python"
+  ],
+  "uniqueID": "264",
+  "slug": "264-Ugly-Number-II"
+}

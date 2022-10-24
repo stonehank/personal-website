@@ -1,0 +1,28 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">nums</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{boolean}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> checkPossibility = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">nums</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> c=<span class=\"hljs-number\">0</span>,mx=-<span class=\"hljs-literal\">Infinity</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;nums.length;i++){\n    <span class=\"hljs-keyword\">if</span>(nums[i]&lt;mx){\n      <span class=\"hljs-keyword\">if</span>(i&lt;=<span class=\"hljs-number\">1</span> || nums[i<span class=\"hljs-number\">-2</span>]&lt;=nums[i])mx=nums[i]\n      c++\n    }<span class=\"hljs-keyword\">else</span>{\n      mx=nums[i]\n    }\n    <span class=\"hljs-keyword\">if</span>(c&gt;<span class=\"hljs-number\">1</span>)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n  }\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n};\n</code></pre>\n"
+  ],
+  "querySlug": "non-decreasing-array",
+  "created_at": "2019-03-14",
+  "timeArr": [
+    2019,
+    2,
+    14,
+    16,
+    34,
+    18,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给你一个长度为 <code>n</code> 的整数数组，请你判断在 <strong>最多 </strong>改变 <code>1</code> 个元素的情况下，该数组能否变成一个非递减数列。</p>\n\n<p>我们是这样定义一个非递减数列的： 对于数组中任意的 <code>i</code> <code>(0 <= i <= n-2)</code>，总满足 <code>nums[i] <= nums[i + 1]</code>。</p>\n\n<p> </p>\n\n<p><strong>示例 1:</strong></p>\n\n<pre>\n<strong>输入:</strong> nums = [4,2,3]\n<strong>输出:</strong> true\n<strong>解释:</strong> 你可以通过把第一个4变成1来使得它成为一个非递减数列。\n</pre>\n\n<p><strong>示例 2:</strong></p>\n\n<pre>\n<strong>输入:</strong> nums = [4,2,1]\n<strong>输出:</strong> false\n<strong>解释:</strong> 你不能在只改变一个元素的情况下将其变为非递减数列。\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 <= n <= 10 ^ 4</code></li>\n\t<li><code>- 10 ^ 5 <= nums[i] <= 10 ^ 5</code></li>\n</ul>\n",
+  "title": "665. 非递减数列",
+  "relatedTags": [
+    "数组"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "665",
+  "slug": "665-Non-decreasing-Array"
+}

@@ -1,0 +1,29 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[][]}</span> <span class=\"hljs-variable\">matrix</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{boolean}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> isToeplitzMatrix = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">matrix</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> m=matrix.length,n=matrix[<span class=\"hljs-number\">0</span>].length\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;m;i++){\n    <span class=\"hljs-keyword\">let</span> cur=matrix[i][<span class=\"hljs-number\">0</span>]\n    <span class=\"hljs-keyword\">let</span> ni=i+<span class=\"hljs-number\">1</span>,nj=<span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">while</span>(ni&gt;=<span class=\"hljs-number\">0</span> &amp;&amp; ni &lt;m &amp;&amp; nj&gt;=<span class=\"hljs-number\">0</span> &amp;&amp; nj&lt;n){\n      <span class=\"hljs-keyword\">if</span>(matrix[ni][nj]!==cur)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n      ni+=<span class=\"hljs-number\">1</span>;nj+=<span class=\"hljs-number\">1</span>\n    }\n  }\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">1</span>;i&lt;n;i++){\n    <span class=\"hljs-keyword\">let</span> cur=matrix[<span class=\"hljs-number\">0</span>][i]\n    <span class=\"hljs-keyword\">let</span> ni=<span class=\"hljs-number\">1</span>,nj=i+<span class=\"hljs-number\">1</span>\n    <span class=\"hljs-keyword\">while</span>(ni&gt;=<span class=\"hljs-number\">0</span> &amp;&amp; ni &lt;m &amp;&amp; nj&gt;=<span class=\"hljs-number\">0</span> &amp;&amp; nj&lt;n){\n      <span class=\"hljs-keyword\">if</span>(matrix[ni][nj]!==cur)<span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">false</span>\n      ni+=<span class=\"hljs-number\">1</span>;nj+=<span class=\"hljs-number\">1</span>\n    }    \n  }\n  <span class=\"hljs-keyword\">return</span> <span class=\"hljs-literal\">true</span>\n};\n</code></pre>\n"
+  ],
+  "querySlug": "toeplitz-matrix",
+  "created_at": "2019-03-15",
+  "timeArr": [
+    2019,
+    2,
+    15,
+    11,
+    55,
+    51,
+    0
+  ],
+  "hasThinking": false,
+  "content": "<p>给你一个 <code>m x n</code> 的矩阵 <code>matrix</code> 。如果这个矩阵是托普利茨矩阵，返回 <code>true</code> ；否则，返回<em> </em><code>false</code><em> 。</em></p>\n\n<p>如果矩阵上每一条由左上到右下的对角线上的元素都相同，那么这个矩阵是<em> </em><strong>托普利茨矩阵</strong> 。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/11/04/ex1.jpg\" style=\"width: 322px; height: 242px;\" />\n<pre>\n<strong>输入：</strong>matrix = [[1,2,3,4],[5,1,2,3],[9,5,1,2]]\n<strong>输出：</strong>true\n<strong>解释：</strong>\n在上述矩阵中, 其对角线为: \n\"[9]\", \"[5, 5]\", \"[1, 1, 1]\", \"[2, 2, 2]\", \"[3, 3]\", \"[4]\"。 \n各条对角线上的所有元素均相同, 因此答案是 True 。\n</pre>\n\n<p><strong>示例 2：</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/11/04/ex2.jpg\" style=\"width: 162px; height: 162px;\" />\n<pre>\n<strong>输入：</strong>matrix = [[1,2],[2,2]]\n<strong>输出：</strong>false\n<strong>解释：</strong>\n对角线 \"[1, 2]\" 上的元素不同。</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>m == matrix.length</code></li>\n\t<li><code>n == matrix[i].length</code></li>\n\t<li><code>1 <= m, n <= 20</code></li>\n\t<li><code>0 <= matrix[i][j] <= 99</code></li>\n</ul>\n\n<p> </p>\n\n<p><strong>进阶：</strong></p>\n\n<ul>\n\t<li>如果矩阵存储在磁盘上，并且内存有限，以至于一次最多只能将矩阵的一行加载到内存中，该怎么办？</li>\n\t<li>如果矩阵太大，以至于一次只能将不完整的一行加载到内存中，该怎么办？</li>\n</ul>\n",
+  "title": "766. 托普利茨矩阵",
+  "relatedTags": [
+    "数组",
+    "矩阵"
+  ],
+  "difficult": "Easy",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "766",
+  "slug": "766-Toeplitz-Matrix"
+}

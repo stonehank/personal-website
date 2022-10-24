@@ -1,0 +1,31 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number}</span> <span class=\"hljs-variable\">label</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number[]}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> pathInZigZagTree = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">label</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> ori=<span class=\"hljs-string\">'lr'</span>\n  <span class=\"hljs-keyword\">let</span> skip=<span class=\"hljs-number\">1</span>\n  <span class=\"hljs-keyword\">let</span> count=skip\n  <span class=\"hljs-keyword\">let</span> aux=[]\n  <span class=\"hljs-keyword\">let</span> temp=[]\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">1</span>;i&lt;=<span class=\"hljs-built_in\">Math</span>.ceil(label*<span class=\"hljs-number\">2</span>);i++){\n    <span class=\"hljs-keyword\">if</span>(ori===<span class=\"hljs-string\">'lr'</span>){\n      aux.push(i)\n      <span class=\"hljs-keyword\">if</span>(--count&lt;=<span class=\"hljs-number\">0</span>){\n        skip*=<span class=\"hljs-number\">2</span>\n        count=skip\n        ori=<span class=\"hljs-string\">'rl'</span>\n      }\n    }<span class=\"hljs-keyword\">else</span>{\n      temp.push(i)\n      <span class=\"hljs-keyword\">if</span>(--count&lt;=<span class=\"hljs-number\">0</span>){\n        skip*=<span class=\"hljs-number\">2</span>\n        count=skip\n        aux=aux.concat(temp.reverse())\n        temp=[]\n        ori=<span class=\"hljs-string\">'lr'</span>\n      }\n    }\n  }\n  aux=aux.concat(temp.reverse())\n  <span class=\"hljs-keyword\">let</span> idx=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">for</span>(<span class=\"hljs-keyword\">let</span> i=<span class=\"hljs-number\">0</span>;i&lt;aux.length;i++){\n    <span class=\"hljs-keyword\">if</span>(aux[i]===label)idx=i\n  }\n  <span class=\"hljs-keyword\">let</span> res=[]\n  \n  <span class=\"hljs-keyword\">while</span>(idx&gt;<span class=\"hljs-number\">0</span>){\n    res.push(aux[idx])\n    idx=<span class=\"hljs-built_in\">Math</span>.floor((idx<span class=\"hljs-number\">-1</span>)/<span class=\"hljs-number\">2</span>)\n  }\n  res.push(<span class=\"hljs-number\">1</span>)\n  <span class=\"hljs-keyword\">return</span> res.reverse()\n};\n</code></pre>\n"
+  ],
+  "querySlug": "path-in-zigzag-labelled-binary-tree",
+  "created_at": "2019-06-30",
+  "timeArr": [
+    2019,
+    5,
+    30,
+    11,
+    0,
+    22,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>如果不存在<code>zigzag</code>那么就很容易算，每次只需要找<code>Math.floor(n/2)</code>。</p>\n<p>在存在<code>zigzag</code>的情况下，由于每一行的顺序跟上一行都不同，因此要找到当前行对应的数字<strong>按照上一行的顺序</strong>的数字。</p>\n<p>例如，上一行是<code>4,5,6,7</code>, 当前行是<code>15,14,13...</code>，那么当前行<strong>第二个</strong>如果按照上一行顺序应该是<code>9</code>。</p>\n<p>接着对<code>9</code>执行<code>Math.floor(n/2)</code>。</p>\n",
+  "content": "<p>在一棵无限的二叉树上，每个节点都有两个子节点，树中的节点 <strong>逐行</strong> 依次按&nbsp;&ldquo;之&rdquo; 字形进行标记。</p>\n\n<p>如下图所示，在奇数行（即，第一行、第三行、第五行&hellip;&hellip;）中，按从左到右的顺序进行标记；</p>\n\n<p>而偶数行（即，第二行、第四行、第六行&hellip;&hellip;）中，按从右到左的顺序进行标记。</p>\n\n<p><img alt=\"\" src=\"https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2019/06/28/tree.png\" style=\"height: 138px; width: 300px;\"></p>\n\n<p>给你树上某一个节点的标号 <code>label</code>，请你返回从根节点到该标号为 <code>label</code> 节点的路径，该路径是由途经的节点标号所组成的。</p>\n\n<p>&nbsp;</p>\n\n<p><strong>示例 1：</strong></p>\n\n<pre><strong>输入：</strong>label = 14\n<strong>输出：</strong>[1,3,4,14]\n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre><strong>输入：</strong>label = 26\n<strong>输出：</strong>[1,2,6,10,26]\n</pre>\n\n<p>&nbsp;</p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= label &lt;= 10^6</code></li>\n</ul>\n",
+  "title": "1104. 二叉树寻路",
+  "relatedTags": [
+    "树",
+    "数学",
+    "二叉树"
+  ],
+  "difficult": "Middle",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "1104",
+  "slug": "1104-Path-In-Zigzag-Labelled-Binary-Tree"
+}

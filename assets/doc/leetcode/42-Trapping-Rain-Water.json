@@ -1,0 +1,33 @@
+{
+  "code": [
+    "<pre class=\"hljs\"><code><span class=\"hljs-comment\">/**\n * <span class=\"hljs-doctag\">@param <span class=\"hljs-type\">{number[]}</span> <span class=\"hljs-variable\">height</span></span>\n * <span class=\"hljs-doctag\">@return <span class=\"hljs-type\">{number}</span></span>\n */</span>\n<span class=\"hljs-keyword\">var</span> trap = <span class=\"hljs-function\"><span class=\"hljs-keyword\">function</span>(<span class=\"hljs-params\">height</span>) </span>{\n  <span class=\"hljs-keyword\">let</span> l=<span class=\"hljs-number\">0</span>,r=height.length<span class=\"hljs-number\">-1</span>\n  <span class=\"hljs-keyword\">let</span> area=<span class=\"hljs-number\">0</span>\n  <span class=\"hljs-keyword\">while</span>(l&lt;r){\n    <span class=\"hljs-keyword\">let</span> left=height[l],right=height[r]\n    <span class=\"hljs-keyword\">if</span>(left&lt;right){\n      <span class=\"hljs-keyword\">while</span>(l&lt;r &amp;&amp; left&gt;height[++l]){\n        area+=left-height[l]\n      }\n      <span class=\"hljs-comment\">// l++</span>\n    }<span class=\"hljs-keyword\">else</span>{\n      <span class=\"hljs-keyword\">while</span>(l&lt;r &amp;&amp; right&gt;height[--r]){\n        area+=right-height[r]\n      }\n      <span class=\"hljs-comment\">// r--</span>\n    }\n  }\n  <span class=\"hljs-keyword\">return</span> area\n};\n</code></pre>\n"
+  ],
+  "querySlug": "trapping-rain-water",
+  "created_at": "2019-03-11",
+  "timeArr": [
+    2019,
+    2,
+    11,
+    20,
+    40,
+    41,
+    0
+  ],
+  "hasThinking": true,
+  "thinking": "<hr>\n<p>思路：</p>\n<p>线的雨水收集可以不用<code>优先队列</code>，因为只需要比较当前两端的位置即可。</p>\n<ol>\n<li>比较两端，如果<code>a&lt;b</code>(如果<code>b&lt;a</code>，下面则从<code>b</code>开始)</li>\n<li>从<code>a</code>开始继续遍历\n<ul>\n<li>发现有比它高的墙<code>x</code>，说明这个<code>a</code>点的漏水被堵住了，将这个墙<code>x</code>继续更另一端的值对比<code>x ? b</code></li>\n<li>发现有比它矮的凹口<code>y</code>，说明这个凹口<code>y</code>最多水位能升到<code>a</code>的位置，记录<code>a.height-y.height</code>，继续往下检测</li>\n<li>发现和它一样高的，同上</li>\n</ul>\n</li>\n<li>继续两端对比，递归1</li>\n</ol>\n",
+  "content": "<p>给定 <em>n</em> 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。</p>\n\n<p> </p>\n\n<p><strong>示例 1：</strong></p>\n\n<p><img src=\"https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2018/10/22/rainwatertrap.png\" style=\"height: 161px; width: 412px;\" /></p>\n\n<pre>\n<strong>输入：</strong>height = [0,1,0,2,1,0,1,3,2,1,2,1]\n<strong>输出：</strong>6\n<strong>解释：</strong>上面是由数组 [0,1,0,2,1,0,1,3,2,1,2,1] 表示的高度图，在这种情况下，可以接 6 个单位的雨水（蓝色部分表示雨水）。 \n</pre>\n\n<p><strong>示例 2：</strong></p>\n\n<pre>\n<strong>输入：</strong>height = [4,2,0,3,2,5]\n<strong>输出：</strong>9\n</pre>\n\n<p> </p>\n\n<p><strong>提示：</strong></p>\n\n<ul>\n\t<li><code>n == height.length</code></li>\n\t<li><code>0 <= n <= 3 * 10<sup>4</sup></code></li>\n\t<li><code>0 <= height[i] <= 10<sup>5</sup></code></li>\n</ul>\n",
+  "title": "42. 接雨水",
+  "relatedTags": [
+    "栈",
+    "数组",
+    "双指针",
+    "动态规划",
+    "单调栈"
+  ],
+  "difficult": "Hard",
+  "lang": [
+    "javascript"
+  ],
+  "uniqueID": "42",
+  "slug": "42-Trapping-Rain-Water"
+}
