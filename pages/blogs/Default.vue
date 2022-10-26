@@ -3,7 +3,7 @@
         v-if="blogList == null"
         type="article,image,list-item-two-line"
     ></v-skeleton-loader>
-    <!-- <ArticleList v-else class="pa-3" :list="blogList" /> -->
+    <ArticleList v-else class="pa-3" :list="blogList" />
 </template>
 
 <script>

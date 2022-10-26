@@ -1,7 +1,6 @@
-import format from 'dateformat'
 import dateExist from './dateExist'
-// const format = require('dateformat');
-// const format = (str) => str
+const format = import('dateformat');
+
 
 export function covertSec2DayHour(seconds, simple = false) {
     if (seconds <= 0) return '0 second'

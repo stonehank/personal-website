@@ -32,7 +32,7 @@
             class="pa-0"
             :style="$vuetify.breakpoint.mdAndUp ? 'margin-left:256px' : ''"
         >
-            <!-- <nuxt-child /> -->
+            <nuxt-child />
         </v-container>
     </section>
 </template>

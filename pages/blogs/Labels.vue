@@ -44,7 +44,7 @@ import TagsGenerator from 'utils/TagsGenerator'
 import labelColor from 'utils/label-color'
 
 export default {
-    name: 'Tags',
+    name: 'Labels',
     data() {
         return {
             tagsCountList: getTagsCount(),

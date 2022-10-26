@@ -25,9 +25,12 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [
+    '@/assets/css/_variables.scss',
+    '@/assets/css/common.scss',
+    '@/assets/css/overwrite/index.scss',
+  ],
   build: {
-    transpile: /dateformat.*/, // t
     /**
      * add external plugins
      */

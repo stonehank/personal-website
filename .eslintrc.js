@@ -17,6 +17,7 @@ module.exports = {
     "vue/valid-v-slot": 0,
     "vue/no-v-html": 0,
     "vue/no-v-text-v-html-on-component": 0,
+    "no-control-regex": 0
     // "comma-dangle": 0,
     // "import/no-dynamic-require": 0,
     // "key-spacing": 0,
