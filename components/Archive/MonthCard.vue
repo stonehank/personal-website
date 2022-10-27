@@ -15,7 +15,7 @@
                         <h4 class="month-count-text text-lg">
                             {{ index + 1 }} 月
                         </h4>
-                        <AutoGrowLine
+                        <ArchiveAutoGrowLine
                             :final-height="percent"
                             :start="start"
                             class="month-count-line"
@@ -30,10 +30,7 @@
 
 <script>
 import anime from 'animejs'
-import AutoGrowLine from './AutoGrowLine'
 export default {
-    name: 'MonthCardInYearArchive',
-    components: { AutoGrowLine },
     props: {
         year: Number,
         counts: Array,

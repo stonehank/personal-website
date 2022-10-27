@@ -1,6 +1,6 @@
 <template>
     <section class="d-flex">
-        <TableOfContent
+        <ArticleTableOfContent
             v-if="$vuetify.breakpoint.mdAndUp"
             :toc="articleDetails.toc"
         />
@@ -17,10 +17,10 @@
                     <ArticleTags :tags="articleDetails.relatedTags" />
                     <div class="text-sm d-flex justify-space-between mt-2">
                         <div class="d-flex align-center">
-                            <client-only placeholder="Loading...">
-                                <DateRender :date="articleDetails.created_at" />
-                            </client-only>
-                            <b class="text-md mx-2">·</b>
+                            <!-- <client-only placeholder="Loading..."> -->
+                            <DateRender :date="articleDetails.created_at" />
+                            <!-- </client-only> -->
+                            <!-- <b class="text-md mx-2">·</b> -->
                             <!-- <CommentCount>
                                 <CommentSysCounter
                                     :uniq-str="'article-' + articleDetails.sha"
@@ -45,12 +45,8 @@
 <script>
 // import CommentSysCounter from 'pagesDir/index/src/commons/CommentSystem/CommentSysCounter'
 // import CommentSysPanel from 'pagesDir/index/src/commons/CommentSystem/CommentSysPanel'
-import TableOfContent from './TableOfContent'
 export default {
     name: 'ArticleInfo',
-    components: {
-        TableOfContent,
-    },
     props: {
         articleDetails: {
             default: () => ({}),
@@ -71,6 +67,7 @@ export default {
         },
     },
     mounted() {
+        console.log(this.articleDetails)
         this.updateTocIdList()
         $(window).on('scroll', this.updateOnScroll)
     },

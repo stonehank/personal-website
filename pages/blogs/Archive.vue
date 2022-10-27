@@ -11,7 +11,7 @@
             class="section"
             :data-anchor="archiveData.year"
         >
-            <YearArchive
+            <ArchiveDetails
                 :archive-data="archiveData"
                 :start="startList[index]"
             />

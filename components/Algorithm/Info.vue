@@ -12,7 +12,7 @@
                             <DifficultRender
                                 :difficult="articleDetails.difficult"
                             />
-                            <b class="text-md mx-2">·</b>
+                            <!-- <b class="text-md mx-2">·</b> -->
                             <!-- <CommentCount>
                                 <CommentSysCounter
                                     :uniq-str="

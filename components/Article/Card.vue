@@ -1,7 +1,7 @@
 <template>
     <v-card class="mx-auto h-100 d-flex flex-column" v-bind="$attrs">
         <v-card-title class="pt-2 pb-1 text-break">
-            <router-link :to="'/articles/' + articleHeader.slug">
+            <router-link :to="'/article/' + articleHeader.slug">
                 <h3 class="text-lg">{{ articleHeader.title }}</h3>
             </router-link>
         </v-card-title>
@@ -10,9 +10,9 @@
             <div>
                 <ArticleTags :tags="articleHeader.relatedTags" />
                 <div class="text-sm d-flex justify-space-start">
-                    <client-only placeholder="Loading...">
-                        <DateRender :date="articleHeader.created_at" />
-                    </client-only>
+                    <!-- <client-only placeholder="Loading..."> -->
+                    <DateRender :date="articleHeader.created_at" />
+                    <!-- </client-only> -->
                     <!--                    <b class="text-md mx-2">·</b>-->
                     <!--                    <CommentCount :commentCount="15" />-->
                 </div>

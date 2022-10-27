@@ -30,7 +30,7 @@
                     />
                     <v-divider
                         v-if="index < filterArticleList.length - 1"
-                        :key="index"
+                        :key="'divider-' + index"
                     ></v-divider>
                 </template>
             </v-list-item-group>
@@ -41,14 +41,9 @@
 <script>
 // import Vue2Scrollbar from 'vue2-scrollbar'
 import scrollTo from 'utils/scrollTo'
-import ArticleCard from '../Articles/ArticleCard'
 // require('vue2-scrollbar/dist/style/vue2-scrollbar.css')
 export default {
     name: 'ArticleList',
-    components: {
-        ArticleCard,
-        // Vue2Scrollbar,
-    },
     props: {
         list: Array,
     },

@@ -55,7 +55,6 @@
 <script>
 import anime from 'animejs'
 export default {
-    name: 'YearMonthInfo',
     props: {
         archiveMonthData: Object,
         start: Boolean,

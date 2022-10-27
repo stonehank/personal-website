@@ -8,7 +8,7 @@
             small
             :color="labelColor[tag]"
             text-color="white"
-            :to="'/labels/' + tag"
+            :to="'/label/' + tag"
             @click="clickEvent"
         >
             {{ tag }}
@@ -18,7 +18,6 @@
 
 <script>
 import labelColor from 'utils/label-color'
-
 export default {
     name: 'ArticleTags',
     props: {

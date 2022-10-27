@@ -4,7 +4,7 @@
         :style="`height:${wrapperH}px`"
     >
         <div v-if="$vuetify.breakpoint.mdAndUp" class="timeline-left">
-            <YearInfo :archive-data="archiveData" :start="start" />
+            <ArchiveYearInfo :archive-data="archiveData" :start="start" />
         </div>
         <div class="timeline-axis">
             <div class="timeline-dot"></div>
@@ -12,9 +12,9 @@
         </div>
         <div class="timeline-right d-flex flex-column pb-4" style="flex: 1">
             <div v-if="$vuetify.breakpoint.smAndDown" class="w-100">
-                <YearInfo :archive-data="archiveData" :start="start" />
+                <ArchiveYearInfo :archive-data="archiveData" :start="start" />
             </div>
-            <MonthCardInYearArchive
+            <ArchiveMonthCard
                 :counts="archiveData.month_counts"
                 :year="archiveData.year"
                 :start="start"
@@ -24,11 +24,7 @@
 </template>
 
 <script>
-import MonthCardInYearArchive from './MonthCardInYearArchive'
-import YearInfo from './YearInfo'
 export default {
-    name: 'YearArchive',
-    components: { YearInfo, MonthCardInYearArchive },
     props: {
         archiveData: Object,
         start: Boolean,

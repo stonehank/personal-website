@@ -192,7 +192,7 @@ export default {
                 if (flag === '算法') {
                     return '/algorithm/' + slug
                 } else {
-                    return '/articles/' + slug
+                    return '/article/' + slug
                 }
             }
             // 添加颜色html

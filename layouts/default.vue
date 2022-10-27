@@ -7,7 +7,6 @@
         <main
             :style="{
                 marginTop: navH + 'px',
-                height: '2000px',
             }"
         >
             <Nuxt />
@@ -41,24 +40,24 @@ export default {
     // updated() {
     //     this.toggleNavOnScroll()
     // },
-    // methods: {
-    //     toggleNavOnScroll() {
-    //         if (window.location.pathname !== '/') {
-    //             this.showNav()
-    //             // return
-    //         }
-    //         if ($(document).scrollTop() >= window.innerHeight * 0.1) {
-    //             this.showNav()
-    //         } else {
-    //             this.hideNav()
-    //         }
-    //     },
-    //     showNav() {
-    //         this.navShowing = true
-    //     },
-    //     hideNav() {
-    //         this.navShowing = false
-    //     },
-    // },
+    methods: {
+        toggleNavOnScroll() {
+            if (window.location.pathname !== '/') {
+                this.showNav()
+                // return
+            }
+            if ($(document).scrollTop() >= window.innerHeight * 0.1) {
+                this.showNav()
+            } else {
+                this.hideNav()
+            }
+        },
+        showNav() {
+            this.navShowing = true
+        },
+        hideNav() {
+            this.navShowing = false
+        },
+    },
 }
 </script>

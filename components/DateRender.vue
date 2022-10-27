@@ -1,7 +1,7 @@
 <template>
     <span v-if="type === 'auto'">{{ autoRender }}</span>
     <span v-else-if="type === 'date'">{{
-        dateFormat(date, 'yyyy-mm-dd')
+        dateFormat(date, 'YYYY-MM-DD')
     }}</span>
     <span v-else-if="type === 'ago'">{{ timeAgo(date) }}</span>
 </template>
@@ -25,7 +25,7 @@ export default {
         timeAgo: () => timeAgo,
         autoRender: function () {
             if (dayGapMoreThan(this.date, this.autoDaysGap)) {
-                return dateFormat(this.date, 'yyyy-mm-dd')
+                return dateFormat(this.date, 'YYYY-MM-DD')
             } else {
                 return timeAgo(this.date)
             }

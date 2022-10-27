@@ -1,6 +1,7 @@
+import moment from 'moment'
+// import format from 'dateformat'
 import dateExist from './dateExist'
-const format = import('dateformat');
-
+// console.log(format)
 
 export function covertSec2DayHour(seconds, simple = false) {
     if (seconds <= 0) return '0 second'
@@ -32,18 +33,18 @@ function toDouble(num) {
     return num + ''
 }
 
-export function dateFormat(date, mask = 'ddd, mmm d, yyyy') {
+export function dateFormat(date, mask = 'ddd, D MMM, YYYY') {
     if (Array.isArray(date)) {
         return date
     }
     if (!dateExist(date)) return null
     try {
-        return format(date, mask)
+        return moment(date).format(mask)
     } catch (_) {
         date = compatibleDateTimeStr(date)
     }
     try {
-        return format(date, mask)
+        return moment(date).format(mask)
     } catch (_) {
         return compatibleDateTimeStr(date)
     }

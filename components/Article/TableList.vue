@@ -11,7 +11,7 @@
         </template>
         <template #item.careted_at="{ value }">
             <span>
-                {{ dateFormat(value, 'yyyy-mm-dd') }}
+                {{ dateFormat(value, 'YYYY-MM-DD') }}
             </span>
         </template>
     </v-data-table>
@@ -34,7 +34,7 @@ export default {
             switch (item.flag) {
                 case '随笔':
                 case '源码阅读':
-                    pathname = '/articles'
+                    pathname = '/article'
                     break
                 case '算法':
                     pathname = '/algorithm'

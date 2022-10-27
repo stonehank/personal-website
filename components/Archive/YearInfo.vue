@@ -49,7 +49,6 @@
 <script>
 import anime from 'animejs'
 export default {
-    name: 'YearInfo',
     props: {
         archiveData: Object,
         start: Boolean,

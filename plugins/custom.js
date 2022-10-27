@@ -12,3 +12,10 @@ Vue.prototype.$state = {
     Vue.prototype.$state[key] = value
   }
 }
+Vue.mixin({
+  computed: {
+    isMobile: function () {
+      return this.$vuetify.breakpoint.smAndDown
+    }
+  }
+})
