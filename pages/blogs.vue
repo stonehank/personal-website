@@ -1,12 +1,12 @@
 <template>
     <section class="d-flex">
         <v-navigation-drawer
-            v-if="$vuetify.breakpoint.mdAndUp"
+            v-if="!$getIsMobile()"
             permanent
             fixed
             class="pa-4"
             :style="{
-                top: $state.getNavH() + 'px',
+                top: $getNavH() + 'px',
                 left: 0,
             }"
         >
@@ -23,15 +23,12 @@
                 <v-list-item to="/blogs/archive">
                     <v-list-item-title>时间归档</v-list-item-title>
                 </v-list-item>
-                <v-list-item to="/blogs/labels">
+                <v-list-item to="/blogs/label">
                     <v-list-item-title>标签归档</v-list-item-title>
                 </v-list-item>
             </v-list>
         </v-navigation-drawer>
-        <v-container
-            class="pa-0"
-            :style="$vuetify.breakpoint.mdAndUp ? 'margin-left:256px' : ''"
-        >
+        <v-container class="pa-0" :style="!$getIsMobile() ? 'margin-left:256px' : ''">
             <nuxt-child />
         </v-container>
     </section>

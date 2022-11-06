@@ -4,7 +4,11 @@
             v-show="show"
             v-scroll="onScroll"
             icon
-            style="background:var(--theme-primary);bottom:96px;"
+            style="
+                background: var(--theme-primary);
+                bottom: 96px;
+                z-index: 99999;
+            "
             fixed
             right
             elevation="4"
@@ -17,27 +21,25 @@
 </template>
 
 <script>
-    import scrollTo from "utils/scrollTo";
+import scrollTo from 'utils/scrollTo'
 
-    export default {
-        name: "ScrTopBtn",
-        data(){
-            return {
-                show:false
-            }
-        },
-        computed:{
-            scrollTo:()=>scrollTo
-        },
-        methods:{
-            onScroll(e){
-                const scrTop=$(e.target).scrollTop()
-                this.show = scrTop > window.innerHeight * 1.5;
-            },
+export default {
+    name: 'ScrTopBtn',
+    data() {
+        return {
+            show: false,
         }
-    }
+    },
+    computed: {
+        scrollTo: () => scrollTo,
+    },
+    methods: {
+        onScroll(e) {
+            const scrTop = $(e.target).scrollTop()
+            this.show = scrTop > window.innerHeight * 1.5
+        },
+    },
+}
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

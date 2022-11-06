@@ -200,6 +200,11 @@ $splitTo:3;
         text-align: center;
         flex-flow: column;
         justify-content: center;
+        h4 {
+          transform: skew($deg, 0);
+          text-align: center;
+          font-size:32px;
+        }
         & .smoky {
           transform: skew($deg,0deg);
           width: 100%;
@@ -207,11 +212,6 @@ $splitTo:3;
         }
       }
 
-      .accord-content h4 {
-        transform: skew($deg, 0);
-        text-align: center;
-        font-size:32px;
-      }
 
       .accord-content h2 span {
         color: #fff;

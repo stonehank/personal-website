@@ -1,14 +1,13 @@
-import colors from 'vuetify/es5/util/colors'
 import webpack from 'webpack'
-
+// eslint-disable-next-line nuxt/no-cjs-in-config
+const globalSize = require('./backend/getArticlesSize')
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   alias: {
-    '~~': `<rootDir>`,
     'images': `/assets/images`,
     'css': `/assets/css`,
-    'utils': `/assets/js`,
+    'utils': `/utils`,
     'doc': '/assets/doc'
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -21,15 +20,25 @@ export default {
       { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css' },
+    ],
   },
-
+  env: {
+    globalSize
+  },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
     '@/assets/css/_variables.scss',
     '@/assets/css/common.scss',
+    '@/assets/css/github-markdown-css.css',
+    '@/assets/css/vue-bbs-theme.scss',
+    '@/assets/css/github.scss',
     '@/assets/css/overwrite/index.scss',
+    '@/assets/css/accordion.scss',
   ],
+  // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     /**
      * add external plugins
@@ -47,8 +56,12 @@ export default {
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    { src: '~/plugins/vue-js-modal.js', mode: 'client' },
-    { src: '~/plugins/custom.js', mode: 'client' },
+    '~/plugins/custom.client.js',
+    '~/plugins/vue-js-modal.client.js',
+    '~/plugins/perfect-scrollbar.client.js',
+    '~/plugins/vue-photo-preview.client.js',
+    '~/plugins/vue-bbs.client.js',
+    '~/plugins/custom.js'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -59,7 +72,50 @@ export default {
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/vuetify
-    '@nuxtjs/vuetify',
+    ['@nuxtjs/vuetify', {
+      defaultAssets: {
+        icons: 'fa'
+      },
+      customVariables: ['~/assets/variables.scss'],
+      theme: {
+        treeShake: true,
+        breakpoint: {
+          thresholds: {
+            xs: 600,
+            sm: 960,
+            md: 1264,
+            lg: 1904,
+          },
+        },
+        theme: {
+          // dark: isDark,
+          themes: {
+            light: {
+              primary: '#2c9ccc',
+              secondary: '#cc2c64',
+              accent: '#ccb12c',
+              error: '#b71c1c',
+              info: '#2196f3',
+              success: '#4caf50',
+              warning: '#FFC107',
+            },
+            dark: {
+              primary: '#45a8d2',
+              secondary: '#d44778',
+              accent: '#d2b941',
+              error: '#cf1d1d',
+              info: '#2196f3',
+              success: '#54cd58',
+              warning: '#FFC107',
+            }
+          }
+        },
+        icons: {
+          iconfont: 'fa',
+        }
+      },
+    }],
+    '@nuxtjs/pwa',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -76,32 +132,14 @@ export default {
     baseURL: '/',
   },
 
+  generate: {
+    routes: require('./backend/getRouteInSpa'),
+  },
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
     manifest: {
       lang: 'en',
     },
+    icon: false
   },
-
-  // Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
-  vuetify: {
-    customVariables: ['~/assets/variables.scss'],
-    theme: {
-      dark: true,
-      themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
-        },
-      },
-    },
-  },
-
-  // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
 }

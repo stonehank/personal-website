@@ -4,30 +4,33 @@
             <v-col
                 cols="12"
                 class="pb-0"
-                :class="isMobile ? 'text-center' : 'text-right'"
+                :class="$getIsMobile() ? 'text-center' : 'text-right'"
             >
                 <router-link :to="'/blogs/archive#' + archiveMonthData.year">
-                    <h2 :class="isMobile ? 'display-2' : 'display-3'">
+                    <h2 :class="$getIsMobile() ? 'display-2' : 'display-3'">
                         {{ archiveMonthData.year }}
                     </h2>
                 </router-link>
                 <span
-                    :class="isMobile ? 'text-lg' : 'text-xl'"
+                    :class="$getIsMobile() ? 'text-lg' : 'text-xl'"
                     class="text-secondary"
                 >
                     / {{ archiveMonthData.month }} 月
                 </span>
             </v-col>
-            <v-col cols="12" :class="isMobile ? 'text-center' : 'text-right'">
+            <v-col
+                cols="12"
+                :class="$getIsMobile() ? 'text-center' : 'text-right'"
+            >
                 <p
                     ref="year-info-1"
                     class="mb-0"
-                    :class="isMobile ? 'text-md' : 'text-lg'"
+                    :class="$getIsMobile() ? 'text-md' : 'text-lg'"
                     :style="animate ? 'opacity:0;' : ''"
                 >
                     共完成
                     <AnimateGrowNumber
-                        :class="isMobile ? 'text-lg' : 'display-1'"
+                        :class="$getIsMobile() ? 'text-lg' : 'display-1'"
                         :final-num="archiveMonthData.blog_count"
                         :start="start"
                         :animate="animate"
@@ -35,12 +38,12 @@
                     篇随笔
                 </p>
                 <!--                <p class="text-secondary"-->
-                <!--                   :class="isMobile ? 'text-md' : 'text-lg'"-->
+                <!--                   :class="$getIsMobile() ? 'text-md' : 'text-lg'"-->
                 <!--                   :style="animate ? 'opacity:0;' : ''"-->
                 <!--                   ref="year-info-2"-->
                 <!--                >-->
                 <!--                    总共阅读次数-->
-                <!--                    <AnimateGrowNumber :class="isMobile ? 'text-lg' : 'display-1'"-->
+                <!--                    <AnimateGrowNumber :class="$getIsMobile() ? 'text-lg' : 'display-1'"-->
                 <!--                                       :final-num="archiveMonthData.view_count"-->
                 <!--                                       :shrink="archiveMonthData.view_count > 99999"-->
                 <!--                                       :start="start"-->
@@ -59,12 +62,8 @@ export default {
         archiveMonthData: Object,
         start: Boolean,
         animate: {
+            type: Boolean,
             default: true,
-        },
-    },
-    computed: {
-        isMobile() {
-            return this.$vuetify.breakpoint.smAndDown
         },
     },
     watch: {

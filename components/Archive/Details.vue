@@ -1,7 +1,7 @@
 <template>
     <section
         class="d-flex justify-start align-center timeline-wrapper"
-        :style="`height:${wrapperH}px`"
+        :style="`height:100%`"
     >
         <div v-if="$vuetify.breakpoint.mdAndUp" class="timeline-left">
             <ArchiveYearInfo :archive-data="archiveData" :start="start" />
@@ -10,7 +10,7 @@
             <div class="timeline-dot"></div>
             <div class="timeline-line"></div>
         </div>
-        <div class="timeline-right d-flex flex-column pb-4" style="flex: 1">
+        <div class="timeline-right d-flex flex-column" style="flex: 1">
             <div v-if="$vuetify.breakpoint.smAndDown" class="w-100">
                 <ArchiveYearInfo :archive-data="archiveData" :start="start" />
             </div>
@@ -26,27 +26,16 @@
 <script>
 export default {
     props: {
-        archiveData: Object,
-        start: Boolean,
-    },
-    data() {
-        return {
-            wrapperH: 0,
-        }
-    },
-    created() {
-        this.updateWrapperH()
-    },
-    mounted() {
-        $(window).on('resize', this.updateWrapperH)
-    },
-    destroyed() {
-        $(window).off('resize', this.updateWrapperH)
-    },
-    methods: {
-        updateWrapperH() {
-            this.wrapperH = window.innerHeight - this.$state.getNavH()
+        archiveData: {
+            type: Object,
+            default: () => ({
+                view_count: 0,
+                blog_count: 0,
+                year: new Date().year(),
+                month_counts: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+            }),
         },
+        start: Boolean,
     },
 }
 </script>
@@ -54,7 +43,7 @@ export default {
 <style scoped lang="scss">
 .timeline-wrapper {
     .timeline-left {
-        width: 350px;
+        width: 300px;
         height: 100%;
     }
     .timeline-right {

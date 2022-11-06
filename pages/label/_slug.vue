@@ -11,12 +11,12 @@
             fixed
             class="pa-4"
             :style="{
-                top: $state.getNavH() + 'px',
+                top: $getNavH() + 'px',
                 left: 0,
             }"
         >
             <div class="text-right">
-                <v-btn icon x-large to="/blogs/labels">
+                <v-btn icon x-large to="/blogs/label">
                     <v-icon large>fas fa-long-arrow-alt-left</v-icon>
                 </v-btn>
                 <v-chip

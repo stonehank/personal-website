@@ -9,7 +9,7 @@
             class="position-fixed py-2 w-100"
             style="background: var(--background-color); z-index: 2"
             :style="{
-                top: $state.getNavH() + 'px',
+                top: $getNavH() + 'px',
                 left: ($vuetify.breakpoint.smAndDown ? 0 : 256 + 12) + 'px',
             }"
         />

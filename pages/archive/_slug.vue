@@ -11,7 +11,7 @@
             fixed
             class="pa-4"
             :style="{
-                top: $state.getNavH() + 'px',
+                top: $getNavH() + 'px',
                 left: 0,
             }"
         >

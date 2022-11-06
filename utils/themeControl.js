@@ -17,7 +17,6 @@ function setTheme(newTheme) {
 }
 
 function renderThemeOnHTML(backgroundColor) {
-    console.log(backgroundColor)
     $('html').removeClass('pw-theme-light')
     $('html').removeClass('pw-theme-dark')
     $('html').addClass('pw-theme-' + backgroundColor)

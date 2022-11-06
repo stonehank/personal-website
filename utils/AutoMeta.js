@@ -1,4 +1,4 @@
-import seoData from '../../seo/seo'
+import seoData from '../seo/seo.json'
 
 const defaultMetaObj = {
     "title": "个人博客",

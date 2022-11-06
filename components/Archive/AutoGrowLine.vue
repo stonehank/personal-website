@@ -7,9 +7,13 @@ import anime from 'animejs'
 export default {
     name: 'AutoGrowLine',
     props: {
-        finalHeight: Number,
+        finalHeight: {
+            default: 0,
+            type: Number,
+        },
         startFrom: {
             default: 0,
+            type: Number,
         },
         start: Boolean,
     },

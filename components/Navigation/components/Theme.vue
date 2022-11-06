@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { getTheme, renderThemeOnHTML, setTheme } from '~/assets/js/themeControl'
+import { getTheme, renderThemeOnHTML, setTheme } from 'utils/themeControl'
 
 export default {
     name: 'Theme',
@@ -33,6 +33,7 @@ export default {
             isDarkActive: null,
         }
     },
+
     watch: {
         isDarkActive(newV) {
             const bg = newV ? 'dark' : 'light'
@@ -40,11 +41,12 @@ export default {
             this.renderTheme(bg)
         },
     },
+
     mounted() {
         const backgroundColor = getTheme()
-        console.log(backgroundColor)
         this.isDarkActive = backgroundColor === 'dark'
     },
+
     methods: {
         renderTheme(backgroundColor) {
             this.$vuetify.theme.isDark = this.isDarkActive

@@ -33,7 +33,10 @@
 export default {
     name: 'AlgorithmTable',
     props: {
-        items: Array,
+        items: {
+            type: Array,
+            default: () => [],
+        },
     },
     data() {
         return {

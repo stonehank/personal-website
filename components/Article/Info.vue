@@ -17,15 +17,13 @@
                     <ArticleTags :tags="articleDetails.relatedTags" />
                     <div class="text-sm d-flex justify-space-between mt-2">
                         <div class="d-flex align-center">
-                            <!-- <client-only placeholder="Loading..."> -->
                             <DateRender :date="articleDetails.created_at" />
-                            <!-- </client-only> -->
-                            <!-- <b class="text-md mx-2">·</b> -->
-                            <!-- <CommentCount>
-                                <CommentSysCounter
+                            <b class="text-md mx-2">·</b>
+                            <ArticleCommentCount>
+                                <comment-counter
                                     :uniq-str="'article-' + articleDetails.sha"
                                 />
-                            </CommentCount> -->
+                            </ArticleCommentCount>
                         </div>
                     </div>
                 </v-card-subtitle>
@@ -37,14 +35,12 @@
                 </v-card-text>
             </v-card>
             <v-divider class="my-4" />
-            <!-- <CommentSysPanel :uniq-str="'article-' + articleDetails.sha" /> -->
+            <CommentPanel :uniq-str="'article-' + articleDetails.sha" />
         </v-container>
     </section>
 </template>
 
 <script>
-// import CommentSysCounter from 'pagesDir/index/src/commons/CommentSystem/CommentSysCounter'
-// import CommentSysPanel from 'pagesDir/index/src/commons/CommentSystem/CommentSysPanel'
 export default {
     name: 'ArticleInfo',
     props: {
@@ -67,7 +63,6 @@ export default {
         },
     },
     mounted() {
-        console.log(this.articleDetails)
         this.updateTocIdList()
         $(window).on('scroll', this.updateOnScroll)
     },
@@ -84,7 +79,7 @@ export default {
         },
         updateOnScroll() {
             const curScrTop = Math.floor($('html')[0].scrollTop)
-            const navH = this.$state.getNavH()
+            const navH = this.$getNavH()
             for (let i = this.tocIdList.length - 1; i >= 0; i--) {
                 const curIdHash = this.tocIdList[i]
                 // console.log(curIdHash)

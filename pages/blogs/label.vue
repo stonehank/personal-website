@@ -25,7 +25,7 @@
                         :color="labelColor[tagData.label]"
                         label
                         tag="div"
-                        :to="'/labels/' + tagData.label"
+                        :to="'/label/' + tagData.label"
                         class="w-100 h-100 text-center justify-center"
                         :style="'font-size:' + tagData.fontSize + 'px'"
                         text-color="white"
@@ -59,8 +59,9 @@ export default {
     },
     mounted() {
         // $(window).on('resize',this.onResize)
-        this.onResize()
+
         setTimeout(() => {
+            this.onResize()
             this.loopShow(0)
         }, 100)
     },

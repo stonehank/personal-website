@@ -12,14 +12,14 @@
                             <DifficultRender
                                 :difficult="articleDetails.difficult"
                             />
-                            <!-- <b class="text-md mx-2">·</b> -->
-                            <!-- <CommentCount>
-                                <CommentSysCounter
+                            <b class="text-md mx-2">·</b>
+                            <ArticleCommentCount>
+                                <CommentCounter
                                     :uniq-str="
                                         'algorithm-' + articleDetails.slug
                                     "
                                 />
-                            </CommentCount> -->
+                            </ArticleCommentCount>
                         </div>
                     </div>
                 </v-card-subtitle>
@@ -42,15 +42,12 @@
                 </v-card-text>
             </v-card>
             <v-divider class="my-4" />
-            <!-- <CommentSysPanel :uniq-str="'algorithm-' + articleDetails.slug" /> -->
+            <CommentPanel :uniq-str="'algorithm-' + articleDetails.slug" />
         </v-container>
     </section>
 </template>
 
 <script>
-// import CommentSysCounter from 'pagesDir/index/src/commons/CommentSystem/CommentSysCounter'
-// import CommentSysPanel from 'pagesDir/index/src/commons/CommentSystem/CommentSysPanel'
-
 export default {
     name: 'AlgorithmInfo',
     props: {

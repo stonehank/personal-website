@@ -1,6 +1,6 @@
 <template>
     <v-container fluid class="h-100">
-        <v-row class="h-100">
+        <v-row class="h-100 my-0">
             <v-col
                 v-for="(percent, index) in percentH"
                 :key="index"

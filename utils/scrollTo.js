@@ -4,7 +4,6 @@ export default function scrollTo(top = 0, immediate = false) {
     realTop = top
   } else if (typeof top === 'string') {
     if ($(top).length === 0) {
-      console.log('The parameter element not exist')
       return
     }
     realTop = Math.floor(Math.max(realTop, $(top).offset().top - ($('#nav-header').outerHeight()) - 8))

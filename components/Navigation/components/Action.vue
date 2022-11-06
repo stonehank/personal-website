@@ -33,7 +33,7 @@ export default {
                             to: '/blogs/algorithm',
                         },
                         { title: '时间归档', icon: null, to: '/blogs/archive' },
-                        { title: '标签归档', icon: null, to: '/blogs/labels' },
+                        { title: '标签归档', icon: null, to: '/blogs/label' },
                     ],
                 },
                 {

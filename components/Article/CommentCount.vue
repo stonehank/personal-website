@@ -6,12 +6,7 @@
 </template>
 
 <script>
-export default {
-    name: 'CommentCount',
-    props: {
-        commentCount: Number,
-    },
-}
+export default {}
 </script>
 
 <style scoped></style>

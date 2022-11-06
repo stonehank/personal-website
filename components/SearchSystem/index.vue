@@ -47,7 +47,7 @@
             <v-card>
                 <v-card-title>确定吗</v-card-title>
                 <v-card-text>
-                    使用全局搜索会一次性加载大约<b>{{ globalSize }}kb</b>
+                    使用全局搜索会一次性加载大约 <b>{{ globalSize }}kb</b>
                 </v-card-text>
                 <v-card-actions>
                     <v-btn @click="cancelGlobal"> 取消 </v-btn>
@@ -79,7 +79,7 @@ export default {
     },
     computed: {
         globalSize: function () {
-            return Math.floor(window.wmpConfig.pageConfig.globalSize / 1024)
+            return (process.env.globalSize / 1024).toFixed(0)
         },
     },
     methods: {
