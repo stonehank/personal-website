@@ -1,17 +1,34 @@
 language: node_js
 node_js:
-  - lts/*
+  - "16.15.1"
 
-os:
-  - linux
-dist: focal
+# S: Build Lifecycle
+install:
+  - npm install
+
+
+script:
+  - travis_wait 30 npm run build
+
+after_script:
+  - mv -f README.md dist
+  - git clone "https://${GH_TOKEN}@${GHIO_REF}" demo
+  - rm -rf demo/assets
+  - rm -rf demo/articles
+  - rm -rf demo/algorithm
+  - cp -R dist/* demo/
+  - cd ./demo
+  - git config user.name "stonehank"
+  - git config user.email "stonehank310@gmail.com"gi
+  - git add .
+  - git commit -m "Update"
+  - git push --force --quiet "https://${GH_TOKEN}@${GHIO_REF}" master:master >/dev/null 2>&1
+
+# E: Build LifeCycle
 
 branches:
   only:
     - main
-    - master
-
-cache: yarn
-
-script:
-  - yarn lint
+env:
+  global:
+     - GHIO_REF: github.com/stonehank/stonehank.github.io
