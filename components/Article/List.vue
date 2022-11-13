@@ -67,7 +67,6 @@ export default {
                 const type = newV.type
                 const page = newV.page
                 if (!order || !type || !page) return
-                console.log(order, type)
                 if (type && order === 'created_at') {
                     this.articleList = this.sortBy(
                         this.articleList,

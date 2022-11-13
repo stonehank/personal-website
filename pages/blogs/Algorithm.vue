@@ -1,6 +1,6 @@
 <template>
     <v-skeleton-loader
-        v-if="algorithmList == null"
+        v-if="loading"
         type="table"
     ></v-skeleton-loader>
     <section v-else>
@@ -9,24 +9,24 @@
 </template>
 
 <script>
-import algorithmJson from 'doc/leetcode/.leetcode-list.json'
+
 export default {
     name: 'Algorithm',
-    data() {
-        return {
-            timer: null,
-            algorithmList: null,
-        }
-    },
-    mounted() {
+    async asyncData(){
+        const algorithmJson = await import('doc/leetcode/.leetcode-list.json')
         const arr = []
         for (const k in algorithmJson) {
             if (algorithmJson[k].hasThinking) arr.push(algorithmJson[k])
         }
-        this.timer = setTimeout(() => (this.algorithmList = arr), 200)
+        return {
+            algorithmList: arr,
+            loading: true,
+        }
     },
-    destroyed() {
-        clearTimeout(this.timer)
+    mounted(){
+        this.$nextTick(function(){
+             this.loading=false
+        })
     },
 }
 </script>

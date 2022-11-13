@@ -1,0 +1,20 @@
+{
+  "content": "<p>最开始我认为可以用<code>v-bind=&quot;$attrs&quot;</code>来覆盖<code>v-on:key=&quot;value&quot;</code>的绑定，以至于在使用<code>vuetify</code>创建自定义组件时通过<code>$attrs</code>来覆盖props属性，</p>\n<p>例如：</p>\n<pre><code class=\"language-vue\"><pre class=\"hljs\"><code>&lt;template&gt;\n    &lt;!-- 本意是通过$attrs传递的color来覆盖掉默认的color --&gt;\n    &lt;v-btn color=&quot;info&quot; v-bint=&quot;$attrs&quot;&gt;\n        &lt;slot&gt;&lt;/slot&gt;\n    &lt;/v-btn&gt;\n&lt;/template&gt;\n&lt;script&gt;\n    export default {\n        name: 'CustomButton'\n    }\n&lt;/script&gt;</code></pre></code></pre>\n<p>这个案例确实有效， 但其实<code>v-bind=$attrs</code>并不能覆盖掉props的绑定，参考一下例子：</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code>&lt;input placeholder=<span class=\"hljs-string\">\"a\"</span> v-bind=<span class=\"hljs-string\">\"{placeholder : 'b'}\"</span> /&gt;\n&lt;input v-bind=\"{placeholder : 'b'}\" placeholder=\"a\" /&gt;</code></pre></code></pre>\n<p>在上面这个例子中，不管你的<code>v-bind</code>放在前还是后，最后placeholder渲染出来都是&quot;a&quot;。</p>\n<p>那么问题来了，在<code>vuetify</code>中为什么可以使用<code>$attrs</code>进行覆盖？</p>\n<p>原来在vuetify内部，有一个watch，对于传入的$attrs， 会首先绑定到<code>vm.$data.attrs$</code>，这个<code>attrs$</code>是自定义一个空对象，作用就是为了跟踪<code>$attrs</code></p>\n<p>在渲染组件时，其实将$attrs全部转换为了props在传递入子组件</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-keyword\">let</span> data={\n    <span class=\"hljs-comment\">// 一些自定义props</span>\n    ...this.data.attrs$,\n}\n<span class=\"hljs-keyword\">return</span> h(<span class=\"hljs-keyword\">this</span>.tag, data, newChildren)</code></pre></code></pre>\n",
+  "toc": [],
+  "relatedTags": null,
+  "created_at": "2021-10-03",
+  "timeArr": [
+    2021,
+    9,
+    3,
+    0,
+    0,
+    0,
+    0
+  ],
+  "title": "Vue中props绑定和$attrs绑定的优先等级",
+  "uuid": "6798b7d7e1d0be3c2f8889f3f527875e351b867c",
+  "summary": "<p>最开始我认为可以用<code>v-bind=&quot;$attrs&quot;</code>来覆盖<code>v-on:key=&quot;value&quot;</code>的绑定，以至于在使用<code>vuetify</code>创建自定义组件时通过<code>$attrs</code>来覆盖props属性，</p>\n<p>例如：</p>\n<pre class=\"hljs\"><code>&lt;template&gt;\n    &lt;!-- 本意是通过$attrs传递的color来覆盖掉默认的color...</code></pre>",
+  "slug": "Vue-zhong-props-bang-ding-he-$attrs-bang-ding-de-you-xian-deng-ji",
+  "sha": "e7813bbaeb1fb13c70ce1da35fb282ec842889d2"
+}

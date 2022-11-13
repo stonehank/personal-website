@@ -1,5 +1,5 @@
 {
-  "content": "<h3 id=\"wen-ti-1php-extension-sodium\">问题1(PHP extension sodium)</h3>\n<blockquote>\n<p>lcobucci/jwt 4.1.4 requires ext-sodium * -&gt; the requested PHP extension sodium is missing from your system.</p>\n</blockquote>\n<p>在<code>php.ini</code>内部取消<code>extension=sodium</code>这一句的注释即可</p>\n<h3 id=\"wen-ti-2valid-cache-path\">问题2(valid cache path)</h3>\n<blockquote>\n<p>InvalidArgumentException</p>\n<p>Please provide a valid cache path.</p>\n</blockquote>\n<p>在<code>storage/framework</code>文件夹下面创建</p>\n<p><code>sessions</code></p>\n<p><code>views</code></p>\n<p><code>cache</code></p>\n<h3 id=\"wen-ti-3descriptiondatamatcherruleplugin\">问题3(DescriptionDataMatcherRulePlugin)</h3>\n<blockquote>\n<p> Cannot find module &#39;webpack/lib/rules/DescriptionDataMatcherRulePlugin&#39;</p>\n</blockquote>\n<p>安装最新的<code>vue-loader</code>（文中最新版本 v15.9.8）</p>\n<h3 id=\"wen-ti-4-nei-cun-bu-zu\">问题4(内存不足)</h3>\n<blockquote>\n<p>FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory</p>\n</blockquote>\n<h3 id=\"wen-ti-5pull-shi-bai\">问题5(pull失败)</h3>\n<blockquote>\n<p>fatal: refusing to merge unrelated histories</p>\n</blockquote>\n<p><code>git pull --allow-unrelated-histories</code></p>\n<h3 id=\"wen-ti-6node-sass-gou-jian-shi-bai\">问题6(node-sass构建失败)</h3>\n<blockquote>\n<p>Node Sass could not find a binding for your current environment: Windows 64-bit with Node.js 14.x</p>\n</blockquote>\n<p>原因是更新了<code>nodejs</code>，在文件夹内输入<code>npm rebuild node-sass</code></p>\n",
+  "content": "<h3 id=\"wen-ti-1php-extension-sodium\">问题1(PHP extension sodium)</h3>\n<blockquote>\n<p>lcobucci/jwt 4.1.4 requires ext-sodium * -&gt; the requested PHP extension sodium is missing from your system.</p>\n</blockquote>\n<p>在<code>php.ini</code>内部取消<code>extension=sodium</code>这一句的注释即可</p>\n<h3 id=\"wen-ti-2valid-cache-path\">问题2(valid cache path)</h3>\n<blockquote>\n<p>InvalidArgumentException</p>\n<p>Please provide a valid cache path.</p>\n</blockquote>\n<p>在<code>storage/framework</code>文件夹下面创建</p>\n<p><code>sessions</code></p>\n<p><code>views</code></p>\n<p><code>cache</code></p>\n<h3 id=\"wen-ti-3descriptiondatamatcherruleplugin\">问题3(DescriptionDataMatcherRulePlugin)</h3>\n<blockquote>\n<p> Cannot find module &#39;webpack/lib/rules/DescriptionDataMatcherRulePlugin&#39;</p>\n</blockquote>\n<p>安装最新的<code>vue-loader</code>（文中最新版本 v15.9.8）</p>\n<h3 id=\"wen-ti-4-nei-cun-bu-zu\">问题4(内存不足)</h3>\n<blockquote>\n<p>FATAL ERROR: CALL_AND_RETRY_LAST Allocation failed - JavaScript heap out of memory</p>\n</blockquote>\n<p>通过更新最新版本<code>node</code>解决，也可以通过命令行<code>node --max-old-space-size=4096</code></p>\n<p>后面的数字<code>4096</code>(MB)代表定义分配的内存</p>\n<h3 id=\"wen-ti-5git-pull-shi-bai\">问题5(git pull失败)</h3>\n<blockquote>\n<p>fatal: refusing to merge unrelated histories</p>\n</blockquote>\n<p>当进行<code>pull</code>时，出现远程git历史和本地git历史对应不上的问题，<code>git pull --allow-unrelated-histories</code></p>\n<h3 id=\"wen-ti-6node-sass-gou-jian-shi-bai\">问题6(node-sass构建失败)</h3>\n<blockquote>\n<p>Node Sass could not find a binding for your current environment: Windows 64-bit with Node.js 14.x</p>\n</blockquote>\n<p>原因是更新了<code>nodejs</code>，在文件夹内输入<code>npm rebuild node-sass</code></p>\n",
   "toc": [
     {
       "anchor": "wen-ti-1php-extension-sodium",
@@ -22,9 +22,9 @@
       "text": "问题4(内存不足)"
     },
     {
-      "anchor": "wen-ti-5pull-shi-bai",
+      "anchor": "wen-ti-5git-pull-shi-bai",
       "level": 3,
-      "text": "问题5(pull失败)"
+      "text": "问题5(git pull失败)"
     },
     {
       "anchor": "wen-ti-6node-sass-gou-jian-shi-bai",
@@ -52,5 +52,5 @@
   "uuid": "e0183343ceb8acf22211aa4b6df0a043841fcdbe",
   "summary": "<p>lcobucci/jwt 4.1.4 requires ext-sodium * -&gt; the requested PHP extension sodium is missing from your system.</p>",
   "slug": "pei-zhi-Larvael8-wen-ti-ji-lu",
-  "sha": "db56556d07b55c00d61de20b7c057a7ad0c1e236"
+  "sha": "3d70142487c738aca907d343c25036cd28a2978c"
 }

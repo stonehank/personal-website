@@ -2,7 +2,7 @@ import jsCookies from 'js-cookie'
 
 function getFromCache(key) {
   let savedUserData = null
-  if (localStorage) {
+  if (typeof localStorage!=='undefined') {
     const originalData = localStorage.getItem(key)
     try {
       savedUserData = JSON.parse(originalData)
@@ -21,7 +21,7 @@ function getFromCache(key) {
 
 function setCache(key, value, expires = 7) {
   const valueStr = JSON.stringify(value)
-  if (localStorage) {
+  if (typeof localStorage!=='undefined') {
     localStorage.setItem(key, valueStr)
   } else {
     jsCookies.set(
@@ -32,7 +32,7 @@ function setCache(key, value, expires = 7) {
 }
 
 function removeCache(key) {
-  if (localStorage) {
+  if (typeof localStorage!=='undefined') {
     localStorage.removeItem(key)
   } else {
     jsCookies.remove(key)

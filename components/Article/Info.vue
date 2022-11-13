@@ -58,7 +58,6 @@ export default {
         articleDetails: {
             handler() {
                 this.updateTocIdList()
-                // console.log('watch slug nest',this.tocIdList)
             },
         },
     },
@@ -82,7 +81,6 @@ export default {
             const navH = this.$getNavH()
             for (let i = this.tocIdList.length - 1; i >= 0; i--) {
                 const curIdHash = this.tocIdList[i]
-                // console.log(curIdHash)
                 if (curScrTop + navH + 16 > $(curIdHash).offset().top) {
                     if (this.$route.hash !== curIdHash) {
                         this.$router.replace({ hash: curIdHash })

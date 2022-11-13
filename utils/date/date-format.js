@@ -1,7 +1,6 @@
 import moment from 'moment'
-// import format from 'dateformat'
 import dateExist from './dateExist'
-// console.log(format)
+
 
 export function covertSec2DayHour(seconds, simple = false) {
     if (seconds <= 0) return '0 second'
@@ -139,7 +138,6 @@ export function timeAgo(oldDate, newDate, langTxt) {
     } else {
         curTime = new Date().getTime()
     }
-    // console.log(oldDate,newDate)
     try {
         // let curTime = new Date().getTime()
         const diffValue = curTime - oldTime

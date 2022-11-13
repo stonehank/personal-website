@@ -765,7 +765,7 @@
     "uuid": "f433b9ed4007a7781ed42e23c229928ae08ba1d8",
     "summary": "<p>A string constant defining the operating system-specific end-of-line marker:</p>",
     "slug": "yuan-ma-yue-du-create-react-app-yi-xie-shou-huo-(-bi-ji-bei-wang-)",
-    "sha": "0a29b597ea9aca0631c7bd70092eb31cf07d8250"
+    "sha": "fa60cceb50a93e0f44d825b1043da061721c78f2"
   },
   "Canvas-diao-yong-clearRect-wu-fa-qing-chu-de-jie-jue-fang-an": {
     "relatedTags": [
@@ -828,7 +828,7 @@
     "uuid": "e0183343ceb8acf22211aa4b6df0a043841fcdbe",
     "summary": "<p>lcobucci/jwt 4.1.4 requires ext-sodium * -&gt; the requested PHP extension sodium is missing from your system.</p>",
     "slug": "pei-zhi-Larvael8-wen-ti-ji-lu",
-    "sha": "db56556d07b55c00d61de20b7c057a7ad0c1e236"
+    "sha": "3d70142487c738aca907d343c25036cd28a2978c"
   },
   "single-spa-wei-qian-duan-de-lu-you-guan-li-xi-tong": {
     "relatedTags": [
@@ -1547,7 +1547,7 @@
     "uuid": "00c5d9ed2847e38150e59f8030c9eff752b313f7",
     "summary": "<p>题目位置：https://leetcode.com/problems/nth-magical-number/description/</p>\n<p>题目：</p>\n<p>如果正整数 可被A  或B整除，则它是神奇的。</p>\n<p>返回第N个魔法数字。由于答案可能非常大，因此返回值需要模(%)10^9 + 7。</p>\n<p>例1：</p>\n<pre class=\"hljs\"><code>输入： N = 1，A ...</code></pre>",
     "slug": "ji-yi-dao-er-fen-cha-zhao-suan-fa-ti",
-    "sha": "d3c6d7ae8150d554512c3b20c6ccc2cd575468c5"
+    "sha": "dfdf8e089072d006549cc430c7b7973cc851fcbb"
   },
   "yi-duan-mo-ni-wei-diao-yong-de-dai-ma": {
     "relatedTags": null,
@@ -2681,7 +2681,7 @@
     "uuid": "fe3678963ac1c863362da40651884c9820158971",
     "summary": "<p>原文地址：https://hackernoon.com/im-harvesting-credit-card-numbers-and-passwords-from-your-site-here-s-how-9a8cb347c5b5</p>\n<p>作者讲述了一些能够达成的破解网络安全手段(有些已被认为是bug修复，例如2)，并给出建议...</p>",
     "slug": "wen-zhang-ji-lu-dang-qian-de-wang-ye-an-quan",
-    "sha": "6901bccad37993cd0ddb283e7bd8f2a32e5ae599"
+    "sha": "f41c15ad702abc0dee5cac1c2036c5a1cb10aaba"
   },
   "ji-lu-yi-dao-LeetCode-wei-cao-zuo-fu-ji-suan-dan-ge-shu-zi-fang-fa": {
     "relatedTags": [
@@ -2891,5 +2891,59 @@
     "summary": "<p>一些JS基础(3)</p>\n<h4>for...of</h4>\n<p><code>for..of</code>会寻找内置或者自定义的 @@iterator 对象并调用它的 next() 方法来遍历数据值</p>\n<p>array默认带有iterator，因此可以直接使用for...of</p>\n<pre class=\"hljs\"><code><span class=\"hljs-keyword\">var</span> arr=[<span class=\"hljs-number\">1</span>,<span class=\"hljs-number\">2</span>,<span class=\"hljs-number\">3</span>];\n<span class=\"hljs-keyword\">var</span> it=arr[Symbo...</code></pre>",
     "slug": "yi-xie-bei-hu-lve-de-js-zhi-shi-3",
     "sha": "4fd90b9ee966a8e1972197c101a2e960a01d9493"
+  },
+  "SafeAreaView-zai-hua-wei-ji-xing-bu-qi-zuo-yong": {
+    "relatedTags": null,
+    "created_at": "2022-09-28",
+    "timeArr": [
+      2022,
+      8,
+      28,
+      0,
+      0,
+      0,
+      0
+    ],
+    "title": "SafeAreaView在华为机型不起作用",
+    "uuid": "50bd8f6626234c3d9241976661b6a78d10859163",
+    "summary": "<p>因为在react-native中，所有安卓都直接返回<code>&lt;View /&gt;</code></p>\n<p>[https://github.com/facebook/react-native/blob/277a64f03ec2a5a5c833f15263b3c3fa45577cae/Libraries/Components/SafeAreaView/...</p>",
+    "slug": "SafeAreaView-zai-hua-wei-ji-xing-bu-qi-zuo-yong",
+    "sha": "f5189448419dd4c2ab51e65d3a040d41675899ac"
+  },
+  "ReactNative-an-zhuo-da-bao-cuo-wu-：Duplicate-Class-wen-ti": {
+    "relatedTags": null,
+    "created_at": "2022-09-29",
+    "timeArr": [
+      2022,
+      8,
+      29,
+      0,
+      0,
+      0,
+      0
+    ],
+    "title": "ReactNative安卓打包错误：Duplicate Class问题",
+    "uuid": "7d1e02ecc096a476ad4ed88e3354920a21e40f15",
+    "summary": "<h4>React Native运行安卓报出Duplicate Class问题</h4>\n<p>报错现象：</p>\n<p>启动安卓开发中，出现大量Duplicate Class错误提示</p>\n<p><img src=\"https://stonehank.github.io/articles/img/duplicate-class.png\" alt=\"\"></p>\n<p>在`app/build...</p>",
+    "slug": "ReactNative-an-zhuo-da-bao-cuo-wu-：Duplicate-Class-wen-ti",
+    "sha": "af9902397a4428fa893968c40dab1a5c1da7e809"
+  },
+  "Vue-zhong-props-bang-ding-he-$attrs-bang-ding-de-you-xian-deng-ji": {
+    "relatedTags": null,
+    "created_at": "2021-10-03",
+    "timeArr": [
+      2021,
+      9,
+      3,
+      0,
+      0,
+      0,
+      0
+    ],
+    "title": "Vue中props绑定和$attrs绑定的优先等级",
+    "uuid": "6798b7d7e1d0be3c2f8889f3f527875e351b867c",
+    "summary": "<p>最开始我认为可以用<code>v-bind=&quot;$attrs&quot;</code>来覆盖<code>v-on:key=&quot;value&quot;</code>的绑定，以至于在使用<code>vuetify</code>创建自定义组件时通过<code>$attrs</code>来覆盖props属性，</p>\n<p>例如：</p>\n<pre class=\"hljs\"><code>&lt;template&gt;\n    &lt;!-- 本意是通过$attrs传递的color来覆盖掉默认的color...</code></pre>",
+    "slug": "Vue-zhong-props-bang-ding-he-$attrs-bang-ding-de-you-xian-deng-ji",
+    "sha": "e7813bbaeb1fb13c70ce1da35fb282ec842889d2"
   }
 }

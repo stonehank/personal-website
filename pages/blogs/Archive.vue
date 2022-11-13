@@ -85,7 +85,6 @@ export default {
     },
     computed: {
         nextDisabled() {
-            console.log('nextDisabled', this.$refs?.swiperRef?.$swiper)
             return this.$refs?.swiperRef?.$swiper?.isEnd
         },
     },

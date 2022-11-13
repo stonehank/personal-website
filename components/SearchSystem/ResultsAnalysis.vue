@@ -197,7 +197,6 @@ export default {
             }
             // 添加颜色html
             function addMatchColor(prefix, match, affix) {
-                // console.log(prefix,match,affix)
                 prefix = ignoreInterceptTags(prefix)
                 return `<span>${prefix}<b style="background:yellow;color:#333">${match}</b>${affix}</span>`
             }
@@ -319,7 +318,6 @@ export default {
 
                 const curWeight = 10000
                 const normalWeight = 500
-                // console.log(precisionMatchArr)
                 for (let i = 0; i < precisionMatchArr.length; i++) {
                     if (precisionMatchArr[i] === 1) {
                         weightPoint += curWeight / Math.pow(2, i)
@@ -359,7 +357,6 @@ export default {
             this.globalDone = false
             const fetchQueue = []
             for (let i = 0; i < this.list.length; i++) {
-                // console.log(this.list[i])
                 if (this.list[i].flag === '随笔') {
                     fetchQueue.push(
                         import(

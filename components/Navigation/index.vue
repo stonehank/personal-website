@@ -9,13 +9,9 @@
         transition="slide-y-transition"
     >
         <Action />
-        <client-only>
-            <BookMark />
-        </client-only>
+        <BookMark />
         <v-spacer></v-spacer>
-        <client-only>
-            <Search class="mr-2" />
-        </client-only>
+        <Search class="mr-2" />
         <Theme />
     </v-app-bar>
 </template>
@@ -33,10 +29,7 @@ export default {
             default: true,
             type: Boolean,
         },
-    },
-    mounted() {
-        console.log(this.$vuetify.breakpoint)
-    },
+    }
 }
 </script>
 

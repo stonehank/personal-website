@@ -1,30 +1,32 @@
 <template>
     <v-skeleton-loader
-        v-if="sourceCodeList == null"
+        v-if="loading"
         type="article,image,list-item-two-line"
     ></v-skeleton-loader>
     <ArticleList v-else class="pa-3" :list="sourceCodeList" />
 </template>
 
 <script>
-import sourceCodeList from 'doc/sourceCode/.sourceCode-list.json'
 export default {
     name: 'SourceCode',
-    data() {
+
+    async asyncData() {
+        const sourceCodeJson = await import(
+            'doc/sourceCode/.sourceCode-list.json'
+        )
+        const arr = []
+        for (const k in sourceCodeJson) {
+            arr.push(sourceCodeJson[k])
+        }
         return {
-            timer: null,
-            sourceCodeList: null,
+            sourceCodeList: arr,
+            loading: true,
         }
     },
     mounted() {
-        const arr = []
-        for (const k in sourceCodeList) {
-            arr.push(sourceCodeList[k])
-        }
-        this.timer = setTimeout(() => (this.sourceCodeList = arr), 200)
-    },
-    destroyed() {
-        clearTimeout(this.timer)
+        this.$nextTick(function () {
+            this.loading = false
+        })
     },
 }
 </script>

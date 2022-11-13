@@ -1,30 +1,29 @@
 <template>
     <v-skeleton-loader
-        v-if="blogList == null"
+        v-if="loading"
         type="article,image,list-item-two-line"
     ></v-skeleton-loader>
     <ArticleList v-else class="pa-3" :list="blogList" />
 </template>
 
 <script>
-import blogListJson from 'doc/blog/.blog-list.json'
 export default {
     name: 'Default',
-    data() {
-        return {
-            timer: null,
-            blogList: null,
-        }
-    },
-    mounted() {
+    async asyncData() {
+        const blogListJson = await import('doc/blog/.blog-list.json')
         const arr = []
         for (const k in blogListJson) {
             arr.push(blogListJson[k])
         }
-        this.timer = setTimeout(() => (this.blogList = arr), 200)
+        return {
+            blogList: arr,
+            loading: true,
+        }
     },
-    destroyed() {
-        clearTimeout(this.timer)
+    mounted() {
+        this.$nextTick(function () {
+            this.loading = false
+        })
     },
 }
 </script>

@@ -6,7 +6,6 @@ const fs = require('fs-extra')
 const blogPath = path.resolve('.', 'assets/doc/blog')
 const sourceCodePath = path.resolve('.', 'assets/doc/sourceCode')
 
-// console.log(path.resolve('.'), blogPath)
 // 计算global-search 文件大小
 function getGZipSize(folderPath) {
 

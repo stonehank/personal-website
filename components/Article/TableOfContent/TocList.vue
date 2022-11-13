@@ -33,9 +33,6 @@ export default {
     computed: {
         scrollTo: () => scrollTo,
     },
-    updated() {
-        console.log('update toc list')
-    },
     mounted() {
         $(document).ready(() => {
             this.initTimer = setTimeout(() => {

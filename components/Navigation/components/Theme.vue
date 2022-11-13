@@ -42,7 +42,7 @@ export default {
         },
     },
 
-    mounted() {
+    created() {
         const backgroundColor = getTheme()
         this.isDarkActive = backgroundColor === 'dark'
     },

@@ -1,5 +1,5 @@
 <template>
-    <Sidebar v-if="$vuetify.breakpoint.smAndDown" :items="items" />
+    <Sidebar v-if="$getIsMobile()" :items="items" />
     <div v-else>
         <v-btn v-for="item in items" :key="item.title" :to="item.to" text large>
             {{ item.title }}

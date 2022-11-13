@@ -1,5 +1,6 @@
 <template>
-    <modal
+    <client-only>
+        <modal
         :ref="modalName"
         :name="modalName"
         :adaptive="true"
@@ -15,6 +16,7 @@
     >
         <slot></slot>
     </modal>
+    </client-only>
 </template>
 
 <script>
@@ -27,7 +29,10 @@ export default {
     },
     props: {
         show: Boolean,
-        name: String,
+        name: {
+            type:String,
+            default:''
+        },
         classes: {
             type: String,
             default: 'v--modal',
@@ -37,7 +42,7 @@ export default {
         return {
             uuid: uuidv4(),
             newShow: this.show,
-            scrollBarW: this.getScrollbarWidth(),
+            scrollBarW: 17,
             prevPadRight: null,
         }
     },
@@ -48,7 +53,6 @@ export default {
     },
     watch: {
         newShow(newV, oldV) {
-            console.log(newV, oldV)
             if (newV) {
                 this.$modal.show(this.modalName)
             } else {
@@ -62,7 +66,10 @@ export default {
         },
     },
     mounted() {
-        this.appendInBody()
+        this.scrollBarW = this.getScrollbarWidth()
+        setTimeout(()=>{
+            this.appendInBody()
+        })
     },
     methods: {
         hasScrollbar() {

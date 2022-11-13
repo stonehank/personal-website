@@ -33,7 +33,6 @@ function debounce(func, wait, immediate) {
 
     const debounced = function () {
         context = this
-        console.log(context, arguments)
         args = arguments
         timestamp = Date.now()
         const callNow = immediate && !timeout

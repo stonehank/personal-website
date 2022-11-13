@@ -1,7 +1,7 @@
 <template>
     <section id="tags-render-wrapper">
         <v-skeleton-loader
-            v-if="tagsCountRenderList == null"
+            v-if="loading"
             type="article,image,list-item-two-line"
         ></v-skeleton-loader>
         <div
@@ -45,9 +45,14 @@ import labelColor from 'utils/label-color'
 
 export default {
     name: 'Labels',
-    data() {
+    asyncData(){
         return {
             tagsCountList: getTagsCount(),
+            loading:true,
+        }
+    },
+    data() {
+        return {
             tagGenerator: null,
             tagsCountRenderList: null,
             show: [],
@@ -58,11 +63,10 @@ export default {
         labelColor: () => labelColor,
     },
     mounted() {
-        // $(window).on('resize',this.onResize)
-
         setTimeout(() => {
             this.onResize()
             this.loopShow(0)
+            this.loading=false
         }, 100)
     },
     destroyed() {
@@ -80,7 +84,6 @@ export default {
         onResize() {
             this.tagsCountRenderList = null
             const gap = this.$vuetify.breakpoint.xsOnly ? 4 : 14
-            // console.log($('#tags-render-wrapper'))
             const containerW = Math.min(
                 window.innerWidth,
                 $('#tags-render-wrapper').width()

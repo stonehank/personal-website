@@ -151,7 +151,6 @@ export function objSortBy(obj, sortKey, asc) {
     else return -1
     return 0
   }
-  // console.log(obj,result)
   return result
 }
 
