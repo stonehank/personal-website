@@ -1,5 +1,5 @@
 {
-  "content": "<h3 id=\"react-native-yun-xing-an-zhuo-bao-chu-duplicate-class-wen-ti\">React Native运行安卓报出Duplicate Class问题</h3>\n<p>报错现象：</p>\n<p>启动安卓开发中，出现大量Duplicate Class错误提示</p>\n<p><img src=\"https://stonehank.github.io/articles/img/duplicate-class.png\" alt=\"\"></p>\n<p>在<code>app/build.gradle</code>中添加</p>\n<pre><code><pre class=\"hljs\"><code>configurations {\n    all*.exclude module:'bcprov-jdk15on'\n}</code></pre></code></pre>",
+  "content": "<h3 id=\"react-native-yun-xing-an-zhuo-bao-chu-duplicate-class-wen-ti\">React Native运行安卓报出Duplicate Class问题</h3>\n<p>报错现象：</p>\n<p>启动安卓开发中，出现大量Duplicate Class错误提示</p>\n<p><img src=\"/article/img/duplicate-class.png\" alt=\"\"></p>\n<p>在<code>app/build.gradle</code>中添加</p>\n<pre><code><pre class=\"hljs\"><code>configurations {\n    all*.exclude module:'bcprov-jdk15on'\n}</code></pre></code></pre>",
   "toc": [
     {
       "anchor": "react-native-yun-xing-an-zhuo-bao-chu-duplicate-class-wen-ti",
@@ -20,7 +20,7 @@
   ],
   "title": "ReactNative安卓打包错误：Duplicate Class问题",
   "uuid": "7d1e02ecc096a476ad4ed88e3354920a21e40f15",
-  "summary": "<h4>React Native运行安卓报出Duplicate Class问题</h4>\n<p>报错现象：</p>\n<p>启动安卓开发中，出现大量Duplicate Class错误提示</p>\n<p><img src=\"https://stonehank.github.io/articles/img/duplicate-class.png\" alt=\"\"></p>\n<p>在`app/build...</p>",
+  "summary": "<h4>React Native运行安卓报出Duplicate Class问题</h4>\n<p>报错现象：</p>\n<p>启动安卓开发中，出现大量Duplicate Class错误提示</p>\n<p><img src=\"/article/img/duplicate-class.png\" alt=\"\"></p>\n<p>在<code>app/build.gradle</code>中添加</p>\n<pre class=\"hljs\"><code>configurati...</code></pre>",
   "slug": "ReactNative-an-zhuo-da-bao-cuo-wu-：Duplicate-Class-wen-ti",
   "sha": "af9902397a4428fa893968c40dab1a5c1da7e809"
 }

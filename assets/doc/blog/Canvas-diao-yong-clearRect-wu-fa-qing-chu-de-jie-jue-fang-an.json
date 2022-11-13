@@ -1,9 +1,7 @@
 {
   "content": "<p>有时候在执行<code>ctx.clearRect</code>时，并不能清除图片，但通过控制台调试却没有任何问题。</p>\n<p>通常这发生在调用了例如：<code>lineTo(), arc(), rect()</code>等等，然后执行<code>stroke()</code>或者<code>fill()</code>；</p>\n<p>这可能是因为我们在绘制路径时并没有调用<code>beginPath()</code>，这导致路径的绘制将储存在内存中，因此<code>clearRect</code>会不起作用。</p>\n",
   "toc": [],
-  "relatedTags": [
-    "canvas"
-  ],
+  "relatedTags": null,
   "created_at": "2019-07-10",
   "timeArr": [
     2019,

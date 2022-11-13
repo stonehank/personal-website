@@ -43,6 +43,7 @@
     "@nuxtjs/vuetify": "^1.12.3",
     "@types/animejs": "^3.1.6",
     "@types/clone-deep": "^4.0.1",
+    "@types/fs-extra": "^9.0.13",
     "@types/js-cookie": "^3.0.2",
     "app-root-path": "^3.1.0",
     "dotenv": "^16.0.3",

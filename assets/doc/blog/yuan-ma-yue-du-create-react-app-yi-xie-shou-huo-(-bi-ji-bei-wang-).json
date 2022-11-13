@@ -32,13 +32,7 @@
       "text": "一个Boolean的使用方法"
     }
   ],
-  "relatedTags": [
-    "react",
-    "源码",
-    "笔记",
-    "npm",
-    "github"
-  ],
+  "relatedTags": null,
   "created_at": "2018-07-28",
   "timeArr": [
     2018,
@@ -51,7 +45,7 @@
   ],
   "title": "源码阅读-create-react-app一些收获(笔记备忘)",
   "uuid": "f433b9ed4007a7781ed42e23c229928ae08ba1d8",
-  "summary": "<p>A string constant defining the operating system-specific end-of-line marker:</p>",
+  "summary": "<blockquote>\n<p>./creat-react-app/createReactApp.js</p>\n</blockquote>\n<h5>os.EOL</h5>\n<pre><code>不同系统的行尾符号\n\n&gt; A string constant defining the operating system-specific end-of-line marker:\n</code></pre>\n<p>...</p>",
   "slug": "yuan-ma-yue-du-create-react-app-yi-xie-shou-huo-(-bi-ji-bei-wang-)",
   "sha": "fa60cceb50a93e0f44d825b1043da061721c78f2"
 }

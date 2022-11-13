@@ -1,5 +1,5 @@
 {
-  "content": "<p>cssModule配置，先进行webpack配置：</p>\n<pre><code><pre class=\"hljs\"><code>// ...\ntest: /\\.css$/,\nuse: ['style-loader', {\n  loader: 'css-loader',\n  options: {\n    module: true,\n    localIdentName: '[name]-[local]-[hash:base64:5]'\n  }\n}],</code></pre>\n</code></pre>\n<p>localIdentName定义名称的格式</p>\n<h2 id=\"ju-bu-he-quan-ju-yang-shi\">局部和全局样式</h2>\n<p>当前文件结构：</p>\n<pre><code><pre class=\"hljs\"><code>|---src\n  |---index.js\n  |---common.css\n  ...</code></pre>\n</code></pre>\n<p>在common.css内部</p>\n<pre><code class=\"language-css\"><pre class=\"hljs\"><code>/* 局部样式*/\n.normal{\n  color:red;\n}\n/* 局部样式*/\n.special{\n  color:blue;\n}\n/* 全局样式，可直接正常使用 .title */\n:global(.title){\n    color: green;\n}\n</code></pre>\n</code></pre>\n<p>在index.js内部</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-keyword\">import</span> styles <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'./common.css'</span>\n\nsomeEle.className=styles.normal;\notherEle.className=styles.special;\nglobalEle.className=<span class=\"hljs-string\">\"title\"</span>;</code></pre>\n</code></pre>\n<p>渲染出来的元素类似：</p>\n<pre><code><pre class=\"hljs\"><code>&lt;div class=&quot;common-normal-2vEvb&quot;&gt;...(red color)&lt;/div&gt;\n&lt;div class=&quot;common-special-1aNtQ&quot;&gt;...(blue color)&lt;/div&gt;\n&lt;div class=&quot;title&quot;&gt;...(green color)&lt;/div&gt;</code></pre>\n</code></pre>\n<h2 id=\"composes\">composes</h2>\n<p>另外，.css内部使用<code>composes</code>组合样式</p>\n<pre><code class=\"language-css\"><pre class=\"hljs\"><code>.base{/* 通用样式*/}\n.case1{\n  composes:base;\n  /* 其他样式*/\n}</code></pre>\n</code></pre>\n",
+  "content": "<p>cssModule配置，先进行webpack配置：</p>\n<pre><code><pre class=\"hljs\"><code>// ...\ntest: /\\.css$/,\nuse: ['style-loader', {\n  loader: 'css-loader',\n  options: {\n    module: true,\n    localIdentName: '[name]-[local]-[hash:base64:5]'\n  }\n}],</code></pre></code></pre><p>localIdentName定义名称的格式</p>\n<h2 id=\"ju-bu-he-quan-ju-yang-shi\">局部和全局样式</h2>\n<p>当前文件结构：</p>\n<pre><code><pre class=\"hljs\"><code>|---src\n  |---index.js\n  |---common.css\n  ...</code></pre></code></pre><p>在common.css内部</p>\n<pre><code class=\"language-css\"><pre class=\"hljs\"><code>/* 局部样式*/\n.normal{\n  color:red;\n}\n/* 局部样式*/\n.special{\n  color:blue;\n}\n/* 全局样式，可直接正常使用 .title */\n:global(.title){\n    color: green;\n}\n</code></pre></code></pre>\n<p>在index.js内部</p>\n<pre><code class=\"language-js\"><pre class=\"hljs\"><code><span class=\"hljs-keyword\">import</span> styles <span class=\"hljs-keyword\">from</span> <span class=\"hljs-string\">'./common.css'</span>\n\nsomeEle.className=styles.normal;\notherEle.className=styles.special;\nglobalEle.className=<span class=\"hljs-string\">\"title\"</span>;</code></pre></code></pre>\n<p>渲染出来的元素类似：</p>\n<pre><code><pre class=\"hljs\"><code>&lt;div class=&quot;common-normal-2vEvb&quot;&gt;...(red color)&lt;/div&gt;\n&lt;div class=&quot;common-special-1aNtQ&quot;&gt;...(blue color)&lt;/div&gt;\n&lt;div class=&quot;title&quot;&gt;...(green color)&lt;/div&gt;</code></pre></code></pre><h2 id=\"composes\">composes</h2>\n<p>另外，.css内部使用<code>composes</code>组合样式</p>\n<pre><code class=\"language-css\"><pre class=\"hljs\"><code>.base{/* 通用样式*/}\n.case1{\n  composes:base;\n  /* 其他样式*/\n}</code></pre></code></pre>\n",
   "toc": [
     {
       "anchor": "ju-bu-he-quan-ju-yang-shi",
@@ -12,11 +12,7 @@
       "text": "composes"
     }
   ],
-  "relatedTags": [
-    "cssmodule",
-    "css",
-    "webpack"
-  ],
+  "relatedTags": null,
   "created_at": "2018-06-17",
   "timeArr": [
     2018,

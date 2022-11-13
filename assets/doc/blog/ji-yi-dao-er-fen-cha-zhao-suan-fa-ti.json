@@ -27,10 +27,7 @@
       "text": "完整代码"
     }
   ],
-  "relatedTags": [
-    "算法",
-    "leetcode"
-  ],
+  "relatedTags": null,
   "created_at": "2018-07-29",
   "timeArr": [
     2018,
@@ -43,7 +40,7 @@
   ],
   "title": "记一道二分查找算法题",
   "uuid": "00c5d9ed2847e38150e59f8030c9eff752b313f7",
-  "summary": "<p>题目位置：https://leetcode.com/problems/nth-magical-number/description/</p>\n<p>题目：</p>\n<p>如果正整数 可被A  或B整除，则它是神奇的。</p>\n<p>返回第N个魔法数字。由于答案可能非常大，因此返回值需要模(%)10^9 + 7。</p>\n<p>例1：</p>\n<pre class=\"hljs\"><code>输入： N = 1，A ...</code></pre>",
+  "summary": "<p>题目位置：https://leetcode.com/problems/nth-magical-number/description/</p>\n<h5>题目：</h5>\n<p>如果正整数 可被A  或B整除，则它是神奇的。</p>\n<p>返回第N个魔法数字。由于答案可能非常大，因此返回值需要模(%)10^9 + 7。</p>\n<p>例1：</p>\n<pre class=\"hljs\"><code>输入： N ...</code></pre>",
   "slug": "ji-yi-dao-er-fen-cha-zhao-suan-fa-ti",
   "sha": "dfdf8e089072d006549cc430c7b7973cc851fcbb"
 }

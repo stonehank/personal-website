@@ -1,5 +1,5 @@
 {
-  "content": "<h2 id=\"hyperapp-kuang-jia\">hyperapp框架</h2>\n<p><a href=\"https://github.com/stonehank/sourcecode-analysis/blob/master/source-code.hyperapp/README.md\">完整源码说明注释</a></p>\n<p>一个极小的类react框架，也是通过 Virtual DOM对节点进行对比（通过key），再更新渲染</p>\n<p>思维导图：</p>\n<p><img src=\"https://stonehank.github.io/articles/img/hyperapp%E5%AF%BC%E5%9B%BE.jpg\" alt=\"\"></p>\n",
+  "content": "<h2 id=\"hyperapp-kuang-jia\">hyperapp框架</h2>\n<p><a href=\"https://github.com/stonehank/sourcecode-analysis/blob/master/source-code.hyperapp/README.md\">完整源码说明注释</a></p>\n<p>一个极小的类react框架，也是通过 Virtual DOM对节点进行对比（通过key），再更新渲染</p>\n<p>思维导图：</p>\n<p><img src=\"/article/img/hyperapp%E5%AF%BC%E5%9B%BE.jpg\" alt=\"\"></p>\n",
   "toc": [
     {
       "anchor": "hyperapp-kuang-jia",
@@ -7,11 +7,7 @@
       "text": "hyperapp框架"
     }
   ],
-  "relatedTags": [
-    "源码",
-    "github",
-    "react"
-  ],
+  "relatedTags": null,
   "created_at": "2018-07-01",
   "timeArr": [
     2018,

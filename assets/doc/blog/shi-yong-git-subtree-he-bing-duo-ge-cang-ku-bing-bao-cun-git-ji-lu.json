@@ -1,5 +1,5 @@
 {
-  "content": "<h4 id=\"bu-zhou-jie-shi\">步骤解释</h4>\n<ol>\n<li><p>创建remote连接\ngit remote add 自定义远程仓库名 远程仓库地址 远程仓库分支</p>\n</li>\n<li><p>添加subtree \ngit subtree add --prefix=当前仓库的子目录名称(可以使用/进行分割)  远程仓库地址 远程仓库分支 &lt;--squash&gt;添加squash则不保存子目录的git记录</p>\n</li>\n</ol>\n<h4 id=\"an-li\">案例</h4>\n<ul>\n<li>当前目录<code>e:/project/demo-list</code></li>\n</ul>\n<ul>\n<li><p>远程目录1：<code>d:/demo1</code></p>\n<p>  分支：<code>master</code></p>\n<pre><code><pre class=\"hljs\"><code>demo1\n  |——1.txt\n  |——2.txt\n  |——3.txt</code></pre>\n</code></pre>\n</li>\n<li><p>远程目录2：<code>d:/demo2</code></p>\n<p>  分支：<code>dev</code></p>\n<pre><code><pre class=\"hljs\"><code>demo2\n  |——1.png\n  |——2.png\n  |——3.png</code></pre>\n</code></pre>\n</li>\n<li><p>预期结果，保存远程目录的git记录</p>\n<pre><code><pre class=\"hljs\"><code>demo-list\n  |——src\n    |——demo1\n      |——1.txt\n      |——2.txt\n      |——3.txt\n    |——demo2\n      |——1.png\n      |——2.png\n      |——3.png</code></pre>\n</code></pre>\n</li>\n<li><p>初始化</p>\n</li>\n</ul>\n<ol>\n<li><code>cd demo-list</code></li>\n<li><code>git init</code></li>\n<li>添加<code>.gitignore</code>或者<code>readme.md</code>，然后commit，push让当前目录有master分支</li>\n</ol>\n<ul>\n<li>第一个demo</li>\n</ul>\n<ol>\n<li><code>git remote add d1 d:/demo1 master</code></li>\n<li><code>git subtree add --prefix=src/demo1  d:/demo1 master </code></li>\n<li><code>git remote remove d1</code></li>\n</ol>\n<ul>\n<li>第二个demo</li>\n</ul>\n<ol>\n<li><code>git remote add d2 d:/demo2 dev</code></li>\n<li><code>git subtree add --prefix=src/demo2 d:/demo2 dev</code></li>\n<li><code>git remote remove d2</code></li>\n</ol>\n",
+  "content": "<h4 id=\"bu-zhou-jie-shi\">步骤解释</h4>\n<ol>\n<li><p>创建remote连接\ngit remote add 自定义远程仓库名 远程仓库地址 远程仓库分支</p>\n</li>\n<li><p>添加subtree \ngit subtree add --prefix=当前仓库的子目录名称(可以使用/进行分割)  远程仓库地址 远程仓库分支 &lt;--squash&gt;添加squash则不保存子目录的git记录</p>\n</li>\n</ol>\n<h4 id=\"an-li\">案例</h4>\n<ul>\n<li>当前目录<code>e:/project/demo-list</code></li>\n</ul>\n<ul>\n<li><p>远程目录1：<code>d:/demo1</code></p>\n<p>  分支：<code>master</code></p>\n<pre><code><pre class=\"hljs\"><code>  demo1\n    |——1.txt\n    |——2.txt\n    |——3.txt</code></pre></code></pre></li>\n<li><p>远程目录2：<code>d:/demo2</code></p>\n<p>  分支：<code>dev</code></p>\n<pre><code><pre class=\"hljs\"><code>  demo2\n    |——1.png\n    |——2.png\n    |——3.png</code></pre></code></pre></li>\n<li><p>预期结果，保存远程目录的git记录</p>\n<pre><code><pre class=\"hljs\"><code>  demo-list\n    |——src\n      |——demo1\n        |——1.txt\n        |——2.txt\n        |——3.txt\n      |——demo2\n        |——1.png\n        |——2.png\n        |——3.png</code></pre></code></pre></li>\n<li><p>初始化</p>\n</li>\n</ul>\n<ol>\n<li><code>cd demo-list</code></li>\n<li><code>git init</code></li>\n<li>添加<code>.gitignore</code>或者<code>readme.md</code>，然后commit，push让当前目录有master分支</li>\n</ol>\n<ul>\n<li>第一个demo</li>\n</ul>\n<ol>\n<li><code>git remote add d1 d:/demo1 master</code></li>\n<li><code>git subtree add --prefix=src/demo1  d:/demo1 master</code></li>\n<li><code>git remote remove d1</code></li>\n</ol>\n<ul>\n<li>第二个demo</li>\n</ul>\n<ol>\n<li><code>git remote add d2 d:/demo2 dev</code></li>\n<li><code>git subtree add --prefix=src/demo2 d:/demo2 dev</code></li>\n<li><code>git remote remove d2</code></li>\n</ol>\n",
   "toc": [
     {
       "anchor": "bu-zhou-jie-shi",
@@ -12,9 +12,7 @@
       "text": "案例"
     }
   ],
-  "relatedTags": [
-    "git"
-  ],
+  "relatedTags": null,
   "created_at": "2018-10-15",
   "timeArr": [
     2018,

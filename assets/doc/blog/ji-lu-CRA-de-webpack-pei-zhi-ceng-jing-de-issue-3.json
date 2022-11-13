@@ -1,12 +1,7 @@
 {
-  "content": "<ul>\n<li><code>terser</code>的配置output</li>\n</ul>\n<pre><code><pre class=\"hljs\"><code>terserOptions: {\n  ...\n  output: {\n    ...      \n    // Turned on because emoji and regex is not minified properly using default\n    // https://github.com/facebook/create-react-app/issues/2488\n    ascii_only: true,\n  },</code></pre>\n</code></pre>\n<p>这里2488问题是提出了一个emoji在prod模式下无法正常显示，然后也有人提出正则同样会出现被压缩过滤的bug。</p>\n<p>这里需要配置为<code>true</code>，不压缩Unicode字符。</p>\n<ul>\n<li><code>optimization</code>的<code>splitChunks</code></li>\n</ul>\n<pre><code><pre class=\"hljs\"><code>optimization: {\n    ...\n    // Automatically split vendor and commons\n    // https://twitter.com/wSokra/status/969633336732905474\n    // https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366\n    splitChunks: {\n      chunks: 'all',\n      name: false,\n    },\n}</code></pre>\n</code></pre>\n<p>这里提到了一篇博文和medium文章，都是认为<code>splitChunks</code>的chunks应该配置为<code>all</code>，以便既可以提取<code>async</code>也可以提取<code>sync</code>的模块。</p>\n<p>而<code>name</code>建议prod模式设置为false，以便当变更的时候能及时更新。</p>\n",
+  "content": "<ul>\n<li><code>terser</code>的配置output</li>\n</ul>\n<pre><code><pre class=\"hljs\"><code>terserOptions: {\n  ...\n  output: {\n    ...      \n    // Turned on because emoji and regex is not minified properly using default\n    // https://github.com/facebook/create-react-app/issues/2488\n    ascii_only: true,\n  },</code></pre></code></pre><p>这里2488问题是提出了一个emoji在prod模式下无法正常显示，然后也有人提出正则同样会出现被压缩过滤的bug。</p>\n<p>这里需要配置为<code>true</code>，不压缩Unicode字符。</p>\n<ul>\n<li><code>optimization</code>的<code>splitChunks</code></li>\n</ul>\n<pre><code><pre class=\"hljs\"><code>optimization: {\n    ...\n    // Automatically split vendor and commons\n    // https://twitter.com/wSokra/status/969633336732905474\n    // https://medium.com/webpack/webpack-4-code-splitting-chunk-graph-and-the-splitchunks-optimization-be739a861366\n    splitChunks: {\n      chunks: 'all',\n      name: false,\n    },\n}</code></pre></code></pre><p>这里提到了一篇博文和medium文章，都是认为<code>splitChunks</code>的chunks应该配置为<code>all</code>，以便既可以提取<code>async</code>也可以提取<code>sync</code>的模块。</p>\n<p>而<code>name</code>建议prod模式设置为false，以便当变更的时候能及时更新。</p>\n",
   "toc": [],
-  "relatedTags": [
-    "webpack",
-    "github",
-    "react",
-    "正则"
-  ],
+  "relatedTags": null,
   "created_at": "2018-10-18",
   "timeArr": [
     2018,

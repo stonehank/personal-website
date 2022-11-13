@@ -1,9 +1,7 @@
 {
-  "content": "<p>canvas的drawImage方法组多可以有9个参数，如下：</p>\n<pre><code><pre class=\"hljs\"><code>void ctx.drawImage(image, dx, dy);\nvoid ctx.drawImage(image, dx, dy, dWidth, dHeight);\nvoid ctx.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);</code></pre>\n</code></pre>\n<p>第三种使用的参数理解：</p>\n<ul>\n<li>dx：用于显示的窗口位置x</li>\n<li>dy：用于显示的窗口位置y</li>\n<li>dWidth：用于显示的窗口宽度</li>\n<li>dHeight：用于显示的窗口高度</li>\n<li>sx：用于显示的画的位置x</li>\n<li>sy：用于显示的画的位置y</li>\n<li>sWidth：用于显示的画的宽度</li>\n<li>sHeight：用于显示的画的高度</li>\n</ul>\n<p>可以看成2张画布，外面的一张通过<code>d</code>参数对其开窗口\n里面的一张是画，通过<code>s</code>参数对其裁剪</p>\n<p>例如：</p>\n<p><code>sx=0,sy=0,sw=1,sh=1</code></p>\n<p>说明从<code>[0,0]</code>开始裁减了<code>1*1</code>的图像</p>\n<p><code>dx=0,dy=0,dw=100,dh=100</code></p>\n<p>说明从<code>[0,0]</code>开始，开了一个<code>100*100</code>的窗口</p>\n<p>最后将裁剪的图像填满窗口，也就是宽高都放大了100倍</p>\n",
+  "content": "<p>canvas的drawImage方法组多可以有9个参数，如下：</p>\n<pre><code><pre class=\"hljs\"><code>void ctx.drawImage(image, dx, dy);\nvoid ctx.drawImage(image, dx, dy, dWidth, dHeight);\nvoid ctx.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);</code></pre></code></pre><p>第三种使用的参数理解：</p>\n<ul>\n<li>dx：用于显示的窗口位置x</li>\n<li>dy：用于显示的窗口位置y</li>\n<li>dWidth：用于显示的窗口宽度</li>\n<li>dHeight：用于显示的窗口高度</li>\n<li>sx：用于显示的画的位置x</li>\n<li>sy：用于显示的画的位置y</li>\n<li>sWidth：用于显示的画的宽度</li>\n<li>sHeight：用于显示的画的高度</li>\n</ul>\n<p>可以看成2张画布，外面的一张通过<code>d</code>参数对其开窗口\n里面的一张是画，通过<code>s</code>参数对其裁剪</p>\n<p>例如：</p>\n<p><code>sx=0,sy=0,sw=1,sh=1</code></p>\n<p>说明从<code>[0,0]</code>开始裁减了<code>1*1</code>的图像</p>\n<p><code>dx=0,dy=0,dw=100,dh=100</code></p>\n<p>说明从<code>[0,0]</code>开始，开了一个<code>100*100</code>的窗口</p>\n<p>最后将裁剪的图像填满窗口，也就是宽高都放大了100倍</p>\n",
   "toc": [],
-  "relatedTags": [
-    "canvas"
-  ],
+  "relatedTags": null,
   "created_at": "2018-09-03",
   "timeArr": [
     2018,
