@@ -12,12 +12,13 @@ export default {
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    titleTemplate: '%s - personal-website-v4',
-    title: 'personal-website-v4',
+    title: '个人博客',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'title', name: 'title', content: '个人博客' },
+      { hid: 'description', name: 'description', content: '记录一些日常笔记，源码阅读笔记归纳，还有个人一些项目展示' },
+      { hid: 'keywords', name: 'keywords', content: '博客，项目，算法思路，源码阅读，开源项目' },
       { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
