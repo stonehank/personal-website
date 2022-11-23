@@ -130,7 +130,7 @@ export default {
         }
       },
     }],
-    '@nuxtjs/pwa',
+    // '@nuxtjs/pwa',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -138,7 +138,7 @@ export default {
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa',
+    // '@nuxtjs/pwa',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -151,10 +151,10 @@ export default {
     routes: require('./backend/getRouteInSpa'),
   },
   // PWA module configuration: https://go.nuxtjs.dev/pwa
-  pwa: {
-    manifest: {
-      lang: 'en',
-    },
-    icon: false
-  },
+  // pwa: {
+  //   manifest: {
+  //     lang: 'en',
+  //   },
+  //   icon: false
+  // },
 }
