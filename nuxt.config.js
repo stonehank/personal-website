@@ -25,11 +25,11 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css' },
     ],
-    script:[
+    script: [
       {
-        type:'text/javascript',
+        type: 'text/javascript',
         charset: 'utf-8',
-        innerHTML:`
+        innerHTML: `
         (function(h,e,a,t,m,p) {
             m=e.createElement(a);m.async=!0;m.src=t;
             p=e.getElementsByTagName(a)[0];p.parentNode.insertBefore(m,p);
@@ -44,6 +44,7 @@ export default {
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    '@/assets/css/main.css',
     '@/assets/css/_variables.scss',
     '@/assets/css/common.scss',
     '@/assets/css/github-markdown-css.css',
@@ -67,7 +68,13 @@ export default {
         anime: ['animejs', 'default'],
       })
     ],
-    publicPath:'https://stonehank.github.io'
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+      },
+    },
+    // publicPath: 'https://stonehank.github.io'
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -86,6 +93,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
+    '@nuxt/postcss8',
     // https://go.nuxtjs.dev/vuetify
     ['@nuxtjs/vuetify', {
       defaultAssets: {

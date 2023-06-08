@@ -3,17 +3,16 @@
         :style="{
             'margin-top': `-${$getNavH()}px`,
             height: `${$getWinH()}px`,
-            overflow: 'hidden',
         }"
-        class="position-relative"
+        class="position-relative overflow-hidden"
     >
         <swiper class="swiper" :options="swiperOption">
             <swiper-slide>
                 <HomeOverview />
             </swiper-slide>
             <swiper-slide>
-                <section style="height: 100vh">
-                    <v-container style="max-width: 980px">
+                <section class="h-screen">
+                    <v-container class="max-w-5xl">
                         <v-row>
                             <v-col
                                 cols="12"

@@ -1,19 +1,19 @@
 <template>
     <client-only>
         <modal
-        :ref="modalName"
-        :name="modalName"
-        :adaptive="true"
-        height="auto"
-        :scrollable="true"
-        :classes="classes"
-        v-bind="$attrs"
-        @before-open="beforeOpen"
-        @before-close="beforeClose"
-        @opened="opened"
-        @closed="closed"
-        v-on="$listeners"
-    >
+            :ref="modalName"
+            :name="modalName"
+            :adaptive="true"
+            height="auto"
+            :scrollable="true"
+            :classes="classes"
+            v-bind="$attrs"
+            @before-open="beforeOpen"
+            @before-close="beforeClose"
+            @opened="opened"
+            @closed="closed"
+            v-on="$listeners"
+        >
         <slot></slot>
     </modal>
     </client-only>
