@@ -1,0 +1,44 @@
+name: Deploy
+
+on:
+    push:
+        branches:
+            - main
+
+jobs:
+    build-and-deploy:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v2
+
+            - name: Set up Node.js
+              uses: actions/setup-node@v2
+              with:
+                  node-version: '16.15.1'
+
+            - name: Install Dependencies
+              run: yarn
+
+            - name: Move README.md
+              run: mv -f README.md dist
+
+            - name: Clone Repository
+              run: git clone "https://${{ secrets.GH_TOKEN }}@github.com/stonehank/stonehank.github.io" demo
+
+            - name: Remove Unwanted Files
+              run: |
+                  rm -rf ./demo/*
+
+            - name: Copy Files to Demo
+              run: cp -R dist/* demo/
+
+            - name: Commit Changes
+              working-directory: ./demo
+              run: |
+                  git config user.name "stonehank"
+                  git config user.email "stonehank310@gmail.com"
+                  git add .
+                  git commit -m "Update"
+                  git push --force "https://${{ secrets.GH_TOKEN }}@github.com/stonehank/stonehank.github.io" main:main
