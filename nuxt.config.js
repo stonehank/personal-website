@@ -74,7 +74,7 @@ export default {
         autoprefixer: {},
       },
     },
-    // publicPath: 'https://stonehank.github.io'
+    publicPath: 'https://stonehank.github.io'
   },
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
