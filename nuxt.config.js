@@ -26,16 +26,16 @@ export default {
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css' },
     ],
     script: [
-      {
-        type: 'text/javascript',
-        charset: 'utf-8',
-        innerHTML: `
-        (function(h,e,a,t,m,p) {
-            m=e.createElement(a);m.async=!0;m.src=t;
-            p=e.getElementsByTagName(a)[0];p.parentNode.insertBefore(m,p);
-        })(window,document,'script','https://u.heatmap.it/log.js');
-        `
-      },
+      // {
+      //   type: 'text/javascript',
+      //   charset: 'utf-8',
+      //   innerHTML: `
+      //   (function(h,e,a,t,m,p) {
+      //       m=e.createElement(a);m.async=!0;m.src=t;
+      //       p=e.getElementsByTagName(a)[0];p.parentNode.insertBefore(m,p);
+      //   })(window,document,'script','https://u.heatmap.it/log.js');
+      //   `
+      // },
       {
         type: 'text/javascript',
         charset: 'utf-8',
