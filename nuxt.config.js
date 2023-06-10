@@ -35,6 +35,17 @@ export default {
             p=e.getElementsByTagName(a)[0];p.parentNode.insertBefore(m,p);
         })(window,document,'script','https://u.heatmap.it/log.js');
         `
+      },
+      {
+        type: 'text/javascript',
+        charset: 'utf-8',
+        innerHTML: `
+        navigator.serviceWorker.getRegistrations().then(function(registrations) {
+          for(let registration of registrations) {
+              registration.unregister();
+          } 
+        });
+        `
       }
     ],
     __dangerouslyDisableSanitizers: ['script']
