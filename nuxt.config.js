@@ -182,9 +182,9 @@ export default {
     baseURL: '/',
   },
 
-  // generate: {
-  //   routes: require('./backend/getRouteInSpa'),
-  // },
+  generate: {
+    routes: require('./backend/getRouteInSpa'),
+  },
 
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
